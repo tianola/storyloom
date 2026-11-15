@@ -19,7 +19,7 @@ BUILDER = ROOT / "tools" / "blender" / "jensen_huang_beats.py"
 BEATS = [
     "denny-den", "leather-jacket", "silicon-wafer", "nv1-chip", "riva-chip", "geforce-chip",
     "parallel-cores", "cuda-stack", "deep-learning", "dgx-cluster", "blackwell-chip", "flat-org",
-    "nvidia-hq",
+    "nvidia-hq", "valuation", "founding-team", "wall-street", "headlines",
 ]
 
 

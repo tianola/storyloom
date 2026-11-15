@@ -6,10 +6,10 @@
     "subtitle": ""
   },
   "u002": {
-    "kind": "cards",
-    "name": "bar-chart",
-    "title": "market-cap",
-    "subtitle": "Jensen Huang Timeline"
+    "kind": "3d",
+    "name": "valuation",
+    "title": "",
+    "subtitle": ""
   },
   "u003": {
     "kind": "3d",
@@ -30,10 +30,10 @@
     "subtitle": ""
   },
   "u006": {
-    "kind": "cards",
-    "name": "bar-chart",
-    "title": "founding-team",
-    "subtitle": "Jensen Huang Timeline"
+    "kind": "3d",
+    "name": "founding-team",
+    "title": "",
+    "subtitle": ""
   },
   "u007": {
     "kind": "3d",
@@ -66,10 +66,10 @@
     "subtitle": ""
   },
   "u012": {
-    "kind": "cards",
-    "name": "bar-chart",
-    "title": "wall-street",
-    "subtitle": "Jensen Huang Timeline"
+    "kind": "3d",
+    "name": "wall-street",
+    "title": "",
+    "subtitle": ""
   },
   "u013": {
     "kind": "3d",
@@ -102,10 +102,10 @@
     "subtitle": ""
   },
   "u018": {
-    "kind": "cards",
-    "name": "bar-chart",
-    "title": "personal-news",
-    "subtitle": "Jensen Huang Timeline"
+    "kind": "3d",
+    "name": "headlines",
+    "title": "",
+    "subtitle": ""
   },
   "u019": {
     "kind": "3d",

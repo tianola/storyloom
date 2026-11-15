@@ -1,4 +1,4 @@
-"""Jensen Huang episode: 13 3D beats built from the reusable model library.
+"""Jensen Huang episode: 17 3D beats built from the reusable model library.
 
     blender -b -P tools/blender/jensen_huang_beats.py                      # every beat, skip rendered ones
     blender -b -P tools/blender/jensen_huang_beats.py -- --beat riva-chip  # one beat (repeatable)
@@ -63,7 +63,7 @@ def denny_den(sec):
                 jacket=kit.mat("kit-denim", (0.10, 0.14, 0.22), roughness=0.8))
     # the idea on the napkin lights up as the sentence reaches "a bet on a wild idea"
     kit.pulse(booth["sketch_ink"], [(1, 0.0), (f(sec * 0.45), 0.0), (f(sec * 0.62), 5.0)])
-    look.tag(st, "San Jose, 1993", booth["napkin_xyz"], (0.3, 0.86), size=0.040, appear_at=f(sec * 0.55))
+    look.tag(st, "San Jose, 1993", booth["napkin_xyz"], (0.3, 0.86), size=0.056, appear_at=f(sec * 0.55))
 
 
 def leather_jacket(sec):
@@ -83,7 +83,7 @@ def leather_jacket(sec):
                       kit.glow("bar-hot", 2.2) if last else kit.mid(), bevel=0)
         grow(bar, 1.05, h, f(0.4 + k * 0.45), f(1.2 + k * 0.45))
     kit.boxes("screen-axis", [placed((1.6, 1.78, 1.02), (5.6, 0.03, 0.02))], kit.base())
-    look.tag(st, "$3 trillion", (4.05, 1.72, 3.85), (0.5, 0.8), size=0.040, appear_at=f(5.2))
+    look.tag(st, "$3 trillion", (4.05, 1.72, 3.85), (0.5, 0.8), size=0.056, appear_at=f(5.2))
 
 
 def silicon_wafer(sec):
@@ -93,8 +93,8 @@ def silicon_wafer(sec):
     w = hardware.wafer()
     hx, hy = w["hero_xy"]
     kit.move(w["hero"], f(2.5), f(6.5), (0, 0, 1.25))
-    look.tag(st, "Silicon wafer", (-2.6, -1.6, 0.08), (0.2, 0.16), size=0.040, appear_at=f(0.8))
-    look.tag(st, "One die = one chip", (hx, hy, 1.33), (0.74, 0.84), size=0.040, appear_at=f(6.6), follow=w["hero"])
+    look.tag(st, "Silicon wafer", (-2.6, -1.6, 0.08), (0.2, 0.16), size=0.056, appear_at=f(0.8))
+    look.tag(st, "One die = one chip", (hx, hy, 1.33), (0.74, 0.84), size=0.056, appear_at=f(6.6), follow=w["hero"])
 
 
 def nv1_chip(sec):
@@ -121,8 +121,8 @@ def nv1_chip(sec):
     kit.spin(tri, st.frames, 0.22)
     kit.appear(patch, f(3.0), f(3.6))
     kit.appear(tri, f(5.4), f(6.0))
-    look.tag(st, "NV1: curved patches", (2.2, 0.9, 2.3), (0.58, 0.9), size=0.040, appear_at=f(3.4))
-    look.tag(st, "Everyone else: triangles", (4.9, 0.9, 0.55), (0.76, 0.14), size=0.040, appear_at=f(5.8))
+    look.tag(st, "NV1: curved patches", (2.2, 0.9, 2.3), (0.58, 0.9), size=0.056, appear_at=f(3.4))
+    look.tag(st, "Everyone else: triangles", (4.9, 0.9, 0.55), (0.76, 0.14), size=0.056, appear_at=f(5.8))
 
 
 def riva_chip(sec):
@@ -133,9 +133,9 @@ def riva_chip(sec):
     kit.move(chip["wires"], f(2.6), f(4.2), (0, 0, 0.55))
     kit.move(chip["die"], f(2.6), f(4.2), (0, 0, 0.55))
     top = chip["top"]
-    look.tag(st, "Plastic package", (1.25, -1.5, top + 2.3), (0.8, 0.88), size=0.040, appear_at=f(3.5), follow=chip["lid"])
-    look.tag(st, "Silicon die", (0.3, -0.4, top + 0.52), (0.14, 0.56), size=0.040, appear_at=f(4.4), follow=chip["die"])
-    look.tag(st, "Pins to the board", (-1.2, -1.9, 0.08), (0.2, 0.14), size=0.040, appear_at=f(5.6))
+    look.tag(st, "Plastic package", (1.25, -1.5, top + 2.3), (0.8, 0.88), size=0.056, appear_at=f(3.5), follow=chip["lid"])
+    look.tag(st, "Silicon die", (0.3, -0.4, top + 0.52), (0.14, 0.56), size=0.056, appear_at=f(4.4), follow=chip["die"])
+    look.tag(st, "Pins to the board", (-1.2, -1.9, 0.08), (0.2, 0.14), size=0.056, appear_at=f(5.6))
 
 
 def geforce_chip(sec):
@@ -146,9 +146,9 @@ def geforce_chip(sec):
     kit.move(card["fan"], f(2.2), f(4.4), (0, 0, 2.7))
     kit.move(card["heatsink"], f(2.8), f(5.0), (0, 0, 1.35))
     gx, gy, gz = card["gpu_xyz"]
-    look.tag(st, "Fan + heatsink", (1.2, -1.5, 2.4), (0.8, 0.76), size=0.040, appear_at=f(5.0), follow=card["heatsink"])
-    look.tag(st, "GPU", (gx, gy, gz + 0.1), (0.1, 0.5), size=0.040, appear_at=f(5.8))
-    look.tag(st, "Plugs into the PC", (-1.1, -2.55, 0.34), (0.36, 0.1), size=0.040, appear_at=f(7.6))
+    look.tag(st, "Fan + heatsink", (1.2, -1.5, 2.4), (0.8, 0.76), size=0.056, appear_at=f(5.0), follow=card["heatsink"])
+    look.tag(st, "GPU", (gx, gy, gz + 0.1), (0.1, 0.5), size=0.056, appear_at=f(5.8))
+    look.tag(st, "Plugs into the PC", (-1.1, -2.55, 0.34), (0.36, 0.1), size=0.056, appear_at=f(7.6))
 
 
 def parallel_cores(sec):
@@ -177,8 +177,8 @@ def parallel_cores(sec):
             t0 = round(k * step) + 4 + r
             keys += [(max(2, t0 - 3), 0.5 if k else 0.05), (t0, 4.5), (t0 + 14, 4.5), (t0 + 26, 0.5)]
         kit.pulse(m, keys)
-    look.tag(st, "CPU: 4 cores, in turn", (-2.9, 2.0, 0.3), (0.28, 0.88), size=0.040, appear_at=f(0.6))
-    look.tag(st, "GPU: thousands, at once", (2.9, 2.0, 0.3), (0.72, 0.88), size=0.040, appear_at=f(2.2))
+    look.tag(st, "CPU: 4 cores, in turn", (-2.9, 2.0, 0.3), (0.28, 0.88), size=0.056, appear_at=f(0.6))
+    look.tag(st, "GPU: thousands, at once", (2.9, 2.0, 0.3), (0.72, 0.88), size=0.056, appear_at=f(2.2))
 
 
 def cuda_stack(sec):
@@ -196,8 +196,8 @@ def cuda_stack(sec):
         g.location = (0, 0, 5.0)
         kit.move(g, f(1.0 + k * 1.6), f(2.2 + k * 1.6), (0, 0, -5.0))
         kit.appear(g, f(1.0 + k * 1.6), f(1.3 + k * 1.6))
-    look.tag(st, "General-purpose code", (2.3, -2.3, 3.95), (0.8, 0.9), size=0.040, appear_at=f(6.2))
-    look.tag(st, "Graphics chip", (1.8, -1.8, 0.4), (0.84, 0.2), size=0.040, appear_at=f(0.6))
+    look.tag(st, "General-purpose code", (2.3, -2.3, 3.95), (0.76, 0.9), size=0.056, appear_at=f(6.2))
+    look.tag(st, "Graphics chip", (1.8, -1.8, 0.4), (0.84, 0.2), size=0.056, appear_at=f(0.6))
 
 
 def deep_learning(sec):
@@ -213,8 +213,8 @@ def deep_learning(sec):
             keys += [(max(2, t0 - 5), 0.4 if wave else 0.15), (t0, 6.0), (t0 + 10, 6.0), (t0 + 24, 0.8)]
         kit.pulse(m, keys)
     first, last = net["positions"][0], net["positions"][n - 1]
-    look.tag(st, "Image in", first[-1], (0.13, 0.9), size=0.040, appear_at=f(0.4))
-    look.tag(st, "Answer out", last[-1], (0.87, 0.9), size=0.040, appear_at=f(1.6))
+    look.tag(st, "Image in", first[-1], (0.13, 0.9), size=0.056, appear_at=f(0.4))
+    look.tag(st, "Answer out", last[-1], (0.87, 0.9), size=0.056, appear_at=f(1.6))
 
 
 def dgx_cluster(sec):
@@ -229,7 +229,7 @@ def dgx_cluster(sec):
                 part.location = (x, 0, 0)
         if rack["drawer"] is not None:
             kit.move(rack["drawer"], f(1.2), f(3.4), (0, -2.3, 0))
-    look.tag(st, "8 GPUs in one server", (0.0, -2.4, 2.75), (0.5, 0.92), size=0.040, appear_at=f(3.5), follow=racks[1]["drawer"])
+    look.tag(st, "8 GPUs in one server", (0.0, -2.4, 2.75), (0.5, 0.92), size=0.056, appear_at=f(3.5), follow=racks[1]["drawer"])
 
 
 def blackwell_chip(sec):
@@ -240,10 +240,10 @@ def blackwell_chip(sec):
     for k, layer in enumerate(pkg["memory"]):
         kit.move(layer, f(3.2 + k * 0.25), f(4.8 + k * 0.25), (0, 0, 0.28 + k * 0.30))
     mx, my = pkg["memory_xy"]
-    look.tag(st, "Heat spreader", (1.4, -1.5, 2.95), (0.82, 0.86), size=0.040, appear_at=f(3.4), follow=pkg["lid"])
-    look.tag(st, "Logic die", (0.0, -0.9, 0.38), (0.5, 0.09), size=0.040, appear_at=f(4.2))
-    look.tag(st, "Stacked memory", (mx, -0.9, 1.75), (0.84, 0.56), size=0.040, appear_at=f(5.6), follow=pkg["memory"][-1])
-    look.tag(st, "Silicon interposer", (-1.55, -1.3, 0.3), (0.19, 0.3), size=0.040, appear_at=f(7.0))
+    look.tag(st, "Heat spreader", (1.4, -1.5, 2.95), (0.82, 0.86), size=0.056, appear_at=f(3.4), follow=pkg["lid"])
+    look.tag(st, "Logic die", (0.0, -0.9, 0.38), (0.5, 0.09), size=0.056, appear_at=f(4.2))
+    look.tag(st, "Stacked memory", (mx, -0.9, 1.75), (0.84, 0.56), size=0.056, appear_at=f(5.6), follow=pkg["memory"][-1])
+    look.tag(st, "Silicon interposer", (-1.55, -1.3, 0.3), (0.19, 0.3), size=0.056, appear_at=f(7.0))
 
 
 def flat_org(sec):
@@ -266,8 +266,8 @@ def flat_org(sec):
                  kit.rods(f"ring{ri}-links", links, 0.018, kit.accent()))
         g = kit.group(f"ring{ri}", parts)
         kit.appear(g, f(start + ri * 1.8), f(start + ri * 1.8 + 0.9))
-    look.tag(st, "60 direct reports", (5.2, -0.4, 0.75), (0.82, 0.88), size=0.040, appear_at=f(5.6))
-    look.tag(st, "No layers in between", (-1.4, -0.9, 0.08), (0.2, 0.82), size=0.040, appear_at=f(7.2))
+    look.tag(st, "60 direct reports", (5.2, -0.4, 0.75), (0.80, 0.88), size=0.056, appear_at=f(5.6))
+    look.tag(st, "No layers in between", (-1.4, -0.9, 0.08), (0.22, 0.82), size=0.056, appear_at=f(7.2))
 
 
 def nvidia_hq(sec):
@@ -276,12 +276,90 @@ def nvidia_hq(sec):
     sets.campus_building()
 
 
+def valuation(sec):
+    """Thirty years in one rising row: the last column is the only one that glows."""
+    st = look.orbit_stage(sec, target=(0.0, 0, 2.2), radius=(22.0, 19.0), azimuth=(-110, -88), height=(5.6, 4.6),
+                          lens=45, floor_grid=1.2)
+    n = 12
+    for k in range(n):
+        h = 0.085 * math.exp(k * 0.36)
+        last = k == n - 1
+        col = kit.box(f"year{k}", (-6.0 + k * 1.1, 0, 0), (0.74, 0.74, h),
+                      look.neon("valuation-now", look.WARM, 1.6) if last else kit.mid(), bevel=0.02)
+        t0 = 0.5 + k * (sec - 4.5) / n
+        grow(col, 0.0, h, f(t0), f(t0 + 0.8))
+    kit.boxes("axis", [placed((0.05, -0.55, 0.01), (13.2, 0.03, 0.02))], kit.accent())
+    look.tag(st, "1993", (-6.0, -0.4, 0.12), (0.12, 0.30), size=0.056, appear_at=f(0.6))
+    look.tag(st, "Today", (6.1, -0.4, 4.3), (0.84, 0.66), size=0.056, appear_at=f(sec - 3.4))
+    number = look.hud_text(st, "$0", (0.36, 0.84), size=0.085, start=1.0, color=look.WARM, strength=2.2)
+    look.hud_text(st, "company valuation", (0.36, 0.745), size=0.036, start=1.0)
+    look.counter(number, 1.0, sec - 3.2, lambda t: 3000 ** t, template="${:,} billion")
+
+
+def founding_team(sec):
+    st = look.orbit_stage(sec, target=(0, 0, 1.55), radius=(11.5, 9.6), azimuth=(-108, -84), height=(2.9, 2.5),
+                          lens=45, floor_grid=0.9, gain=2.6)
+    kit.cyl("plinth", (0, 0, 0.07), 3.3, 0.14, kit.slate(), verts=64)
+    kit.cyl("plinth-rim", (0, 0, 0.02), 3.4, 0.04, kit.accent(), verts=64)
+    people = (("Chris Malachowsky", -1.75, kit.mid(), (0.18, 0.84)),
+              ("Jensen Huang", 0.0, kit.epoxy(), (0.50, 0.90)),
+              ("Curtis Priem", 1.75, kit.mat("kit-denim", (0.10, 0.14, 0.22), roughness=0.8), (0.82, 0.84)))
+    for k, (name, x, jacket, screen) in enumerate(people):
+        sets.figure(f"founder{k}", (x, 0.25 if k != 1 else -0.25, 0.14), jacket=jacket, scale=1.45)
+        look.tag(st, name, (x, 0.25 if k != 1 else -0.25, 3.05), screen, size=0.050, appear_at=f(0.8 + k * 1.3))
+    look.hud_text(st, "$40,000", (0.5, 0.16), size=0.085, start=sec * 0.5, color=look.WARM, strength=2.2)
+    look.hud_text(st, "in personal savings", (0.5, 0.075), size=0.036, start=sec * 0.5)
+
+
+def wall_street(sec):
+    """A margin line that keeps falling while the spending underneath it keeps going."""
+    st = look.orbit_stage(sec, target=(0, 0.6, 2.7), radius=(17.0, 15.0), azimuth=(-104, -82), height=(3.8, 3.2),
+                          lens=45, floor_grid=1.1, gain=1.6)
+    kit.box("board", (0, 1.2, 2.6), (11.0, 0.16, 5.0), kit.epoxy(), bevel=0.04)
+    kit.boxes("gridlines", [placed((0, 1.11, 0.9 + k * 0.85), (10.2, 0.02, 0.012)) for k in range(5)], kit.mid())
+    pts = [(-4.8, 4.3), (-3.9, 4.0), (-3.1, 4.15), (-2.2, 3.5), (-1.4, 3.65), (-0.5, 2.9), (0.4, 3.05),
+           (1.3, 2.3), (2.1, 2.45), (3.0, 1.75), (3.9, 1.85), (4.8, 1.25)]
+    line_mat = look.neon("margin-line", look.COOL, 3.0)
+    for k in range(len(pts) - 1):
+        (x0, z0), (x1, z1) = pts[k], pts[k + 1]
+        seg = kit.rod(f"margin{k}", (x0, 1.08, z0), (x1, 1.08, z1), 0.045, line_mat, verts=8)
+        kit.appear(seg, f(0.6 + k * (sec - 4.0) / len(pts)), f(0.9 + k * (sec - 4.0) / len(pts)))
+    for k in range(10):
+        h = 0.35 + k * 0.11
+        bar = kit.box(f"spend{k}", (-4.5 + k * 1.0, 1.06, 0.2), (0.5, 0.06, h), look.neon("cuda-spend", look.WARM, 1.1),
+                      bevel=0)
+        grow(bar, 0.2, h, f(1.0 + k * 0.5), f(1.6 + k * 0.5))
+    look.tag(st, "Profit margin", (4.8, 1.0, 1.25), (0.82, 0.62), size=0.052, appear_at=f(sec - 4.0))
+    look.tag(st, "Spending on CUDA", (4.5, 1.0, 0.9), (0.80, 0.14), size=0.052, appear_at=f(sec - 5.5))
+
+
+def headlines(sec):
+    """Front pages drifting past in the dark: attention, with nothing legible to quote."""
+    look.orbit_stage(sec, target=(0, 0, 2.4), radius=(14.0, 12.0), azimuth=(-100, -80), height=(2.9, 2.6),
+                     lens=45, floor_grid=1.1, gain=2.2)
+    sheets = [(-4.6, 2.2, 2.9, 0.20), (-1.9, 0.6, 2.2, -0.12), (0.9, 2.8, 3.1, 0.10), (3.4, 0.2, 2.5, -0.22),
+              (5.6, 2.4, 2.0, 0.16), (-6.4, -0.4, 1.9, 0.30), (1.6, -1.4, 1.7, -0.06)]
+    for k, (x, y, z, yaw) in enumerate(sheets):
+        page = kit.box(f"page{k}", (0, 0, 0), (2.3, 0.03, 3.1), kit.base(), bevel=0)
+        ink = [placed((0, -0.02, 1.15), (1.9, 0.01, 0.30))]
+        ink += [placed((-0.5, -0.02, 0.62 - r * 0.17), (0.86, 0.01, 0.06)) for r in range(11)]
+        ink += [placed((0.5, -0.02, 0.62 - r * 0.17), (0.86, 0.01, 0.06)) for r in range(4)]
+        ink.append(placed((0.5, -0.02, -0.72), (0.86, 0.01, 1.0)))
+        text = kit.boxes(f"ink{k}", ink, kit.epoxy())
+        g = kit.group(f"sheet{k}", (page, text))
+        g.location = (x, y, z)
+        g.rotation_euler = (0, 0, yaw)
+        kit.move(g, 1, f(sec), (0.9 if k % 2 else -0.9, 0, 0.35 if k % 3 else -0.3))
+
+
 BEATS = {
     "denny-den": denny_den, "leather-jacket": leather_jacket, "silicon-wafer": silicon_wafer,
     "nv1-chip": nv1_chip, "riva-chip": riva_chip, "geforce-chip": geforce_chip,
     "parallel-cores": parallel_cores, "cuda-stack": cuda_stack, "deep-learning": deep_learning,
     "dgx-cluster": dgx_cluster, "blackwell-chip": blackwell_chip, "flat-org": flat_org,
     "nvidia-hq": nvidia_hq,
+    "valuation": valuation, "founding-team": founding_team, "wall-street": wall_street,
+    "headlines": headlines,
 }
 
 

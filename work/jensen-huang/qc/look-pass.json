@@ -1,7 +1,7 @@
 {
   "tool": "tools/look_pass.py",
   "graded": "F:\\AI-PROJECTS\\longform-explainer\\work\\jensen-huang\\video-graded.mp4",
-  "graded_sha256": "2d79795b6c6f1b7e2acd957d464e003feea1d58f465474733ee5ae7f6624c630",
+  "graded_sha256": "66d1ed6413eeed8bb45009a4fa253997ba7e8093e0ab845b0d4a6d133f77624c",
   "strengths": {
     "bloom": 0.22,
     "bloom_sigma": 14.0,
@@ -20,5 +20,5 @@
     "pixel_format": "yuv420p"
   },
   "filtergraph": "[0:v]format=gbrp,split=2[base][hl];[hl]curves=master='0/0 0.68/0 1/1',gblur=sigma=14.0[bloom];[base][bloom]blend=all_mode=screen:all_opacity=0.22,eq=contrast=1.03:saturation=1.07,unsharp=5:5:0.45,noise=alls=3.5:allf=t,vignette=0.3",
-  "finished_at": "2026-11-15T07:32:15+00:00"
+  "finished_at": "2026-11-15T12:52:50+00:00"
 }

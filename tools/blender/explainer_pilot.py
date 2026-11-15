@@ -68,8 +68,8 @@ def build():
         trace_y=look.signal_material("trace-y", F, axis="Y", spacing=0.21, speed=0.16, lanes=1 / 0.028))
 
     # the take-apart, timed so each layer leaves just before the lens arrives
-    kit.move(card["fan"], f(2.0), f(4.6), (-3.2, 3.4, 3.0))
-    kit.move(card["heatsink"], f(2.6), f(5.4), (-3.2, 3.4, 1.9))
+    kit.move(card["fan"], f(2.0), f(4.6), (-5.0, 4.2, 2.3))
+    kit.move(card["heatsink"], f(2.6), f(5.4), (-5.0, 4.2, 1.2))
     lid = bpy.data.objects["card-gpu-g-lid"]
     kit.move(lid, f(6.6), f(9.2), (-1.6, 1.4, 0.9))
 
