@@ -25,8 +25,9 @@ The catalog is the point. Every entry is a (name, detect, fix) triple:
   False, and the supervisor records the finding for a human / the agent instead of guessing.
 
 Nothing here edits production sources: the fixes are all *data* fixes (provision a valid
-placeholder clip, regenerate a corrupt file, re-run the finishing pass) - safe on a local-only
-video and reversible, which is why they may run unattended.
+re-run the finishing pass) - safe on a local-only video and reversible, which is why they may
+run unattended. Missing or unreadable archive media is NOT one of them: it is recorded and stops
+that stage, because a placeholder would put a black frame in the film.
 """
 import argparse
 import json
@@ -55,42 +56,8 @@ class Fix:
         return re.search(self.pattern, out, re.I | re.S) is not None
 
 
-def _provision_placeholder_clip(out: str) -> str | None:
-    """A valid ffmpeg-generated clip in place of a missing archival source.
-
-    The ingest step refuses to cut a shot whose source file is not on disk. For a local-only
-    build the correct unattended answer is to stand up a valid placeholder (a short silent
-    colour field), not to stop and wait: the gate still measures and reports it, and a real
-    clip can replace it later without touching the pipeline.
-    """
-    m = re.search(r"which is not on disk at (\S+)", out)
-    if not m:
-        m = re.search(r"reads \S+ from archive\.json.*?(\S+\.mp4)", out, re.S)
-    if not m:
-        return None
-    target = Path(m.group(1))
-    target.parent.mkdir(parents=True, exist_ok=True)
-    if not (target.is_file() and target.stat().st_size > 0):
-        _run(["ffmpeg", "-y", "-f", "lavfi", "-i", "color=c=black:s=1280x720:r=24",
-              "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", "5",
-              "-c:v", "libx264", "-c:a", "aac", str(target)])
-    return f"provisioned a valid placeholder clip at {target}"
-
-
-def _regenerate_corrupt_clip(out: str) -> str | None:
-    """Regenerate the input file ffmpeg could not parse (a half-written placeholder)."""
-    m = re.search(r"ffprobe[^\n]*?(\S+\.mp4)", out)
-    if not m:
-        m = re.search(r"Invalid data found.*?(\S+\.mp4)", out, re.S)
-    if not m:
-        return None
-    target = Path(m.group(1))
-    if not target.exists():
-        return None
-    _run(["ffmpeg", "-y", "-f", "lavfi", "-i", "color=c=black:s=1280x720:r=24",
-          "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", "5",
-          "-c:v", "libx264", "-c:a", "aac", str(target)])
-    return f"regenerated the unparseable clip {target}"
+PLACEHOLDER_RULE = ("missing archive media is never replaced by a placeholder: a black frame in the "
+                    "film is worse than a stopped build. Fetch the source or reassign the shot.")
 
 
 def _rerun_finishing_pass(out: str) -> str | None:
@@ -112,16 +79,15 @@ def _rerun_finishing_pass(out: str) -> str | None:
 
 
 FIX_CATALOG = [
-    Fix("missing-archive-clip",
-        r"not on disk at|reads \S+ from archive\.json, which is not on disk"),
-    Fix("corrupt-archive-clip",
-        r"moov atom not found|Invalid data found when processing input"),
     Fix("finishing-unreported",
         r"shared_finish_unreported|no finishing-pass report"),
 ]
 
 # Errors no data fix can clear - the run records them and hands them to a human/agent.
 AGENT_ONLY = [
+    ("missing-archive-media", r"not on disk at|has no record in|holds no clip for it", PLACEHOLDER_RULE),
+    ("corrupt-archive-media", r"moov atom not found|Invalid data found when processing input",
+     "an archive file cannot be read; fetch it again (" + PLACEHOLDER_RULE + ")"),
     ("beat-script-source-bug", r"KeyError: .*bpy_prop_collection", "a beat script uses a Blender material input name that no longer exists - needs a source edit"),
     ("missing-tools-module", r"ModuleNotFoundError: No module named '(\w+)'", "a tools/ module failed to import - a sys.path/source issue, not a data one"),
 ]
@@ -181,8 +147,6 @@ def drive_stage(stage: str, episode: str, py: str, max_retries: int = 3) -> Stag
 
 # Bind the concrete fixers by catalog name (keeps the data table clean).
 _CATALOG_FIXERS = {
-    "missing-archive-clip": _provision_placeholder_clip,
-    "corrupt-archive-clip": _regenerate_corrupt_clip,
     "finishing-unreported": _rerun_finishing_pass,
 }
 

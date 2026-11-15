@@ -42,6 +42,24 @@ def beats_of(episode):
     return [{**b, "text": " ".join(b["text"])} for b in beats.values()]
 
 
+def archive_mix(episode, contract=None):
+    """Planning-time share check: findings when the shot list gives archive too little screen time.
+
+    Same numbers the QC gate uses (`workflow.archive.mix_findings`), applied to `shots.json` before
+    anything is rendered, so a film that cannot meet the floor is refused at planning.
+    Returns [(code, message)]; empty when the share and per-act floors are met."""
+    from workflow import archive
+    episode = Path(episode)
+    contract = contract or json.loads((ROOT / "workflow" / "style.json").read_text(encoding="utf-8"))
+    shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
+    manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
+    rate = manifest["sampleRate"]
+    timeline = [{"layer": shots[u["id"]]["kind"], "start": u["startSample"] / rate,
+                 "seconds": (u["endSample"] - u["startSample"]) / rate}
+                for u in manifest["utterances"] if u["id"] in shots]
+    return [(f.code, f.message) for f in archive.mix_findings(timeline, contract, mode="warn")]
+
+
 def catalog_digest(catalog):
     lines = []
     for name, spec in sorted(catalog.items()):
@@ -150,6 +168,8 @@ def main(argv=None):
     if args.check:
         board = json.loads((episode / "storyboard.json").read_text(encoding="utf-8"))
         errors = problems(board, beats, catalog)
+        mix = archive_mix(episode)
+        errors += [f"archive mix: {message}" for code, message in mix]
         print("\n".join(errors) or f"storyboard OK ({len(beats)} beats)")
         return 1 if errors else 0
     if args.brief or not args.ask_cmd:

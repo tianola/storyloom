@@ -13,6 +13,12 @@
 ## Next (in order)
 - 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
 
+## Phase 7: DONE
+- `pipeline_supervisor.py`: placeholder/regenerate fixes removed; missing or unreadable archive media is an AGENT_ONLY finding that stops the stage (`python/test_pipeline_supervisor.py`). Core already raised on missing sources (`workflow/episode.archive_sources`).
+- `plan_storyboard.archive_mix(episode)` applies the archive share/per-act floors (`workflow.archive.mix_findings`) at planning time; `--check` fails on it. Jensen reports `archive_share_low` (10% vs 20%), as known.
+- Stills already get paper/drift treatment through `archive_ingest.ingest_clip` (form: still).
+- Remaining: phase 8 (`tools/make_episode.py`), phase 9 (clean-up/docs).
+
 ## Phase 6: DONE
 - `tools/captions.py` (word timings estimated from the waveform, `vo/words.json`, per-beat `word_timing.json` for the storyboard builder, `captions.srt/.vtt`, soft `mov_text` stream, `--burn`), `tools/audio_finish.py` (per-utterance levelling to the median, bounded 9 dB; synthesised whoosh/thud under cuts; level ride across archive cuts measured like the gate), `assemble_episode.py` flags `--remux`, `--out`, `--no-finish`, `--burn-captions`. `qc.captions_required` is now true.
 - Proven on a scratch copy of the Jensen episode (main's files untouched): `assemble_episode.py --episode <copy> --remux --out remuxed.mp4` then `qc_episode.py`: PASS, 0 errors, 3 warnings (was 8); `no_captions` and the 4 `cut_loudness_jump` are gone, remaining are the 2 long archive shots and archive share. The real master in main has NOT been re-muxed.
@@ -33,7 +39,7 @@
 - Phase 7 must write the archive sourcing step fresh if still wanted.
 
 ## Open defects
-- `tools/pipeline_supervisor.py` provisions a placeholder clip for missing archive media: likely cause of the black `boarding-school_part1` shot. Phase 7 makes it an error.
+- (fixed in phase 7) supervisor placeholder clip, the likely cause of the black `boarding-school_part1` shot.
 - Narration "GeForce twenty-five-ninety" (should be 256); "personal life" line unsourced; script 3:08 vs 600-900 s; no captions; archive share 10%; 4 loudness jumps at archive cuts.
 - "Today" tag in `valuation` close-up sits against the bar (cosmetic).
 - Map scene with real coastlines needs a public-domain coastline file: ask the user before downloading.

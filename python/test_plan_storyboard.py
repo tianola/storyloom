@@ -64,6 +64,10 @@ class Planner(unittest.TestCase):
         board = json.loads((ROOT / "work" / "jensen-huang" / "storyboard.json").read_text(encoding="utf-8"))
         self.assertEqual(P.problems(board, P.beats_of(ROOT / "work" / "jensen-huang"), CATALOG), [])
 
+    def test_archive_share_is_checked_at_planning_time(self):
+        found = P.archive_mix(ROOT / "work" / "jensen-huang")   # the fixture is known to be short of archive
+        self.assertEqual([code for code, _ in found], ["archive_share_low"])
+
     def test_a_rejected_plan_never_replaces_storyboard_json(self):
         with tempfile.TemporaryDirectory() as tmp:
             ep = Path(tmp)
