@@ -1,0 +1,38 @@
+{
+ "slug": "jensen-huang",
+ "title": "Jensen Huang: The Architect of Modern AI",
+ "language": "English",
+ "workflow_version": 3,
+ "duration_target_seconds": [
+  600,
+  900
+ ],
+ "archive": {
+  "enabled": true
+ },
+ "rollout": {
+  "builder": "tools/blender/jensen_huang_beats.py",
+  "baseline": "1080p",
+  "finish_beats": [
+   "u001",
+   "u002",
+   "u003",
+   "u004",
+   "u005",
+   "u006",
+   "u007",
+   "u008",
+   "u009",
+   "u010",
+   "u011",
+   "u012",
+   "u013",
+   "u014",
+   "u015",
+   "u016",
+   "u017",
+   "u018",
+   "u019"
+  ]
+ }
+}

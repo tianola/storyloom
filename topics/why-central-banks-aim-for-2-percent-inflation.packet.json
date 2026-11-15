@@ -1,0 +1,52 @@
+{
+  "job": {
+    "topic": "Why central banks aim for 2 percent inflation",
+    "category": "economics",
+    "audience": "curious general viewer",
+    "targetSeconds": 480,
+    "modelId": "qwen3.5:4b",
+    "voice": "af_heart"
+  },
+  "sources": [
+    {
+      "id": "src1",
+      "url": "https://www.federalreserve.gov/faqs/economy_14400.htm",
+      "title": "Why does the Federal Reserve aim for inflation of 2 percent over the longer run?",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "retrievedAt": "2026-11-06T05:30:17Z",
+      "excerpt": "the Federal Open Market Committee (FOMC) judges that inflation of 2 percent over the longer run, as measured by the annual change in the price index for personal consumption expenditures, is most consistent with the Federal Reserve's mandate for maximum employment and price stability. When households and businesses can reasonably expect inflation to remain low and stable, they are able to make sound decisions regarding saving, borrowing, and investment, which contribute to a well-functioning economy and the well-being of all Americans. Related Information FOMC economic projections FAQs Monetary Policy Report to the Congress Bureau of Labor Statistics Related Questions What is inflation, and how does the Federal Reserve evaluate changes in the rate of inflation? Back to Top Last Update: August 22, 2025 Board of Governors of the Federal Reserve System About the Fed News & Events Monetary Policy Supervision & Regulation Financial Stability Payment Systems Economic Research Data Consumers & Communities Connect with the Board Tools and Information Contact Publications Freedom of Informati",
+      "locator": "FAQ: Why does the Federal Reserve aim for inflation of 2 percent over the longer run?",
+      "snapshotHash": "7ca8b0691daa604d7f7ceb7393ea2f9ea5ccd2dfd2b1d4e73d0364145402c73a"
+    },
+    {
+      "id": "src2",
+      "url": "https://www.federalreserve.gov/economy-at-a-glance-inflation-pce.htm",
+      "title": "Inflation (PCE)",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "retrievedAt": "2026-11-06T05:30:17Z",
+      "excerpt": "The Federal Reserve seeks to achieve inflation at the rate of 2 percent over the longer run as measured by the annual change in the price index for personal consumption expenditures (PCE). Why does the Fed target PCE inflation instead of the CPI? To measure inflation across the entire economy, economists produce price indexes to see how overall prices for goods and services are changing. Two common price indexes are the consumer price index (CPI) and the personal consumption expenditures (PCE) price index. While the two are similar, the PCE index is constructed in a way that accounts for how Americans are spending their money at a given time and more quickly adapts to changes in spending patterns. Related Information What to know about prices and inflation (Bureau of Economic Analysis) Quick Guide: Some Popular BEA Price Indexes (Bureau of Economic Analysis) Back to Top Last Update: August 02, 2024 Board of Governors of the Federal Reserve System About the Fed News & Events Monetary Policy Supervision & Regulation Financial Stability Payment Systems Economic Research Data Consumers &",
+      "locator": "What is the FOMC's inflation target? / Why does the Fed target PCE inflation instead of the CPI?",
+      "snapshotHash": "24252c67677072821578793580fdfd3cd795391129583b307970eba6c56416f8"
+    },
+    {
+      "id": "src3",
+      "url": "https://www.ecb.europa.eu/mopo/strategy/pricestab/html/index.en.html",
+      "title": "Two per cent inflation target",
+      "publisher": "European Central Bank",
+      "retrievedAt": "2026-11-06T05:30:17Z",
+      "excerpt": "Governing Council, after concluding its strategy review in July 2021, considers that price stability is best maintained by aiming for 2% inflation over the medium term. We consider the Harmonised Index of Consumer Prices (HICP) to be the appropriate measure for assessing the achievement of the price stability objective. However, we recognise that the inclusion of costs related to owner-occupied housing in the HICP would better represent the inflation rate that is relevant for households. The European Statistical System is investigating how these costs could be included in the inflation measure. Measuring inflation – the Harmonised Index of Consumer Prices (HICP) Medium-term orientation Focus on the euro area The ECB’s inflation target makes clear that the focus of the ECB’s monetary policy is on the euro area as a whole. Therefore, the 2% inflation target is assessed on the basis of inflation developments in the euro area economy. Reasons for our inflation target of 2% An inflation rate of 2% is low enough for the economy to fully reap the benefits of price stability while also underlining the ECB’s commitment to the following. Providing a safety margin against the risk of deflatio",
+      "locator": "sections: Two per cent inflation target / Measuring inflation - the HICP",
+      "snapshotHash": "189585df21d645170e60b0953b3e7092d14769515caf5fcff11782387c6878d1"
+    },
+    {
+      "id": "src4",
+      "url": "https://www.ecb.europa.eu/mopo/strategy/strategy-review/html/price-stability-objective.en.html",
+      "title": "Our price stability objective and the strategy review",
+      "publisher": "European Central Bank",
+      "retrievedAt": "2026-11-06T05:30:17Z",
+      "excerpt": "The risk of deflation When the economy shrinks, inflation tends to fall. But if inflation is already too low when a recession hits, we could start to see inflation falling below zero. If prices are falling continuously across the board – a phenomenon called “deflation” – it creates a vicious circle for the economy. For instance, if we all expect prices to fall, we tend to postpone today’s purchases to take advantage of lower prices tomorrow. And if everybody did this, the economy could grind to a halt. By targeting an inflation rate of 2% over the medium term, we can create a safety buffer to avoid this scenario. Making sure our inflation target is easily understood A clear inflation target can better influence expectations Inflation that is too low for too long can influence how people expect prices to develop in the future. If shoppers and business owners get used to very low inflation, they come to expect that it will stay that way. These expectations are important. People use them to make decisions about spending, borrowing and investing. That is why our inflation target needs to be clear, predictable and easily understood. It helps people expect future price changes to be arou",
+      "locator": "section: The risk of deflation",
+      "snapshotHash": "bbe189e7aba9cc1499afdc1a58340317789acd42c401a96b87f6a5ac3dabf693"
+    }
+  ]
+}

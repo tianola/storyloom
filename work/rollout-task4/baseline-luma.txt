@@ -1,0 +1,20 @@
+<string>:4: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+0.116  work/episode-artemis-ii/renders/3d\apollo-era-mid.png
+0.453  work/episode-artemis-ii/renders/3d\crew-quarters-mid.png
+0.087  work/episode-artemis-ii/renders/3d\cubesats-mid.png
+0.214  work/episode-artemis-ii/renders/3d\earth-from-moon-mid.png
+0.192  work/episode-artemis-ii/renders/3d\earth-rise-mid.png
+0.245  work/episode-artemis-ii/renders/3d\far-side-mid.png
+0.066  work/episode-artemis-ii/renders/3d\free-return-mid.png
+0.239  work/episode-artemis-ii/renders/3d\gateway-mid.png
+0.085  work/episode-artemis-ii/renders/3d\heat-shield-mid.png
+0.163  work/episode-artemis-ii/renders/3d\lunar-approach-mid.png
+0.241  work/episode-artemis-ii/renders/3d\lunar-base-mid.png
+0.420  work/episode-artemis-ii/renders/3d\lunar-flyby-mid.png
+0.114  work/episode-artemis-ii/renders/3d\mars-approach-mid.png
+0.070  work/episode-artemis-ii/renders/3d\orion-deep-space-mid.png
+0.086  work/episode-artemis-ii/renders/3d\orion-space-mid.png
+0.153  work/episode-artemis-ii/renders/3d\rendezvous-mid.png
+0.428  work/episode-artemis-ii/renders/3d\sls-launch-mid.png
+0.643  work/episode-artemis-ii/renders/3d\splashdown-mid.png
+0.053  work/episode-artemis-ii/renders/3d\tli-burn-mid.png

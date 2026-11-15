@@ -1,0 +1,101 @@
+{
+  "voice": "af_heart",
+  "speed": 1.0,
+  "utterances": [
+    {
+      "id": "u001",
+      "file": "u001.wav",
+      "text": "In nineteen ninety-three, at a modest booth inside a Denny's diner in San Jose, three engineers sketched out a bet on a wild idea: that computer screens would soon demand real time three dimensional worlds."
+    },
+    {
+      "id": "u002",
+      "file": "u002.wav",
+      "text": "Thirty years later, that company became the single engine of the artificial intelligence revolution, crossing three trillion dollars in valuation."
+    },
+    {
+      "id": "u003",
+      "file": "u003.wav",
+      "text": "Yet the man wearing the signature leather jacket did not start with AI. He started with failure, near bankruptcy, and a mathematical paradigm that Wall Street mocked for a decade."
+    },
+    {
+      "id": "u004",
+      "file": "u004.wav",
+      "text": "Born in Taiwan, Jensen Huang was sent to Kentucky as a child, attending a rugged boarding school where students chopped wood and cleaned toilets."
+    },
+    {
+      "id": "u005",
+      "file": "u005.wav",
+      "text": "That early discipline forged an unyielding work ethic. By twenty-three, he was an engineer at LSI Logic, but his ambitions reached far beyond standard silicon."
+    },
+    {
+      "id": "u006",
+      "file": "u006.wav",
+      "text": "Alongside Chris Malachowsky and Curtis Priem, Huang founded NVIDIA with just forty thousand dollars in personal savings and a conviction that graphical processing needed a revolution."
+    },
+    {
+      "id": "u007",
+      "file": "u007.wav",
+      "text": "Their first product, the NV1, was an architectural disaster. It embraced quadratic texture mapping instead of triangles, putting NVIDIA thirty days away from running out of cash."
+    },
+    {
+      "id": "u008",
+      "file": "u008.wav",
+      "text": "Facing extinction, Huang made a ruthless call: abandon the NV1, lay off half the company, and bet everything on a single chip\u2014the RIVA twelve-eight."
+    },
+    {
+      "id": "u009",
+      "file": "u009.wav",
+      "text": "The RIVA succeeded, followed by the GeForce twenty-five-ninety, establishing the GPU as a dedicated graphics processor that freed the computer's CPU for other tasks."
+    },
+    {
+      "id": "u010",
+      "file": "u010.wav",
+      "text": "But Huang saw further. While others treated GPUs as specialised accelerators for video games, he realized their thousands of small cores could compute anything in parallel."
+    },
+    {
+      "id": "u011",
+      "file": "u011.wav",
+      "text": "In two thousand and six, NVIDIA released CUDA\u2014a software platform allowing developers to run general purpose code directly on graphics chips."
+    },
+    {
+      "id": "u012",
+      "file": "u012.wav",
+      "text": "Wall Street hated it. CUDA compressed profit margins, weighed down earnings, and looked like an expensive academic science project for years."
+    },
+    {
+      "id": "u013",
+      "file": "u013.wav",
+      "text": "Huang kept funding it anyway, convinced that parallel computing was the future of all computation."
+    },
+    {
+      "id": "u014",
+      "file": "u014.wav",
+      "text": "Then came two thousand and twelve. Researchers at the University of Toronto used CUDA GPUs to train AlexNet, shattering computer vision benchmarks."
+    },
+    {
+      "id": "u015",
+      "file": "u015.wav",
+      "text": "The deep learning explosion had ignited, and NVIDIA was the sole arms dealer providing the computational heavy artillery."
+    },
+    {
+      "id": "u016",
+      "file": "u016.wav",
+      "text": "From the DGX supercomputer to Hopper and Blackwell, NVIDIA built an unassailable moat combining silicon architecture, high bandwidth memory, and proprietary software."
+    },
+    {
+      "id": "u017",
+      "file": "u017.wav",
+      "text": "Away from the silicon, Huang runs NVIDIA with a flat organization boasting dozens of direct reports, cultivating an intense, high expectation culture."
+    },
+    {
+      "id": "u018",
+      "file": "u018.wav",
+      "text": "Recently, public headlines also turned toward his personal life, highlighting the human complexities behind the titan of silicon."
+    },
+    {
+      "id": "u019",
+      "file": "u019.wav",
+      "text": "From a Denny's booth to powering the global intelligence infrastructure, Jensen Huang's journey proves that the boldest technological bets require enduring decades of doubt."
+    }
+  ]
+}

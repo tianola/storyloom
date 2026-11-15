@@ -1,0 +1,2787 @@
+{
+  "job": {
+    "topic": "Why people see colour differently",
+    "category": "science",
+    "audience": "curious general viewer",
+    "targetSeconds": 480,
+    "modelId": "openrouter/dots-studio/dots-3-note-preview:free",
+    "voice": "af_heart"
+  },
+  "narration": {
+    "voice": "af_heart",
+    "speed": 1
+  },
+  "sources": [
+    {
+      "id": "src1",
+      "url": "https://spaceplace.nasa.gov/blue-sky/en/",
+      "title": "Why Is the Sky Blue?",
+      "publisher": "NASA Space Place",
+      "retrievedAt": "2026-11-06T01:11:14Z",
+      "excerpt": "Sunlight reaches Earth's atmosphere and is scattered in all directions by all the gases and particles in the air. Blue light is scattered more than the other colors because it travels as shorter, smaller waves. Closer to the horizon, the sky fades to a lighter blue or white. The sunlight reaching us from low in the sky has passed through even more air than the sunlight reaching us from overhead. As the Sun gets lower in the sky, its light is passing through more of the atmosphere to reach you. Even more of the blue light is scattered, allowing the reds and yellows to pass straight through to your eyes. The sky appears red because small particles of dust, pollution, or other aerosols also scatter blue light, leaving more purely red and yellow light to go through the air.",
+      "locator": "sections: Why is the sky blue / What makes a red sunset",
+      "snapshotHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28"
+    },
+    {
+      "id": "src2",
+      "url": "file:///F:/AI-PROJECTS/longform-explainer/tools/numbers.md",
+      "title": "Numbers computed for this project",
+      "publisher": "This project",
+      "retrievedAt": "2026-11-06T02:07:20Z",
+      "excerpt": "Relative Rayleigh scattering strength scales with 1/wavelength^4, normalised to red at 675 nm: violet 400 nm 8.11, blue 450 nm 5.06, green 530 nm 2.63, yellow 580 nm 1.83, orange 620 nm 1.40, red 675 nm 1.00. Path through a flat atmosphere is 1/sin(elevation): sun overhead 1.00, 60 degrees 1.15, 45 degrees 1.41, 30 degrees 2.00, 20 degrees 2.92, 15 degrees 3.86, 10 degrees 5.76, 5 degrees 11.47. Computed with node tools/spectrum.ts on Node v24.21.0.",
+      "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts",
+      "snapshotHash": "bd81b6efb830306bff5095852ea3097dfaf8d600b607050ff667dee587d5ed0b"
+    },
+    {
+      "id": "src3",
+      "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness",
+      "title": "Color Blindness",
+      "publisher": "National Eye Institute (NIH)",
+      "retrievedAt": "2026-11-06T02:07:20Z",
+      "excerpt": "r vision deficiency ), it means you see colors differently than most people. Most of the time, color vision deficiency makes it hard to tell the difference between certain colors. Usually, color vision deficiency runs in families. There’s no cure, but special glasses and contact lenses can help people see differences between colors. Most people who have color vision deficiency don’t have problems with everyday activities. What are the types of color vision deficiency? The most common type of color vision deficiency makes it hard to tell the difference between red and green. Another type makes blue and yellow look the same. In rare cases, people have complete color vision deficiency, which means they don’t see color at all. Learn more about the types of color vision deficiency What are the symptoms of color vision deficiency? The main symptom of color vision deficiency is not seeing colors the way most people do. If you have color vision deficiency, you may have trouble seeing: The difference between colors How bright colors are Different shades of colors Symptoms of color vision deficiency are often so mild that they’re hard to notice. That’s why many people with color vision deficiency don’t know they have it. And people usually adjust to differences in how they see color. People with very serious cases of color vision deficiency might have other symptoms, too — like quick side-to-side eye movements (nystagmus) or sensitivity to light. Am I at risk for color vision deficiency? Men have a much higher risk than women for color vision deficiency. You’re also more likely to ha",
+      "locator": "sections: What are the types / symptoms / risk",
+      "snapshotHash": "a78cd5d2b843c9ee77ccb674b97f34f4ede321ced6abd0b70f426ea8de997e11"
+    },
+    {
+      "id": "src4",
+      "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness",
+      "title": "Color Blindness",
+      "publisher": "National Eye Institute (NIH)",
+      "retrievedAt": "2026-11-06T02:07:20Z",
+      "excerpt": "at causes color vision deficiency? Most people who have color vision deficiency are born with it. This is because the most common types of color vision deficiency are genetic, meaning they’re passed down from parents. Color vision deficiency can also happen because of an injury to the retina (the light-sensitive layer of tissue in the back of the eye), the optic nerve (which connects the eye to the brain), or the brain itself. Some examples of injuries that can lead to color vision deficiency are: Retinal detachment (when the retina is pulled away from its normal position at the back of the eye) Eye injuries caused by lasers Some kinds of brain tumors — especially ones that affect the optic nerve or put pressure on the brain Radiation treatments Color vision may also get worse as you get older — often because of cataracts (cloudy areas in the lens of the eye). Learn more about what causes color vision deficiency Did you know? Everyone sees color a little differently — including people who don’t have color vision deficiency About 1 in 12 men have color vision deficiency Most people with color vision deficiency are born with it, but sometimes it doesn’t show up until later in life How can I find out if I have color deficiency? Your eye doctor can usually use a simple test to tell you if you have color vision deficiency. During the most common type of test, your eye doctor will show you a circle made of many different colored dots. The circle has a shape inside it that’s also made of dots — like a number, a letter, or a squiggly line. This shape is easy to see if you don’t hav",
+      "locator": "sections: What causes it / Did you know",
+      "snapshotHash": "a78cd5d2b843c9ee77ccb674b97f34f4ede321ced6abd0b70f426ea8de997e11"
+    }
+  ],
+  "licenses": [
+    {
+      "id": "lic-model",
+      "scope": "model",
+      "origin": "kokoro-onnx v1.0 export of hexgrad/Kokoro-82M",
+      "author": "Hexgrad; thewh1teagle",
+      "licenseId": "Apache-2.0",
+      "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+      "licenseTextHash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "artifactHash": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+      "attribution": "Kokoro-82M speech model, Apache-2.0",
+      "modifications": "none; used as the published ONNX export",
+      "review": "approved"
+    },
+    {
+      "id": "lic-voice",
+      "scope": "voice",
+      "origin": "voices-v1.0.bin bundled with kokoro-onnx",
+      "author": "Hexgrad; thewh1teagle",
+      "licenseId": "Apache-2.0",
+      "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+      "licenseTextHash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "artifactHash": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+      "attribution": "Kokoro voice bundle, voice af_heart, Apache-2.0",
+      "modifications": "none; no voice cloning",
+      "review": "approved"
+    },
+    {
+      "id": "lic-narrator-code",
+      "scope": "software",
+      "origin": "kokoro-onnx python adapter",
+      "author": "thewh1teagle",
+      "licenseId": "MIT",
+      "licenseUrl": "https://raw.githubusercontent.com/thewh1teagle/kokoro-onnx/main/LICENSE",
+      "licenseTextHash": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e",
+      "artifactHash": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e",
+      "attribution": "kokoro-onnx (MIT)",
+      "modifications": "none; called as a library by python/narrate.py",
+      "review": "approved"
+    },
+    {
+      "id": "lic-rasterizer",
+      "scope": "software",
+      "origin": "@resvg/resvg-js",
+      "author": "Y. Lin and resvg contributors",
+      "licenseId": "MIT",
+      "licenseUrl": "https://opensource.org/license/mit",
+      "licenseTextHash": "4b89d4518bd135ab4ee154a7bce722246b57a98c3d7efc1a09409898160c2bd1",
+      "artifactHash": "4b89d4518bd135ab4ee154a7bce722246b57a98c3d7efc1a09409898160c2bd1",
+      "attribution": "resvg-js (MIT), bundled LICENSE hashed from node_modules",
+      "modifications": "none; local runtime dependency, not redistributed",
+      "review": "approved"
+    },
+    {
+      "id": "lic-ffmpeg",
+      "scope": "software",
+      "origin": "FFmpeg 9.0.2 full_build (gyan.dev)",
+      "author": "FFmpeg contributors",
+      "licenseId": "GPL-3.0-or-later",
+      "licenseUrl": "https://www.gnu.org/licenses/gpl-3.0.en.html",
+      "licenseTextHash": "35fed3bda7c88eef3ff67a96c7c029a0b530a1e9d811f620280f8c2bf2ab8153",
+      "artifactHash": "35fed3bda7c88eef3ff67a96c7c029a0b530a1e9d811f620280f8c2bf2ab8153",
+      "attribution": "FFmpeg, license notice printed by the local install",
+      "modifications": "none; invoked as a separate local process",
+      "review": "approved"
+    },
+    {
+      "id": "lic-artwork",
+      "scope": "image",
+      "origin": "scenes drawn by src/svg-scene.ts",
+      "author": "longform-explainer project",
+      "licenseId": "ProjectOwned-Original",
+      "licenseUrl": "file:///F:/AI-PROJECTS/longform-explainer/docs/superpowers/specs/2026-11-05-longform-explainer.md",
+      "licenseTextHash": "426e780e90b6b3ce53cfba23251a5715e2ba64db3f936d719008b246c5e83842",
+      "artifactHash": "bd81b6efb830306bff5095852ea3097dfaf8d600b607050ff667dee587d5ed0b",
+      "attribution": "Original vector artwork generated by this project; no third-party images",
+      "modifications": "generated per scene from validated data",
+      "review": "approved"
+    },
+    {
+      "id": "lic-facts-nasa",
+      "scope": "dataset",
+      "origin": "NASA Space Place page text used as factual content",
+      "author": "NASA",
+      "licenseId": "USGov-NotCopyrightable",
+      "licenseUrl": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "licenseTextHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28",
+      "artifactHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28",
+      "attribution": "NASA Space Place, cited in the description; facts restated in original wording, no NASA media shipped",
+      "modifications": "paraphrased",
+      "review": "approved"
+    },
+    {
+      "id": "lic-facts-nei",
+      "scope": "dataset",
+      "origin": "National Eye Institute color blindness page text used as factual content",
+      "author": "National Eye Institute, NIH",
+      "licenseId": "USGov-NotCopyrightable",
+      "licenseUrl": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness",
+      "licenseTextHash": "a78cd5d2b843c9ee77ccb674b97f34f4ede321ced6abd0b70f426ea8de997e11",
+      "artifactHash": "a78cd5d2b843c9ee77ccb674b97f34f4ede321ced6abd0b70f426ea8de997e11",
+      "attribution": "NEI/NIH, cited in the description; facts restated in original wording, no NIH media shipped",
+      "modifications": "paraphrased",
+      "review": "approved"
+    },
+    {
+      "id": "lic-numbers",
+      "scope": "dataset",
+      "origin": "tools/numbers.md, reproducible with node tools/spectrum.ts",
+      "author": "longform-explainer project",
+      "licenseId": "ProjectOwned-Original",
+      "licenseUrl": "file:///F:/AI-PROJECTS/longform-explainer/docs/superpowers/specs/2026-11-05-longform-explainer.md",
+      "licenseTextHash": "426e780e90b6b3ce53cfba23251a5715e2ba64db3f936d719008b246c5e83842",
+      "artifactHash": "bd81b6efb830306bff5095852ea3097dfaf8d600b607050ff667dee587d5ed0b",
+      "attribution": "Derived arithmetic (1/wavelength^4 and 1/sin(elevation)) computed in this repository",
+      "modifications": "none; recomputed at build time",
+      "review": "approved"
+    },
+    {
+      "id": "lic-script",
+      "scope": "dataset",
+      "origin": "narration drafted by dots-studio/dots-3-note-preview through the local OmniRoute gateway, then reviewed",
+      "author": "longform-explainer project",
+      "licenseId": "ProjectOwned-Original",
+      "licenseUrl": "file:///F:/AI-PROJECTS/longform-explainer/docs/superpowers/specs/2026-11-05-longform-explainer.md",
+      "licenseTextHash": "426e780e90b6b3ce53cfba23251a5715e2ba64db3f936d719008b246c5e83842",
+      "artifactHash": "5480ba9d8da6326bd2029ec7df033e425459e112a7b67bba97a9bd3613cb7d04",
+      "attribution": "Model-drafted wording rewritten where it went past the sources; facts belong to the cited pages",
+      "modifications": "4 utterances rewritten by the reviewer, 1 citation corrected",
+      "review": "approved"
+    }
+  ],
+  "reviews": {
+    "c1": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c2": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c3": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c4": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c5": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c6": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c7": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c8": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c9": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c10": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c11": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c12": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c13": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c14": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c15": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c16": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c17": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c18": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c19": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c20": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c21": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c22": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c23": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    },
+    "c24": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T22:14:10Z"
+    }
+  },
+  "script": {
+    "schemaVersion": 1,
+    "title": "Why People See Colour Differently",
+    "language": "en",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Sunlight reaching Earth is scattered in all directions by gases and particles in the atmosphere.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "sections: Why is the sky blue / What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c2",
+        "text": "Blue light is scattered more than other colors because it travels as shorter, smaller waves.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "sections: Why is the sky blue / What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c3",
+        "text": "Relative Rayleigh scattering strength scales with one over wavelength to the fourth power, normalized to red at 675 nm.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c4",
+        "text": "Violet light at 400 nm scatters about 8.11 times as strongly as red light at 675 nm.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c5",
+        "text": "Green light at 530 nm scatters about 2.63 times as strongly as red light at 675 nm.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c6",
+        "text": "Yellow light at 580 nm scatters about 1.83 times as strongly as red light at 675 nm.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c7",
+        "text": "Sunlight overhead passes through one unit of atmosphere, at 30 degrees elevation about two units, and at 5 degrees about 11.47 units.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c8",
+        "text": "Closer to the horizon, the sky fades to a lighter blue or white because sunlight has passed through more air.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "sections: Why is the sky blue / What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c9",
+        "text": "As the Sun gets lower, more blue light is scattered away, allowing reds and yellows to pass straight through to the eyes.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "sections: Why is the sky blue / What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c10",
+        "text": "Small particles of dust, pollution, or other aerosols also scatter light and can make the sky appear red.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "sections: Why is the sky blue / What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c11",
+        "text": "Color vision deficiency means a person sees colors differently than most people.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c12",
+        "text": "Most of the time, color vision deficiency makes it hard to tell the difference between certain colors.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c13",
+        "text": "The most common type of color vision deficiency makes it hard to tell the difference between red and green.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c14",
+        "text": "Another type of color vision deficiency makes blue and yellow look the same.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c15",
+        "text": "In rare cases, people have complete color vision deficiency.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c16",
+        "text": "Most people with color vision deficiency are born with it because the common types are genetic and passed down from parents.",
+        "evidence": [
+          {
+            "sourceId": "src4",
+            "locator": "sections: What causes it / Did you know"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c17",
+        "text": "Color vision deficiency can also result from an injury to the retina, the optic nerve, or the brain itself.",
+        "evidence": [
+          {
+            "sourceId": "src4",
+            "locator": "sections: What causes it / Did you know"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c18",
+        "text": "Examples of injuries that can lead to color vision deficiency include retinal detachment, laser eye injuries, and some brain tumors affecting the optic nerve.",
+        "evidence": [
+          {
+            "sourceId": "src4",
+            "locator": "sections: What causes it / Did you know"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c19",
+        "text": "Color vision deficiency usually runs in families.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c20",
+        "text": "There is no cure for color vision deficiency, but special glasses and contact lenses can help people see differences between colors.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c21",
+        "text": "Most people who have color vision deficiency do not have problems with everyday activities.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c22",
+        "text": "Complete color vision deficiency is rare, so most people with the condition still see some color rather than only black and white.",
+        "evidence": [
+          {
+            "sourceId": "src3",
+            "locator": "sections: What are the types / symptoms / risk"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c23",
+        "text": "At 15 degrees solar elevation, sunlight passes through about 3.86 times more atmosphere than when the Sun is overhead.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c24",
+        "text": "Because low-angle sunlight passes through more air, the light reaching the eye near sunset is richer in reds and yellows than overhead sunlight.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "sections: Why is the sky blue / What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      }
+    ],
+    "chapters": [
+      {
+        "id": "ch1",
+        "heading": "Why sunlight splits into different colors",
+        "summary": "Explains that sunlight is scattered by air molecules and that shorter blue waves scatter more strongly than longer red waves, with measured Rayleigh ratios showing violet scatters far more than red.",
+        "utterances": [
+          {
+            "id": "u001",
+            "spokenText": "Sunlight reaching Earth is scattered in all directions by gases and particles in the atmosphere. The light does not travel straight through to your eyes completely unchanged.",
+            "captionText": "Sunlight scatters in the atmosphere",
+            "claimIds": [
+              "c1"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s001",
+              "utteranceIds": [
+                "u001"
+              ],
+              "claimIds": [
+                "c1"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Sunlight enters the atmosphere",
+                "steps": [
+                  "Sunlight enters air",
+                  "Gases and particles scatter it",
+                  "Light spreads in all directions"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u002",
+            "spokenText": "Every color in the sunlight gets redirected by the air as it passes through the sky. This scattering happens constantly all around you during the day.",
+            "captionText": "All colors scatter in air",
+            "claimIds": [
+              "c1"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s002",
+              "utteranceIds": [
+                "u002"
+              ],
+              "claimIds": [
+                "c1"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Every color scatters",
+                "steps": [
+                  "White light enters",
+                  "Air redirects every color",
+                  "Scattering fills the sky"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u003",
+            "spokenText": "Blue light is scattered more than other colors because it travels as shorter, smaller waves. Those very short waves bounce off air molecules more often.",
+            "captionText": "Blue scatters the most",
+            "claimIds": [
+              "c2"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s003",
+              "utteranceIds": [
+                "u003"
+              ],
+              "claimIds": [
+                "c2"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Blue waves scatter strongly",
+                "steps": [
+                  "Short blue waves hit air",
+                  "They scatter more often",
+                  "Red waves pass through easier"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u004",
+            "spokenText": "Because shorter wavelengths redirect more easily, blue light spreads across the sky. It really reaches your eyes from every direction instead of straight from the Sun.",
+            "captionText": "Short waves spread across the sky",
+            "claimIds": [
+              "c2"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s004",
+              "utteranceIds": [
+                "u004"
+              ],
+              "claimIds": [
+                "c2"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Why the sky looks blue",
+                "steps": [
+                  "Blue scatters in all directions",
+                  "Your eyes see scattered blue",
+                  "The sky appears blue"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u005",
+            "spokenText": "Rayleigh scattering strength scales with one over wavelength to the fourth power. We set red light at six hundred seventy five nanometres as the reference, so its relative strength is exactly one.",
+            "captionText": "Inverse fourth power law, red at 675 nm is baseline.",
+            "claimIds": [
+              "c3"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s005",
+              "utteranceIds": [
+                "u005"
+              ],
+              "claimIds": [
+                "c3"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Inverse fourth power law",
+                "steps": [
+                  "Shorter wavelength scatters more",
+                  "Strength drops as wavelength grows",
+                  "Red 675 nm equals one"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u006",
+            "spokenText": "Since violet light travels at about four hundred nanometres, its much shorter wavelength means it gets scattered far more aggressively than longer red waves.",
+            "captionText": "Shorter violet waves scatter much more than red.",
+            "claimIds": [
+              "c3"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s006",
+              "utteranceIds": [
+                "u006"
+              ],
+              "claimIds": [
+                "c3"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Violet versus red",
+                "steps": [
+                  "Violet at 400 nm",
+                  "Red at 675 nm",
+                  "Short waves redirect more"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u007",
+            "spokenText": "That is a huge difference: short violet waves are redirected roughly eight times more efficiently than long red waves, which is why the effect is so lopsided.",
+            "captionText": "Violet is redirected about eight times more than red.",
+            "claimIds": [
+              "c4"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s007",
+              "utteranceIds": [
+                "u007"
+              ],
+              "claimIds": [
+                "c4"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "grow",
+                  "target": "bar-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "value-0"
+                },
+                {
+                  "at": 4.5,
+                  "action": "grow",
+                  "target": "bar-1"
+                }
+              ],
+              "kind": "bar-chart",
+              "props": {
+                "title": "Relative Rayleigh strength",
+                "unit": "times red",
+                "series": [
+                  {
+                    "label": "Violet 400 nm",
+                    "value": 8.11
+                  },
+                  {
+                    "label": "Red 675 nm",
+                    "value": 1
+                  }
+                ],
+                "axis": "category"
+              }
+            }
+          },
+          {
+            "id": "u008",
+            "spokenText": "Green at 530 nanometers scatters 2.63 times as strongly as red at 675 nanometers. Yellow at 580 nanometers scatters 1.83 times as strongly as red.",
+            "captionText": "Green scatters 2.63× more than red; yellow scatters 1.83× more.",
+            "claimIds": [
+              "c5",
+              "c6"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s008",
+              "utteranceIds": [
+                "u008"
+              ],
+              "claimIds": [
+                "c5",
+                "c6"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "bar-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "bar-1"
+                }
+              ],
+              "kind": "bar-chart",
+              "props": {
+                "title": "Scattering strength relative to red",
+                "unit": "× red at 675 nm",
+                "series": [
+                  {
+                    "label": "Green 530 nm",
+                    "value": 2.63
+                  },
+                  {
+                    "label": "Yellow 580 nm",
+                    "value": 1.83
+                  }
+                ],
+                "axis": "category"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch2",
+        "heading": "How the sky changes from blue overhead to red at the horizon",
+        "summary": "Compares the air mass sunlight travels through at different solar elevations and shows how increasing path length removes more blue light, leaving reds and yellows near sunset.",
+        "utterances": [
+          {
+            "id": "u009",
+            "spokenText": "When the Sun sits directly overhead, its light passes through exactly one unit of atmosphere. But at thirty degrees elevation, that same sunlight travels through about two full units of air.",
+            "captionText": "Overhead: 1 unit. At 30 degrees: 2 units.",
+            "claimIds": [
+              "c7"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s009",
+              "utteranceIds": [
+                "u009"
+              ],
+              "claimIds": [
+                "c7"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "left"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "right"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "left-value"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "right-value"
+                },
+                {
+                  "at": 1.5,
+                  "action": "emphasize",
+                  "target": "unit"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Atmospheric path length",
+                "left": "Overhead",
+                "right": "30 degrees",
+                "unit": "atmosphere units",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "30 degrees",
+                    "value": 2
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u010",
+            "spokenText": "Near the horizon, at just five degrees elevation, sunlight must cross roughly eleven point four seven units of atmosphere before it finally reaches your eyes.",
+            "captionText": "At 5 degrees: about 11.47 units of air.",
+            "claimIds": [
+              "c7"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s010",
+              "utteranceIds": [
+                "u010"
+              ],
+              "claimIds": [
+                "c7"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "node-1"
+                },
+                {
+                  "at": 1.5,
+                  "action": "reveal",
+                  "target": "node-2"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "packet"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Sunlight near the horizon",
+                "steps": [
+                  "Sun low in sky",
+                  "Light enters atmosphere",
+                  "Long path through air"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u011",
+            "spokenText": "Because that sunlight has passed through so much extra air, the sky closer to the horizon fades to a lighter blue or even white.",
+            "captionText": "Horizon sky fades to lighter blue or white.",
+            "claimIds": [
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s011",
+              "utteranceIds": [
+                "u011"
+              ],
+              "claimIds": [
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "node-1"
+                },
+                {
+                  "at": 1.5,
+                  "action": "reveal",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Sky near the horizon",
+                "steps": [
+                  "More air",
+                  "More scattering",
+                  "Lighter blue or white"
+                ],
+                "flowDirection": "bottom-top"
+              }
+            }
+          },
+          {
+            "id": "u012",
+            "spokenText": "This happens because low-angle sunlight travels through much more atmosphere than light coming from straight overhead, scattering away more blue along the way.",
+            "captionText": "Low-angle light crosses much more air.",
+            "claimIds": [
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s012",
+              "utteranceIds": [
+                "u012"
+              ],
+              "claimIds": [
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "left"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "right"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "left-value"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "right-value"
+                },
+                {
+                  "at": 1.5,
+                  "action": "emphasize",
+                  "target": "right-value"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Path length effect",
+                "left": "Overhead",
+                "right": "Horizon",
+                "unit": "atmosphere units",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "Horizon",
+                    "value": 11.47
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u013",
+            "spokenText": "As the Sun sinks lower, its light cuts through a thicker slice of sky. More blue gets scattered away before it reaches you, so the reds and yellows pass straight through to your eyes.",
+            "captionText": "Low-angle light leaves reds and yellows",
+            "claimIds": [
+              "c9"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s013",
+              "utteranceIds": [
+                "u013"
+              ],
+              "claimIds": [
+                "c9"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Sunset colors",
+                "steps": [
+                  "Sun low",
+                  "Blue scatters away",
+                  "Reds and yellows pass through"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u014",
+            "spokenText": "Overhead, sunlight crosses just one layer of air. Near the horizon it crosses many layers, so almost all the blue is stripped out before the light arrives.",
+            "captionText": "More air strips out the blue",
+            "claimIds": [
+              "c9"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s014",
+              "utteranceIds": [
+                "u014"
+              ],
+              "claimIds": [
+                "c9"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Air mass grows",
+                "steps": [
+                  "Overhead: one layer",
+                  "Horizon: many layers",
+                  "Blue removed"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u015",
+            "spokenText": "Dust, smoke, and pollution add even more scattering. These tiny particles boost the reddening effect, which is why hazy sunsets can look especially deep red.",
+            "captionText": "Particles deepen the red",
+            "claimIds": [
+              "c10"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s015",
+              "utteranceIds": [
+                "u015"
+              ],
+              "claimIds": [
+                "c10"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Aerosols and haze",
+                "steps": [
+                  "Dust and smoke",
+                  "Extra scattering",
+                  "Deeper red sunset"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u016",
+            "spokenText": "Clean air after rain can still turn red, but dirty air makes the effect stronger. Either way, particles help paint the evening sky.",
+            "captionText": "Hazy skies burn redder",
+            "claimIds": [
+              "c10"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s016",
+              "utteranceIds": [
+                "u016"
+              ],
+              "claimIds": [
+                "c10"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Particle effect",
+                "steps": [
+                  "Clean air",
+                  "Dirty air",
+                  "Stronger red"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u017",
+            "spokenText": "Color vision deficiency means a person sees colors differently than most people. Most of the time, it makes it hard to tell the difference between certain colors.",
+            "captionText": "Color vision deficiency changes how colors appear.",
+            "claimIds": [
+              "c11",
+              "c12"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s017",
+              "utteranceIds": [
+                "u017"
+              ],
+              "claimIds": [
+                "c11",
+                "c12"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 4,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Color vision deficiency",
+                "steps": [
+                  "Sees colors differently",
+                  "Hard to distinguish certain colors"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch3",
+        "heading": "The main ways people see color differently",
+        "summary": "Defines color vision deficiency, lists the common red-green and blue-yellow types, notes rare complete deficiency, and states that most affected people manage everyday activities.",
+        "utterances": [
+          {
+            "id": "u018",
+            "spokenText": "The most common type of color vision deficiency makes red and green hard to distinguish. People with it often confuse these two colors in daily life, at work, and outdoors.",
+            "captionText": "Red-green is the most common type",
+            "claimIds": [
+              "c13"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s018",
+              "utteranceIds": [
+                "u018"
+              ],
+              "claimIds": [
+                "c13"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Red-Green Deficiency",
+                "steps": [
+                  "Most common type",
+                  "Hard to distinguish red and green"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u019",
+            "spokenText": "Red-green deficiency is the most common form of color vision deficiency. People with it struggle to tell red from green in many situations.",
+            "captionText": "Red-green affects many people",
+            "claimIds": [
+              "c13"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s019",
+              "utteranceIds": [
+                "u019"
+              ],
+              "claimIds": [
+                "c13"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Red-Green Is Common",
+                "steps": [
+                  "Most common form",
+                  "Red and green confused"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u020",
+            "spokenText": "Another type makes blue and yellow look the same. These colors can appear nearly identical to people with this deficiency, especially in dim light.",
+            "captionText": "Blue-yellow looks the same to some",
+            "claimIds": [
+              "c14"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s020",
+              "utteranceIds": [
+                "u020"
+              ],
+              "claimIds": [
+                "c14"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Blue-Yellow Deficiency",
+                "steps": [
+                  "Less common type",
+                  "Blue and yellow look alike"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u021",
+            "spokenText": "Blue-yellow deficiency is much less common than the red-green type. It can make certain shades of blue and yellow nearly impossible to separate.",
+            "captionText": "Blue-yellow is rarer than red-green",
+            "claimIds": [
+              "c14"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s021",
+              "utteranceIds": [
+                "u021"
+              ],
+              "claimIds": [
+                "c14"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Blue-Yellow Is Rare",
+                "steps": [
+                  "Much less common",
+                  "Shades hard to separate"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u022",
+            "spokenText": "In rare cases, a person has complete color vision deficiency. They may see almost no color at all, rather than just struggling to separate one pair of similar hues.",
+            "captionText": "Complete color vision deficiency is rare",
+            "claimIds": [
+              "c15"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s022",
+              "utteranceIds": [
+                "u022"
+              ],
+              "claimIds": [
+                "c15"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Complete color vision deficiency",
+                "steps": [
+                  "Rare condition",
+                  "Little or no color seen"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u023",
+            "spokenText": "Even so, seeing nothing but gray and white is rare. That total loss comes with complete deficiency, which is itself the uncommon case.",
+            "captionText": "Complete loss is the rare case",
+            "claimIds": [
+              "c15"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s023",
+              "utteranceIds": [
+                "u023"
+              ],
+              "claimIds": [
+                "c15"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "emphasize",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Complete deficiency is rare",
+                "steps": [
+                  "Complete: no color at all",
+                  "The rare case"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u024",
+            "spokenText": "Most people with color vision deficiency are born with it. The common types are genetic, meaning they are passed down from parents through their families.",
+            "captionText": "Most color vision deficiency is inherited",
+            "claimIds": [
+              "c16"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s024",
+              "utteranceIds": [
+                "u024"
+              ],
+              "claimIds": [
+                "c16"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Inherited color vision deficiency",
+                "steps": [
+                  "Born with it",
+                  "Passed from parents"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u025",
+            "spokenText": "Because it runs in families, the trait often appears across generations. It is usually present from early childhood and lasts throughout a person's life.",
+            "captionText": "It runs in families",
+            "claimIds": [
+              "c16"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s025",
+              "utteranceIds": [
+                "u025"
+              ],
+              "claimIds": [
+                "c16"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "emphasize",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Runs in families",
+                "steps": [
+                  "Appears across generations",
+                  "Present from childhood"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u026",
+            "spokenText": "Not every case is inherited. Color vision deficiency can also result from an injury to the retina, the optic nerve, or the brain itself, appearing later in life.",
+            "captionText": "Injury can cause color vision deficiency.",
+            "claimIds": [
+              "c17"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s026",
+              "utteranceIds": [
+                "u026"
+              ],
+              "claimIds": [
+                "c17"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Acquired color vision deficiency",
+                "steps": [
+                  "Retina injury",
+                  "Optic nerve injury",
+                  "Brain injury"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u027",
+            "spokenText": "Specific injuries can lead to color vision deficiency. Examples include retinal detachment, laser eye injuries, and certain brain tumors affecting the optic nerve in adults.",
+            "captionText": "Retinal detachment, laser injuries, optic nerve tumors.",
+            "claimIds": [
+              "c18"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s027",
+              "utteranceIds": [
+                "u027"
+              ],
+              "claimIds": [
+                "c18"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Specific injury examples",
+                "steps": [
+                  "Retinal detachment",
+                  "Laser eye injuries",
+                  "Brain tumors"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch4",
+        "heading": "Why color vision differences happen: genes and injury",
+        "summary": "Explains that most color vision deficiency is inherited and genetic, while acquired forms can result from retinal, optic nerve, or brain injuries such as detachment, laser damage, or tumors.",
+        "utterances": [
+          {
+            "id": "u028",
+            "spokenText": "Color vision deficiency usually runs in families, passed from parents to children through inherited genes. Most people who have it are born with the condition.",
+            "captionText": "Inherited through families",
+            "claimIds": [
+              "c19"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s028",
+              "utteranceIds": [
+                "u028"
+              ],
+              "claimIds": [
+                "c19"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2.5,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Passed through families",
+                "steps": [
+                  "Parent carries gene",
+                  "Gene passes to child",
+                  "Child may inherit trait"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u029",
+            "spokenText": "Because the trait is genetic, it often appears across several generations of the same family. Parents pass it on, and it is usually there from early childhood.",
+            "captionText": "Passed from parents",
+            "claimIds": [
+              "c19"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s029",
+              "utteranceIds": [
+                "u029"
+              ],
+              "claimIds": [
+                "c19"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2.5,
+                  "action": "grow",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Across generations",
+                "steps": [
+                  "Grandparent",
+                  "Parent",
+                  "Child"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u030",
+            "spokenText": "The pattern follows family lines. Men are affected far more often than women, which is why the condition looks so uneven across the population.",
+            "captionText": "Men affected far more often",
+            "claimIds": [
+              "c19"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s030",
+              "utteranceIds": [
+                "u030"
+              ],
+              "claimIds": [
+                "c19"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2.5,
+                  "action": "emphasize",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Who is affected more often",
+                "steps": [
+                  "Runs in families",
+                  "Much higher risk in men",
+                  "Lower risk in women"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u031",
+            "spokenText": "The inherited form is present from birth and usually remains stable throughout life. Because it runs in families, relatives often share the same type of color vision difference.",
+            "captionText": "Present from birth",
+            "claimIds": [
+              "c19"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s031",
+              "utteranceIds": [
+                "u031"
+              ],
+              "claimIds": [
+                "c19"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2.5,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Present from birth",
+                "steps": [
+                  "Born with genes",
+                  "Stable over time",
+                  "Shared in family"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u032",
+            "spokenText": "Color vision differences are often present from birth, but there is no cure for the condition. Most people simply learn to adapt to the way they see the world every day.",
+            "captionText": "No cure exists",
+            "claimIds": [
+              "c20"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s032",
+              "utteranceIds": [
+                "u032"
+              ],
+              "claimIds": [
+                "c20"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Born with it",
+                "steps": [
+                  "Present from birth",
+                  "No known cure",
+                  "Lifelong adaptation"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u033",
+            "spokenText": "Special glasses and tinted contact lenses can help some people tell colors apart more easily. These aids improve contrast, though they do not restore typical color vision completely.",
+            "captionText": "Glasses and lenses help",
+            "claimIds": [
+              "c20"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s033",
+              "utteranceIds": [
+                "u033"
+              ],
+              "claimIds": [
+                "c20"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 2,
+                  "action": "reveal",
+                  "target": "node-1"
+                },
+                {
+                  "at": 3,
+                  "action": "emphasize",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Helpful tools",
+                "steps": [
+                  "Special glasses",
+                  "Tinted contact lenses",
+                  "Improved contrast"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u034",
+            "spokenText": "When an injury to the retina, the optic nerve or the brain causes the change, the color vision follows that damage. Color vision can also get worse with age, often because of cataracts.",
+            "captionText": "Injuries and age both change color vision",
+            "claimIds": [
+              "c17"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s034",
+              "utteranceIds": [
+                "u034"
+              ],
+              "claimIds": [
+                "c17"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Acquired causes",
+                "steps": [
+                  "Retina or optic nerve",
+                  "Brain injury",
+                  "Worse with age: cataracts"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u035",
+            "spokenText": "Most people with color vision deficiency manage everyday activities without major issues. Adaptive tools and simple strategies make daily life fully workable for them.",
+            "captionText": "Daily life is manageable",
+            "claimIds": [
+              "c20"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s035",
+              "utteranceIds": [
+                "u035"
+              ],
+              "claimIds": [
+                "c20"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 2,
+                  "action": "reveal",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Everyday life",
+                "steps": [
+                  "Daily activities",
+                  "Minor challenges",
+                  "Fully workable"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u036",
+            "spokenText": "Most people with color vision deficiency live normal lives and face few real obstacles. They adapt easily and still handle ordinary tasks just like anyone else, day after day.",
+            "captionText": "Most adapt to daily life",
+            "claimIds": [
+              "c21"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s036",
+              "utteranceIds": [
+                "u036"
+              ],
+              "claimIds": [
+                "c21"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Everyday life",
+                "steps": [
+                  "Live normally",
+                  "Face few obstacles"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u037",
+            "spokenText": "Simple tools and small adjustments make work, school, and home fully workable for them. Daily routines stay normal and independent every single day.",
+            "captionText": "Tools keep routines normal",
+            "claimIds": [
+              "c21"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s037",
+              "utteranceIds": [
+                "u037"
+              ],
+              "claimIds": [
+                "c21"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Tools and adjustments",
+                "steps": [
+                  "Work",
+                  "School",
+                  "Home"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch5",
+        "heading": "Tools, limits, and everyday impact",
+        "summary": "Notes there is no cure but special glasses and lenses can help, that the condition usually runs in families, and that most people do not have major problems with daily life.",
+        "utterances": [
+          {
+            "id": "u038",
+            "spokenText": "Complete color vision deficiency is rare. Most people with the condition still see some color rather than only black and white.",
+            "captionText": "Most retain some color",
+            "claimIds": [
+              "c22"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s038",
+              "utteranceIds": [
+                "u038"
+              ],
+              "claimIds": [
+                "c22"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Complete deficiency is rare",
+                "steps": [
+                  "Most see some color",
+                  "Not only black and white"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u039",
+            "spokenText": "Because complete loss of color is uncommon, most people still experience hues and shades in daily life. They do not usually live in a fully grayscale world without color.",
+            "captionText": "Hues remain in daily life",
+            "claimIds": [
+              "c22"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s039",
+              "utteranceIds": [
+                "u039"
+              ],
+              "claimIds": [
+                "c22"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "grow",
+                  "target": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Total grayscale is uncommon",
+                "steps": [
+                  "Hues remain daily",
+                  "Not fully grayscale"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u040",
+            "spokenText": "Seeing the world in only black and white is not the typical outcome for someone with this inherited condition. Total color vision loss remains the exception.",
+            "captionText": "Black-and-white vision is unusual",
+            "claimIds": [
+              "c22"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s040",
+              "utteranceIds": [
+                "u040"
+              ],
+              "claimIds": [
+                "c22"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "emphasize",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "draw",
+                  "target": "node-0"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Inherited condition rarely removes all color",
+                "steps": [
+                  "Usually lifelong",
+                  "Total loss is exception"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u041",
+            "spokenText": "Most affected individuals retain some color perception, even if distinguishing certain shades remains difficult. Total color blindness is therefore the exception rather than the rule.",
+            "captionText": "Total color blindness is rare",
+            "claimIds": [
+              "c22"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s041",
+              "utteranceIds": [
+                "u041"
+              ],
+              "claimIds": [
+                "c22"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "transform",
+                  "target": "node-0",
+                  "to": "node-1"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Exception, not the rule",
+                "steps": [
+                  "Some color perception",
+                  "Complete loss is rare"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u042",
+            "spokenText": "Fifteen degrees above the horizon, sunlight travels a much longer path through the air. It passes through about three point eight six times more atmosphere than overhead sunlight.",
+            "captionText": "15° Sun crosses 3.86× more atmosphere.",
+            "claimIds": [
+              "c23"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s042",
+              "utteranceIds": [
+                "u042"
+              ],
+              "claimIds": [
+                "c23"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "left-value"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "right-value"
+                },
+                {
+                  "at": 4.5,
+                  "action": "emphasize",
+                  "target": "right"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Sunlight path: overhead vs 15°",
+                "left": "Overhead Sun",
+                "right": "Sun at 15° elevation",
+                "unit": "× atmosphere thickness",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "15° elevation",
+                    "value": 3.86
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u043",
+            "spokenText": "That is nearly four times as much air for the light to cross. The extra distance comes from the shallow angle at which the rays enter the atmosphere.",
+            "captionText": "Nearly four times the air.",
+            "claimIds": [
+              "c23"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s043",
+              "utteranceIds": [
+                "u043"
+              ],
+              "claimIds": [
+                "c23"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "highlight",
+                  "target": "left"
+                },
+                {
+                  "at": 2.5,
+                  "action": "highlight",
+                  "target": "right"
+                },
+                {
+                  "at": 4,
+                  "action": "emphasize",
+                  "target": "unit"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Sunlight path: overhead vs 15°",
+                "left": "Overhead Sun",
+                "right": "Sun at 15° elevation",
+                "unit": "× atmosphere thickness",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "15° elevation",
+                    "value": 3.86
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u044",
+            "spokenText": "Overhead, the Sun's light crosses just one unit of atmosphere. At fifteen degrees, that same beam stretches across roughly three point eight six units instead.",
+            "captionText": "One unit overhead vs 3.86 units low.",
+            "claimIds": [
+              "c23"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s044",
+              "utteranceIds": [
+                "u044"
+              ],
+              "claimIds": [
+                "c23"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1.5,
+                  "action": "highlight",
+                  "target": "left-value"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "right-value"
+                },
+                {
+                  "at": 4.5,
+                  "action": "emphasize",
+                  "target": "right-value"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Sunlight path: overhead vs 15°",
+                "left": "Overhead Sun",
+                "right": "Sun at 15° elevation",
+                "unit": "× atmosphere thickness",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "15° elevation",
+                    "value": 3.86
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u045",
+            "spokenText": "So a low Sun sends its light through far more air than a high Sun does. That longer path is the key difference at fifteen degrees elevation.",
+            "captionText": "Low angle, longer path.",
+            "claimIds": [
+              "c23"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s045",
+              "utteranceIds": [
+                "u045"
+              ],
+              "claimIds": [
+                "c23"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 1,
+                  "action": "highlight",
+                  "target": "right"
+                },
+                {
+                  "at": 2.5,
+                  "action": "highlight",
+                  "target": "left"
+                },
+                {
+                  "at": 4,
+                  "action": "emphasize",
+                  "target": "right-value"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Sunlight path: overhead vs 15°",
+                "left": "Overhead Sun",
+                "right": "Sun at 15° elevation",
+                "unit": "× atmosphere thickness",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "15° elevation",
+                    "value": 3.86
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u046",
+            "spokenText": "That longer path strips away much more blue light. The rays reaching your eyes near sunset are far richer in reds and yellows than overhead sunlight.",
+            "captionText": "Sunset light carries more red and yellow.",
+            "claimIds": [
+              "c24"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s046",
+              "utteranceIds": [
+                "u046"
+              ],
+              "claimIds": [
+                "c24"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 2,
+                  "action": "highlight",
+                  "target": "node-0"
+                },
+                {
+                  "at": 4,
+                  "action": "highlight",
+                  "target": "node-1"
+                },
+                {
+                  "at": 6,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "kind": "process",
+              "props": {
+                "title": "Why sunset looks redder",
+                "steps": [
+                  "Low-angle light travels farther",
+                  "Blue scatters out of the beam",
+                  "Reds and yellows reach your eyes"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u047",
+            "spokenText": "High overhead, sunlight takes a short path through the air. It really stays bluer, while low-angle light arrives warmed by all that extra atmosphere above us.",
+            "captionText": "Overhead light stays bluer; sunset light turns red.",
+            "claimIds": [
+              "c24"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s047",
+              "utteranceIds": [
+                "u047"
+              ],
+              "claimIds": [
+                "c24"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "highlight",
+                  "target": "left"
+                },
+                {
+                  "at": 3,
+                  "action": "highlight",
+                  "target": "right"
+                }
+              ],
+              "kind": "comparison",
+              "props": {
+                "title": "Overhead versus sunset",
+                "left": "Overhead sun",
+                "right": "Sunset",
+                "unit": "red-yellow richness",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "Sunset",
+                    "value": 3
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

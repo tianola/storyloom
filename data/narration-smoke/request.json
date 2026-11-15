@@ -1,0 +1,14 @@
+{
+  "voice": "af_heart",
+  "speed": 1.0,
+  "utterances": [
+    {
+      "id": "u001",
+      "text": "Energy can change form, but it does not disappear."
+    },
+    {
+      "id": "u002",
+      "text": "Follow the moving dots from the battery to the lamp."
+    }
+  ]
+}

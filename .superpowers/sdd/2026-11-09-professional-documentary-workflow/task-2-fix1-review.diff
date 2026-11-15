@@ -1,0 +1,335 @@
+Task 2 scoped re-review: redirect fix round 1
+Diffs against saved pre-fix copies; no git repository or commits.
+
+diff --git a/tools/sourcing/download.py b/tools/sourcing/download.py
+--- a/tools/sourcing/download.py
++++ b/tools/sourcing/download.py
+@@ -1,36 +1,62 @@
+ """Bounded, atomic downloads for sourced media."""
+ 
+ import hashlib
+ import io
+ import logging
+ import os
+ from pathlib import Path
+ from urllib.parse import urlsplit
+-from urllib.request import urlopen
++from urllib.request import HTTPRedirectHandler, build_opener
+ 
+ CHUNK_BYTES = 1024 * 1024
+ TIMEOUT_SECONDS = 60
+ DEFAULT_MAX_BYTES = 100 * 1024 * 1024
+ LOGGER = logging.getLogger(__name__)
+ 
+ 
+ def _require_http_url(url):
+     parsed = urlsplit(url)
+     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+         raise ValueError("only HTTP(S) download URLs are allowed")
+ 
+ 
++def _origin(url):
++    parsed = urlsplit(url)
++    default_port = {"http": 80, "https": 443}.get(parsed.scheme.lower())
++    port = parsed.port if parsed.port is not None else default_port
++    return parsed.scheme.lower(), parsed.hostname, port
++
++
++class _SafeRedirectHandler(HTTPRedirectHandler):
++    def redirect_request(self, req, fp, code, msg, headers, newurl):
++        _require_http_url(newurl)
++        redirected = super().redirect_request(req, fp, code, msg, headers, newurl)
++        if redirected is not None and _origin(req.full_url) != _origin(redirected.full_url):
++            for header_map in (redirected.headers, redirected.unredirected_hdrs):
++                for name in list(header_map):
++                    if name.lower() == "authorization":
++                        del header_map[name]
++        return redirected
++
++
++_SAFE_OPENER = build_opener(_SafeRedirectHandler())
++
++
++def _open_url(request, timeout=TIMEOUT_SECONDS):
++    return _SAFE_OPENER.open(request, timeout=timeout)
++
++
+ def download_binary(
+     url: str,
+     destination: Path,
+-    opener=urlopen,
++    opener=_open_url,
+     *,
+     max_bytes: int = DEFAULT_MAX_BYTES,
+ ) -> Path:
+     """Download to a sibling partial file and atomically move it after EOF."""
+     _require_http_url(url)
+     if isinstance(max_bytes, bool) or not isinstance(max_bytes, int) or max_bytes <= 0:
+         raise ValueError("max_bytes must be a positive integer")
+     destination = Path(destination)
+     if os.path.lexists(destination):
+         raise FileExistsError(destination)
+
+diff --git a/tools/sourcing/providers.py b/tools/sourcing/providers.py
+--- a/tools/sourcing/providers.py
++++ b/tools/sourcing/providers.py
+@@ -1,21 +1,23 @@
+ """Search adapters for Wikimedia Commons, Internet Archive, and Pexels."""
+ 
+ import argparse
+ from html import unescape
+ from html.parser import HTMLParser
+ import json
+ import os
+ import re
+ import sys
+ from urllib.parse import urlencode, urlsplit
+-from urllib.request import Request, urlopen
++from urllib.request import Request
++
++from tools.sourcing.download import _open_url
+ 
+ TIMEOUT_SECONDS = 60
+ USER_AGENT = "LongformDocumentarySourcing/1.0"
+ 
+ 
+ class _TextParser(HTMLParser):
+     def __init__(self):
+         super().__init__()
+         self.parts = []
+ 
+@@ -125,40 +127,40 @@
+     finally:
+         close = getattr(response, "close", None)
+         if close is not None:
+             close()
+ 
+ 
+ def _request(url, headers=None):
+     return Request(url, headers={"Accept": "application/json", "User-Agent": USER_AGENT, **(headers or {})})
+ 
+ 
+-def search_wikimedia(query: str, limit: int = 5, opener=urlopen) -> list[dict]:
++def search_wikimedia(query: str, limit: int = 5, opener=_open_url) -> list[dict]:
+     parameters = {
+         "action": "query", "format": "json", "formatversion": "2",
+         "generator": "search", "gsrsearch": query, "gsrnamespace": "6", "gsrlimit": str(limit),
+         "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": "1280",
+     }
+     url = "https://commons.wikimedia.org/w/api.php?" + urlencode(parameters)
+     return parse_wikimedia(_open_json(_request(url), opener))
+ 
+ 
+-def search_internet_archive(query: str, limit: int = 5, opener=urlopen) -> list[dict]:
++def search_internet_archive(query: str, limit: int = 5, opener=_open_url) -> list[dict]:
+     parameters = {
+         "q": query, "fl[]": ["identifier", "title", "mediatype", "licenseurl", "creator"],
+         "rows": str(limit), "page": "1", "output": "json",
+     }
+     url = "https://archive.org/advancedsearch.php?" + urlencode(parameters, doseq=True)
+     return parse_internet_archive(_open_json(_request(url), opener))
+ 
+ 
+-def search_pexels(query: str, limit: int = 5, opener=urlopen) -> list[dict]:
++def search_pexels(query: str, limit: int = 5, opener=_open_url) -> list[dict]:
+     api_key = os.environ.get("PEXELS_API_KEY")
+     if not api_key:
+         raise ValueError("PEXELS_API_KEY is required")
+     parameters = {"query": query, "per_page": str(limit), "page": "1"}
+     url = "https://api.pexels.com/v1/search?" + urlencode(parameters)
+     request = _request(url, {"Authorization": api_key})
+     return parse_pexels(_open_json(request, opener))
+ 
+ 
+ def main(argv=None):
+
+diff --git a/python/test_sourcing.py b/python/test_sourcing.py
+--- a/python/test_sourcing.py
++++ b/python/test_sourcing.py
+@@ -129,24 +129,29 @@
+             self.assertEqual(updated_editorial["file"], editorial["file"])
+             with self.assertRaises(ValueError):
+                 mark_purchased(path, "a0002")
+ 
+ 
+ import hashlib
+ import io
+ import os
+ import subprocess
+ import sys
++import threading
++from email.message import Message
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ from unittest import mock
+ from urllib.parse import parse_qs, urlsplit
+-from urllib.request import Request
+-
++from urllib.request import FTPHandler, Request
++from urllib.response import addinfourl
++
++from tools.sourcing import providers
+ from tools.sourcing.download import download_binary
+ from tools.sourcing.providers import (
+     parse_internet_archive,
+     parse_pexels,
+     parse_wikimedia,
+     search_internet_archive,
+     search_pexels,
+     search_wikimedia,
+ )
+ 
+@@ -171,20 +176,35 @@
+             raise self.error
+         return b""
+ 
+     def geturl(self):
+         return self.final_url
+ 
+     def close(self):
+         self.closed = True
+ 
+ 
++class QuietHandler(BaseHTTPRequestHandler):
++    def log_message(self, format, *args):
++        pass
++
++
++def start_local_server(test_case, handler):
++    server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
++    thread = threading.Thread(target=server.serve_forever, daemon=True)
++    thread.start()
++    test_case.addCleanup(thread.join)
++    test_case.addCleanup(server.server_close)
++    test_case.addCleanup(server.shutdown)
++    return f"http://127.0.0.1:{server.server_port}"
++
++
+ class DownloadTests(unittest.TestCase):
+     def test_download_uses_timeout_chunks_and_atomic_destination(self):
+         with tempfile.TemporaryDirectory() as tmp:
+             destination = Path(tmp) / "nested/media.bin"
+             response = FakeResponse([b"media"])
+             calls = []
+ 
+             def opener(url, timeout):
+                 calls.append((url, timeout))
+                 return response
+@@ -227,20 +247,49 @@
+             self.assertFalse(Path(str(destination) + ".partial").exists())
+ 
+     def test_rejects_unsafe_initial_and_redirect_schemes(self):
+         with tempfile.TemporaryDirectory() as tmp:
+             destination = Path(tmp) / "media.bin"
+             with self.assertRaises(ValueError):
+                 download_binary("ftp://example.com/media", destination, opener=lambda url, timeout: self.fail("opened"))
+             response = FakeResponse([b"media"], final_url="file:///etc/passwd")
+             with self.assertRaises(ValueError):
+                 download_binary("https://example.com/media", destination, opener=lambda url, timeout: response)
++            self.assertFalse(destination.exists())
++            self.assertFalse(Path(str(destination) + ".partial").exists())
++
++    def test_rejects_ftp_redirect_before_opening_target(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            destination = Path(tmp) / "media.bin"
++            target_url = "ftp://example.invalid/media.bin"
++            redirect_paths = []
++
++            class RedirectHandler(QuietHandler):
++                def do_GET(self):
++                    redirect_paths.append(self.path)
++                    self.send_response(302)
++                    self.send_header("Location", target_url)
++                    self.end_headers()
++
++            initial_url = start_local_server(self, RedirectHandler) + "/start"
++            opened_targets = []
++
++            def ftp_open(handler, request):
++                opened_targets.append(request.full_url)
++                return addinfourl(io.BytesIO(b"disallowed"), Message(), request.full_url)
++
++            with mock.patch.object(FTPHandler, "ftp_open", ftp_open):
++                with self.assertRaisesRegex(ValueError, "HTTP"):
++                    download_binary(initial_url, destination)
++
++            self.assertEqual(redirect_paths, ["/start"])
++            self.assertEqual(opened_targets, [])
+             self.assertFalse(destination.exists())
+             self.assertFalse(Path(str(destination) + ".partial").exists())
+ 
+     def test_enforces_explicit_maximum_bytes(self):
+         with tempfile.TemporaryDirectory() as tmp:
+             destination = Path(tmp) / "media.bin"
+             response = FakeResponse([b"12345"])
+             with self.assertRaisesRegex(ValueError, "maximum"):
+                 download_binary(
+                     "https://example.com/media", destination,
+@@ -359,20 +408,67 @@
+                 self.assertIsInstance(request, Request)
+                 self.assertEqual(timeout, 60)
+                 query = parse_qs(urlsplit(request.full_url).query)
+                 self.assertEqual(query[limit_parameter], ["5"])
+                 self.assertEqual(query["query" if provider == "pexels" else "q" if provider == "internet-archive" else "gsrsearch"], ["Carrington event"])
+                 self.assertNotIn(secret, request.full_url)
+                 self.assertNotIn(secret, json.dumps(results))
+                 if provider == "pexels":
+                     self.assertEqual(request.get_header("Authorization"), secret)
+ 
++    def test_pexels_cross_origin_redirect_never_receives_authorization(self):
++        secret = "unit-test-only-cross-origin-sentinel"
++        initial_headers = []
++        second_headers = []
++        second_urls = []
++        payload = json.dumps(PEXELS_PAYLOAD).encode("utf-8")
++
++        class SecondOriginHandler(QuietHandler):
++            def do_GET(self):
++                second_headers.append(self.headers)
++                second_urls.append(self.path)
++                self.send_response(200)
++                self.send_header("Content-Type", "application/json")
++                self.send_header("Content-Length", str(len(payload)))
++                self.end_headers()
++                self.wfile.write(payload)
++
++        second_origin = start_local_server(self, SecondOriginHandler)
++
++        class InitialOriginHandler(QuietHandler):
++            def do_GET(self):
++                initial_headers.append(self.headers)
++                self.send_response(302)
++                self.send_header("Location", second_origin + "/redirected")
++                self.end_headers()
++
++        initial_url = start_local_server(self, InitialOriginHandler) + "/search"
++        original_request = providers._request
++
++        def local_request(url, headers=None):
++            return original_request(initial_url, headers)
++
++        with mock.patch.object(providers, "_request", side_effect=local_request):
++            with mock.patch.dict(os.environ, {"PEXELS_API_KEY": secret}):
++                with self.assertNoLogs(level="DEBUG"):
++                    results = search_pexels("solar storm", limit=5)
++
++        self.assertEqual(initial_headers[0].get("Authorization"), secret)
++        self.assertIsNone(second_headers[0].get("Authorization"))
++        observation_report = json.dumps({
++            "second_headers": [dict(headers) for headers in second_headers],
++            "second_urls": second_urls,
++            "results": results,
++            "logs": [],
++        })
++        self.assertNotIn(secret, observation_report)
++
+     def test_pexels_requires_environment_key_at_call_time_and_cli_is_clear(self):
+         with mock.patch.dict(os.environ, {}, clear=True):
+             with self.assertRaisesRegex(ValueError, "PEXELS_API_KEY is required"):
+                 search_pexels("solar storm", opener=lambda request, timeout: self.fail("network opened"))
+ 
+         repo = Path(__file__).resolve().parents[1]
+         env = os.environ.copy()
+         env.pop("PEXELS_API_KEY", None)
+         completed = subprocess.run(
+             [sys.executable, "-m", "tools.sourcing.providers", "pexels", "solar storm", "--limit", "5"],
+

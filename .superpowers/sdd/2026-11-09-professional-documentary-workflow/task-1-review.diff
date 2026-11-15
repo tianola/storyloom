@@ -1,0 +1,112 @@
+Task 1 review package
+New files only; no git repository or commits.
+
+diff --git a/workflow/__init__.py b/workflow/__init__.py
+new file mode 100644
+
+diff --git a/workflow/init_episode.py b/workflow/init_episode.py
+new file mode 100644
+--- /dev/null
++++ b/workflow/init_episode.py
+@@ -0,0 +1,38 @@
++import json
++import re
++import shutil
++from pathlib import Path
++
++SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
++PHASES = ("research", "story", "script", "assets", "vo", "motion", "edit", "qc", "dist")
++TEMPLATES = {"sources.md": "research", "beat-sheet.md": "story", "narration.md": "script"}
++
++def init_episode(root: Path, slug: str, title: str) -> Path:
++    if not SLUG.fullmatch(slug):
++        raise ValueError("slug must be lowercase kebab-case")
++    if not title.strip():
++        raise ValueError("title is required")
++    episode = Path(root) / slug
++    episode.mkdir(parents=True, exist_ok=False)
++    for phase in PHASES:
++        (episode / phase).mkdir()
++    (episode / "episode.json").write_text(json.dumps({
++        "slug": slug, "title": title.strip(), "language": "English",
++        "workflow_version": 3, "duration_target_seconds": [600, 900]
++    }, indent=2) + "\n", encoding="utf-8")
++    (episode / "assets/license-manifest.json").write_text("[]\n", encoding="utf-8")
++    template_root = Path(__file__).with_name("templates")
++    for filename, phase in TEMPLATES.items():
++        shutil.copyfile(template_root / filename, episode / phase / filename)
++    return episode
++
++
++if __name__ == "__main__":
++    import argparse
++
++    parser = argparse.ArgumentParser(description="Initialize a documentary episode workflow.")
++    parser.add_argument("--root", type=Path, required=True)
++    parser.add_argument("--slug", required=True)
++    parser.add_argument("--title", required=True)
++    args = parser.parse_args()
++    init_episode(args.root, args.slug, args.title)
+
+diff --git a/workflow/templates/sources.md b/workflow/templates/sources.md
+new file mode 100644
+--- /dev/null
++++ b/workflow/templates/sources.md
+@@ -0,0 +1,4 @@
++# Sources
++
++| Claim ID | Exact claim | Source URL | Publisher | Publication date | Source tier | Supporting quotation | Verification status |
++| --- | --- | --- | --- | --- | --- | --- | --- |
+
+diff --git a/workflow/templates/beat-sheet.md b/workflow/templates/beat-sheet.md
+new file mode 100644
+--- /dev/null
++++ b/workflow/templates/beat-sheet.md
+@@ -0,0 +1,4 @@
++# Beat Sheet
++
++| Time range | Narrative purpose | Tension/reveal | Narration IDs | Visual IDs | Transition anchor |
++| --- | --- | --- | --- | --- | --- |
+
+diff --git a/workflow/templates/narration.md b/workflow/templates/narration.md
+new file mode 100644
+--- /dev/null
++++ b/workflow/templates/narration.md
+@@ -0,0 +1,4 @@
++# Narration
++
++| Utterance ID | Narration text | Visual ID | Visual note | Source claim IDs | Estimated seconds |
++| --- | --- | --- | --- | --- | --- |
+
+diff --git a/python/test_init_episode.py b/python/test_init_episode.py
+new file mode 100644
+--- /dev/null
++++ b/python/test_init_episode.py
+@@ -0,0 +1,26 @@
++import json
++import tempfile
++import unittest
++from pathlib import Path
++from workflow.init_episode import init_episode
++
++class InitEpisodeTests(unittest.TestCase):
++    def test_creates_nine_phase_layout_and_empty_manifest(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            episode = init_episode(Path(tmp), "episode-carrington", "The Carrington Event")
++            for name in ("research", "story", "script", "assets", "vo", "motion", "edit", "qc", "dist"):
++                self.assertTrue((episode / name).is_dir(), name)
++            self.assertEqual(json.loads((episode / "assets/license-manifest.json").read_text()), [])
++            self.assertEqual(json.loads((episode / "episode.json").read_text())["language"], "English")
++            self.assertTrue((episode / "research/sources.md").is_file())
++            self.assertTrue((episode / "story/beat-sheet.md").is_file())
++            self.assertTrue((episode / "script/narration.md").is_file())
++
++    def test_rejects_unsafe_slug_and_existing_episode(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            for slug in ("../escape", "A", "two words", "a/b", ""):
++                with self.subTest(slug=slug), self.assertRaises(ValueError):
++                    init_episode(Path(tmp), slug, "Title")
++            init_episode(Path(tmp), "episode-carrington", "Title")
++            with self.assertRaises(FileExistsError):
++                init_episode(Path(tmp), "episode-carrington", "Title")
+

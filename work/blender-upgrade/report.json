@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "versions": {
+    "blender-4.1": "4.1.0",
+    "blender-4.5": "4.5.15 LTS"
+  },
+  "renders": {
+    "blender-4.1": {
+      "version": "4.1.0",
+      "executable": "tools/blender-4.1.0-windows-x64/blender.exe",
+      "command": [
+        "F:\\AI-PROJECTS\\longform-explainer\\tools\\blender-4.1.0-windows-x64\\blender.exe",
+        "--background",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "F:\\AI-PROJECTS\\longform-explainer\\tools\\blender\\verification_beat.py",
+        "--",
+        "--output",
+        "F:\\AI-PROJECTS\\longform-explainer\\work\\blender-upgrade\\blender-4.1.png"
+      ],
+      "returncode": 0,
+      "output": "work/blender-upgrade/blender-4.1.png",
+      "output_bytes": 325013,
+      "elapsed_seconds": 4.978,
+      "log": "work/blender-upgrade/blender-4.1.log",
+      "engine": "BLENDER_EEVEE",
+      "driver_errors": []
+    },
+    "blender-4.5": {
+      "version": "4.5.15 LTS",
+      "executable": "tools/blender-4.5.15-windows-x64/blender.exe",
+      "command": [
+        "F:\\AI-PROJECTS\\longform-explainer\\tools\\blender-4.5.15-windows-x64\\blender.exe",
+        "--background",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "F:\\AI-PROJECTS\\longform-explainer\\tools\\blender\\verification_beat.py",
+        "--",
+        "--output",
+        "F:\\AI-PROJECTS\\longform-explainer\\work\\blender-upgrade\\blender-4.5.png"
+      ],
+      "returncode": 0,
+      "output": "work/blender-upgrade/blender-4.5.png",
+      "output_bytes": 327071,
+      "elapsed_seconds": 19.259,
+      "log": "work/blender-upgrade/blender-4.5.log",
+      "engine": "BLENDER_EEVEE_NEXT",
+      "driver_errors": []
+    }
+  },
+  "comparison": {
+    "command": [
+      "C:\\Users\\thana\\AppData\\Local\\Microsoft\\WinGet\\Links\\ffmpeg.EXE",
+      "-y",
+      "-i",
+      "F:\\AI-PROJECTS\\longform-explainer\\work\\blender-upgrade\\blender-4.1.png",
+      "-i",
+      "F:\\AI-PROJECTS\\longform-explainer\\work\\blender-upgrade\\blender-4.5.png",
+      "-filter_complex",
+      "hstack=inputs=2",
+      "-frames:v",
+      "1",
+      "F:\\AI-PROJECTS\\longform-explainer\\work\\blender-upgrade\\comparison.png"
+    ],
+    "returncode": 0,
+    "output": "work/blender-upgrade/comparison.png",
+    "output_bytes": 585454,
+    "elapsed_seconds": 0.099,
+    "log": "work/blender-upgrade/comparison.log"
+  },
+  "visual_inspection": "required before --accept"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "shot-recipes",
+  "name": "Fern Shot-Recipe Library",
+  "output": "shot-recipes",
+  "bgm": "",
+  "scenes": [[0], [1], [2], [3]],
+  "maxLine": 24,
+  "pacing": "auto",
+  "preview": false
+}

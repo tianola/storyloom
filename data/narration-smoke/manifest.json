@@ -1,0 +1,23 @@
+{
+  "sampleRate": 24000,
+  "voice": "af_heart",
+  "utterances": [
+    {
+      "id": "u001",
+      "file": "u001.wav",
+      "text": "Energy can change form, but it does not disappear.",
+      "samples": 76032,
+      "startSample": 0,
+      "endSample": 76032
+    },
+    {
+      "id": "u002",
+      "file": "u002.wav",
+      "text": "Follow the moving dots from the battery to the lamp.",
+      "samples": 71424,
+      "startSample": 76032,
+      "endSample": 147456
+    }
+  ],
+  "totalSamples": 147456
+}

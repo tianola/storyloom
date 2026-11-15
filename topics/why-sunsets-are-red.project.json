@@ -1,0 +1,1017 @@
+{
+  "job": {
+    "topic": "Why sunsets are red",
+    "category": "science",
+    "audience": "curious general viewer",
+    "targetSeconds": 75,
+    "modelId": "imported-reviewed-script",
+    "voice": "af_heart"
+  },
+  "narration": {
+    "voice": "af_heart",
+    "speed": 1
+  },
+  "sources": [
+    {
+      "id": "src1",
+      "url": "https://spaceplace.nasa.gov/blue-sky/en/",
+      "title": "Why Is the Sky Blue?",
+      "publisher": "NASA Space Place",
+      "retrievedAt": "2026-11-06T01:11:14Z",
+      "excerpt": "Sunlight reaches Earth's atmosphere and is scattered in all directions by all the gases and particles in the air. Blue light is scattered more than the other colors because it travels as shorter, smaller waves. Closer to the horizon, the sky fades to a lighter blue or white. The sunlight reaching us from low in the sky has passed through even more air than the sunlight reaching us from overhead. As the Sun gets lower in the sky, its light is passing through more of the atmosphere to reach you. Even more of the blue light is scattered, allowing the reds and yellows to pass straight through to your eyes. The sky appears red because small particles of dust, pollution, or other aerosols also scatter blue light, leaving more purely red and yellow light to go through the air.",
+      "locator": "sections: Why is the sky blue / What makes a red sunset (page serves dynamic content; snapshot hash records the retrieved bytes)",
+      "snapshotHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28"
+    },
+    {
+      "id": "src2",
+      "url": "file:///F:/AI-PROJECTS/longform-explainer/tools/numbers.md",
+      "title": "Numbers computed for this episode",
+      "publisher": "This project",
+      "retrievedAt": "2026-11-06T01:11:14Z",
+      "excerpt": "Relative Rayleigh scattering strength scales with 1/wavelength^4. Using 450 nm blue, 530 nm green and 675 nm red against red: blue 5.06, green 2.63, red 1.00. Path through a flat atmosphere is secant of the zenith angle: sun 60 degrees up 1.15, sun 30 degrees up 2.00, sun 10 degrees up 5.76.",
+      "locator": "tools/numbers.md, computed with node 24.21.0",
+      "snapshotHash": "bd81b6efb830306bff5095852ea3097dfaf8d600b607050ff667dee587d5ed0b"
+    }
+  ],
+  "licenses": [
+    {
+      "id": "lic-model",
+      "scope": "model",
+      "origin": "kokoro-onnx v1.0 export of hexgrad/Kokoro-82M",
+      "author": "Hexgrad; thewh1teagle",
+      "licenseId": "Apache-2.0",
+      "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+      "licenseTextHash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "artifactHash": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+      "attribution": "Kokoro-82M speech model, Apache-2.0",
+      "modifications": "none; used as the published ONNX export",
+      "review": "approved"
+    },
+    {
+      "id": "lic-voice",
+      "scope": "voice",
+      "origin": "voices-v1.0.bin bundled with kokoro-onnx",
+      "author": "Hexgrad; thewh1teagle",
+      "licenseId": "Apache-2.0",
+      "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+      "licenseTextHash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "artifactHash": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+      "attribution": "Kokoro voice bundle, voice af_heart, Apache-2.0",
+      "modifications": "none; no voice cloning",
+      "review": "approved"
+    },
+    {
+      "id": "lic-narrator-code",
+      "scope": "software",
+      "origin": "kokoro-onnx python adapter",
+      "author": "thewh1teagle",
+      "licenseId": "MIT",
+      "licenseUrl": "https://raw.githubusercontent.com/thewh1teagle/kokoro-onnx/main/LICENSE",
+      "licenseTextHash": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e",
+      "artifactHash": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e",
+      "attribution": "kokoro-onnx (MIT)",
+      "modifications": "none; called as a library by python/narrate.py",
+      "review": "approved"
+    },
+    {
+      "id": "lic-rasterizer",
+      "scope": "software",
+      "origin": "@resvg/resvg-js",
+      "author": "Y. Lin and resvg contributors",
+      "licenseId": "MIT",
+      "licenseUrl": "https://opensource.org/license/mit",
+      "licenseTextHash": "4b89d4518bd135ab4ee154a7bce722246b57a98c3d7efc1a09409898160c2bd1",
+      "artifactHash": "4b89d4518bd135ab4ee154a7bce722246b57a98c3d7efc1a09409898160c2bd1",
+      "attribution": "resvg-js (MIT), bundled LICENSE hashed from node_modules",
+      "modifications": "none; local runtime dependency, not redistributed",
+      "review": "approved"
+    },
+    {
+      "id": "lic-ffmpeg",
+      "scope": "software",
+      "origin": "FFmpeg 9.0.2 full_build (gyan.dev)",
+      "author": "FFmpeg contributors",
+      "licenseId": "GPL-3.0-or-later",
+      "licenseUrl": "https://www.gnu.org/licenses/gpl-3.0.en.html",
+      "licenseTextHash": "35fed3bda7c88eef3ff67a96c7c029a0b530a1e9d811f620280f8c2bf2ab8153",
+      "artifactHash": "35fed3bda7c88eef3ff67a96c7c029a0b530a1e9d811f620280f8c2bf2ab8153",
+      "attribution": "FFmpeg, license notice printed by the local install",
+      "modifications": "none; invoked as a separate local process",
+      "review": "approved"
+    },
+    {
+      "id": "lic-artwork",
+      "scope": "image",
+      "origin": "scenes drawn by src/svg-scene.ts",
+      "author": "longform-explainer project",
+      "licenseId": "ProjectOwned-Original",
+      "licenseUrl": "file:///F:/AI-PROJECTS/longform-explainer/docs/superpowers/specs/2026-11-05-longform-explainer.md",
+      "licenseTextHash": "426e780e90b6b3ce53cfba23251a5715e2ba64db3f936d719008b246c5e83842",
+      "artifactHash": "bd81b6efb830306bff5095852ea3097dfaf8d600b607050ff667dee587d5ed0b",
+      "attribution": "Original vector artwork generated by this project; no third-party images",
+      "modifications": "generated per scene from validated data",
+      "review": "approved"
+    },
+    {
+      "id": "lic-facts",
+      "scope": "dataset",
+      "origin": "NASA Space Place page text quoted as factual content",
+      "author": "NASA",
+      "licenseId": "USGov-NotCopyrightable",
+      "licenseUrl": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "licenseTextHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28",
+      "artifactHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28",
+      "attribution": "NASA Space Place, cited in the description; facts are restated in original wording, not reproduced",
+      "modifications": "paraphrased; no NASA media files shipped",
+      "review": "approved"
+    }
+  ],
+  "reviews": {
+    "c1": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c2": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c3": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c4": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c5": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c6": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c7": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    },
+    "c8": {
+      "reviewer": "Qoder main agent",
+      "reviewedAt": "2026-11-06T01:11:14Z"
+    }
+  },
+  "script": {
+    "schemaVersion": 1,
+    "title": "Why sunsets are red",
+    "language": "en",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Sunlight contains all the colors of the rainbow mixed together.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: Why is the sky blue"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c2",
+        "text": "Blue light waves are shorter than red light waves.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: Why is the sky blue"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c3",
+        "text": "Gases and particles in the air scatter sunlight in all directions.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: Why is the sky blue"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c4",
+        "text": "Shorter blue waves are scattered more than longer red waves.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: Why is the sky blue"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c5",
+        "text": "Light from low in the sky passes through more air than light from overhead, and the horizon sky fades lighter.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: horizon fading"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c6",
+        "text": "When the Sun is low, more blue light is scattered away, so reds and yellows reach the eye.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c7",
+        "text": "Dust, pollution and other aerosols also scatter blue light, leaving purer red and yellow light.",
+        "evidence": [
+          {
+            "sourceId": "src1",
+            "locator": "section: What makes a red sunset"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      },
+      {
+        "id": "c8",
+        "text": "The on-screen ratios come from a 1/wavelength^4 scaling and a flat-atmosphere secant model, computed for this episode.",
+        "evidence": [
+          {
+            "sourceId": "src2",
+            "locator": "tools/numbers.md"
+          }
+        ],
+        "material": true,
+        "review": "approved"
+      }
+    ],
+    "chapters": [
+      {
+        "id": "ch1",
+        "heading": "White light is a mixture",
+        "summary": "Sunlight already holds every color of the rainbow.",
+        "utterances": [
+          {
+            "id": "u001",
+            "spokenText": "Sunlight looks like plain white, but it already holds every color of the rainbow, mixed together in one beam.",
+            "captionText": "White sunlight holds every color",
+            "claimIds": [
+              "c1"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s01",
+              "kind": "process",
+              "utteranceIds": [
+                "u001"
+              ],
+              "claimIds": [
+                "c1"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.4,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 1.2,
+                  "action": "draw",
+                  "target": "link-0"
+                },
+                {
+                  "at": 2,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-1"
+                },
+                {
+                  "at": 3.2,
+                  "action": "draw",
+                  "target": "link-1"
+                },
+                {
+                  "at": 4.2,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-2"
+                },
+                {
+                  "at": 5.4,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "props": {
+                "title": "One beam, many colors",
+                "steps": [
+                  "Sunlight",
+                  "Prism",
+                  "Rainbow"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u002",
+            "spokenText": "Each color travels as its own wave, and blue waves are the short, choppy ones, while red waves run long and lazy.",
+            "captionText": "Blue waves are shorter than red waves",
+            "claimIds": [
+              "c2",
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s02",
+              "kind": "comparison",
+              "utteranceIds": [
+                "u002"
+              ],
+              "claimIds": [
+                "c2",
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "left"
+                },
+                {
+                  "at": 2,
+                  "action": "reveal",
+                  "target": "right"
+                },
+                {
+                  "at": 3.6,
+                  "action": "count",
+                  "target": "left-value"
+                },
+                {
+                  "at": 4.4,
+                  "action": "count",
+                  "target": "right-value"
+                },
+                {
+                  "at": 5.6,
+                  "action": "highlight",
+                  "target": "right-value"
+                }
+              ],
+              "props": {
+                "title": "Wave length, relative",
+                "left": "Blue",
+                "right": "Red",
+                "unit": "relative to blue",
+                "values": [
+                  {
+                    "label": "Blue",
+                    "value": 1,
+                    "color": "#4aa3e8"
+                  },
+                  {
+                    "label": "Red",
+                    "value": 1.5,
+                    "color": "#e4796b"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch2",
+        "heading": "Why the sky is blue",
+        "summary": "Air scatters the short waves in every direction.",
+        "utterances": [
+          {
+            "id": "u003",
+            "spokenText": "On its way down to you, sunlight crosses a deep blanket of air, full of gas molecules and tiny particles.",
+            "captionText": "Sunlight crosses a blanket of air",
+            "claimIds": [
+              "c3"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s03",
+              "kind": "process",
+              "utteranceIds": [
+                "u003"
+              ],
+              "claimIds": [
+                "c3"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.4,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 1.1,
+                  "action": "draw",
+                  "target": "link-0"
+                },
+                {
+                  "at": 1.9,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-1"
+                },
+                {
+                  "at": 3,
+                  "action": "emphasize",
+                  "target": "node-1"
+                },
+                {
+                  "at": 3.8,
+                  "action": "draw",
+                  "target": "link-1"
+                },
+                {
+                  "at": 4.6,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-2"
+                }
+              ],
+              "props": {
+                "title": "From the Sun to your eye",
+                "steps": [
+                  "Sun",
+                  "Air",
+                  "Your eye"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u004",
+            "spokenText": "Those molecules knock light in every direction. This is scattering, and it grabs the shortest waves hardest.",
+            "captionText": "Scattering hits short waves hardest",
+            "claimIds": [
+              "c4",
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s04",
+              "kind": "comparison",
+              "utteranceIds": [
+                "u004"
+              ],
+              "claimIds": [
+                "c4",
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "left"
+                },
+                {
+                  "at": 1.8,
+                  "action": "reveal",
+                  "target": "right"
+                },
+                {
+                  "at": 3,
+                  "action": "count",
+                  "target": "left-value"
+                },
+                {
+                  "at": 3.8,
+                  "action": "count",
+                  "target": "right-value"
+                },
+                {
+                  "at": 5,
+                  "action": "highlight",
+                  "target": "right-value"
+                }
+              ],
+              "props": {
+                "title": "How strongly air scatters each color",
+                "left": "Red",
+                "right": "Blue",
+                "unit": "× stronger than red",
+                "values": [
+                  {
+                    "label": "Red",
+                    "value": 1,
+                    "color": "#e4796b"
+                  },
+                  {
+                    "label": "Blue",
+                    "value": 5.06,
+                    "color": "#4aa3e8"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "u005",
+            "spokenText": "Because blue is about five times easier to scatter than red, the whole dome of sky fills with blue light.",
+            "captionText": "Blue scatters about 5x more than red",
+            "claimIds": [
+              "c4",
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s05",
+              "kind": "bar-chart",
+              "utteranceIds": [
+                "u005"
+              ],
+              "claimIds": [
+                "c4",
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.4,
+                  "action": "reveal",
+                  "target": "axis"
+                },
+                {
+                  "at": 1.2,
+                  "action": "grow",
+                  "target": "bar-0"
+                },
+                {
+                  "at": 2.2,
+                  "action": "grow",
+                  "target": "bar-1"
+                },
+                {
+                  "at": 3,
+                  "action": "count",
+                  "target": "value-1"
+                },
+                {
+                  "at": 4,
+                  "action": "highlight",
+                  "target": "bar-1"
+                }
+              ],
+              "props": {
+                "title": "Scattering strength by color",
+                "unit": "× stronger than red",
+                "series": [
+                  {
+                    "label": "Red",
+                    "value": 1,
+                    "color": "#e4796b"
+                  },
+                  {
+                    "label": "Blue",
+                    "value": 5.06,
+                    "color": "#4aa3e8"
+                  }
+                ],
+                "axis": "category"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch3",
+        "heading": "Why sunsets redden",
+        "summary": "A low Sun means a much longer path through air.",
+        "utterances": [
+          {
+            "id": "u006",
+            "spokenText": "Here is the sunset trick. When the Sun sits low, its light crosses far more air than it does overhead.",
+            "captionText": "Low Sun = much longer path through air",
+            "claimIds": [
+              "c5",
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s06",
+              "kind": "bar-chart",
+              "utteranceIds": [
+                "u006"
+              ],
+              "claimIds": [
+                "c5",
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "axis"
+                },
+                {
+                  "at": 1.4,
+                  "action": "grow",
+                  "target": "bar-0"
+                },
+                {
+                  "at": 2.4,
+                  "action": "grow",
+                  "target": "bar-1"
+                },
+                {
+                  "at": 3.4,
+                  "action": "grow",
+                  "target": "bar-2"
+                },
+                {
+                  "at": 4.4,
+                  "action": "count",
+                  "target": "value-2"
+                },
+                {
+                  "at": 5.6,
+                  "action": "highlight",
+                  "target": "bar-2"
+                }
+              ],
+              "props": {
+                "title": "Air crossed on the way down",
+                "unit": "× the overhead path (flat model)",
+                "series": [
+                  {
+                    "label": "Sun 60° up",
+                    "value": 1.15,
+                    "color": "#f2a35c"
+                  },
+                  {
+                    "label": "Sun 30° up",
+                    "value": 2,
+                    "color": "#f2a35c"
+                  },
+                  {
+                    "label": "Sun 10° up",
+                    "value": 5.76,
+                    "color": "#f2a35c"
+                  }
+                ],
+                "axis": "category"
+              }
+            }
+          },
+          {
+            "id": "u007",
+            "spokenText": "On that long journey, almost all the blue is scattered out of the beam, and reds and yellows arrive instead.",
+            "captionText": "The blue is spent before it arrives",
+            "claimIds": [
+              "c6"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s07",
+              "kind": "process",
+              "utteranceIds": [
+                "u007"
+              ],
+              "claimIds": [
+                "c6"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.4,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 1.1,
+                  "action": "draw",
+                  "target": "link-0"
+                },
+                {
+                  "at": 1.8,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-1"
+                },
+                {
+                  "at": 2.8,
+                  "action": "hide",
+                  "target": "node-1"
+                },
+                {
+                  "at": 3.4,
+                  "action": "draw",
+                  "target": "link-1"
+                },
+                {
+                  "at": 4,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-2"
+                },
+                {
+                  "at": 5.2,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "props": {
+                "title": "What survives the long path",
+                "steps": [
+                  "White light",
+                  "Blue scattered out",
+                  "Red sunset"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          },
+          {
+            "id": "u008",
+            "spokenText": "The pale band near the horizon is the same effect one step weaker: more air, more mixing, whiter light.",
+            "captionText": "Horizon haze is the same effect, weaker",
+            "claimIds": [
+              "c5",
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s08",
+              "kind": "comparison",
+              "utteranceIds": [
+                "u008"
+              ],
+              "claimIds": [
+                "c5",
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "left"
+                },
+                {
+                  "at": 1.7,
+                  "action": "reveal",
+                  "target": "right"
+                },
+                {
+                  "at": 2.9,
+                  "action": "count",
+                  "target": "left-value"
+                },
+                {
+                  "at": 3.7,
+                  "action": "count",
+                  "target": "right-value"
+                },
+                {
+                  "at": 4.8,
+                  "action": "highlight",
+                  "target": "right-value"
+                }
+              ],
+              "props": {
+                "title": "Overhead sky versus horizon sky",
+                "left": "Overhead",
+                "right": "Horizon",
+                "unit": "× the overhead path",
+                "values": [
+                  {
+                    "label": "Overhead",
+                    "value": 1
+                  },
+                  {
+                    "label": "Horizon",
+                    "value": 5.76
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ch4",
+        "heading": "Dust, haze and the last glow",
+        "summary": "Bigger particles push the red further.",
+        "utterances": [
+          {
+            "id": "u009",
+            "spokenText": "Add dust, smoke or pollution and the air scatters even more blue away, which is why a hazy evening glows deeper.",
+            "captionText": "Haze deepens the red",
+            "claimIds": [
+              "c7",
+              "c8"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s09",
+              "kind": "bar-chart",
+              "utteranceIds": [
+                "u009"
+              ],
+              "claimIds": [
+                "c7",
+                "c8"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.5,
+                  "action": "reveal",
+                  "target": "axis"
+                },
+                {
+                  "at": 1.3,
+                  "action": "grow",
+                  "target": "bar-0"
+                },
+                {
+                  "at": 2.1,
+                  "action": "grow",
+                  "target": "bar-1"
+                },
+                {
+                  "at": 2.9,
+                  "action": "grow",
+                  "target": "bar-2"
+                },
+                {
+                  "at": 3.7,
+                  "action": "count",
+                  "target": "value-0"
+                },
+                {
+                  "at": 4.5,
+                  "action": "highlight",
+                  "target": "bar-0"
+                }
+              ],
+              "props": {
+                "title": "Scattering across the visible band",
+                "unit": "× stronger than red",
+                "series": [
+                  {
+                    "label": "Blue",
+                    "value": 5.06,
+                    "color": "#4aa3e8"
+                  },
+                  {
+                    "label": "Green",
+                    "value": 2.63,
+                    "color": "#5fd08a"
+                  },
+                  {
+                    "label": "Red",
+                    "value": 1,
+                    "color": "#e4796b"
+                  }
+                ],
+                "axis": "category"
+              }
+            }
+          },
+          {
+            "id": "u010",
+            "spokenText": "So a bright sunset is not a different Sun. It is the same white light, with the blue taken out along the way.",
+            "captionText": "Same sunlight, minus the blue",
+            "claimIds": [
+              "c3",
+              "c6"
+            ],
+            "scene": {
+              "schemaVersion": 1,
+              "id": "s10",
+              "kind": "process",
+              "utteranceIds": [
+                "u010"
+              ],
+              "claimIds": [
+                "c3",
+                "c6"
+              ],
+              "assetIds": [],
+              "beats": [
+                {
+                  "at": 0,
+                  "action": "reveal",
+                  "target": "title"
+                },
+                {
+                  "at": 0.4,
+                  "action": "reveal",
+                  "target": "node-0"
+                },
+                {
+                  "at": 1,
+                  "action": "draw",
+                  "target": "link-0"
+                },
+                {
+                  "at": 1.7,
+                  "action": "move",
+                  "target": "packet",
+                  "to": "node-1"
+                },
+                {
+                  "at": 2.7,
+                  "action": "transform",
+                  "target": "packet",
+                  "to": "node-2"
+                },
+                {
+                  "at": 4,
+                  "action": "highlight",
+                  "target": "node-2"
+                }
+              ],
+              "props": {
+                "title": "The whole story in one line",
+                "steps": [
+                  "White light",
+                  "Long path",
+                  "Red sky"
+                ],
+                "flowDirection": "left-right"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+ "poses": [
+  {
+   "frame": 1,
+   "horizon": 9.196,
+   "bottom_misses": 0,
+   "line_misses": 0,
+   "reach": 51.6,
+   "visible_ground_points": 230762
+  },
+  {
+   "frame": 120,
+   "horizon": 8.867,
+   "bottom_misses": 0,
+   "line_misses": 0,
+   "reach": 50.1,
+   "visible_ground_points": 226861
+  },
+  {
+   "frame": 240,
+   "horizon": 8.474,
+   "bottom_misses": 0,
+   "line_misses": 0,
+   "reach": 48.5,
+   "visible_ground_points": 222950
+  },
+  {
+   "frame": 360,
+   "horizon": 8.008,
+   "bottom_misses": 0,
+   "line_misses": 0,
+   "reach": 46.8,
+   "visible_ground_points": 219030
+  },
+  {
+   "frame": 480,
+   "horizon": 7.451,
+   "bottom_misses": 0,
+   "line_misses": 0,
+   "reach": 45.1,
+   "visible_ground_points": 215150
+  }
+ ],
+ "ground": "Surface",
+ "camera_height": 9.727,
+ "hit_xy": [
+  14.0,
+  -15.5
+ ],
+ "ground_vertices": 1050625,
+ "ground_faces": 1048576,
+ "cap_half": 170.0,
+ "horizon_el_deg": 9.196,
+ "horizon_curl_deg": 0.731,
+ "sky_band_frac": 0.1763,
+ "frame_bottom_misses": 0,
+ "horizon_misses": 0,
+ "ground_reach": 51.6,
+ "patch_edge_columns": 0,
+ "near_band_spacing": 0.3322,
+ "near_band_vertices": 1822,
+ "relief_floor": 0.5315,
+ "relief_p99": 0.3517,
+ "outside_starfield": 0,
+ "starfield_radius": 400.0,
+ "half_fov_v": 14.205,
+ "half_fov_h": 24.228
+}

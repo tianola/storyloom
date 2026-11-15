@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <filter id="aged">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0.15" in="noise" result="muted"/>
+      <feBlend in="SourceGraphic" in2="muted" mode="multiply"/>
+    </filter>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8dcc8"/>
+      <stop offset="100%" stop-color="#d4c4a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#paper)" filter="url(#aged)"/>
+  <rect x="40" y="30" width="720" height="540" fill="none" stroke="#8b7355" stroke-width="2" rx="4"/>
+  <line x1="80" y1="120" x2="720" y2="120" stroke="#a0906880" stroke-width="1"/>
+  <line x1="80" y1="200" x2="720" y2="200" stroke="#a0906840" stroke-width="1"/>
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#a0906840" stroke-width="1"/>
+  <line x1="80" y1="360" x2="720" y2="360" stroke="#a0906840" stroke-width="1"/>
+  <line x1="80" y1="440" x2="720" y2="440" stroke="#a0906840" stroke-width="1"/>
+  <text x="400" y="85" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#4a3c28" font-weight="bold">ARCHIVAL DOCUMENT</text>
+  <text x="100" y="165" font-family="Georgia, serif" font-size="18" fill="#6b5b3e">Subject: Early network topology survey</text>
+  <text x="100" y="245" font-family="Georgia, serif" font-size="18" fill="#6b5b3e">Date: 14 November 1962</text>
+  <text x="100" y="325" font-family="Georgia, serif" font-size="18" fill="#6b5b3e">Classification: Declassified</text>
+  <text x="100" y="405" font-family="Georgia, serif" font-size="18" fill="#6b5b3e">Reference: DOC-1962-NT-0471</text>
+  <rect x="540" y="420" width="160" height="100" fill="none" stroke="#8b735560" stroke-width="1.5" rx="2"/>
+  <text x="620" y="475" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8b7355">[ PHOTO ]</text>
+  <circle cx="160" cy="500" r="30" fill="none" stroke="#8b735540" stroke-width="1"/>
+  <text x="160" y="505" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8b7355">SEAL</text>
+</svg>

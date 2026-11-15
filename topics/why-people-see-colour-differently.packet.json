@@ -1,0 +1,52 @@
+{
+  "job": {
+    "topic": "Why people see colour differently",
+    "category": "science",
+    "audience": "curious general viewer",
+    "targetSeconds": 480,
+    "modelId": "qwen3.5:4b",
+    "voice": "af_heart"
+  },
+  "sources": [
+    {
+      "id": "src1",
+      "url": "https://spaceplace.nasa.gov/blue-sky/en/",
+      "title": "Why Is the Sky Blue?",
+      "publisher": "NASA Space Place",
+      "retrievedAt": "2026-11-06T01:11:14Z",
+      "excerpt": "Sunlight reaches Earth's atmosphere and is scattered in all directions by all the gases and particles in the air. Blue light is scattered more than the other colors because it travels as shorter, smaller waves. Closer to the horizon, the sky fades to a lighter blue or white. The sunlight reaching us from low in the sky has passed through even more air than the sunlight reaching us from overhead. As the Sun gets lower in the sky, its light is passing through more of the atmosphere to reach you. Even more of the blue light is scattered, allowing the reds and yellows to pass straight through to your eyes. The sky appears red because small particles of dust, pollution, or other aerosols also scatter blue light, leaving more purely red and yellow light to go through the air.",
+      "locator": "sections: Why is the sky blue / What makes a red sunset",
+      "snapshotHash": "966960a96fc4cfd72180ff8f39382ddb0ad831b7ec1f5b0126f41d753fc89a28"
+    },
+    {
+      "id": "src2",
+      "url": "file:///F:/AI-PROJECTS/longform-explainer/tools/numbers.md",
+      "title": "Numbers computed for this project",
+      "publisher": "This project",
+      "retrievedAt": "2026-11-06T02:07:20Z",
+      "excerpt": "Relative Rayleigh scattering strength scales with 1/wavelength^4, normalised to red at 675 nm: violet 400 nm 8.11, blue 450 nm 5.06, green 530 nm 2.63, yellow 580 nm 1.83, orange 620 nm 1.40, red 675 nm 1.00. Path through a flat atmosphere is 1/sin(elevation): sun overhead 1.00, 60 degrees 1.15, 45 degrees 1.41, 30 degrees 2.00, 20 degrees 2.92, 15 degrees 3.86, 10 degrees 5.76, 5 degrees 11.47. Computed with node tools/spectrum.ts on Node v24.21.0.",
+      "locator": "tools/numbers.md, reproducible with node tools/spectrum.ts",
+      "snapshotHash": "bd81b6efb830306bff5095852ea3097dfaf8d600b607050ff667dee587d5ed0b"
+    },
+    {
+      "id": "src3",
+      "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness",
+      "title": "Color Blindness",
+      "publisher": "National Eye Institute (NIH)",
+      "retrievedAt": "2026-11-06T02:07:20Z",
+      "excerpt": "r vision deficiency ), it means you see colors differently than most people. Most of the time, color vision deficiency makes it hard to tell the difference between certain colors. Usually, color vision deficiency runs in families. There’s no cure, but special glasses and contact lenses can help people see differences between colors. Most people who have color vision deficiency don’t have problems with everyday activities. What are the types of color vision deficiency? The most common type of color vision deficiency makes it hard to tell the difference between red and green. Another type makes blue and yellow look the same. In rare cases, people have complete color vision deficiency, which means they don’t see color at all. Learn more about the types of color vision deficiency What are the symptoms of color vision deficiency? The main symptom of color vision deficiency is not seeing colors the way most people do. If you have color vision deficiency, you may have trouble seeing: The difference between colors How bright colors are Different shades of colors Symptoms of color vision deficiency are often so mild that they’re hard to notice. That’s why many people with color vision deficiency don’t know they have it. And people usually adjust to differences in how they see color. People with very serious cases of color vision deficiency might have other symptoms, too — like quick side-to-side eye movements (nystagmus) or sensitivity to light. Am I at risk for color vision deficiency? Men have a much higher risk than women for color vision deficiency. You’re also more likely to ha",
+      "locator": "sections: What are the types / symptoms / risk",
+      "snapshotHash": "a78cd5d2b843c9ee77ccb674b97f34f4ede321ced6abd0b70f426ea8de997e11"
+    },
+    {
+      "id": "src4",
+      "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness",
+      "title": "Color Blindness",
+      "publisher": "National Eye Institute (NIH)",
+      "retrievedAt": "2026-11-06T02:07:20Z",
+      "excerpt": "at causes color vision deficiency? Most people who have color vision deficiency are born with it. This is because the most common types of color vision deficiency are genetic, meaning they’re passed down from parents. Color vision deficiency can also happen because of an injury to the retina (the light-sensitive layer of tissue in the back of the eye), the optic nerve (which connects the eye to the brain), or the brain itself. Some examples of injuries that can lead to color vision deficiency are: Retinal detachment (when the retina is pulled away from its normal position at the back of the eye) Eye injuries caused by lasers Some kinds of brain tumors — especially ones that affect the optic nerve or put pressure on the brain Radiation treatments Color vision may also get worse as you get older — often because of cataracts (cloudy areas in the lens of the eye). Learn more about what causes color vision deficiency Did you know? Everyone sees color a little differently — including people who don’t have color vision deficiency About 1 in 12 men have color vision deficiency Most people with color vision deficiency are born with it, but sometimes it doesn’t show up until later in life How can I find out if I have color deficiency? Your eye doctor can usually use a simple test to tell you if you have color vision deficiency. During the most common type of test, your eye doctor will show you a circle made of many different colored dots. The circle has a shape inside it that’s also made of dots — like a number, a letter, or a squiggly line. This shape is easy to see if you don’t hav",
+      "locator": "sections: What causes it / Did you know",
+      "snapshotHash": "a78cd5d2b843c9ee77ccb674b97f34f4ede321ced6abd0b70f426ea8de997e11"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "boarding-school_part1": {
+    "asset": "assets/archive/boarding_school_part1.mp4",
+    "licence": "arch-001",
+    "form": "clip",
+    "native_fps": 24.0,
+    "motion_mode": "retime_to_natural",
+    "aspect": "pillarbox_visible_edge",
+    "treatment": "keep_distinct",
+    "light_side": "left",
+    "carries": "filmed_event"
+  },
+  "alexnet-era_part1": {
+    "asset": "assets/archive/alexnet_architecture.png",
+    "licence": "arch-002",
+    "form": "still",
+    "aspect": "pillarbox_visible_edge",
+    "treatment": "keep_distinct",
+    "light_side": "right",
+    "carries": "instrument_footage",
+    "still_move": {
+      "pan_deg": 2.0,
+      "zoom_from": 1.03,
+      "zoom_to": 1.15
+    }
+  }
+}

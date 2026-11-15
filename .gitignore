@@ -1,0 +1,28 @@
+# environments and dependencies
+.venv/
+.venv-xpu/
+node_modules/
+__pycache__/
+.pytest_cache/
+
+# vendored binaries and model weights
+tools/blender-4.5.15-windows-x64/
+tools/blender-4.5.15-windows-x64.zip
+tools/mograph-gn-presets/
+models/
+
+# rendered media and scratch output
+*.mp4
+*.wav
+*.blend
+*.blend1
+work/probe-realism/
+work/*/segments/
+work/*/renders/
+dist/
+
+# local state
+*.db
+*.log
+onnx_files.txt
+undefined

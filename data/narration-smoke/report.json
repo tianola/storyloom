@@ -1,0 +1,181 @@
+{
+  "commands": [
+    "F:\\AI-PROJECTS\\longform-explainer\\.venv\\Scripts\\python.exe F:\\AI-PROJECTS\\longform-explainer\\python\\narrate.py --input F:\\AI-PROJECTS\\longform-explainer\\data\\narration-smoke\\request.json --output F:\\AI-PROJECTS\\longform-explainer\\data\\narration-smoke --model F:\\AI-PROJECTS\\longform-explainer\\models\\kokoro\\kokoro-v1.0.onnx --voices F:\\AI-PROJECTS\\longform-explainer\\models\\kokoro\\voices-v1.0.bin"
+  ],
+  "python": "3.12.14",
+  "cli_runs": [
+    {
+      "exit": 0,
+      "wall_seconds": 10.85,
+      "tree_cpu_seconds": 25.438,
+      "tree_peak_working_set_mb": 495.4,
+      "tree_peak_resident_mb": 493.9,
+      "tree_process_ids": [
+        44332,
+        44916
+      ],
+      "observer_error": null,
+      "stdout": "F:\\AI-PROJECTS\\longform-explainer\\data\\narration-smoke\\manifest.json",
+      "stderr": "narrate: loading engine from F:\\AI-PROJECTS\\longform-explainer\\models\\kokoro\\kokoro-v1.0.onnx\nnarrate: wrote 2 utterances, 147695 samples (6.154 s)",
+      "manifest_total_samples": 147695
+    },
+    {
+      "exit": 0,
+      "wall_seconds": 10.6,
+      "tree_cpu_seconds": 25.344,
+      "tree_peak_working_set_mb": 495.3,
+      "tree_peak_resident_mb": 493.9,
+      "tree_process_ids": [
+        31244,
+        41004
+      ],
+      "observer_error": null,
+      "stdout": "F:\\AI-PROJECTS\\longform-explainer\\data\\narration-smoke\\manifest.json",
+      "stderr": "narrate: loading engine from F:\\AI-PROJECTS\\longform-explainer\\models\\kokoro\\kokoro-v1.0.onnx\nnarrate: wrote 2 utterances, 147456 samples (6.144 s)",
+      "manifest_total_samples": 147456
+    }
+  ],
+  "manifest": {
+    "sampleRate": 24000,
+    "voice": "af_heart",
+    "utterances": [
+      {
+        "id": "u001",
+        "file": "u001.wav",
+        "text": "Energy can change form, but it does not disappear.",
+        "samples": 76032,
+        "startSample": 0,
+        "endSample": 76032
+      },
+      {
+        "id": "u002",
+        "file": "u002.wav",
+        "text": "Follow the moving dots from the battery to the lamp.",
+        "samples": 71424,
+        "startSample": 76032,
+        "endSample": 147456
+      }
+    ],
+    "totalSamples": 147456
+  },
+  "ffprobe": [
+    {
+      "file": "u001.wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate": "24000",
+      "channels": 1,
+      "duration_seconds": 3.168,
+      "bit_rate": "384000"
+    },
+    {
+      "file": "u002.wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate": "24000",
+      "channels": 1,
+      "duration_seconds": 2.976,
+      "bit_rate": "384000"
+    }
+  ],
+  "cross_check": {
+    "manifest_total_samples": 147456,
+    "independent_wav_frame_sum": 147456,
+    "ffprobe_sum_seconds": 6.144,
+    "manifest_seconds": 6.144,
+    "cold_run_total_samples": [
+      147695,
+      147456
+    ],
+    "mismatches": []
+  },
+  "offline_guard": {
+    "command": "F:\\AI-PROJECTS\\longform-explainer\\.venv\\Scripts\\python.exe F:\\AI-PROJECTS\\longform-explainer\\python\\narrate.py --input C:\\Users\\thana\\AppData\\Local\\Temp\\narration-offline-fsoznhgw\\request.json --output C:\\Users\\thana\\AppData\\Local\\Temp\\narration-offline-fsoznhgw\\out --model F:\\AI-PROJECTS\\longform-explainer\\models\\kokoro\\kokoro-v1.0.onnx --voices F:\\AI-PROJECTS\\longform-explainer\\models\\kokoro\\voices-v1.0.bin",
+    "exit": 0,
+    "wall_seconds": 10.843,
+    "network_attempts": [],
+    "files_produced": [
+      "manifest.json",
+      "u001.wav",
+      "u002.wav"
+    ],
+    "stderr_tail": [
+      "narrate: wrote 2 utterances, 147695 samples (6.154 s)"
+    ]
+  },
+  "engine": {
+    "kokoro_onnx_version": "0.6.1",
+    "onnxruntime_version": "1.31.1",
+    "available_providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "voices_installed_total": 54,
+    "english_voices_installed": [
+      "af_alloy",
+      "af_aoede",
+      "af_bella",
+      "af_heart",
+      "af_jessica",
+      "af_kore",
+      "af_nicole",
+      "af_nova",
+      "af_river",
+      "af_sarah",
+      "af_sky",
+      "am_adam",
+      "am_echo",
+      "am_eric",
+      "am_fenrir",
+      "am_liam",
+      "am_michael",
+      "am_onyx",
+      "am_puck",
+      "am_santa",
+      "bf_alice",
+      "bf_emma",
+      "bf_isabella",
+      "bf_lily",
+      "bm_daniel",
+      "bm_fable",
+      "bm_george",
+      "bm_lewis"
+    ],
+    "requested_voice_present": true,
+    "model_load_seconds": 4.591,
+    "model_load_cpu_seconds": 3.828,
+    "own_peak_working_set_mb_after_synthesis": 490.6,
+    "per_utterance": [
+      {
+        "id": "u001",
+        "text_chars": 50,
+        "seconds": 2.731,
+        "cpu_seconds": 10.047,
+        "samples": 76032,
+        "sample_rate": 24000
+      },
+      {
+        "id": "u002",
+        "text_chars": 52,
+        "seconds": 2.021,
+        "cpu_seconds": 9.188,
+        "samples": 71663,
+        "sample_rate": 24000
+      }
+    ],
+    "run_to_run_drift_vs_cli_manifest": [
+      {
+        "id": "u001",
+        "cli_manifest_samples": 76032,
+        "in_process_samples": 76032
+      },
+      {
+        "id": "u002",
+        "cli_manifest_samples": 71424,
+        "in_process_samples": 71663
+      }
+    ],
+    "synth_seconds_excluding_model_load": 4.752,
+    "audio_seconds": 6.144,
+    "rtf_excluding_model_load": 0.773,
+    "rtf_cli_end_to_end": 1.725
+  }
+}

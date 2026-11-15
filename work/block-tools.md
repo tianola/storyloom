@@ -1,0 +1,5 @@
+
+- 2026-11-06 `F:/AI-PROJECTS/longform-explainer/.venv/Scripts/python.exe` is a **launcher stub**: `Popen.pid` is not the real interpreter pid (28460 vs 16676 observed), so any CPU/memory accounting must walk the process tree. Cancelling the stub *did* kill the interpreter, verified by process query after abort — do not add `taskkill /T` to fix a leak that was not observed.
+- 2026-11-06 `models/kokoro/assets.json` must stay **BOM-free**: PowerShell 5.1 `Set-Content -Encoding UTF8` writes a BOM that breaks `json.loads`. Regenerate it only through `scripts/setup-narration.ps1`.
+- 2026-11-06 Kokoro ONNX speech is **not bit-reproducible** run to run (`u002` 71,663 vs 71,424 samples, ~10 ms). Consume durations from the manifest the same run wrote; never recompute them, and cache only on the joint artifact hashes of the WAVs plus the manifest.
+- 2026-11-06 local drafting math for `qwen3.5:4b` on this CPU: 12.6 tok/s generating, 63.9 tok/s prompt eval, ~27 spoken words per utterance however the prompt asks, and `think: false` is mandatory or the completion is entirely reasoning with an empty answer.
