@@ -285,7 +285,7 @@ BEATS = {
 
 
 def configure_video(scene, out_path):
-    scene.eevee.taa_render_samples = 32
+    scene.eevee.taa_render_samples = 24
     scene.render.image_settings.file_format = "FFMPEG"
     scene.render.ffmpeg.format = "MPEG4"
     scene.render.ffmpeg.codec = "H264"
