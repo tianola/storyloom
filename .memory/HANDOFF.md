@@ -1,12 +1,13 @@
 # HANDOFF
-- Read `.memory/PROJECT.md` and `.memory/STATE.md` first.
-- Goal: Fern-style long-form documentary whose engineering-explainer segments match or beat two reference reels (dark scene, glow, continuous camera dive, animated mechanism, pill tags, on-screen counters). User gave full creative freedom (2026-11-15).
-- Two looks, same call shape: `kit.stage`/`kit.label` (matte fern-minimal) and `look.orbit_stage`/`look.tag` (explainer). `look.dark_stage(path)` is the multi-waypoint dive. Jensen episode uses the explainer look for every beat.
-- Builders: `tools/blender/jensen_huang_beats.py` (`-- --beat X`, `--force`, `--still 0.85 --out DIR` for half-res look checks + FRAMING report); `tools/blender/explainer_pilot.py` (`-- --still 1,4,7`).
-- Render cost: ~1 s/frame at 1080p (bloom + DOF), 17 beats ~70 min. Ray tracing is off on purpose (no transparent materials; halves render time).
-- Assemble: delete `work/jensen-huang/segments/*.mp4` first (existence cache), then `python tools/assemble_episode.py --episode work/jensen-huang`; after changing `shots.json` run `--shot-lengths-only` before rendering (builder reads `shot_lengths.json`).
-- QC: `python tools/qc_episode.py --episode work/jensen-huang --master work/jensen-huang/jensen-huang.mp4 --json work/jensen-huang/qc/qc-episode-models.json`.
-- Use system `python` for pytest (`.venv` has no pytest). Blender: `tools/blender-4.5.15-windows-x64/blender.exe`.
-- 17-beat master is current and QC-read (2026-11-15 16:30); known pilot leader defect in STATE.
-- Obsidian notes: `E:/Documents/Obsidian Vault/AI-SECOND-BRAIN/PROJECTS/longform-explainer/` (STATUS, HANDOFF, DECISIONS).
-- Memory protocol: update `.memory/STATE.md`, `HANDOFF.md` and Obsidian only at milestones or session end, never for small questions; bullets only.
+- Read `.memory/PROJECT.md`, `.memory/STATE.md`, then `docs/COMPLETION-PLAN.md`.
+- Goal: topic in -> Fern-style long-form documentary out, with engineering-explainer 3D segments at or above the two reference reels, and no per-episode Blender code. User gave full creative freedom; wants the code finished before any new episode.
+- Current position: phase 1-2 of the plan written but untested (see STATE "Written, NOT yet run"). Continue with the generic storyboard builder.
+- Looks: `kit.stage`/`kit.label` (matte), `look.orbit_stage`/`look.tag` (explainer, one move), `look.dark_stage(path)` (dive), new `look.open_set` + `look.shoot` + `look.auto_tag` (cuts inside a beat, auto-placed tags).
+- Builders: `tools/blender/jensen_huang_beats.py` (hand-written, to be replaced by data), `tools/blender/explainer_pilot.py`.
+- Blender: `tools/blender-4.5.15-windows-x64/blender.exe -b -P <script> -- <args>`. Look check: `-- --still 0.85 --out DIR` (half-res PNG + FRAMING lines). ~1 s/frame at 1080p; ray tracing off on purpose.
+- Assemble: clear `work/<ep>/segments/*.mp4` first, `python tools/assemble_episode.py --episode work/<ep>`; `--shot-lengths-only` after changing `shots.json`. QC: `python tools/qc_episode.py --episode work/<ep> --master work/<ep>/<ep>.mp4 --json ...`.
+- Use system `python` for pytest (`.venv` has no pytest). Bash heredocs with nested quotes fail: write patch scripts with the Write tool.
+- Git: `.gitignore` ignores only the root `/models/` (ONNX assets); `tools/blender/models/` is tracked since 2026-11-15 evening (it was silently ignored before).
+- Review method so far: contact sheets only; nothing has been watched in real time.
+- Obsidian: `E:/Documents/Obsidian Vault/AI-SECOND-BRAIN/PROJECTS/longform-explainer/` (STATUS, HANDOFF, DECISIONS); append short dated sections.
+- Memory protocol: update `.memory/*` and Obsidian only at milestones or session end; bullets only.

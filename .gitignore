@@ -9,7 +9,7 @@ __pycache__/
 tools/blender-4.5.15-windows-x64/
 tools/blender-4.5.15-windows-x64.zip
 tools/mograph-gn-presets/
-models/
+/models/
 
 # rendered media and scratch output
 *.mp4
