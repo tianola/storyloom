@@ -3,7 +3,7 @@
 - Goal: topic in -> Fern-style long-form documentary out, with engineering-explainer 3D segments at or above the two reference reels, and no per-episode Blender code. User gave full creative freedom; wants the code finished before any new episode.
 - Current position: phase 1-2 of the plan written but untested (see STATE "Written, NOT yet run"). Continue with the generic storyboard builder.
 - Looks: `kit.stage`/`kit.label` (matte), `look.orbit_stage`/`look.tag` (explainer, one move), `look.dark_stage(path)` (dive), new `look.open_set` + `look.shoot` + `look.auto_tag` (cuts inside a beat, auto-placed tags).
-- Builders: `tools/blender/jensen_huang_beats.py` (hand-written, to be replaced by data), `tools/blender/explainer_pilot.py`.
+- Builders: `tools/blender/storyboard_beats.py` (generic, reads `<episode>/storyboard.json`), `tools/blender/explainer_pilot.py`.
 - Blender: `tools/blender-4.5.15-windows-x64/blender.exe -b -P <script> -- <args>`. Look check: `-- --still 0.85 --out DIR` (half-res PNG + FRAMING lines). ~1 s/frame at 1080p; ray tracing off on purpose.
 - Assemble: clear `work/<ep>/segments/*.mp4` first, `python tools/assemble_episode.py --episode work/<ep>`; `--shot-lengths-only` after changing `shots.json`. QC: `python tools/qc_episode.py --episode work/<ep> --master work/<ep>/<ep>.mp4 --json ...`.
 - Use system `python` for pytest (`.venv` has no pytest). Bash heredocs with nested quotes fail: write patch scripts with the Write tool.

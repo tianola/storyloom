@@ -1,29 +1,26 @@
 # STATE
-- Updated: 2026-11-15 (evening). Work interrupted mid phase 1-2 of `docs/COMPLETION-PLAN.md`.
-- User instruction: finish the code first (plan + implement); NO new episode until the pipeline is complete. Jensen episode is the regression fixture only.
-- Plan: `docs/COMPLETION-PLAN.md`, 10 phases (0 green baseline, 1 scene catalog, 2 in-beat cuts, 3 storyboard data + generic builder, 4 planner, 5 script gate, 6 sound + captions, 7 archive, 8 one command, 9 clean-up/docs).
+- Updated: 2026-11-15 (night). Phases 1-3 of `docs/COMPLETION-PLAN.md` done and verified; phase 0 partly done.
+- User instruction: finish the code first; NO new episode until the pipeline is complete. Jensen episode is the regression fixture only.
+- Blender for tests in a worktree: `export BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe` (the exe is gitignored, so it only exists in the main checkout). Unset it for `test_blender_config`.
 
-## Done and verified
-- Model library, explainer look, GPU pilot, Jensen 17 3D beats; master `work/jensen-huang/jensen-huang.mp4` 188.2 s; QC PASS 0 errors 8 warnings; `python/test_model_library.py` 3/3 (run 16:30, before the look.py edits below).
-
-## Written, NOT yet run in Blender
-- `tools/blender/models/look.py`: `open_set(seconds)` (world only; `dark_stage` now calls it), `shoot(shots, ...)` (one camera, hard cuts between set-ups, lights/floor from first shot, `st.shots`, `st.taken`), `reserve`, `auto_tag(st, text, pin, start, until, size)` (chooses screen slot, skips off-screen anchors), `pill` accepts a pin object and reports off-screen anchors.
-- `tools/blender/models/scenes.py`: 20 parametric scenes in `SCENES` (`chip-teardown`, `graphics-card`, `wafer`, `cores-compare`, `server-racks`, `layer-stack`, `neural-network`, `flow-diagram`, `timeline`, `scale-compare`, `bar-chart`, `line-chart`, `presenter-screen`, `people-row`, `meeting-table`, `org-radial`, `campus`, `pages`, `document`, `statement`). Each returns a `Set` with `views`, `pins` (anchors), `actions` (fn, default start fraction, span), `lens/floor_grid/gain`.
-- First check to run: `python -m pytest python/test_model_library.py -q -p no:cacheprovider` (confirms `dark_stage` refactor did not break Jensen beats).
+## Done and verified (commit after `76a184c`)
+- `tools/blender/storyboard_beats.py`: generic builder. `--episode DIR [--beat N] [--force] [--still F] [--out D]`, `--catalog FILE`. Reads `storyboard.json` + `shot_lengths.json` (+ optional `word_timing.json`). Cuts every ~4.5 s with drift; label whose anchor is off screen gets its own 2.4 s close-up shot and the beat is rebuilt (up to 2 repairs).
+- `workflow/scenes.json` (20 scenes: params, examples, views, anchors, actions), `workflow/storyboard.py` validator (`python -m workflow.storyboard <episode>`), `python/test_storyboard.py`, `python/test_scene_catalog.py`.
+- `work/jensen-huang/storyboard.json`: the 17 beats as data; 0 framing problems in stills; `episode.json` rollout.builder -> generic builder; `tools/rollout_render.py` `builder_args()` adds `--episode`. Hand-written `jensen_huang_beats.py` and its two probes deleted.
+- Tests passing: model_library 3, scene_catalog, storyboard, rollout_render, jensen_huang_episode (57 passed).
+- Phase 0 so far: `archive_source` `used_urls` was a set read as a dict (44 failures -> ~16).
 
 ## Next (in order)
-- `tools/blender/storyboard_beats.py`: generic builder. Reads `<episode>/storyboard.json` (beat name -> `{scene, params, shots:[{view, labels:[{text, anchor, at}]}], actions:[{name, at}], hud:[...], counter:{...}}`) + `shot_lengths.json`; default shot split every ~4-5 s over the scene's view sequence with drift (radius -6%, azimuth +/-7 deg); `at:<anchor>` close-up view; runs each action once (storyboard time or default); labels via `look.auto_tag`; `at` = fraction or `word:<text>` resolved from narration word timing; same CLI as Jensen builder (`--beat`, `--force`, `--still`, `--out`, plus `--episode`).
-- `workflow/scenes.json` (catalog as data: description, params, anchors, views, actions, example) + `workflow/storyboard.py` validator + `python/test_scene_catalog.py` (build every scene from its example in Blender, compare with catalog).
-- Express Jensen's 17 beats as `work/jensen-huang/storyboard.json`, point `episode.json` rollout.builder at the generic builder, stills check only (no full render).
-- Then phases 4-9 of the plan.
+- Phase 4 `tools/plan_storyboard.py`; 5 `tools/qc_script.py`; 6 word timings (feeds `word:` times) + captions + loudness; 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
+- Finish phase 0 (see below).
 
-## Baseline failures found (phase 0, not fixed yet)
-- Python: `test_archive_source` ~44 (first: missing-episode message asserts old wording), `test_blender_surfaces` 15 + `test_regolith_stipple` 15 + `test_lunar_ground` 8 (errors, missing `media/pbr` tiles), `test_episode_paths` 7, `test_qc_episode` 2, `test_sourcing_transport` 1.
-- TypeScript: 9 `tsc` errors (`src/cli.ts` 25, 195; `src/contracts.ts` 130; `src/writer.ts` 135, 136, 142, 152; `tests/writer.test.ts` 273) from Zod 4.
+## Baseline failures left (phase 0)
+- `test_archive_source` ~16: `_replace_missing_bytes` undefined (archive_source.py:783), `already['licence']` KeyError (:777), `tools/sourcing/rights.py` does not exist (#149b half-done refactor; decide: finish or delete), ordering/fixture mismatches.
+- `test_blender_surfaces` 15 + `test_regolith_stipple` 15 + `test_lunar_ground` 8: missing `media/pbr` tiles (ignored media; worktree lacks them). `test_manim_labels` 3, `test_episode_paths` 7 and `test_qc_episode` 2 need `work/episode-artemis-ii` (ignored files). `test_skills_map`, `test_pattern_library`, `test_sourcing_transport` 1 each, `test_blender_config` fails only when BLENDER_EXE is set.
+- TypeScript: 9 `tsc` errors from Zod 4 (`src/cli.ts` 25, 195; `src/contracts.ts` 130; `src/writer.ts` 135, 136, 142, 152; `tests/writer.test.ts` 273).
 
 ## Open defects
-- `tools/pipeline_supervisor.py` provisions a placeholder clip for missing archive media: likely cause of the black `boarding-school_part1` (u004) shot. Phase 7 makes this an error.
-- Pilot: "Fan and heatsink" leader crosses the frame at ~4 s (tag follows a part that leaves frame). New off-screen check in `pill` will report it; fix with `until=`.
+- `tools/pipeline_supervisor.py` provisions a placeholder clip for missing archive media: likely cause of the black `boarding-school_part1` shot. Phase 7 makes it an error.
 - Narration "GeForce twenty-five-ninety" (should be 256); "personal life" line unsourced; script 3:08 vs 600-900 s; no captions; archive share 10%; 4 loudness jumps at archive cuts.
-- Map scene with real coastlines needs a public-domain coastline file: ask user before downloading.
-- Commits: see `git log`; last verified checkpoint `4ee03be`.
+- "Today" tag in `valuation` close-up sits against the bar (cosmetic).
+- Map scene with real coastlines needs a public-domain coastline file: ask the user before downloading.
