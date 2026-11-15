@@ -1,5 +1,5 @@
 # STATE
-- Updated: 2026-11-15 (night). Phases 0-4 of `docs/COMPLETION-PLAN.md` done and verified.
+- Updated: 2026-11-15 (night). Phases 0-5 of `docs/COMPLETION-PLAN.md` done and verified.
 - User instruction: finish the code first; NO new episode until the pipeline is complete. Jensen episode is the regression fixture only.
 - Blender for tests in a worktree: `export BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe` (the exe is gitignored, so it only exists in the main checkout). Unset it for `test_blender_config`.
 
@@ -11,7 +11,11 @@
 - Phase 0 so far: `archive_source` `used_urls` was a set read as a dict (44 failures -> ~16).
 
 ## Next (in order)
-- 5 `tools/qc_script.py`; 6 word timings (feeds `word:` times) + captions + loudness; 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
+- 6 word timings (feeds `word:` times) + captions + loudness; 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
+
+## Phase 5: DONE
+- `tools/qc_script.py --episode DIR` (bounds in `workflow/style.json` `script`): length 600-900 s at 2.36 words/s, hook <= 10 s, chapters (`script/chapters.json`, >= 3), sentence length, speech-safe text (no digits/symbols; product names like NV1 only warn), every line cites a verified claim in `research/sources.md` via `script/claims.json` or is declared `"framing"`; sensitive lines (personal life, marriage, ...) always need a source. Writes `qc/script-qc.json`, exit 1 on errors. Jensen: 24 errors (188 s, hook 14.8 s, no chapters, every line unsourced since `sources.md` is empty, u018 sensitive). Tests: `python/test_qc_script.py` (8).
+- Note: shell heredocs mangle `` into a backspace; write regexes with the Write/Edit tools.
 
 ## Phase 4: DONE
 - `tools/plan_storyboard.py --episode DIR [--brief | --ask-cmd CMD [--repairs N] | --check]`: brief for an agent, or a command that gets the prompt on stdin and prints JSON; invalid answers are sent back with the errors; `storyboard.json` is only replaced by a valid one (rejects go to `storyboard-rejected.json`, exit 1). `storyboard_beats.py` also refuses an invalid storyboard before building. Tests: `python/test_plan_storyboard.py` (9). No real LLM call has been run yet.

@@ -101,6 +101,20 @@
     "rule": "one voice for every episode; the API key stays in the environment, never in this file"
   },
 
+  "script": {
+    "min_seconds": 600,
+    "max_seconds": 900,
+    "words_per_second": 2.36,
+    "words_per_second_basis": "measured on the Jensen master: 444 words in 188.2 s of narration including pauses (Kokoro af_heart, speed 1)",
+    "hook_max_seconds": 10.0,
+    "sentence_max_words": 32,
+    "sentence_error_words": 45,
+    "chapter_min": 3,
+    "chapter_seconds": [45, 240],
+    "sensitive_terms": ["marriage", "divorce", "personal life", "affair", "lawsuit", "arrest", "health", "illness", "death", "scandal"],
+    "rule": "tools/qc_script.py runs before narration is synthesised: a script that is too short, opens slowly, has no chapters, carries a line no source stands behind, or writes numbers a voice cannot read never reaches the renderer"
+  },
+
   "cadence": {
     "videos_per_week": 1,
     "retention_rule": "retention falling inside the first minute means the hook changed, not the topic"
