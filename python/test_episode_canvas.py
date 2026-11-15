@@ -44,31 +44,9 @@ def assembler_canvas():
     return assemble_episode.WIDTH, assemble_episode.HEIGHT
 
 
-def beat_resolutions():
-    """What each beat hands `setup_scene` as its resolution, as literal source text."""
-    src = (ROOT / "tools" / "blender" / "artemis_beats.py").read_text(encoding="utf-8")
-    return [(x.strip(), y.strip()) for x, y in
-            re.findall(r"setup_scene\([^)]*resolution_x=([^,]+),\s*resolution_y=([^)]+)\)", src)]
 
 
 class TestEpisodeCanvas(unittest.TestCase):
-    def test_no_beat_hardcodes_a_resolution(self):
-        hardcoded = [pair for pair in beat_resolutions() if pair[0].isdigit() or pair[1].isdigit()]
-        self.assertEqual(hardcoded, [],
-                         "the canvas has one source; a literal here outlives it and silently "
-                         "downscales the layer it belongs to")
-
-    def test_every_beat_renders_the_shared_canvas(self):
-        declarations = beat_resolutions()
-        self.assertTrue(declarations, "no beat declares a canvas, so the regex is measuring "
-                                      "nothing and the guard is decoration")
-        self.assertEqual(set(declarations), {("CANVAS_W", "CANVAS_H")})
-
-    def test_the_shared_canvas_comes_from_the_contract(self):
-        src = (ROOT / "tools" / "blender" / "artemis_beats.py").read_text(encoding="utf-8")
-        self.assertRegex(src, r"style_contract\(PROJECT_ROOT\)\[[\"']canvas[\"']\]",
-                         "CANVAS_W has to be read, not typed")
-
     def test_the_rollout_names_the_canvas_it_measures(self):
         """Cost evidence labelled with a resolution it did not render is worthless later."""
         src = (ROOT / "tools" / "rollout_render.py").read_text(encoding="utf-8").splitlines()

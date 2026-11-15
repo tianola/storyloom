@@ -264,7 +264,6 @@
     "sourcing": {
       "why": "The archival layer is the house default, so finding the footage has to be the house default too. Every number, endpoint, field name and refusal reason an archiver needs is stated here rather than in tools/, because a policy that lives in code is a policy one episode can carry and the next cannot — the same reason #146 deleted the assembler's shot table. Nothing in this block needs a credential: anonymous read is enough on all three hosts, and a code path that can carry a key is the failure being avoided, not the key itself.",
       "enabled": true,
-      "entry_point": "tools/archive_source.py",
       "report_filename": "archive-sourcing.json",
       "report_filename_why": "the accepted/refused split with each refusal's searched field paths is evidence, not a gate. It is deliberately not the ledger and not archive.json: a candidate refused for lack of evidence must leave a record of the search without ever reaching #148's round-trip check.",
       "user_agent": "longform-explainer-archivist/0.1 (+https://longform-explainer.example/contact; archivist@longform-explainer.example)",

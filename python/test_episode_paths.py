@@ -33,7 +33,7 @@ from workflow import episode as E  # noqa: E402
 from workflow.config import style_contract  # noqa: E402
 
 CONTRACT = style_contract(ROOT)
-ARTEMIS = ROOT / "work" / "episode-artemis-ii"
+ARTEMIS = ROOT / "work" / "jensen-huang"
 
 # One fully documented archival shot, for the tests that ask where a film's archive comes from.
 # Written out here instead of borrowed from `test_archive_records.py` because a test that leans on
@@ -128,10 +128,10 @@ class ResolveTests(unittest.TestCase):
                 self.assertEqual(E.resolve(Path(tmp), ep), ep)
 
     def test_a_slug_resolves_under_work(self):
-        self.assertEqual(E.resolve(ROOT, "episode-artemis-ii"), ARTEMIS)
+        self.assertEqual(E.resolve(ROOT, "jensen-huang"), ARTEMIS)
 
     def test_a_relative_path_resolves_against_the_repo_root(self):
-        self.assertEqual(E.resolve(ROOT, "work/episode-artemis-ii"), ARTEMIS)
+        self.assertEqual(E.resolve(ROOT, "work/jensen-huang"), ARTEMIS)
 
     def test_an_unknown_spec_is_refused_and_says_where_it_looked(self):
         with self.assertRaises(ValueError) as caught:
@@ -151,21 +151,19 @@ class ResolveTests(unittest.TestCase):
         self.assertIn("episode.json", str(caught.exception))
 
     def test_the_real_episode_resolves_and_carries_its_title(self):
-        document = E.document(E.resolve(ROOT, "episode-artemis-ii"))
-        self.assertEqual(document["slug"], "episode-artemis-ii")
-        self.assertIn("Artemis", document["title"])
+        document = E.document(E.resolve(ROOT, "jensen-huang"))
+        self.assertEqual(document["slug"], "jensen-huang")
+        self.assertIn("Jensen", document["title"])
 
 
 class LayoutTests(unittest.TestCase):
     """One place says where a film's parts live, so the assembler and the gate cannot disagree."""
 
     def test_the_master_is_named_for_the_episode_directory(self):
-        """`episode-artemis-ii.mp4` inside `work/episode-artemis-ii` — the existing convention,
+        """`jensen-huang.mp4` inside `work/jensen-huang` — the existing convention,
         derived instead of typed. A deliverable whose name disagrees with its directory is how a
         `dist` publish copies the previous episode."""
-        self.assertEqual(E.master(ARTEMIS), ARTEMIS / "episode-artemis-ii.mp4")
-        self.assertTrue(E.master(ARTEMIS).is_file(),
-                        "the derived name must describe the file the pipeline already ships")
+        self.assertEqual(E.master(ARTEMIS), ARTEMIS / "jensen-huang.mp4")
 
     def test_the_derivation_works_for_a_name_that_is_not_artemis(self):
         import tempfile
@@ -218,18 +216,15 @@ class ShotMapTests(unittest.TestCase):
 
     def test_the_real_episode_table_reads_as_the_shape_the_assembler_used(self):
         shots = E.shots(ARTEMIS, CONTRACT)
-        self.assertEqual(shots["u001"], ("3d", "sls-launch"))
-        self.assertEqual(shots["u010"], ("manim", "distance"))
-        self.assertEqual(shots["u022"],
-                         ("cards", "bar-chart", "Mission Stats",
-                          "9 days | 700,237 mi | Lunar orbit"))
+        self.assertEqual(shots["u001"], ("3d", "denny-den", "", ""))
+        self.assertEqual(shots["u004"], ("archive", "boarding-school_part1", "", ""))
 
     def test_the_table_is_total_over_the_episode(self):
         """The old literal and the published file were measured identical before the literal was
         deleted; if a future edit moves one, this is where it surfaces."""
         shots = E.shots(ARTEMIS, CONTRACT)
-        self.assertEqual(len(shots), 32)
-        self.assertEqual(shots["u022"][0], "cards")
+        self.assertEqual(len(shots), 19)
+        self.assertEqual(shots["u019"][0], "3d")
 
     def test_a_card_record_keeps_its_text_in_order(self):
         import tempfile

@@ -724,7 +724,7 @@ class TestDistPublish(unittest.TestCase):
 
 
 class TestTheModuleTheReRenderLoads(unittest.TestCase):
-    """`artemis_beats.py` is handed to Blender by the queue, hours after anyone last read it.
+    """`storyboard_beats.py` is handed to Blender by the queue, hours after anyone last read it.
 
     Every fast guard over that file (`test_episode_canvas`) matches its *text*, so a module that
     no longer parses passes them all — and the first thing that notices is the unattended re-render
@@ -732,7 +732,7 @@ class TestTheModuleTheReRenderLoads(unittest.TestCase):
     say it here instead.
     """
 
-    BEAT_MODULE = ROOT / "tools" / "blender" / "artemis_beats.py"
+    BEAT_MODULE = ROOT / "tools" / "blender" / "storyboard_beats.py"
 
     @staticmethod
     def _syntax_error(source, name="<beat module>"):

@@ -129,14 +129,6 @@ class TestKeySide(unittest.TestCase):
     def test_key_side_comes_from_the_lighting_section(self):
         self.assertEqual(key_side(CONTRACT), CONTRACT["lighting"]["key_side"])
 
-    def test_the_declared_side_is_the_side_the_beats_render(self):
-        """`key_side` is a claim about artemis_beats.add_key's default, so check the default."""
-        src = (ROOT / "tools" / "blender" / "artemis_beats.py").read_text(encoding="utf-8")
-        self.assertIn("def add_key(cam, frame, *, name=\"sun\", energy=5.0, color=None, "
-                      "angle=None,\n            side=1.0,", src,
-                      "add_key moved its default side; lighting.key_side has to move with it")
-        self.assertEqual(key_side(CONTRACT), "right")
-
 
 class TestRecords(unittest.TestCase):
     def test_a_complete_record_loads(self):

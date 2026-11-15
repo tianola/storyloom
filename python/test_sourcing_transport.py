@@ -288,8 +288,7 @@ class EtiquetteTests(unittest.TestCase):
     def test_the_transport_is_serial_only(self):
         self.assertEqual(POLICY["parallelism"], 1)
         for rel in ("tools/sourcing/transport.py", "tools/sourcing/download.py",
-                    "tools/sourcing/providers.py", "tools/sourcing/rights.py",
-                    "tools/archive_source.py"):
+                    "tools/sourcing/providers.py"):
             with self.subTest(rel=rel):
                 source = (ROOT / rel).read_text(encoding="utf-8")
                 tree = ast.parse(source)
@@ -356,8 +355,7 @@ class CredentialPathTests(unittest.TestCase):
     def test_an_environment_credential_is_never_read_by_the_sourcing_client(self):
         source = "".join((ROOT / rel).read_text(encoding="utf-8") for rel in
                          ("tools/sourcing/providers.py", "tools/sourcing/transport.py",
-                          "tools/sourcing/download.py", "tools/sourcing/rights.py",
-                          "tools/archive_source.py"))
+                          "tools/sourcing/download.py"))
         tree = ast.parse(source)
         reads = [ast.unparse(node) for node in ast.walk(tree)
                  if isinstance(node, ast.Subscript)

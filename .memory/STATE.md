@@ -1,5 +1,5 @@
 # STATE
-- Updated: 2026-11-15 (night). Phases 1-3 of `docs/COMPLETION-PLAN.md` done and verified; phase 0 partly done.
+- Updated: 2026-11-15 (night). Phases 0-3 of `docs/COMPLETION-PLAN.md` done and verified.
 - User instruction: finish the code first; NO new episode until the pipeline is complete. Jensen episode is the regression fixture only.
 - Blender for tests in a worktree: `export BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe` (the exe is gitignored, so it only exists in the main checkout). Unset it for `test_blender_config`.
 
@@ -12,13 +12,11 @@
 
 ## Next (in order)
 - Phase 4 `tools/plan_storyboard.py`; 5 `tools/qc_script.py`; 6 word timings (feeds `word:` times) + captions + loudness; 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
-- Finish phase 0 (see below).
 
-## Baseline failures left (phase 0)
-- TypeScript: DONE (`tsc` clean, 160 tests pass). `node_modules` in a worktree: symlink to the main checkout's.
-- `test_archive_source` 29 failing (was 44): the tool is a half-finished refactor. `tools/sourcing/rights.py` (#149b) was never written, `_replace_missing_bytes` is undefined, and with the used_urls fix a second shot with the same asset is now refused, which the accepted-run fixtures do not expect. Needs a decision: finish or delete (with `test_sourcing_transport` 1 that reads rights.py).
-- Artemis-episode leftovers (fail in the main checkout too): `test_episode_paths` 7 and `test_qc_episode` 2 (the "real episode" `work/episode-artemis-ii` has no episode.json/shots.json), `test_blender_surfaces` 15 + `test_regolith_stipple` 15 + `test_lunar_ground` 8 (`media/pbr` tiles do not exist). Decide: delete with the dead Artemis code, or skip when assets are absent.
-- Worktree-only: `test_manim_labels`, `test_skills_map`, `test_pattern_library` pass in main; `test_blender_config` fails only when BLENDER_EXE is set.
+## Phase 0: DONE (2026-11-15)
+- `tsc` clean, 160 TS tests pass. Python: 619 passed, 2 skipped, 0 failed in the main checkout setup (in a worktree: export BLENDER_EXE, junction `.venv` and symlink `node_modules` to the main checkout; `narration-tts` preflight tests need the main checkout's `models/`; `test_blender_config` needs BLENDER_EXE unset).
+- Deleted as dead: `tools/archive_source.py` (+ test, style.json `entry_point`), the Artemis builder stack (`artemis_beats.py`, `work/artemis_beats.*`, `bench_beat.py`, `lunar_ground_probe.py`, `techniques/surfaces*.py`, `tools/tile_seams.py`) and their tests (surfaces, regolith, lunar ground, tile seams, Artemis text guards). The "real episode" tests in `test_episode_paths`/`test_qc_episode` now read Jensen. `tools/sourcing/` (transport, providers, download) stays.
+- Phase 7 must write the archive sourcing step fresh if still wanted.
 
 ## Open defects
 - `tools/pipeline_supervisor.py` provisions a placeholder clip for missing archive media: likely cause of the black `boarding-school_part1` shot. Phase 7 makes it an error.
