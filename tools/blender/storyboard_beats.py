@@ -234,6 +234,14 @@ def main():
     timing_path = episode / "word_timing.json"
     timing = json.loads(timing_path.read_text(encoding="utf-8")) if timing_path.exists() else {}
 
+    sys.path.insert(0, str(PROJECT_ROOT))
+    from workflow import storyboard as validator
+    refused = validator.validate({"beats": board}, validator.load_catalog(), lengths)
+    if refused:
+        raise SystemExit("storyboard refused before any scene was built:
+  " + "
+  ".join(refused))
+
     names = args.beat or [n for n in board if n in lengths]
     unknown = [n for n in names if n not in board]
     if unknown:
