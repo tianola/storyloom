@@ -7,6 +7,12 @@
 3. Worktree/Blender env notes below. Open defects are listed at the bottom; the Jensen episode is only the regression fixture.
 - User rule: do not start a new episode without being asked; ask before downloading a public-domain coastline file.
 
+## After phase 9 (same night)
+- Verified in main: 660 tests OK, dry run lists all stages.
+- `tools/plan_shots.py` + stage `shots` in make_episode (now 10 stages): generates shots.json (3D beats of ~14 s, archive records spread evenly, `script/shots-hint.json` pins lines). Never overwrites an existing shots.json. `python/test_plan_shots.py`.
+- Planner tried with local `huihui_ai/qwen2.5-coder-abliterate:7b` via `--ask-cmd "ollama run <model>"` (10 min): the 7B model failed validation after 2 repairs (invented `none` actions, wrong params/anchors, skipped beats, >4 labels), and the gate correctly wrote nothing to storyboard.json. Catalog digest now says to leave out `params`/`actions` for scenes that have none. A stronger model is needed for a real run; not tested.
+- Jensen content defects NOT fixed on purpose (each needs re-synthesis and re-render of the fixture): "twenty-five-ninety" (line u009 should be 256), unsourced "personal life" line (u018), script 3:08 vs 600-900 s, archive share 10%.
+
 ## Phase 9: DONE
 - Deleted stray root one-offs (`qc_findings.txt`, `test_import.py`, `fix_licence.py`, `regenerate_narration.py`, `update_archive_licence.py`; `undefined` did not exist). `PRODUCTION-GUIDE.md` now opens with section 0 (the one command). Kept `create_package.*`, `download_blender.ps1`, `ENHANCED-3D-TOOLKIT-REPORT.md` (not one-offs of the pipeline).
 - (Earlier lines below describing "Next" are historical.)

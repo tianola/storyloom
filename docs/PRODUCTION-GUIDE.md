@@ -6,8 +6,9 @@
 ## 0. Μία εντολή
 
 Ένα επεισόδιο βγαίνει από ένα φάκελο `work/<όνομα>/` με το σενάριο (`script/narration.md`, μία
-πρόταση ανά γραμμή, και προαιρετικά `chapters.json`, `claims.json`), το `shots.json` (ποια γραμμή
-παίζει πάνω από ποιο beat ή archive shot) και το `archive.json` αν υπάρχει archive. Μετά:
+πρόταση ανά γραμμή, και προαιρετικά `chapters.json`, `claims.json`, `shots-hint.json`) και το `archive.json` αν υπάρχει
+archive. Το `shots.json` (ποια γραμμή παίζει πάνω από ποιο beat ή archive shot) το φτιάχνει το στάδιο
+`shots` (`tools/plan_shots.py`), εκτός αν υπάρχει ήδη δικό σου. Μετά:
 
 ```
 python tools/make_episode.py --episode work/<όνομα> --dry-run
@@ -15,7 +16,7 @@ python tools/make_episode.py --episode work/<όνομα> --ask-cmd "<εντολ�
 ```
 
 Η πρώτη εντολή δείχνει τι θα έτρεχε κάθε στάδιο και δεν αλλάζει τίποτα. Η δεύτερη τρέχει τα
-στάδια με τη σειρά: `script` (πύλη σεναρίου, `tools/qc_script.py`), `narration` (Kokoro),
+στάδια με τη σειρά: `script` (πύλη σεναρίου, `tools/qc_script.py`), `narration` (Kokoro), `shots`,
 `captions` (χρόνοι λέξεων, υπότιτλοι), `lengths` (δευτερόλεπτα ανά beat), `plan` (storyboard από
 τον planner, `tools/plan_storyboard.py`, με έλεγχο και επανόρθωση), `ingest` (archive), `render`
 (Blender), `assemble` (κοπή, grade, επίπεδα ήχου, υπότιτλοι) και `qc` (`tools/qc_episode.py`).

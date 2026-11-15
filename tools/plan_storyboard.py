@@ -65,9 +65,9 @@ def catalog_digest(catalog):
     for name, spec in sorted(catalog.items()):
         params = "; ".join(f"{k}: {p['type']}" + (f" in {p['values']}" if "values" in p else "") +
                            f" (default {json.dumps(p['default'])}) {p['doc']}" for k, p in spec["params"].items())
-        lines.append(f"- {name}: {spec['description']}\n    params: {params or 'none'}\n"
+        lines.append(f"- {name}: {spec['description']}\n    params: {params or '(this scene takes none: leave out "params")'}\n"
                      f"    views: {', '.join(spec['views'])}\n    anchors: {', '.join(spec['anchors'])}\n"
-                     f"    actions: {', '.join(spec['actions']) or 'none'}")
+                     f"    actions: {', '.join(spec['actions']) or '(this scene has none: leave out \"actions\")'}")
     return "\n".join(lines)
 
 
