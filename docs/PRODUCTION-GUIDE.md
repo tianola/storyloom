@@ -3,6 +3,36 @@
 **Έκδοση:** 2026-11-12 · **Ισχύει για:** όλα τα επόμενα επεισόδια — και για το Artemis II, που
 πλέον περνάει τον έλεγχο με 0 errors (§9.1)
 
+## 0. Μία εντολή
+
+Ένα επεισόδιο βγαίνει από ένα φάκελο `work/<όνομα>/` με το σενάριο (`script/narration.md`, μία
+πρόταση ανά γραμμή, και προαιρετικά `chapters.json`, `claims.json`), το `shots.json` (ποια γραμμή
+παίζει πάνω από ποιο beat ή archive shot) και το `archive.json` αν υπάρχει archive. Μετά:
+
+```
+python tools/make_episode.py --episode work/<όνομα> --dry-run
+python tools/make_episode.py --episode work/<όνομα> --ask-cmd "<εντολή planner>"
+```
+
+Η πρώτη εντολή δείχνει τι θα έτρεχε κάθε στάδιο και δεν αλλάζει τίποτα. Η δεύτερη τρέχει τα
+στάδια με τη σειρά: `script` (πύλη σεναρίου, `tools/qc_script.py`), `narration` (Kokoro),
+`captions` (χρόνοι λέξεων, υπότιτλοι), `lengths` (δευτερόλεπτα ανά beat), `plan` (storyboard από
+τον planner, `tools/plan_storyboard.py`, με έλεγχο και επανόρθωση), `ingest` (archive), `render`
+(Blender), `assemble` (κοπή, grade, επίπεδα ήχου, υπότιτλοι) και `qc` (`tools/qc_episode.py`).
+Σταματά στην πρώτη αποτυχία. Ό,τι τελείωσε με τις ίδιες εισόδους παραλείπεται στην επόμενη
+εκτέλεση (`qc/make-episode.json`). Επιλογές: `--from <στάδιο>`, `--only <στάδια>`, `--force`,
+`--replan`.
+
+Τρεις κανόνες που η εντολή επιβάλλει: ένα σενάριο που δεν περνά την πύλη δεν γίνεται φωνή. Ένα
+storyboard που δεν επικυρώνεται δεν φτάνει στο Blender. Archive media που λείπει σταματά το
+στάδιο, δεν αντικαθίσταται ποτέ από μαύρο κλιπ. Τον κατάλογο των σκηνών που μπορεί να διαλέξει ο
+planner ορίζει το `workflow/scenes.json`, και το `python/test_scene_catalog.py` το συγκρίνει με
+τον κώδικα στο `tools/blender/models/scenes.py`.
+
+Τα επόμενα κεφάλαια εξηγούν το γιατί πίσω από κάθε αριθμό του contract.
+
+---
+
 Αυτός ο οδηγός δεν είναι συμβουλή. Είναι η περιγραφή δύο αρχείων που ήδη υπάρχουν και
 διαβάζονται από κώδικα:
 
@@ -11,7 +41,7 @@
 | Το στυλ ως δεδομένα | `workflow/style.json` | `workflow/config.py: style_contract()` |
 | Ο έλεγχος του τελικού video | `tools/qc_episode.py` | τρέχει στο master και βγάζει exit 1 |
 | Οι κανόνες που δεν αλλάζουν | `python/test_style_contract.py`, `python/test_qc_episode.py`, `python/test_episode_audio.py`, `python/test_card_motion.py` | `python -m pytest python/` |
-| Η γεωμετρία πριν το render | `python/test_lunar_ground.py`, `python/test_manim_labels.py` (§9.4) | `python -m pytest python/` |
+| Η γεωμετρία πριν το render | `python/test_manim_labels.py` (§9.4; το `test_lunar_ground.py` αφαιρέθηκε μαζί με τον κώδικα Artemis) | `python -m pytest python/` |
 | Το κείμενο του οδηγού | `python/test_greek_prose.py` (§9.5) | `python -m pytest python/` |
 
 Αν ένας κανόνας αυτού του οδηγού δεν υπάρχει σε ένα από αυτά τα τρία, τότε δεν ισχύει —

@@ -1,5 +1,15 @@
 # STATE
-- Updated: 2026-11-15 (night). Phases 0-6 of `docs/COMPLETION-PLAN.md` done and verified.
+- Updated: 2026-11-15 (night). ALL phases 0-9 of `docs/COMPLETION-PLAN.md` are done; the code is complete. Nothing has been run end to end on a new topic yet.
+
+## How to run an episode (read this first in a new chat)
+1. Make `work/<name>/` with `script/narration.md` (one sentence per line), optional `script/chapters.json`, `script/claims.json`, `research/sources.md`, plus `shots.json` and `archive.json` (see `docs/PRODUCTION-GUIDE.md` section 0).
+2. `python tools/make_episode.py --episode work/<name> --dry-run`, then run it with `--ask-cmd "<planner command>"` (or write `storyboard.json` from `storyboard-brief.md`). Stages: script, narration, captions, lengths, plan, ingest, render, assemble, qc. Resumable; stops at first failure.
+3. Worktree/Blender env notes below. Open defects are listed at the bottom; the Jensen episode is only the regression fixture.
+- User rule: do not start a new episode without being asked; ask before downloading a public-domain coastline file.
+
+## Phase 9: DONE
+- Deleted stray root one-offs (`qc_findings.txt`, `test_import.py`, `fix_licence.py`, `regenerate_narration.py`, `update_archive_licence.py`; `undefined` did not exist). `PRODUCTION-GUIDE.md` now opens with section 0 (the one command). Kept `create_package.*`, `download_blender.ps1`, `ENHANCED-3D-TOOLKIT-REPORT.md` (not one-offs of the pipeline).
+- (Earlier lines below describing "Next" are historical.)
 - User instruction: finish the code first; NO new episode until the pipeline is complete. Jensen episode is the regression fixture only.
 - Blender for tests in a worktree: `export BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe` (the exe is gitignored, so it only exists in the main checkout). Unset it for `test_blender_config`.
 
@@ -11,7 +21,7 @@
 - Phase 0 so far: `archive_source` `used_urls` was a set read as a dict (44 failures -> ~16).
 
 ## Next (in order)
-- 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
+- (none: all phases done)
 
 ## Phase 8: DONE
 - `tools/make_episode.py --episode work/X [--dry-run] [--from S] [--only S,..] [--force] [--ask-cmd CMD] [--replan] [--models DIR]`.
