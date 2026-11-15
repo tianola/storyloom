@@ -131,15 +131,15 @@ const outlineJsonSchema = {
  * because a 4B model writing a black-box `scene: object` reliably omits required fields and quotes
  * numbers. If the contract changes, the prompt changes with it.
  */
-function jsonShapeOf(field: z.ZodTypeAny, omit: string[] = []): Record<string, unknown> {
-  if (field instanceof z.ZodOptional) return jsonShapeOf(field.unwrap(), omit);
-  if (field instanceof z.ZodDefault) return jsonShapeOf(field.removeDefault(), omit);
+function jsonShapeOf(field: z.ZodType, omit: string[] = []): Record<string, unknown> {
+  if (field instanceof z.ZodOptional) return jsonShapeOf(field.unwrap() as z.ZodType, omit);
+  if (field instanceof z.ZodDefault) return jsonShapeOf(field.removeDefault() as z.ZodType, omit);
   if (field instanceof z.ZodNumber) return { type: "number" };
   if (field instanceof z.ZodBoolean) return { type: "boolean" };
   if (field instanceof z.ZodLiteral) return { type: typeof field.value, enum: [field.value] };
   if (field instanceof z.ZodEnum) return { type: "string", enum: field.options };
   if (field instanceof z.ZodString) {
-    const checks = (field._def as Record<string, unknown>).checks as Array<Record<string, unknown>> | undefined;
+    const checks = (field._def as unknown as Record<string, unknown>).checks as Array<Record<string, unknown>> | undefined;
     const regexCheck = checks?.find((check) => {
       const zd = check._zod as Record<string, Record<string, unknown>> | undefined;
       return zd?.def?.format === "regex";
@@ -149,7 +149,7 @@ function jsonShapeOf(field: z.ZodTypeAny, omit: string[] = []): Record<string, u
     return pattern ? { type: "string", pattern: pattern.source } : { type: "string" };
   }
   if (field instanceof z.ZodArray) {
-    const checks = (field._def as Record<string, unknown>).checks as Array<Record<string, unknown>> | undefined;
+    const checks = (field._def as unknown as Record<string, unknown>).checks as Array<Record<string, unknown>> | undefined;
     const minCheck = checks?.find((c) => {
       const zd = c._zod as Record<string, Record<string, unknown>> | undefined;
       return zd?.def?.check === "min_length";

@@ -22,7 +22,7 @@ export const ProjectSchema = z
     sources: z.array(Source).min(1),
     licenses: z.array(LicenseEntry).min(1),
     script: ScriptSchema,
-    reviews: z.record(z.object({ reviewer: z.string().min(1).max(120), reviewedAt: z.string() }))
+    reviews: z.record(z.string(), z.object({ reviewer: z.string().min(1).max(120), reviewedAt: z.string() }))
   })
   .strict();
 export type ProjectSpec = z.infer<typeof ProjectSchema>;

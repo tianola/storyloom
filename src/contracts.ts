@@ -127,7 +127,7 @@ export type LicenseEntry = z.infer<typeof LicenseEntry>;
 const TimedSceneBase = z.object({
   ...SceneBase,
   kind: z.enum(["process", "comparison", "bar-chart"]),
-  props: z.record(z.unknown()),
+  props: z.record(z.string(), z.unknown()),
   startSample: z.number().int().nonnegative(),
   endSampleExclusive: z.number().int().positive(),
   sampleRate: z.number().int().min(8000).max(192000),

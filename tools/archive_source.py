@@ -954,11 +954,12 @@ def source_shot(run: Run, name: str, uids, supply_id, used_urls, existing_rows, 
                 continue
             if result.get("would"):
                 run.accepted.append(result["would"])
-                used_urls[result["would"]["retrieval_url"]] = {"file": result["would"].get("file", "")}
+                used_urls[result["would"]["retrieval_url"]] = {"file": result["would"].get("file", ""),
+                                                              "licence": result["would"].get("licence", "")}
                 return True
             new_rows.append(result["row"])
             new_records[name] = result["record"]
-            used_urls[result["media"]] = {"file": result["row"]["file"]}
+            used_urls[result["media"]] = {"file": result["row"]["file"], "licence": result["accepted"]["licence"]}
             run.accepted.append(result["accepted"])
             return True
     return False
@@ -1028,7 +1029,7 @@ def execute(run: Run) -> dict:
         raise UsageError(f"nothing states what to search for the archival shots {unqueried}: "
                          "pass --query for the topic, or --shot-query NAME=QUERY for each of them")
     supply_id = _next_ids([row["id"] for row in existing_rows], run.sourcing["record_id"])
-    used_urls = {str(row["retrieval_url"]): row for row in existing_rows}
+    used_urls = {str(row["retrieval_url"]): {"file": row["file"], "licence": row["id"]} for row in existing_rows}
     new_rows, new_records, unfilled = [], {}, []
     for name, uids in pending.items():
         if not source_shot(run, name, uids, supply_id, used_urls, existing_rows, existing_records,

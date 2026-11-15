@@ -270,7 +270,7 @@ test("the chapter prompt states the scene contract, field for field", () => {
     }
   }
 
-  const actions = (Beat.shape.action as z.ZodEnum<[string, ...string[]]>).options;
+  const actions = (Beat.shape.action as unknown as z.ZodEnum<Record<string, string>>).options;
   for (const action of actions) assert.ok(stated.includes(`"${action}"`), `the prompt omits beat action ${action}`);
   assert.match(stated, /seconds/i, "beat.at must be described as seconds, the field the model got wrong");
   assert.ok(/additionalProperties: false|"additionalProperties":false/.test(stated) || stated.includes("no other keys"), "strict props must be stated");

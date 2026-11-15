@@ -15,9 +15,10 @@
 - Finish phase 0 (see below).
 
 ## Baseline failures left (phase 0)
-- `test_archive_source` ~16: `_replace_missing_bytes` undefined (archive_source.py:783), `already['licence']` KeyError (:777), `tools/sourcing/rights.py` does not exist (#149b half-done refactor; decide: finish or delete), ordering/fixture mismatches.
-- `test_blender_surfaces` 15 + `test_regolith_stipple` 15 + `test_lunar_ground` 8: missing `media/pbr` tiles (ignored media; worktree lacks them). `test_manim_labels` 3, `test_episode_paths` 7 and `test_qc_episode` 2 need `work/episode-artemis-ii` (ignored files). `test_skills_map`, `test_pattern_library`, `test_sourcing_transport` 1 each, `test_blender_config` fails only when BLENDER_EXE is set.
-- TypeScript: 9 `tsc` errors from Zod 4 (`src/cli.ts` 25, 195; `src/contracts.ts` 130; `src/writer.ts` 135, 136, 142, 152; `tests/writer.test.ts` 273).
+- TypeScript: DONE (`tsc` clean, 160 tests pass). `node_modules` in a worktree: symlink to the main checkout's.
+- `test_archive_source` 29 failing (was 44): the tool is a half-finished refactor. `tools/sourcing/rights.py` (#149b) was never written, `_replace_missing_bytes` is undefined, and with the used_urls fix a second shot with the same asset is now refused, which the accepted-run fixtures do not expect. Needs a decision: finish or delete (with `test_sourcing_transport` 1 that reads rights.py).
+- Artemis-episode leftovers (fail in the main checkout too): `test_episode_paths` 7 and `test_qc_episode` 2 (the "real episode" `work/episode-artemis-ii` has no episode.json/shots.json), `test_blender_surfaces` 15 + `test_regolith_stipple` 15 + `test_lunar_ground` 8 (`media/pbr` tiles do not exist). Decide: delete with the dead Artemis code, or skip when assets are absent.
+- Worktree-only: `test_manim_labels`, `test_skills_map`, `test_pattern_library` pass in main; `test_blender_config` fails only when BLENDER_EXE is set.
 
 ## Open defects
 - `tools/pipeline_supervisor.py` provisions a placeholder clip for missing archive media: likely cause of the black `boarding-school_part1` shot. Phase 7 makes it an error.
