@@ -1,0 +1,227 @@
+"""One command from a written script to a quality-checked master.
+
+    python tools/make_episode.py --episode work/X --dry-run     # what each stage would do
+    python tools/make_episode.py --episode work/X                # run every stage that is not done
+    python tools/make_episode.py --episode work/X --from render  # start at a stage
+    python tools/make_episode.py --episode work/X --only qc      # just these (comma separated)
+    python tools/make_episode.py --episode work/X --ask-cmd "<cmd>"   # planner: prompt on stdin, JSON out
+
+Stages, in order (each is an existing tool; this file only sequences them):
+  script     tools/qc_script.py          the script gate; nothing is synthesised for a script that fails
+  narration  python/narrate.py           one wav per line + vo/manifest.json (Kokoro, offline)
+  captions   tools/captions.py           word timings, captions.srt/.vtt, word_timing.json
+  lengths    assemble_episode.py --shot-lengths-only    narration seconds per beat
+  plan       tools/plan_storyboard.py    storyboard.json; without --ask-cmd it writes the brief and stops
+  ingest     rollout_render.py ingest    archive clips (a missing source is an error, never a placeholder)
+  render     rollout_render.py render    the 3D beats in Blender
+  assemble   tools/assemble_episode.py   cut, grade, level, mux (captions as a soft stream)
+  qc         tools/qc_episode.py         the master against the style contract
+
+Resumable: `<episode>/qc/make-episode.json` records a digest of each finished stage's inputs. A stage
+whose inputs have not changed and whose outputs exist is skipped; change the script and everything
+downstream of it runs again. The run stops at the first failing stage with its exit code.
+`shots.json` (which utterance plays over which beat or archive shot) is an input the author provides;
+a missing or incomplete one stops the run at `plan` with the lines it does not cover.
+"""
+import argparse
+import hashlib
+import json
+import os
+import subprocess
+import sys
+from datetime import datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+PY = sys.executable
+STAGES = ["script", "narration", "captions", "lengths", "plan", "ingest", "render", "assemble", "qc"]
+
+
+def _files(episode, *names):
+    return [episode / n for n in names]
+
+
+def inputs_of(stage, episode):
+    """Files whose content decides whether a finished stage is still valid."""
+    style = ROOT / "workflow" / "style.json"
+    table = {
+        "script": _files(episode, "script/narration.md", "script/chapters.json", "script/claims.json",
+                         "research/sources.md") + [style],
+        "narration": _files(episode, "script/narration.md"),
+        "captions": _files(episode, "vo/manifest.json", "shots.json"),
+        "lengths": _files(episode, "vo/manifest.json", "shots.json"),
+        "plan": _files(episode, "shot_lengths.json", "shots.json", "vo/manifest.json") + [ROOT / "workflow" / "scenes.json"],
+        "ingest": _files(episode, "archive.json", "shots.json"),
+        "render": _files(episode, "storyboard.json", "shot_lengths.json", "word_timing.json"),
+        "assemble": _files(episode, "vo/manifest.json", "shots.json", "shot_lengths.json", "storyboard.json"),
+        "qc": [episode / f"{episode.name}.mp4"],
+    }
+    return table[stage]
+
+
+def digest(paths):
+    h = hashlib.sha1()
+    for p in paths:
+        h.update(str(p.name).encode())
+        h.update(p.read_bytes() if p.is_file() and p.stat().st_size < 200_000_000 else
+                 (str(p.stat().st_size) + str(p.stat().st_mtime_ns)).encode() if p.is_file() else b"-")
+    return h.hexdigest()
+
+
+def outputs_exist(stage, episode):
+    out = {
+        "script": ["qc/script-qc.json"],
+        "narration": ["vo/manifest.json"],
+        "captions": ["vo/captions.srt", "word_timing.json"],
+        "lengths": ["shot_lengths.json"],
+        "plan": ["storyboard.json"],
+        "ingest": [],
+        "render": [],
+        "assemble": [f"{episode.name}.mp4"],
+        "qc": ["qc/qc-report.json"],
+    }[stage]
+    return all((episode / o).is_file() for o in out)
+
+
+def narration_request(episode):
+    """The Kokoro request for the script: one utterance per line (ids as the script gate numbers them)."""
+    import qc_script
+    existing = episode / "script" / "narration-request.json"
+    base = json.loads(existing.read_text(encoding="utf-8")) if existing.exists() else {}
+    script = qc_script.read_script(episode)
+    return {"voice": base.get("voice", "af_heart"), "speed": base.get("speed", 1.0),
+            "utterances": [{"id": uid, "file": f"{uid}.wav", "text": text} for uid, text in script.items()]}
+
+
+def commands(stage, episode, args):
+    """[argv] for a stage, or raises Blocked with the reason it cannot run yet."""
+    ep = str(episode)
+    tools = ROOT / "tools"
+    if stage == "script":
+        return [[PY, str(tools / "qc_script.py"), "--episode", ep]]
+    if stage == "narration":
+        models = Path(args.models)
+        return [[PY, str(ROOT / "python" / "narrate.py"), "--input", str(episode / "script" / "narration-request.json"),
+                 "--output", str(episode / "vo"), "--model", str(models / "kokoro-v1.0.onnx"),
+                 "--voices", str(models / "voices-v1.0.bin")]]
+    if stage == "captions":
+        return [[PY, str(tools / "captions.py"), "--episode", ep]]
+    if stage == "lengths":
+        return [[PY, str(tools / "assemble_episode.py"), "--episode", ep, "--shot-lengths-only"]]
+    if stage == "plan":
+        if (episode / "storyboard.json").is_file() and not args.replan:
+            return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--check"]]
+        if args.ask_cmd:
+            return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--ask-cmd", args.ask_cmd]]
+        return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--brief"], "BLOCK:"
+                "no storyboard.json and no --ask-cmd: the brief is written to storyboard-brief.md; "
+                "give a planner command or write storyboard.json from it, then re-run"]
+    if stage in ("ingest", "render"):
+        return [[PY, str(tools / "rollout_render.py"), "--episode", ep, stage]]
+    if stage == "assemble":
+        return [[PY, str(tools / "assemble_episode.py"), "--episode", ep]]
+    if stage == "qc":
+        return [[PY, str(tools / "qc_episode.py"), "--episode", ep, "--master", str(episode / f"{episode.name}.mp4"),
+                 "--json", str(episode / "qc" / "qc-report.json")]]
+    raise KeyError(stage)
+
+
+def load_state(episode):
+    path = episode / "qc" / "make-episode.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+def save_state(episode, state):
+    (episode / "qc").mkdir(exist_ok=True)
+    (episode / "qc" / "make-episode.json").write_text(json.dumps(state, indent=1), encoding="utf-8")
+
+
+def status(stage, episode, state, force):
+    """'done' | 'run' (with a reason)."""
+    try:
+        now = digest(inputs_of(stage, episode))
+    except OSError as exc:
+        return "run", f"inputs unreadable ({exc})"
+    record = state.get(stage)
+    if force:
+        return "run", "forced"
+    if not record:
+        return "run", "never run"
+    if record["inputs"] != now:
+        return "run", "inputs changed since it last ran"
+    if not outputs_exist(stage, episode):
+        return "run", "outputs missing"
+    return "done", f"finished {record['finished']}"
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--episode", type=Path, required=True)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--from", dest="first", choices=STAGES)
+    ap.add_argument("--only", help="comma-separated stages")
+    ap.add_argument("--force", action="store_true", help="run the selected stages even if they are done")
+    ap.add_argument("--ask-cmd", help="planner command (see plan_storyboard.py)")
+    ap.add_argument("--replan", action="store_true", help="plan again even though storyboard.json exists")
+    ap.add_argument("--models", default=str(ROOT / "models" / "kokoro"))
+    args = ap.parse_args(argv)
+    episode = args.episode if args.episode.is_absolute() else ROOT / args.episode
+    if not (episode / "script" / "narration.md").is_file():
+        raise SystemExit(f"{episode}: no script/narration.md; write the script first")
+
+    selected = STAGES
+    if args.only:
+        selected = [s for s in args.only.split(",") if s]
+        unknown = [s for s in selected if s not in STAGES]
+        if unknown:
+            raise SystemExit(f"unknown stage(s) {unknown}; expected {STAGES}")
+    elif args.first:
+        selected = STAGES[STAGES.index(args.first):]
+
+    state = load_state(episode)
+    env = dict(os.environ)
+    forced_downstream = False
+    for stage in selected:
+        state_now, why = status(stage, episode, state, args.force)
+        if state_now == "done" and forced_downstream:
+            state_now, why = "run", "an earlier stage re-runs"
+        if state_now == "done":
+            print(f"[{stage:9}] done     {why}")
+            continue
+        forced_downstream = True      # a stage that runs invalidates what depends on its outputs
+        if stage == "narration":
+            if not args.dry_run:
+                (episode / "script" / "narration-request.json").write_text(
+                    json.dumps(narration_request(episode), indent=1), encoding="utf-8")
+        cmds = commands(stage, episode, args)
+        blocked = next((c[6:] for c in cmds if isinstance(c, str) and c.startswith("BLOCK:")), None)
+        argvs = [c for c in cmds if isinstance(c, list)]
+        label = "would run" if args.dry_run else "running  "
+        print(f"[{stage:9}] {label} ({why})")
+        for a in argvs:
+            shown = [Path(x).name if x == PY else (os.path.relpath(x, ROOT) if x.startswith(str(ROOT)) else x) for x in a]
+            print("            " + " ".join(f'"{x}"' if " " in x else x for x in shown))
+        if blocked:
+            print(f"            BLOCKED: {blocked}" if args.dry_run else "")
+        if args.dry_run:
+            continue
+        for a in argvs:
+            code = subprocess.run(a, cwd=ROOT, env=env).returncode
+            if code != 0:
+                print(f"\nstage '{stage}' failed (exit {code}); fix it and re-run, finished stages are skipped",
+                      file=sys.stderr)
+                return code
+        if blocked:
+            print(f"\nstopped at '{stage}': {blocked}", file=sys.stderr)
+            return 2
+        state[stage] = {"inputs": digest(inputs_of(stage, episode)),
+                        "finished": datetime.now().isoformat(timespec="seconds")}
+        save_state(episode, state)
+    print("\nall selected stages are finished" if not args.dry_run else "\n(dry run: nothing was changed)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,66 @@
+"""make_episode: stage order, dry run on the Jensen fixture, resumability, and the planner stop."""
+import io
+import json
+import sys
+import tempfile
+import unittest
+from contextlib import redirect_stdout
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT))
+import make_episode as M  # noqa: E402
+
+
+def run(argv):
+    out = io.StringIO()
+    with redirect_stdout(out):
+        code = M.main(argv)
+    return code, out.getvalue()
+
+
+class MakeEpisode(unittest.TestCase):
+    def test_dry_run_lists_every_stage_in_order_and_changes_nothing(self):
+        before = (ROOT / "work" / "jensen-huang" / "qc" / "make-episode.json").exists()
+        code, text = run(["--episode", "work/jensen-huang", "--dry-run"])
+        self.assertEqual(code, 0)
+        positions = [text.index(f"[{s:9}]") for s in M.STAGES]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn("qc_script.py", text)
+        self.assertIn("rollout_render.py", text)
+        self.assertEqual((ROOT / "work" / "jensen-huang" / "qc" / "make-episode.json").exists(), before)
+
+    def test_a_finished_stage_is_skipped_until_its_input_changes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ep = Path(tmp) / "ep"
+            (ep / "script").mkdir(parents=True)
+            (ep / "qc").mkdir()
+            (ep / "script" / "narration.md").write_text("One line.\n", encoding="utf-8")
+            (ep / "qc" / "script-qc.json").write_text("{}", encoding="utf-8")
+            state = {"script": {"inputs": M.digest(M.inputs_of("script", ep)), "finished": "now"}}
+            self.assertEqual(M.status("script", ep, state, False)[0], "done")
+            (ep / "script" / "narration.md").write_text("Another line.\n", encoding="utf-8")
+            self.assertEqual(M.status("script", ep, state, False)[0], "run")
+            self.assertEqual(M.status("script", ep, state, True)[1], "forced")
+
+    def test_plan_without_a_planner_or_storyboard_is_blocked_with_a_brief(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ep = Path(tmp) / "ep"
+            ep.mkdir()
+            args = type("A", (), {"replan": False, "ask_cmd": None, "models": "m"})()
+            cmds = M.commands("plan", ep, args)
+            self.assertTrue(any(isinstance(c, str) and c.startswith("BLOCK:") for c in cmds))
+
+    def test_unknown_stage_is_refused(self):
+        with self.assertRaises(SystemExit):
+            run(["--episode", "work/jensen-huang", "--only", "nope"])
+
+    def test_narration_request_numbers_lines_like_the_script_gate(self):
+        req = M.narration_request(ROOT / "work" / "jensen-huang")
+        self.assertEqual(req["utterances"][0]["id"], "u001")
+        self.assertEqual(req["voice"], "af_heart")
+
+
+if __name__ == "__main__":
+    unittest.main()

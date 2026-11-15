@@ -13,6 +13,13 @@
 ## Next (in order)
 - 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
 
+## Phase 8: DONE
+- `tools/make_episode.py --episode work/X [--dry-run] [--from S] [--only S,..] [--force] [--ask-cmd CMD] [--replan] [--models DIR]`.
+- Stages: script, narration, captions, lengths, plan, ingest, render, assemble, qc. Resumable via `qc/make-episode.json` (input digests; downstream stages re-run when an earlier one runs). Stops at the first failure.
+- `plan` without `--ask-cmd` and without storyboard.json writes the brief and stops (exit 2). `shots.json` is still authored by hand (not generated).
+- Dry run on Jensen verified (`python/test_make_episode.py`); script gate failure verified on a scratch copy (stops, records nothing). Full real run not done (needs main checkout media, Blender hours).
+- Remaining: phase 9.
+
 ## Phase 7: DONE
 - `pipeline_supervisor.py`: placeholder/regenerate fixes removed; missing or unreadable archive media is an AGENT_ONLY finding that stops the stage (`python/test_pipeline_supervisor.py`). Core already raised on missing sources (`workflow/episode.archive_sources`).
 - `plan_storyboard.archive_mix(episode)` applies the archive share/per-act floors (`workflow.archive.mix_findings`) at planning time; `--check` fails on it. Jensen reports `archive_share_low` (10% vs 20%), as known.
