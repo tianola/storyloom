@@ -11,7 +11,7 @@
   "enabled": true
  },
  "rollout": {
-  "builder": "tools/blender/jensen_huang_beats.py",
+  "builder": "tools/blender/storyboard_beats.py",
   "baseline": "1080p",
   "finish_beats": [
    "u001",

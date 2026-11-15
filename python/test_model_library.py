@@ -1,6 +1,6 @@
 """The reusable model library (tools/blender/models) builds, and its beats stay framed.
 
-Runs the Jensen Huang builder in still mode: every beat is constructed in real Blender,
+Runs the storyboard builder on the Jensen Huang storyboard in still mode: every beat is constructed in real Blender,
 one half-resolution frame is rendered per beat, and the builder reports any callout
 whose text would leave the frame. A model that stops building, or a label nudged off
 screen, fails here in about half a minute instead of after a full render.
@@ -15,7 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from workflow.config import blender_executable  # noqa: E402
 
-BUILDER = ROOT / "tools" / "blender" / "jensen_huang_beats.py"
+BUILDER = ROOT / "tools" / "blender" / "storyboard_beats.py"
+EPISODE = ROOT / "work" / "jensen-huang"
 BEATS = [
     "denny-den", "leather-jacket", "silicon-wafer", "nv1-chip", "riva-chip", "geforce-chip",
     "parallel-cores", "cuda-stack", "deep-learning", "dgx-cluster", "blackwell-chip", "flat-org",
@@ -31,7 +32,7 @@ class ModelLibraryBuilds(unittest.TestCase):
         cls.proc = subprocess.run(
             [str(blender_executable(ROOT)), "--background", "--factory-startup",
              "--python-exit-code", "1", "--python", str(BUILDER), "--",
-             "--still", "0.85", "--out", str(cls.out)],
+             "--episode", str(EPISODE), "--still", "0.85", "--out", str(cls.out)],
             cwd=str(ROOT), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
             encoding="utf-8", errors="replace", timeout=900)
 

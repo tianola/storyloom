@@ -1,0 +1,649 @@
+{
+ "_note": "Scene catalog. views/anchors/actions are the union over `examples` and are checked against the Blender code by python/test_scene_catalog.py.",
+ "scenes": {
+  "chip-teardown": {
+   "description": "A chip package that opens: quad flat pack, ball grid array, or a stacked AI package.",
+   "params": {
+    "package": {
+     "type": "enum",
+     "default": "qfp",
+     "doc": "qfp = pin-lined chip; bga = chip on balls; ai = logic die with stacked memory",
+     "values": [
+      "qfp",
+      "bga",
+      "ai"
+     ]
+    },
+    "text": {
+     "type": "string",
+     "default": "",
+     "doc": "marking printed on the lid"
+    },
+    "seed": {
+     "type": "int",
+     "default": 4,
+     "doc": "random seed of the wire bonding"
+    }
+   },
+   "examples": [
+    {
+     "package": "qfp"
+    },
+    {
+     "package": "bga"
+    },
+    {
+     "package": "ai"
+    }
+   ],
+   "views": [
+    "wide",
+    "die",
+    "pins",
+    "balls",
+    "memory",
+    "logic"
+   ],
+   "anchors": [
+    "balls",
+    "die",
+    "interposer",
+    "lid",
+    "logic",
+    "memory",
+    "package",
+    "pins"
+   ],
+   "actions": [
+    "open"
+   ]
+  },
+  "graphics-card": {
+   "description": "A graphics card whose cooler lifts off to show the processor underneath.",
+   "params": {
+    "text": {
+     "type": "string",
+     "default": "GPU",
+     "doc": "marking on the processor"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "gpu",
+    "connector"
+   ],
+   "anchors": [
+    "connector",
+    "cooler",
+    "gpu"
+   ],
+   "actions": [
+    "open"
+   ]
+  },
+  "wafer": {
+   "description": "A silicon wafer on its chuck; one die lifts out of the grid.",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "die"
+   ],
+   "anchors": [
+    "die",
+    "wafer"
+   ],
+   "actions": [
+    "lift"
+   ]
+  },
+  "cores-compare": {
+   "description": "Two processors side by side: a few big cores taking turns, many small ones at once.",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "few",
+    "many"
+   ],
+   "anchors": [
+    "few",
+    "many"
+   ],
+   "actions": []
+  },
+  "server-racks": {
+   "description": "A row of server racks; one drawer slides out to show what is inside.",
+   "params": {
+    "count": {
+     "type": "int",
+     "default": 3,
+     "doc": "racks in the row",
+     "min": 1,
+     "max": 6
+    },
+    "pull": {
+     "type": "int",
+     "default": 1,
+     "doc": "index of the rack whose drawer slides out"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "drawer"
+   ],
+   "anchors": [
+    "drawer",
+    "racks"
+   ],
+   "actions": [
+    "open"
+   ]
+  },
+  "layer-stack": {
+   "description": "Named slabs dropping onto each other, bottom first; one can be the highlighted layer.",
+   "params": {
+    "layers": {
+     "type": "string[]",
+     "default": [
+      "Hardware",
+      "Platform",
+      "Applications"
+     ],
+     "doc": "slab names, bottom first; anchors are layer1..layerN",
+     "max_items": 5
+    },
+    "highlight": {
+     "type": "string",
+     "default": "Hardware",
+     "doc": "the slab that glows"
+    },
+    "base": {
+     "type": "enum",
+     "default": "chip",
+     "doc": "what the stack sits on",
+     "values": [
+      "chip",
+      "none"
+     ]
+    }
+   },
+   "examples": [
+    {},
+    {
+     "layers": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+     ]
+    }
+   ],
+   "views": [
+    "wide",
+    "top"
+   ],
+   "anchors": [
+    "base",
+    "layer1",
+    "layer2",
+    "layer3",
+    "layer4",
+    "layer5"
+   ],
+   "actions": [
+    "stack"
+   ]
+  },
+  "neural-network": {
+   "description": "A feed-forward network; signals sweep through it layer by layer.",
+   "params": {
+    "layers": {
+     "type": "int[]",
+     "default": [
+      4,
+      6,
+      6,
+      6,
+      3
+     ],
+     "doc": "neurons per layer"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "input",
+    "output"
+   ],
+   "anchors": [
+    "hidden",
+    "input",
+    "output"
+   ],
+   "actions": []
+  },
+  "flow-diagram": {
+   "description": "Boxes in a row joined by traces carrying light: how one stage feeds the next.",
+   "params": {
+    "nodes": {
+     "type": "string[]",
+     "default": [
+      "Input",
+      "Process",
+      "Output"
+     ],
+     "doc": "box names left to right; anchors are node1..nodeN",
+     "max_items": 6
+    }
+   },
+   "examples": [
+    {},
+    {
+     "nodes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ]
+    }
+   ],
+   "views": [
+    "wide",
+    "first",
+    "last"
+   ],
+   "anchors": [
+    "node1",
+    "node2",
+    "node3",
+    "node4",
+    "node5",
+    "node6"
+   ],
+   "actions": [
+    "run"
+   ]
+  },
+  "timeline": {
+   "description": "Years along a rail; each marker lights as the story reaches it.",
+   "params": {
+    "events": {
+     "type": "string[]",
+     "default": [
+      "1993",
+      "1999",
+      "2006",
+      "2012",
+      "2024"
+     ],
+     "doc": "marker names; anchors are event1..eventN",
+     "max_items": 8
+    }
+   },
+   "examples": [
+    {},
+    {
+     "events": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h"
+     ]
+    }
+   ],
+   "views": [
+    "wide",
+    "start",
+    "end"
+   ],
+   "anchors": [
+    "event1",
+    "event2",
+    "event3",
+    "event4",
+    "event5",
+    "event6",
+    "event7",
+    "event8"
+   ],
+   "actions": [
+    "run"
+   ]
+  },
+  "scale-compare": {
+   "description": "One block beside many: how much more, counted out in cubes.",
+   "params": {
+    "many": {
+     "type": "int",
+     "default": 100,
+     "doc": "cubes in the large group"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "many"
+   ],
+   "anchors": [
+    "many",
+    "one"
+   ],
+   "actions": [
+    "fill"
+   ]
+  },
+  "bar-chart": {
+   "description": "Columns rising left to right; the last one is the point of the sentence.",
+   "params": {
+    "values": {
+     "type": "number[]",
+     "default": [],
+     "doc": "column values; empty = a doubling curve"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "last"
+   ],
+   "anchors": [
+    "first",
+    "last"
+   ],
+   "actions": [
+    "grow"
+   ]
+  },
+  "line-chart": {
+   "description": "A line drawn across a dark board, optionally over a row of bars.",
+   "params": {
+    "points": {
+     "type": "number[]",
+     "default": [
+      9,
+      8.4,
+      8.7,
+      7.2,
+      7.5,
+      6.0,
+      6.3,
+      4.8,
+      5.1,
+      3.6,
+      3.9,
+      2.6
+     ],
+     "doc": "line values (max 24)"
+    },
+    "bars": {
+     "type": "number[]",
+     "default": [],
+     "doc": "optional bars under the line; adds the `bars` anchor"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "bars": [
+      3,
+      4,
+      5
+     ]
+    }
+   ],
+   "views": [
+    "wide",
+    "end"
+   ],
+   "anchors": [
+    "bars",
+    "line_end",
+    "line_start"
+   ],
+   "actions": [
+    "draw"
+   ]
+  },
+  "presenter-screen": {
+   "description": "A figure on a stage in front of a screen with a rising chart behind them.",
+   "params": {
+    "values": {
+     "type": "number[]",
+     "default": [
+      1,
+      1.3,
+      1.1,
+      2,
+      3.4,
+      6.2,
+      13,
+      27.5
+     ],
+     "doc": "chart behind the presenter"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "presenter",
+    "screen"
+   ],
+   "anchors": [
+    "peak",
+    "presenter"
+   ],
+   "actions": [
+    "grow"
+   ]
+  },
+  "people-row": {
+   "description": "One to six figures standing on a plinth: founders, a team, rivals.",
+   "params": {
+    "count": {
+     "type": "int",
+     "default": 3,
+     "doc": "figures, 1-6; anchors are person1..personN",
+     "min": 1,
+     "max": 6
+    },
+    "lead": {
+     "type": "int",
+     "default": 2,
+     "doc": "index of the highlighted figure"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "count": 6
+    }
+   ],
+   "views": [
+    "wide",
+    "lead"
+   ],
+   "anchors": [
+    "person1",
+    "person2",
+    "person3",
+    "person4",
+    "person5",
+    "person6"
+   ],
+   "actions": []
+  },
+  "meeting-table": {
+   "description": "A diner booth with people around a table and an idea sketched on a napkin.",
+   "params": {
+    "count": {
+     "type": "int",
+     "default": 3,
+     "doc": "people at the table"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "table"
+   ],
+   "anchors": [
+    "table"
+   ],
+   "actions": [
+    "idea"
+   ]
+  },
+  "org-radial": {
+   "description": "One figure at the centre, everyone else in rings around it, each linked straight in.",
+   "params": {
+    "rings": {
+     "type": "int[]",
+     "default": [
+      16,
+      26,
+      18
+     ],
+     "doc": "people per ring"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "centre"
+   ],
+   "anchors": [
+    "centre",
+    "links",
+    "ring"
+   ],
+   "actions": [
+    "spread"
+   ]
+  },
+  "campus": {
+   "description": "A low headquarters building among trees, seen from the air.",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "low"
+   ],
+   "anchors": [
+    "building"
+   ],
+   "actions": []
+  },
+  "pages": {
+   "description": "Front pages drifting past in the dark: attention, with nothing legible to quote.",
+   "params": {
+    "count": {
+     "type": "int",
+     "default": 7,
+     "doc": "front pages drifting past"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "close"
+   ],
+   "anchors": [
+    "front"
+   ],
+   "actions": []
+  },
+  "document": {
+   "description": "One sheet of paper with a short title and a line that gets marked.",
+   "params": {
+    "lines": {
+     "type": "int",
+     "default": 12,
+     "doc": "text lines"
+    },
+    "mark": {
+     "type": "int",
+     "default": 6,
+     "doc": "line that gets marked"
+    },
+    "title": {
+     "type": "string",
+     "default": "",
+     "doc": "title above the text"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "mark"
+   ],
+   "anchors": [
+    "mark",
+    "title"
+   ],
+   "actions": [
+    "mark"
+   ]
+  },
+  "statement": {
+   "description": "A field of posts moving like a slow wave: the backdrop for a line that carries no object.",
+   "params": {
+    "mood": {
+     "type": "enum",
+     "default": "cool",
+     "doc": "colour of the field",
+     "values": [
+      "cool",
+      "warm"
+     ]
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "low"
+   ],
+   "anchors": [
+    "centre"
+   ],
+   "actions": []
+  }
+ }
+}

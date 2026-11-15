@@ -157,10 +157,19 @@ def guard():
     return None
 
 
+def builder_args(args):
+    """Arguments after the script. The generic storyboard builder is told which episode to read;
+    an episode-specific builder already knows."""
+    args = list(args)
+    if Path(str(SCRIPT)).name == "storyboard_beats.py":
+        args = ["--", "--episode", str(EPISODE)] + [("--beat" if a == "--only" else a) for a in args]
+    return args
+
+
 def run_blender(args, log_path, timeout=None):
     """Run Blender and return (exit_code, seconds). The exit code is captured from Blender
     itself; piping through grep/tail would report the pipe's status instead."""
-    cmd = [BLENDER, "-b", "-P", str(SCRIPT)] + args
+    cmd = [BLENDER, "-b", "-P", str(SCRIPT)] + builder_args(args)
     t0 = time.time()
     with open(log_path, "w", encoding="utf-8") as fh:
         proc = subprocess.run(cmd, stdout=fh, stderr=subprocess.STDOUT, timeout=timeout)
@@ -214,7 +223,7 @@ def _spawn(args, log_path):
     # Blender that reaches a prompt would block forever with no console to answer it.
     stdin_file = QC / "render-stdin.txt"
     stdin_file.touch(exist_ok=True)
-    cmd = [BLENDER, "-b", "-P", str(SCRIPT)] + list(args)
+    cmd = [BLENDER, "-b", "-P", str(SCRIPT)] + builder_args(args)
     flags = 0
     if os.name == "nt":
         flags = subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
