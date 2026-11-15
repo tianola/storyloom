@@ -1,0 +1,54 @@
+{
+  "beats": {
+    "denny-den": {"scene": "meeting-table", "labels": [{"text": "San Jose, 1993", "anchor": "table", "at": 0.55}]},
+    "leather-jacket": {"scene": "presenter-screen", "labels": [{"text": "$3 trillion", "anchor": "peak", "at": 0.47}]},
+    "silicon-wafer": {"scene": "wafer", "labels": [
+      {"text": "Silicon wafer", "anchor": "wafer", "at": 0.07},
+      {"text": "One die = one chip", "anchor": "die", "at": 0.6}]},
+    "nv1-chip": {"scene": "chip-teardown", "params": {"package": "qfp"}, "labels": [
+      {"text": "NV1: curved patches", "anchor": "die", "at": 0.28},
+      {"text": "Everyone else: triangles", "anchor": "pins", "at": 0.48}]},
+    "riva-chip": {"scene": "chip-teardown", "params": {"package": "qfp"}, "labels": [
+      {"text": "Plastic package", "anchor": "package", "at": 0.35},
+      {"text": "Silicon die", "anchor": "die", "at": 0.44},
+      {"text": "Pins to the board", "anchor": "pins", "at": 0.56}]},
+    "geforce-chip": {"scene": "graphics-card", "params": {"text": "GeForce 256"}, "labels": [
+      {"text": "Fan + heatsink", "anchor": "cooler", "at": 0.42, "until": 0.5},
+      {"text": "GPU", "anchor": "gpu", "at": 0.48},
+      {"text": "Plugs into the PC", "anchor": "connector", "at": 0.63}]},
+    "parallel-cores": {"scene": "cores-compare", "labels": [
+      {"text": "CPU: 4 cores, in turn", "anchor": "few", "at": 0.05},
+      {"text": "GPU: thousands, at once", "anchor": "many", "at": 0.2}]},
+    "cuda-stack": {"scene": "layer-stack", "params": {"layers": ["CUDA", "Libraries", "Applications"], "highlight": "CUDA", "base": "chip"}, "labels": [
+      {"text": "Graphics chip", "anchor": "base", "at": 0.06},
+      {"text": "General-purpose code", "anchor": "layer3", "at": 0.62}]},
+    "deep-learning": {"scene": "neural-network", "labels": [
+      {"text": "Image in", "anchor": "input", "at": 0.06},
+      {"text": "Answer out", "anchor": "output", "at": 0.23}]},
+    "dgx-cluster": {"scene": "server-racks", "labels": [{"text": "8 GPUs in one server", "anchor": "drawer", "at": 0.44}]},
+    "blackwell-chip": {"scene": "chip-teardown", "params": {"package": "ai"}, "labels": [
+      {"text": "Heat spreader", "anchor": "lid", "at": 0.31},
+      {"text": "Logic die", "anchor": "logic", "at": 0.38},
+      {"text": "Stacked memory", "anchor": "memory", "at": 0.51},
+      {"text": "Silicon interposer", "anchor": "interposer", "at": 0.64}]},
+    "flat-org": {"scene": "org-radial", "labels": [
+      {"text": "60 direct reports", "anchor": "ring", "at": 0.5},
+      {"text": "No layers in between", "anchor": "links", "at": 0.65}]},
+    "nvidia-hq": {"scene": "campus"},
+    "valuation": {"scene": "bar-chart", "params": {"values": [0.1, 0.15, 0.2, 0.3, 0.4, 0.6, 0.9, 1.4, 2.0, 3.0, 4.4, 6.4]},
+      "labels": [{"text": "1993", "anchor": "first", "at": 0.07}, {"text": "Today", "anchor": "last", "at": 0.62}],
+      "hud": [{"text": "company valuation", "screen": [0.36, 0.745], "size": 0.036, "at": 1.0}],
+      "counter": {"screen": [0.36, 0.84], "size": 0.085, "from": 1, "to": 3000, "curve": "exp", "color": "warm",
+                  "template": "${:,} billion", "start": 1.0, "end": 5.8}},
+    "founding-team": {"scene": "people-row", "params": {"count": 3}, "labels": [
+      {"text": "Chris Malachowsky", "anchor": "person1", "at": 0.07},
+      {"text": "Jensen Huang", "anchor": "person2", "at": 0.18},
+      {"text": "Curtis Priem", "anchor": "person3", "at": 0.29}],
+      "hud": [{"text": "$40,000", "screen": [0.5, 0.16], "size": 0.085, "at": 0.5, "color": "warm"},
+              {"text": "in personal savings", "screen": [0.5, 0.075], "size": 0.036, "at": 0.5}]},
+    "wall-street": {"scene": "line-chart", "params": {"bars": [3, 4, 3.5, 5, 6, 8]}, "labels": [
+      {"text": "Profit margin", "anchor": "line_end", "at": 0.56},
+      {"text": "Spending on CUDA", "anchor": "bars", "at": 0.4}]},
+    "headlines": {"scene": "pages", "params": {"count": 7}}
+  }
+}
