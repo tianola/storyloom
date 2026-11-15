@@ -7,6 +7,6 @@
 - Assemble: delete `work/jensen-huang/segments/*.mp4` first (existence cache), then `python tools/assemble_episode.py --episode work/jensen-huang`; after changing `shots.json` run `--shot-lengths-only` before rendering (builder reads `shot_lengths.json`).
 - QC: `python tools/qc_episode.py --episode work/jensen-huang --master work/jensen-huang/jensen-huang.mp4 --json work/jensen-huang/qc/qc-episode-models.json`.
 - Use system `python` for pytest (`.venv` has no pytest). Blender: `tools/blender-4.5.15-windows-x64/blender.exe`.
-- Do not claim the 17-beat master is current until the background chain in STATE finished and QC was read.
+- 17-beat master is current and QC-read (2026-11-15 16:30); known pilot leader defect in STATE.
 - Obsidian notes: `E:/Documents/Obsidian Vault/AI-SECOND-BRAIN/PROJECTS/longform-explainer/` (STATUS, HANDOFF, DECISIONS).
 - Memory protocol: update `.memory/STATE.md`, `HANDOFF.md` and Obsidian only at milestones or session end, never for small questions; bullets only.
