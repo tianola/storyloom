@@ -88,7 +88,7 @@
   "qc": {
     "gate": "tools/qc_episode.py",
     "duration_tolerance_seconds": 2.0,
-    "captions_required": false,
+    "captions_required": true,
     "licence_required_keys": ["id", "provider", "license", "url", "file"],
     "rule": "an episode is finished when the gate prints no errors, not when the render exits zero"
   },

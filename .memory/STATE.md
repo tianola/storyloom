@@ -1,5 +1,5 @@
 # STATE
-- Updated: 2026-11-15 (night). Phases 0-5 of `docs/COMPLETION-PLAN.md` done and verified.
+- Updated: 2026-11-15 (night). Phases 0-6 of `docs/COMPLETION-PLAN.md` done and verified.
 - User instruction: finish the code first; NO new episode until the pipeline is complete. Jensen episode is the regression fixture only.
 - Blender for tests in a worktree: `export BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe` (the exe is gitignored, so it only exists in the main checkout). Unset it for `test_blender_config`.
 
@@ -11,7 +11,14 @@
 - Phase 0 so far: `archive_source` `used_urls` was a set read as a dict (44 failures -> ~16).
 
 ## Next (in order)
-- 6 word timings (feeds `word:` times) + captions + loudness; 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
+- 7 archive layer; 8 `tools/make_episode.py`; 9 clean-up/docs (stray root files: `qc_findings.txt`, `test_import.py`, `fix_licence.py`, `undefined`, ...).
+
+## Phase 6: DONE
+- `tools/captions.py` (word timings estimated from the waveform, `vo/words.json`, per-beat `word_timing.json` for the storyboard builder, `captions.srt/.vtt`, soft `mov_text` stream, `--burn`), `tools/audio_finish.py` (per-utterance levelling to the median, bounded 9 dB; synthesised whoosh/thud under cuts; level ride across archive cuts measured like the gate), `assemble_episode.py` flags `--remux`, `--out`, `--no-finish`, `--burn-captions`. `qc.captions_required` is now true.
+- Proven on a scratch copy of the Jensen episode (main's files untouched): `assemble_episode.py --episode <copy> --remux --out remuxed.mp4` then `qc_episode.py`: PASS, 0 errors, 3 warnings (was 8); `no_captions` and the 4 `cut_loudness_jump` are gone, remaining are the 2 long archive shots and archive share. The real master in main has NOT been re-muxed.
+- Finding: the 3+ LU jumps were sentence-end declination inside 1 s windows (every cut steps 1-7 LU), not level differences between sentences (those were < 1 LU); only the ride fixes it.
+- Lesson: a heredoc `
+` inside Python source became a real newline and broke `storyboard_beats.py` for a while; the gate test now also asserts no SyntaxError.
 
 ## Phase 5: DONE
 - `tools/qc_script.py --episode DIR` (bounds in `workflow/style.json` `script`): length 600-900 s at 2.36 words/s, hook <= 10 s, chapters (`script/chapters.json`, >= 3), sentence length, speech-safe text (no digits/symbols; product names like NV1 only warn), every line cites a verified claim in `research/sources.md` via `script/claims.json` or is declared `"framing"`; sensitive lines (personal life, marriage, ...) always need a source. Writes `qc/script-qc.json`, exit 1 on errors. Jensen: 24 errors (188 s, hook 14.8 s, no chapters, every line unsourced since `sources.md` is empty, u018 sensitive). Tests: `python/test_qc_script.py` (8).

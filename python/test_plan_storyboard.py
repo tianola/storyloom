@@ -98,6 +98,8 @@ class BuilderGate(unittest.TestCase):
                                  capture_output=True, text=True)
             self.assertNotEqual(run.returncode, 0)
             self.assertIn("refused before any scene was built", run.stdout + run.stderr)
+            self.assertNotIn("SyntaxError", run.stdout + run.stderr)
+            self.assertIn("unknown scene", run.stdout + run.stderr)
             self.assertFalse(list((ep / "out").glob("*")) if (ep / "out").exists() else [])
 
 

@@ -223,7 +223,9 @@ class TimelineRules(unittest.TestCase):
     def test_missing_captions_are_reported_not_assumed(self):
         findings = qc_episode.check_captions(subtitle_streams=0, contract=CONTRACT)
         self.assertEqual(len(findings), 1)
-        self.assertEqual(findings[0].severity, "warn")
+        self.assertEqual(findings[0].severity, "error", "the pipeline now writes captions, so a master without them is a breach")
+        relaxed = {**CONTRACT, "qc": {**CONTRACT["qc"], "captions_required": False}}
+        self.assertEqual(qc_episode.check_captions(subtitle_streams=0, contract=relaxed)[0].severity, "warn")
         self.assertEqual(qc_episode.check_captions(subtitle_streams=1, contract=CONTRACT), [])
 
 

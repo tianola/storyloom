@@ -32,11 +32,15 @@ import archive_ingest
 import look_pass
 import loudness
 import music_bed
+import audio_finish
+import captions
 
 import archive_ingest
 import look_pass
 import loudness
 import music_bed
+import audio_finish
+import captions
 
 from workflow.capabilities import REFUSED, stage_report  # noqa: E402
 from workflow.config import style_contract  # noqa: E402
@@ -568,24 +572,29 @@ def concat_segments(episode, manifest):
     return video_only
 
 
-def mux_final(episode, video_path, audio_path):
+def mux_final(episode, video_path, audio_path, output=None, captions_path=None):
     """Combine video and audio into the final episode, at the contract's loudness and rate.
 
     The video is copied, never re-encoded: the grade already happened in `look_pass`, and a
     second x264 pass would only cost quality and an hour. Everything here is an audio decision.
     """
     print("Muxing final episode...", flush=True)
-    output = master(episode)
+    output = Path(output) if output else master(episode)
     measured = loudness.measure(audio_path)
     print(f"  Narration measures {measured['input_i']} LUFS, {measured['input_tp']} dBFS true peak; "
           f"target {AUDIO['integrated_lufs_target']} LUFS", flush=True)
+    inputs = ["-i", str(video_path), "-i", str(audio_path)]
+    maps, subs = [], []
+    if captions_path:
+        # a soft subtitle stream: players offer it, nothing is burned into the picture
+        inputs += ["-i", str(captions_path)]
+        maps = ["-map", "0:v", "-map", "1:a", "-map", "2:0"]
+        subs = ["-c:s", "mov_text", "-metadata:s:s:0", "language=eng"]
     subprocess.run([
-        "ffmpeg", "-y",
-        "-i", str(video_path),
-        "-i", str(audio_path),
+        "ffmpeg", "-y", *inputs, *maps,
         "-filter:a", loudness.loudnorm_filter(measured),
         "-ac", str(AUDIO["channels_min"]),
-        "-c:v", "copy", "-c:a", "aac",
+        "-c:v", "copy", "-c:a", "aac", *subs,
         "-b:a", "192k",
         "-shortest",
         "-movflags", "+faststart",
@@ -608,10 +617,10 @@ def probe_duration(path):
     return float(result.stdout.strip())
 
 
-def verify(episode, manifest):
+def verify(episode, manifest, output=None):
     """Verify the final episode."""
     print("\n=== Verification ===", flush=True)
-    output = master(episode)
+    output = Path(output) if output else master(episode)
     audio_dur = probe_duration(vo_dir(episode) / "full-audio.wav")
     episode_dur = probe_duration(output)
     expected_dur = manifest["totalSamples"] / narration_rate(manifest)
@@ -646,6 +655,13 @@ def main(argv=None, host=None, root=None):
     parser.add_argument("--episode", required=True,
                         help="episode directory or slug under work/ (required: this tool has no "
                              "current episode of its own)")
+    parser.add_argument("--remux", action="store_true",
+                        help="redo only the sound and captions over the video already graded")
+    parser.add_argument("--out", help="write the master here instead of the episode's own path")
+    parser.add_argument("--no-finish", action="store_true",
+                        help="skip sentence levelling, level rides and transition sounds")
+    parser.add_argument("--burn-captions", action="store_true",
+                        help="also burn the captions into the picture (re-encodes the video)")
     parser.add_argument("--shot-lengths-only", action="store_true",
                         help="publish the per-beat narration lengths and stop, without building")
     args = parser.parse_args(argv)
@@ -669,15 +685,31 @@ def main(argv=None, host=None, root=None):
         return 0
 
     voice_path = concat_audio(episode, manifest)
+    if not args.no_finish:
+        print("Finishing the narration (levels, level rides, transitions)...", flush=True)
+        voice_path, _ = audio_finish.finish_voice(episode, manifest, json.loads(
+            (episode / "shots.json").read_text(encoding="utf-8")))
     audio_path = add_music_bed(voice_path, music_bed_path(episode),
                                vo_dir(episode) / "full-audio-with-bed.wav")
-    generate_cards(episode, manifest, shot_map)
-    ingest_archive(episode, manifest, shot_map, CONTRACT, root=root)
-    build_segments(episode, manifest, shot_map)
-    video_path = concat_segments(episode, manifest)
-    video_path = look_pass.apply(video_path, graded_path(episode))
-    mux_final(episode, video_path, audio_path)
-    verify(episode, manifest)
+    captions_path = captions.write_all(episode, manifest)
+    if args.remux:
+        video_path = graded_path(episode)
+        if not video_path.is_file():
+            print(f"assemble_episode: --remux needs the graded video {video_path}", file=sys.stderr)
+            return 1
+    else:
+        generate_cards(episode, manifest, shot_map)
+        ingest_archive(episode, manifest, shot_map, CONTRACT, root=root)
+        build_segments(episode, manifest, shot_map)
+        video_path = concat_segments(episode, manifest)
+        video_path = look_pass.apply(video_path, graded_path(episode))
+    output = Path(args.out) if args.out else master(episode)
+    mux_final(episode, video_path, audio_path, output=output, captions_path=captions_path)
+    if args.burn_captions:
+        burned = output.with_name(output.stem + "-burned.mp4")
+        captions.attach(output, captions_path, burned, burn=True)
+        print(f"  Burned captions: {burned}", flush=True)
+    verify(episode, manifest, output)
 
     print("\nDone!", flush=True)
     return 0
