@@ -1,7 +1,7 @@
 """Pilot for the "explainer" look: one unbroken move from a graphics card down to its cores.
 
     blender -b -P tools/blender/explainer_pilot.py                         # the video
-    blender -b -P tools/blender/explainer_pilot.py -- --still 2,7,10,13,16,20,25
+    blender -b -P tools/blender/explainer_pilot.py -- --still 1,4,7,10,13,17,23
         # half-resolution PNGs at those seconds: the look check before the render
 
 The shot answers one question without a cut: why is a GPU fast? The camera starts on
@@ -27,7 +27,7 @@ import look  # noqa: E402
 from kit import FPS  # noqa: E402
 
 OUT_DIR = PROJECT_ROOT / "work" / "explainer-pilot"
-SECONDS = 26.0
+SECONDS = 24.0
 DIE = (-0.2, 0.1, 0.52)      # centre of the die surface, in card space
 DIE_W = 0.90
 
@@ -38,11 +38,11 @@ def f(seconds):
 
 def build():
     path = [
-        (0.0, (8.5, -11.5, 6.5), (0.0, 0.0, 0.9)),
-        (5.0, (4.6, -7.0, 4.2), (-0.2, 0.1, 0.9)),
-        (9.0, (1.7, -3.0, 2.0), (-0.2, 0.1, 0.62)),
-        (13.0, (0.45, -1.15, 1.10), (-0.2, 0.1, 0.55)),
-        (17.0, (0.10, -0.74, 0.86), (-0.2, 0.1, 0.54)),
+        (0.0, (7.6, -10.2, 5.8), (0.0, 0.0, 0.9)),
+        (3.0, (4.6, -7.0, 4.2), (-0.2, 0.1, 0.9)),
+        (7.0, (1.7, -3.0, 2.0), (-0.2, 0.1, 0.62)),
+        (11.0, (0.45, -1.15, 1.10), (-0.2, 0.1, 0.55)),
+        (15.0, (0.10, -0.74, 0.86), (-0.2, 0.1, 0.54)),
         (SECONDS, (-0.66, -0.50, 0.80), (-0.16, 0.16, 0.54)),
     ]
     st = look.dark_stage(SECONDS, path, lens=35.0, fstop=9.0)
@@ -61,17 +61,17 @@ def build():
     for ob in [o for o in bpy.data.objects if o.name.startswith("card-gpu-die")]:
         bpy.data.objects.remove(ob, do_unlink=True)
     waves = 8
-    core_mats = [look.neon(f"core-wave{w}", look.WARM, 0.12, base=(0.05, 0.06, 0.08)) for w in range(waves)]
+    core_mats = [look.neon(f"core-wave{w}", look.WARM, 0.12, base=(0.10, 0.045, 0.012)) for w in range(waves)]
     city = hardware.core_city(
         "city", DIE, DIE_W, n=32, waves=waves, core_mats=core_mats,
         trace_x=look.signal_material("trace-x", F, axis="X", spacing=0.16, speed=0.20, lanes=1 / 0.028),
         trace_y=look.signal_material("trace-y", F, axis="Y", spacing=0.21, speed=0.16, lanes=1 / 0.028))
 
     # the take-apart, timed so each layer leaves just before the lens arrives
-    kit.move(card["fan"], f(4.2), f(7.0), (0.0, 1.5, 4.2))
-    kit.move(card["heatsink"], f(4.9), f(7.8), (0.0, 1.5, 3.4))
+    kit.move(card["fan"], f(2.0), f(4.6), (-3.2, 3.4, 3.0))
+    kit.move(card["heatsink"], f(2.6), f(5.4), (-3.2, 3.4, 1.9))
     lid = bpy.data.objects["card-gpu-g-lid"]
-    kit.move(lid, f(8.6), f(11.2), (1.5, 0.6, 1.2))
+    kit.move(lid, f(6.6), f(9.2), (-1.6, 1.4, 0.9))
 
     # In this look the off-white parts would be the brightest thing in frame; they are
     # furniture here, so they drop back and leave the light to the parts that work.
@@ -84,42 +84,42 @@ def build():
     x0, y0 = DIE[0] - DIE_W / 2 + pitch * 0.5, DIE[1] - DIE_W / 2 + pitch * 0.5
     steps = [(8 + k, 9) for k in range(12)] + [(19 - k, 10) for k in range(12)]
     hop.hide_render = True
-    hop.keyframe_insert("hide_render", frame=f(14.3) - 1)
+    hop.keyframe_insert("hide_render", frame=f(12.3) - 1)
     hop.hide_render = False
-    hop.keyframe_insert("hide_render", frame=f(14.3))
+    hop.keyframe_insert("hide_render", frame=f(12.3))
     for k, (i, j) in enumerate(steps):
         hop.location = (x0 + i * pitch, y0 + j * pitch, DIE[2] + pitch * 0.53)
-        hop.keyframe_insert("location", frame=f(14.3) + k * 4)
+        hop.keyframe_insert("location", frame=f(12.3) + k * 4)
     for fc in hop.animation_data.action.fcurves:
         for kp in fc.keyframe_points:
             kp.interpolation = "CONSTANT"
-    hop.keyframe_insert("hide_render", frame=f(17.9) - 1)
+    hop.keyframe_insert("hide_render", frame=f(15.9) - 1)
     hop.hide_render = True
-    hop.keyframe_insert("hide_render", frame=f(17.9))
+    hop.keyframe_insert("hide_render", frame=f(15.9))
 
     # All at once: every core fires on the same beat, with a one-frame shimmer between
     # diagonals so the field reads as many parts rather than one flashing slab.
     for w, m in enumerate(core_mats):
-        keys = [(1, 0.10), (f(18.0), 0.10)]
-        frame = f(18.2) + w
+        keys = [(1, 0.10), (f(16.0), 0.10)]
+        frame = f(16.2) + w
         while frame < F:
-            keys += [(frame, 0.16), (frame + 3, 1.35), (frame + 7, 1.35), (frame + 15, 0.16)]
+            keys += [(frame, 0.16), (frame + 3, 1.05), (frame + 7, 1.05), (frame + 15, 0.16)]
             frame += 22
         kit.pulse(m, keys)
 
     # tags: each names the layer the lens is about to pass
-    look.pill(st, "Graphics card", (2.6, -1.4, 0.45), (0.72, 0.80), start=0.8, until=4.4)
-    look.pill(st, "Fan and heatsink", (0.9, -1.2, 1.3), (0.70, 0.82), start=5.0, until=7.6,
+    look.pill(st, "Graphics card", (2.6, -1.4, 0.45), (0.72, 0.80), start=0.4, until=2.6)
+    look.pill(st, "Fan and heatsink", (0.9, -1.2, 1.3), (0.30, 0.84), start=2.9, until=5.4,
               follow=card["heatsink"])
-    look.pill(st, "GPU chip", (-0.2, 0.1, 0.80), (0.30, 0.78), start=7.9, until=10.6)
-    look.pill(st, "Silicon die", (DIE[0] + 0.25, DIE[1] - 0.25, DIE[2] + 0.03), (0.70, 0.78), start=11.6,
-              until=14.2)
-    look.pill(st, "One core", (DIE[0] - 0.02, DIE[1] - 0.16, DIE[2] + 0.04), (0.30, 0.74), start=14.6, until=17.6)
+    look.pill(st, "GPU chip", (-0.2, 0.1, 0.80), (0.30, 0.78), start=5.8, until=8.6)
+    look.pill(st, "Silicon die", (DIE[0] + 0.25, DIE[1] - 0.25, DIE[2] + 0.03), (0.70, 0.78), start=9.6,
+              until=12.2)
+    look.pill(st, "One core", (DIE[0] - 0.02, DIE[1] - 0.16, DIE[2] + 0.04), (0.30, 0.74), start=12.6, until=15.6)
 
-    look.hud_text(st, "One core at a time", (0.5, 0.90), size=0.040, start=14.4, until=17.8)
-    number = look.hud_text(st, "1", (0.5, 0.88), size=0.085, start=18.2, color=look.WARM, strength=2.4)
-    look.hud_text(st, "cores working in the same instant", (0.5, 0.795), size=0.032, start=18.2)
-    look.counter(number, 18.2, 22.0, lambda t: 1024 ** t)
+    look.hud_text(st, "One core at a time", (0.5, 0.90), size=0.050, start=12.4, until=15.8)
+    number = look.hud_text(st, "1", (0.5, 0.88), size=0.095, start=16.2, color=look.WARM, strength=2.4)
+    look.hud_text(st, "cores working in the same instant", (0.5, 0.785), size=0.040, start=16.2)
+    look.counter(number, 16.2, 19.6, lambda t: 1024 ** t)
     return st
 
 

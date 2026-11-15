@@ -25,6 +25,7 @@ sys.path.insert(0, str(HERE / "models"))
 import kit  # noqa: E402
 import hardware  # noqa: E402
 import sets  # noqa: E402
+import look  # noqa: E402
 from kit import FPS, placed  # noqa: E402
 
 EPISODE = PROJECT_ROOT / "work" / "jensen-huang"
@@ -53,8 +54,8 @@ def grow(ob, base_z, height, f0, f1):
 # ---------------------------------------------------------------------------
 
 def denny_den(sec):
-    st = kit.stage(sec, target=(0.1, 0, 0.95), radius=(7.6, 5.4), azimuth=(205, 238), height=(3.3, 2.3),
-                   lens=40, floor_grid=0.8, key_energy=2.0, fill=260.0)
+    st = look.orbit_stage(sec, target=(0.1, 0, 0.95), radius=(7.6, 5.4), azimuth=(205, 238), height=(3.3, 2.3),
+                   lens=40, floor_grid=0.8, gain=3.2)
     booth = sets.diner_booth()
     sets.figure("founder-a", (-0.65, 1.22, 0.0), facing=0.0, seated=True)
     sets.figure("founder-b", (0.65, 1.22, 0.0), facing=0.0, seated=True, jacket=kit.mid())
@@ -62,12 +63,12 @@ def denny_den(sec):
                 jacket=kit.mat("kit-denim", (0.10, 0.14, 0.22), roughness=0.8))
     # the idea on the napkin lights up as the sentence reaches "a bet on a wild idea"
     kit.pulse(booth["sketch_ink"], [(1, 0.0), (f(sec * 0.45), 0.0), (f(sec * 0.62), 5.0)])
-    kit.label(st, "San Jose, 1993", booth["napkin_xyz"], (0.3, 0.86), size=0.05, appear_at=f(sec * 0.55))
+    look.tag(st, "San Jose, 1993", booth["napkin_xyz"], (0.3, 0.86), size=0.040, appear_at=f(sec * 0.55))
 
 
 def leather_jacket(sec):
-    st = kit.stage(sec, target=(0.9, 0.4, 2.1), radius=(13.5, 11.5), azimuth=(-112, -84), height=(2.8, 2.4),
-                   lens=45, floor_grid=1.0)
+    st = look.orbit_stage(sec, target=(0.9, 0.4, 2.1), radius=(13.5, 11.5), azimuth=(-112, -84), height=(2.8, 2.4),
+                   lens=45, floor_grid=1.0, gain=2.6)
     kit.cyl("stage", (0, 0, 0.09), 3.4, 0.18, kit.slate(), verts=64)
     kit.cyl("stage-rim", (0, 0, 0.02), 3.5, 0.04, kit.accent(), verts=64)
     sets.figure("presenter", (-1.3, -0.6, 0.18), facing=math.radians(12), jacket=kit.epoxy(), scale=1.7)
@@ -82,22 +83,22 @@ def leather_jacket(sec):
                       kit.glow("bar-hot", 2.2) if last else kit.mid(), bevel=0)
         grow(bar, 1.05, h, f(0.4 + k * 0.45), f(1.2 + k * 0.45))
     kit.boxes("screen-axis", [placed((1.6, 1.78, 1.02), (5.6, 0.03, 0.02))], kit.base())
-    kit.label(st, "$3 trillion", (4.05, 1.72, 3.85), (0.5, 0.8), size=0.05, appear_at=f(5.2))
+    look.tag(st, "$3 trillion", (4.05, 1.72, 3.85), (0.5, 0.8), size=0.040, appear_at=f(5.2))
 
 
 def silicon_wafer(sec):
-    st = kit.stage(sec, target=(0.0, 0, 0.5), radius=(15.5, 12.5), azimuth=(-125, -94), height=(9.6, 7.2),
+    st = look.orbit_stage(sec, target=(0.0, 0, 0.5), radius=(15.5, 12.5), azimuth=(-125, -94), height=(9.6, 7.2),
                    floor_grid=1.0)
     kit.cyl("chuck", (0, 0, -0.14), 4.1, 0.28, kit.slate(), verts=96)
     w = hardware.wafer()
     hx, hy = w["hero_xy"]
     kit.move(w["hero"], f(2.5), f(6.5), (0, 0, 1.25))
-    kit.label(st, "Silicon wafer", (-2.6, -1.6, 0.08), (0.2, 0.16), size=0.05, appear_at=f(0.8))
-    kit.label(st, "One die = one chip", (hx, hy, 1.33), (0.74, 0.84), size=0.05, appear_at=f(6.6), follow=w["hero"])
+    look.tag(st, "Silicon wafer", (-2.6, -1.6, 0.08), (0.2, 0.16), size=0.040, appear_at=f(0.8))
+    look.tag(st, "One die = one chip", (hx, hy, 1.33), (0.74, 0.84), size=0.040, appear_at=f(6.6), follow=w["hero"])
 
 
 def nv1_chip(sec):
-    st = kit.stage(sec, target=(0.9, 0.2, 1.0), radius=(16.0, 14.0), azimuth=(-114, -90), height=(7.0, 5.6),
+    st = look.orbit_stage(sec, target=(0.9, 0.2, 1.0), radius=(16.0, 14.0), azimuth=(-114, -90), height=(7.0, 5.6),
                    floor_grid=0.9)
     kit.box("board", (-1.9, 0, 0.06), (4.6, 4.6, 0.10), kit.pcb(), bevel=0.02)
     chip = hardware.qfp_chip("nv1", size=2.6, text="NV1", seed=2)
@@ -120,38 +121,38 @@ def nv1_chip(sec):
     kit.spin(tri, st.frames, 0.22)
     kit.appear(patch, f(3.0), f(3.6))
     kit.appear(tri, f(5.4), f(6.0))
-    kit.label(st, "NV1: curved patches", (2.2, 0.9, 2.3), (0.58, 0.9), size=0.045, appear_at=f(3.4))
-    kit.label(st, "Everyone else: triangles", (4.9, 0.9, 0.55), (0.76, 0.14), size=0.045, appear_at=f(5.8))
+    look.tag(st, "NV1: curved patches", (2.2, 0.9, 2.3), (0.58, 0.9), size=0.040, appear_at=f(3.4))
+    look.tag(st, "Everyone else: triangles", (4.9, 0.9, 0.55), (0.76, 0.14), size=0.040, appear_at=f(5.8))
 
 
 def riva_chip(sec):
-    st = kit.stage(sec, target=(0, 0, 1.15), radius=(13.2, 11.0), azimuth=(-122, -92), height=(7.6, 6.0),
+    st = look.orbit_stage(sec, target=(0, 0, 1.15), radius=(13.2, 11.0), azimuth=(-122, -92), height=(7.6, 6.0),
                    floor_grid=0.8)
     chip = hardware.qfp_chip("riva", size=3.2, leads_per_side=24, text="RIVA 128", seed=4)
     kit.move(chip["lid"], f(1.6), f(3.4), (0, 0, 2.3))
     kit.move(chip["wires"], f(2.6), f(4.2), (0, 0, 0.55))
     kit.move(chip["die"], f(2.6), f(4.2), (0, 0, 0.55))
     top = chip["top"]
-    kit.label(st, "Plastic package", (1.25, -1.5, top + 2.3), (0.8, 0.88), size=0.045, appear_at=f(3.5), follow=chip["lid"])
-    kit.label(st, "Silicon die", (0.3, -0.4, top + 0.52), (0.14, 0.56), size=0.045, appear_at=f(4.4), follow=chip["die"])
-    kit.label(st, "Pins to the board", (-1.2, -1.9, 0.08), (0.2, 0.14), size=0.045, appear_at=f(5.6))
+    look.tag(st, "Plastic package", (1.25, -1.5, top + 2.3), (0.8, 0.88), size=0.040, appear_at=f(3.5), follow=chip["lid"])
+    look.tag(st, "Silicon die", (0.3, -0.4, top + 0.52), (0.14, 0.56), size=0.040, appear_at=f(4.4), follow=chip["die"])
+    look.tag(st, "Pins to the board", (-1.2, -1.9, 0.08), (0.2, 0.14), size=0.040, appear_at=f(5.6))
 
 
 def geforce_chip(sec):
-    st = kit.stage(sec, target=(0, -0.3, 1.5), radius=(17.5, 14.5), azimuth=(-122, -94), height=(10.0, 7.6),
+    st = look.orbit_stage(sec, target=(0, -0.3, 1.5), radius=(17.5, 14.5), azimuth=(-122, -94), height=(10.0, 7.6),
                    floor_grid=1.2)
     card = hardware.graphics_card(chip_text="GeForce 256")
     kit.spin(card["rotor"], st.frames, 9.0)
     kit.move(card["fan"], f(2.2), f(4.4), (0, 0, 2.7))
     kit.move(card["heatsink"], f(2.8), f(5.0), (0, 0, 1.35))
     gx, gy, gz = card["gpu_xyz"]
-    kit.label(st, "Fan + heatsink", (1.2, -1.5, 2.4), (0.8, 0.76), size=0.045, appear_at=f(5.0), follow=card["heatsink"])
-    kit.label(st, "GPU", (gx, gy, gz + 0.1), (0.1, 0.5), size=0.055, appear_at=f(5.8))
-    kit.label(st, "Plugs into the PC", (-1.1, -2.55, 0.34), (0.36, 0.1), size=0.045, appear_at=f(7.6))
+    look.tag(st, "Fan + heatsink", (1.2, -1.5, 2.4), (0.8, 0.76), size=0.040, appear_at=f(5.0), follow=card["heatsink"])
+    look.tag(st, "GPU", (gx, gy, gz + 0.1), (0.1, 0.5), size=0.040, appear_at=f(5.8))
+    look.tag(st, "Plugs into the PC", (-1.1, -2.55, 0.34), (0.36, 0.1), size=0.040, appear_at=f(7.6))
 
 
 def parallel_cores(sec):
-    st = kit.stage(sec, target=(0, -0.2, 0.9), radius=(15.5, 13.6), azimuth=(-103, -80), height=(10.0, 8.6),
+    st = look.orbit_stage(sec, target=(0, -0.2, 0.9), radius=(15.5, 13.6), azimuth=(-103, -80), height=(10.0, 8.6),
                    floor_grid=1.1)
     F = st.frames
     for x, tag in ((-2.9, "cpu"), (2.9, "gpu")):
@@ -176,18 +177,18 @@ def parallel_cores(sec):
             t0 = round(k * step) + 4 + r
             keys += [(max(2, t0 - 3), 0.5 if k else 0.05), (t0, 4.5), (t0 + 14, 4.5), (t0 + 26, 0.5)]
         kit.pulse(m, keys)
-    kit.label(st, "CPU: 4 cores, in turn", (-2.9, 2.0, 0.3), (0.28, 0.88), size=0.045, appear_at=f(0.6))
-    kit.label(st, "GPU: thousands, at once", (2.9, 2.0, 0.3), (0.72, 0.88), size=0.045, appear_at=f(2.2))
+    look.tag(st, "CPU: 4 cores, in turn", (-2.9, 2.0, 0.3), (0.28, 0.88), size=0.040, appear_at=f(0.6))
+    look.tag(st, "GPU: thousands, at once", (2.9, 2.0, 0.3), (0.72, 0.88), size=0.040, appear_at=f(2.2))
 
 
 def cuda_stack(sec):
-    st = kit.stage(sec, target=(0.4, 0, 2.3), radius=(16.5, 14.0), azimuth=(-108, -82), height=(6.6, 5.4),
+    st = look.orbit_stage(sec, target=(0.4, 0, 2.3), radius=(16.5, 14.0), azimuth=(-108, -82), height=(6.6, 5.4),
                    floor_grid=1.2)
     chip = hardware.bga_chip("gpu", size=3.6, text="GPU")
     del chip
-    ink = kit.slate()
-    layers = [("CUDA", 1.75, kit.accent(), ink), ("Libraries", 2.85, kit.base(), ink),
-              ("Applications", 3.95, kit.base(), ink)]
+    ink, lit = kit.slate(), kit.mat("stack-ink", (0.95, 0.95, 0.93), emission=1.3)
+    layers = [("CUDA", 1.75, kit.accent(), ink), ("Libraries", 2.85, kit.slate(), lit),
+              ("Applications", 3.95, kit.slate(), lit)]
     for k, (text, z, material, text_mat) in enumerate(layers):
         slab = kit.box(f"layer-{text}", (0, 0, z), (4.6, 4.6, 0.46), material, bevel=0.05)
         word = kit.flat_text(f"text-{text}", text, (0, -2.305, z), 0.34, text_mat, rot=(math.radians(90), 0, 0))
@@ -195,12 +196,12 @@ def cuda_stack(sec):
         g.location = (0, 0, 5.0)
         kit.move(g, f(1.0 + k * 1.6), f(2.2 + k * 1.6), (0, 0, -5.0))
         kit.appear(g, f(1.0 + k * 1.6), f(1.3 + k * 1.6))
-    kit.label(st, "General-purpose code", (2.3, -2.3, 3.95), (0.8, 0.9), size=0.045, appear_at=f(6.2))
-    kit.label(st, "Graphics chip", (1.8, -1.8, 0.4), (0.84, 0.2), size=0.045, appear_at=f(0.6))
+    look.tag(st, "General-purpose code", (2.3, -2.3, 3.95), (0.8, 0.9), size=0.040, appear_at=f(6.2))
+    look.tag(st, "Graphics chip", (1.8, -1.8, 0.4), (0.84, 0.2), size=0.040, appear_at=f(0.6))
 
 
 def deep_learning(sec):
-    st = kit.stage(sec, target=(0, 0, 3.7), radius=(17.5, 15.8), azimuth=(-102, -80), height=(4.4, 4.0),
+    st = look.orbit_stage(sec, target=(0, 0, 3.7), radius=(17.5, 15.8), azimuth=(-102, -80), height=(4.4, 4.0),
                    lens=45, floor_grid=1.3)
     net = sets.neural_network()
     F = st.frames
@@ -212,12 +213,12 @@ def deep_learning(sec):
             keys += [(max(2, t0 - 5), 0.4 if wave else 0.15), (t0, 6.0), (t0 + 10, 6.0), (t0 + 24, 0.8)]
         kit.pulse(m, keys)
     first, last = net["positions"][0], net["positions"][n - 1]
-    kit.label(st, "Image in", first[-1], (0.13, 0.9), size=0.045, appear_at=f(0.4))
-    kit.label(st, "Answer out", last[-1], (0.87, 0.9), size=0.045, appear_at=f(1.6))
+    look.tag(st, "Image in", first[-1], (0.13, 0.9), size=0.040, appear_at=f(0.4))
+    look.tag(st, "Answer out", last[-1], (0.87, 0.9), size=0.040, appear_at=f(1.6))
 
 
 def dgx_cluster(sec):
-    st = kit.stage(sec, target=(0, -0.8, 2.5), radius=(15.0, 13.0), azimuth=(-126, -100), height=(5.0, 4.2),
+    st = look.orbit_stage(sec, target=(0, -0.8, 2.5), radius=(15.0, 13.0), azimuth=(-126, -100), height=(5.0, 4.2),
                    lens=42, floor_grid=1.2)
     racks = []
     for k, x in enumerate((-2.7, 0.0, 2.7)):
@@ -228,25 +229,25 @@ def dgx_cluster(sec):
                 part.location = (x, 0, 0)
         if rack["drawer"] is not None:
             kit.move(rack["drawer"], f(1.2), f(3.4), (0, -2.3, 0))
-    kit.label(st, "8 GPUs in one server", (0.0, -2.4, 2.75), (0.5, 0.92), size=0.045, appear_at=f(3.5), follow=racks[1]["drawer"])
+    look.tag(st, "8 GPUs in one server", (0.0, -2.4, 2.75), (0.5, 0.92), size=0.040, appear_at=f(3.5), follow=racks[1]["drawer"])
 
 
 def blackwell_chip(sec):
-    st = kit.stage(sec, target=(0, 0, 1.6), radius=(15.0, 12.4), azimuth=(-122, -94), height=(8.6, 6.4),
+    st = look.orbit_stage(sec, target=(0, 0, 1.6), radius=(15.0, 12.4), azimuth=(-122, -94), height=(8.6, 6.4),
                    floor_grid=1.0)
     pkg = hardware.ai_package("blackwell")
     kit.move(pkg["lid"], f(1.4), f(3.4), (0, 0, 2.6))
     for k, layer in enumerate(pkg["memory"]):
         kit.move(layer, f(3.2 + k * 0.25), f(4.8 + k * 0.25), (0, 0, 0.28 + k * 0.30))
     mx, my = pkg["memory_xy"]
-    kit.label(st, "Heat spreader", (1.4, -1.5, 2.95), (0.82, 0.86), size=0.045, appear_at=f(3.4), follow=pkg["lid"])
-    kit.label(st, "Logic die", (0.0, -0.9, 0.38), (0.5, 0.09), size=0.045, appear_at=f(4.2))
-    kit.label(st, "Stacked memory", (mx, -0.9, 1.75), (0.84, 0.56), size=0.045, appear_at=f(5.6), follow=pkg["memory"][-1])
-    kit.label(st, "Silicon interposer", (-1.55, -1.3, 0.3), (0.17, 0.3), size=0.045, appear_at=f(7.0))
+    look.tag(st, "Heat spreader", (1.4, -1.5, 2.95), (0.82, 0.86), size=0.040, appear_at=f(3.4), follow=pkg["lid"])
+    look.tag(st, "Logic die", (0.0, -0.9, 0.38), (0.5, 0.09), size=0.040, appear_at=f(4.2))
+    look.tag(st, "Stacked memory", (mx, -0.9, 1.75), (0.84, 0.56), size=0.040, appear_at=f(5.6), follow=pkg["memory"][-1])
+    look.tag(st, "Silicon interposer", (-1.55, -1.3, 0.3), (0.19, 0.3), size=0.040, appear_at=f(7.0))
 
 
 def flat_org(sec):
-    st = kit.stage(sec, target=(0, 0, 0.9), radius=(19.0, 16.5), azimuth=(-118, -90), height=(12.0, 9.6),
+    st = look.orbit_stage(sec, target=(0, 0, 0.9), radius=(19.0, 16.5), azimuth=(-118, -90), height=(12.0, 9.6),
                    floor_grid=1.1)
     kit.cyl("ceo-plinth", (0, 0, 0.22), 0.62, 0.44, kit.accent(), verts=40)
     kit.ico("ceo-head", (0, 0, 0.86), 0.34, kit.accent(), subdivisions=1)
@@ -265,13 +266,13 @@ def flat_org(sec):
                  kit.rods(f"ring{ri}-links", links, 0.018, kit.accent()))
         g = kit.group(f"ring{ri}", parts)
         kit.appear(g, f(start + ri * 1.8), f(start + ri * 1.8 + 0.9))
-    kit.label(st, "60 direct reports", (5.2, -0.4, 0.75), (0.82, 0.88), size=0.045, appear_at=f(5.6))
-    kit.label(st, "No layers in between", (-1.4, -0.9, 0.08), (0.2, 0.82), size=0.045, appear_at=f(7.2))
+    look.tag(st, "60 direct reports", (5.2, -0.4, 0.75), (0.82, 0.88), size=0.040, appear_at=f(5.6))
+    look.tag(st, "No layers in between", (-1.4, -0.9, 0.08), (0.2, 0.82), size=0.040, appear_at=f(7.2))
 
 
 def nvidia_hq(sec):
-    kit.stage(sec, target=(0, 0, 1.4), radius=(27.0, 22.0), azimuth=(-118, -84), height=(13.5, 9.5), lens=40,
-              floor_grid=2.0, key_energy=4.5)
+    look.orbit_stage(sec, target=(0, 0, 1.4), radius=(27.0, 22.0), azimuth=(-118, -84), height=(13.5, 9.5), lens=40,
+              floor_grid=2.0, gain=3.0)
     sets.campus_building()
 
 
