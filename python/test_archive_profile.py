@@ -36,6 +36,11 @@ from workflow.archive import mix_findings, profile, require_mix, resolve_mode  #
 from workflow.config import style_contract  # noqa: E402
 
 CONTRACT = style_contract(ROOT)
+# The shipped contract has no archive floor (owner decision 2026-11-17: archive is evidence, not a
+# quota). The floor machinery stays, so it is exercised against a contract that declares one.
+FLOORED = json.loads(json.dumps(CONTRACT))
+FLOORED["archive"]["episode_profile"]["mix"]["min_share"]["archive"] = 0.20
+FLOORED["archive"]["episode_profile"]["mix"]["min_per_act"]["archive"] = 1
 
 
 def stripped(*keys):
@@ -109,15 +114,13 @@ class TestVisualMix(unittest.TestCase):
                          "the taxonomy is contract data now: the render queue and the canvas "
                          "test read it instead of each carrying its own tuple")
 
-    def test_the_default_mix_asks_for_some_archive_time(self):
-        """A profile whose archival share is zero is a profile that changes nothing.
-
-        Checked as data rather than as a constant in this file so that lowering the share is a
-        visible edit to style.json, not a test edit.
-        """
+    def test_the_default_mix_sets_no_archive_quota(self):
+        """A share floor is what filled the ask-chatgpt cut with generic clips; the shipped
+        profile asks for none, and a film with no archive at all draws no finding from it."""
         mix = profile(CONTRACT)["mix"]
-        self.assertGreater(float(mix["min_share"]["archive"]), 0.0)
-        self.assertLessEqual(float(mix["min_share"]["archive"]), 1.0)
+        self.assertEqual(float(mix["min_share"]["archive"]), 0.0)
+        self.assertEqual(int(mix["min_per_act"]["archive"]), 0)
+        self.assertEqual(mix_findings(shots(**{"3d": [(0.0, 540.0)]}), CONTRACT), [])
 
     def test_the_share_is_measured_in_screen_seconds_not_shot_counts(self):
         """Counts let a film be carried by three one-second inserts over ninety 20-second beats.
@@ -344,13 +347,13 @@ class TestMixObligation(unittest.TestCase):
                "manim": [(370.0, 60.0)]})
 
     def test_a_timeline_that_meets_the_obligation_reports_nothing(self):
-        self.assertEqual(mix_findings(self.clean_timeline(), CONTRACT), [])
+        self.assertEqual(mix_findings(self.clean_timeline(), FLOORED), [])
 
     def test_an_empty_timeline_is_refused_not_passed(self):
         """A build with no shots is a build that has not started, and reporting "no archive"
         about it would blame the layer for the assembler."""
         with self.assertRaises(ValueError):
-            mix_findings([], CONTRACT)
+            mix_findings([], FLOORED)
 
     def test_a_3d_only_film_names_the_missing_layer_once(self):
         """One blocking code, not three, so the report says what to fix.
@@ -359,7 +362,7 @@ class TestMixObligation(unittest.TestCase):
         and pushes the reader to compare numbers instead of adding the layer.
         """
         timeline = shots(**{"3d": [(0.0, 240.0), (240.0, 300.0)]})
-        found = mix_findings(timeline, CONTRACT)
+        found = mix_findings(timeline, FLOORED)
         self.assertEqual([f.code for f in found], ["archive_layer_missing"])
         self.assertEqual(found[0].severity, "warning",
                          "warn mode reports what closed would refuse, without refusing it")
@@ -372,7 +375,7 @@ class TestMixObligation(unittest.TestCase):
         """
         timeline = shots(**{"3d": [(i * 20.0, 20.0) for i in range(12)],
                             "archive": [(10.0, 2.0), (150.0, 2.0), (300.0, 2.0)]})
-        found = mix_findings(timeline, CONTRACT)
+        found = mix_findings(timeline, FLOORED)
         self.assertIn("archive_share_low", [f.code for f in found])
 
     def test_an_act_with_no_archival_shot_is_named_by_its_bounds(self):
@@ -383,7 +386,7 @@ class TestMixObligation(unittest.TestCase):
         """
         timeline = shots(**{"3d": [(0.0, 120.0), (120.0, 120.0), (300.0, 240.0)],
                             "archive": [(10.0, 60.0)]})
-        found = mix_findings(timeline, CONTRACT)
+        found = mix_findings(timeline, FLOORED)
         self.assertIn("archive_act_missing", [f.code for f in found])
         message = [f.message for f in found if f.code == "archive_act_missing"][0]
         self.assertIn("270", message)
@@ -397,19 +400,19 @@ class TestMixObligation(unittest.TestCase):
         timeline = shots(**{"3d": [(0.0, 200.0), (200.0, 100.0)],
                             "archive": [(10.0, 60.0), (300.0, 80.0)],
                             "stock": [(120.0, 60.0)]})
-        found = mix_findings(timeline, CONTRACT)
+        found = mix_findings(timeline, FLOORED)
         self.assertIn("layer_unknown", [f.code for f in found])
         self.assertIn("stock", [f.message for f in found if f.code == "layer_unknown"][0])
 
     def test_off_reports_nothing_at_all(self):
         timeline = shots(**{"3d": [(0.0, 540.0)]})
-        self.assertEqual(mix_findings(timeline, CONTRACT, mode="off"), [])
+        self.assertEqual(mix_findings(timeline, FLOORED, mode="off"), [])
 
     def test_closed_refuses_and_warn_does_not(self):
         timeline = shots(**{"3d": [(0.0, 540.0)]})
-        require_mix(timeline, CONTRACT, mode="warn")
+        require_mix(timeline, FLOORED, mode="warn")
         with self.assertRaises(ValueError) as caught:
-            require_mix(timeline, CONTRACT, mode="closed")
+            require_mix(timeline, FLOORED, mode="closed")
         self.assertIn("archive_layer_missing", str(caught.exception))
 
     def test_the_act_partition_is_the_same_one_the_finding_names(self):
@@ -419,7 +422,7 @@ class TestMixObligation(unittest.TestCase):
         _low, high = profile(CONTRACT)["mix"]["act_seconds"]
         total = 450.0
         self.assertLessEqual(total / 2, high)
-        self.assertEqual(mix_findings(self.clean_timeline(), CONTRACT), [])
+        self.assertEqual(mix_findings(self.clean_timeline(), FLOORED), [])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,120 @@
+{
+  "name": "presentation-patterns",
+  "status": "read before writing any beat",
+  "provenance": "Pasted by the user on 2026-11-12 from a screenshot of a prompt gallery. The five tagged fields are the pattern and are kept as given. The short UI fragments were damaged by OCR: ui_labels is what they read as, ui_labels_raw keeps them as they arrived so nobody mistakes a reconstruction for a source.",
+  "brief_form": ["context", "task", "rules", "output", "input"],
+  "shared_reading": "Every beat brief is written in these five fields before any frame is built. A beat that cannot say who it is for and what it must leave out is filler, not a beat.",
+  "house_style_override": "Two of the six ask for a look that is not ours: soft studio product lighting (photo-teardown) and a bright palette sized for a phone screen (mini-world). Where a pattern's look disagrees with workflow/style.json, the style contract wins and only the pattern's structure is adopted.",
+
+  "patterns": [
+    {
+      "id": "photo-teardown",
+      "title": "The Photo Teardown",
+      "subject_example": "Quadcopter Drone",
+      "ui_labels": ["Exploded", "Labels", "Gimbal camera", "Tap a part"],
+      "ui_labels_raw": ["Expkodc", "Labets", "Tap atell + GP5", "Carcon franiE", "Rrmm chal", "Gimbul CaTHHM"],
+      "context": "I'm uploading a photo of an object I own and I want to see how it's built inside.",
+      "task": "Rebuild the object as an interactive 3D model in one HTML file with three.js. Add an Explode button that pulls every part apart, and label each part with what it does.",
+      "rules": "Build every part from code so the file runs offline. Use soft studio lighting so it looks like a product render.",
+      "output": "One HTML file I can open, spin, zoom and take apart.",
+      "input": "[UPLOAD A PHOTO OF A GADGET, WATCH, SHOE OR TOY]",
+      "pipeline_use": {
+        "applies_when": "a beat shows a physical object the viewer could own or recognise - a thruster, a suit, a drill, a phone",
+        "obligation": "the object is built as an exterior and then opened: every part that carries the explanation separates on camera and gets a label naming what it does. Parts drifting apart with no labels is an animation, not a teardown.",
+        "enforced_by": "builder",
+        "adjacent_existing_check": "python/test_manim_labels.py already fails a label collision, and tools/blender/techniques/lighting.py is what replaces this pattern's studio lighting"
+      }
+    },
+    {
+      "id": "product-viewer",
+      "title": "The Product Viewer",
+      "subject_example": "Over-Ear Headphones",
+      "ui_labels": ["Features", "Feature hotspots"],
+      "ui_labels_raw": ["Festures", "Fols Hattenges"],
+      "context": "I sell [PRODUCT] online and flat photos can't show buyers what it really looks like.",
+      "task": "Build a 3D viewer of my product that buyers can rotate, with colour swatches that repaint it live and clickable hotspots that explain each feature.",
+      "rules": "Keep it fast on a phone and match my brand colours [COLOURS].",
+      "output": "One HTML file plus the embed code to paste into my store page.",
+      "input": "[PRODUCT PHOTOS + 3 FEATURES TO HIGHLIGHT]",
+      "pipeline_use": {
+        "applies_when": "an episode is about a thing whose features are the subject - a spacecraft, a lander, an instrument",
+        "obligation": "the camera orbits slowly enough to read and names the features in order, one sentence each, so the viewer always knows which part is being talked about. The house three colours stay; this pattern's brand-colour swatches do not apply to an episode.",
+        "enforced_by": "builder",
+        "adjacent_existing_check": "style.json palette.count_max is 3 and camera.max_deg_per_second is 4.0, which together bound the orbit this pattern asks for"
+      }
+    },
+    {
+      "id": "how-it-works",
+      "title": "The How It Works Model",
+      "subject_example": "How a Car Engine Works",
+      "ui_labels": ["Play", "Label", "Spark plug", "Intake valve", "Exhaust valve", "Piston", "Connecting rod", "Crankshaft", "Intake", "Compression", "Power", "Exhaust", "The piston rises and pushes the burnt gas out"],
+      "ui_labels_raw": ["Labcla", "Comp.63-r", "Fower"],
+      "context": "I need to explain [TOPIC, e.g. how a car engine or the heart works] to people who switch off at diagrams.",
+      "task": "Build an interactive 3D model of it, with a Play button that runs the process step by step and parts that show a one-line explanation when clicked.",
+      "rules": "Write every explanation in plain words a 12-year-old understands and keep each step under 10 seconds.",
+      "output": "One HTML file I can share with a class, a team or a client.",
+      "input": "[TOPIC + WHO IT'S FOR]",
+      "pipeline_use": {
+        "applies_when": "any beat whose claim is about how something works rather than what it looks like - an engine, a thruster, a heat shield, a valve, a body",
+        "obligation": "the beat opens the thing: at least one interior view, cutaway, section or exploded, with a label naming what each visible part does, then the process run in ordered steps, each held under its ceiling. A mechanism shown only from the outside is not finished, however good the outside looks.",
+        "numbers": { "step_ceiling_seconds": 10.0, "reading_age_years": 12 },
+        "enforced_by": "builder",
+        "adjacent_existing_check": "style.json rhythm.max_shot_seconds is 20.0, so the 10 s step ceiling is the tighter bound inside a shot, and qc_episode's slow_shot advisory measures whether anything is actually moving during it"
+      }
+    },
+    {
+      "id": "data-city",
+      "title": "The Data City",
+      "subject_example": "Store Sales 2026",
+      "ui_labels": ["Fly-through", "Top stories"],
+      "ui_labels_raw": ["Tup aloties"],
+      "context": "My numbers sit in a spreadsheet nobody reads.",
+      "task": "Turn this data into a 3D city where each building is one item and its height is the value, with a camera that flies over the city and stops on the 3 biggest stories in the data.",
+      "rules": "Use only my numbers, label every building and add a legend so nobody has to guess.",
+      "output": "One HTML file I can present full screen in my next meeting.",
+      "input": "[PASTE YOUR DATA]",
+      "pipeline_use": {
+        "applies_when": "a beat carries numbers",
+        "obligation": "the numbers become space the camera moves through, the three largest values get the camera's attention, every mark is labelled and a legend stays on screen. Only numbers already in the claims ledger may appear; a rounded stand-in that reads as data is a breach, not a shortcut.",
+        "enforced_by": "builder",
+        "adjacent_existing_check": "the claims ledger (D-002) is what makes 'use only my numbers' checkable; qc_episode fails a label collision but does not yet compare an on-screen number against the ledger"
+      }
+    },
+    {
+      "id": "print-maker",
+      "title": "The 3D Print Maker",
+      "subject_example": "Phone Stand",
+      "ui_labels": ["Preview", "Save", "Export", "Download STL", "98 x 90 x 101 mm", "Walls > 2 mm", "overhangs under 45 degrees"],
+      "ui_labels_raw": ["Previey", "SaLe", "wvwthenigs unider a5", "1D1 mm", "9:41"],
+      "context": "I own a 3D printer, or can use one at a library, but I can't use CAD software.",
+      "task": "Design [OBJECT, e.g. a phone stand, cable clip or name keyring] from my description, show it as a 3D preview I can resize with sliders, and add a Download STL button.",
+      "rules": "Make it printable with no supports, use walls at least 2mm thick and show the final size in millimetres.",
+      "output": "One HTML file that previews the design and exports a print-ready STL file.",
+      "input": "[WHAT YOU WANT TO PRINT + ROUGH SIZE]",
+      "pipeline_use": {
+        "applies_when": "the episode models a real object in Blender, which is most of them",
+        "obligation": "the mesh a beat already builds is exportable as an STL with the size stated on screen in the same units the narration claims, so the object a viewer could hold and the object the episode showed agree.",
+        "enforced_by": "not-yet-enforced",
+        "adjacent_existing_check": "the pattern's own output is a browser previewer; our geometry already exists in Blender, so the export is a by-product of the beat rather than a new build"
+      }
+    },
+    {
+      "id": "mini-world",
+      "title": "The Mini World",
+      "subject_example": "Seaside Town",
+      "ui_labels": ["Record 00:06", "Palette", "Details"],
+      "ui_labels_raw": ["Pale !!", "Delals"],
+      "context": "I want a scroll-stopping visual for my brand, town or office to post on social.",
+      "task": "Build a tiny 3D diorama of it that slowly rotates, with small moving details like cars, people or clouds, and a Record button that saves a 10-second clip.",
+      "rules": "Use one colour palette and keep it bright and clean so it reads on a phone screen.",
+      "output": "One HTML file that plays the diorama and records a clip I can upload.",
+      "input": "[WHAT TO BUILD + 3 DETAILS THAT MAKE IT YOURS]",
+      "pipeline_use": {
+        "applies_when": "a place or a system has to be seen as a whole - a lunar base, a launch complex, a supply chain",
+        "obligation": "one palette, slow rotation inside the camera ceiling, and at least three small moving details so the frame is alive; the same shot is cut down to a ten-second loop for the channel's short-form post.",
+        "enforced_by": "builder",
+        "adjacent_existing_check": "qc_episode's slow_shot advisory and rhythm.motion_static_max already refuse a dead frame, which is this pattern's whole point"
+      }
+    }
+  ]
+}

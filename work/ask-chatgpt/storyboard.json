@@ -1,0 +1,1505 @@
+{
+ "beats": {
+  "beat-00": {
+   "scene": "gpu-rack",
+   "shots": [
+    {
+     "view": "tray",
+     "to": "wide"
+    }
+   ],
+   "actions": [
+    {
+     "name": "slice",
+     "at": "word:tonne"
+    },
+    {
+     "name": "cool",
+     "at": "word:power"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.93,
+      0.94
+     ],
+     "height": 0.09,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u001"
+  },
+  "beat-01": {
+   "scene": "token-stream",
+   "cut": "montage",
+   "params": {
+    "prompt": "Why does my cat sound like a carburettor?",
+    "answer": "Cats| purr| by| tw|itching| the| muscles| of| the| voice| box|,| so| the| sound| comes| in| quick| pul|ses|."
+   },
+   "actions": [
+    {
+     "name": "type",
+     "at": 0.0
+    },
+    {
+     "name": "stream",
+     "at": 0.06
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.84,
+      0.86
+     ],
+     "height": 0.2,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u002"
+  },
+  "beat-02": {
+   "scene": "model-layers",
+   "shots": [
+    {
+     "view": "wide",
+     "to": "layer"
+    },
+    {
+     "view": "at:weights",
+     "start": 17.49
+    },
+    {
+     "view": "layer",
+     "start": 18.69
+    }
+   ],
+   "actions": [
+    {
+     "name": "pass",
+     "at": 0.2
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.26,
+     "walk": [
+      0.15,
+      0.0
+     ]
+    },
+    {
+     "who": "token",
+     "screen": [
+      0.2,
+      0.92
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u004"
+  },
+  "beat-03": {
+   "scene": "fiber-trip",
+   "shots": [
+    {
+     "view": "at:mast",
+     "start": 0.0
+    },
+    {
+     "view": "at:phone",
+     "start": 1.2
+    },
+    {
+     "view": "phone",
+     "to": "wide",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "send",
+     "at": 0.15
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.12,
+      0.84
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "walk": [
+      0.25,
+      0.0
+     ]
+    }
+   ],
+   "note": "from u008"
+  },
+  "beat-04": {
+   "scene": "fiber-trip",
+   "shots": [
+    {
+     "view": "fibre",
+     "to": "wide"
+    },
+    {
+     "view": "at:phone",
+     "start": 8.33
+    },
+    {
+     "view": "at:mast",
+     "start": 9.53
+    }
+   ],
+   "actions": [
+    {
+     "name": "send",
+     "at": 0.05
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.86
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u012"
+  },
+  "beat-05": {
+   "scene": "fiber-trip",
+   "params": {
+    "markers": true
+   },
+   "shots": [
+    {
+     "view": "at:mast",
+     "start": 0.0
+    },
+    {
+     "view": "at:phone",
+     "start": 1.2
+    },
+    {
+     "view": "fibre",
+     "to": "building",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "send",
+     "at": 0.0
+    },
+    {
+     "name": "reply",
+     "at": 0.6
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.88
+     ],
+     "height": 0.26
+    }
+   ],
+   "note": "from u015"
+  },
+  "beat-06": {
+   "scene": "server-racks",
+   "params": {
+    "count": 5
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "to": "drawer"
+    },
+    {
+     "view": "wide",
+     "start": 12.09
+    },
+    {
+     "view": "at:drawer",
+     "start": 13.29
+    }
+   ],
+   "actions": [
+    {
+     "name": "open",
+     "at": "word:read"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.26,
+     "walk": [
+      0.2,
+      0.0
+     ]
+    },
+    {
+     "who": "token",
+     "screen": [
+      0.22,
+      0.92
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u019"
+  },
+  "beat-07": {
+   "scene": "document",
+   "params": {
+    "title": "A New Algorithm for Data Compression",
+    "lines": 14,
+    "mark": 5
+   },
+   "shots": [
+    {
+     "view": "at:title",
+     "start": 0.0
+    },
+    {
+     "view": "at:mark",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "mark",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:pair"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.26
+    }
+   ],
+   "note": "from u022"
+  },
+  "beat-08": {
+   "scene": "document",
+   "params": {
+    "title": "A New Algorithm for Data Compression",
+    "lines": 14,
+    "mark": 5
+   },
+   "shots": [
+    {
+     "view": "mark",
+     "to": "wide"
+    },
+    {
+     "view": "at:mark",
+     "start": 12.17
+    },
+    {
+     "view": "at:title",
+     "start": 13.37
+    }
+   ],
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:pair"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.26
+    }
+   ],
+   "note": "from u025"
+  },
+  "beat-09": {
+   "scene": "tokenizer",
+   "shots": [
+    {
+     "view": "at:sentence",
+     "start": 0.0
+    },
+    {
+     "view": "at:token",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "tokens",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "split",
+     "at": 0.15
+    },
+    {
+     "name": "number",
+     "at": "word:nine"
+    }
+   ],
+   "labels": [
+    {
+     "text": "cat = 9059",
+     "anchor": "id",
+     "at": "word:nine"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.88,
+      0.88
+     ],
+     "height": 0.2,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u028"
+  },
+  "beat-10": {
+   "scene": "tokenizer",
+   "shots": [
+    {
+     "view": "tokens",
+     "to": "vector"
+    },
+    {
+     "view": "at:token",
+     "start": 15.01
+    },
+    {
+     "view": "at:sentence",
+     "start": 16.21
+    }
+   ],
+   "actions": [
+    {
+     "name": "embed",
+     "at": 0.1
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.88
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u031"
+  },
+  "beat-11": {
+   "scene": "model-layers",
+   "shots": [
+    {
+     "view": "at:weights",
+     "start": 0.0
+    },
+    {
+     "view": "layer",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "layer",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "pass",
+     "at": 0.3
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.14,
+      0.88
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    },
+    {
+     "who": "explorer",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u035"
+  },
+  "beat-12": {
+   "scene": "model-layers",
+   "shots": [
+    {
+     "view": "layer",
+     "to": "attention"
+    },
+    {
+     "view": "layer",
+     "start": 12.52
+    },
+    {
+     "view": "at:weights",
+     "start": 13.72
+    }
+   ],
+   "actions": [
+    {
+     "name": "attend",
+     "at": "word:attention"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.12,
+      0.86
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u038"
+  },
+  "beat-13": {
+   "scene": "experts",
+   "shots": [
+    {
+     "view": "wide",
+     "to": "router"
+    }
+   ],
+   "actions": [
+    {
+     "name": "route",
+     "at": "word:router"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.12,
+      0.86
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u041"
+  },
+  "beat-14": {
+   "scene": "token-stream",
+   "params": {
+    "prompt": "Why does my cat sound like a carburettor?",
+    "answer": "Cats| purr| by| tw|itching| the| muscles| of| the| voice| box|,| so| the| sound| comes| in| quick| pul|ses|."
+   },
+   "shots": [
+    {
+     "view": "close",
+     "to": "wide"
+    },
+    {
+     "view": "at:prompt",
+     "start": 12.07
+    },
+    {
+     "view": "at:cursor",
+     "start": 13.27
+    }
+   ],
+   "actions": [
+    {
+     "name": "stream",
+     "at": 0.1
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u045"
+  },
+  "beat-15": {
+   "scene": "model-layers",
+   "shots": [
+    {
+     "view": "layer",
+     "start": 0.0
+    },
+    {
+     "view": "at:weights",
+     "start": 1.2
+    },
+    {
+     "view": "layer",
+     "to": "wide",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "pass",
+     "at": 0.05
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u048"
+  },
+  "beat-16": {
+   "scene": "chip-factory",
+   "params": {
+    "truck_x": -6.4
+   },
+   "shots": [
+    {
+     "view": "workers",
+     "to": "wide"
+    },
+    {
+     "view": "at:desk",
+     "start": 12.77
+    },
+    {
+     "view": "at:workers",
+     "start": 13.97
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.26
+    },
+    {
+     "who": "token",
+     "screen": [
+      0.2,
+      0.92
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u052"
+  },
+  "beat-17": {
+   "scene": "chip-factory",
+   "cut": "montage",
+   "params": {
+    "truck_x": -6.6
+   },
+   "actions": [
+    {
+     "name": "deliver",
+     "at": "word:delivery"
+    }
+   ],
+   "labels": [
+    {
+     "text": "4 µs of work",
+     "anchor": "desk",
+     "at": "word:four"
+    },
+    {
+     "text": "600 µs on the road",
+     "anchor": "truck",
+     "at": "word:six"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u056"
+  },
+  "beat-18": {
+   "scene": "chip-factory",
+   "params": {
+    "truck_x": -6.4
+   },
+   "shots": [
+    {
+     "view": "road",
+     "to": "workers"
+    },
+    {
+     "view": "at:truck",
+     "start": 11.47
+    },
+    {
+     "view": "at:desk",
+     "start": 12.67
+    }
+   ],
+   "actions": [
+    {
+     "name": "deliver",
+     "at": 0.15
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u059"
+  },
+  "beat-19": {
+   "scene": "document",
+   "params": {
+    "title": "Hitting the Memory Wall",
+    "lines": 10,
+    "mark": 3
+   },
+   "shots": [
+    {
+     "view": "at:title",
+     "start": 0.0
+    },
+    {
+     "view": "at:mark",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "mark",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:widening"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.26
+    }
+   ],
+   "note": "from u063"
+  },
+  "beat-20": {
+   "scene": "document",
+   "params": {
+    "title": "Hitting the Memory Wall",
+    "lines": 10,
+    "mark": 3
+   },
+   "shots": [
+    {
+     "view": "mark",
+     "to": "wide"
+    },
+    {
+     "view": "at:mark",
+     "start": 9.02
+    },
+    {
+     "view": "at:title",
+     "start": 10.22
+    }
+   ],
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:widening"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.26
+    }
+   ],
+   "note": "from u066"
+  },
+  "beat-21": {
+   "scene": "wire-trip",
+   "shots": [
+    {
+     "view": "at:multiplier",
+     "start": 0.0
+    },
+    {
+     "view": "at:memory",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "wire",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "send",
+     "at": 0.1
+    },
+    {
+     "name": "local",
+     "at": 0.6
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.16,
+      0.9
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "walk": [
+      0.4,
+      0.0
+     ]
+    }
+   ],
+   "note": "from u069"
+  },
+  "beat-22": {
+   "scene": "chip-factory",
+   "params": {
+    "truck_x": -6.0
+   },
+   "shots": [
+    {
+     "view": "road",
+     "to": "wide"
+    },
+    {
+     "view": "at:desk",
+     "start": 14.33
+    },
+    {
+     "view": "at:workers",
+     "start": 15.53
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u072"
+  },
+  "beat-23": {
+   "scene": "hbm-stack",
+   "shots": [
+    {
+     "view": "at:gpu",
+     "start": 0.0
+    },
+    {
+     "view": "at:tsv",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "stack",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "explode",
+     "at": 0.15
+    }
+   ],
+   "labels": [
+    {
+     "text": "memory chips, stacked",
+     "anchor": "dram",
+     "at": "word:stacked"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u076"
+  },
+  "beat-24": {
+   "scene": "chip-factory",
+   "params": {
+    "truck_x": -2.8
+   },
+   "shots": [
+    {
+     "view": "road",
+     "to": "workers"
+    },
+    {
+     "view": "at:truck",
+     "start": 11.0
+    },
+    {
+     "view": "at:desk",
+     "start": 12.2
+    }
+   ],
+   "actions": [
+    {
+     "name": "deliver",
+     "at": 0.2
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    },
+    {
+     "who": "token",
+     "screen": [
+      0.84,
+      0.9
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u080"
+  },
+  "beat-25": {
+   "scene": "batching",
+   "params": {
+    "mode": "batch",
+    "users": 10
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0
+    },
+    {
+     "view": "at:weights",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "users",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "share",
+     "at": 0.2
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u083"
+  },
+  "beat-26": {
+   "scene": "chip-factory",
+   "params": {
+    "busy": true,
+    "truck_x": -3.0
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "to": "workers"
+    },
+    {
+     "view": "at:workers",
+     "start": 12.77
+    },
+    {
+     "view": "at:truck",
+     "start": 13.97
+    }
+   ],
+   "actions": [
+    {
+     "name": "deliver",
+     "at": 0.1
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u086"
+  },
+  "beat-27": {
+   "scene": "batching",
+   "params": {
+    "mode": "cache",
+    "users": 6
+   },
+   "shots": [
+    {
+     "view": "at:weights",
+     "start": 0.0
+    },
+    {
+     "view": "wide",
+     "start": 1.2
+    },
+    {
+     "view": "cache",
+     "to": "wide",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "share",
+     "at": 0.2
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u090"
+  },
+  "beat-28": {
+   "scene": "batching",
+   "params": {
+    "mode": "cache",
+    "users": 12
+   },
+   "shots": [
+    {
+     "view": "users",
+     "to": "wide"
+    },
+    {
+     "view": "at:weights",
+     "start": 15.23
+    },
+    {
+     "view": "wide",
+     "start": 16.43
+    }
+   ],
+   "actions": [
+    {
+     "name": "share",
+     "at": 0.1
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u093"
+  },
+  "beat-29": {
+   "scene": "bit-width",
+   "shots": [
+    {
+     "view": "number",
+     "start": 0.0
+    },
+    {
+     "view": "lanes",
+     "start": 1.2
+    },
+    {
+     "view": "number",
+     "to": "lanes",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "shrink",
+     "at": "word:four"
+    },
+    {
+     "name": "flow",
+     "at": 0.6
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u096"
+  },
+  "beat-30": {
+   "scene": "gpu-rack",
+   "shots": [
+    {
+     "view": "wide",
+     "to": "front"
+    }
+   ],
+   "actions": [
+    {
+     "name": "link",
+     "at": 0.4
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.3
+    },
+    {
+     "who": "token",
+     "screen": [
+      0.2,
+      0.92
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u100"
+  },
+  "beat-31": {
+   "scene": "gpu-rack",
+   "shots": [
+    {
+     "view": "at:coldplate",
+     "start": 0.0
+    },
+    {
+     "view": "at:gpu",
+     "start": 1.2
+    },
+    {
+     "view": "back",
+     "to": "wide",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "link",
+     "at": 0.05
+    },
+    {
+     "name": "slice",
+     "at": "word:slices"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u103"
+  },
+  "beat-32": {
+   "scene": "gpu-rack",
+   "shots": [
+    {
+     "view": "tray",
+     "to": "wide"
+    },
+    {
+     "view": "at:gpu",
+     "start": 11.07
+    },
+    {
+     "view": "at:switch",
+     "start": 12.27
+    }
+   ],
+   "actions": [
+    {
+     "name": "cool",
+     "at": 0.3
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.28
+    }
+   ],
+   "note": "from u106"
+  },
+  "beat-33": {
+   "scene": "heat-loop",
+   "shots": [
+    {
+     "view": "rack",
+     "start": 0.0
+    },
+    {
+     "view": "at:pipes",
+     "start": 1.2
+    },
+    {
+     "view": "rack",
+     "to": "tower",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "flow",
+     "at": 0.05
+    },
+    {
+     "name": "evaporate",
+     "at": "word:evaporate"
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.9
+     ],
+     "height": 0.14,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u109"
+  },
+  "beat-34": {
+   "scene": "token-stream",
+   "params": {
+    "prompt": "Why does my cat sound like a carburettor?",
+    "answer": "Cats| purr| by| tw|itching| the| muscles| of| the| voice| box|,| so| the| sound| comes| in| quick| pul|ses|."
+   },
+   "shots": [
+    {
+     "view": "close",
+     "to": "wide"
+    },
+    {
+     "view": "at:prompt",
+     "start": 12.17
+    },
+    {
+     "view": "at:cursor",
+     "start": 13.37
+    }
+   ],
+   "actions": [
+    {
+     "name": "stream",
+     "at": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.88
+     ],
+     "height": 0.2,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u113"
+  },
+  "beat-35": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 100
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0
+    },
+    {
+     "view": "at:one",
+     "start": 1.2
+    },
+    {
+     "view": "wide",
+     "to": "many",
+     "start": 3.0999999999999996
+    }
+   ],
+   "actions": [
+    {
+     "name": "fill",
+     "at": 0.15
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.1,
+      0.9
+     ],
+     "height": 0.24
+    }
+   ],
+   "note": "from u116"
+  },
+  "beat-36": {
+   "scene": "fiber-trip",
+   "cut": "montage",
+   "actions": [
+    {
+     "name": "send",
+     "at": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.86
+     ],
+     "height": 0.18,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u120"
+  },
+  "beat-37": {
+   "scene": "model-layers",
+   "cut": "montage",
+   "actions": [
+    {
+     "name": "pass",
+     "at": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.16,
+     "word": "cat",
+     "hop": true
+    }
+   ],
+   "note": "from u123"
+  },
+  "beat-38": {
+   "scene": "token-stream",
+   "params": {
+    "prompt": "Why does my cat sound like a carburettor?",
+    "answer": "Cats| purr| by| tw|itching| the| muscles| of| the| voice| box|,| so| the| sound| comes| in| quick| pul|ses|."
+   },
+   "shots": [
+    {
+     "view": "close",
+     "to": "wide"
+    }
+   ],
+   "actions": [
+    {
+     "name": "stream",
+     "at": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "token",
+     "screen": [
+      0.86,
+      0.88
+     ],
+     "height": 0.22,
+     "word": "cat",
+     "hop": true
+    },
+    {
+     "who": "explorer",
+     "screen": [
+      0.12,
+      0.88
+     ],
+     "height": 0.26
+    }
+   ],
+   "note": "from u127"
+  }
+ }
+}

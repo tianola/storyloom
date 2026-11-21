@@ -1,0 +1,1023 @@
+{
+  "sampleRate": 24000,
+  "voice": "af_heart",
+  "utterances": [
+    {
+      "id": "u001",
+      "file": "u001.wav",
+      "text": "The kind of machine that answers your questions weighs more than a tonne and draws as much power as a hundred homes.",
+      "samples": 154624,
+      "startSample": 0,
+      "endSample": 154624
+    },
+    {
+      "id": "u002",
+      "file": "u002.wav",
+      "text": "Ask it why your cat sounds like a carburettor, and watch what that monster does. A few words. A pause. A few more words.",
+      "samples": 174592,
+      "startSample": 154624,
+      "endSample": 329216
+    },
+    {
+      "id": "u003",
+      "file": "u003.wav",
+      "text": "It is the most powerful computer most of us will ever touch, and yet it writes like someone pecking at a keyboard.",
+      "samples": 155648,
+      "startSample": 329216,
+      "endSample": 484864
+    },
+    {
+      "id": "u004",
+      "file": "u004.wav",
+      "text": "So why does it stutter?",
+      "samples": 30208,
+      "startSample": 484864,
+      "endSample": 515072
+    },
+    {
+      "id": "u005",
+      "file": "u005.wav",
+      "text": "The obvious guess is that it is thinking hard, that every single word takes a staggering amount of maths.",
+      "samples": 138240,
+      "startSample": 515072,
+      "endSample": 653312
+    },
+    {
+      "id": "u006",
+      "file": "u006.wav",
+      "text": "Keep that guess in mind, because we are going to test it. The real answer explains nearly everything about the buildings behind artificial intelligence.",
+      "samples": 215552,
+      "startSample": 653312,
+      "endSample": 868864
+    },
+    {
+      "id": "u007",
+      "file": "u007.wav",
+      "text": "To see it, let's follow a single word of your question on its trip. The word cat.",
+      "samples": 110080,
+      "startSample": 868864,
+      "endSample": 978944
+    },
+    {
+      "id": "u008",
+      "file": "u008.wav",
+      "text": "Cat leaves your phone as a radio wave and reaches a mast down the street.",
+      "samples": 98816,
+      "startSample": 978944,
+      "endSample": 1077760
+    },
+    {
+      "id": "u009",
+      "file": "u009.wav",
+      "text": "From there it travels as light, trapped inside a strand of glass thinner than a hair.",
+      "samples": 104960,
+      "startSample": 1077760,
+      "endSample": 1182720
+    },
+    {
+      "id": "u010",
+      "file": "u010.wav",
+      "text": "But how do you keep light inside a bent piece of glass?",
+      "samples": 67584,
+      "startSample": 1182720,
+      "endSample": 1250304
+    },
+    {
+      "id": "u011",
+      "file": "u011.wav",
+      "text": "In eighteen forty two, a Swiss physicist called Daniel Colladon showed the trick with a jet of water.",
+      "samples": 143872,
+      "startSample": 1250304,
+      "endSample": 1394176
+    },
+    {
+      "id": "u012",
+      "file": "u012.wav",
+      "text": "Light that hits the inside of the jet at a shallow angle cannot escape, so it follows the water as it curves.",
+      "samples": 153088,
+      "startSample": 1394176,
+      "endSample": 1547264
+    },
+    {
+      "id": "u013",
+      "file": "u013.wav",
+      "text": "Glass fibre does exactly the same thing, bouncing the light off its walls over and over.",
+      "samples": 121344,
+      "startSample": 1547264,
+      "endSample": 1668608
+    },
+    {
+      "id": "u014",
+      "file": "u014.wav",
+      "text": "In twenty seventeen, a team at Heriot Watt University in Edinburgh actually filmed it.",
+      "samples": 130048,
+      "startSample": 1668608,
+      "endSample": 1798656
+    },
+    {
+      "id": "u015",
+      "file": "u015.wav",
+      "text": "Their camera caught a pulse of light racing around a coil of fibre, loop after loop.",
+      "samples": 108032,
+      "startSample": 1798656,
+      "endSample": 1906688
+    },
+    {
+      "id": "u016",
+      "file": "u016.wav",
+      "text": "In glass, light covers about two hundred thousand kilometres every second.",
+      "samples": 103424,
+      "startSample": 1906688,
+      "endSample": 2010112
+    },
+    {
+      "id": "u017",
+      "file": "u017.wav",
+      "text": "A thousand kilometres of cable costs cat about five thousandths of a second.",
+      "samples": 110080,
+      "startSample": 2010112,
+      "endSample": 2120192
+    },
+    {
+      "id": "u018",
+      "file": "u018.wav",
+      "text": "So the trip is not the slow part. Hold on to that.",
+      "samples": 70144,
+      "startSample": 2120192,
+      "endSample": 2190336
+    },
+    {
+      "id": "u019",
+      "file": "u019.wav",
+      "text": "The light ends in a warehouse of computers, like the one built for OpenAI in Abilene, Texas.",
+      "samples": 145920,
+      "startSample": 2190336,
+      "endSample": 2336256
+    },
+    {
+      "id": "u020",
+      "file": "u020.wav",
+      "text": "And there cat runs into its first problem. The chips inside cannot read.",
+      "samples": 104960,
+      "startSample": 2336256,
+      "endSample": 2441216
+    },
+    {
+      "id": "u021",
+      "file": "u021.wav",
+      "text": "They only understand numbers, so your question has to be chopped into pieces first.",
+      "samples": 113664,
+      "startSample": 2441216,
+      "endSample": 2554880
+    },
+    {
+      "id": "u022",
+      "file": "u022.wav",
+      "text": "The way it gets chopped comes from an unlikely place.",
+      "samples": 66048,
+      "startSample": 2554880,
+      "endSample": 2620928
+    },
+    {
+      "id": "u023",
+      "file": "u023.wav",
+      "text": "In February nineteen ninety four, a programmer in Colorado Springs called Philip Gage wrote a magazine article about shrinking files.",
+      "samples": 195072,
+      "startSample": 2620928,
+      "endSample": 2816000
+    },
+    {
+      "id": "u024",
+      "file": "u024.wav",
+      "text": "His idea was simple. Find the pair of characters that appears most often, and replace it with a new symbol.",
+      "samples": 153600,
+      "startSample": 2816000,
+      "endSample": 2969600
+    },
+    {
+      "id": "u025",
+      "file": "u025.wav",
+      "text": "Then do it again, and again, until the file is small.",
+      "samples": 71680,
+      "startSample": 2969600,
+      "endSample": 3041280
+    },
+    {
+      "id": "u026",
+      "file": "u026.wav",
+      "text": "Two decades later, Rico Sennrich and his colleagues borrowed that trick to split words for translation software.",
+      "samples": 158720,
+      "startSample": 3041280,
+      "endSample": 3200000
+    },
+    {
+      "id": "u027",
+      "file": "u027.wav",
+      "text": "Common words end up as single pieces, rare ones as fragments, and every piece gets a number.",
+      "samples": 136192,
+      "startSample": 3200000,
+      "endSample": 3336192
+    },
+    {
+      "id": "u028",
+      "file": "u028.wav",
+      "text": "ChatGPT's tokenizer works the same way. In it, cat with a space in front is number nine thousand and fifty nine.",
+      "samples": 182784,
+      "startSample": 3336192,
+      "endSample": 3518976
+    },
+    {
+      "id": "u029",
+      "file": "u029.wav",
+      "text": "That number is a key. It unlocks a long list of other numbers, a kind of address for the meaning of the word.",
+      "samples": 146432,
+      "startSample": 3518976,
+      "endSample": 3665408
+    },
+    {
+      "id": "u030",
+      "file": "u030.wav",
+      "text": "On a map, two numbers say where something is.",
+      "samples": 54272,
+      "startSample": 3665408,
+      "endSample": 3719680
+    },
+    {
+      "id": "u031",
+      "file": "u031.wav",
+      "text": "Here every token gets thousands of them, so it sits somewhere in a space with thousands of directions.",
+      "samples": 133632,
+      "startSample": 3719680,
+      "endSample": 3853312
+    },
+    {
+      "id": "u032",
+      "file": "u032.wav",
+      "text": "Training arranges that space so that cat ends up near dog, and a long way from carburettor.",
+      "samples": 133632,
+      "startSample": 3853312,
+      "endSample": 3986944
+    },
+    {
+      "id": "u033",
+      "file": "u033.wav",
+      "text": "But cat is not done yet. Now comes the climb.",
+      "samples": 66048,
+      "startSample": 3986944,
+      "endSample": 4052992
+    },
+    {
+      "id": "u034",
+      "file": "u034.wav",
+      "text": "OpenAI does not say how big the models behind ChatGPT are.",
+      "samples": 101376,
+      "startSample": 4052992,
+      "endSample": 4154368
+    },
+    {
+      "id": "u035",
+      "file": "u035.wav",
+      "text": "But in twenty twenty five it published an open model built the same way, with the blueprint.",
+      "samples": 118784,
+      "startSample": 4154368,
+      "endSample": 4273152
+    },
+    {
+      "id": "u036",
+      "file": "u036.wav",
+      "text": "That model is made of about a hundred and seventeen billion numbers, called weights.",
+      "samples": 105472,
+      "startSample": 4273152,
+      "endSample": 4378624
+    },
+    {
+      "id": "u037",
+      "file": "u037.wav",
+      "text": "Nobody typed them in. Training tuned them, step by step, on trillions of tokens of text.",
+      "samples": 138240,
+      "startSample": 4378624,
+      "endSample": 4516864
+    },
+    {
+      "id": "u038",
+      "file": "u038.wav",
+      "text": "They are stacked in thirty six layers, like the floors of a tower, and cat has to climb every floor.",
+      "samples": 135168,
+      "startSample": 4516864,
+      "endSample": 4652032
+    },
+    {
+      "id": "u039",
+      "file": "u039.wav",
+      "text": "On each floor, cat looks back at every word before it and decides which ones matter. That step is called attention.",
+      "samples": 161280,
+      "startSample": 4652032,
+      "endSample": 4813312
+    },
+    {
+      "id": "u040",
+      "file": "u040.wav",
+      "text": "It is how the word it gets linked to the thing it refers to.",
+      "samples": 78336,
+      "startSample": 4813312,
+      "endSample": 4891648
+    },
+    {
+      "id": "u041",
+      "file": "u041.wav",
+      "text": "Then cat visits a crowd of smaller networks on that floor, called experts.",
+      "samples": 100864,
+      "startSample": 4891648,
+      "endSample": 4992512
+    },
+    {
+      "id": "u042",
+      "file": "u042.wav",
+      "text": "But it does not visit all of them. A small router sends it to just four out of a hundred and twenty eight.",
+      "samples": 138752,
+      "startSample": 4992512,
+      "endSample": 5131264
+    },
+    {
+      "id": "u043",
+      "file": "u043.wav",
+      "text": "So on the whole climb, cat only touches about five billion weights.",
+      "samples": 93696,
+      "startSample": 5131264,
+      "endSample": 5224960
+    },
+    {
+      "id": "u044",
+      "file": "u044.wav",
+      "text": "Each touch is a multiplication and an addition, so that is roughly ten billion operations for a single new word.",
+      "samples": 174592,
+      "startSample": 5224960,
+      "endSample": 5399552
+    },
+    {
+      "id": "u045",
+      "file": "u045.wav",
+      "text": "What comes out of the top floor is not a sentence. It is a score for every possible next piece.",
+      "samples": 129536,
+      "startSample": 5399552,
+      "endSample": 5529088
+    },
+    {
+      "id": "u046",
+      "file": "u046.wav",
+      "text": "The system picks one, usually a likely one, with a little randomness so it does not sound like a robot.",
+      "samples": 139776,
+      "startSample": 5529088,
+      "endSample": 5668864
+    },
+    {
+      "id": "u047",
+      "file": "u047.wav",
+      "text": "And then the whole climb starts again from the ground floor, for the next piece.",
+      "samples": 94720,
+      "startSample": 5668864,
+      "endSample": 5763584
+    },
+    {
+      "id": "u048",
+      "file": "u048.wav",
+      "text": "A long answer means hundreds of climbs, one after another.",
+      "samples": 81920,
+      "startSample": 5763584,
+      "endSample": 5845504
+    },
+    {
+      "id": "u049",
+      "file": "u049.wav",
+      "text": "Ten billion operations for every word. So that must be the stutter, right? The maths?",
+      "samples": 119808,
+      "startSample": 5845504,
+      "endSample": 5965312
+    },
+    {
+      "id": "u050",
+      "file": "u050.wav",
+      "text": "Actually, no. That guess is wrong. The arithmetic is the easy part.",
+      "samples": 97792,
+      "startSample": 5965312,
+      "endSample": 6063104
+    },
+    {
+      "id": "u051",
+      "file": "u051.wav",
+      "text": "To see what the real problem is, picture the chip as a factory.",
+      "samples": 84992,
+      "startSample": 6063104,
+      "endSample": 6148096
+    },
+    {
+      "id": "u052",
+      "file": "u052.wav",
+      "text": "The workers who do the multiplying sit at desks. The weights do not live with them.",
+      "samples": 108544,
+      "startSample": 6148096,
+      "endSample": 6256640
+    },
+    {
+      "id": "u053",
+      "file": "u053.wav",
+      "text": "They live in a warehouse next door, and for every new piece of the answer, they have to be trucked in.",
+      "samples": 124416,
+      "startSample": 6256640,
+      "endSample": 6381056
+    },
+    {
+      "id": "u054",
+      "file": "u054.wav",
+      "text": "All of the weights that cat touches, every time. For that open model, the load is about five gigabytes.",
+      "samples": 147968,
+      "startSample": 6381056,
+      "endSample": 6529024
+    },
+    {
+      "id": "u055",
+      "file": "u055.wav",
+      "text": "Now take a Blackwell chip from NVIDIA, the kind in that Texas warehouse.",
+      "samples": 98304,
+      "startSample": 6529024,
+      "endSample": 6627328
+    },
+    {
+      "id": "u056",
+      "file": "u056.wav",
+      "text": "Its workers can finish ten billion operations in about four millionths of a second.",
+      "samples": 115712,
+      "startSample": 6627328,
+      "endSample": 6743040
+    },
+    {
+      "id": "u057",
+      "file": "u057.wav",
+      "text": "Its memory can deliver about eight terabytes a second, which sounds enormous.",
+      "samples": 104960,
+      "startSample": 6743040,
+      "endSample": 6848000
+    },
+    {
+      "id": "u058",
+      "file": "u058.wav",
+      "text": "But watch the race. At that speed, the five gigabyte delivery takes more than six hundred millionths of a second.",
+      "samples": 162304,
+      "startSample": 6848000,
+      "endSample": 7010304
+    },
+    {
+      "id": "u059",
+      "file": "u059.wav",
+      "text": "The truck takes over a hundred times longer than the work.",
+      "samples": 66048,
+      "startSample": 7010304,
+      "endSample": 7076352
+    },
+    {
+      "id": "u060",
+      "file": "u060.wav",
+      "text": "So when the chip writes for just you, its workers sit idle more than ninety nine percent of the time.",
+      "samples": 126976,
+      "startSample": 7076352,
+      "endSample": 7203328
+    },
+    {
+      "id": "u061",
+      "file": "u061.wav",
+      "text": "That is the pause you see. Engineers call it being memory bound.",
+      "samples": 89088,
+      "startSample": 7203328,
+      "endSample": 7292416
+    },
+    {
+      "id": "u062",
+      "file": "u062.wav",
+      "text": "And none of this surprised the people who saw it coming.",
+      "samples": 67584,
+      "startSample": 7292416,
+      "endSample": 7360000
+    },
+    {
+      "id": "u063",
+      "file": "u063.wav",
+      "text": "In nineteen ninety four, two computer scientists at the University of Virginia, William Wulf and Sally McKee, wrote a short paper with a blunt title.",
+      "samples": 216064,
+      "startSample": 7360000,
+      "endSample": 7576064
+    },
+    {
+      "id": "u064",
+      "file": "u064.wav",
+      "text": "Hitting the Memory Wall.",
+      "samples": 31232,
+      "startSample": 7576064,
+      "endSample": 7607296
+    },
+    {
+      "id": "u065",
+      "file": "u065.wav",
+      "text": "Processors were getting faster much more quickly than memory, they pointed out, and the gap kept widening.",
+      "samples": 141824,
+      "startSample": 7607296,
+      "endSample": 7749120
+    },
+    {
+      "id": "u066",
+      "file": "u066.wav",
+      "text": "Sooner or later, they warned, every program would end up waiting for memory instead of computing. Cat's climb is exactly that case.",
+      "samples": 193024,
+      "startSample": 7749120,
+      "endSample": 7942144
+    },
+    {
+      "id": "u067",
+      "file": "u067.wav",
+      "text": "They were right, and the wall is not just about time. It is about energy.",
+      "samples": 97792,
+      "startSample": 7942144,
+      "endSample": 8039936
+    },
+    {
+      "id": "u068",
+      "file": "u068.wav",
+      "text": "Twenty years later, the Stanford engineer Mark Horowitz put numbers on it.",
+      "samples": 101376,
+      "startSample": 8039936,
+      "endSample": 8141312
+    },
+    {
+      "id": "u069",
+      "file": "u069.wav",
+      "text": "Fetching a number from a memory chip cost about a hundred and seventy times more energy than multiplying two numbers.",
+      "samples": 162304,
+      "startSample": 8141312,
+      "endSample": 8303616
+    },
+    {
+      "id": "u070",
+      "file": "u070.wav",
+      "text": "The distance is the cost. Every bit has to be pushed down a wire, and the longer the wire, the more it burns.",
+      "samples": 149504,
+      "startSample": 8303616,
+      "endSample": 8453120
+    },
+    {
+      "id": "u071",
+      "file": "u071.wav",
+      "text": "So the question for everyone building these machines became: how do you stop moving so much?",
+      "samples": 124416,
+      "startSample": 8453120,
+      "endSample": 8577536
+    },
+    {
+      "id": "u072",
+      "file": "u072.wav",
+      "text": "The first answer was to move the warehouse.",
+      "samples": 54272,
+      "startSample": 8577536,
+      "endSample": 8631808
+    },
+    {
+      "id": "u073",
+      "file": "u073.wav",
+      "text": "At AMD, a team led by Bryan Black had been working on it since two thousand eight.",
+      "samples": 118784,
+      "startSample": 8631808,
+      "endSample": 8750592
+    },
+    {
+      "id": "u074",
+      "file": "u074.wav",
+      "text": "Their problem was graphics memory. Its power use simply would not scale to what the next chips needed.",
+      "samples": 138752,
+      "startSample": 8750592,
+      "endSample": 8889344
+    },
+    {
+      "id": "u075",
+      "file": "u075.wav",
+      "text": "So instead of spreading memory chips around the board, they stacked them into towers.",
+      "samples": 106496,
+      "startSample": 8889344,
+      "endSample": 8995840
+    },
+    {
+      "id": "u076",
+      "file": "u076.wav",
+      "text": "Tiny wires run straight down through the silicon, connecting every floor of the tower at once.",
+      "samples": 129024,
+      "startSample": 8995840,
+      "endSample": 9124864
+    },
+    {
+      "id": "u077",
+      "file": "u077.wav",
+      "text": "Then they set the towers right beside the processor, on the same slab of silicon.",
+      "samples": 107520,
+      "startSample": 9124864,
+      "endSample": 9232384
+    },
+    {
+      "id": "u078",
+      "file": "u078.wav",
+      "text": "In June twenty fifteen, AMD's Fiji was the first graphics chip to ship with this stacked memory.",
+      "samples": 141824,
+      "startSample": 9232384,
+      "endSample": 9374208
+    },
+    {
+      "id": "u079",
+      "file": "u079.wav",
+      "text": "Today it is called high bandwidth memory, and every Blackwell chip carries its own towers of it.",
+      "samples": 126976,
+      "startSample": 9374208,
+      "endSample": 9501184
+    },
+    {
+      "id": "u080",
+      "file": "u080.wav",
+      "text": "The road from warehouse to factory is now as short as anyone can make it.",
+      "samples": 100352,
+      "startSample": 9501184,
+      "endSample": 9601536
+    },
+    {
+      "id": "u081",
+      "file": "u081.wav",
+      "text": "But there is a catch. Even on that short road, the truck still takes hundreds of times longer than the work.",
+      "samples": 141312,
+      "startSample": 9601536,
+      "endSample": 9742848
+    },
+    {
+      "id": "u082",
+      "file": "u082.wav",
+      "text": "So the second answer was to stop sending the truck for just one person.",
+      "samples": 96768,
+      "startSample": 9742848,
+      "endSample": 9839616
+    },
+    {
+      "id": "u083",
+      "file": "u083.wav",
+      "text": "Every conversation uses exactly the same weights.",
+      "samples": 74752,
+      "startSample": 9839616,
+      "endSample": 9914368
+    },
+    {
+      "id": "u084",
+      "file": "u084.wav",
+      "text": "So the system gathers many conversations together, and a single delivery carries cat along with everyone else's words.",
+      "samples": 163840,
+      "startSample": 9914368,
+      "endSample": 10078208
+    },
+    {
+      "id": "u085",
+      "file": "u085.wav",
+      "text": "The workers who would nap for you stay busy for a crowd. This is called batching.",
+      "samples": 105472,
+      "startSample": 10078208,
+      "endSample": 10183680
+    },
+    {
+      "id": "u086",
+      "file": "u086.wav",
+      "text": "Except batching has a problem of its own. Every conversation needs a scratchpad.",
+      "samples": 113152,
+      "startSample": 10183680,
+      "endSample": 10296832
+    },
+    {
+      "id": "u087",
+      "file": "u087.wav",
+      "text": "For every word you send or receive, the model keeps the notes it made during attention, so it never has to redo them.",
+      "samples": 162816,
+      "startSample": 10296832,
+      "endSample": 10459648
+    },
+    {
+      "id": "u088",
+      "file": "u088.wav",
+      "text": "Those notes grow with every word and every person, and they fill the memory up.",
+      "samples": 104960,
+      "startSample": 10459648,
+      "endSample": 10564608
+    },
+    {
+      "id": "u089",
+      "file": "u089.wav",
+      "text": "In twenty twenty three, Woosuk Kwon and his colleagues at Berkeley measured how badly.",
+      "samples": 116224,
+      "startSample": 10564608,
+      "endSample": 10680832
+    },
+    {
+      "id": "u090",
+      "file": "u090.wav",
+      "text": "In the serving systems of the time, as little as a fifth of that scratchpad memory held actual notes.",
+      "samples": 144384,
+      "startSample": 10680832,
+      "endSample": 10825216
+    },
+    {
+      "id": "u091",
+      "file": "u091.wav",
+      "text": "The rest was reserved just in case, or lost in gaps between conversations.",
+      "samples": 112640,
+      "startSample": 10825216,
+      "endSample": 10937856
+    },
+    {
+      "id": "u092",
+      "file": "u092.wav",
+      "text": "Their fix came from an old idea in operating systems. Cut memory into small pages and hand them out only when needed.",
+      "samples": 184832,
+      "startSample": 10937856,
+      "endSample": 11122688
+    },
+    {
+      "id": "u093",
+      "file": "u093.wav",
+      "text": "With almost nothing wasted, the same chips could handle two to four times as many requests.",
+      "samples": 124928,
+      "startSample": 11122688,
+      "endSample": 11247616
+    },
+    {
+      "id": "u094",
+      "file": "u094.wav",
+      "text": "A year earlier, Tri Dao and his colleagues had applied the same lesson inside attention itself.",
+      "samples": 135680,
+      "startSample": 11247616,
+      "endSample": 11383296
+    },
+    {
+      "id": "u095",
+      "file": "u095.wav",
+      "text": "Their method, called FlashAttention, keeps the work in a tiny fast memory on the chip, so less has to travel back and forth.",
+      "samples": 179200,
+      "startSample": 11383296,
+      "endSample": 11562496
+    },
+    {
+      "id": "u096",
+      "file": "u096.wav",
+      "text": "The third answer was to make the cargo lighter.",
+      "samples": 62464,
+      "startSample": 11562496,
+      "endSample": 11624960
+    },
+    {
+      "id": "u097",
+      "file": "u097.wav",
+      "text": "In that open model, most weights are stored in just over four bits each, instead of the usual sixteen.",
+      "samples": 142336,
+      "startSample": 11624960,
+      "endSample": 11767296
+    },
+    {
+      "id": "u098",
+      "file": "u098.wav",
+      "text": "Smaller numbers mean a lighter truck on every trip, and the whole model fits on a single chip.",
+      "samples": 123392,
+      "startSample": 11767296,
+      "endSample": 11890688
+    },
+    {
+      "id": "u099",
+      "file": "u099.wav",
+      "text": "But the biggest models do not fit on one chip, and a busy service needs thousands of them.",
+      "samples": 118784,
+      "startSample": 11890688,
+      "endSample": 12009472
+    },
+    {
+      "id": "u100",
+      "file": "u100.wav",
+      "text": "So the chips are wired together, and here the fight against distance gets physical.",
+      "samples": 102912,
+      "startSample": 12009472,
+      "endSample": 12112384
+    },
+    {
+      "id": "u101",
+      "file": "u101.wav",
+      "text": "This is NVIDIA's rack for Blackwell, a cabinet taller than a person that weighs more than a tonne.",
+      "samples": 130048,
+      "startSample": 12112384,
+      "endSample": 12242432
+    },
+    {
+      "id": "u102",
+      "file": "u102.wav",
+      "text": "It holds seventy two of those chips, along with thirty six Grace processors to manage them.",
+      "samples": 124928,
+      "startSample": 12242432,
+      "endSample": 12367360
+    },
+    {
+      "id": "u103",
+      "file": "u103.wav",
+      "text": "Behind them runs a spine of copper cables, more than three kilometres of it, linking every chip to every other.",
+      "samples": 153600,
+      "startSample": 12367360,
+      "endSample": 12520960
+    },
+    {
+      "id": "u104",
+      "file": "u104.wav",
+      "text": "NVIDIA says the rack acts like a single, massive GPU.",
+      "samples": 87552,
+      "startSample": 12520960,
+      "endSample": 12608512
+    },
+    {
+      "id": "u105",
+      "file": "u105.wav",
+      "text": "A model can be cut into slices and spread across it, so each chip only fetches its own slice of cat's climb.",
+      "samples": 154112,
+      "startSample": 12608512,
+      "endSample": 12762624
+    },
+    {
+      "id": "u106",
+      "file": "u106.wav",
+      "text": "Where does all that effort go in the end?",
+      "samples": 44544,
+      "startSample": 12762624,
+      "endSample": 12807168
+    },
+    {
+      "id": "u107",
+      "file": "u107.wav",
+      "text": "It turns into heat. One of these racks draws about a hundred and twenty kilowatts, about as much as a hundred American homes.",
+      "samples": 176640,
+      "startSample": 12807168,
+      "endSample": 12983808
+    },
+    {
+      "id": "u108",
+      "file": "u108.wav",
+      "text": "Air cannot carry that away, so liquid runs through metal plates pressed onto every chip.",
+      "samples": 118784,
+      "startSample": 12983808,
+      "endSample": 13102592
+    },
+    {
+      "id": "u109",
+      "file": "u109.wav",
+      "text": "The heat has to go somewhere, and many sites dump it into the sky through cooling towers.",
+      "samples": 116224,
+      "startSample": 13102592,
+      "endSample": 13218816
+    },
+    {
+      "id": "u110",
+      "file": "u110.wav",
+      "text": "A tower lets a small part of the water evaporate, and the evaporation pulls heat out of the rest.",
+      "samples": 131072,
+      "startSample": 13218816,
+      "endSample": 13349888
+    },
+    {
+      "id": "u111",
+      "file": "u111.wav",
+      "text": "That is where the water in the headlines goes.",
+      "samples": 56320,
+      "startSample": 13349888,
+      "endSample": 13406208
+    },
+    {
+      "id": "u112",
+      "file": "u112.wav",
+      "text": "Days after ChatGPT launched, its chief executive Sam Altman wrote that the compute costs were eye-watering.",
+      "samples": 171520,
+      "startSample": 13406208,
+      "endSample": 13577728
+    },
+    {
+      "id": "u113",
+      "file": "u113.wav",
+      "text": "How much does cat's trip actually cost, then?",
+      "samples": 57344,
+      "startSample": 13577728,
+      "endSample": 13635072
+    },
+    {
+      "id": "u114",
+      "file": "u114.wav",
+      "text": "In twenty twenty five, he put an average query at about a third of a watt hour, about what an oven uses in a second or so.",
+      "samples": 179712,
+      "startSample": 13635072,
+      "endSample": 13814784
+    },
+    {
+      "id": "u115",
+      "file": "u115.wav",
+      "text": "Tiny, for one question. But ChatGPT gets around two and a half billion prompts a day.",
+      "samples": 129536,
+      "startSample": 13814784,
+      "endSample": 13944320
+    },
+    {
+      "id": "u116",
+      "file": "u116.wav",
+      "text": "Together, that is a steady load of about thirty five megawatts, the power of roughly thirty thousand homes.",
+      "samples": 144896,
+      "startSample": 13944320,
+      "endSample": 14089216
+    },
+    {
+      "id": "u117",
+      "file": "u117.wav",
+      "text": "And yet that is a single service, in an industry that is still building.",
+      "samples": 90112,
+      "startSample": 14089216,
+      "endSample": 14179328
+    },
+    {
+      "id": "u118",
+      "file": "u118.wav",
+      "text": "Which brings us back to cat.",
+      "samples": 37888,
+      "startSample": 14179328,
+      "endSample": 14217216
+    },
+    {
+      "id": "u119",
+      "file": "u119.wav",
+      "text": "Light carried it through glass, a trick from a jet of water in eighteen forty two.",
+      "samples": 106496,
+      "startSample": 14217216,
+      "endSample": 14323712
+    },
+    {
+      "id": "u120",
+      "file": "u120.wav",
+      "text": "A file compression idea from a nineteen ninety four magazine turned it into a number.",
+      "samples": 116736,
+      "startSample": 14323712,
+      "endSample": 14440448
+    },
+    {
+      "id": "u121",
+      "file": "u121.wav",
+      "text": "It climbed a tower of weights that had to be trucked in, again and again, for every piece of the answer.",
+      "samples": 132608,
+      "startSample": 14440448,
+      "endSample": 14573056
+    },
+    {
+      "id": "u122",
+      "file": "u122.wav",
+      "text": "Stacked memory shortened the road, batching shared the truck, and smaller numbers lightened the load.",
+      "samples": 127488,
+      "startSample": 14573056,
+      "endSample": 14700544
+    },
+    {
+      "id": "u123",
+      "file": "u123.wav",
+      "text": "Every one of those inventions fights the same wall that two scientists described in nineteen ninety four.",
+      "samples": 142848,
+      "startSample": 14700544,
+      "endSample": 14843392
+    },
+    {
+      "id": "u124",
+      "file": "u124.wav",
+      "text": "Moving a number costs more than using it.",
+      "samples": 54272,
+      "startSample": 14843392,
+      "endSample": 14897664
+    },
+    {
+      "id": "u125",
+      "file": "u125.wav",
+      "text": "So the next time an answer appears a few words at a time, watch the rhythm.",
+      "samples": 95232,
+      "startSample": 14897664,
+      "endSample": 14992896
+    },
+    {
+      "id": "u126",
+      "file": "u126.wav",
+      "text": "That little stutter is not the machine thinking.",
+      "samples": 58368,
+      "startSample": 14992896,
+      "endSample": 15051264
+    },
+    {
+      "id": "u127",
+      "file": "u127.wav",
+      "text": "It is the machine waiting for the truck.",
+      "samples": 45056,
+      "startSample": 15051264,
+      "endSample": 15096320
+    }
+  ],
+  "totalSamples": 15096320
+}

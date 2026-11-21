@@ -1,0 +1,845 @@
+{
+ "beats": {
+  "beat-01": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Laser",
+     "Molten tin drop",
+     "Your phone"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.2
+    }
+   ],
+   "counter": {
+    "template": "{:,} drops a second",
+    "from": 1,
+    "to": 50000,
+    "screen": [
+     0.5,
+     0.86
+    ],
+    "curve": "exp",
+    "color": "warm"
+   }
+  },
+  "beat-02": {
+   "scene": "chip-teardown",
+   "params": {
+    "package": "ai"
+   },
+   "labels": [
+    {
+     "text": "Tiny switches",
+     "anchor": "logic",
+     "at": "word:switches"
+    },
+    {
+     "text": "Drawn with light",
+     "anchor": "memory",
+     "at": 0.75
+    }
+   ]
+  },
+  "beat-03": {
+   "scene": "campus",
+   "labels": [
+    {
+     "text": "The company that builds it",
+     "anchor": "building",
+     "at": "word:company"
+    }
+   ]
+  },
+  "beat-04": {
+   "scene": "wafer",
+   "actions": [
+    {
+     "name": "lift",
+     "at": "word:pattern"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Coated silicon",
+     "anchor": "wafer",
+     "at": "word:coating"
+    },
+    {
+     "text": "Pattern shone through a mask",
+     "anchor": "die",
+     "at": "word:stencil"
+    }
+   ]
+  },
+  "beat-05": {
+   "scene": "layer-stack",
+   "params": {
+    "layers": [
+     "Silicon",
+     "Coating",
+     "Light pattern",
+     "Etch",
+     "Repeat"
+    ],
+    "highlight": "Light pattern",
+    "base": "chip"
+   },
+   "labels": [
+    {
+     "text": "Layer after layer",
+     "anchor": "layer4",
+     "at": 0.55
+    },
+    {
+     "text": "Wavelength sets the finest line",
+     "anchor": "layer3",
+     "at": 0.8
+    }
+   ]
+  },
+  "beat-06": {
+   "scene": "line-chart",
+   "actions": [
+    {
+     "name": "draw",
+     "at": 0.05
+    }
+   ],
+   "labels": [
+    {
+     "text": "Longer waves smear",
+     "anchor": "line_start",
+     "at": "word:smear"
+    },
+    {
+     "text": "Shorter waves, finer lines",
+     "anchor": "line_end",
+     "at": "word:finer"
+    }
+   ],
+   "hud": [
+    {
+     "text": "13.5 nm",
+     "screen": [
+      0.82,
+      0.18
+     ],
+     "at": "word:thirteen"
+    }
+   ]
+  },
+  "beat-07": {
+   "scene": "document",
+   "params": {
+    "lines": 12,
+    "mark": 7,
+    "title": "Finer pencil"
+   },
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:finer"
+    }
+   ],
+   "labels": [
+    {
+     "text": "The whole promise",
+     "anchor": "mark",
+     "at": "word:promise"
+    }
+   ]
+  },
+  "beat-08": {
+   "scene": "timeline",
+   "params": {
+    "events": [
+     "Mid-1980s",
+     "A small lab effort"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.2
+    }
+   ],
+   "labels": [
+    {
+     "text": "Japan",
+     "anchor": "event1",
+     "at": "word:Japan"
+    },
+    {
+     "text": "Not taken seriously",
+     "anchor": "event2",
+     "at": "word:seriously"
+    }
+   ]
+  },
+  "beat-09": {
+   "scene": "people-row",
+   "params": {
+    "count": 3,
+    "lead": 3
+   },
+   "labels": [
+    {
+     "text": "EUV LLC (US)",
+     "anchor": "person1",
+     "at": "word:American"
+    },
+    {
+     "text": "ASML",
+     "anchor": "person2",
+     "at": "word:ASML"
+    },
+    {
+     "text": "Zeiss",
+     "anchor": "person3",
+     "at": "word:Zeiss"
+    }
+   ]
+  },
+  "beat-10": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Japan",
+     "EUV LLC",
+     "ASML + Zeiss",
+     "Prototype"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.1
+    }
+   ],
+   "labels": [
+    {
+     "text": "2001",
+     "anchor": "node4",
+     "at": "word:one"
+    }
+   ]
+  },
+  "beat-11": {
+   "scene": "people-row",
+   "params": {
+    "count": 3,
+    "lead": 2
+   },
+   "labels": [
+    {
+     "text": "Intel",
+     "anchor": "person1",
+     "at": "word:Intel"
+    },
+    {
+     "text": "Samsung",
+     "anchor": "person2",
+     "at": "word:Samsung"
+    },
+    {
+     "text": "TSMC",
+     "anchor": "person3",
+     "at": "word:TSMC"
+    }
+   ]
+  },
+  "beat-12": {
+   "scene": "timeline",
+   "params": {
+    "events": [
+     "Mid-1980s",
+     "2001",
+     "2006",
+     "2013"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.05
+    }
+   ],
+   "labels": [
+    {
+     "text": "The first idea",
+     "anchor": "event1",
+     "at": "word:idea"
+    },
+    {
+     "text": "First production system",
+     "anchor": "event4",
+     "at": "word:shipped"
+    }
+   ]
+  },
+  "beat-13": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Molten tin",
+     "Droplet",
+     "Vacuum chamber"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.3
+    }
+   ],
+   "labels": [
+    {
+     "text": "25 micrometres wide",
+     "anchor": "node2",
+     "at": "word:twenty-five"
+    },
+    {
+     "text": "70 m/s",
+     "anchor": "node3",
+     "at": "word:seventy"
+    }
+   ]
+  },
+  "beat-14": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 60
+   },
+   "actions": [
+    {
+     "name": "fill",
+     "at": "word:fifty"
+    }
+   ],
+   "labels": [
+    {
+     "text": "One droplet",
+     "anchor": "one",
+     "at": "word:droplet"
+    },
+    {
+     "text": "50,000 every second",
+     "anchor": "many",
+     "at": "word:fifty"
+    }
+   ]
+  },
+  "beat-15": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Laser",
+     "Tin droplet",
+     "Plasma",
+     "EUV light"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": "word:plasma"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Hot plasma",
+     "anchor": "node3",
+     "at": "word:plasma"
+    },
+    {
+     "text": "EUV light",
+     "anchor": "node4",
+     "at": "word:extreme"
+    }
+   ]
+  },
+  "beat-16": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 90
+   },
+   "actions": [
+    {
+     "name": "fill",
+     "at": 0.35
+    }
+   ],
+   "counter": {
+    "template": "{:,} explosions",
+    "from": 1,
+    "to": 50000,
+    "screen": [
+     0.5,
+     0.86
+    ],
+    "curve": "exp",
+    "color": "warm"
+   },
+   "labels": [
+    {
+     "text": "One droplet, one explosion",
+     "anchor": "one",
+     "at": "word:droplet"
+    }
+   ]
+  },
+  "beat-17": {
+   "scene": "org-radial",
+   "params": {
+    "rings": [
+     10,
+     18,
+     28
+    ]
+   },
+   "actions": [
+    {
+     "name": "spread",
+     "at": 0.2
+    }
+   ],
+   "labels": [
+    {
+     "text": "Driver laser",
+     "anchor": "ring",
+     "at": "word:driver"
+    },
+    {
+     "text": "Trumpf laser: 450,000+ parts",
+     "anchor": "centre",
+     "at": "word:Trumpf"
+    }
+   ]
+  },
+  "beat-18": {
+   "scene": "document",
+   "params": {
+    "lines": 10,
+    "mark": 4,
+    "title": "All matter absorbs EUV"
+   },
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:vacuum"
+    }
+   ],
+   "labels": [
+    {
+     "text": "So: a vacuum",
+     "anchor": "mark",
+     "at": "word:vacuum"
+    }
+   ]
+  },
+  "beat-19": {
+   "scene": "layer-stack",
+   "params": {
+    "layers": [
+     "Silicon",
+     "Molybdenum",
+     "Silicon",
+     "Molybdenum",
+     "Silicon"
+    ],
+    "highlight": "Molybdenum",
+    "base": "chip"
+   },
+   "labels": [
+    {
+     "text": "Many thin layers",
+     "anchor": "layer5",
+     "at": "word:alternating"
+    },
+    {
+     "text": "Weak reflections add up",
+     "anchor": "layer4",
+     "at": "word:reflections"
+    }
+   ],
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ]
+  },
+  "beat-20": {
+   "scene": "bar-chart",
+   "params": {
+    "values": [
+     100,
+     70,
+     49,
+     34,
+     24,
+     17
+    ]
+   },
+   "actions": [
+    {
+     "name": "grow",
+     "at": 0.05
+    }
+   ],
+   "labels": [
+    {
+     "text": "Light at the source",
+     "anchor": "first",
+     "at": 0.1
+    },
+    {
+     "text": "What is left",
+     "anchor": "last",
+     "at": 0.7
+    }
+   ]
+  },
+  "beat-21": {
+   "scene": "document",
+   "params": {
+    "lines": 12,
+    "mark": 6,
+    "title": "An ordinary mask"
+   },
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:blocks"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Light blocked here",
+     "anchor": "mark",
+     "at": "word:blocks"
+    }
+   ]
+  },
+  "beat-22": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Tin flash",
+     "Mask",
+     "Mirrors",
+     "Silicon"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": "word:bounces"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Every reflection costs light",
+     "anchor": "node3",
+     "at": "word:reflection"
+    }
+   ]
+  },
+  "beat-23": {
+   "scene": "line-chart",
+   "params": {
+    "points": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     101,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ]
+   },
+   "actions": [
+    {
+     "name": "draw",
+     "at": 0.05
+    }
+   ],
+   "labels": [
+    {
+     "text": "Roughness: about 50 picometres",
+     "anchor": "line_start",
+     "at": "word:fifty"
+    },
+    {
+     "text": "Less than one atom wide",
+     "anchor": "line_end",
+     "at": "word:atom"
+    }
+   ]
+  },
+  "beat-24": {
+   "scene": "chip-teardown",
+   "params": {
+    "package": "bga"
+   },
+   "labels": [
+    {
+     "text": "A tiny angle becomes an error",
+     "anchor": "die",
+     "at": "word:angle"
+    },
+    {
+     "text": "One mirror maker",
+     "anchor": "balls",
+     "at": "word:single"
+    }
+   ]
+  },
+  "beat-25": {
+   "scene": "people-row",
+   "params": {
+    "count": 3,
+    "lead": 3
+   },
+   "labels": [
+    {
+     "text": "Trumpf: the laser",
+     "anchor": "person1",
+     "at": "word:Trumpf"
+    },
+    {
+     "text": "Zeiss: the mirrors",
+     "anchor": "person2",
+     "at": "word:Zeiss"
+    },
+    {
+     "text": "ASML: the machine",
+     "anchor": "person3",
+     "at": "word:ASML"
+    }
+   ]
+  },
+  "beat-26": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 30
+   },
+   "actions": [
+    {
+     "name": "fill",
+     "at": 0.3
+    }
+   ],
+   "labels": [
+    {
+     "text": "ASML: the only one",
+     "anchor": "one",
+     "at": "word:only"
+    }
+   ]
+  },
+  "beat-27": {
+   "scene": "campus",
+   "labels": [
+    {
+     "text": "First high-NA tool: Intel",
+     "anchor": "building",
+     "at": "word:Intel"
+    }
+   ],
+   "hud": [
+    {
+     "text": "Numerical aperture 0.55",
+     "screen": [
+      0.5,
+      0.15
+     ],
+     "at": "word:numerical"
+    }
+   ]
+  },
+  "beat-28": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Larger aperture",
+     "Finer lines",
+     "Harder everywhere"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.1
+    }
+   ],
+   "labels": [
+    {
+     "text": "Higher numerical aperture",
+     "anchor": "node1",
+     "at": "word:aperture"
+    },
+    {
+     "text": "Chance gets involved",
+     "anchor": "node3",
+     "at": "word:chance"
+    }
+   ]
+  },
+  "beat-29": {
+   "scene": "line-chart",
+   "params": {
+    "points": [
+     5,
+     6.4,
+     4.1,
+     6.9,
+     3.8,
+     6.2,
+     4.6,
+     7.1,
+     3.9,
+     6.6,
+     4.4,
+     5.9
+    ]
+   },
+   "actions": [
+    {
+     "name": "draw",
+     "at": 0.1
+    }
+   ],
+   "labels": [
+    {
+     "text": "Particle counts fluctuate",
+     "anchor": "line_end",
+     "at": "word:fluctuates"
+    },
+    {
+     "text": "Too much, too little",
+     "anchor": "line_start",
+     "at": "word:much"
+    }
+   ]
+  },
+  "beat-30": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 25
+   },
+   "actions": [
+    {
+     "name": "fill",
+     "at": "word:raindrops"
+    }
+   ],
+   "labels": [
+    {
+     "text": "No two tiles alike",
+     "anchor": "many",
+     "at": "word:tiles"
+    },
+    {
+     "text": "Randomness grows as lines shrink",
+     "anchor": "one",
+     "at": "word:shrink"
+    }
+   ]
+  },
+  "beat-31": {
+   "scene": "layer-stack",
+   "params": {
+    "layers": [
+     "Brighter source",
+     "Sensitive coating",
+     "The price"
+    ],
+    "highlight": "The price",
+    "base": "none"
+   },
+   "labels": [
+    {
+     "text": "Speed, cost, or another error",
+     "anchor": "layer3",
+     "at": 0.7
+    }
+   ]
+  },
+  "beat-32": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Tin",
+     "Laser",
+     "Vacuum",
+     "Mirrors",
+     "Shorter wavelength"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.1
+    }
+   ],
+   "labels": [
+    {
+     "text": "Everything buys one thing",
+     "anchor": "node5",
+     "at": "word:wavelength"
+    }
+   ]
+  },
+  "beat-33": {
+   "scene": "chip-teardown",
+   "params": {
+    "package": "ai"
+   },
+   "actions": [
+    {
+     "name": "open",
+     "at": 0.3
+    }
+   ],
+   "labels": [
+    {
+     "text": "Chips made with this light",
+     "anchor": "logic",
+     "at": "word:Chips"
+    }
+   ]
+  },
+  "beat-34": {
+   "scene": "wafer",
+   "actions": [
+    {
+     "name": "lift",
+     "at": "word:pattern"
+    }
+   ],
+   "labels": [
+    {
+     "text": "A pattern drawn by light",
+     "anchor": "wafer",
+     "at": "word:pattern"
+    },
+    {
+     "text": "Tin drops: 50,000 a second",
+     "anchor": "die",
+     "at": "word:tin"
+    }
+   ]
+  }
+ }
+}

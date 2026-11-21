@@ -1,13 +1,26 @@
 # HANDOFF
-- Read `.memory/PROJECT.md`, `.memory/STATE.md`, then `docs/COMPLETION-PLAN.md`.
-- Goal: topic in -> Fern-style long-form documentary out, with engineering-explainer 3D segments at or above the two reference reels, and no per-episode Blender code. User gave full creative freedom; wants the code finished before any new episode.
-- Current position: phase 1-2 of the plan written but untested (see STATE "Written, NOT yet run"). Continue with the generic storyboard builder.
-- Looks: `kit.stage`/`kit.label` (matte), `look.orbit_stage`/`look.tag` (explainer, one move), `look.dark_stage(path)` (dive), new `look.open_set` + `look.shoot` + `look.auto_tag` (cuts inside a beat, auto-placed tags).
-- Builders: `tools/blender/storyboard_beats.py` (generic, reads `<episode>/storyboard.json`), `tools/blender/explainer_pilot.py`.
-- Blender: `tools/blender-4.5.15-windows-x64/blender.exe -b -P <script> -- <args>`. Look check: `-- --still 0.85 --out DIR` (half-res PNG + FRAMING lines). ~1 s/frame at 1080p; ray tracing off on purpose.
-- Assemble: clear `work/<ep>/segments/*.mp4` first, `python tools/assemble_episode.py --episode work/<ep>`; `--shot-lengths-only` after changing `shots.json`. QC: `python tools/qc_episode.py --episode work/<ep> --master work/<ep>/<ep>.mp4 --json ...`.
-- Use system `python` for pytest (`.venv` has no pytest). Bash heredocs with nested quotes fail: write patch scripts with the Write tool.
-- Git: `.gitignore` ignores only the root `/models/` (ONNX assets); `tools/blender/models/` is tracked since 2026-11-15 evening (it was silently ignored before).
-- Review method so far: contact sheets only; nothing has been watched in real time.
+- Read `.memory/PROJECT.md`, then the top section of `.memory/STATE.md` (2026-11-21).
+- Goal: topic in, long-form documentary out. Since 2026-11-21 it must be a **living-world film**:
+  - the explorer narrates on screen with lip sync;
+  - a human story drives it;
+  - the world keeps moving;
+  - the characters speak in their own voices (ElevenLabs v3).
+- Current position: Semmelweis pilot (`work/semmelweis-pilot`, about 100 s). It is re-narrated with the chosen voices (user's own clone as the explorer, Lajos as Semmelweis, Ana as the mother) and is being rendered (`build2.log`). Next: QC, stills, `qc/pilot-gate-status.md`, user review. Expand to a full film only after approval.
+- Run: `PYTHONIOENCODING=utf-8 BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe .venv/Scripts/python.exe -X utf8 tools/make_episode.py --episode work/semmelweis-pilot --only <stages>`. Voice change: `--only narration,captions,lengths`, then rescale the shot starts in `storyboard.json` to the new `shot_lengths.json`.
+- Tests: `python -m unittest discover -s python -p "test_*.py"` (723; 7 known errors need `BLENDER_EXE`).
+- Key files:
+  - voice: `python/eleven.py`;
+  - lip sync and people: `tools/lip_sync.py`, `tools/pixel/people.py`;
+  - world: `tools/blender/models/world.py`, `world_plan.py`, `characters.py`;
+  - storyboard: `tools/blender/storyboard_beats.py`.
+- ElevenLabs key: env var or the git-ignored `.env.local`. Never print or commit it. Check credits first: `GET /v1/user/subscription`.
+- Rules:
+  - Never run two Blender or make_episode runs at once.
+  - Don't loosen QC gates.
+  - No placeholder archive media.
+  - Ask before downloads.
+  - `Remove-Item` on renders is blocked; use `Move-Item`.
+  - Report to the user in Greek.
+  - Commit only when asked.
+  - The user is at the PC: give paths, don't send files.
 - Obsidian: `E:/Documents/Obsidian Vault/AI-SECOND-BRAIN/PROJECTS/longform-explainer/` (STATUS, HANDOFF, DECISIONS); append short dated sections.
-- Memory protocol: update `.memory/*` and Obsidian only at milestones or session end; bullets only.

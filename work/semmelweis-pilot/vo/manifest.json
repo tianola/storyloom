@@ -1,0 +1,206 @@
+{
+  "sampleRate": 24000,
+  "voice": "eleven:VKTXURQy46dy2BlsOQmv",
+  "utterances": [
+    {
+      "id": "u001",
+      "file": "u001.wav",
+      "text": "Vienna, eighteen sixty five. A doctor is led into an asylum.",
+      "samples": 125281,
+      "startSample": 0,
+      "endSample": 125281
+    },
+    {
+      "id": "u002",
+      "file": "u002.wav",
+      "text": "There, it is said, the guards beat him. Two weeks later he is dead.",
+      "samples": 105601,
+      "startSample": 125281,
+      "endSample": 230882
+    },
+    {
+      "id": "u003",
+      "file": "u003.wav",
+      "text": "I see a time when only cases of self-infection will occur in the maternity hospitals of the world.",
+      "samples": 168960,
+      "speaker": "semmelweis",
+      "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
+      "mode": "thought",
+      "startSample": 230882,
+      "endSample": 399842
+    },
+    {
+      "id": "u004",
+      "file": "u004.wav",
+      "text": "Ignaz Semmelweis wrote that. But most doctors of his day rejected it.",
+      "samples": 121921,
+      "startSample": 399842,
+      "endSample": 521763
+    },
+    {
+      "id": "u005",
+      "file": "u005.wav",
+      "text": "In his day, every doctor knew what killed new mothers: bad air.",
+      "samples": 109200,
+      "startSample": 521763,
+      "endSample": 630963
+    },
+    {
+      "id": "u006",
+      "file": "u006.wav",
+      "text": "So why did they die in one clinic of Vienna's hospital, and hardly at all in the next?",
+      "samples": 132240,
+      "startSample": 630963,
+      "endSample": 763203
+    },
+    {
+      "id": "u007",
+      "file": "u007.wav",
+      "text": "Vienna, eighteen forty six. Semmelweis, twenty eight, is the new assistant in the First Clinic.",
+      "samples": 160081,
+      "startSample": 763203,
+      "endSample": 923284
+    },
+    {
+      "id": "u008",
+      "file": "u008.wav",
+      "text": "Here, doctors and students deliver the babies. Next door, midwives do.",
+      "samples": 121200,
+      "startSample": 923284,
+      "endSample": 1044484
+    },
+    {
+      "id": "u009",
+      "file": "u009.wav",
+      "text": "That year, one mother in nine dies here. Next door, one in thirty six.",
+      "samples": 132961,
+      "startSample": 1044484,
+      "endSample": 1177445
+    },
+    {
+      "id": "u010",
+      "file": "u010.wav",
+      "text": "Yet both clinics share one hospital, and the same Vienna air.",
+      "samples": 99840,
+      "startSample": 1177445,
+      "endSample": 1277285
+    },
+    {
+      "id": "u011",
+      "file": "u011.wav",
+      "text": "Everything was in question. Only the large number of deaths was an unquestionable reality.",
+      "samples": 147840,
+      "speaker": "semmelweis",
+      "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
+      "mode": "thought",
+      "startSample": 1277285,
+      "endSample": 1425125
+    },
+    {
+      "id": "u012",
+      "file": "u012.wav",
+      "text": "But the women know the difference.",
+      "samples": 40080,
+      "startSample": 1425125,
+      "endSample": 1465205
+    },
+    {
+      "id": "u013",
+      "file": "u013.wav",
+      "text": "Please. Not the first clinic.",
+      "samples": 59520,
+      "speaker": "mother",
+      "voice": "eleven:rCmVtv8cYU60uhlsOo1M",
+      "mode": "say",
+      "startSample": 1465205,
+      "endSample": 1524725
+    },
+    {
+      "id": "u014",
+      "file": "u014.wav",
+      "text": "He wrote that they knelt, wringing their hands, begging to be sent next door.",
+      "samples": 106320,
+      "startSample": 1524725,
+      "endSample": 1631045
+    },
+    {
+      "id": "u015",
+      "file": "u015.wav",
+      "text": "So Semmelweis tests every explanation, one by one. The mothers deliver on their side, as the midwives do. Nothing changes.",
+      "samples": 203280,
+      "startSample": 1631045,
+      "endSample": 1834325
+    },
+    {
+      "id": "u016",
+      "file": "u016.wav",
+      "text": "But there is the bell. A priest crosses the ward to the dying, an attendant ringing ahead of him.",
+      "samples": 139679,
+      "startSample": 1834325,
+      "endSample": 1974004
+    },
+    {
+      "id": "u017",
+      "file": "u017.wav",
+      "text": "Even to me myself it had a strange effect upon my nerves, when I heard the bell hurry past my door.",
+      "samples": 170880,
+      "speaker": "semmelweis",
+      "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
+      "mode": "say",
+      "startSample": 1974004,
+      "endSample": 2144884
+    },
+    {
+      "id": "u018",
+      "file": "u018.wav",
+      "text": "He sends the priest a quieter way. Still, the mothers die.",
+      "samples": 94800,
+      "startSample": 2144884,
+      "endSample": 2239684
+    },
+    {
+      "id": "u019",
+      "file": "u019.wav",
+      "text": "Then, in March eighteen forty seven, Semmelweis's friend Jakob Kolletschka is cut by a student's knife during an autopsy, and dies.",
+      "samples": 214801,
+      "startSample": 2239684,
+      "endSample": 2454485
+    },
+    {
+      "id": "u020",
+      "file": "u020.wav",
+      "text": "Day and night I was haunted by the image of Kolletschka's disease.",
+      "samples": 113280,
+      "speaker": "semmelweis",
+      "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
+      "mode": "thought",
+      "startSample": 2454485,
+      "endSample": 2567765
+    },
+    {
+      "id": "u021",
+      "file": "u021.wav",
+      "text": "But Kolletschka's body shows the same disease as the dying mothers.",
+      "samples": 83760,
+      "startSample": 2567765,
+      "endSample": 2651525
+    },
+    {
+      "id": "u022",
+      "file": "u022.wav",
+      "text": "And the students who cut the dead walk straight on to the mothers.",
+      "samples": 87120,
+      "startSample": 2651525,
+      "endSample": 2738645
+    },
+    {
+      "id": "u023",
+      "file": "u023.wav",
+      "text": "What are their hands carrying?",
+      "samples": 45360,
+      "startSample": 2738645,
+      "endSample": 2784005
+    }
+  ],
+  "totalSamples": 2784005
+}

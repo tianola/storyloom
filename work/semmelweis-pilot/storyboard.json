@@ -1,0 +1,93 @@
+{
+ "beats": {
+  "beat-01": {
+   "scene": "asylum",
+   "note": "u001-u004 hook (montage): the street and the gate, the door shuts on 'beat him'; his own written words over the cell in moonlight, push in and hold; pull out on 'rejected'",
+   "params": {"drag_from": 0.02, "drag_until": 0.3},
+   "shots": [
+    {"view": "street", "start": 0.0, "move": "drift"},
+    {"view": "at:lantern", "start": 3.0, "move": "lock"},
+    {"view": "gate", "start": 4.4, "move": "lock"},
+    {"view": "cell", "start": 6.8, "move": "lock"},
+    {"view": "bars", "start": 8.8, "move": "lock"},
+    {"view": "cell-close", "start": 11.0, "move": "push"},
+    {"view": "cell", "start": 18.9, "move": "pull"}
+   ],
+   "actions": [{"name": "door-shut", "at": 7.2}],
+   "hud": [{"text": "1865", "screen": [0.5, 0.14], "at": 0.0, "until": 3.0}]
+  },
+  "beat-02": {
+   "scene": "vienna",
+   "note": "u005-u006 the explorer on his rooftop corner (always screen right) at dusk: the guess and the question; then the living town below",
+   "params": {"time": "dusk", "lights_from": 0.0, "lights_until": 0.9, "walkers": 12, "groups": 3},
+   "shots": [
+    {"view": "roofs", "start": 0.0, "move": "drift"},
+    {"view": "market", "start": 6.0, "move": "drift"}
+   ],
+   "cast": [
+    {"who": "explorer", "bust": true, "screen": [0.72, 1.0], "height": 0.62, "speaker": "narrator", "pose": "talk",
+     "acts": [{"at": "word:So", "pose": "point", "face": "worried"}], "shot": 0}
+   ]
+  },
+  "beat-03": {
+   "scene": "vienna",
+   "note": "u007-u011 one held descent over the living town at dusk down to his lit window (who he is, the two clinics, the numbers, the same air); then inside the room, a slow push on him for his own words",
+   "params": {"time": "dusk>night", "lights_from": 0.02, "lights_until": 0.55, "lamps_from": 0.04, "lamps_until": 0.5,
+              "walkers": 16, "groups": 4},
+   "shots": [
+    {"view": "aerial", "to": "window", "glide": "log", "start": 0.0},
+    {"view": "desk", "start": 21.4, "move": "drift"}
+   ],
+   "hud": [{"text": "Vienna, 1846", "screen": [0.5, 0.14], "at": 0.0, "until": 4.0}]
+  },
+  "beat-04": {
+   "scene": "vienna",
+   "note": "u012-u014 dawn at the clinic doors: a mother in the foreground pleads (on screen before her line); then the queue at the Second Clinic while we hear what he wrote",
+   "params": {"time": "dawn", "walkers": 0, "groups": 0},
+   "shots": [
+    {"view": "doors", "start": 0.0, "move": "drift"},
+    {"view": "second-door", "start": 4.4, "move": "drift"}
+   ],
+   "cast": [
+    {"who": "mother", "screen": [0.36, 0.97], "height": 0.62, "speaker": "mother", "shot": 0, "pose": "plead", "face": "worried",
+     "acts": [{"at": 4.0, "face": "sad"}]}
+   ]
+  },
+  "beat-05": {
+   "scene": "ward",
+   "note": "u015-u018 the First Clinic ward by day: the tests (a mother on her side), the priest and the bell down the aisle, Semmelweis at the door hearing it (on screen before his line), the priest goes another way, the mothers still die",
+   "params": {"time": "day"},
+   "shots": [
+    {"view": "ward-wide", "start": 0.0, "move": "drift"},
+    {"view": "ward-bed", "start": 5.0, "move": "push"},
+    {"view": "ward-wide", "to": "ward-priest", "start": 8.5},
+    {"view": "ward-door", "start": 13.2, "move": "lock"},
+    {"view": "ward-aisle", "start": 21.4, "move": "pull"}
+   ],
+   "actions": [{"name": "bell", "at": 8.5}],
+   "cast": [
+    {"who": "semmelweis", "screen": [0.48, 0.96], "height": 0.58, "speaker": "semmelweis", "shot": 3, "pose": "stand", "face": "worried",
+     "acts": [{"at": 15.0, "pose": "talk"}, {"at": 20.8, "pose": "stand", "face": "sad"}]}
+   ]
+  },
+  "beat-06": {
+   "scene": "vienna",
+   "note": "u019-u021 the dissecting room: one slow dolly from the door to the table while Kolletschka's death is told; his own words over the jars; the covered body",
+   "params": {"time": "dawn", "walkers": 0, "groups": 0, "tint": 0.9},
+   "shots": [
+    {"view": "anatomy", "to": "anatomy-close", "start": 0.0},
+    {"view": "jars", "start": 11.0, "move": "push"},
+    {"view": "at:table", "start": 14.0, "move": "lock"}
+   ],
+   "hud": [{"text": "March 1847", "screen": [0.5, 0.14], "at": 0.3, "until": 3.5}]
+  },
+  "beat-07": {
+   "scene": "ward",
+   "note": "u022-u023 back in the ward: one slow move down the aisle toward the beds, past the doctor and students at a mother's bed; the question over their hands",
+   "params": {"time": "day"},
+   "shots": [
+    {"view": "ward-aisle", "to": "ward-priest", "start": 0.0}
+   ]
+  }
+ }
+}

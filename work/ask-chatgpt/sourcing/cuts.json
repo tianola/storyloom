@@ -1,0 +1,242 @@
+{
+ "typing": {
+  "source": "typing",
+  "in": 0.5,
+  "length": 5.3,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 59.94,
+  "duration": 5.305,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d0/Hunt_and_peck_typing_%E2%80%94_Monkeytype_benchmark.webm/Hunt_and_peck_typing_%E2%80%94_Monkeytype_benchmark.webm.1080p.vp9.webm"
+ },
+ "typing-b": {
+  "source": "typing",
+  "in": 10.0,
+  "length": 4.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 59.94,
+  "duration": 3.987,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d0/Hunt_and_peck_typing_%E2%80%94_Monkeytype_benchmark.webm/Hunt_and_peck_typing_%E2%80%94_Monkeytype_benchmark.webm.1080p.vp9.webm"
+ },
+ "dc-cables": {
+  "source": "dc-tour",
+  "in": 980.0,
+  "length": 6.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 6.0,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "dc-rows": {
+  "source": "dc-tour",
+  "in": 515.5,
+  "length": 6.6,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 6.6,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "dc-chillers": {
+  "source": "dc-tour",
+  "in": 575.0,
+  "length": 7.4,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 7.4,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "cell-tower": {
+  "source": "cell-tower",
+  "in": 1.0,
+  "length": 5.4,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 29.97,
+  "duration": 5.405,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/d/de/Cell_tower_video.webm"
+ },
+ "dc-fiber2": {
+  "source": "dc-tour",
+  "in": 725.5,
+  "length": 7.4,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 7.4,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "laser-water": {
+  "source": "fiber-eg",
+  "in": 64.6,
+  "length": 6.6,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 29.97,
+  "duration": 6.607,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Fiber_optic_cables_%E2%80%94_How_they_work.webm"
+ },
+ "spad-pulse": {
+  "source": "spad-pulse",
+  "in": 0.0,
+  "length": 4.8,
+  "speed": 0.85,
+  "logo_crop": false,
+  "fps": 25.0,
+  "duration": 5.64,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/48/Observation-of-laser-pulse-propagation-in-optical-fibers-with-a-SPAD-camera-srep43302-s1.ogv/Observation-of-laser-pulse-propagation-in-optical-fibers-with-a-SPAD-camera-srep43302-s1.ogv.1080p.vp9.webm"
+ },
+ "dc-hall": {
+  "source": "dc-tour",
+  "in": 38.0,
+  "length": 7.4,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 7.4,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "nvb-hgx": {
+  "source": "nv-booth",
+  "in": 24.5,
+  "length": 4.0,
+  "speed": 0.95,
+  "logo_crop": true,
+  "fps": 59.94,
+  "duration": 4.221,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/24/AI%E5%8A%A9%E6%89%8B%E8%83%BD%E5%B8%AE%E6%88%91%E8%B6%85%E9%A2%91%EF%BC%9FCOMPUTEX_NV%E5%B1%95%E5%8C%BA%E4%BD%93%E9%AA%8C_%28%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan%29_01.webm/AI%E5%8A%A9%E6%89%8B%E8%83%BD%E5%B8%AE%E6%88%91%E8%B6%85%E9%A2%91%EF%BC%9FCOMPUTEX_NV%E5%B1%95%E5%8C%BA%E4%BD%93%E9%AA%8C_%28%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan%29_01.webm.1080p.vp9.webm"
+ },
+ "gh-server": {
+  "source": "supermicro-gh",
+  "in": 95.0,
+  "length": 7.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 59.94,
+  "duration": 7.007,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/28/Supermicro_Ampere_Server_and_Nvidia_Grace_Hopper_Super_Chip.webm/Supermicro_Ampere_Server_and_Nvidia_Grace_Hopper_Super_Chip.webm.1080p.vp9.webm"
+ },
+ "nvb-tray": {
+  "source": "nv-booth",
+  "in": 65.35,
+  "length": 1.95,
+  "speed": 0.45,
+  "logo_crop": true,
+  "fps": 59.94,
+  "duration": 4.320983,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/24/AI%E5%8A%A9%E6%89%8B%E8%83%BD%E5%B8%AE%E6%88%91%E8%B6%85%E9%A2%91%EF%BC%9FCOMPUTEX_NV%E5%B1%95%E5%8C%BA%E4%BD%93%E9%AA%8C_%28%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan%29_01.webm/AI%E5%8A%A9%E6%89%8B%E8%83%BD%E5%B8%AE%E6%88%91%E8%B6%85%E9%A2%91%EF%BC%9FCOMPUTEX_NV%E5%B1%95%E5%8C%BA%E4%BD%93%E9%AA%8C_%28%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan%29_01.webm.1080p.vp9.webm"
+ },
+ "qct-gh": {
+  "source": "qct-gh",
+  "in": 8.8,
+  "length": 5.0,
+  "speed": 0.95,
+  "logo_crop": false,
+  "fps": 59.94,
+  "duration": 5.272,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/42/QCT_shows_Nvidia_Grace_Hopper_Arm_with_Nvidia_GPU_Server.webm/QCT_shows_Nvidia_Grace_Hopper_Arm_with_Nvidia_GPU_Server.webm.1080p.vp9.webm"
+ },
+ "nvb-server": {
+  "source": "nv-booth",
+  "in": 69.2,
+  "length": 3.5,
+  "speed": 0.9,
+  "logo_crop": true,
+  "fps": 59.94,
+  "duration": 3.904,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/24/AI%E5%8A%A9%E6%89%8B%E8%83%BD%E5%B8%AE%E6%88%91%E8%B6%85%E9%A2%91%EF%BC%9FCOMPUTEX_NV%E5%B1%95%E5%8C%BA%E4%BD%93%E9%AA%8C_%28%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan%29_01.webm/AI%E5%8A%A9%E6%89%8B%E8%83%BD%E5%B8%AE%E6%88%91%E8%B6%85%E9%A2%91%EF%BC%9FCOMPUTEX_NV%E5%B1%95%E5%8C%BA%E4%BD%93%E9%AA%8C_%28%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan%29_01.webm.1080p.vp9.webm"
+ },
+ "smuc-anim": {
+  "source": "supermuc",
+  "in": 35.0,
+  "length": 7.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 23.976,
+  "duration": 6.965,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/a/a6/SuperMUC-_First_Commercial_Hot-Water_Cooled_Supercomputer_to_Consume_40%25_Less_Energy.webm"
+ },
+ "dc-pumps": {
+  "source": "dc-tour",
+  "in": 500.0,
+  "length": 3.5,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 3.5,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "tower-showers": {
+  "source": "tower-showers",
+  "in": 0.0,
+  "length": 5.47,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 5.467,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Showers_in_natural_draft_cooling_tower.webm"
+ },
+ "tower-inside": {
+  "source": "tower-inside",
+  "in": 0.0,
+  "length": 7.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 29.0,
+  "duration": 6.966,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e5/Inside_cooling_tower_-_video.webm/Inside_cooling_tower_-_video.webm.1080p.vp9.webm"
+ },
+ "dc-roof": {
+  "source": "dc-tour",
+  "in": 557.5,
+  "length": 2.45,
+  "speed": 0.9,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 2.733,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "smuc-racks": {
+  "source": "supermuc",
+  "in": 175.5,
+  "length": 4.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 23.976,
+  "duration": 4.004,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/a/a6/SuperMUC-_First_Commercial_Hot-Water_Cooled_Supercomputer_to_Consume_40%25_Less_Energy.webm"
+ },
+ "dc-chillers2": {
+  "source": "dc-tour",
+  "in": 618.0,
+  "length": 9.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 9.0,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ },
+ "spad-b": {
+  "source": "spad-pulse",
+  "in": 8.0,
+  "length": 3.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 25.0,
+  "duration": 3.0,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/48/Observation-of-laser-pulse-propagation-in-optical-fibers-with-a-SPAD-camera-srep43302-s1.ogv/Observation-of-laser-pulse-propagation-in-optical-fibers-with-a-SPAD-camera-srep43302-s1.ogv.1080p.vp9.webm"
+ },
+ "dc-fiber": {
+  "source": "dc-tour",
+  "in": 677.0,
+  "length": 4.0,
+  "speed": 1,
+  "logo_crop": false,
+  "fps": 30.0,
+  "duration": 4.0,
+  "from": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm/Data_Center_Tour_%26_Technical_Deep_Dive_into_the_Power%2C_Data_and_Cooling_Infrastructure%21.webm.1080p.vp9.webm"
+ }
+}

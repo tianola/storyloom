@@ -119,9 +119,6 @@ def profile(contract: dict) -> dict:
                 raise ValueError(f"mix.min_share[{layer!r}] is {number}, outside 0..1")
             if bound == "min_per_act" and number < 0:
                 raise ValueError(f"mix.min_per_act[{layer!r}] is {number}")
-    if float(mix["min_share"]["archive"]) <= 0.0:
-        raise ValueError("mix.min_share.archive is zero, so the profile asks for no archival "
-                         "screen time and the default is a label rather than a rule")
 
     act = mix["act_seconds"]
     if (not isinstance(act, list) or len(act) != 2 or not 0 < float(act[0]) <= float(act[1])):
@@ -299,6 +296,9 @@ def mix_findings(shots, contract: dict, *, mode: str | None = None) -> list[Find
         raise ValueError("the shot list carries no screen seconds at all; refusing to compute a "
                          "share over a zero-length film")
     archive_seconds = by_seconds["archive"]
+    floor = float(mix["min_share"]["archive"])
+    if archive_seconds <= 0 and floor <= 0 and int(mix["min_per_act"]["archive"]) <= 0:
+        return findings     # no floor: archive is evidence where there is some, not a quota
     if archive_seconds <= 0:
         findings.append(Finding(
             "archive_layer_missing", severity,
@@ -307,7 +307,6 @@ def mix_findings(shots, contract: dict, *, mode: str | None = None) -> list[Find
         return findings
 
     share = archive_seconds / total
-    floor = float(mix["min_share"]["archive"])
     if share < floor:
         findings.append(Finding(
             "archive_share_low", severity,
@@ -361,10 +360,21 @@ def key_side(contract: dict) -> str:
     return contract["lighting"]["key_side"]
 
 
-def _relative_posix(value: str, field: str, name: str) -> str:
+def relative_posix_problem(value) -> str | None:
+    """'empty', 'unsafe' (a backslash, an absolute path or a '..'), or None for a safe relative
+    POSIX path. Shared by the archive and episode loaders, which word their own messages."""
     if not isinstance(value, str) or not value.strip():
-        raise ValueError(f"{name}: {field} must be a non-empty path")
+        return "empty"
     if "\\" in value or PurePosixPath(value).is_absolute() or ".." in PurePosixPath(value).parts:
+        return "unsafe"
+    return None
+
+
+def _relative_posix(value: str, field: str, name: str) -> str:
+    problem = relative_posix_problem(value)
+    if problem == "empty":
+        raise ValueError(f"{name}: {field} must be a non-empty path")
+    if problem:
         raise ValueError(f"{name}: {field} must be an episode-relative POSIX path, got {value!r}")
     return value
 

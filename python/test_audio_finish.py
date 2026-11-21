@@ -58,3 +58,40 @@ class AudioFinish(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ThoughtTreatment(unittest.TestCase):
+    def test_thought_is_quieter_and_duller_say_is_untouched(self):
+        import audio_finish
+        rate = 24000
+        t = np.arange(rate) / rate
+        tone = 0.3 * np.sin(2 * np.pi * 300 * t) + 0.3 * np.sin(2 * np.pi * 9000 * t)
+        style = audio_finish.thought_style()
+        out = audio_finish.treat_thought(tone, rate, style)
+        self.assertEqual(len(out), len(tone))
+
+        def band(x, hz):
+            return abs(np.fft.rfft(x)[hz])
+        self.assertLess(band(out, 9000) / band(out, 300), 0.7 * band(tone, 9000) / band(tone, 300))
+        self.assertLess(band(out, 300), band(tone, 300))
+        self.assertGreater(band(out, 300), 0.4 * band(tone, 300))
+        self.assertIn("why", style)
+
+    def test_level_utterances_treats_only_thought_lines(self):
+        import tempfile
+        from unittest import mock
+        import audio_finish
+        with tempfile.TemporaryDirectory() as tmp:
+            vo = Path(tmp) / "vo"
+            vo.mkdir()
+            signal = (0.2 * np.sin(2 * np.pi * 9000 * np.arange(RATE) / RATE))
+            for name in ("a.wav", "b.wav"):
+                audio_finish.write_wav(vo / name, RATE, signal)
+            manifest = {"utterances": [{"id": "a", "file": "a.wav", "mode": "say"},
+                                       {"id": "b", "file": "b.wav", "mode": "thought"}]}
+            with mock.patch.object(audio_finish.loudness, "measure", return_value={"input_i": -20.0}):
+                audio_finish.level_utterances(tmp, manifest)
+            from captions import read_wav
+            a = read_wav(vo / "levelled" / "a.wav")[1]
+            b = read_wav(vo / "levelled" / "b.wav")[1]
+            self.assertLess(np.abs(b).max(), 0.5 * np.abs(a).max())

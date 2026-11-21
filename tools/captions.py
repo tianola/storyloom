@@ -3,10 +3,12 @@
     python tools/captions.py --episode work/X                    # words.json, word_timing.json, captions.srt/.vtt
     python tools/captions.py --episode work/X --attach MASTER --out OUT [--burn]
 
-Kokoro returns audio without word marks, so each word is placed inside its utterance by the length
-of the word (plus a pause after punctuation), across the span where the utterance is actually
-voiced (leading and trailing silence found from the waveform). It is an estimate, good to a few
-tenths of a second, which is what captions and `word:` label times need.
+Word times come from `vo/word_marks.json` (tools/word_marks.py: the voice model's own phoneme
+durations, kept only when they describe exactly the wav on disk). Where a line has no valid
+marks, each word is placed inside its utterance by the length of the word (plus a pause after
+punctuation), across the span where the utterance is actually voiced. That estimate was measured
+on ask-chatgpt at 0.09 s median and 0.28 s at the 90th percentile off the exact times, which is
+too loose for `word:` cues that fire an action on screen.
 
 Outputs, under `<episode>/vo/` unless noted:
   words.json          [{"uid", "word", "start", "end"}] in film seconds
@@ -26,6 +28,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "tools"))
 
 LINE_CHARS = 42
 MAX_CUE_S = 6.5
@@ -75,15 +78,35 @@ def place_words(text, start, end):
     return out
 
 
+def exact_marks(episode, u):
+    """[(word, start, end)] from vo/word_marks.json (tools/word_marks.py) when they were read from
+    exactly this wav and this text; None otherwise, and the estimate is used."""
+    path = Path(episode) / "vo" / "word_marks.json"
+    if not path.exists():
+        return None
+    entry = json.loads(path.read_text(encoding="utf-8")).get(u["id"])
+    if not entry or entry.get("text") != u["text"] or len(entry["words"]) != len(u["text"].split()):
+        return None
+    from word_marks import wav_print
+    if entry.get("wav") != wav_print(Path(episode) / "vo" / u["file"]):
+        return None
+    return [tuple(w) for w in entry["words"]]
+
+
 def word_timings(episode, manifest=None):
+    """Every word in film seconds: exact marks from the voice model where they match the audio,
+    else spread by length across the voiced span."""
     episode = Path(episode)
     manifest = manifest or json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
     words = []
     for u in manifest["utterances"]:
-        rate, samples = read_wav(episode / "vo" / u["file"])
         offset = u["startSample"] / manifest["sampleRate"]
-        a, b = voiced_span(samples, rate)
-        for word, s, e in place_words(u["text"], a, b):
+        placed = exact_marks(episode, u)
+        if placed is None:
+            rate, samples = read_wav(episode / "vo" / u["file"])
+            a, b = voiced_span(samples, rate)
+            placed = place_words(u["text"], a, b)
+        for word, s, e in placed:
             words.append({"uid": u["id"], "word": word, "start": round(offset + s, 3), "end": round(offset + e, 3)})
     return words
 

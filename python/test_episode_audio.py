@@ -138,7 +138,7 @@ class TruePeakCeilingIsEnforced(unittest.TestCase):
         """Run the delivery chain exactly as mux_final does, then read back what it produced."""
         delivered = Path(self.tmp) / ("encoded.m4a" if encoded else "pcm.wav")
         audio_filter = loudness.loudnorm_filter(loudness.measure(source), AUDIO)
-        codec = ["-c:a", "aac", "-b:a", "192k"] if encoded else ["-c:a", "pcm_s16le"]
+        codec = ["-c:a", "aac", "-b:a", AUDIO["aac_bitrate"]] if encoded else ["-c:a", "pcm_s16le"]
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(source),
                         "-af", audio_filter, "-ar", str(self.RATE), "-ac", "2", *codec,
                         str(delivered)], check=True)

@@ -1,0 +1,109 @@
+{
+ "beats": {
+  "beat-01": {
+   "scene": "asylum",
+   "note": "u001-u003 cold open, 1865: the street to the gate, guards drag him in (shadows), the door shuts on 'beat him', the cell in moonlight, his thought",
+   "params": {"drag_from": 0.03, "drag_until": 0.4},
+   "shots": [
+    {"view": "street", "start": 0.0, "to": "gate"},
+    {"view": "at:lantern", "start": 2.6},
+    {"view": "gate", "start": 3.8},
+    {"view": "cell", "start": 6.0},
+    {"view": "bars", "start": 7.6},
+    {"view": "cell-close", "start": 8.9},
+    {"view": "at:window", "start": 11.0},
+    {"view": "cell-close", "start": 12.2}
+   ],
+   "actions": [{"name": "door-shut", "at": 6.2}],
+   "hud": [{"text": "1865", "screen": [0.5, 0.14], "at": 0.0, "until": 3.6}]
+  },
+  "beat-02": {
+   "scene": "vienna",
+   "note": "u004-u005 the guide on a rooftop at dusk; below him the market, carts, neighbours talking",
+   "params": {"time": "dusk", "lights_from": 0.0, "lights_until": 0.9, "walkers": 12, "groups": 3},
+   "shots": [
+    {"view": "roofs", "start": 0.0},
+    {"view": "market", "to": "street", "start": 2.4},
+    {"view": "roofs", "start": 9.4}
+   ],
+   "cast": [
+    {"who": "explorer", "bust": true, "screen": [0.72, 1.0], "height": 0.62, "speaker": "narrator", "pose": "talk", "acts": [], "shot": 0},
+    {"who": "explorer", "bust": true, "screen": [0.28, 1.0], "height": 0.6, "speaker": "narrator", "pose": "point", "face": "worried", "acts": [], "shot": 2}
+   ]
+  },
+  "beat-03": {
+   "scene": "vienna",
+   "note": "u006-u010 one held descent over the living town at dusk (market, carts, washing, birds, lamps coming on) down to the lit window where Semmelweis writes; then the hospital court",
+   "params": {"time": "dusk>night", "lights_from": 0.02, "lights_until": 0.55, "lamps_from": 0.04, "lamps_until": 0.5,
+              "walkers": 16, "groups": 4},
+   "shots": [
+    {"view": "aerial", "to": "window", "glide": "log", "start": 0.0},
+    {"view": "court-wide", "start": 20.4},
+    {"view": "doors", "start": 22.2}
+   ],
+   "hud": [{"text": "Vienna, 1846", "screen": [0.5, 0.14], "at": 0.0, "until": 4.2}]
+  },
+  "beat-04": {
+   "scene": "vienna",
+   "note": "u011-u013 morning in the court: students and a stretcher at the First Clinic, the queue of mothers at the Second, the numbers, one mother pleading",
+   "params": {"time": "dawn", "walkers": 0, "groups": 0},
+   "shots": [
+    {"view": "court-wide", "start": 0.0},
+    {"view": "court-low", "start": 2.2},
+    {"view": "second-door", "start": 3.8},
+    {"view": "doors", "start": 5.3},
+    {"view": "at:first", "start": 6.7},
+    {"view": "at:second", "start": 8.0},
+    {"view": "pump", "start": 9.2},
+    {"view": "first-door", "start": 10.4}
+   ],
+   "cast": [
+    {"who": "mother", "screen": [0.42, 0.96], "height": 0.72, "speaker": "mother", "shot": 7, "pose": "plead", "face": "worried"}
+   ]
+  },
+  "beat-05": {
+   "scene": "vienna",
+   "note": "u014 the reversal, said to us in front of the two doors",
+   "params": {"time": "dawn", "walkers": 0, "groups": 0},
+   "shots": [
+    {"view": "doors", "start": 0.0},
+    {"view": "court-wide", "start": 2.4}
+   ],
+   "cast": [
+    {"who": "semmelweis", "bust": true, "screen": [0.3, 1.0], "height": 0.66, "speaker": "semmelweis", "pose": "talk", "face": "angry", "acts": [], "shot": 0},
+    {"who": "semmelweis", "bust": true, "screen": [0.7, 1.0], "height": 0.66, "speaker": "semmelweis", "pose": "point", "face": "worried",
+     "acts": [{"at": "word:So", "pose": "stand", "face": "worried"}], "shot": 1}
+   ]
+  },
+  "beat-06": {
+   "scene": "vienna",
+   "note": "u015-u017 the busy morning street; the dissecting room (Kolletschka lecturing, jars, late students); students crossing the court to the First Clinic",
+   "params": {"time": "dawn", "walkers": 14, "groups": 3, "tint": 0.9},
+   "shots": [
+    {"view": "street", "start": 0.0},
+    {"view": "street-low", "start": 1.8},
+    {"view": "market", "start": 3.2},
+    {"view": "anatomy", "start": 4.6},
+    {"view": "jars", "start": 6.6},
+    {"view": "anatomy-close", "start": 7.9},
+    {"view": "at:table", "start": 10.1},
+    {"view": "court-low", "start": 11.6},
+    {"view": "doors", "start": 13.4},
+    {"view": "second-door", "start": 15.0},
+    {"view": "court-wide", "start": 16.4}
+   ]
+  },
+  "beat-07": {
+   "scene": "vienna",
+   "note": "u018-u019 the guide on the roof at night; Semmelweis alone at his desk; pull away from the window into the night",
+   "params": {"time": "night", "lights_from": 0.0, "lights_until": 0.05, "walkers": 4, "groups": 1},
+   "shots": [
+    {"view": "roofs", "start": 0.0},
+    {"view": "window", "to": "aerial", "start": 2.2}
+   ],
+   "cast": [
+    {"who": "explorer", "bust": true, "screen": [0.72, 1.0], "height": 0.62, "speaker": "narrator", "pose": "talk", "acts": [], "shot": 0}
+   ]
+  }
+ }
+}

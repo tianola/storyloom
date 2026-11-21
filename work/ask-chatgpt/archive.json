@@ -1,0 +1,163 @@
+{
+ "colladon-1884": {
+  "asset": "assets/archive/colladon-1884.jpg",
+  "licence": "arch-001",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "period_look",
+  "depicts": [
+   "Colladon"
+  ],
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "spad-pulse": {
+  "asset": "assets/archive/spad-pulse.mp4",
+  "licence": "arch-002",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "Heriot Watt"
+  ],
+  "native_fps": 25.0,
+  "motion_mode": "retime_to_natural"
+ },
+ "nvb-hgx": {
+  "asset": "assets/archive/nvb-hgx.mp4",
+  "licence": "arch-003",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "Blackwell"
+  ],
+  "native_fps": 59.94,
+  "motion_mode": "retime_to_natural"
+ },
+ "horowitz-2025": {
+  "asset": "assets/archive/horowitz-2025.jpg",
+  "licence": "arch-004",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_person",
+  "depicts": [
+   "Mark Horowitz"
+  ],
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "fiji": {
+  "asset": "assets/archive/fiji.jpg",
+  "licence": "arch-005",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "Fiji"
+  ],
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "hbm-p100": {
+  "asset": "assets/archive/hbm-p100.jpg",
+  "licence": "arch-006",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "high bandwidth memory"
+  ],
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "vllm-paper": {
+  "asset": "assets/archive/vllm-paper.jpg",
+  "licence": "arch-007",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "Woosuk Kwon"
+  ],
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "dgx-gb200": {
+  "asset": "assets/archive/dgx-gb200.jpg",
+  "licence": "arch-008",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "rack for Blackwell"
+  ],
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "qct-gh": {
+  "asset": "assets/archive/qct-gh.mp4",
+  "licence": "arch-009",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "depicts": [
+   "Grace"
+  ],
+  "native_fps": 59.94,
+  "motion_mode": "retime_to_natural"
+ },
+ "altman-2019": {
+  "asset": "assets/archive/altman-2019.jpg",
+  "licence": "arch-010",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_person",
+  "depicts": [
+   "Sam Altman"
+  ],
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ }
+}

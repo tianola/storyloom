@@ -122,12 +122,26 @@ def narration_rate(manifest) -> int:
     return int(manifest["sampleRate"])
 
 
+def file_print(path):
+    """Name, size and modification time of a file: enough to tell a cached product from a stale one."""
+    p = Path(path)
+    st = p.stat()
+    return f"{p.resolve()}|{st.st_size}|{st.st_mtime_ns}"
+
+
 def concat_audio(episode, manifest):
-    """Concatenate all utterance WAVs into one file."""
+    """Concatenate all utterance WAVs into one file.
+
+    The file is reused only when it was made from these very utterance files: an episode whose
+    narration was re-synthesised keeps the ids u001..., and reusing on existence alone ships the
+    old voice under the new pictures (it happened: a rewrite assembled with the previous cut's audio).
+    """
     print("Concatenating audio...", flush=True)
     audio_dir = vo_dir(episode)
     audio_path = audio_dir / "full-audio.wav"
-    if audio_path.exists():
+    stamp_path = audio_dir / "full-audio.stamp"
+    stamp = "\n".join(file_print(audio_dir / u["file"]) for u in manifest["utterances"])
+    if audio_path.exists() and stamp_path.exists() and stamp_path.read_text(encoding="utf-8") == stamp:
         return audio_path
 
     list_file = audio_dir / "concat-list.txt"
@@ -141,11 +155,12 @@ def concat_audio(episode, manifest):
         "-c", "copy",
         str(audio_path),
     ], capture_output=True, check=True)
+    stamp_path.write_text(stamp, encoding="utf-8")
     print(f"  Audio: {audio_path}", flush=True)
     return audio_path
 
 
-def add_music_bed(voice_path, bed_path, mixed_path):
+def add_music_bed(voice_path, bed_path, mixed_path, drops=()):
     """Lay the generated bed under the narration and hand back the track for the mux.
 
     The bed is synthesised rather than sourced: anything that ships inside the master has to be
@@ -160,7 +175,7 @@ def add_music_bed(voice_path, bed_path, mixed_path):
     """
     print("Adding the music bed...", flush=True)
     voice_duration = probe_duration(voice_path)
-    music_bed.write_bed(bed_path, voice_duration + BED_TAIL_S, fade_end_s=voice_duration)
+    music_bed.write_bed(bed_path, voice_duration + BED_TAIL_S, fade_end_s=voice_duration, drops=drops)
     uncut = Path(mixed_path).with_name(f"{Path(mixed_path).stem}-uncut.wav")
     music_bed.mix_under(voice_path, bed_path, uncut)
     subprocess.run([
@@ -489,10 +504,25 @@ def build_segments(episode, manifest, shot_map):
     seg_dir.mkdir(parents=True, exist_ok=True)
     consumed = {}
     rate = narration_rate(manifest)
+    # a cached segment is reused only if it was cut from the same file, at the same slice and length:
+    # ids are reused across rewrites, so existence alone would splice the previous cut's pictures in
+    stamps_path = seg_dir / "stamps.json"
+    try:
+        stamps = json.loads(stamps_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        stamps = {}
 
+    clock = 0                         # the film clock in samples, for manifests without start/end
     for u in manifest["utterances"]:
         uid = u["id"]
         duration_s = u["samples"] / rate
+        # Frames come from the line's place on the film clock, not from its own length: cutting
+        # each segment with -t rounds it to whole frames on its own, and 127 roundings drifted
+        # the picture 0.14 s behind the voice by the first minute and 0.65 s by the tenth
+        # (measured 2026-11-18 on ask-chatgpt against the storyboard's known cuts).
+        begin = u.get("startSample", clock)
+        clock = u.get("endSample", begin + u["samples"])
+        frames = round(clock / rate * FPS) - round(begin / rate * FPS)
         visual_path = visual_for(episode, uid, shot_map[uid], CONTRACT)
         seg_path = seg_dir / f"{uid}.mp4"
 
@@ -505,15 +535,17 @@ def build_segments(episode, manifest, shot_map):
             start = consumed.get(str(visual_path), 0.0)
             consumed[str(visual_path)] = start + duration_s
 
-        if seg_path.exists():
+        key = f"{file_print(visual_path)}|{start if start is not None else 0.0:.3f}|{duration_s:.4f}|{frames}f"
+        if seg_path.exists() and stamps.get(uid) == key:
             continue
+        stamps.pop(uid, None)
 
         ext = visual_path.suffix.lower()
         if ext == ".png":
             subprocess.run([
                 "ffmpeg", "-y",
                 "-loop", "1", "-i", str(visual_path),
-                "-t", str(duration_s),
+                "-frames:v", str(frames),
                 "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2",
                 "-c:v", "libx264", "-pix_fmt", "yuv420p",
                 "-preset", "ultrafast", "-crf", "23",
@@ -538,7 +570,7 @@ def build_segments(episode, manifest, shot_map):
             subprocess.run([
                 "ffmpeg", "-y",
                 *input_args,
-                "-t", str(duration_s),
+                "-frames:v", str(frames),
                 "-vf", vf,
                 "-c:v", "libx264", "-pix_fmt", "yuv420p",
                 "-preset", "ultrafast", "-crf", "23",
@@ -546,8 +578,10 @@ def build_segments(episode, manifest, shot_map):
                 "-an",
                 str(seg_path),
             ], capture_output=True, check=True)
+        stamps[uid] = key
+        stamps_path.write_text(json.dumps(stamps, indent=0), encoding="utf-8")
 
-    print(f"  Built {len(list(seg_dir.glob('*.mp4')))} segments", flush=True)
+    print(f"  Built {len(manifest['utterances'])} segments", flush=True)
 
 
 def concat_segments(episode, manifest):
@@ -595,7 +629,7 @@ def mux_final(episode, video_path, audio_path, output=None, captions_path=None):
         "-filter:a", loudness.loudnorm_filter(measured),
         "-ac", str(AUDIO["channels_min"]),
         "-c:v", "copy", "-c:a", "aac", *subs,
-        "-b:a", "192k",
+        "-b:a", AUDIO["aac_bitrate"],
         "-shortest",
         "-movflags", "+faststart",
         str(output),
@@ -685,12 +719,14 @@ def main(argv=None, host=None, root=None):
         return 0
 
     voice_path = concat_audio(episode, manifest)
+    finish_report = {}
     if not args.no_finish:
         print("Finishing the narration (levels, level rides, transitions)...", flush=True)
-        voice_path, _ = audio_finish.finish_voice(episode, manifest, json.loads(
+        voice_path, finish_report = audio_finish.finish_voice(episode, manifest, json.loads(
             (episode / "shots.json").read_text(encoding="utf-8")))
     audio_path = add_music_bed(voice_path, music_bed_path(episode),
-                               vo_dir(episode) / "full-audio-with-bed.wav")
+                               vo_dir(episode) / "full-audio-with-bed.wav",
+                               drops=finish_report.get("_sound", {}).get("music_drops", ()))
     captions_path = captions.write_all(episode, manifest)
     if args.remux:
         video_path = graded_path(episode)

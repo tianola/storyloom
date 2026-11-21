@@ -1,0 +1,8 @@
+[
+ {
+  "severity": "warn",
+  "code": "empty_shot",
+  "subject": "11.6s",
+  "message": "the shot around 11.6s carries detail in 0.0% of the picture (at least 2%): frame something, or move closer"
+ }
+]

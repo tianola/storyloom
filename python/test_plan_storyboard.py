@@ -60,12 +60,56 @@ class Planner(unittest.TestCase):
         self.assertIn("'zzz' is not a 3D beat", errors)
         self.assertIn("at most", errors)
 
-    def test_jensen_storyboard_passes_the_planner_check(self):
+    def test_jensen_storyboard_is_valid_but_reads_as_slides(self):
+        """The regression fixture predates the story rules: every name in it is valid, and the shape
+        check names what makes it a slide deck (text rate, no montage, no held moves)."""
         board = json.loads((ROOT / "work" / "jensen-huang" / "storyboard.json").read_text(encoding="utf-8"))
-        self.assertEqual(P.problems(board, P.beats_of(ROOT / "work" / "jensen-huang"), CATALOG), [])
+        beats = P.beats_of(ROOT / "work" / "jensen-huang")
+        lengths = {b["name"]: b["seconds"] for b in beats}
+        shape = P.shape_problems(board, lengths)
+        self.assertEqual([e for e in P.problems(board, beats, CATALOG) if e not in shape], [])
+        self.assertTrue(any("on-screen text" in e for e in shape), shape)
+
+    def test_shape_rules_count_text_charts_and_cuts(self):
+        lengths = {n: 60 for n in "abcd"}
+        slides = {"beats": {n: {"scene": "bar-chart", "cut": "steady",
+                                "labels": [{"text": "x", "anchor": "a"}] * 4} for n in "abcd"}}
+        found = " ".join(P.shape_problems(slides, lengths))
+        for expected in ("on-screen text", "chart beats", "montage", "continuous camera move"):
+            self.assertIn(expected, found)
+        story = {"beats": {"a": {"scene": "wafer", "cut": "montage"}, "b": {"scene": "wafer"},
+                           "c": {"scene": "wafer", "labels": [{"text": "Die", "anchor": "die"}]}, "d": {"scene": "wafer"}}}
+        self.assertEqual(P.shape_problems(story, lengths), [])
+
+    def test_a_held_move_with_quick_cutaways_still_counts_as_travel(self):
+        lengths = {n: 15 for n in "abcd"}
+        cut_in = [{"view": "at:die", "start": 0.0}, {"view": "at:edge", "start": 1.5},
+                  {"view": "wide", "to": "die", "start": 3.4}]           # 11.6 s of 15 is one move
+        choppy = [{"view": "at:die", "start": 0.0}, {"view": "wide", "to": "die", "start": 7.0}]   # 8 s of 15
+        board = {"beats": {"a": {"scene": "wafer", "cut": "montage"}, "b": {"scene": "wafer", "shots": cut_in},
+                           "c": {"scene": "wafer", "shots": choppy}, "d": {"scene": "wafer", "shots": choppy}}}
+        found = " ".join(P.shape_problems(board, lengths))
+        self.assertIn("1 of 4 beats are one continuous camera move", found)
+        board["beats"]["c"]["shots"] = cut_in
+        self.assertEqual(P.shape_problems(board, lengths), [])
+
+    def test_hand_cut_quick_shots_count_as_a_montage(self):
+        lengths = {n: 15 for n in "abcd"}
+        held = [{"view": "at:die", "start": 0.0}, {"view": "at:edge", "start": 1.5},
+                {"view": "wide", "to": "die", "start": 3.4}]
+        quick = [{"view": v, "start": t} for v, t in (("wide", 0.0), ("at:die", 2.0), ("at:edge", 3.4), ("wide", 5.6),
+                                                     ("at:die", 7.0), ("at:edge", 9.4), ("wide", 11.0), ("at:die", 13.2))]
+        slow = [{"view": v, "start": t} for v, t in (("wide", 0.0), ("at:die", 4.0), ("at:edge", 8.0), ("wide", 12.0))]
+        board = {"beats": {"a": {"scene": "wafer", "shots": quick}, "b": {"scene": "wafer", "shots": held},
+                           "c": {"scene": "wafer", "shots": held}, "d": {"scene": "wafer"}}}
+        self.assertEqual(P.shape_problems(board, lengths), [])
+        board["beats"]["a"]["shots"] = slow                      # 4 s a shot is not a montage
+        self.assertIn("montage", " ".join(P.shape_problems(board, lengths)))
 
     def test_archive_share_is_checked_at_planning_time(self):
-        found = P.archive_mix(ROOT / "work" / "jensen-huang")   # the fixture is known to be short of archive
+        contract = json.loads((ROOT / "workflow" / "style.json").read_text(encoding="utf-8"))
+        contract["archive"]["episode_profile"]["mix"]["min_share"]["archive"] = 0.20   # shipped floor is 0
+        found = P.archive_mix(ROOT / "work" / "jensen-huang", contract)   # the fixture is short of archive
         self.assertEqual([code for code, _ in found], ["archive_share_low"])
 
     def test_a_rejected_plan_never_replaces_storyboard_json(self):

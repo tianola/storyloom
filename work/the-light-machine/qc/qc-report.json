@@ -1,0 +1,92 @@
+[
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "wafer-ibm",
+  "message": "u010 holds the archival layer for 6.3s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "ucl-scientist",
+  "message": "u021 holds the archival layer for 6.4s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "tsmc-fab6",
+  "message": "u028 holds the archival layer for 6.1s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "webb-primary",
+  "message": "u049 holds the archival layer for 6.4s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "zeiss-otus",
+  "message": "u062 holds the archival layer for 6.3s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-14",
+  "message": "u034 moves at 1.73 for 5.2s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-16",
+  "message": "u039 moves at 1.48 for 4.6s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-16",
+  "message": "u040 moves at 1.34 for 9.2s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-17",
+  "message": "u043 moves at 1.52 for 6.9s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-19",
+  "message": "u050 moves at 1.56 for 6.2s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "ibm-ray-b",
+  "message": "u052 moves at 1.70 for 4.2s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-24",
+  "message": "u063 moves at 1.91 for 7.2s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-26",
+  "message": "u068 moves at 1.85 for 6.1s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-29",
+  "message": "u078 moves at 1.40 for 8.9s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "beat-30",
+  "message": "u080 moves at 1.69 for 6.8s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ }
+]

@@ -1,0 +1,8616 @@
+{
+ "b01-droplet": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "a",
+   "start": 0.177
+  },
+  {
+   "word": "factory",
+   "start": 0.295
+  },
+  {
+   "word": "in",
+   "start": 0.767
+  },
+  {
+   "word": "Taiwan,",
+   "start": 0.944
+  },
+  {
+   "word": "a",
+   "start": 1.534
+  },
+  {
+   "word": "drop",
+   "start": 1.652
+  },
+  {
+   "word": "of",
+   "start": 1.946
+  },
+  {
+   "word": "molten",
+   "start": 2.123
+  },
+  {
+   "word": "tin",
+   "start": 2.536
+  },
+  {
+   "word": "is",
+   "start": 2.772
+  },
+  {
+   "word": "flying",
+   "start": 2.949
+  },
+  {
+   "word": "through",
+   "start": 3.362
+  },
+  {
+   "word": "a",
+   "start": 3.834
+  },
+  {
+   "word": "vacuum",
+   "start": 3.952
+  },
+  {
+   "word": "at",
+   "start": 4.365
+  },
+  {
+   "word": "two",
+   "start": 4.542
+  },
+  {
+   "word": "hundred",
+   "start": 4.778
+  },
+  {
+   "word": "and",
+   "start": 5.249
+  },
+  {
+   "word": "fifty",
+   "start": 5.485
+  },
+  {
+   "word": "kilometres",
+   "start": 5.839
+  },
+  {
+   "word": "an",
+   "start": 6.488
+  },
+  {
+   "word": "hour.",
+   "start": 6.665
+  },
+  {
+   "word": "It",
+   "start": 7.061
+  },
+  {
+   "word": "is",
+   "start": 7.223
+  },
+  {
+   "word": "about",
+   "start": 7.384
+  },
+  {
+   "word": "thirty",
+   "start": 7.707
+  },
+  {
+   "word": "micrometres",
+   "start": 8.084
+  },
+  {
+   "word": "wide,",
+   "start": 8.731
+  },
+  {
+   "word": "smaller",
+   "start": 9.161
+  },
+  {
+   "word": "than",
+   "start": 9.592
+  },
+  {
+   "word": "the",
+   "start": 9.861
+  },
+  {
+   "word": "width",
+   "start": 10.077
+  },
+  {
+   "word": "of",
+   "start": 10.4
+  },
+  {
+   "word": "a",
+   "start": 10.561
+  },
+  {
+   "word": "human",
+   "start": 10.669
+  },
+  {
+   "word": "hair.",
+   "start": 10.992
+  },
+  {
+   "word": "A",
+   "start": 11.361
+  },
+  {
+   "word": "laser",
+   "start": 11.471
+  },
+  {
+   "word": "pulse",
+   "start": 11.801
+  },
+  {
+   "word": "hits",
+   "start": 12.132
+  },
+  {
+   "word": "it",
+   "start": 12.407
+  },
+  {
+   "word": "and",
+   "start": 12.572
+  },
+  {
+   "word": "squashes",
+   "start": 12.793
+  },
+  {
+   "word": "it",
+   "start": 13.289
+  },
+  {
+   "word": "flat,",
+   "start": 13.454
+  },
+  {
+   "word": "like",
+   "start": 13.894
+  },
+  {
+   "word": "a",
+   "start": 14.17
+  },
+  {
+   "word": "pancake.",
+   "start": 14.28
+  },
+  {
+   "word": "A",
+   "start": 14.817
+  },
+  {
+   "word": "moment",
+   "start": 14.932
+  },
+  {
+   "word": "later,",
+   "start": 15.337
+  },
+  {
+   "word": "a",
+   "start": 15.857
+  },
+  {
+   "word": "far",
+   "start": 15.973
+  },
+  {
+   "word": "stronger",
+   "start": 16.204
+  },
+  {
+   "word": "pulse",
+   "start": 16.724
+  },
+  {
+   "word": "hits",
+   "start": 17.071
+  },
+  {
+   "word": "the",
+   "start": 17.36
+  },
+  {
+   "word": "pancake",
+   "start": 17.592
+  },
+  {
+   "word": "and",
+   "start": 18.054
+  },
+  {
+   "word": "turns",
+   "start": 18.285
+  },
+  {
+   "word": "it",
+   "start": 18.632
+  },
+  {
+   "word": "into",
+   "start": 18.806
+  },
+  {
+   "word": "plasma,",
+   "start": 19.095
+  },
+  {
+   "word": "about",
+   "start": 19.673
+  },
+  {
+   "word": "forty",
+   "start": 20.02
+  },
+  {
+   "word": "times",
+   "start": 20.366
+  },
+  {
+   "word": "hotter",
+   "start": 20.713
+  },
+  {
+   "word": "than",
+   "start": 21.118
+  },
+  {
+   "word": "the",
+   "start": 21.407
+  },
+  {
+   "word": "surface",
+   "start": 21.638
+  },
+  {
+   "word": "of",
+   "start": 22.101
+  },
+  {
+   "word": "the",
+   "start": 22.274
+  },
+  {
+   "word": "Sun.",
+   "start": 22.505
+  }
+ ],
+ "sun-171": [
+  {
+   "word": "For",
+   "start": 0.0
+  },
+  {
+   "word": "an",
+   "start": 0.211
+  },
+  {
+   "word": "instant,",
+   "start": 0.37
+  },
+  {
+   "word": "that",
+   "start": 0.951
+  },
+  {
+   "word": "plasma",
+   "start": 1.215
+  },
+  {
+   "word": "glows",
+   "start": 1.585
+  },
+  {
+   "word": "with",
+   "start": 1.902
+  },
+  {
+   "word": "a",
+   "start": 2.166
+  },
+  {
+   "word": "kind",
+   "start": 2.271
+  },
+  {
+   "word": "of",
+   "start": 2.536
+  },
+  {
+   "word": "light",
+   "start": 2.694
+  },
+  {
+   "word": "that",
+   "start": 3.011
+  },
+  {
+   "word": "barely",
+   "start": 3.275
+  },
+  {
+   "word": "exists",
+   "start": 3.645
+  },
+  {
+   "word": "on",
+   "start": 4.015
+  },
+  {
+   "word": "Earth.",
+   "start": 4.173
+  }
+ ],
+ "b02-again": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.263
+  },
+  {
+   "word": "next",
+   "start": 0.473
+  },
+  {
+   "word": "drop",
+   "start": 0.736
+  },
+  {
+   "word": "arrives,",
+   "start": 0.999
+  },
+  {
+   "word": "and",
+   "start": 1.577
+  },
+  {
+   "word": "the",
+   "start": 1.787
+  },
+  {
+   "word": "whole",
+   "start": 1.997
+  },
+  {
+   "word": "thing",
+   "start": 2.313
+  },
+  {
+   "word": "happens",
+   "start": 2.628
+  },
+  {
+   "word": "again,",
+   "start": 3.049
+  },
+  {
+   "word": "fifty",
+   "start": 3.522
+  },
+  {
+   "word": "thousand",
+   "start": 3.838
+  },
+  {
+   "word": "times",
+   "start": 4.311
+  },
+  {
+   "word": "every",
+   "start": 4.626
+  },
+  {
+   "word": "second.",
+   "start": 4.942
+  }
+ ],
+ "wafer-ibm": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "drops,",
+   "start": 0.24
+  },
+  {
+   "word": "the",
+   "start": 0.78
+  },
+  {
+   "word": "lasers,",
+   "start": 1.02
+  },
+  {
+   "word": "the",
+   "start": 1.62
+  },
+  {
+   "word": "tiny",
+   "start": 1.86
+  },
+  {
+   "word": "artificial",
+   "start": 2.16
+  },
+  {
+   "word": "stars:",
+   "start": 2.82
+  },
+  {
+   "word": "all",
+   "start": 3.42
+  },
+  {
+   "word": "of",
+   "start": 3.66
+  },
+  {
+   "word": "it",
+   "start": 3.84
+  },
+  {
+   "word": "exists",
+   "start": 4.02
+  },
+  {
+   "word": "to",
+   "start": 4.44
+  },
+  {
+   "word": "draw",
+   "start": 4.62
+  },
+  {
+   "word": "lines",
+   "start": 4.92
+  },
+  {
+   "word": "on",
+   "start": 5.28
+  },
+  {
+   "word": "a",
+   "start": 5.46
+  },
+  {
+   "word": "computer",
+   "start": 5.58
+  },
+  {
+   "word": "chip.",
+   "start": 6.12
+  }
+ ],
+ "chip-die-b": [
+  {
+   "word": "Lines",
+   "start": 0.0
+  },
+  {
+   "word": "only",
+   "start": 0.362
+  },
+  {
+   "word": "a",
+   "start": 0.664
+  },
+  {
+   "word": "few",
+   "start": 0.784
+  },
+  {
+   "word": "dozen",
+   "start": 1.025
+  },
+  {
+   "word": "atoms",
+   "start": 1.387
+  },
+  {
+   "word": "wide.",
+   "start": 1.749
+  }
+ ],
+ "euv-tool": [
+  {
+   "word": "To",
+   "start": 0.0
+  },
+  {
+   "word": "understand",
+   "start": 0.16
+  },
+  {
+   "word": "why",
+   "start": 0.746
+  },
+  {
+   "word": "anyone",
+   "start": 0.959
+  },
+  {
+   "word": "would",
+   "start": 1.332
+  },
+  {
+   "word": "build",
+   "start": 1.652
+  },
+  {
+   "word": "something",
+   "start": 1.971
+  },
+  {
+   "word": "this",
+   "start": 2.504
+  },
+  {
+   "word": "extreme,",
+   "start": 2.77
+  },
+  {
+   "word": "we",
+   "start": 3.356
+  },
+  {
+   "word": "need",
+   "start": 3.516
+  },
+  {
+   "word": "one",
+   "start": 3.782
+  },
+  {
+   "word": "stubborn",
+   "start": 3.995
+  },
+  {
+   "word": "fact",
+   "start": 4.475
+  },
+  {
+   "word": "about",
+   "start": 4.741
+  },
+  {
+   "word": "light.",
+   "start": 5.061
+  }
+ ],
+ "b04-machine": [
+  {
+   "word": "By",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.157
+  },
+  {
+   "word": "end,",
+   "start": 0.367
+  },
+  {
+   "word": "every",
+   "start": 0.734
+  },
+  {
+   "word": "strange",
+   "start": 1.049
+  },
+  {
+   "word": "part",
+   "start": 1.469
+  },
+  {
+   "word": "of",
+   "start": 1.731
+  },
+  {
+   "word": "this",
+   "start": 1.889
+  },
+  {
+   "word": "machine",
+   "start": 2.151
+  },
+  {
+   "word": "will",
+   "start": 2.571
+  },
+  {
+   "word": "make",
+   "start": 2.833
+  },
+  {
+   "word": "sense,",
+   "start": 3.096
+  },
+  {
+   "word": "because",
+   "start": 3.568
+  },
+  {
+   "word": "each",
+   "start": 3.988
+  },
+  {
+   "word": "one",
+   "start": 4.25
+  },
+  {
+   "word": "fights",
+   "start": 4.46
+  },
+  {
+   "word": "that",
+   "start": 4.828
+  },
+  {
+   "word": "single",
+   "start": 5.09
+  },
+  {
+   "word": "fact.",
+   "start": 5.457
+  }
+ ],
+ "chip-die": [
+  {
+   "word": "A",
+   "start": 0.0
+  },
+  {
+   "word": "modern",
+   "start": 0.119
+  },
+  {
+   "word": "chip",
+   "start": 0.535
+  },
+  {
+   "word": "is",
+   "start": 0.832
+  },
+  {
+   "word": "a",
+   "start": 1.01
+  },
+  {
+   "word": "city",
+   "start": 1.129
+  },
+  {
+   "word": "of",
+   "start": 1.426
+  },
+  {
+   "word": "tiny",
+   "start": 1.604
+  },
+  {
+   "word": "switches",
+   "start": 1.902
+  },
+  {
+   "word": "called",
+   "start": 2.437
+  },
+  {
+   "word": "transistors,",
+   "start": 2.853
+  },
+  {
+   "word": "tens",
+   "start": 3.744
+  },
+  {
+   "word": "of",
+   "start": 4.041
+  },
+  {
+   "word": "billions",
+   "start": 4.22
+  },
+  {
+   "word": "of",
+   "start": 4.755
+  },
+  {
+   "word": "them,",
+   "start": 4.933
+  },
+  {
+   "word": "wired",
+   "start": 5.408
+  },
+  {
+   "word": "together",
+   "start": 5.765
+  },
+  {
+   "word": "in",
+   "start": 6.3
+  },
+  {
+   "word": "stacked",
+   "start": 6.478
+  },
+  {
+   "word": "layers.",
+   "start": 6.954
+  }
+ ],
+ "cleanroom": [
+  {
+   "word": "Nobody",
+   "start": 0.0
+  },
+  {
+   "word": "builds",
+   "start": 0.366
+  },
+  {
+   "word": "them",
+   "start": 0.731
+  },
+  {
+   "word": "one",
+   "start": 0.993
+  },
+  {
+   "word": "at",
+   "start": 1.202
+  },
+  {
+   "word": "a",
+   "start": 1.358
+  },
+  {
+   "word": "time.",
+   "start": 1.463
+  },
+  {
+   "word": "They",
+   "start": 2.038
+  },
+  {
+   "word": "are",
+   "start": 2.299
+  },
+  {
+   "word": "printed",
+   "start": 2.508
+  },
+  {
+   "word": "all",
+   "start": 2.926
+  },
+  {
+   "word": "at",
+   "start": 3.135
+  },
+  {
+   "word": "once,",
+   "start": 3.292
+  },
+  {
+   "word": "like",
+   "start": 3.71
+  },
+  {
+   "word": "a",
+   "start": 3.971
+  },
+  {
+   "word": "photograph.",
+   "start": 4.075
+  }
+ ],
+ "st-wafer": [
+  {
+   "word": "It",
+   "start": 0.0
+  },
+  {
+   "word": "starts",
+   "start": 0.147
+  },
+  {
+   "word": "with",
+   "start": 0.49
+  },
+  {
+   "word": "a",
+   "start": 0.735
+  },
+  {
+   "word": "polished",
+   "start": 0.833
+  },
+  {
+   "word": "disc",
+   "start": 1.274
+  },
+  {
+   "word": "of",
+   "start": 1.519
+  },
+  {
+   "word": "silicon,",
+   "start": 1.666
+  },
+  {
+   "word": "called",
+   "start": 2.205
+  },
+  {
+   "word": "a",
+   "start": 2.548
+  },
+  {
+   "word": "wafer.",
+   "start": 2.646
+  }
+ ],
+ "ucl-litho": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "wafer",
+   "start": 0.224
+  },
+  {
+   "word": "is",
+   "start": 0.561
+  },
+  {
+   "word": "coated",
+   "start": 0.729
+  },
+  {
+   "word": "with",
+   "start": 1.121
+  },
+  {
+   "word": "a",
+   "start": 1.402
+  },
+  {
+   "word": "thin",
+   "start": 1.514
+  },
+  {
+   "word": "film",
+   "start": 1.795
+  },
+  {
+   "word": "called",
+   "start": 2.075
+  },
+  {
+   "word": "photoresist,",
+   "start": 2.468
+  },
+  {
+   "word": "a",
+   "start": 3.309
+  },
+  {
+   "word": "material",
+   "start": 3.421
+  },
+  {
+   "word": "that",
+   "start": 3.926
+  },
+  {
+   "word": "changes",
+   "start": 4.206
+  },
+  {
+   "word": "wherever",
+   "start": 4.655
+  },
+  {
+   "word": "light",
+   "start": 5.16
+  },
+  {
+   "word": "falls",
+   "start": 5.497
+  },
+  {
+   "word": "on",
+   "start": 5.833
+  },
+  {
+   "word": "it.",
+   "start": 6.001
+  }
+ ],
+ "b06-projector": [
+  {
+   "word": "Above",
+   "start": 0.0
+  },
+  {
+   "word": "it",
+   "start": 0.327
+  },
+  {
+   "word": "sits",
+   "start": 0.49
+  },
+  {
+   "word": "the",
+   "start": 0.763
+  },
+  {
+   "word": "mask,",
+   "start": 0.981
+  },
+  {
+   "word": "a",
+   "start": 1.417
+  },
+  {
+   "word": "plate",
+   "start": 1.526
+  },
+  {
+   "word": "carrying",
+   "start": 1.852
+  },
+  {
+   "word": "the",
+   "start": 2.343
+  },
+  {
+   "word": "pattern",
+   "start": 2.561
+  },
+  {
+   "word": "for",
+   "start": 2.997
+  },
+  {
+   "word": "one",
+   "start": 3.214
+  },
+  {
+   "word": "layer,",
+   "start": 3.432
+  },
+  {
+   "word": "drawn",
+   "start": 3.923
+  },
+  {
+   "word": "four",
+   "start": 4.25
+  },
+  {
+   "word": "times",
+   "start": 4.522
+  },
+  {
+   "word": "larger",
+   "start": 4.849
+  },
+  {
+   "word": "than",
+   "start": 5.23
+  },
+  {
+   "word": "it",
+   "start": 5.503
+  },
+  {
+   "word": "will",
+   "start": 5.666
+  },
+  {
+   "word": "end",
+   "start": 5.939
+  },
+  {
+   "word": "up.",
+   "start": 6.157
+  },
+  {
+   "word": "Light",
+   "start": 6.42
+  },
+  {
+   "word": "shines",
+   "start": 6.762
+  },
+  {
+   "word": "through",
+   "start": 7.162
+  },
+  {
+   "word": "the",
+   "start": 7.618
+  },
+  {
+   "word": "mask,",
+   "start": 7.846
+  },
+  {
+   "word": "and",
+   "start": 8.303
+  },
+  {
+   "word": "a",
+   "start": 8.531
+  },
+  {
+   "word": "set",
+   "start": 8.645
+  },
+  {
+   "word": "of",
+   "start": 8.873
+  },
+  {
+   "word": "optics",
+   "start": 9.044
+  },
+  {
+   "word": "shrinks",
+   "start": 9.444
+  },
+  {
+   "word": "the",
+   "start": 9.9
+  },
+  {
+   "word": "image",
+   "start": 10.128
+  },
+  {
+   "word": "four",
+   "start": 10.471
+  },
+  {
+   "word": "times",
+   "start": 10.756
+  },
+  {
+   "word": "and",
+   "start": 11.098
+  },
+  {
+   "word": "focuses",
+   "start": 11.327
+  },
+  {
+   "word": "it",
+   "start": 11.783
+  },
+  {
+   "word": "onto",
+   "start": 11.954
+  },
+  {
+   "word": "the",
+   "start": 12.239
+  },
+  {
+   "word": "wafer.",
+   "start": 12.468
+  },
+  {
+   "word": "It",
+   "start": 12.917
+  },
+  {
+   "word": "is",
+   "start": 13.098
+  },
+  {
+   "word": "a",
+   "start": 13.279
+  },
+  {
+   "word": "slide",
+   "start": 13.4
+  },
+  {
+   "word": "projector",
+   "start": 13.763
+  },
+  {
+   "word": "run",
+   "start": 14.367
+  },
+  {
+   "word": "backwards:",
+   "start": 14.609
+  },
+  {
+   "word": "instead",
+   "start": 15.455
+  },
+  {
+   "word": "of",
+   "start": 15.939
+  },
+  {
+   "word": "throwing",
+   "start": 16.12
+  },
+  {
+   "word": "a",
+   "start": 16.664
+  },
+  {
+   "word": "small",
+   "start": 16.785
+  },
+  {
+   "word": "picture",
+   "start": 17.147
+  },
+  {
+   "word": "onto",
+   "start": 17.631
+  },
+  {
+   "word": "a",
+   "start": 17.933
+  },
+  {
+   "word": "wall,",
+   "start": 18.054
+  },
+  {
+   "word": "it",
+   "start": 18.537
+  },
+  {
+   "word": "squeezes",
+   "start": 18.719
+  },
+  {
+   "word": "a",
+   "start": 19.263
+  },
+  {
+   "word": "big",
+   "start": 19.384
+  },
+  {
+   "word": "picture",
+   "start": 19.625
+  },
+  {
+   "word": "onto",
+   "start": 20.109
+  },
+  {
+   "word": "a",
+   "start": 20.411
+  },
+  {
+   "word": "tiny",
+   "start": 20.532
+  },
+  {
+   "word": "patch.",
+   "start": 20.834
+  },
+  {
+   "word": "Where",
+   "start": 21.279
+  },
+  {
+   "word": "the",
+   "start": 21.579
+  },
+  {
+   "word": "light",
+   "start": 21.779
+  },
+  {
+   "word": "lands,",
+   "start": 22.079
+  },
+  {
+   "word": "the",
+   "start": 22.529
+  },
+  {
+   "word": "resist",
+   "start": 22.729
+  },
+  {
+   "word": "changes.",
+   "start": 23.079
+  },
+  {
+   "word": "Wash",
+   "start": 23.779
+  },
+  {
+   "word": "it,",
+   "start": 24.029
+  },
+  {
+   "word": "etch",
+   "start": 24.329
+  },
+  {
+   "word": "it,",
+   "start": 24.579
+  },
+  {
+   "word": "and",
+   "start": 24.879
+  },
+  {
+   "word": "the",
+   "start": 25.079
+  },
+  {
+   "word": "pattern",
+   "start": 25.279
+  },
+  {
+   "word": "is",
+   "start": 25.679
+  },
+  {
+   "word": "cut",
+   "start": 25.829
+  },
+  {
+   "word": "into",
+   "start": 26.029
+  },
+  {
+   "word": "the",
+   "start": 26.279
+  },
+  {
+   "word": "layer",
+   "start": 26.479
+  },
+  {
+   "word": "underneath.",
+   "start": 26.779
+  }
+ ],
+ "ucl-scientist": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.284
+  },
+  {
+   "word": "wafer",
+   "start": 0.51
+  },
+  {
+   "word": "is",
+   "start": 0.85
+  },
+  {
+   "word": "coated",
+   "start": 1.02
+  },
+  {
+   "word": "again",
+   "start": 1.417
+  },
+  {
+   "word": "and",
+   "start": 1.757
+  },
+  {
+   "word": "the",
+   "start": 1.984
+  },
+  {
+   "word": "next",
+   "start": 2.21
+  },
+  {
+   "word": "layer",
+   "start": 2.494
+  },
+  {
+   "word": "is",
+   "start": 2.834
+  },
+  {
+   "word": "printed",
+   "start": 3.004
+  },
+  {
+   "word": "on",
+   "start": 3.457
+  },
+  {
+   "word": "top,",
+   "start": 3.627
+  },
+  {
+   "word": "dozens",
+   "start": 4.024
+  },
+  {
+   "word": "of",
+   "start": 4.42
+  },
+  {
+   "word": "times.",
+   "start": 4.59
+  }
+ ],
+ "b07-gap": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.171
+  },
+  {
+   "word": "size",
+   "start": 0.4
+  },
+  {
+   "word": "of",
+   "start": 0.686
+  },
+  {
+   "word": "a",
+   "start": 0.857
+  },
+  {
+   "word": "transistor",
+   "start": 0.971
+  },
+  {
+   "word": "comes",
+   "start": 1.6
+  },
+  {
+   "word": "down",
+   "start": 1.943
+  },
+  {
+   "word": "to",
+   "start": 2.229
+  },
+  {
+   "word": "one",
+   "start": 2.4
+  },
+  {
+   "word": "question:",
+   "start": 2.629
+  },
+  {
+   "word": "how",
+   "start": 3.371
+  },
+  {
+   "word": "small",
+   "start": 3.6
+  },
+  {
+   "word": "a",
+   "start": 3.943
+  },
+  {
+   "word": "detail",
+   "start": 4.057
+  },
+  {
+   "word": "can",
+   "start": 4.457
+  },
+  {
+   "word": "you",
+   "start": 4.686
+  },
+  {
+   "word": "project",
+   "start": 4.914
+  },
+  {
+   "word": "with",
+   "start": 5.371
+  },
+  {
+   "word": "light?",
+   "start": 5.657
+  },
+  {
+   "word": "The",
+   "start": 6.101
+  },
+  {
+   "word": "answer",
+   "start": 6.312
+  },
+  {
+   "word": "depends",
+   "start": 6.68
+  },
+  {
+   "word": "on",
+   "start": 7.1
+  },
+  {
+   "word": "what",
+   "start": 7.258
+  },
+  {
+   "word": "light",
+   "start": 7.521
+  },
+  {
+   "word": "is.",
+   "start": 7.837
+  },
+  {
+   "word": "Light",
+   "start": 8.31
+  },
+  {
+   "word": "is",
+   "start": 8.625
+  },
+  {
+   "word": "a",
+   "start": 8.783
+  },
+  {
+   "word": "wave.",
+   "start": 8.888
+  },
+  {
+   "word": "Watch",
+   "start": 9.257
+  },
+  {
+   "word": "a",
+   "start": 9.562
+  },
+  {
+   "word": "wave",
+   "start": 9.663
+  },
+  {
+   "word": "arrive",
+   "start": 9.917
+  },
+  {
+   "word": "at",
+   "start": 10.272
+  },
+  {
+   "word": "a",
+   "start": 10.424
+  },
+  {
+   "word": "gap.",
+   "start": 10.525
+  },
+  {
+   "word": "If",
+   "start": 11.033
+  },
+  {
+   "word": "the",
+   "start": 11.185
+  },
+  {
+   "word": "gap",
+   "start": 11.388
+  },
+  {
+   "word": "is",
+   "start": 11.591
+  },
+  {
+   "word": "wide,",
+   "start": 11.743
+  },
+  {
+   "word": "the",
+   "start": 12.148
+  },
+  {
+   "word": "wave",
+   "start": 12.351
+  },
+  {
+   "word": "passes",
+   "start": 12.605
+  },
+  {
+   "word": "almost",
+   "start": 12.96
+  },
+  {
+   "word": "straight",
+   "start": 13.315
+  },
+  {
+   "word": "through.",
+   "start": 13.772
+  },
+  {
+   "word": "But",
+   "start": 14.282
+  },
+  {
+   "word": "if",
+   "start": 14.496
+  },
+  {
+   "word": "the",
+   "start": 14.657
+  },
+  {
+   "word": "gap",
+   "start": 14.872
+  },
+  {
+   "word": "is",
+   "start": 15.086
+  },
+  {
+   "word": "narrow,",
+   "start": 15.247
+  },
+  {
+   "word": "close",
+   "start": 15.783
+  },
+  {
+   "word": "to",
+   "start": 16.104
+  },
+  {
+   "word": "the",
+   "start": 16.265
+  },
+  {
+   "word": "size",
+   "start": 16.48
+  },
+  {
+   "word": "of",
+   "start": 16.748
+  },
+  {
+   "word": "the",
+   "start": 16.908
+  },
+  {
+   "word": "wave",
+   "start": 17.123
+  },
+  {
+   "word": "itself,",
+   "start": 17.391
+  },
+  {
+   "word": "the",
+   "start": 17.927
+  },
+  {
+   "word": "wave",
+   "start": 18.141
+  },
+  {
+   "word": "spreads",
+   "start": 18.409
+  },
+  {
+   "word": "out",
+   "start": 18.838
+  },
+  {
+   "word": "on",
+   "start": 19.052
+  },
+  {
+   "word": "the",
+   "start": 19.213
+  },
+  {
+   "word": "other",
+   "start": 19.428
+  },
+  {
+   "word": "side.",
+   "start": 19.749
+  },
+  {
+   "word": "This",
+   "start": 20.339
+  },
+  {
+   "word": "spreading",
+   "start": 20.607
+  },
+  {
+   "word": "is",
+   "start": 21.143
+  },
+  {
+   "word": "called",
+   "start": 21.304
+  },
+  {
+   "word": "diffraction.",
+   "start": 21.679
+  }
+ ],
+ "b08-grating": [
+  {
+   "word": "A",
+   "start": 0.0
+  },
+  {
+   "word": "chip",
+   "start": 0.119
+  },
+  {
+   "word": "pattern",
+   "start": 0.414
+  },
+  {
+   "word": "is",
+   "start": 0.887
+  },
+  {
+   "word": "nothing",
+   "start": 1.064
+  },
+  {
+   "word": "but",
+   "start": 1.537
+  },
+  {
+   "word": "narrow",
+   "start": 1.773
+  },
+  {
+   "word": "gaps.",
+   "start": 2.187
+  },
+  {
+   "word": "A",
+   "start": 2.837
+  },
+  {
+   "word": "row",
+   "start": 2.955
+  },
+  {
+   "word": "of",
+   "start": 3.192
+  },
+  {
+   "word": "fine",
+   "start": 3.369
+  },
+  {
+   "word": "lines",
+   "start": 3.664
+  },
+  {
+   "word": "on",
+   "start": 4.019
+  },
+  {
+   "word": "a",
+   "start": 4.196
+  },
+  {
+   "word": "mask",
+   "start": 4.315
+  },
+  {
+   "word": "behaves",
+   "start": 4.61
+  },
+  {
+   "word": "like",
+   "start": 5.083
+  },
+  {
+   "word": "what",
+   "start": 5.378
+  },
+  {
+   "word": "physicists",
+   "start": 5.674
+  },
+  {
+   "word": "call",
+   "start": 6.324
+  },
+  {
+   "word": "a",
+   "start": 6.619
+  },
+  {
+   "word": "grating.",
+   "start": 6.738
+  },
+  {
+   "word": "Light",
+   "start": 7.316
+  },
+  {
+   "word": "passing",
+   "start": 7.63
+  },
+  {
+   "word": "through",
+   "start": 8.049
+  },
+  {
+   "word": "a",
+   "start": 8.467
+  },
+  {
+   "word": "grating",
+   "start": 8.572
+  },
+  {
+   "word": "does",
+   "start": 8.991
+  },
+  {
+   "word": "not",
+   "start": 9.252
+  },
+  {
+   "word": "just",
+   "start": 9.461
+  },
+  {
+   "word": "carry",
+   "start": 9.723
+  },
+  {
+   "word": "straight",
+   "start": 10.037
+  },
+  {
+   "word": "on.",
+   "start": 10.508
+  },
+  {
+   "word": "It",
+   "start": 10.979
+  },
+  {
+   "word": "splits",
+   "start": 11.136
+  },
+  {
+   "word": "into",
+   "start": 11.502
+  },
+  {
+   "word": "separate",
+   "start": 11.764
+  },
+  {
+   "word": "beams",
+   "start": 12.234
+  },
+  {
+   "word": "that",
+   "start": 12.548
+  },
+  {
+   "word": "fan",
+   "start": 12.81
+  },
+  {
+   "word": "out",
+   "start": 13.019
+  },
+  {
+   "word": "at",
+   "start": 13.228
+  },
+  {
+   "word": "an",
+   "start": 13.385
+  },
+  {
+   "word": "angle.",
+   "start": 13.542
+  },
+  {
+   "word": "And",
+   "start": 14.002
+  },
+  {
+   "word": "here",
+   "start": 14.223
+  },
+  {
+   "word": "is",
+   "start": 14.5
+  },
+  {
+   "word": "the",
+   "start": 14.666
+  },
+  {
+   "word": "key:",
+   "start": 14.887
+  },
+  {
+   "word": "the",
+   "start": 15.329
+  },
+  {
+   "word": "finer",
+   "start": 15.55
+  },
+  {
+   "word": "the",
+   "start": 15.882
+  },
+  {
+   "word": "lines,",
+   "start": 16.103
+  },
+  {
+   "word": "the",
+   "start": 16.6
+  },
+  {
+   "word": "wider",
+   "start": 16.821
+  },
+  {
+   "word": "that",
+   "start": 17.153
+  },
+  {
+   "word": "fan",
+   "start": 17.43
+  },
+  {
+   "word": "opens.",
+   "start": 17.651
+  },
+  {
+   "word": "To",
+   "start": 18.068
+  },
+  {
+   "word": "rebuild",
+   "start": 18.23
+  },
+  {
+   "word": "the",
+   "start": 18.661
+  },
+  {
+   "word": "pattern",
+   "start": 18.876
+  },
+  {
+   "word": "on",
+   "start": 19.307
+  },
+  {
+   "word": "the",
+   "start": 19.469
+  },
+  {
+   "word": "wafer,",
+   "start": 19.684
+  },
+  {
+   "word": "the",
+   "start": 20.169
+  },
+  {
+   "word": "lens",
+   "start": 20.384
+  },
+  {
+   "word": "has",
+   "start": 20.653
+  },
+  {
+   "word": "to",
+   "start": 20.869
+  },
+  {
+   "word": "catch",
+   "start": 21.03
+  },
+  {
+   "word": "those",
+   "start": 21.353
+  },
+  {
+   "word": "angled",
+   "start": 21.676
+  },
+  {
+   "word": "beams",
+   "start": 22.053
+  },
+  {
+   "word": "and",
+   "start": 22.377
+  },
+  {
+   "word": "bring",
+   "start": 22.592
+  },
+  {
+   "word": "them",
+   "start": 22.915
+  },
+  {
+   "word": "back",
+   "start": 23.184
+  },
+  {
+   "word": "together.",
+   "start": 23.454
+  },
+  {
+   "word": "If",
+   "start": 24.032
+  },
+  {
+   "word": "it",
+   "start": 24.183
+  },
+  {
+   "word": "catches",
+   "start": 24.335
+  },
+  {
+   "word": "them,",
+   "start": 24.739
+  },
+  {
+   "word": "the",
+   "start": 25.143
+  },
+  {
+   "word": "beams",
+   "start": 25.346
+  },
+  {
+   "word": "overlap,",
+   "start": 25.649
+  },
+  {
+   "word": "they",
+   "start": 26.205
+  },
+  {
+   "word": "interfere,",
+   "start": 26.457
+  },
+  {
+   "word": "and",
+   "start": 27.114
+  },
+  {
+   "word": "the",
+   "start": 27.317
+  },
+  {
+   "word": "lines",
+   "start": 27.519
+  },
+  {
+   "word": "reappear,",
+   "start": 27.822
+  },
+  {
+   "word": "sharp.",
+   "start": 28.428
+  }
+ ],
+ "b09-miss": [
+  {
+   "word": "But",
+   "start": 0.0
+  },
+  {
+   "word": "if",
+   "start": 0.217
+  },
+  {
+   "word": "the",
+   "start": 0.38
+  },
+  {
+   "word": "fan",
+   "start": 0.597
+  },
+  {
+   "word": "is",
+   "start": 0.815
+  },
+  {
+   "word": "too",
+   "start": 0.978
+  },
+  {
+   "word": "wide",
+   "start": 1.195
+  },
+  {
+   "word": "and",
+   "start": 1.467
+  },
+  {
+   "word": "the",
+   "start": 1.684
+  },
+  {
+   "word": "side",
+   "start": 1.902
+  },
+  {
+   "word": "beams",
+   "start": 2.173
+  },
+  {
+   "word": "miss",
+   "start": 2.499
+  },
+  {
+   "word": "the",
+   "start": 2.771
+  },
+  {
+   "word": "lens,",
+   "start": 2.989
+  },
+  {
+   "word": "only",
+   "start": 3.423
+  },
+  {
+   "word": "the",
+   "start": 3.695
+  },
+  {
+   "word": "straight",
+   "start": 3.912
+  },
+  {
+   "word": "beam",
+   "start": 4.401
+  },
+  {
+   "word": "gets",
+   "start": 4.673
+  },
+  {
+   "word": "through.",
+   "start": 4.945
+  },
+  {
+   "word": "The",
+   "start": 5.462
+  },
+  {
+   "word": "wafer",
+   "start": 5.679
+  },
+  {
+   "word": "then",
+   "start": 6.005
+  },
+  {
+   "word": "receives",
+   "start": 6.277
+  },
+  {
+   "word": "a",
+   "start": 6.765
+  },
+  {
+   "word": "flat,",
+   "start": 6.874
+  },
+  {
+   "word": "even",
+   "start": 7.308
+  },
+  {
+   "word": "glow.",
+   "start": 7.579
+  },
+  {
+   "word": "The",
+   "start": 8.177
+  },
+  {
+   "word": "pattern",
+   "start": 8.394
+  },
+  {
+   "word": "is",
+   "start": 8.828
+  },
+  {
+   "word": "simply",
+   "start": 8.991
+  },
+  {
+   "word": "gone.",
+   "start": 9.371
+  },
+  {
+   "word": "So",
+   "start": 9.729
+  },
+  {
+   "word": "there",
+   "start": 9.894
+  },
+  {
+   "word": "is",
+   "start": 10.223
+  },
+  {
+   "word": "a",
+   "start": 10.388
+  },
+  {
+   "word": "hard",
+   "start": 10.498
+  },
+  {
+   "word": "limit:",
+   "start": 10.773
+  },
+  {
+   "word": "below",
+   "start": 11.322
+  },
+  {
+   "word": "a",
+   "start": 11.652
+  },
+  {
+   "word": "certain",
+   "start": 11.762
+  },
+  {
+   "word": "size,",
+   "start": 12.201
+  },
+  {
+   "word": "a",
+   "start": 12.641
+  },
+  {
+   "word": "line",
+   "start": 12.751
+  },
+  {
+   "word": "cannot",
+   "start": 13.025
+  },
+  {
+   "word": "be",
+   "start": 13.41
+  },
+  {
+   "word": "printed",
+   "start": 13.575
+  },
+  {
+   "word": "at",
+   "start": 14.014
+  },
+  {
+   "word": "all.",
+   "start": 14.179
+  }
+ ],
+ "b10-formula": [
+  {
+   "word": "Engineers",
+   "start": 0.0
+  },
+  {
+   "word": "write",
+   "start": 0.553
+  },
+  {
+   "word": "that",
+   "start": 0.884
+  },
+  {
+   "word": "limit",
+   "start": 1.16
+  },
+  {
+   "word": "as",
+   "start": 1.491
+  },
+  {
+   "word": "a",
+   "start": 1.657
+  },
+  {
+   "word": "short",
+   "start": 1.767
+  },
+  {
+   "word": "formula.",
+   "start": 2.099
+  },
+  {
+   "word": "The",
+   "start": 2.647
+  },
+  {
+   "word": "smallest",
+   "start": 2.89
+  },
+  {
+   "word": "feature",
+   "start": 3.438
+  },
+  {
+   "word": "equals",
+   "start": 3.924
+  },
+  {
+   "word": "a",
+   "start": 4.35
+  },
+  {
+   "word": "factor",
+   "start": 4.471
+  },
+  {
+   "word": "called",
+   "start": 4.897
+  },
+  {
+   "word": "k",
+   "start": 5.323
+  },
+  {
+   "word": "one,",
+   "start": 5.444
+  },
+  {
+   "word": "times",
+   "start": 5.87
+  },
+  {
+   "word": "the",
+   "start": 6.235
+  },
+  {
+   "word": "wavelength,",
+   "start": 6.478
+  },
+  {
+   "word": "divided",
+   "start": 7.329
+  },
+  {
+   "word": "by",
+   "start": 7.816
+  },
+  {
+   "word": "the",
+   "start": 7.998
+  },
+  {
+   "word": "numerical",
+   "start": 8.242
+  },
+  {
+   "word": "aperture.",
+   "start": 8.85
+  },
+  {
+   "word": "Read",
+   "start": 9.484
+  },
+  {
+   "word": "it",
+   "start": 9.734
+  },
+  {
+   "word": "as",
+   "start": 9.884
+  },
+  {
+   "word": "three",
+   "start": 10.034
+  },
+  {
+   "word": "knobs",
+   "start": 10.334
+  },
+  {
+   "word": "you",
+   "start": 10.634
+  },
+  {
+   "word": "can",
+   "start": 10.834
+  },
+  {
+   "word": "turn.",
+   "start": 11.034
+  },
+  {
+   "word": "The",
+   "start": 11.394
+  },
+  {
+   "word": "numerical",
+   "start": 11.633
+  },
+  {
+   "word": "aperture",
+   "start": 12.231
+  },
+  {
+   "word": "measures",
+   "start": 12.77
+  },
+  {
+   "word": "how",
+   "start": 13.308
+  },
+  {
+   "word": "wide",
+   "start": 13.547
+  },
+  {
+   "word": "a",
+   "start": 13.846
+  },
+  {
+   "word": "fan",
+   "start": 13.966
+  },
+  {
+   "word": "the",
+   "start": 14.205
+  },
+  {
+   "word": "lens",
+   "start": 14.444
+  },
+  {
+   "word": "can",
+   "start": 14.744
+  },
+  {
+   "word": "collect.",
+   "start": 14.983
+  },
+  {
+   "word": "A",
+   "start": 15.82
+  },
+  {
+   "word": "bigger",
+   "start": 15.94
+  },
+  {
+   "word": "opening",
+   "start": 16.359
+  },
+  {
+   "word": "catches",
+   "start": 16.837
+  },
+  {
+   "word": "wider",
+   "start": 17.316
+  },
+  {
+   "word": "beams.",
+   "start": 17.675
+  },
+  {
+   "word": "The",
+   "start": 18.134
+  },
+  {
+   "word": "factor",
+   "start": 18.339
+  },
+  {
+   "word": "k",
+   "start": 18.698
+  },
+  {
+   "word": "one",
+   "start": 18.8
+  },
+  {
+   "word": "is",
+   "start": 19.005
+  },
+  {
+   "word": "cleverness:",
+   "start": 19.159
+  },
+  {
+   "word": "tricks",
+   "start": 19.928
+  },
+  {
+   "word": "in",
+   "start": 20.287
+  },
+  {
+   "word": "the",
+   "start": 20.441
+  },
+  {
+   "word": "lighting",
+   "start": 20.646
+  },
+  {
+   "word": "and",
+   "start": 21.108
+  },
+  {
+   "word": "the",
+   "start": 21.313
+  },
+  {
+   "word": "mask",
+   "start": 21.518
+  },
+  {
+   "word": "that",
+   "start": 21.774
+  },
+  {
+   "word": "squeeze",
+   "start": 22.031
+  },
+  {
+   "word": "out",
+   "start": 22.441
+  },
+  {
+   "word": "a",
+   "start": 22.646
+  },
+  {
+   "word": "little",
+   "start": 22.748
+  },
+  {
+   "word": "more.",
+   "start": 23.107
+  },
+  {
+   "word": "And",
+   "start": 23.467
+  },
+  {
+   "word": "the",
+   "start": 23.693
+  },
+  {
+   "word": "wavelength",
+   "start": 23.918
+  },
+  {
+   "word": "is",
+   "start": 24.539
+  },
+  {
+   "word": "the",
+   "start": 24.709
+  },
+  {
+   "word": "size",
+   "start": 24.934
+  },
+  {
+   "word": "of",
+   "start": 25.216
+  },
+  {
+   "word": "the",
+   "start": 25.386
+  },
+  {
+   "word": "wave",
+   "start": 25.612
+  },
+  {
+   "word": "itself.",
+   "start": 25.894
+  },
+  {
+   "word": "Shorter",
+   "start": 26.627
+  },
+  {
+   "word": "waves",
+   "start": 27.079
+  },
+  {
+   "word": "fan",
+   "start": 27.417
+  },
+  {
+   "word": "out",
+   "start": 27.643
+  },
+  {
+   "word": "less,",
+   "start": 27.869
+  },
+  {
+   "word": "so",
+   "start": 28.32
+  },
+  {
+   "word": "they",
+   "start": 28.49
+  },
+  {
+   "word": "can",
+   "start": 28.772
+  },
+  {
+   "word": "draw",
+   "start": 28.998
+  },
+  {
+   "word": "finer",
+   "start": 29.28
+  },
+  {
+   "word": "lines.",
+   "start": 29.618
+  },
+  {
+   "word": "Every",
+   "start": 30.049
+  },
+  {
+   "word": "chipmaking",
+   "start": 30.369
+  },
+  {
+   "word": "machine",
+   "start": 30.956
+  },
+  {
+   "word": "ever",
+   "start": 31.383
+  },
+  {
+   "word": "built",
+   "start": 31.65
+  },
+  {
+   "word": "is",
+   "start": 31.97
+  },
+  {
+   "word": "an",
+   "start": 32.131
+  },
+  {
+   "word": "attempt",
+   "start": 32.291
+  },
+  {
+   "word": "to",
+   "start": 32.718
+  },
+  {
+   "word": "turn",
+   "start": 32.878
+  },
+  {
+   "word": "one",
+   "start": 33.145
+  },
+  {
+   "word": "of",
+   "start": 33.358
+  },
+  {
+   "word": "these",
+   "start": 33.518
+  },
+  {
+   "word": "three",
+   "start": 33.839
+  },
+  {
+   "word": "knobs.",
+   "start": 34.159
+  }
+ ],
+ "b11-wavelength-knob": [
+  {
+   "word": "For",
+   "start": 0.0
+  },
+  {
+   "word": "decades,",
+   "start": 0.201
+  },
+  {
+   "word": "the",
+   "start": 0.755
+  },
+  {
+   "word": "industry",
+   "start": 0.957
+  },
+  {
+   "word": "turned",
+   "start": 1.41
+  },
+  {
+   "word": "the",
+   "start": 1.762
+  },
+  {
+   "word": "wavelength",
+   "start": 1.964
+  },
+  {
+   "word": "knob.",
+   "start": 2.518
+  }
+ ],
+ "mercury-lamp": [
+  {
+   "word": "Mercury",
+   "start": 0.0
+  },
+  {
+   "word": "lamps",
+   "start": 0.444
+  },
+  {
+   "word": "gave",
+   "start": 0.777
+  },
+  {
+   "word": "light",
+   "start": 1.054
+  },
+  {
+   "word": "at",
+   "start": 1.387
+  },
+  {
+   "word": "four",
+   "start": 1.554
+  },
+  {
+   "word": "hundred",
+   "start": 1.831
+  },
+  {
+   "word": "and",
+   "start": 2.275
+  },
+  {
+   "word": "thirty",
+   "start": 2.497
+  },
+  {
+   "word": "six",
+   "start": 2.885
+  },
+  {
+   "word": "nanometres,",
+   "start": 3.107
+  },
+  {
+   "word": "then",
+   "start": 3.884
+  },
+  {
+   "word": "three",
+   "start": 4.161
+  },
+  {
+   "word": "hundred",
+   "start": 4.494
+  },
+  {
+   "word": "and",
+   "start": 4.938
+  },
+  {
+   "word": "sixty",
+   "start": 5.16
+  },
+  {
+   "word": "five.",
+   "start": 5.493
+  }
+ ],
+ "b12-lasers": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "came",
+   "start": 0.268
+  },
+  {
+   "word": "lasers,",
+   "start": 0.536
+  },
+  {
+   "word": "at",
+   "start": 1.072
+  },
+  {
+   "word": "two",
+   "start": 1.233
+  },
+  {
+   "word": "hundred",
+   "start": 1.447
+  },
+  {
+   "word": "and",
+   "start": 1.876
+  },
+  {
+   "word": "forty",
+   "start": 2.09
+  },
+  {
+   "word": "eight",
+   "start": 2.412
+  },
+  {
+   "word": "nanometres,",
+   "start": 2.733
+  },
+  {
+   "word": "and",
+   "start": 3.483
+  },
+  {
+   "word": "then",
+   "start": 3.698
+  },
+  {
+   "word": "one",
+   "start": 3.966
+  },
+  {
+   "word": "hundred",
+   "start": 4.18
+  },
+  {
+   "word": "and",
+   "start": 4.609
+  },
+  {
+   "word": "ninety",
+   "start": 4.823
+  },
+  {
+   "word": "three.",
+   "start": 5.198
+  },
+  {
+   "word": "And",
+   "start": 5.642
+  },
+  {
+   "word": "there",
+   "start": 5.824
+  },
+  {
+   "word": "the",
+   "start": 6.097
+  },
+  {
+   "word": "wavelength",
+   "start": 6.279
+  },
+  {
+   "word": "knob",
+   "start": 6.78
+  },
+  {
+   "word": "got",
+   "start": 7.007
+  },
+  {
+   "word": "stuck.",
+   "start": 7.189
+  }
+ ],
+ "zeiss-otus": [
+  {
+   "word": "Below",
+   "start": 0.0
+  },
+  {
+   "word": "about",
+   "start": 0.351
+  },
+  {
+   "word": "one",
+   "start": 0.702
+  },
+  {
+   "word": "hundred",
+   "start": 0.935
+  },
+  {
+   "word": "and",
+   "start": 1.403
+  },
+  {
+   "word": "fifty",
+   "start": 1.637
+  },
+  {
+   "word": "nanometres,",
+   "start": 1.987
+  },
+  {
+   "word": "almost",
+   "start": 2.805
+  },
+  {
+   "word": "every",
+   "start": 3.214
+  },
+  {
+   "word": "lens",
+   "start": 3.565
+  },
+  {
+   "word": "material",
+   "start": 3.857
+  },
+  {
+   "word": "absorbs",
+   "start": 4.383
+  },
+  {
+   "word": "the",
+   "start": 4.85
+  },
+  {
+   "word": "light",
+   "start": 5.084
+  },
+  {
+   "word": "instead",
+   "start": 5.435
+  },
+  {
+   "word": "of",
+   "start": 5.902
+  },
+  {
+   "word": "bending",
+   "start": 6.078
+  },
+  {
+   "word": "it.",
+   "start": 6.545
+  }
+ ],
+ "b13-other-knobs": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "engineers",
+   "start": 0.148
+  },
+  {
+   "word": "turned",
+   "start": 0.642
+  },
+  {
+   "word": "the",
+   "start": 0.989
+  },
+  {
+   "word": "other",
+   "start": 1.186
+  },
+  {
+   "word": "knobs.",
+   "start": 1.483
+  }
+ ],
+ "asml-lens": [
+  {
+   "word": "They",
+   "start": 0.0
+  },
+  {
+   "word": "filled",
+   "start": 0.268
+  },
+  {
+   "word": "the",
+   "start": 0.643
+  },
+  {
+   "word": "gap",
+   "start": 0.857
+  },
+  {
+   "word": "between",
+   "start": 1.071
+  },
+  {
+   "word": "the",
+   "start": 1.5
+  },
+  {
+   "word": "lens",
+   "start": 1.714
+  },
+  {
+   "word": "and",
+   "start": 1.982
+  },
+  {
+   "word": "the",
+   "start": 2.196
+  },
+  {
+   "word": "wafer",
+   "start": 2.41
+  },
+  {
+   "word": "with",
+   "start": 2.731
+  },
+  {
+   "word": "water,",
+   "start": 2.999
+  },
+  {
+   "word": "which",
+   "start": 3.481
+  },
+  {
+   "word": "bends",
+   "start": 3.802
+  },
+  {
+   "word": "light",
+   "start": 4.124
+  },
+  {
+   "word": "more",
+   "start": 4.445
+  },
+  {
+   "word": "than",
+   "start": 4.713
+  },
+  {
+   "word": "air,",
+   "start": 4.981
+  },
+  {
+   "word": "so",
+   "start": 5.355
+  },
+  {
+   "word": "the",
+   "start": 5.516
+  },
+  {
+   "word": "lens",
+   "start": 5.73
+  },
+  {
+   "word": "could",
+   "start": 5.998
+  },
+  {
+   "word": "collect",
+   "start": 6.319
+  },
+  {
+   "word": "a",
+   "start": 6.748
+  },
+  {
+   "word": "wider",
+   "start": 6.855
+  },
+  {
+   "word": "fan.",
+   "start": 7.176
+  }
+ ],
+ "b14-patterning": [
+  {
+   "word": "When",
+   "start": 0.0
+  },
+  {
+   "word": "even",
+   "start": 0.284
+  },
+  {
+   "word": "that",
+   "start": 0.567
+  },
+  {
+   "word": "was",
+   "start": 0.851
+  },
+  {
+   "word": "not",
+   "start": 1.077
+  },
+  {
+   "word": "enough,",
+   "start": 1.304
+  },
+  {
+   "word": "they",
+   "start": 1.871
+  },
+  {
+   "word": "split",
+   "start": 2.155
+  },
+  {
+   "word": "each",
+   "start": 2.495
+  },
+  {
+   "word": "layer",
+   "start": 2.778
+  },
+  {
+   "word": "into",
+   "start": 3.118
+  },
+  {
+   "word": "two,",
+   "start": 3.402
+  },
+  {
+   "word": "three,",
+   "start": 3.799
+  },
+  {
+   "word": "even",
+   "start": 4.309
+  },
+  {
+   "word": "four",
+   "start": 4.592
+  },
+  {
+   "word": "separate",
+   "start": 4.876
+  },
+  {
+   "word": "exposures,",
+   "start": 5.386
+  },
+  {
+   "word": "each",
+   "start": 6.123
+  },
+  {
+   "word": "printing",
+   "start": 6.406
+  },
+  {
+   "word": "only",
+   "start": 6.916
+  },
+  {
+   "word": "some",
+   "start": 7.2
+  },
+  {
+   "word": "of",
+   "start": 7.483
+  },
+  {
+   "word": "the",
+   "start": 7.653
+  },
+  {
+   "word": "lines.",
+   "start": 7.88
+  },
+  {
+   "word": "It",
+   "start": 8.299
+  },
+  {
+   "word": "worked,",
+   "start": 8.465
+  },
+  {
+   "word": "but",
+   "start": 9.018
+  },
+  {
+   "word": "every",
+   "start": 9.24
+  },
+  {
+   "word": "extra",
+   "start": 9.572
+  },
+  {
+   "word": "pass",
+   "start": 9.904
+  },
+  {
+   "word": "costs",
+   "start": 10.181
+  },
+  {
+   "word": "time",
+   "start": 10.513
+  },
+  {
+   "word": "and",
+   "start": 10.789
+  },
+  {
+   "word": "money,",
+   "start": 11.011
+  },
+  {
+   "word": "and",
+   "start": 11.509
+  },
+  {
+   "word": "has",
+   "start": 11.73
+  },
+  {
+   "word": "to",
+   "start": 11.951
+  },
+  {
+   "word": "line",
+   "start": 12.117
+  },
+  {
+   "word": "up",
+   "start": 12.394
+  },
+  {
+   "word": "perfectly",
+   "start": 12.56
+  },
+  {
+   "word": "with",
+   "start": 13.114
+  },
+  {
+   "word": "the",
+   "start": 13.39
+  },
+  {
+   "word": "others.",
+   "start": 13.612
+  }
+ ],
+ "b15-euv": [
+  {
+   "word": "To",
+   "start": 0.0
+  },
+  {
+   "word": "keep",
+   "start": 0.16
+  },
+  {
+   "word": "shrinking,",
+   "start": 0.426
+  },
+  {
+   "word": "the",
+   "start": 1.117
+  },
+  {
+   "word": "industry",
+   "start": 1.33
+  },
+  {
+   "word": "had",
+   "start": 1.808
+  },
+  {
+   "word": "to",
+   "start": 2.021
+  },
+  {
+   "word": "turn",
+   "start": 2.18
+  },
+  {
+   "word": "the",
+   "start": 2.446
+  },
+  {
+   "word": "wavelength",
+   "start": 2.659
+  },
+  {
+   "word": "knob",
+   "start": 3.244
+  },
+  {
+   "word": "again,",
+   "start": 3.509
+  },
+  {
+   "word": "and",
+   "start": 3.988
+  },
+  {
+   "word": "by",
+   "start": 4.201
+  },
+  {
+   "word": "an",
+   "start": 4.36
+  },
+  {
+   "word": "enormous",
+   "start": 4.52
+  },
+  {
+   "word": "amount.",
+   "start": 4.998
+  },
+  {
+   "word": "The",
+   "start": 5.462
+  },
+  {
+   "word": "target",
+   "start": 5.687
+  },
+  {
+   "word": "was",
+   "start": 6.081
+  },
+  {
+   "word": "thirteen",
+   "start": 6.307
+  },
+  {
+   "word": "and",
+   "start": 6.814
+  },
+  {
+   "word": "a",
+   "start": 7.039
+  },
+  {
+   "word": "half",
+   "start": 7.152
+  },
+  {
+   "word": "nanometres,",
+   "start": 7.434
+  },
+  {
+   "word": "fourteen",
+   "start": 8.223
+  },
+  {
+   "word": "times",
+   "start": 8.73
+  },
+  {
+   "word": "shorter.",
+   "start": 9.068
+  },
+  {
+   "word": "Extreme",
+   "start": 9.857
+  },
+  {
+   "word": "ultraviolet",
+   "start": 10.307
+  },
+  {
+   "word": "light.",
+   "start": 10.984
+  },
+  {
+   "word": "In",
+   "start": 11.415
+  },
+  {
+   "word": "nineteen",
+   "start": 11.578
+  },
+  {
+   "word": "eighty",
+   "start": 12.065
+  },
+  {
+   "word": "six,",
+   "start": 12.444
+  },
+  {
+   "word": "a",
+   "start": 12.824
+  },
+  {
+   "word": "Japanese",
+   "start": 12.932
+  },
+  {
+   "word": "researcher,",
+   "start": 13.42
+  },
+  {
+   "word": "Hiroo",
+   "start": 14.178
+  },
+  {
+   "word": "Kinoshita,",
+   "start": 14.503
+  },
+  {
+   "word": "showed",
+   "start": 15.208
+  },
+  {
+   "word": "the",
+   "start": 15.587
+  },
+  {
+   "word": "first",
+   "start": 15.804
+  },
+  {
+   "word": "images",
+   "start": 16.129
+  },
+  {
+   "word": "printed",
+   "start": 16.508
+  },
+  {
+   "word": "with",
+   "start": 16.942
+  },
+  {
+   "word": "it.",
+   "start": 17.212
+  }
+ ],
+ "asml-8tower": [
+  {
+   "word": "Turning",
+   "start": 0.0
+  },
+  {
+   "word": "that",
+   "start": 0.44
+  },
+  {
+   "word": "experiment",
+   "start": 0.715
+  },
+  {
+   "word": "into",
+   "start": 1.32
+  },
+  {
+   "word": "a",
+   "start": 1.595
+  },
+  {
+   "word": "factory",
+   "start": 1.705
+  },
+  {
+   "word": "tool",
+   "start": 2.145
+  },
+  {
+   "word": "took",
+   "start": 2.42
+  },
+  {
+   "word": "nearly",
+   "start": 2.695
+  },
+  {
+   "word": "three",
+   "start": 3.08
+  },
+  {
+   "word": "decades.",
+   "start": 3.41
+  }
+ ],
+ "b16-problem-one": [
+  {
+   "word": "Because",
+   "start": 0.0
+  },
+  {
+   "word": "at",
+   "start": 0.411
+  },
+  {
+   "word": "thirteen",
+   "start": 0.565
+  },
+  {
+   "word": "and",
+   "start": 1.028
+  },
+  {
+   "word": "a",
+   "start": 1.233
+  },
+  {
+   "word": "half",
+   "start": 1.336
+  },
+  {
+   "word": "nanometres,",
+   "start": 1.593
+  },
+  {
+   "word": "almost",
+   "start": 2.313
+  },
+  {
+   "word": "everything",
+   "start": 2.673
+  },
+  {
+   "word": "we",
+   "start": 3.238
+  },
+  {
+   "word": "know",
+   "start": 3.392
+  },
+  {
+   "word": "about",
+   "start": 3.649
+  },
+  {
+   "word": "building",
+   "start": 3.958
+  },
+  {
+   "word": "optics",
+   "start": 4.42
+  },
+  {
+   "word": "stops",
+   "start": 4.78
+  },
+  {
+   "word": "working.",
+   "start": 5.088
+  },
+  {
+   "word": "Problem",
+   "start": 5.6
+  },
+  {
+   "word": "number",
+   "start": 6.029
+  },
+  {
+   "word": "one:",
+   "start": 6.405
+  },
+  {
+   "word": "nothing",
+   "start": 6.834
+  },
+  {
+   "word": "glows",
+   "start": 7.263
+  },
+  {
+   "word": "at",
+   "start": 7.585
+  },
+  {
+   "word": "this",
+   "start": 7.745
+  },
+  {
+   "word": "wavelength.",
+   "start": 8.014
+  },
+  {
+   "word": "Not",
+   "start": 8.925
+  },
+  {
+   "word": "a",
+   "start": 9.14
+  },
+  {
+   "word": "lamp,",
+   "start": 9.247
+  },
+  {
+   "word": "and",
+   "start": 9.676
+  },
+  {
+   "word": "not",
+   "start": 9.891
+  },
+  {
+   "word": "an",
+   "start": 10.105
+  },
+  {
+   "word": "ordinary",
+   "start": 10.266
+  },
+  {
+   "word": "laser.",
+   "start": 10.749
+  },
+  {
+   "word": "To",
+   "start": 11.167
+  },
+  {
+   "word": "make",
+   "start": 11.328
+  },
+  {
+   "word": "it,",
+   "start": 11.596
+  },
+  {
+   "word": "you",
+   "start": 11.918
+  },
+  {
+   "word": "need",
+   "start": 12.133
+  },
+  {
+   "word": "matter",
+   "start": 12.401
+  },
+  {
+   "word": "so",
+   "start": 12.776
+  },
+  {
+   "word": "hot",
+   "start": 12.937
+  },
+  {
+   "word": "that",
+   "start": 13.152
+  },
+  {
+   "word": "its",
+   "start": 13.42
+  },
+  {
+   "word": "atoms",
+   "start": 13.635
+  },
+  {
+   "word": "are",
+   "start": 13.957
+  },
+  {
+   "word": "stripped",
+   "start": 14.171
+  },
+  {
+   "word": "of",
+   "start": 14.654
+  },
+  {
+   "word": "many",
+   "start": 14.815
+  },
+  {
+   "word": "of",
+   "start": 15.083
+  },
+  {
+   "word": "their",
+   "start": 15.244
+  },
+  {
+   "word": "electrons.",
+   "start": 15.566
+  },
+  {
+   "word": "A",
+   "start": 16.424
+  },
+  {
+   "word": "plasma.",
+   "start": 16.531
+  }
+ ],
+ "b17-tin": [
+  {
+   "word": "Tin",
+   "start": 0.0
+  },
+  {
+   "word": "turns",
+   "start": 0.239
+  },
+  {
+   "word": "out",
+   "start": 0.596
+  },
+  {
+   "word": "to",
+   "start": 0.834
+  },
+  {
+   "word": "be",
+   "start": 1.013
+  },
+  {
+   "word": "ideal:",
+   "start": 1.192
+  },
+  {
+   "word": "highly",
+   "start": 1.787
+  },
+  {
+   "word": "charged",
+   "start": 2.204
+  },
+  {
+   "word": "tin",
+   "start": 2.681
+  },
+  {
+   "word": "ions",
+   "start": 2.919
+  },
+  {
+   "word": "give",
+   "start": 3.217
+  },
+  {
+   "word": "off",
+   "start": 3.515
+  },
+  {
+   "word": "much",
+   "start": 3.753
+  },
+  {
+   "word": "of",
+   "start": 4.051
+  },
+  {
+   "word": "their",
+   "start": 4.229
+  },
+  {
+   "word": "light",
+   "start": 4.587
+  },
+  {
+   "word": "in",
+   "start": 4.944
+  },
+  {
+   "word": "a",
+   "start": 5.123
+  },
+  {
+   "word": "narrow",
+   "start": 5.242
+  },
+  {
+   "word": "band",
+   "start": 5.659
+  },
+  {
+   "word": "around",
+   "start": 5.957
+  },
+  {
+   "word": "thirteen",
+   "start": 6.374
+  },
+  {
+   "word": "and",
+   "start": 6.91
+  },
+  {
+   "word": "a",
+   "start": 7.148
+  },
+  {
+   "word": "half",
+   "start": 7.267
+  },
+  {
+   "word": "nanometres.",
+   "start": 7.565
+  },
+  {
+   "word": "So",
+   "start": 8.309
+  },
+  {
+   "word": "the",
+   "start": 8.472
+  },
+  {
+   "word": "machine",
+   "start": 8.69
+  },
+  {
+   "word": "makes",
+   "start": 9.125
+  },
+  {
+   "word": "tin",
+   "start": 9.451
+  },
+  {
+   "word": "plasma,",
+   "start": 9.669
+  },
+  {
+   "word": "one",
+   "start": 10.213
+  },
+  {
+   "word": "droplet",
+   "start": 10.43
+  },
+  {
+   "word": "at",
+   "start": 10.865
+  },
+  {
+   "word": "a",
+   "start": 11.028
+  },
+  {
+   "word": "time.",
+   "start": 11.137
+  },
+  {
+   "word": "A",
+   "start": 11.509
+  },
+  {
+   "word": "generator",
+   "start": 11.635
+  },
+  {
+   "word": "fires",
+   "start": 12.262
+  },
+  {
+   "word": "a",
+   "start": 12.639
+  },
+  {
+   "word": "stream",
+   "start": 12.765
+  },
+  {
+   "word": "of",
+   "start": 13.204
+  },
+  {
+   "word": "molten",
+   "start": 13.392
+  },
+  {
+   "word": "tin",
+   "start": 13.832
+  },
+  {
+   "word": "droplets,",
+   "start": 14.083
+  },
+  {
+   "word": "each",
+   "start": 14.836
+  },
+  {
+   "word": "about",
+   "start": 15.15
+  },
+  {
+   "word": "thirty",
+   "start": 15.527
+  },
+  {
+   "word": "micrometres",
+   "start": 15.966
+  },
+  {
+   "word": "across.",
+   "start": 16.72
+  }
+ ],
+ "co2-laser": [
+  {
+   "word": "A",
+   "start": 0.0
+  },
+  {
+   "word": "carbon",
+   "start": 0.115
+  },
+  {
+   "word": "dioxide",
+   "start": 0.517
+  },
+  {
+   "word": "laser,",
+   "start": 0.977
+  },
+  {
+   "word": "built",
+   "start": 1.494
+  },
+  {
+   "word": "by",
+   "start": 1.839
+  },
+  {
+   "word": "the",
+   "start": 2.011
+  },
+  {
+   "word": "German",
+   "start": 2.241
+  },
+  {
+   "word": "company",
+   "start": 2.643
+  },
+  {
+   "word": "Trumpf,",
+   "start": 3.103
+  },
+  {
+   "word": "waits",
+   "start": 3.678
+  },
+  {
+   "word": "for",
+   "start": 4.022
+  },
+  {
+   "word": "them.",
+   "start": 4.252
+  }
+ ],
+ "laser-cut": [
+  {
+   "word": "Its",
+   "start": 0.0
+  },
+  {
+   "word": "pulses",
+   "start": 0.238
+  },
+  {
+   "word": "pass",
+   "start": 0.655
+  },
+  {
+   "word": "through",
+   "start": 0.953
+  },
+  {
+   "word": "four",
+   "start": 1.429
+  },
+  {
+   "word": "amplifier",
+   "start": 1.727
+  },
+  {
+   "word": "stages,",
+   "start": 2.323
+  },
+  {
+   "word": "until",
+   "start": 2.918
+  },
+  {
+   "word": "the",
+   "start": 3.276
+  },
+  {
+   "word": "beam",
+   "start": 3.514
+  },
+  {
+   "word": "carries",
+   "start": 3.812
+  },
+  {
+   "word": "tens",
+   "start": 4.288
+  },
+  {
+   "word": "of",
+   "start": 4.586
+  },
+  {
+   "word": "kilowatts.",
+   "start": 4.764
+  }
+ ],
+ "b18-pulses": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "first,",
+   "start": 0.217
+  },
+  {
+   "word": "weaker",
+   "start": 0.705
+  },
+  {
+   "word": "pulse",
+   "start": 1.085
+  },
+  {
+   "word": "hits",
+   "start": 1.41
+  },
+  {
+   "word": "the",
+   "start": 1.681
+  },
+  {
+   "word": "droplet",
+   "start": 1.898
+  },
+  {
+   "word": "and",
+   "start": 2.331
+  },
+  {
+   "word": "flattens",
+   "start": 2.548
+  },
+  {
+   "word": "it",
+   "start": 3.036
+  },
+  {
+   "word": "into",
+   "start": 3.199
+  },
+  {
+   "word": "a",
+   "start": 3.47
+  },
+  {
+   "word": "thin",
+   "start": 3.578
+  },
+  {
+   "word": "disc.",
+   "start": 3.849
+  },
+  {
+   "word": "Why",
+   "start": 4.213
+  },
+  {
+   "word": "flatten",
+   "start": 4.433
+  },
+  {
+   "word": "it?",
+   "start": 4.872
+  },
+  {
+   "word": "A",
+   "start": 5.367
+  },
+  {
+   "word": "small",
+   "start": 5.477
+  },
+  {
+   "word": "sphere",
+   "start": 5.806
+  },
+  {
+   "word": "is",
+   "start": 6.191
+  },
+  {
+   "word": "a",
+   "start": 6.356
+  },
+  {
+   "word": "hard",
+   "start": 6.466
+  },
+  {
+   "word": "target,",
+   "start": 6.741
+  },
+  {
+   "word": "and",
+   "start": 7.29
+  },
+  {
+   "word": "most",
+   "start": 7.51
+  },
+  {
+   "word": "of",
+   "start": 7.785
+  },
+  {
+   "word": "its",
+   "start": 7.949
+  },
+  {
+   "word": "tin",
+   "start": 8.169
+  },
+  {
+   "word": "is",
+   "start": 8.389
+  },
+  {
+   "word": "hidden",
+   "start": 8.554
+  },
+  {
+   "word": "inside.",
+   "start": 8.938
+  },
+  {
+   "word": "A",
+   "start": 9.408
+  },
+  {
+   "word": "wide,",
+   "start": 9.509
+  },
+  {
+   "word": "thin",
+   "start": 9.912
+  },
+  {
+   "word": "disc",
+   "start": 10.164
+  },
+  {
+   "word": "spreads",
+   "start": 10.415
+  },
+  {
+   "word": "that",
+   "start": 10.818
+  },
+  {
+   "word": "tin",
+   "start": 11.07
+  },
+  {
+   "word": "out,",
+   "start": 11.271
+  },
+  {
+   "word": "where",
+   "start": 11.624
+  },
+  {
+   "word": "the",
+   "start": 11.926
+  },
+  {
+   "word": "main",
+   "start": 12.127
+  },
+  {
+   "word": "pulse",
+   "start": 12.379
+  },
+  {
+   "word": "can",
+   "start": 12.681
+  },
+  {
+   "word": "reach",
+   "start": 12.883
+  },
+  {
+   "word": "all",
+   "start": 13.185
+  },
+  {
+   "word": "of",
+   "start": 13.386
+  },
+  {
+   "word": "it.",
+   "start": 13.537
+  },
+  {
+   "word": "Then",
+   "start": 13.792
+  },
+  {
+   "word": "the",
+   "start": 14.064
+  },
+  {
+   "word": "main",
+   "start": 14.282
+  },
+  {
+   "word": "pulse",
+   "start": 14.555
+  },
+  {
+   "word": "hits",
+   "start": 14.881
+  },
+  {
+   "word": "the",
+   "start": 15.154
+  },
+  {
+   "word": "disc",
+   "start": 15.372
+  },
+  {
+   "word": "and",
+   "start": 15.644
+  },
+  {
+   "word": "turns",
+   "start": 15.862
+  },
+  {
+   "word": "it",
+   "start": 16.189
+  },
+  {
+   "word": "into",
+   "start": 16.353
+  },
+  {
+   "word": "plasma",
+   "start": 16.625
+  },
+  {
+   "word": "at",
+   "start": 17.007
+  },
+  {
+   "word": "around",
+   "start": 17.17
+  },
+  {
+   "word": "two",
+   "start": 17.551
+  },
+  {
+   "word": "hundred",
+   "start": 17.769
+  },
+  {
+   "word": "thousand",
+   "start": 18.205
+  },
+  {
+   "word": "degrees.",
+   "start": 18.696
+  },
+  {
+   "word": "Fifty",
+   "start": 19.24
+  },
+  {
+   "word": "thousand",
+   "start": 19.616
+  },
+  {
+   "word": "times",
+   "start": 20.179
+  },
+  {
+   "word": "a",
+   "start": 20.555
+  },
+  {
+   "word": "second,",
+   "start": 20.68
+  },
+  {
+   "word": "a",
+   "start": 21.306
+  },
+  {
+   "word": "tiny",
+   "start": 21.431
+  },
+  {
+   "word": "star",
+   "start": 21.744
+  },
+  {
+   "word": "is",
+   "start": 22.057
+  },
+  {
+   "word": "born",
+   "start": 22.245
+  },
+  {
+   "word": "and",
+   "start": 22.558
+  },
+  {
+   "word": "dies",
+   "start": 22.808
+  },
+  {
+   "word": "inside",
+   "start": 23.121
+  },
+  {
+   "word": "the",
+   "start": 23.559
+  },
+  {
+   "word": "machine.",
+   "start": 23.81
+  }
+ ],
+ "b19-collector": [
+  {
+   "word": "And",
+   "start": 0.0
+  },
+  {
+   "word": "it",
+   "start": 0.23
+  },
+  {
+   "word": "is",
+   "start": 0.403
+  },
+  {
+   "word": "brutally",
+   "start": 0.576
+  },
+  {
+   "word": "inefficient.",
+   "start": 1.095
+  },
+  {
+   "word": "Only",
+   "start": 2.133
+  },
+  {
+   "word": "about",
+   "start": 2.422
+  },
+  {
+   "word": "five",
+   "start": 2.768
+  },
+  {
+   "word": "percent",
+   "start": 3.056
+  },
+  {
+   "word": "of",
+   "start": 3.517
+  },
+  {
+   "word": "the",
+   "start": 3.69
+  },
+  {
+   "word": "laser",
+   "start": 3.921
+  },
+  {
+   "word": "energy",
+   "start": 4.267
+  },
+  {
+   "word": "comes",
+   "start": 4.67
+  },
+  {
+   "word": "out",
+   "start": 5.016
+  },
+  {
+   "word": "as",
+   "start": 5.247
+  },
+  {
+   "word": "useful",
+   "start": 5.42
+  },
+  {
+   "word": "light.",
+   "start": 5.824
+  },
+  {
+   "word": "A",
+   "start": 6.24
+  },
+  {
+   "word": "large",
+   "start": 6.345
+  },
+  {
+   "word": "curved",
+   "start": 6.658
+  },
+  {
+   "word": "mirror,",
+   "start": 7.024
+  },
+  {
+   "word": "the",
+   "start": 7.547
+  },
+  {
+   "word": "collector,",
+   "start": 7.756
+  },
+  {
+   "word": "gathers",
+   "start": 8.436
+  },
+  {
+   "word": "the",
+   "start": 8.854
+  },
+  {
+   "word": "light",
+   "start": 9.063
+  },
+  {
+   "word": "and",
+   "start": 9.376
+  },
+  {
+   "word": "focuses",
+   "start": 9.585
+  },
+  {
+   "word": "it",
+   "start": 10.004
+  },
+  {
+   "word": "toward",
+   "start": 10.16
+  },
+  {
+   "word": "a",
+   "start": 10.526
+  },
+  {
+   "word": "single",
+   "start": 10.631
+  },
+  {
+   "word": "point.",
+   "start": 10.997
+  },
+  {
+   "word": "But",
+   "start": 11.392
+  },
+  {
+   "word": "every",
+   "start": 11.622
+  },
+  {
+   "word": "explosion",
+   "start": 11.968
+  },
+  {
+   "word": "sprays",
+   "start": 12.545
+  },
+  {
+   "word": "tin",
+   "start": 12.948
+  },
+  {
+   "word": "at",
+   "start": 13.179
+  },
+  {
+   "word": "tens",
+   "start": 13.352
+  },
+  {
+   "word": "of",
+   "start": 13.64
+  },
+  {
+   "word": "kilometres",
+   "start": 13.813
+  },
+  {
+   "word": "per",
+   "start": 14.447
+  },
+  {
+   "word": "second,",
+   "start": 14.678
+  },
+  {
+   "word": "and",
+   "start": 15.255
+  },
+  {
+   "word": "even",
+   "start": 15.485
+  },
+  {
+   "word": "one",
+   "start": 15.774
+  },
+  {
+   "word": "nanometre",
+   "start": 16.004
+  },
+  {
+   "word": "of",
+   "start": 16.581
+  },
+  {
+   "word": "tin",
+   "start": 16.754
+  },
+  {
+   "word": "on",
+   "start": 16.984
+  },
+  {
+   "word": "the",
+   "start": 17.157
+  },
+  {
+   "word": "collector",
+   "start": 17.388
+  },
+  {
+   "word": "would",
+   "start": 17.964
+  },
+  {
+   "word": "ruin",
+   "start": 18.31
+  },
+  {
+   "word": "it.",
+   "start": 18.599
+  },
+  {
+   "word": "So",
+   "start": 18.858
+  },
+  {
+   "word": "a",
+   "start": 19.018
+  },
+  {
+   "word": "constant",
+   "start": 19.125
+  },
+  {
+   "word": "flow",
+   "start": 19.605
+  },
+  {
+   "word": "of",
+   "start": 19.872
+  },
+  {
+   "word": "hydrogen",
+   "start": 20.032
+  },
+  {
+   "word": "gas",
+   "start": 20.512
+  },
+  {
+   "word": "sweeps",
+   "start": 20.725
+  },
+  {
+   "word": "through",
+   "start": 21.098
+  },
+  {
+   "word": "the",
+   "start": 21.525
+  },
+  {
+   "word": "chamber,",
+   "start": 21.738
+  },
+  {
+   "word": "cleaning",
+   "start": 22.325
+  },
+  {
+   "word": "the",
+   "start": 22.805
+  },
+  {
+   "word": "tin",
+   "start": 23.018
+  },
+  {
+   "word": "away",
+   "start": 23.232
+  },
+  {
+   "word": "before",
+   "start": 23.498
+  },
+  {
+   "word": "it",
+   "start": 23.872
+  },
+  {
+   "word": "can",
+   "start": 24.032
+  },
+  {
+   "word": "settle.",
+   "start": 24.245
+  }
+ ],
+ "tsmc-fab6": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "result",
+   "start": 0.22
+  },
+  {
+   "word": "is",
+   "start": 0.605
+  },
+  {
+   "word": "more",
+   "start": 0.77
+  },
+  {
+   "word": "than",
+   "start": 1.045
+  },
+  {
+   "word": "five",
+   "start": 1.321
+  },
+  {
+   "word": "hundred",
+   "start": 1.596
+  },
+  {
+   "word": "watts",
+   "start": 2.036
+  },
+  {
+   "word": "of",
+   "start": 2.366
+  },
+  {
+   "word": "extreme",
+   "start": 2.532
+  },
+  {
+   "word": "ultraviolet",
+   "start": 2.972
+  },
+  {
+   "word": "light,",
+   "start": 3.632
+  },
+  {
+   "word": "steady",
+   "start": 4.128
+  },
+  {
+   "word": "enough",
+   "start": 4.513
+  },
+  {
+   "word": "to",
+   "start": 4.898
+  },
+  {
+   "word": "run",
+   "start": 5.063
+  },
+  {
+   "word": "a",
+   "start": 5.284
+  },
+  {
+   "word": "factory",
+   "start": 5.394
+  },
+  {
+   "word": "around",
+   "start": 5.834
+  },
+  {
+   "word": "the",
+   "start": 6.219
+  },
+  {
+   "word": "clock.",
+   "start": 6.439
+  }
+ ],
+ "b20-absorbed": [
+  {
+   "word": "Problem",
+   "start": 0.0
+  },
+  {
+   "word": "number",
+   "start": 0.405
+  },
+  {
+   "word": "two:",
+   "start": 0.76
+  },
+  {
+   "word": "this",
+   "start": 1.165
+  },
+  {
+   "word": "light",
+   "start": 1.418
+  },
+  {
+   "word": "is",
+   "start": 1.722
+  },
+  {
+   "word": "swallowed",
+   "start": 1.874
+  },
+  {
+   "word": "by",
+   "start": 2.38
+  },
+  {
+   "word": "everything.",
+   "start": 2.532
+  },
+  {
+   "word": "Glass",
+   "start": 3.198
+  },
+  {
+   "word": "absorbs",
+   "start": 3.521
+  },
+  {
+   "word": "it,",
+   "start": 3.95
+  },
+  {
+   "word": "so",
+   "start": 4.272
+  },
+  {
+   "word": "there",
+   "start": 4.433
+  },
+  {
+   "word": "can",
+   "start": 4.756
+  },
+  {
+   "word": "be",
+   "start": 4.97
+  },
+  {
+   "word": "no",
+   "start": 5.131
+  },
+  {
+   "word": "lenses.",
+   "start": 5.292
+  },
+  {
+   "word": "That",
+   "start": 9.866
+  },
+  {
+   "word": "leaves",
+   "start": 10.119
+  },
+  {
+   "word": "mirrors.",
+   "start": 10.474
+  },
+  {
+   "word": "But",
+   "start": 11.184
+  },
+  {
+   "word": "an",
+   "start": 11.387
+  },
+  {
+   "word": "ordinary",
+   "start": 11.539
+  },
+  {
+   "word": "mirror",
+   "start": 11.996
+  },
+  {
+   "word": "reflects",
+   "start": 12.351
+  },
+  {
+   "word": "almost",
+   "start": 12.807
+  },
+  {
+   "word": "none",
+   "start": 13.162
+  },
+  {
+   "word": "of",
+   "start": 13.416
+  },
+  {
+   "word": "this",
+   "start": 13.568
+  },
+  {
+   "word": "light.",
+   "start": 13.821
+  }
+ ],
+ "vacuum-chamber": [
+  {
+   "word": "Even",
+   "start": 0.0
+  },
+  {
+   "word": "air",
+   "start": 0.283
+  },
+  {
+   "word": "absorbs",
+   "start": 0.509
+  },
+  {
+   "word": "it,",
+   "start": 0.96
+  },
+  {
+   "word": "so",
+   "start": 1.299
+  },
+  {
+   "word": "the",
+   "start": 1.469
+  },
+  {
+   "word": "entire",
+   "start": 1.695
+  },
+  {
+   "word": "light",
+   "start": 2.09
+  },
+  {
+   "word": "path",
+   "start": 2.429
+  },
+  {
+   "word": "has",
+   "start": 2.711
+  },
+  {
+   "word": "to",
+   "start": 2.937
+  },
+  {
+   "word": "sit",
+   "start": 3.107
+  },
+  {
+   "word": "in",
+   "start": 3.333
+  },
+  {
+   "word": "a",
+   "start": 3.502
+  },
+  {
+   "word": "vacuum.",
+   "start": 3.615
+  }
+ ],
+ "b21-bragg": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "these",
+   "start": 0.172
+  },
+  {
+   "word": "mirrors",
+   "start": 0.517
+  },
+  {
+   "word": "are",
+   "start": 0.977
+  },
+  {
+   "word": "built",
+   "start": 1.206
+  },
+  {
+   "word": "from",
+   "start": 1.551
+  },
+  {
+   "word": "layers:",
+   "start": 1.838
+  },
+  {
+   "word": "about",
+   "start": 2.471
+  },
+  {
+   "word": "forty",
+   "start": 2.815
+  },
+  {
+   "word": "pairs",
+   "start": 3.16
+  },
+  {
+   "word": "of",
+   "start": 3.505
+  },
+  {
+   "word": "molybdenum",
+   "start": 3.677
+  },
+  {
+   "word": "and",
+   "start": 4.309
+  },
+  {
+   "word": "silicon,",
+   "start": 4.539
+  },
+  {
+   "word": "each",
+   "start": 5.171
+  },
+  {
+   "word": "pair",
+   "start": 5.459
+  },
+  {
+   "word": "only",
+   "start": 5.746
+  },
+  {
+   "word": "about",
+   "start": 6.033
+  },
+  {
+   "word": "seven",
+   "start": 6.378
+  },
+  {
+   "word": "nanometres",
+   "start": 6.723
+  },
+  {
+   "word": "thick.",
+   "start": 7.355
+  },
+  {
+   "word": "Every",
+   "start": 7.796
+  },
+  {
+   "word": "boundary",
+   "start": 8.136
+  },
+  {
+   "word": "between",
+   "start": 8.645
+  },
+  {
+   "word": "the",
+   "start": 9.098
+  },
+  {
+   "word": "two",
+   "start": 9.325
+  },
+  {
+   "word": "materials",
+   "start": 9.551
+  },
+  {
+   "word": "reflects",
+   "start": 10.117
+  },
+  {
+   "word": "only",
+   "start": 10.627
+  },
+  {
+   "word": "a",
+   "start": 10.91
+  },
+  {
+   "word": "tiny",
+   "start": 11.023
+  },
+  {
+   "word": "bit",
+   "start": 11.306
+  },
+  {
+   "word": "of",
+   "start": 11.533
+  },
+  {
+   "word": "the",
+   "start": 11.702
+  },
+  {
+   "word": "light.",
+   "start": 11.929
+  },
+  {
+   "word": "On",
+   "start": 12.608
+  },
+  {
+   "word": "its",
+   "start": 12.778
+  },
+  {
+   "word": "own,",
+   "start": 13.004
+  },
+  {
+   "word": "that",
+   "start": 13.401
+  },
+  {
+   "word": "is",
+   "start": 13.684
+  },
+  {
+   "word": "useless.",
+   "start": 13.853
+  },
+  {
+   "word": "But",
+   "start": 14.388
+  },
+  {
+   "word": "the",
+   "start": 14.601
+  },
+  {
+   "word": "layers",
+   "start": 14.814
+  },
+  {
+   "word": "are",
+   "start": 15.186
+  },
+  {
+   "word": "spaced",
+   "start": 15.399
+  },
+  {
+   "word": "at",
+   "start": 15.771
+  },
+  {
+   "word": "half",
+   "start": 15.93
+  },
+  {
+   "word": "the",
+   "start": 16.196
+  },
+  {
+   "word": "wavelength,",
+   "start": 16.409
+  },
+  {
+   "word": "so",
+   "start": 17.153
+  },
+  {
+   "word": "every",
+   "start": 17.313
+  },
+  {
+   "word": "one",
+   "start": 17.632
+  },
+  {
+   "word": "of",
+   "start": 17.845
+  },
+  {
+   "word": "those",
+   "start": 18.004
+  },
+  {
+   "word": "tiny",
+   "start": 18.323
+  },
+  {
+   "word": "reflections",
+   "start": 18.589
+  },
+  {
+   "word": "leaves",
+   "start": 19.227
+  },
+  {
+   "word": "in",
+   "start": 19.599
+  },
+  {
+   "word": "step",
+   "start": 19.759
+  },
+  {
+   "word": "with",
+   "start": 20.025
+  },
+  {
+   "word": "all",
+   "start": 20.291
+  },
+  {
+   "word": "the",
+   "start": 20.503
+  },
+  {
+   "word": "others.",
+   "start": 20.716
+  },
+  {
+   "word": "The",
+   "start": 21.162
+  },
+  {
+   "word": "wave",
+   "start": 21.389
+  },
+  {
+   "word": "crests",
+   "start": 21.671
+  },
+  {
+   "word": "line",
+   "start": 22.067
+  },
+  {
+   "word": "up,",
+   "start": 22.35
+  },
+  {
+   "word": "they",
+   "start": 22.69
+  },
+  {
+   "word": "add",
+   "start": 22.972
+  },
+  {
+   "word": "together,",
+   "start": 23.199
+  },
+  {
+   "word": "and",
+   "start": 23.877
+  },
+  {
+   "word": "dozens",
+   "start": 24.104
+  },
+  {
+   "word": "of",
+   "start": 24.5
+  },
+  {
+   "word": "weak",
+   "start": 24.669
+  },
+  {
+   "word": "echoes",
+   "start": 24.952
+  },
+  {
+   "word": "become",
+   "start": 25.348
+  },
+  {
+   "word": "one",
+   "start": 25.744
+  },
+  {
+   "word": "strong",
+   "start": 25.97
+  },
+  {
+   "word": "reflection,",
+   "start": 26.366
+  },
+  {
+   "word": "about",
+   "start": 27.158
+  },
+  {
+   "word": "seventy",
+   "start": 27.497
+  },
+  {
+   "word": "percent.",
+   "start": 27.95
+  }
+ ],
+ "soap-film": [
+  {
+   "word": "It",
+   "start": 0.0
+  },
+  {
+   "word": "is",
+   "start": 0.155
+  },
+  {
+   "word": "the",
+   "start": 0.31
+  },
+  {
+   "word": "same",
+   "start": 0.517
+  },
+  {
+   "word": "trick",
+   "start": 0.775
+  },
+  {
+   "word": "that",
+   "start": 1.086
+  },
+  {
+   "word": "makes",
+   "start": 1.344
+  },
+  {
+   "word": "a",
+   "start": 1.654
+  },
+  {
+   "word": "soap",
+   "start": 1.758
+  },
+  {
+   "word": "bubble",
+   "start": 2.016
+  },
+  {
+   "word": "shimmer,",
+   "start": 2.378
+  },
+  {
+   "word": "tuned",
+   "start": 2.947
+  },
+  {
+   "word": "to",
+   "start": 3.257
+  },
+  {
+   "word": "a",
+   "start": 3.412
+  },
+  {
+   "word": "single",
+   "start": 3.516
+  },
+  {
+   "word": "colour.",
+   "start": 3.878
+  }
+ ],
+ "b22-why-13": [
+  {
+   "word": "This",
+   "start": 0.0
+  },
+  {
+   "word": "is",
+   "start": 0.224
+  },
+  {
+   "word": "also",
+   "start": 0.358
+  },
+  {
+   "word": "where",
+   "start": 0.581
+  },
+  {
+   "word": "the",
+   "start": 0.85
+  },
+  {
+   "word": "strange",
+   "start": 1.028
+  },
+  {
+   "word": "number",
+   "start": 1.386
+  },
+  {
+   "word": "comes",
+   "start": 1.699
+  },
+  {
+   "word": "from.",
+   "start": 1.967
+  },
+  {
+   "word": "Silicon",
+   "start": 2.348
+  },
+  {
+   "word": "starts",
+   "start": 2.805
+  },
+  {
+   "word": "absorbing",
+   "start": 3.204
+  },
+  {
+   "word": "strongly",
+   "start": 3.775
+  },
+  {
+   "word": "just",
+   "start": 4.288
+  },
+  {
+   "word": "below",
+   "start": 4.574
+  },
+  {
+   "word": "twelve",
+   "start": 4.916
+  },
+  {
+   "word": "and",
+   "start": 5.316
+  },
+  {
+   "word": "a",
+   "start": 5.544
+  },
+  {
+   "word": "half",
+   "start": 5.658
+  },
+  {
+   "word": "nanometres,",
+   "start": 5.943
+  },
+  {
+   "word": "and",
+   "start": 6.742
+  },
+  {
+   "word": "these",
+   "start": 6.97
+  },
+  {
+   "word": "mirrors",
+   "start": 7.313
+  },
+  {
+   "word": "work",
+   "start": 7.769
+  },
+  {
+   "word": "best",
+   "start": 8.055
+  },
+  {
+   "word": "just",
+   "start": 8.34
+  },
+  {
+   "word": "above",
+   "start": 8.625
+  },
+  {
+   "word": "that",
+   "start": 8.968
+  },
+  {
+   "word": "edge.",
+   "start": 9.253
+  },
+  {
+   "word": "Thirteen",
+   "start": 9.643
+  },
+  {
+   "word": "and",
+   "start": 10.093
+  },
+  {
+   "word": "a",
+   "start": 10.293
+  },
+  {
+   "word": "half",
+   "start": 10.393
+  },
+  {
+   "word": "is",
+   "start": 10.643
+  },
+  {
+   "word": "where",
+   "start": 10.793
+  },
+  {
+   "word": "the",
+   "start": 11.093
+  },
+  {
+   "word": "mirrors",
+   "start": 11.293
+  },
+  {
+   "word": "work",
+   "start": 11.693
+  },
+  {
+   "word": "best,",
+   "start": 11.943
+  },
+  {
+   "word": "and",
+   "start": 12.343
+  },
+  {
+   "word": "where",
+   "start": 12.543
+  },
+  {
+   "word": "tin",
+   "start": 12.843
+  },
+  {
+   "word": "happens",
+   "start": 13.043
+  },
+  {
+   "word": "to",
+   "start": 13.443
+  },
+  {
+   "word": "glow",
+   "start": 13.593
+  },
+  {
+   "word": "brightest.",
+   "start": 13.843
+  }
+ ],
+ "mirror-grind": [
+  {
+   "word": "These",
+   "start": 0.0
+  },
+  {
+   "word": "mirrors",
+   "start": 0.353
+  },
+  {
+   "word": "must",
+   "start": 0.823
+  },
+  {
+   "word": "also",
+   "start": 1.116
+  },
+  {
+   "word": "be",
+   "start": 1.41
+  },
+  {
+   "word": "smooth",
+   "start": 1.586
+  },
+  {
+   "word": "beyond",
+   "start": 1.997
+  },
+  {
+   "word": "belief,",
+   "start": 2.409
+  },
+  {
+   "word": "with",
+   "start": 2.996
+  },
+  {
+   "word": "bumps",
+   "start": 3.29
+  },
+  {
+   "word": "of",
+   "start": 3.642
+  },
+  {
+   "word": "around",
+   "start": 3.818
+  },
+  {
+   "word": "fifty",
+   "start": 4.23
+  },
+  {
+   "word": "picometres,",
+   "start": 4.582
+  },
+  {
+   "word": "smaller",
+   "start": 5.404
+  },
+  {
+   "word": "than",
+   "start": 5.874
+  },
+  {
+   "word": "a",
+   "start": 6.168
+  },
+  {
+   "word": "single",
+   "start": 6.285
+  },
+  {
+   "word": "atom.",
+   "start": 6.697
+  }
+ ],
+ "gold-mirror": [
+  {
+   "word": "If",
+   "start": 0.0
+  },
+  {
+   "word": "one",
+   "start": 0.155
+  },
+  {
+   "word": "of",
+   "start": 0.362
+  },
+  {
+   "word": "these",
+   "start": 0.517
+  },
+  {
+   "word": "mirrors",
+   "start": 0.828
+  },
+  {
+   "word": "were",
+   "start": 1.242
+  },
+  {
+   "word": "the",
+   "start": 1.5
+  },
+  {
+   "word": "size",
+   "start": 1.707
+  },
+  {
+   "word": "of",
+   "start": 1.966
+  },
+  {
+   "word": "Germany,",
+   "start": 2.121
+  },
+  {
+   "word": "its",
+   "start": 2.69
+  },
+  {
+   "word": "biggest",
+   "start": 2.897
+  },
+  {
+   "word": "bump",
+   "start": 3.311
+  },
+  {
+   "word": "would",
+   "start": 3.569
+  },
+  {
+   "word": "be",
+   "start": 3.88
+  },
+  {
+   "word": "about",
+   "start": 4.035
+  },
+  {
+   "word": "one",
+   "start": 4.345
+  },
+  {
+   "word": "millimetre",
+   "start": 4.552
+  },
+  {
+   "word": "high.",
+   "start": 5.121
+  }
+ ],
+ "zeiss-oberkochen": [
+  {
+   "word": "Zeiss",
+   "start": 0.0
+  },
+  {
+   "word": "makes",
+   "start": 0.307
+  },
+  {
+   "word": "them,",
+   "start": 0.615
+  },
+  {
+   "word": "in",
+   "start": 1.025
+  },
+  {
+   "word": "southern",
+   "start": 1.178
+  },
+  {
+   "word": "Germany.",
+   "start": 1.64
+  }
+ ],
+ "b23-follow": [
+  {
+   "word": "Now",
+   "start": 0.0
+  },
+  {
+   "word": "follow",
+   "start": 0.172
+  },
+  {
+   "word": "the",
+   "start": 0.475
+  },
+  {
+   "word": "light",
+   "start": 0.647
+  },
+  {
+   "word": "through",
+   "start": 0.906
+  },
+  {
+   "word": "the",
+   "start": 1.252
+  },
+  {
+   "word": "machine.",
+   "start": 1.424
+  }
+ ],
+ "ibm-ray-a": [
+  {
+   "word": "From",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.257
+  },
+  {
+   "word": "collector,",
+   "start": 0.463
+  },
+  {
+   "word": "it",
+   "start": 1.133
+  },
+  {
+   "word": "bounces",
+   "start": 1.288
+  },
+  {
+   "word": "off",
+   "start": 1.7
+  },
+  {
+   "word": "a",
+   "start": 1.906
+  },
+  {
+   "word": "set",
+   "start": 2.009
+  },
+  {
+   "word": "of",
+   "start": 2.215
+  },
+  {
+   "word": "mirrors",
+   "start": 2.37
+  },
+  {
+   "word": "that",
+   "start": 2.782
+  },
+  {
+   "word": "shape",
+   "start": 3.04
+  },
+  {
+   "word": "it",
+   "start": 3.349
+  },
+  {
+   "word": "into",
+   "start": 3.503
+  },
+  {
+   "word": "an",
+   "start": 3.761
+  },
+  {
+   "word": "even,",
+   "start": 3.915
+  },
+  {
+   "word": "curved",
+   "start": 4.328
+  },
+  {
+   "word": "slit",
+   "start": 4.688
+  },
+  {
+   "word": "of",
+   "start": 4.946
+  },
+  {
+   "word": "light.",
+   "start": 5.101
+  }
+ ],
+ "ibm-mask-a": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "it",
+   "start": 0.229
+  },
+  {
+   "word": "hits",
+   "start": 0.367
+  },
+  {
+   "word": "the",
+   "start": 0.596
+  },
+  {
+   "word": "mask.",
+   "start": 0.779
+  },
+  {
+   "word": "And",
+   "start": 1.284
+  },
+  {
+   "word": "the",
+   "start": 1.467
+  },
+  {
+   "word": "mask,",
+   "start": 1.651
+  },
+  {
+   "word": "too,",
+   "start": 2.017
+  },
+  {
+   "word": "has",
+   "start": 2.338
+  },
+  {
+   "word": "to",
+   "start": 2.522
+  },
+  {
+   "word": "be",
+   "start": 2.659
+  },
+  {
+   "word": "a",
+   "start": 2.797
+  },
+  {
+   "word": "mirror.",
+   "start": 2.889
+  }
+ ],
+ "b24-mask": [
+  {
+   "word": "It",
+   "start": 0.0
+  },
+  {
+   "word": "is",
+   "start": 0.167
+  },
+  {
+   "word": "the",
+   "start": 0.334
+  },
+  {
+   "word": "same",
+   "start": 0.557
+  },
+  {
+   "word": "stack",
+   "start": 0.836
+  },
+  {
+   "word": "of",
+   "start": 1.17
+  },
+  {
+   "word": "molybdenum",
+   "start": 1.337
+  },
+  {
+   "word": "and",
+   "start": 1.95
+  },
+  {
+   "word": "silicon,",
+   "start": 2.173
+  },
+  {
+   "word": "with",
+   "start": 2.786
+  },
+  {
+   "word": "the",
+   "start": 3.064
+  },
+  {
+   "word": "chip",
+   "start": 3.287
+  },
+  {
+   "word": "pattern",
+   "start": 3.566
+  },
+  {
+   "word": "drawn",
+   "start": 4.011
+  },
+  {
+   "word": "on",
+   "start": 4.346
+  },
+  {
+   "word": "top",
+   "start": 4.513
+  },
+  {
+   "word": "in",
+   "start": 4.736
+  },
+  {
+   "word": "a",
+   "start": 4.903
+  },
+  {
+   "word": "metal",
+   "start": 5.014
+  },
+  {
+   "word": "that",
+   "start": 5.349
+  },
+  {
+   "word": "absorbs",
+   "start": 5.627
+  },
+  {
+   "word": "the",
+   "start": 6.073
+  },
+  {
+   "word": "light.",
+   "start": 6.296
+  },
+  {
+   "word": "The",
+   "start": 6.73
+  },
+  {
+   "word": "light",
+   "start": 6.943
+  },
+  {
+   "word": "strikes",
+   "start": 7.262
+  },
+  {
+   "word": "it",
+   "start": 7.687
+  },
+  {
+   "word": "at",
+   "start": 7.847
+  },
+  {
+   "word": "a",
+   "start": 8.006
+  },
+  {
+   "word": "slight",
+   "start": 8.113
+  },
+  {
+   "word": "angle,",
+   "start": 8.485
+  },
+  {
+   "word": "about",
+   "start": 8.964
+  },
+  {
+   "word": "six",
+   "start": 9.283
+  },
+  {
+   "word": "degrees,",
+   "start": 9.495
+  },
+  {
+   "word": "so",
+   "start": 10.08
+  },
+  {
+   "word": "the",
+   "start": 10.24
+  },
+  {
+   "word": "reflected",
+   "start": 10.453
+  },
+  {
+   "word": "beam",
+   "start": 10.985
+  },
+  {
+   "word": "can",
+   "start": 11.25
+  },
+  {
+   "word": "travel",
+   "start": 11.463
+  },
+  {
+   "word": "on",
+   "start": 11.835
+  },
+  {
+   "word": "without",
+   "start": 11.995
+  },
+  {
+   "word": "hitting",
+   "start": 12.42
+  },
+  {
+   "word": "the",
+   "start": 12.846
+  },
+  {
+   "word": "incoming",
+   "start": 13.059
+  },
+  {
+   "word": "one.",
+   "start": 13.537
+  }
+ ],
+ "ibm-ray-c": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "six",
+   "start": 0.288
+  },
+  {
+   "word": "more",
+   "start": 0.519
+  },
+  {
+   "word": "mirrors",
+   "start": 0.808
+  },
+  {
+   "word": "shrink",
+   "start": 1.27
+  },
+  {
+   "word": "the",
+   "start": 1.674
+  },
+  {
+   "word": "pattern",
+   "start": 1.905
+  },
+  {
+   "word": "four",
+   "start": 2.367
+  },
+  {
+   "word": "times",
+   "start": 2.656
+  },
+  {
+   "word": "and",
+   "start": 3.003
+  },
+  {
+   "word": "focus",
+   "start": 3.234
+  },
+  {
+   "word": "it",
+   "start": 3.58
+  },
+  {
+   "word": "onto",
+   "start": 3.753
+  },
+  {
+   "word": "the",
+   "start": 4.042
+  },
+  {
+   "word": "wafer.",
+   "start": 4.273
+  }
+ ],
+ "b25-bounces": [
+  {
+   "word": "Count",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.3
+  },
+  {
+   "word": "bounces.",
+   "start": 0.499
+  },
+  {
+   "word": "There",
+   "start": 1.198
+  },
+  {
+   "word": "are",
+   "start": 1.497
+  },
+  {
+   "word": "around",
+   "start": 1.697
+  },
+  {
+   "word": "ten",
+   "start": 2.046
+  },
+  {
+   "word": "of",
+   "start": 2.246
+  },
+  {
+   "word": "them,",
+   "start": 2.396
+  },
+  {
+   "word": "and",
+   "start": 2.795
+  },
+  {
+   "word": "each",
+   "start": 2.994
+  },
+  {
+   "word": "one",
+   "start": 3.244
+  },
+  {
+   "word": "keeps",
+   "start": 3.444
+  },
+  {
+   "word": "only",
+   "start": 3.743
+  },
+  {
+   "word": "about",
+   "start": 3.992
+  },
+  {
+   "word": "seventy",
+   "start": 4.292
+  },
+  {
+   "word": "percent.",
+   "start": 4.691
+  },
+  {
+   "word": "Seventy",
+   "start": 5.173
+  },
+  {
+   "word": "percent",
+   "start": 5.614
+  },
+  {
+   "word": "of",
+   "start": 6.054
+  },
+  {
+   "word": "seventy",
+   "start": 6.219
+  },
+  {
+   "word": "percent",
+   "start": 6.66
+  },
+  {
+   "word": "of",
+   "start": 7.1
+  },
+  {
+   "word": "seventy",
+   "start": 7.266
+  },
+  {
+   "word": "percent,",
+   "start": 7.706
+  },
+  {
+   "word": "again",
+   "start": 8.312
+  },
+  {
+   "word": "and",
+   "start": 8.642
+  },
+  {
+   "word": "again.",
+   "start": 8.863
+  },
+  {
+   "word": "Of",
+   "start": 9.28
+  },
+  {
+   "word": "the",
+   "start": 9.434
+  },
+  {
+   "word": "light",
+   "start": 9.638
+  },
+  {
+   "word": "that",
+   "start": 9.945
+  },
+  {
+   "word": "leaves",
+   "start": 10.2
+  },
+  {
+   "word": "the",
+   "start": 10.558
+  },
+  {
+   "word": "source,",
+   "start": 10.763
+  },
+  {
+   "word": "only",
+   "start": 11.274
+  },
+  {
+   "word": "a",
+   "start": 11.529
+  },
+  {
+   "word": "few",
+   "start": 11.631
+  },
+  {
+   "word": "percent",
+   "start": 11.836
+  },
+  {
+   "word": "ever",
+   "start": 12.245
+  },
+  {
+   "word": "reaches",
+   "start": 12.5
+  },
+  {
+   "word": "the",
+   "start": 12.909
+  },
+  {
+   "word": "wafer.",
+   "start": 13.114
+  },
+  {
+   "word": "That",
+   "start": 13.504
+  },
+  {
+   "word": "is",
+   "start": 13.767
+  },
+  {
+   "word": "why",
+   "start": 13.925
+  },
+  {
+   "word": "the",
+   "start": 14.136
+  },
+  {
+   "word": "source",
+   "start": 14.346
+  },
+  {
+   "word": "has",
+   "start": 14.714
+  },
+  {
+   "word": "to",
+   "start": 14.925
+  },
+  {
+   "word": "be",
+   "start": 15.083
+  },
+  {
+   "word": "so",
+   "start": 15.24
+  },
+  {
+   "word": "violent:",
+   "start": 15.398
+  },
+  {
+   "word": "almost",
+   "start": 16.03
+  },
+  {
+   "word": "all",
+   "start": 16.398
+  },
+  {
+   "word": "its",
+   "start": 16.608
+  },
+  {
+   "word": "light",
+   "start": 16.819
+  },
+  {
+   "word": "is",
+   "start": 17.134
+  },
+  {
+   "word": "spent",
+   "start": 17.292
+  },
+  {
+   "word": "getting",
+   "start": 17.608
+  },
+  {
+   "word": "there.",
+   "start": 18.029
+  }
+ ],
+ "b26-slit": [
+  {
+   "word": "Even",
+   "start": 0.0
+  },
+  {
+   "word": "then,",
+   "start": 0.288
+  },
+  {
+   "word": "the",
+   "start": 0.749
+  },
+  {
+   "word": "machine",
+   "start": 0.98
+  },
+  {
+   "word": "cannot",
+   "start": 1.44
+  },
+  {
+   "word": "expose",
+   "start": 1.844
+  },
+  {
+   "word": "a",
+   "start": 2.247
+  },
+  {
+   "word": "whole",
+   "start": 2.362
+  },
+  {
+   "word": "chip",
+   "start": 2.708
+  },
+  {
+   "word": "at",
+   "start": 2.996
+  },
+  {
+   "word": "once.",
+   "start": 3.168
+  },
+  {
+   "word": "The",
+   "start": 3.802
+  },
+  {
+   "word": "light",
+   "start": 4.032
+  },
+  {
+   "word": "only",
+   "start": 4.378
+  },
+  {
+   "word": "covers",
+   "start": 4.666
+  },
+  {
+   "word": "a",
+   "start": 5.069
+  },
+  {
+   "word": "thin",
+   "start": 5.184
+  },
+  {
+   "word": "slit.",
+   "start": 5.472
+  }
+ ],
+ "ibm-mask-b": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.148
+  },
+  {
+   "word": "mask",
+   "start": 0.347
+  },
+  {
+   "word": "and",
+   "start": 0.595
+  },
+  {
+   "word": "the",
+   "start": 0.793
+  },
+  {
+   "word": "wafer",
+   "start": 0.991
+  },
+  {
+   "word": "move",
+   "start": 1.289
+  },
+  {
+   "word": "in",
+   "start": 1.537
+  },
+  {
+   "word": "opposite",
+   "start": 1.685
+  },
+  {
+   "word": "directions,",
+   "start": 2.132
+  },
+  {
+   "word": "sweeping",
+   "start": 2.826
+  },
+  {
+   "word": "the",
+   "start": 3.272
+  },
+  {
+   "word": "pattern",
+   "start": 3.471
+  },
+  {
+   "word": "through",
+   "start": 3.867
+  },
+  {
+   "word": "that",
+   "start": 4.264
+  },
+  {
+   "word": "slit.",
+   "start": 4.512
+  }
+ ],
+ "b27-scan": [
+  {
+   "word": "Because",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.451
+  },
+  {
+   "word": "image",
+   "start": 0.677
+  },
+  {
+   "word": "is",
+   "start": 1.015
+  },
+  {
+   "word": "shrunk",
+   "start": 1.184
+  },
+  {
+   "word": "four",
+   "start": 1.579
+  },
+  {
+   "word": "times,",
+   "start": 1.861
+  },
+  {
+   "word": "the",
+   "start": 2.369
+  },
+  {
+   "word": "mask",
+   "start": 2.595
+  },
+  {
+   "word": "has",
+   "start": 2.877
+  },
+  {
+   "word": "to",
+   "start": 3.102
+  },
+  {
+   "word": "travel",
+   "start": 3.271
+  },
+  {
+   "word": "four",
+   "start": 3.666
+  },
+  {
+   "word": "times",
+   "start": 3.948
+  },
+  {
+   "word": "faster",
+   "start": 4.287
+  },
+  {
+   "word": "than",
+   "start": 4.682
+  },
+  {
+   "word": "the",
+   "start": 4.964
+  },
+  {
+   "word": "wafer,",
+   "start": 5.189
+  },
+  {
+   "word": "in",
+   "start": 5.697
+  },
+  {
+   "word": "perfect",
+   "start": 5.866
+  },
+  {
+   "word": "step.",
+   "start": 6.318
+  },
+  {
+   "word": "The",
+   "start": 6.688
+  },
+  {
+   "word": "mask",
+   "start": 6.91
+  },
+  {
+   "word": "stage",
+   "start": 7.186
+  },
+  {
+   "word": "whips",
+   "start": 7.519
+  },
+  {
+   "word": "back",
+   "start": 7.851
+  },
+  {
+   "word": "and",
+   "start": 8.127
+  },
+  {
+   "word": "forth",
+   "start": 8.349
+  },
+  {
+   "word": "with",
+   "start": 8.681
+  },
+  {
+   "word": "accelerations",
+   "start": 8.958
+  },
+  {
+   "word": "of",
+   "start": 9.732
+  },
+  {
+   "word": "more",
+   "start": 9.898
+  },
+  {
+   "word": "than",
+   "start": 10.175
+  },
+  {
+   "word": "twenty",
+   "start": 10.452
+  },
+  {
+   "word": "times",
+   "start": 10.839
+  },
+  {
+   "word": "the",
+   "start": 11.171
+  },
+  {
+   "word": "pull",
+   "start": 11.393
+  },
+  {
+   "word": "of",
+   "start": 11.67
+  },
+  {
+   "word": "gravity.",
+   "start": 11.836
+  },
+  {
+   "word": "Then",
+   "start": 12.373
+  },
+  {
+   "word": "the",
+   "start": 12.629
+  },
+  {
+   "word": "wafer",
+   "start": 12.835
+  },
+  {
+   "word": "steps",
+   "start": 13.142
+  },
+  {
+   "word": "to",
+   "start": 13.45
+  },
+  {
+   "word": "the",
+   "start": 13.604
+  },
+  {
+   "word": "next",
+   "start": 13.809
+  },
+  {
+   "word": "patch,",
+   "start": 14.066
+  },
+  {
+   "word": "and",
+   "start": 14.528
+  },
+  {
+   "word": "the",
+   "start": 14.733
+  },
+  {
+   "word": "dance",
+   "start": 14.938
+  },
+  {
+   "word": "repeats,",
+   "start": 15.246
+  },
+  {
+   "word": "around",
+   "start": 15.81
+  },
+  {
+   "word": "a",
+   "start": 16.169
+  },
+  {
+   "word": "hundred",
+   "start": 16.272
+  },
+  {
+   "word": "times",
+   "start": 16.682
+  },
+  {
+   "word": "per",
+   "start": 16.99
+  },
+  {
+   "word": "wafer.",
+   "start": 17.195
+  },
+  {
+   "word": "Every",
+   "start": 17.6
+  },
+  {
+   "word": "new",
+   "start": 17.952
+  },
+  {
+   "word": "layer",
+   "start": 18.187
+  },
+  {
+   "word": "has",
+   "start": 18.539
+  },
+  {
+   "word": "to",
+   "start": 18.774
+  },
+  {
+   "word": "land",
+   "start": 18.951
+  },
+  {
+   "word": "on",
+   "start": 19.244
+  },
+  {
+   "word": "the",
+   "start": 19.421
+  },
+  {
+   "word": "one",
+   "start": 19.655
+  },
+  {
+   "word": "beneath",
+   "start": 19.89
+  },
+  {
+   "word": "it",
+   "start": 20.36
+  },
+  {
+   "word": "to",
+   "start": 20.537
+  },
+  {
+   "word": "within",
+   "start": 20.713
+  },
+  {
+   "word": "about",
+   "start": 21.124
+  },
+  {
+   "word": "a",
+   "start": 21.476
+  },
+  {
+   "word": "nanometre.",
+   "start": 21.594
+  },
+  {
+   "word": "A",
+   "start": 22.534
+  },
+  {
+   "word": "handful",
+   "start": 22.651
+  },
+  {
+   "word": "of",
+   "start": 23.121
+  },
+  {
+   "word": "atoms.",
+   "start": 23.297
+  }
+ ],
+ "st-backend": [
+  {
+   "word": "A",
+   "start": 0.0
+  },
+  {
+   "word": "modern",
+   "start": 0.106
+  },
+  {
+   "word": "machine",
+   "start": 0.48
+  },
+  {
+   "word": "does",
+   "start": 0.906
+  },
+  {
+   "word": "all",
+   "start": 1.173
+  },
+  {
+   "word": "of",
+   "start": 1.386
+  },
+  {
+   "word": "this",
+   "start": 1.546
+  },
+  {
+   "word": "for",
+   "start": 1.813
+  },
+  {
+   "word": "around",
+   "start": 2.026
+  },
+  {
+   "word": "two",
+   "start": 2.4
+  },
+  {
+   "word": "hundred",
+   "start": 2.613
+  },
+  {
+   "word": "wafers",
+   "start": 3.04
+  },
+  {
+   "word": "every",
+   "start": 3.413
+  },
+  {
+   "word": "hour.",
+   "start": 3.733
+  }
+ ],
+ "b28-photons": [
+  {
+   "word": "You",
+   "start": 0.0
+  },
+  {
+   "word": "might",
+   "start": 0.197
+  },
+  {
+   "word": "think",
+   "start": 0.494
+  },
+  {
+   "word": "a",
+   "start": 0.79
+  },
+  {
+   "word": "shorter",
+   "start": 0.889
+  },
+  {
+   "word": "wave",
+   "start": 1.284
+  },
+  {
+   "word": "simply",
+   "start": 1.531
+  },
+  {
+   "word": "means",
+   "start": 1.877
+  },
+  {
+   "word": "sharper",
+   "start": 2.174
+  },
+  {
+   "word": "lines.",
+   "start": 2.569
+  },
+  {
+   "word": "But",
+   "start": 3.162
+  },
+  {
+   "word": "there",
+   "start": 3.36
+  },
+  {
+   "word": "is",
+   "start": 3.656
+  },
+  {
+   "word": "a",
+   "start": 3.804
+  },
+  {
+   "word": "catch.",
+   "start": 3.903
+  },
+  {
+   "word": "Light",
+   "start": 4.278
+  },
+  {
+   "word": "arrives",
+   "start": 4.625
+  },
+  {
+   "word": "in",
+   "start": 5.088
+  },
+  {
+   "word": "tiny",
+   "start": 5.262
+  },
+  {
+   "word": "packets",
+   "start": 5.551
+  },
+  {
+   "word": "of",
+   "start": 6.014
+  },
+  {
+   "word": "energy",
+   "start": 6.188
+  },
+  {
+   "word": "called",
+   "start": 6.593
+  },
+  {
+   "word": "photons,",
+   "start": 6.998
+  },
+  {
+   "word": "and",
+   "start": 7.635
+  },
+  {
+   "word": "a",
+   "start": 7.867
+  },
+  {
+   "word": "shorter",
+   "start": 7.983
+  },
+  {
+   "word": "wave",
+   "start": 8.446
+  },
+  {
+   "word": "packs",
+   "start": 8.735
+  },
+  {
+   "word": "more",
+   "start": 9.083
+  },
+  {
+   "word": "energy",
+   "start": 9.372
+  },
+  {
+   "word": "into",
+   "start": 9.777
+  },
+  {
+   "word": "each",
+   "start": 10.067
+  },
+  {
+   "word": "one.",
+   "start": 10.356
+  }
+ ],
+ "b29-energy": [
+  {
+   "word": "An",
+   "start": 0.0
+  },
+  {
+   "word": "extreme",
+   "start": 0.206
+  },
+  {
+   "word": "ultraviolet",
+   "start": 0.756
+  },
+  {
+   "word": "photon",
+   "start": 1.58
+  },
+  {
+   "word": "carries",
+   "start": 2.061
+  },
+  {
+   "word": "about",
+   "start": 2.61
+  },
+  {
+   "word": "fourteen",
+   "start": 3.022
+  },
+  {
+   "word": "times",
+   "start": 3.64
+  },
+  {
+   "word": "the",
+   "start": 4.052
+  },
+  {
+   "word": "energy",
+   "start": 4.327
+  },
+  {
+   "word": "of",
+   "start": 4.808
+  },
+  {
+   "word": "the",
+   "start": 5.014
+  },
+  {
+   "word": "deep",
+   "start": 5.289
+  },
+  {
+   "word": "ultraviolet",
+   "start": 5.632
+  },
+  {
+   "word": "photons",
+   "start": 6.456
+  },
+  {
+   "word": "used",
+   "start": 7.006
+  },
+  {
+   "word": "before.",
+   "start": 7.349
+  },
+  {
+   "word": "So",
+   "start": 7.916
+  },
+  {
+   "word": "for",
+   "start": 8.094
+  },
+  {
+   "word": "the",
+   "start": 8.331
+  },
+  {
+   "word": "same",
+   "start": 8.568
+  },
+  {
+   "word": "total",
+   "start": 8.865
+  },
+  {
+   "word": "dose,",
+   "start": 9.22
+  },
+  {
+   "word": "the",
+   "start": 9.695
+  },
+  {
+   "word": "wafer",
+   "start": 9.932
+  },
+  {
+   "word": "receives",
+   "start": 10.287
+  },
+  {
+   "word": "about",
+   "start": 10.821
+  },
+  {
+   "word": "fourteen",
+   "start": 11.177
+  },
+  {
+   "word": "times",
+   "start": 11.71
+  },
+  {
+   "word": "fewer",
+   "start": 12.066
+  },
+  {
+   "word": "photons.",
+   "start": 12.422
+  }
+ ],
+ "raindrops": [
+  {
+   "word": "And",
+   "start": 0.0
+  },
+  {
+   "word": "photons",
+   "start": 0.224
+  },
+  {
+   "word": "arrive",
+   "start": 0.671
+  },
+  {
+   "word": "at",
+   "start": 1.062
+  },
+  {
+   "word": "random,",
+   "start": 1.23
+  },
+  {
+   "word": "like",
+   "start": 1.789
+  },
+  {
+   "word": "the",
+   "start": 2.068
+  },
+  {
+   "word": "first",
+   "start": 2.292
+  },
+  {
+   "word": "raindrops",
+   "start": 2.627
+  },
+  {
+   "word": "of",
+   "start": 3.187
+  },
+  {
+   "word": "a",
+   "start": 3.354
+  },
+  {
+   "word": "shower",
+   "start": 3.466
+  },
+  {
+   "word": "on",
+   "start": 3.857
+  },
+  {
+   "word": "a",
+   "start": 4.025
+  },
+  {
+   "word": "pavement.",
+   "start": 4.137
+  }
+ ],
+ "b30-shot-noise": [
+  {
+   "word": "At",
+   "start": 0.0
+  },
+  {
+   "word": "a",
+   "start": 0.178
+  },
+  {
+   "word": "typical",
+   "start": 0.297
+  },
+  {
+   "word": "dose,",
+   "start": 0.773
+  },
+  {
+   "word": "a",
+   "start": 1.248
+  },
+  {
+   "word": "square",
+   "start": 1.367
+  },
+  {
+   "word": "of",
+   "start": 1.783
+  },
+  {
+   "word": "resist",
+   "start": 1.961
+  },
+  {
+   "word": "ten",
+   "start": 2.377
+  },
+  {
+   "word": "nanometres",
+   "start": 2.615
+  },
+  {
+   "word": "on",
+   "start": 3.269
+  },
+  {
+   "word": "a",
+   "start": 3.447
+  },
+  {
+   "word": "side",
+   "start": 3.566
+  },
+  {
+   "word": "catches",
+   "start": 3.863
+  },
+  {
+   "word": "only",
+   "start": 4.339
+  },
+  {
+   "word": "around",
+   "start": 4.636
+  },
+  {
+   "word": "two",
+   "start": 5.052
+  },
+  {
+   "word": "thousand",
+   "start": 5.29
+  },
+  {
+   "word": "of",
+   "start": 5.825
+  },
+  {
+   "word": "them.",
+   "start": 6.003
+  },
+  {
+   "word": "Some",
+   "start": 6.4
+  },
+  {
+   "word": "patches",
+   "start": 6.651
+  },
+  {
+   "word": "catch",
+   "start": 7.053
+  },
+  {
+   "word": "a",
+   "start": 7.354
+  },
+  {
+   "word": "few",
+   "start": 7.454
+  },
+  {
+   "word": "more,",
+   "start": 7.655
+  },
+  {
+   "word": "some",
+   "start": 8.057
+  },
+  {
+   "word": "a",
+   "start": 8.308
+  },
+  {
+   "word": "few",
+   "start": 8.408
+  },
+  {
+   "word": "less.",
+   "start": 8.609
+  },
+  {
+   "word": "Where",
+   "start": 8.98
+  },
+  {
+   "word": "too",
+   "start": 9.314
+  },
+  {
+   "word": "few",
+   "start": 9.536
+  },
+  {
+   "word": "land,",
+   "start": 9.759
+  },
+  {
+   "word": "a",
+   "start": 10.204
+  },
+  {
+   "word": "line",
+   "start": 10.315
+  },
+  {
+   "word": "comes",
+   "start": 10.593
+  },
+  {
+   "word": "out",
+   "start": 10.927
+  },
+  {
+   "word": "thin",
+   "start": 11.149
+  },
+  {
+   "word": "or",
+   "start": 11.427
+  },
+  {
+   "word": "broken.",
+   "start": 11.594
+  },
+  {
+   "word": "Where",
+   "start": 12.318
+  },
+  {
+   "word": "too",
+   "start": 12.651
+  },
+  {
+   "word": "many",
+   "start": 12.874
+  },
+  {
+   "word": "land,",
+   "start": 13.152
+  },
+  {
+   "word": "two",
+   "start": 13.597
+  },
+  {
+   "word": "lines",
+   "start": 13.819
+  },
+  {
+   "word": "can",
+   "start": 14.153
+  },
+  {
+   "word": "merge",
+   "start": 14.376
+  },
+  {
+   "word": "into",
+   "start": 14.709
+  },
+  {
+   "word": "one.",
+   "start": 14.988
+  },
+  {
+   "word": "Engineers",
+   "start": 15.307
+  },
+  {
+   "word": "call",
+   "start": 15.849
+  },
+  {
+   "word": "these",
+   "start": 16.12
+  },
+  {
+   "word": "stochastic",
+   "start": 16.446
+  },
+  {
+   "word": "effects,",
+   "start": 17.042
+  },
+  {
+   "word": "and",
+   "start": 17.638
+  },
+  {
+   "word": "they",
+   "start": 17.855
+  },
+  {
+   "word": "are",
+   "start": 18.126
+  },
+  {
+   "word": "now",
+   "start": 18.343
+  },
+  {
+   "word": "one",
+   "start": 18.559
+  },
+  {
+   "word": "of",
+   "start": 18.776
+  },
+  {
+   "word": "the",
+   "start": 18.939
+  },
+  {
+   "word": "hardest",
+   "start": 19.156
+  },
+  {
+   "word": "limits",
+   "start": 19.589
+  },
+  {
+   "word": "in",
+   "start": 19.969
+  },
+  {
+   "word": "chipmaking.",
+   "start": 20.131
+  },
+  {
+   "word": "The",
+   "start": 20.811
+  },
+  {
+   "word": "cure",
+   "start": 21.051
+  },
+  {
+   "word": "is",
+   "start": 21.351
+  },
+  {
+   "word": "more",
+   "start": 21.531
+  },
+  {
+   "word": "photons:",
+   "start": 21.831
+  },
+  {
+   "word": "a",
+   "start": 22.551
+  },
+  {
+   "word": "brighter",
+   "start": 22.671
+  },
+  {
+   "word": "source,",
+   "start": 23.211
+  },
+  {
+   "word": "or",
+   "start": 23.811
+  },
+  {
+   "word": "a",
+   "start": 23.991
+  },
+  {
+   "word": "longer",
+   "start": 24.111
+  },
+  {
+   "word": "exposure.",
+   "start": 24.531
+  },
+  {
+   "word": "And",
+   "start": 25.431
+  },
+  {
+   "word": "every",
+   "start": 25.671
+  },
+  {
+   "word": "extra",
+   "start": 26.031
+  },
+  {
+   "word": "photon",
+   "start": 26.391
+  },
+  {
+   "word": "costs",
+   "start": 26.811
+  },
+  {
+   "word": "time.",
+   "start": 27.171
+  },
+  {
+   "word": "That",
+   "start": 27.583
+  },
+  {
+   "word": "is",
+   "start": 27.837
+  },
+  {
+   "word": "why",
+   "start": 27.99
+  },
+  {
+   "word": "the",
+   "start": 28.194
+  },
+  {
+   "word": "race",
+   "start": 28.397
+  },
+  {
+   "word": "for",
+   "start": 28.652
+  },
+  {
+   "word": "more",
+   "start": 28.855
+  },
+  {
+   "word": "source",
+   "start": 29.11
+  },
+  {
+   "word": "power",
+   "start": 29.466
+  },
+  {
+   "word": "never",
+   "start": 29.772
+  },
+  {
+   "word": "stops.",
+   "start": 30.077
+  }
+ ],
+ "b31-high-na": [
+  {
+   "word": "With",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.272
+  },
+  {
+   "word": "wavelength",
+   "start": 0.489
+  },
+  {
+   "word": "fixed,",
+   "start": 1.087
+  },
+  {
+   "word": "one",
+   "start": 1.576
+  },
+  {
+   "word": "knob",
+   "start": 1.793
+  },
+  {
+   "word": "is",
+   "start": 2.065
+  },
+  {
+   "word": "left",
+   "start": 2.227
+  },
+  {
+   "word": "to",
+   "start": 2.499
+  },
+  {
+   "word": "turn:",
+   "start": 2.662
+  },
+  {
+   "word": "the",
+   "start": 3.151
+  },
+  {
+   "word": "numerical",
+   "start": 3.368
+  },
+  {
+   "word": "aperture.",
+   "start": 3.911
+  },
+  {
+   "word": "Today's",
+   "start": 4.502
+  },
+  {
+   "word": "standard",
+   "start": 4.986
+  },
+  {
+   "word": "machines",
+   "start": 5.53
+  },
+  {
+   "word": "collect",
+   "start": 6.074
+  },
+  {
+   "word": "light",
+   "start": 6.558
+  },
+  {
+   "word": "with",
+   "start": 6.921
+  },
+  {
+   "word": "a",
+   "start": 7.224
+  },
+  {
+   "word": "numerical",
+   "start": 7.345
+  },
+  {
+   "word": "aperture",
+   "start": 7.95
+  },
+  {
+   "word": "of",
+   "start": 8.494
+  },
+  {
+   "word": "zero",
+   "start": 8.675
+  },
+  {
+   "word": "point",
+   "start": 8.978
+  },
+  {
+   "word": "three",
+   "start": 9.341
+  },
+  {
+   "word": "three,",
+   "start": 9.704
+  },
+  {
+   "word": "enough",
+   "start": 10.248
+  },
+  {
+   "word": "for",
+   "start": 10.672
+  },
+  {
+   "word": "lines",
+   "start": 10.914
+  },
+  {
+   "word": "about",
+   "start": 11.276
+  },
+  {
+   "word": "thirteen",
+   "start": 11.639
+  },
+  {
+   "word": "nanometres",
+   "start": 12.184
+  },
+  {
+   "word": "wide.",
+   "start": 12.849
+  },
+  {
+   "word": "The",
+   "start": 13.238
+  },
+  {
+   "word": "newest",
+   "start": 13.482
+  },
+  {
+   "word": "generation",
+   "start": 13.907
+  },
+  {
+   "word": "opens",
+   "start": 14.577
+  },
+  {
+   "word": "that",
+   "start": 14.942
+  },
+  {
+   "word": "to",
+   "start": 15.246
+  },
+  {
+   "word": "zero",
+   "start": 15.428
+  },
+  {
+   "word": "point",
+   "start": 15.733
+  },
+  {
+   "word": "five",
+   "start": 16.097
+  },
+  {
+   "word": "five,",
+   "start": 16.402
+  },
+  {
+   "word": "for",
+   "start": 16.888
+  },
+  {
+   "word": "lines",
+   "start": 17.132
+  },
+  {
+   "word": "of",
+   "start": 17.497
+  },
+  {
+   "word": "about",
+   "start": 17.679
+  },
+  {
+   "word": "eight",
+   "start": 18.044
+  },
+  {
+   "word": "nanometres.",
+   "start": 18.409
+  },
+  {
+   "word": "Catching",
+   "start": 19.158
+  },
+  {
+   "word": "a",
+   "start": 19.661
+  },
+  {
+   "word": "wider",
+   "start": 19.773
+  },
+  {
+   "word": "fan",
+   "start": 20.108
+  },
+  {
+   "word": "means",
+   "start": 20.332
+  },
+  {
+   "word": "bigger",
+   "start": 20.668
+  },
+  {
+   "word": "mirrors,",
+   "start": 21.059
+  },
+  {
+   "word": "and",
+   "start": 21.674
+  },
+  {
+   "word": "steeper",
+   "start": 21.898
+  },
+  {
+   "word": "angles",
+   "start": 22.345
+  },
+  {
+   "word": "at",
+   "start": 22.737
+  },
+  {
+   "word": "the",
+   "start": 22.904
+  },
+  {
+   "word": "mask.",
+   "start": 23.128
+  },
+  {
+   "word": "So",
+   "start": 23.51
+  },
+  {
+   "word": "these",
+   "start": 23.674
+  },
+  {
+   "word": "machines",
+   "start": 24.001
+  },
+  {
+   "word": "shrink",
+   "start": 24.493
+  },
+  {
+   "word": "the",
+   "start": 24.875
+  },
+  {
+   "word": "image",
+   "start": 25.094
+  },
+  {
+   "word": "eight",
+   "start": 25.421
+  },
+  {
+   "word": "times",
+   "start": 25.749
+  },
+  {
+   "word": "one",
+   "start": 26.077
+  },
+  {
+   "word": "way",
+   "start": 26.295
+  },
+  {
+   "word": "and",
+   "start": 26.514
+  },
+  {
+   "word": "four",
+   "start": 26.732
+  },
+  {
+   "word": "times",
+   "start": 27.005
+  },
+  {
+   "word": "the",
+   "start": 27.333
+  },
+  {
+   "word": "other,",
+   "start": 27.551
+  },
+  {
+   "word": "giving",
+   "start": 28.043
+  },
+  {
+   "word": "up",
+   "start": 28.425
+  },
+  {
+   "word": "half",
+   "start": 28.589
+  },
+  {
+   "word": "the",
+   "start": 28.862
+  },
+  {
+   "word": "exposure",
+   "start": 29.08
+  },
+  {
+   "word": "field.",
+   "start": 29.572
+  }
+ ],
+ "intel-d1x": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "first",
+   "start": 0.226
+  },
+  {
+   "word": "commercial",
+   "start": 0.565
+  },
+  {
+   "word": "one",
+   "start": 1.186
+  },
+  {
+   "word": "was",
+   "start": 1.412
+  },
+  {
+   "word": "assembled",
+   "start": 1.637
+  },
+  {
+   "word": "at",
+   "start": 2.202
+  },
+  {
+   "word": "Intel,",
+   "start": 2.371
+  },
+  {
+   "word": "and",
+   "start": 2.879
+  },
+  {
+   "word": "each",
+   "start": 3.105
+  },
+  {
+   "word": "costs",
+   "start": 3.388
+  },
+  {
+   "word": "around",
+   "start": 3.726
+  },
+  {
+   "word": "three",
+   "start": 4.122
+  },
+  {
+   "word": "hundred",
+   "start": 4.46
+  },
+  {
+   "word": "and",
+   "start": 4.912
+  },
+  {
+   "word": "sixty",
+   "start": 5.138
+  },
+  {
+   "word": "million",
+   "start": 5.477
+  },
+  {
+   "word": "dollars.",
+   "start": 5.928
+  }
+ ],
+ "asml-hq": [
+  {
+   "word": "Only",
+   "start": 0.0
+  },
+  {
+   "word": "one",
+   "start": 0.275
+  },
+  {
+   "word": "company",
+   "start": 0.495
+  },
+  {
+   "word": "in",
+   "start": 0.935
+  },
+  {
+   "word": "the",
+   "start": 1.1
+  },
+  {
+   "word": "world",
+   "start": 1.32
+  },
+  {
+   "word": "sells",
+   "start": 1.65
+  },
+  {
+   "word": "these",
+   "start": 1.98
+  },
+  {
+   "word": "machines:",
+   "start": 2.31
+  },
+  {
+   "word": "the",
+   "start": 3.025
+  },
+  {
+   "word": "Dutch",
+   "start": 3.245
+  },
+  {
+   "word": "company",
+   "start": 3.575
+  },
+  {
+   "word": "ASML.",
+   "start": 4.015
+  }
+ ],
+ "b32-look-back": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "look",
+   "start": 0.163
+  },
+  {
+   "word": "back",
+   "start": 0.436
+  },
+  {
+   "word": "at",
+   "start": 0.708
+  },
+  {
+   "word": "that",
+   "start": 0.872
+  },
+  {
+   "word": "flying",
+   "start": 1.144
+  },
+  {
+   "word": "drop",
+   "start": 1.526
+  },
+  {
+   "word": "of",
+   "start": 1.798
+  },
+  {
+   "word": "tin.",
+   "start": 1.962
+  },
+  {
+   "word": "The",
+   "start": 2.294
+  },
+  {
+   "word": "tin,",
+   "start": 2.509
+  },
+  {
+   "word": "the",
+   "start": 2.885
+  },
+  {
+   "word": "laser",
+   "start": 3.1
+  },
+  {
+   "word": "and",
+   "start": 3.422
+  },
+  {
+   "word": "the",
+   "start": 3.637
+  },
+  {
+   "word": "plasma",
+   "start": 3.852
+  },
+  {
+   "word": "exist",
+   "start": 4.229
+  },
+  {
+   "word": "because",
+   "start": 4.551
+  },
+  {
+   "word": "nothing",
+   "start": 4.981
+  },
+  {
+   "word": "else",
+   "start": 5.411
+  },
+  {
+   "word": "glows",
+   "start": 5.68
+  },
+  {
+   "word": "at",
+   "start": 6.002
+  },
+  {
+   "word": "this",
+   "start": 6.164
+  },
+  {
+   "word": "wavelength.",
+   "start": 6.432
+  }
+ ],
+ "b33-mirrors": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "vacuum",
+   "start": 0.201
+  },
+  {
+   "word": "and",
+   "start": 0.553
+  },
+  {
+   "word": "the",
+   "start": 0.754
+  },
+  {
+   "word": "layered",
+   "start": 0.955
+  },
+  {
+   "word": "mirrors",
+   "start": 1.357
+  },
+  {
+   "word": "exist",
+   "start": 1.759
+  },
+  {
+   "word": "because",
+   "start": 2.061
+  },
+  {
+   "word": "everything",
+   "start": 2.463
+  },
+  {
+   "word": "else",
+   "start": 3.016
+  },
+  {
+   "word": "swallows",
+   "start": 3.267
+  },
+  {
+   "word": "it.",
+   "start": 3.719
+  }
+ ],
+ "b34-scanning": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "scanning,",
+   "start": 0.221
+  },
+  {
+   "word": "the",
+   "start": 0.887
+  },
+  {
+   "word": "speed",
+   "start": 1.109
+  },
+  {
+   "word": "and",
+   "start": 1.441
+  },
+  {
+   "word": "the",
+   "start": 1.663
+  },
+  {
+   "word": "nanometre",
+   "start": 1.885
+  },
+  {
+   "word": "precision",
+   "start": 2.44
+  },
+  {
+   "word": "exist",
+   "start": 2.994
+  },
+  {
+   "word": "because",
+   "start": 3.327
+  },
+  {
+   "word": "the",
+   "start": 3.771
+  },
+  {
+   "word": "light",
+   "start": 3.992
+  },
+  {
+   "word": "can",
+   "start": 4.325
+  },
+  {
+   "word": "only",
+   "start": 4.547
+  },
+  {
+   "word": "fill",
+   "start": 4.824
+  },
+  {
+   "word": "a",
+   "start": 5.101
+  },
+  {
+   "word": "slit.",
+   "start": 5.212
+  }
+ ],
+ "b35-power": [
+  {
+   "word": "And",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.234
+  },
+  {
+   "word": "endless",
+   "start": 0.469
+  },
+  {
+   "word": "hunger",
+   "start": 0.938
+  },
+  {
+   "word": "for",
+   "start": 1.348
+  },
+  {
+   "word": "power",
+   "start": 1.583
+  },
+  {
+   "word": "exists",
+   "start": 1.935
+  },
+  {
+   "word": "because",
+   "start": 2.345
+  },
+  {
+   "word": "each",
+   "start": 2.814
+  },
+  {
+   "word": "photon",
+   "start": 3.108
+  },
+  {
+   "word": "carries",
+   "start": 3.518
+  },
+  {
+   "word": "so",
+   "start": 3.987
+  },
+  {
+   "word": "much",
+   "start": 4.163
+  },
+  {
+   "word": "energy",
+   "start": 4.456
+  },
+  {
+   "word": "that",
+   "start": 4.867
+  },
+  {
+   "word": "too",
+   "start": 5.16
+  },
+  {
+   "word": "few",
+   "start": 5.395
+  },
+  {
+   "word": "arrive.",
+   "start": 5.629
+  }
+ ],
+ "b36-wave": [
+  {
+   "word": "All",
+   "start": 0.0
+  },
+  {
+   "word": "of",
+   "start": 0.232
+  },
+  {
+   "word": "it",
+   "start": 0.405
+  },
+  {
+   "word": "traces",
+   "start": 0.579
+  },
+  {
+   "word": "back",
+   "start": 0.985
+  },
+  {
+   "word": "to",
+   "start": 1.275
+  },
+  {
+   "word": "that",
+   "start": 1.449
+  },
+  {
+   "word": "one",
+   "start": 1.739
+  },
+  {
+   "word": "stubborn",
+   "start": 1.971
+  },
+  {
+   "word": "fact:",
+   "start": 2.492
+  },
+  {
+   "word": "light",
+   "start": 3.014
+  },
+  {
+   "word": "is",
+   "start": 3.362
+  },
+  {
+   "word": "a",
+   "start": 3.536
+  },
+  {
+   "word": "wave,",
+   "start": 3.652
+  },
+  {
+   "word": "and",
+   "start": 4.115
+  },
+  {
+   "word": "a",
+   "start": 4.347
+  },
+  {
+   "word": "wave",
+   "start": 4.463
+  },
+  {
+   "word": "cannot",
+   "start": 4.753
+  },
+  {
+   "word": "draw",
+   "start": 5.159
+  },
+  {
+   "word": "a",
+   "start": 5.449
+  },
+  {
+   "word": "detail",
+   "start": 5.565
+  },
+  {
+   "word": "much",
+   "start": 5.97
+  },
+  {
+   "word": "smaller",
+   "start": 6.26
+  },
+  {
+   "word": "than",
+   "start": 6.724
+  },
+  {
+   "word": "itself.",
+   "start": 7.014
+  }
+ ],
+ "tainan-temple": [
+  {
+   "word": "This",
+   "start": 0.0
+  },
+  {
+   "word": "machine",
+   "start": 0.266
+  },
+  {
+   "word": "is",
+   "start": 0.691
+  },
+  {
+   "word": "what",
+   "start": 0.851
+  },
+  {
+   "word": "it",
+   "start": 1.117
+  },
+  {
+   "word": "looks",
+   "start": 1.277
+  },
+  {
+   "word": "like",
+   "start": 1.596
+  },
+  {
+   "word": "when",
+   "start": 1.862
+  },
+  {
+   "word": "people",
+   "start": 2.128
+  },
+  {
+   "word": "refuse",
+   "start": 2.5
+  },
+  {
+   "word": "to",
+   "start": 2.872
+  },
+  {
+   "word": "accept",
+   "start": 3.032
+  },
+  {
+   "word": "that.",
+   "start": 3.404
+  }
+ ],
+ "b37-star": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "next",
+   "start": 0.221
+  },
+  {
+   "word": "time",
+   "start": 0.496
+  },
+  {
+   "word": "you",
+   "start": 0.772
+  },
+  {
+   "word": "pick",
+   "start": 0.993
+  },
+  {
+   "word": "up",
+   "start": 1.269
+  },
+  {
+   "word": "your",
+   "start": 1.434
+  },
+  {
+   "word": "phone,",
+   "start": 1.71
+  },
+  {
+   "word": "remember:",
+   "start": 2.206
+  },
+  {
+   "word": "somewhere",
+   "start": 2.923
+  },
+  {
+   "word": "inside",
+   "start": 3.475
+  },
+  {
+   "word": "it",
+   "start": 3.861
+  },
+  {
+   "word": "are",
+   "start": 4.026
+  },
+  {
+   "word": "lines",
+   "start": 4.247
+  },
+  {
+   "word": "drawn",
+   "start": 4.578
+  },
+  {
+   "word": "by",
+   "start": 4.909
+  },
+  {
+   "word": "a",
+   "start": 5.074
+  },
+  {
+   "word": "star",
+   "start": 5.185
+  },
+  {
+   "word": "smaller",
+   "start": 5.46
+  },
+  {
+   "word": "than",
+   "start": 5.902
+  },
+  {
+   "word": "a",
+   "start": 6.178
+  },
+  {
+   "word": "grain",
+   "start": 6.288
+  },
+  {
+   "word": "of",
+   "start": 6.619
+  },
+  {
+   "word": "dust.",
+   "start": 6.784
+  }
+ ]
+}

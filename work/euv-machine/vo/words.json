@@ -1,0 +1,12728 @@
+[
+ {
+  "uid": "u001",
+  "word": "In",
+  "start": 0.04,
+  "end": 0.217
+ },
+ {
+  "uid": "u001",
+  "word": "a",
+  "start": 0.217,
+  "end": 0.335
+ },
+ {
+  "uid": "u001",
+  "word": "factory",
+  "start": 0.335,
+  "end": 0.807
+ },
+ {
+  "uid": "u001",
+  "word": "in",
+  "start": 0.807,
+  "end": 0.984
+ },
+ {
+  "uid": "u001",
+  "word": "Taiwan,",
+  "start": 0.984,
+  "end": 1.397
+ },
+ {
+  "uid": "u001",
+  "word": "a",
+  "start": 1.574,
+  "end": 1.692
+ },
+ {
+  "uid": "u001",
+  "word": "drop",
+  "start": 1.692,
+  "end": 1.986
+ },
+ {
+  "uid": "u001",
+  "word": "of",
+  "start": 1.986,
+  "end": 2.163
+ },
+ {
+  "uid": "u001",
+  "word": "molten",
+  "start": 2.163,
+  "end": 2.576
+ },
+ {
+  "uid": "u001",
+  "word": "tin",
+  "start": 2.576,
+  "end": 2.812
+ },
+ {
+  "uid": "u001",
+  "word": "is",
+  "start": 2.812,
+  "end": 2.989
+ },
+ {
+  "uid": "u001",
+  "word": "flying",
+  "start": 2.989,
+  "end": 3.402
+ },
+ {
+  "uid": "u001",
+  "word": "through",
+  "start": 3.402,
+  "end": 3.874
+ },
+ {
+  "uid": "u001",
+  "word": "a",
+  "start": 3.874,
+  "end": 3.992
+ },
+ {
+  "uid": "u001",
+  "word": "vacuum",
+  "start": 3.992,
+  "end": 4.405
+ },
+ {
+  "uid": "u001",
+  "word": "at",
+  "start": 4.405,
+  "end": 4.582
+ },
+ {
+  "uid": "u001",
+  "word": "two",
+  "start": 4.582,
+  "end": 4.818
+ },
+ {
+  "uid": "u001",
+  "word": "hundred",
+  "start": 4.818,
+  "end": 5.289
+ },
+ {
+  "uid": "u001",
+  "word": "and",
+  "start": 5.289,
+  "end": 5.525
+ },
+ {
+  "uid": "u001",
+  "word": "fifty",
+  "start": 5.525,
+  "end": 5.879
+ },
+ {
+  "uid": "u001",
+  "word": "kilometres",
+  "start": 5.879,
+  "end": 6.528
+ },
+ {
+  "uid": "u001",
+  "word": "an",
+  "start": 6.528,
+  "end": 6.705
+ },
+ {
+  "uid": "u001",
+  "word": "hour.",
+  "start": 6.705,
+  "end": 7.0
+ },
+ {
+  "uid": "u002",
+  "word": "It",
+  "start": 7.101,
+  "end": 7.263
+ },
+ {
+  "uid": "u002",
+  "word": "is",
+  "start": 7.263,
+  "end": 7.424
+ },
+ {
+  "uid": "u002",
+  "word": "about",
+  "start": 7.424,
+  "end": 7.747
+ },
+ {
+  "uid": "u002",
+  "word": "thirty",
+  "start": 7.747,
+  "end": 8.124
+ },
+ {
+  "uid": "u002",
+  "word": "micrometres",
+  "start": 8.124,
+  "end": 8.771
+ },
+ {
+  "uid": "u002",
+  "word": "wide,",
+  "start": 8.771,
+  "end": 9.04
+ },
+ {
+  "uid": "u002",
+  "word": "smaller",
+  "start": 9.201,
+  "end": 9.632
+ },
+ {
+  "uid": "u002",
+  "word": "than",
+  "start": 9.632,
+  "end": 9.901
+ },
+ {
+  "uid": "u002",
+  "word": "the",
+  "start": 9.901,
+  "end": 10.117
+ },
+ {
+  "uid": "u002",
+  "word": "width",
+  "start": 10.117,
+  "end": 10.44
+ },
+ {
+  "uid": "u002",
+  "word": "of",
+  "start": 10.44,
+  "end": 10.601
+ },
+ {
+  "uid": "u002",
+  "word": "a",
+  "start": 10.601,
+  "end": 10.709
+ },
+ {
+  "uid": "u002",
+  "word": "human",
+  "start": 10.709,
+  "end": 11.032
+ },
+ {
+  "uid": "u002",
+  "word": "hair.",
+  "start": 11.032,
+  "end": 11.301
+ },
+ {
+  "uid": "u003",
+  "word": "A",
+  "start": 11.401,
+  "end": 11.511
+ },
+ {
+  "uid": "u003",
+  "word": "laser",
+  "start": 11.511,
+  "end": 11.841
+ },
+ {
+  "uid": "u003",
+  "word": "pulse",
+  "start": 11.841,
+  "end": 12.172
+ },
+ {
+  "uid": "u003",
+  "word": "hits",
+  "start": 12.172,
+  "end": 12.447
+ },
+ {
+  "uid": "u003",
+  "word": "it",
+  "start": 12.447,
+  "end": 12.612
+ },
+ {
+  "uid": "u003",
+  "word": "and",
+  "start": 12.612,
+  "end": 12.833
+ },
+ {
+  "uid": "u003",
+  "word": "squashes",
+  "start": 12.833,
+  "end": 13.329
+ },
+ {
+  "uid": "u003",
+  "word": "it",
+  "start": 13.329,
+  "end": 13.494
+ },
+ {
+  "uid": "u003",
+  "word": "flat,",
+  "start": 13.494,
+  "end": 13.769
+ },
+ {
+  "uid": "u003",
+  "word": "like",
+  "start": 13.934,
+  "end": 14.21
+ },
+ {
+  "uid": "u003",
+  "word": "a",
+  "start": 14.21,
+  "end": 14.32
+ },
+ {
+  "uid": "u003",
+  "word": "pancake.",
+  "start": 14.32,
+  "end": 14.761
+ },
+ {
+  "uid": "u004",
+  "word": "A",
+  "start": 14.857,
+  "end": 14.972
+ },
+ {
+  "uid": "u004",
+  "word": "moment",
+  "start": 14.972,
+  "end": 15.377
+ },
+ {
+  "uid": "u004",
+  "word": "later,",
+  "start": 15.377,
+  "end": 15.724
+ },
+ {
+  "uid": "u004",
+  "word": "a",
+  "start": 15.897,
+  "end": 16.013
+ },
+ {
+  "uid": "u004",
+  "word": "far",
+  "start": 16.013,
+  "end": 16.244
+ },
+ {
+  "uid": "u004",
+  "word": "stronger",
+  "start": 16.244,
+  "end": 16.764
+ },
+ {
+  "uid": "u004",
+  "word": "pulse",
+  "start": 16.764,
+  "end": 17.111
+ },
+ {
+  "uid": "u004",
+  "word": "hits",
+  "start": 17.111,
+  "end": 17.4
+ },
+ {
+  "uid": "u004",
+  "word": "the",
+  "start": 17.4,
+  "end": 17.632
+ },
+ {
+  "uid": "u004",
+  "word": "pancake",
+  "start": 17.632,
+  "end": 18.094
+ },
+ {
+  "uid": "u004",
+  "word": "and",
+  "start": 18.094,
+  "end": 18.325
+ },
+ {
+  "uid": "u004",
+  "word": "turns",
+  "start": 18.325,
+  "end": 18.672
+ },
+ {
+  "uid": "u004",
+  "word": "it",
+  "start": 18.672,
+  "end": 18.846
+ },
+ {
+  "uid": "u004",
+  "word": "into",
+  "start": 18.846,
+  "end": 19.135
+ },
+ {
+  "uid": "u004",
+  "word": "plasma,",
+  "start": 19.135,
+  "end": 19.539
+ },
+ {
+  "uid": "u004",
+  "word": "about",
+  "start": 19.713,
+  "end": 20.06
+ },
+ {
+  "uid": "u004",
+  "word": "forty",
+  "start": 20.06,
+  "end": 20.406
+ },
+ {
+  "uid": "u004",
+  "word": "times",
+  "start": 20.406,
+  "end": 20.753
+ },
+ {
+  "uid": "u004",
+  "word": "hotter",
+  "start": 20.753,
+  "end": 21.158
+ },
+ {
+  "uid": "u004",
+  "word": "than",
+  "start": 21.158,
+  "end": 21.447
+ },
+ {
+  "uid": "u004",
+  "word": "the",
+  "start": 21.447,
+  "end": 21.678
+ },
+ {
+  "uid": "u004",
+  "word": "surface",
+  "start": 21.678,
+  "end": 22.141
+ },
+ {
+  "uid": "u004",
+  "word": "of",
+  "start": 22.141,
+  "end": 22.314
+ },
+ {
+  "uid": "u004",
+  "word": "the",
+  "start": 22.314,
+  "end": 22.545
+ },
+ {
+  "uid": "u004",
+  "word": "Sun.",
+  "start": 22.545,
+  "end": 22.777
+ },
+ {
+  "uid": "u005",
+  "word": "For",
+  "start": 22.878,
+  "end": 23.089
+ },
+ {
+  "uid": "u005",
+  "word": "an",
+  "start": 23.089,
+  "end": 23.248
+ },
+ {
+  "uid": "u005",
+  "word": "instant,",
+  "start": 23.248,
+  "end": 23.67
+ },
+ {
+  "uid": "u005",
+  "word": "that",
+  "start": 23.829,
+  "end": 24.093
+ },
+ {
+  "uid": "u005",
+  "word": "plasma",
+  "start": 24.093,
+  "end": 24.463
+ },
+ {
+  "uid": "u005",
+  "word": "glows",
+  "start": 24.463,
+  "end": 24.78
+ },
+ {
+  "uid": "u005",
+  "word": "with",
+  "start": 24.78,
+  "end": 25.044
+ },
+ {
+  "uid": "u005",
+  "word": "a",
+  "start": 25.044,
+  "end": 25.149
+ },
+ {
+  "uid": "u005",
+  "word": "kind",
+  "start": 25.149,
+  "end": 25.414
+ },
+ {
+  "uid": "u005",
+  "word": "of",
+  "start": 25.414,
+  "end": 25.572
+ },
+ {
+  "uid": "u005",
+  "word": "light",
+  "start": 25.572,
+  "end": 25.889
+ },
+ {
+  "uid": "u005",
+  "word": "that",
+  "start": 25.889,
+  "end": 26.153
+ },
+ {
+  "uid": "u005",
+  "word": "barely",
+  "start": 26.153,
+  "end": 26.523
+ },
+ {
+  "uid": "u005",
+  "word": "exists",
+  "start": 26.523,
+  "end": 26.893
+ },
+ {
+  "uid": "u005",
+  "word": "on",
+  "start": 26.893,
+  "end": 27.051
+ },
+ {
+  "uid": "u005",
+  "word": "Earth.",
+  "start": 27.051,
+  "end": 27.368
+ },
+ {
+  "uid": "u006",
+  "word": "Then",
+  "start": 27.475,
+  "end": 27.738
+ },
+ {
+  "uid": "u006",
+  "word": "the",
+  "start": 27.738,
+  "end": 27.948
+ },
+ {
+  "uid": "u006",
+  "word": "next",
+  "start": 27.948,
+  "end": 28.211
+ },
+ {
+  "uid": "u006",
+  "word": "drop",
+  "start": 28.211,
+  "end": 28.474
+ },
+ {
+  "uid": "u006",
+  "word": "arrives,",
+  "start": 28.474,
+  "end": 28.894
+ },
+ {
+  "uid": "u006",
+  "word": "and",
+  "start": 29.052,
+  "end": 29.262
+ },
+ {
+  "uid": "u006",
+  "word": "the",
+  "start": 29.262,
+  "end": 29.472
+ },
+ {
+  "uid": "u006",
+  "word": "whole",
+  "start": 29.472,
+  "end": 29.788
+ },
+ {
+  "uid": "u006",
+  "word": "thing",
+  "start": 29.788,
+  "end": 30.103
+ },
+ {
+  "uid": "u006",
+  "word": "happens",
+  "start": 30.103,
+  "end": 30.524
+ },
+ {
+  "uid": "u006",
+  "word": "again,",
+  "start": 30.524,
+  "end": 30.839
+ },
+ {
+  "uid": "u006",
+  "word": "fifty",
+  "start": 30.997,
+  "end": 31.313
+ },
+ {
+  "uid": "u006",
+  "word": "thousand",
+  "start": 31.313,
+  "end": 31.786
+ },
+ {
+  "uid": "u006",
+  "word": "times",
+  "start": 31.786,
+  "end": 32.101
+ },
+ {
+  "uid": "u006",
+  "word": "every",
+  "start": 32.101,
+  "end": 32.417
+ },
+ {
+  "uid": "u006",
+  "word": "second.",
+  "start": 32.417,
+  "end": 32.785
+ },
+ {
+  "uid": "u007",
+  "word": "The",
+  "start": 32.893,
+  "end": 33.133
+ },
+ {
+  "uid": "u007",
+  "word": "drops,",
+  "start": 33.133,
+  "end": 33.493
+ },
+ {
+  "uid": "u007",
+  "word": "the",
+  "start": 33.673,
+  "end": 33.913
+ },
+ {
+  "uid": "u007",
+  "word": "lasers,",
+  "start": 33.913,
+  "end": 34.333
+ },
+ {
+  "uid": "u007",
+  "word": "the",
+  "start": 34.513,
+  "end": 34.753
+ },
+ {
+  "uid": "u007",
+  "word": "tiny",
+  "start": 34.753,
+  "end": 35.053
+ },
+ {
+  "uid": "u007",
+  "word": "artificial",
+  "start": 35.053,
+  "end": 35.713
+ },
+ {
+  "uid": "u007",
+  "word": "stars:",
+  "start": 35.713,
+  "end": 36.073
+ },
+ {
+  "uid": "u007",
+  "word": "all",
+  "start": 36.313,
+  "end": 36.553
+ },
+ {
+  "uid": "u007",
+  "word": "of",
+  "start": 36.553,
+  "end": 36.733
+ },
+ {
+  "uid": "u007",
+  "word": "it",
+  "start": 36.733,
+  "end": 36.913
+ },
+ {
+  "uid": "u007",
+  "word": "exists",
+  "start": 36.913,
+  "end": 37.333
+ },
+ {
+  "uid": "u007",
+  "word": "to",
+  "start": 37.333,
+  "end": 37.513
+ },
+ {
+  "uid": "u007",
+  "word": "draw",
+  "start": 37.513,
+  "end": 37.813
+ },
+ {
+  "uid": "u007",
+  "word": "lines",
+  "start": 37.813,
+  "end": 38.173
+ },
+ {
+  "uid": "u007",
+  "word": "on",
+  "start": 38.173,
+  "end": 38.353
+ },
+ {
+  "uid": "u007",
+  "word": "a",
+  "start": 38.353,
+  "end": 38.473
+ },
+ {
+  "uid": "u007",
+  "word": "computer",
+  "start": 38.473,
+  "end": 39.013
+ },
+ {
+  "uid": "u007",
+  "word": "chip.",
+  "start": 39.013,
+  "end": 39.313
+ },
+ {
+  "uid": "u008",
+  "word": "Lines",
+  "start": 39.431,
+  "end": 39.793
+ },
+ {
+  "uid": "u008",
+  "word": "only",
+  "start": 39.793,
+  "end": 40.095
+ },
+ {
+  "uid": "u008",
+  "word": "a",
+  "start": 40.095,
+  "end": 40.215
+ },
+ {
+  "uid": "u008",
+  "word": "few",
+  "start": 40.215,
+  "end": 40.456
+ },
+ {
+  "uid": "u008",
+  "word": "dozen",
+  "start": 40.456,
+  "end": 40.818
+ },
+ {
+  "uid": "u008",
+  "word": "atoms",
+  "start": 40.818,
+  "end": 41.18
+ },
+ {
+  "uid": "u008",
+  "word": "wide.",
+  "start": 41.18,
+  "end": 41.481
+ },
+ {
+  "uid": "u009",
+  "word": "To",
+  "start": 41.587,
+  "end": 41.747
+ },
+ {
+  "uid": "u009",
+  "word": "understand",
+  "start": 41.747,
+  "end": 42.333
+ },
+ {
+  "uid": "u009",
+  "word": "why",
+  "start": 42.333,
+  "end": 42.546
+ },
+ {
+  "uid": "u009",
+  "word": "anyone",
+  "start": 42.546,
+  "end": 42.919
+ },
+ {
+  "uid": "u009",
+  "word": "would",
+  "start": 42.919,
+  "end": 43.239
+ },
+ {
+  "uid": "u009",
+  "word": "build",
+  "start": 43.239,
+  "end": 43.558
+ },
+ {
+  "uid": "u009",
+  "word": "something",
+  "start": 43.558,
+  "end": 44.091
+ },
+ {
+  "uid": "u009",
+  "word": "this",
+  "start": 44.091,
+  "end": 44.357
+ },
+ {
+  "uid": "u009",
+  "word": "extreme,",
+  "start": 44.357,
+  "end": 44.783
+ },
+ {
+  "uid": "u009",
+  "word": "we",
+  "start": 44.943,
+  "end": 45.103
+ },
+ {
+  "uid": "u009",
+  "word": "need",
+  "start": 45.103,
+  "end": 45.369
+ },
+ {
+  "uid": "u009",
+  "word": "one",
+  "start": 45.369,
+  "end": 45.582
+ },
+ {
+  "uid": "u009",
+  "word": "stubborn",
+  "start": 45.582,
+  "end": 46.062
+ },
+ {
+  "uid": "u009",
+  "word": "fact",
+  "start": 46.062,
+  "end": 46.328
+ },
+ {
+  "uid": "u009",
+  "word": "about",
+  "start": 46.328,
+  "end": 46.648
+ },
+ {
+  "uid": "u009",
+  "word": "light.",
+  "start": 46.648,
+  "end": 46.967
+ },
+ {
+  "uid": "u010",
+  "word": "By",
+  "start": 47.049,
+  "end": 47.206
+ },
+ {
+  "uid": "u010",
+  "word": "the",
+  "start": 47.206,
+  "end": 47.416
+ },
+ {
+  "uid": "u010",
+  "word": "end,",
+  "start": 47.416,
+  "end": 47.626
+ },
+ {
+  "uid": "u010",
+  "word": "every",
+  "start": 47.783,
+  "end": 48.098
+ },
+ {
+  "uid": "u010",
+  "word": "strange",
+  "start": 48.098,
+  "end": 48.518
+ },
+ {
+  "uid": "u010",
+  "word": "part",
+  "start": 48.518,
+  "end": 48.78
+ },
+ {
+  "uid": "u010",
+  "word": "of",
+  "start": 48.78,
+  "end": 48.938
+ },
+ {
+  "uid": "u010",
+  "word": "this",
+  "start": 48.938,
+  "end": 49.2
+ },
+ {
+  "uid": "u010",
+  "word": "machine",
+  "start": 49.2,
+  "end": 49.62
+ },
+ {
+  "uid": "u010",
+  "word": "will",
+  "start": 49.62,
+  "end": 49.882
+ },
+ {
+  "uid": "u010",
+  "word": "make",
+  "start": 49.882,
+  "end": 50.145
+ },
+ {
+  "uid": "u010",
+  "word": "sense,",
+  "start": 50.145,
+  "end": 50.46
+ },
+ {
+  "uid": "u010",
+  "word": "because",
+  "start": 50.617,
+  "end": 51.037
+ },
+ {
+  "uid": "u010",
+  "word": "each",
+  "start": 51.037,
+  "end": 51.299
+ },
+ {
+  "uid": "u010",
+  "word": "one",
+  "start": 51.299,
+  "end": 51.509
+ },
+ {
+  "uid": "u010",
+  "word": "fights",
+  "start": 51.509,
+  "end": 51.877
+ },
+ {
+  "uid": "u010",
+  "word": "that",
+  "start": 51.877,
+  "end": 52.139
+ },
+ {
+  "uid": "u010",
+  "word": "single",
+  "start": 52.139,
+  "end": 52.506
+ },
+ {
+  "uid": "u010",
+  "word": "fact.",
+  "start": 52.506,
+  "end": 52.769
+ },
+ {
+  "uid": "u011",
+  "word": "A",
+  "start": 52.873,
+  "end": 52.992
+ },
+ {
+  "uid": "u011",
+  "word": "modern",
+  "start": 52.992,
+  "end": 53.408
+ },
+ {
+  "uid": "u011",
+  "word": "chip",
+  "start": 53.408,
+  "end": 53.705
+ },
+ {
+  "uid": "u011",
+  "word": "is",
+  "start": 53.705,
+  "end": 53.883
+ },
+ {
+  "uid": "u011",
+  "word": "a",
+  "start": 53.883,
+  "end": 54.002
+ },
+ {
+  "uid": "u011",
+  "word": "city",
+  "start": 54.002,
+  "end": 54.299
+ },
+ {
+  "uid": "u011",
+  "word": "of",
+  "start": 54.299,
+  "end": 54.477
+ },
+ {
+  "uid": "u011",
+  "word": "tiny",
+  "start": 54.477,
+  "end": 54.775
+ },
+ {
+  "uid": "u011",
+  "word": "switches",
+  "start": 54.775,
+  "end": 55.31
+ },
+ {
+  "uid": "u011",
+  "word": "called",
+  "start": 55.31,
+  "end": 55.726
+ },
+ {
+  "uid": "u011",
+  "word": "transistors,",
+  "start": 55.726,
+  "end": 56.439
+ },
+ {
+  "uid": "u011",
+  "word": "tens",
+  "start": 56.617,
+  "end": 56.914
+ },
+ {
+  "uid": "u011",
+  "word": "of",
+  "start": 56.914,
+  "end": 57.093
+ },
+ {
+  "uid": "u011",
+  "word": "billions",
+  "start": 57.093,
+  "end": 57.628
+ },
+ {
+  "uid": "u011",
+  "word": "of",
+  "start": 57.628,
+  "end": 57.806
+ },
+ {
+  "uid": "u011",
+  "word": "them,",
+  "start": 57.806,
+  "end": 58.103
+ },
+ {
+  "uid": "u011",
+  "word": "wired",
+  "start": 58.281,
+  "end": 58.638
+ },
+ {
+  "uid": "u011",
+  "word": "together",
+  "start": 58.638,
+  "end": 59.173
+ },
+ {
+  "uid": "u011",
+  "word": "in",
+  "start": 59.173,
+  "end": 59.351
+ },
+ {
+  "uid": "u011",
+  "word": "stacked",
+  "start": 59.351,
+  "end": 59.827
+ },
+ {
+  "uid": "u011",
+  "word": "layers.",
+  "start": 59.827,
+  "end": 60.243
+ },
+ {
+  "uid": "u012",
+  "word": "Nobody",
+  "start": 60.328,
+  "end": 60.694
+ },
+ {
+  "uid": "u012",
+  "word": "builds",
+  "start": 60.694,
+  "end": 61.059
+ },
+ {
+  "uid": "u012",
+  "word": "them",
+  "start": 61.059,
+  "end": 61.321
+ },
+ {
+  "uid": "u012",
+  "word": "one",
+  "start": 61.321,
+  "end": 61.53
+ },
+ {
+  "uid": "u012",
+  "word": "at",
+  "start": 61.53,
+  "end": 61.686
+ },
+ {
+  "uid": "u012",
+  "word": "a",
+  "start": 61.686,
+  "end": 61.791
+ },
+ {
+  "uid": "u012",
+  "word": "time.",
+  "start": 61.791,
+  "end": 62.052
+ },
+ {
+  "uid": "u012",
+  "word": "They",
+  "start": 62.366,
+  "end": 62.627
+ },
+ {
+  "uid": "u012",
+  "word": "are",
+  "start": 62.627,
+  "end": 62.836
+ },
+ {
+  "uid": "u012",
+  "word": "printed",
+  "start": 62.836,
+  "end": 63.254
+ },
+ {
+  "uid": "u012",
+  "word": "all",
+  "start": 63.254,
+  "end": 63.463
+ },
+ {
+  "uid": "u012",
+  "word": "at",
+  "start": 63.463,
+  "end": 63.62
+ },
+ {
+  "uid": "u012",
+  "word": "once,",
+  "start": 63.62,
+  "end": 63.881
+ },
+ {
+  "uid": "u012",
+  "word": "like",
+  "start": 64.038,
+  "end": 64.299
+ },
+ {
+  "uid": "u012",
+  "word": "a",
+  "start": 64.299,
+  "end": 64.403
+ },
+ {
+  "uid": "u012",
+  "word": "photograph.",
+  "start": 64.403,
+  "end": 64.978
+ },
+ {
+  "uid": "u013",
+  "word": "It",
+  "start": 65.065,
+  "end": 65.212
+ },
+ {
+  "uid": "u013",
+  "word": "starts",
+  "start": 65.212,
+  "end": 65.555
+ },
+ {
+  "uid": "u013",
+  "word": "with",
+  "start": 65.555,
+  "end": 65.8
+ },
+ {
+  "uid": "u013",
+  "word": "a",
+  "start": 65.8,
+  "end": 65.898
+ },
+ {
+  "uid": "u013",
+  "word": "polished",
+  "start": 65.898,
+  "end": 66.339
+ },
+ {
+  "uid": "u013",
+  "word": "disc",
+  "start": 66.339,
+  "end": 66.584
+ },
+ {
+  "uid": "u013",
+  "word": "of",
+  "start": 66.584,
+  "end": 66.731
+ },
+ {
+  "uid": "u013",
+  "word": "silicon,",
+  "start": 66.731,
+  "end": 67.123
+ },
+ {
+  "uid": "u013",
+  "word": "called",
+  "start": 67.27,
+  "end": 67.613
+ },
+ {
+  "uid": "u013",
+  "word": "a",
+  "start": 67.613,
+  "end": 67.711
+ },
+ {
+  "uid": "u013",
+  "word": "wafer.",
+  "start": 67.711,
+  "end": 68.005
+ },
+ {
+  "uid": "u014",
+  "word": "The",
+  "start": 68.095,
+  "end": 68.319
+ },
+ {
+  "uid": "u014",
+  "word": "wafer",
+  "start": 68.319,
+  "end": 68.656
+ },
+ {
+  "uid": "u014",
+  "word": "is",
+  "start": 68.656,
+  "end": 68.824
+ },
+ {
+  "uid": "u014",
+  "word": "coated",
+  "start": 68.824,
+  "end": 69.216
+ },
+ {
+  "uid": "u014",
+  "word": "with",
+  "start": 69.216,
+  "end": 69.497
+ },
+ {
+  "uid": "u014",
+  "word": "a",
+  "start": 69.497,
+  "end": 69.609
+ },
+ {
+  "uid": "u014",
+  "word": "thin",
+  "start": 69.609,
+  "end": 69.89
+ },
+ {
+  "uid": "u014",
+  "word": "film",
+  "start": 69.89,
+  "end": 70.17
+ },
+ {
+  "uid": "u014",
+  "word": "called",
+  "start": 70.17,
+  "end": 70.563
+ },
+ {
+  "uid": "u014",
+  "word": "photoresist,",
+  "start": 70.563,
+  "end": 71.236
+ },
+ {
+  "uid": "u014",
+  "word": "a",
+  "start": 71.404,
+  "end": 71.516
+ },
+ {
+  "uid": "u014",
+  "word": "material",
+  "start": 71.516,
+  "end": 72.021
+ },
+ {
+  "uid": "u014",
+  "word": "that",
+  "start": 72.021,
+  "end": 72.301
+ },
+ {
+  "uid": "u014",
+  "word": "changes",
+  "start": 72.301,
+  "end": 72.75
+ },
+ {
+  "uid": "u014",
+  "word": "wherever",
+  "start": 72.75,
+  "end": 73.255
+ },
+ {
+  "uid": "u014",
+  "word": "light",
+  "start": 73.255,
+  "end": 73.592
+ },
+ {
+  "uid": "u014",
+  "word": "falls",
+  "start": 73.592,
+  "end": 73.928
+ },
+ {
+  "uid": "u014",
+  "word": "on",
+  "start": 73.928,
+  "end": 74.096
+ },
+ {
+  "uid": "u014",
+  "word": "it.",
+  "start": 74.096,
+  "end": 74.265
+ },
+ {
+  "uid": "u015",
+  "word": "Above",
+  "start": 74.388,
+  "end": 74.715
+ },
+ {
+  "uid": "u015",
+  "word": "it",
+  "start": 74.715,
+  "end": 74.878
+ },
+ {
+  "uid": "u015",
+  "word": "sits",
+  "start": 74.878,
+  "end": 75.151
+ },
+ {
+  "uid": "u015",
+  "word": "the",
+  "start": 75.151,
+  "end": 75.369
+ },
+ {
+  "uid": "u015",
+  "word": "mask,",
+  "start": 75.369,
+  "end": 75.641
+ },
+ {
+  "uid": "u015",
+  "word": "a",
+  "start": 75.805,
+  "end": 75.914
+ },
+ {
+  "uid": "u015",
+  "word": "plate",
+  "start": 75.914,
+  "end": 76.24
+ },
+ {
+  "uid": "u015",
+  "word": "carrying",
+  "start": 76.24,
+  "end": 76.731
+ },
+ {
+  "uid": "u015",
+  "word": "the",
+  "start": 76.731,
+  "end": 76.949
+ },
+ {
+  "uid": "u015",
+  "word": "pattern",
+  "start": 76.949,
+  "end": 77.385
+ },
+ {
+  "uid": "u015",
+  "word": "for",
+  "start": 77.385,
+  "end": 77.602
+ },
+ {
+  "uid": "u015",
+  "word": "one",
+  "start": 77.602,
+  "end": 77.82
+ },
+ {
+  "uid": "u015",
+  "word": "layer,",
+  "start": 77.82,
+  "end": 78.147
+ },
+ {
+  "uid": "u015",
+  "word": "drawn",
+  "start": 78.311,
+  "end": 78.638
+ },
+ {
+  "uid": "u015",
+  "word": "four",
+  "start": 78.638,
+  "end": 78.91
+ },
+ {
+  "uid": "u015",
+  "word": "times",
+  "start": 78.91,
+  "end": 79.237
+ },
+ {
+  "uid": "u015",
+  "word": "larger",
+  "start": 79.237,
+  "end": 79.618
+ },
+ {
+  "uid": "u015",
+  "word": "than",
+  "start": 79.618,
+  "end": 79.891
+ },
+ {
+  "uid": "u015",
+  "word": "it",
+  "start": 79.891,
+  "end": 80.054
+ },
+ {
+  "uid": "u015",
+  "word": "will",
+  "start": 80.054,
+  "end": 80.327
+ },
+ {
+  "uid": "u015",
+  "word": "end",
+  "start": 80.327,
+  "end": 80.545
+ },
+ {
+  "uid": "u015",
+  "word": "up.",
+  "start": 80.545,
+  "end": 80.708
+ },
+ {
+  "uid": "u016",
+  "word": "Light",
+  "start": 80.808,
+  "end": 81.15
+ },
+ {
+  "uid": "u016",
+  "word": "shines",
+  "start": 81.15,
+  "end": 81.55
+ },
+ {
+  "uid": "u016",
+  "word": "through",
+  "start": 81.55,
+  "end": 82.006
+ },
+ {
+  "uid": "u016",
+  "word": "the",
+  "start": 82.006,
+  "end": 82.234
+ },
+ {
+  "uid": "u016",
+  "word": "mask,",
+  "start": 82.234,
+  "end": 82.52
+ },
+ {
+  "uid": "u016",
+  "word": "and",
+  "start": 82.691,
+  "end": 82.919
+ },
+ {
+  "uid": "u016",
+  "word": "a",
+  "start": 82.919,
+  "end": 83.033
+ },
+ {
+  "uid": "u016",
+  "word": "set",
+  "start": 83.033,
+  "end": 83.261
+ },
+ {
+  "uid": "u016",
+  "word": "of",
+  "start": 83.261,
+  "end": 83.432
+ },
+ {
+  "uid": "u016",
+  "word": "optics",
+  "start": 83.432,
+  "end": 83.832
+ },
+ {
+  "uid": "u016",
+  "word": "shrinks",
+  "start": 83.832,
+  "end": 84.288
+ },
+ {
+  "uid": "u016",
+  "word": "the",
+  "start": 84.288,
+  "end": 84.516
+ },
+ {
+  "uid": "u016",
+  "word": "image",
+  "start": 84.516,
+  "end": 84.859
+ },
+ {
+  "uid": "u016",
+  "word": "four",
+  "start": 84.859,
+  "end": 85.144
+ },
+ {
+  "uid": "u016",
+  "word": "times",
+  "start": 85.144,
+  "end": 85.486
+ },
+ {
+  "uid": "u016",
+  "word": "and",
+  "start": 85.486,
+  "end": 85.715
+ },
+ {
+  "uid": "u016",
+  "word": "focuses",
+  "start": 85.715,
+  "end": 86.171
+ },
+ {
+  "uid": "u016",
+  "word": "it",
+  "start": 86.171,
+  "end": 86.342
+ },
+ {
+  "uid": "u016",
+  "word": "onto",
+  "start": 86.342,
+  "end": 86.627
+ },
+ {
+  "uid": "u016",
+  "word": "the",
+  "start": 86.627,
+  "end": 86.856
+ },
+ {
+  "uid": "u016",
+  "word": "wafer.",
+  "start": 86.856,
+  "end": 87.198
+ },
+ {
+  "uid": "u017",
+  "word": "It",
+  "start": 87.305,
+  "end": 87.486
+ },
+ {
+  "uid": "u017",
+  "word": "is",
+  "start": 87.486,
+  "end": 87.667
+ },
+ {
+  "uid": "u017",
+  "word": "a",
+  "start": 87.667,
+  "end": 87.788
+ },
+ {
+  "uid": "u017",
+  "word": "slide",
+  "start": 87.788,
+  "end": 88.151
+ },
+ {
+  "uid": "u017",
+  "word": "projector",
+  "start": 88.151,
+  "end": 88.755
+ },
+ {
+  "uid": "u017",
+  "word": "run",
+  "start": 88.755,
+  "end": 88.997
+ },
+ {
+  "uid": "u017",
+  "word": "backwards:",
+  "start": 88.997,
+  "end": 89.601
+ },
+ {
+  "uid": "u017",
+  "word": "instead",
+  "start": 89.843,
+  "end": 90.327
+ },
+ {
+  "uid": "u017",
+  "word": "of",
+  "start": 90.327,
+  "end": 90.508
+ },
+ {
+  "uid": "u017",
+  "word": "throwing",
+  "start": 90.508,
+  "end": 91.052
+ },
+ {
+  "uid": "u017",
+  "word": "a",
+  "start": 91.052,
+  "end": 91.173
+ },
+ {
+  "uid": "u017",
+  "word": "small",
+  "start": 91.173,
+  "end": 91.535
+ },
+ {
+  "uid": "u017",
+  "word": "picture",
+  "start": 91.535,
+  "end": 92.019
+ },
+ {
+  "uid": "u017",
+  "word": "onto",
+  "start": 92.019,
+  "end": 92.321
+ },
+ {
+  "uid": "u017",
+  "word": "a",
+  "start": 92.321,
+  "end": 92.442
+ },
+ {
+  "uid": "u017",
+  "word": "wall,",
+  "start": 92.442,
+  "end": 92.744
+ },
+ {
+  "uid": "u017",
+  "word": "it",
+  "start": 92.925,
+  "end": 93.107
+ },
+ {
+  "uid": "u017",
+  "word": "squeezes",
+  "start": 93.107,
+  "end": 93.651
+ },
+ {
+  "uid": "u017",
+  "word": "a",
+  "start": 93.651,
+  "end": 93.772
+ },
+ {
+  "uid": "u017",
+  "word": "big",
+  "start": 93.772,
+  "end": 94.013
+ },
+ {
+  "uid": "u017",
+  "word": "picture",
+  "start": 94.013,
+  "end": 94.497
+ },
+ {
+  "uid": "u017",
+  "word": "onto",
+  "start": 94.497,
+  "end": 94.799
+ },
+ {
+  "uid": "u017",
+  "word": "a",
+  "start": 94.799,
+  "end": 94.92
+ },
+ {
+  "uid": "u017",
+  "word": "tiny",
+  "start": 94.92,
+  "end": 95.222
+ },
+ {
+  "uid": "u017",
+  "word": "patch.",
+  "start": 95.222,
+  "end": 95.585
+ },
+ {
+  "uid": "u018",
+  "word": "Where",
+  "start": 95.667,
+  "end": 95.967
+ },
+ {
+  "uid": "u018",
+  "word": "the",
+  "start": 95.967,
+  "end": 96.167
+ },
+ {
+  "uid": "u018",
+  "word": "light",
+  "start": 96.167,
+  "end": 96.467
+ },
+ {
+  "uid": "u018",
+  "word": "lands,",
+  "start": 96.467,
+  "end": 96.767
+ },
+ {
+  "uid": "u018",
+  "word": "the",
+  "start": 96.917,
+  "end": 97.117
+ },
+ {
+  "uid": "u018",
+  "word": "resist",
+  "start": 97.117,
+  "end": 97.467
+ },
+ {
+  "uid": "u018",
+  "word": "changes.",
+  "start": 97.467,
+  "end": 97.867
+ },
+ {
+  "uid": "u018",
+  "word": "Wash",
+  "start": 98.167,
+  "end": 98.417
+ },
+ {
+  "uid": "u018",
+  "word": "it,",
+  "start": 98.417,
+  "end": 98.567
+ },
+ {
+  "uid": "u018",
+  "word": "etch",
+  "start": 98.717,
+  "end": 98.967
+ },
+ {
+  "uid": "u018",
+  "word": "it,",
+  "start": 98.967,
+  "end": 99.117
+ },
+ {
+  "uid": "u018",
+  "word": "and",
+  "start": 99.267,
+  "end": 99.467
+ },
+ {
+  "uid": "u018",
+  "word": "the",
+  "start": 99.467,
+  "end": 99.667
+ },
+ {
+  "uid": "u018",
+  "word": "pattern",
+  "start": 99.667,
+  "end": 100.067
+ },
+ {
+  "uid": "u018",
+  "word": "is",
+  "start": 100.067,
+  "end": 100.217
+ },
+ {
+  "uid": "u018",
+  "word": "cut",
+  "start": 100.217,
+  "end": 100.417
+ },
+ {
+  "uid": "u018",
+  "word": "into",
+  "start": 100.417,
+  "end": 100.667
+ },
+ {
+  "uid": "u018",
+  "word": "the",
+  "start": 100.667,
+  "end": 100.867
+ },
+ {
+  "uid": "u018",
+  "word": "layer",
+  "start": 100.867,
+  "end": 101.167
+ },
+ {
+  "uid": "u018",
+  "word": "underneath.",
+  "start": 101.167,
+  "end": 101.717
+ },
+ {
+  "uid": "u019",
+  "word": "Then",
+  "start": 101.821,
+  "end": 102.105
+ },
+ {
+  "uid": "u019",
+  "word": "the",
+  "start": 102.105,
+  "end": 102.331
+ },
+ {
+  "uid": "u019",
+  "word": "wafer",
+  "start": 102.331,
+  "end": 102.671
+ },
+ {
+  "uid": "u019",
+  "word": "is",
+  "start": 102.671,
+  "end": 102.841
+ },
+ {
+  "uid": "u019",
+  "word": "coated",
+  "start": 102.841,
+  "end": 103.238
+ },
+ {
+  "uid": "u019",
+  "word": "again",
+  "start": 103.238,
+  "end": 103.578
+ },
+ {
+  "uid": "u019",
+  "word": "and",
+  "start": 103.578,
+  "end": 103.805
+ },
+ {
+  "uid": "u019",
+  "word": "the",
+  "start": 103.805,
+  "end": 104.031
+ },
+ {
+  "uid": "u019",
+  "word": "next",
+  "start": 104.031,
+  "end": 104.315
+ },
+ {
+  "uid": "u019",
+  "word": "layer",
+  "start": 104.315,
+  "end": 104.655
+ },
+ {
+  "uid": "u019",
+  "word": "is",
+  "start": 104.655,
+  "end": 104.825
+ },
+ {
+  "uid": "u019",
+  "word": "printed",
+  "start": 104.825,
+  "end": 105.278
+ },
+ {
+  "uid": "u019",
+  "word": "on",
+  "start": 105.278,
+  "end": 105.448
+ },
+ {
+  "uid": "u019",
+  "word": "top,",
+  "start": 105.448,
+  "end": 105.675
+ },
+ {
+  "uid": "u019",
+  "word": "dozens",
+  "start": 105.845,
+  "end": 106.241
+ },
+ {
+  "uid": "u019",
+  "word": "of",
+  "start": 106.241,
+  "end": 106.411
+ },
+ {
+  "uid": "u019",
+  "word": "times.",
+  "start": 106.411,
+  "end": 106.751
+ },
+ {
+  "uid": "u020",
+  "word": "So",
+  "start": 106.846,
+  "end": 107.017
+ },
+ {
+  "uid": "u020",
+  "word": "the",
+  "start": 107.017,
+  "end": 107.246
+ },
+ {
+  "uid": "u020",
+  "word": "size",
+  "start": 107.246,
+  "end": 107.532
+ },
+ {
+  "uid": "u020",
+  "word": "of",
+  "start": 107.532,
+  "end": 107.703
+ },
+ {
+  "uid": "u020",
+  "word": "a",
+  "start": 107.703,
+  "end": 107.817
+ },
+ {
+  "uid": "u020",
+  "word": "transistor",
+  "start": 107.817,
+  "end": 108.446
+ },
+ {
+  "uid": "u020",
+  "word": "comes",
+  "start": 108.446,
+  "end": 108.789
+ },
+ {
+  "uid": "u020",
+  "word": "down",
+  "start": 108.789,
+  "end": 109.075
+ },
+ {
+  "uid": "u020",
+  "word": "to",
+  "start": 109.075,
+  "end": 109.246
+ },
+ {
+  "uid": "u020",
+  "word": "one",
+  "start": 109.246,
+  "end": 109.475
+ },
+ {
+  "uid": "u020",
+  "word": "question:",
+  "start": 109.475,
+  "end": 109.989
+ },
+ {
+  "uid": "u020",
+  "word": "how",
+  "start": 110.217,
+  "end": 110.446
+ },
+ {
+  "uid": "u020",
+  "word": "small",
+  "start": 110.446,
+  "end": 110.789
+ },
+ {
+  "uid": "u020",
+  "word": "a",
+  "start": 110.789,
+  "end": 110.903
+ },
+ {
+  "uid": "u020",
+  "word": "detail",
+  "start": 110.903,
+  "end": 111.303
+ },
+ {
+  "uid": "u020",
+  "word": "can",
+  "start": 111.303,
+  "end": 111.532
+ },
+ {
+  "uid": "u020",
+  "word": "you",
+  "start": 111.532,
+  "end": 111.76
+ },
+ {
+  "uid": "u020",
+  "word": "project",
+  "start": 111.76,
+  "end": 112.217
+ },
+ {
+  "uid": "u020",
+  "word": "with",
+  "start": 112.217,
+  "end": 112.503
+ },
+ {
+  "uid": "u020",
+  "word": "light?",
+  "start": 112.503,
+  "end": 112.846
+ },
+ {
+  "uid": "u021",
+  "word": "The",
+  "start": 112.947,
+  "end": 113.158
+ },
+ {
+  "uid": "u021",
+  "word": "answer",
+  "start": 113.158,
+  "end": 113.526
+ },
+ {
+  "uid": "u021",
+  "word": "depends",
+  "start": 113.526,
+  "end": 113.946
+ },
+ {
+  "uid": "u021",
+  "word": "on",
+  "start": 113.946,
+  "end": 114.104
+ },
+ {
+  "uid": "u021",
+  "word": "what",
+  "start": 114.104,
+  "end": 114.367
+ },
+ {
+  "uid": "u021",
+  "word": "light",
+  "start": 114.367,
+  "end": 114.683
+ },
+ {
+  "uid": "u021",
+  "word": "is.",
+  "start": 114.683,
+  "end": 114.84
+ },
+ {
+  "uid": "u021",
+  "word": "Light",
+  "start": 115.156,
+  "end": 115.471
+ },
+ {
+  "uid": "u021",
+  "word": "is",
+  "start": 115.471,
+  "end": 115.629
+ },
+ {
+  "uid": "u021",
+  "word": "a",
+  "start": 115.629,
+  "end": 115.734
+ },
+ {
+  "uid": "u021",
+  "word": "wave.",
+  "start": 115.734,
+  "end": 115.997
+ },
+ {
+  "uid": "u022",
+  "word": "Watch",
+  "start": 116.103,
+  "end": 116.408
+ },
+ {
+  "uid": "u022",
+  "word": "a",
+  "start": 116.408,
+  "end": 116.509
+ },
+ {
+  "uid": "u022",
+  "word": "wave",
+  "start": 116.509,
+  "end": 116.763
+ },
+ {
+  "uid": "u022",
+  "word": "arrive",
+  "start": 116.763,
+  "end": 117.118
+ },
+ {
+  "uid": "u022",
+  "word": "at",
+  "start": 117.118,
+  "end": 117.27
+ },
+ {
+  "uid": "u022",
+  "word": "a",
+  "start": 117.27,
+  "end": 117.371
+ },
+ {
+  "uid": "u022",
+  "word": "gap.",
+  "start": 117.371,
+  "end": 117.574
+ },
+ {
+  "uid": "u022",
+  "word": "If",
+  "start": 117.879,
+  "end": 118.031
+ },
+ {
+  "uid": "u022",
+  "word": "the",
+  "start": 118.031,
+  "end": 118.234
+ },
+ {
+  "uid": "u022",
+  "word": "gap",
+  "start": 118.234,
+  "end": 118.437
+ },
+ {
+  "uid": "u022",
+  "word": "is",
+  "start": 118.437,
+  "end": 118.589
+ },
+ {
+  "uid": "u022",
+  "word": "wide,",
+  "start": 118.589,
+  "end": 118.842
+ },
+ {
+  "uid": "u022",
+  "word": "the",
+  "start": 118.994,
+  "end": 119.197
+ },
+ {
+  "uid": "u022",
+  "word": "wave",
+  "start": 119.197,
+  "end": 119.451
+ },
+ {
+  "uid": "u022",
+  "word": "passes",
+  "start": 119.451,
+  "end": 119.806
+ },
+ {
+  "uid": "u022",
+  "word": "almost",
+  "start": 119.806,
+  "end": 120.161
+ },
+ {
+  "uid": "u022",
+  "word": "straight",
+  "start": 120.161,
+  "end": 120.618
+ },
+ {
+  "uid": "u022",
+  "word": "through.",
+  "start": 120.618,
+  "end": 121.023
+ },
+ {
+  "uid": "u023",
+  "word": "But",
+  "start": 121.128,
+  "end": 121.342
+ },
+ {
+  "uid": "u023",
+  "word": "if",
+  "start": 121.342,
+  "end": 121.503
+ },
+ {
+  "uid": "u023",
+  "word": "the",
+  "start": 121.503,
+  "end": 121.718
+ },
+ {
+  "uid": "u023",
+  "word": "gap",
+  "start": 121.718,
+  "end": 121.932
+ },
+ {
+  "uid": "u023",
+  "word": "is",
+  "start": 121.932,
+  "end": 122.093
+ },
+ {
+  "uid": "u023",
+  "word": "narrow,",
+  "start": 122.093,
+  "end": 122.468
+ },
+ {
+  "uid": "u023",
+  "word": "close",
+  "start": 122.629,
+  "end": 122.95
+ },
+ {
+  "uid": "u023",
+  "word": "to",
+  "start": 122.95,
+  "end": 123.111
+ },
+ {
+  "uid": "u023",
+  "word": "the",
+  "start": 123.111,
+  "end": 123.326
+ },
+ {
+  "uid": "u023",
+  "word": "size",
+  "start": 123.326,
+  "end": 123.594
+ },
+ {
+  "uid": "u023",
+  "word": "of",
+  "start": 123.594,
+  "end": 123.754
+ },
+ {
+  "uid": "u023",
+  "word": "the",
+  "start": 123.754,
+  "end": 123.969
+ },
+ {
+  "uid": "u023",
+  "word": "wave",
+  "start": 123.969,
+  "end": 124.237
+ },
+ {
+  "uid": "u023",
+  "word": "itself,",
+  "start": 124.237,
+  "end": 124.612
+ },
+ {
+  "uid": "u023",
+  "word": "the",
+  "start": 124.773,
+  "end": 124.987
+ },
+ {
+  "uid": "u023",
+  "word": "wave",
+  "start": 124.987,
+  "end": 125.255
+ },
+ {
+  "uid": "u023",
+  "word": "spreads",
+  "start": 125.255,
+  "end": 125.684
+ },
+ {
+  "uid": "u023",
+  "word": "out",
+  "start": 125.684,
+  "end": 125.898
+ },
+ {
+  "uid": "u023",
+  "word": "on",
+  "start": 125.898,
+  "end": 126.059
+ },
+ {
+  "uid": "u023",
+  "word": "the",
+  "start": 126.059,
+  "end": 126.274
+ },
+ {
+  "uid": "u023",
+  "word": "other",
+  "start": 126.274,
+  "end": 126.595
+ },
+ {
+  "uid": "u023",
+  "word": "side.",
+  "start": 126.595,
+  "end": 126.863
+ },
+ {
+  "uid": "u023",
+  "word": "This",
+  "start": 127.185,
+  "end": 127.453
+ },
+ {
+  "uid": "u023",
+  "word": "spreading",
+  "start": 127.453,
+  "end": 127.989
+ },
+ {
+  "uid": "u023",
+  "word": "is",
+  "start": 127.989,
+  "end": 128.15
+ },
+ {
+  "uid": "u023",
+  "word": "called",
+  "start": 128.15,
+  "end": 128.525
+ },
+ {
+  "uid": "u023",
+  "word": "diffraction.",
+  "start": 128.525,
+  "end": 129.168
+ },
+ {
+  "uid": "u024",
+  "word": "A",
+  "start": 129.257,
+  "end": 129.376
+ },
+ {
+  "uid": "u024",
+  "word": "chip",
+  "start": 129.376,
+  "end": 129.671
+ },
+ {
+  "uid": "u024",
+  "word": "pattern",
+  "start": 129.671,
+  "end": 130.144
+ },
+ {
+  "uid": "u024",
+  "word": "is",
+  "start": 130.144,
+  "end": 130.321
+ },
+ {
+  "uid": "u024",
+  "word": "nothing",
+  "start": 130.321,
+  "end": 130.794
+ },
+ {
+  "uid": "u024",
+  "word": "but",
+  "start": 130.794,
+  "end": 131.03
+ },
+ {
+  "uid": "u024",
+  "word": "narrow",
+  "start": 131.03,
+  "end": 131.444
+ },
+ {
+  "uid": "u024",
+  "word": "gaps.",
+  "start": 131.444,
+  "end": 131.739
+ },
+ {
+  "uid": "u024",
+  "word": "A",
+  "start": 132.094,
+  "end": 132.212
+ },
+ {
+  "uid": "u024",
+  "word": "row",
+  "start": 132.212,
+  "end": 132.449
+ },
+ {
+  "uid": "u024",
+  "word": "of",
+  "start": 132.449,
+  "end": 132.626
+ },
+ {
+  "uid": "u024",
+  "word": "fine",
+  "start": 132.626,
+  "end": 132.921
+ },
+ {
+  "uid": "u024",
+  "word": "lines",
+  "start": 132.921,
+  "end": 133.276
+ },
+ {
+  "uid": "u024",
+  "word": "on",
+  "start": 133.276,
+  "end": 133.453
+ },
+ {
+  "uid": "u024",
+  "word": "a",
+  "start": 133.453,
+  "end": 133.572
+ },
+ {
+  "uid": "u024",
+  "word": "mask",
+  "start": 133.572,
+  "end": 133.867
+ },
+ {
+  "uid": "u024",
+  "word": "behaves",
+  "start": 133.867,
+  "end": 134.34
+ },
+ {
+  "uid": "u024",
+  "word": "like",
+  "start": 134.34,
+  "end": 134.635
+ },
+ {
+  "uid": "u024",
+  "word": "what",
+  "start": 134.635,
+  "end": 134.931
+ },
+ {
+  "uid": "u024",
+  "word": "physicists",
+  "start": 134.931,
+  "end": 135.581
+ },
+ {
+  "uid": "u024",
+  "word": "call",
+  "start": 135.581,
+  "end": 135.876
+ },
+ {
+  "uid": "u024",
+  "word": "a",
+  "start": 135.876,
+  "end": 135.995
+ },
+ {
+  "uid": "u024",
+  "word": "grating.",
+  "start": 135.995,
+  "end": 136.467
+ },
+ {
+  "uid": "u025",
+  "word": "Light",
+  "start": 136.573,
+  "end": 136.887
+ },
+ {
+  "uid": "u025",
+  "word": "passing",
+  "start": 136.887,
+  "end": 137.306
+ },
+ {
+  "uid": "u025",
+  "word": "through",
+  "start": 137.306,
+  "end": 137.724
+ },
+ {
+  "uid": "u025",
+  "word": "a",
+  "start": 137.724,
+  "end": 137.829
+ },
+ {
+  "uid": "u025",
+  "word": "grating",
+  "start": 137.829,
+  "end": 138.248
+ },
+ {
+  "uid": "u025",
+  "word": "does",
+  "start": 138.248,
+  "end": 138.509
+ },
+ {
+  "uid": "u025",
+  "word": "not",
+  "start": 138.509,
+  "end": 138.718
+ },
+ {
+  "uid": "u025",
+  "word": "just",
+  "start": 138.718,
+  "end": 138.98
+ },
+ {
+  "uid": "u025",
+  "word": "carry",
+  "start": 138.98,
+  "end": 139.294
+ },
+ {
+  "uid": "u025",
+  "word": "straight",
+  "start": 139.294,
+  "end": 139.765
+ },
+ {
+  "uid": "u025",
+  "word": "on.",
+  "start": 139.765,
+  "end": 139.922
+ },
+ {
+  "uid": "u025",
+  "word": "It",
+  "start": 140.236,
+  "end": 140.393
+ },
+ {
+  "uid": "u025",
+  "word": "splits",
+  "start": 140.393,
+  "end": 140.759
+ },
+ {
+  "uid": "u025",
+  "word": "into",
+  "start": 140.759,
+  "end": 141.021
+ },
+ {
+  "uid": "u025",
+  "word": "separate",
+  "start": 141.021,
+  "end": 141.491
+ },
+ {
+  "uid": "u025",
+  "word": "beams",
+  "start": 141.491,
+  "end": 141.805
+ },
+ {
+  "uid": "u025",
+  "word": "that",
+  "start": 141.805,
+  "end": 142.067
+ },
+ {
+  "uid": "u025",
+  "word": "fan",
+  "start": 142.067,
+  "end": 142.276
+ },
+ {
+  "uid": "u025",
+  "word": "out",
+  "start": 142.276,
+  "end": 142.485
+ },
+ {
+  "uid": "u025",
+  "word": "at",
+  "start": 142.485,
+  "end": 142.642
+ },
+ {
+  "uid": "u025",
+  "word": "an",
+  "start": 142.642,
+  "end": 142.799
+ },
+ {
+  "uid": "u025",
+  "word": "angle.",
+  "start": 142.799,
+  "end": 143.113
+ },
+ {
+  "uid": "u026",
+  "word": "And",
+  "start": 143.259,
+  "end": 143.48
+ },
+ {
+  "uid": "u026",
+  "word": "here",
+  "start": 143.48,
+  "end": 143.757
+ },
+ {
+  "uid": "u026",
+  "word": "is",
+  "start": 143.757,
+  "end": 143.923
+ },
+ {
+  "uid": "u026",
+  "word": "the",
+  "start": 143.923,
+  "end": 144.144
+ },
+ {
+  "uid": "u026",
+  "word": "key:",
+  "start": 144.144,
+  "end": 144.365
+ },
+ {
+  "uid": "u026",
+  "word": "the",
+  "start": 144.586,
+  "end": 144.807
+ },
+ {
+  "uid": "u026",
+  "word": "finer",
+  "start": 144.807,
+  "end": 145.139
+ },
+ {
+  "uid": "u026",
+  "word": "the",
+  "start": 145.139,
+  "end": 145.36
+ },
+ {
+  "uid": "u026",
+  "word": "lines,",
+  "start": 145.36,
+  "end": 145.692
+ },
+ {
+  "uid": "u026",
+  "word": "the",
+  "start": 145.857,
+  "end": 146.078
+ },
+ {
+  "uid": "u026",
+  "word": "wider",
+  "start": 146.078,
+  "end": 146.41
+ },
+ {
+  "uid": "u026",
+  "word": "that",
+  "start": 146.41,
+  "end": 146.687
+ },
+ {
+  "uid": "u026",
+  "word": "fan",
+  "start": 146.687,
+  "end": 146.908
+ },
+ {
+  "uid": "u026",
+  "word": "opens.",
+  "start": 146.908,
+  "end": 147.239
+ },
+ {
+  "uid": "u027",
+  "word": "To",
+  "start": 147.325,
+  "end": 147.487
+ },
+ {
+  "uid": "u027",
+  "word": "rebuild",
+  "start": 147.487,
+  "end": 147.918
+ },
+ {
+  "uid": "u027",
+  "word": "the",
+  "start": 147.918,
+  "end": 148.133
+ },
+ {
+  "uid": "u027",
+  "word": "pattern",
+  "start": 148.133,
+  "end": 148.564
+ },
+ {
+  "uid": "u027",
+  "word": "on",
+  "start": 148.564,
+  "end": 148.726
+ },
+ {
+  "uid": "u027",
+  "word": "the",
+  "start": 148.726,
+  "end": 148.941
+ },
+ {
+  "uid": "u027",
+  "word": "wafer,",
+  "start": 148.941,
+  "end": 149.264
+ },
+ {
+  "uid": "u027",
+  "word": "the",
+  "start": 149.426,
+  "end": 149.641
+ },
+ {
+  "uid": "u027",
+  "word": "lens",
+  "start": 149.641,
+  "end": 149.91
+ },
+ {
+  "uid": "u027",
+  "word": "has",
+  "start": 149.91,
+  "end": 150.126
+ },
+ {
+  "uid": "u027",
+  "word": "to",
+  "start": 150.126,
+  "end": 150.287
+ },
+ {
+  "uid": "u027",
+  "word": "catch",
+  "start": 150.287,
+  "end": 150.61
+ },
+ {
+  "uid": "u027",
+  "word": "those",
+  "start": 150.61,
+  "end": 150.933
+ },
+ {
+  "uid": "u027",
+  "word": "angled",
+  "start": 150.933,
+  "end": 151.31
+ },
+ {
+  "uid": "u027",
+  "word": "beams",
+  "start": 151.31,
+  "end": 151.634
+ },
+ {
+  "uid": "u027",
+  "word": "and",
+  "start": 151.634,
+  "end": 151.849
+ },
+ {
+  "uid": "u027",
+  "word": "bring",
+  "start": 151.849,
+  "end": 152.172
+ },
+ {
+  "uid": "u027",
+  "word": "them",
+  "start": 152.172,
+  "end": 152.441
+ },
+ {
+  "uid": "u027",
+  "word": "back",
+  "start": 152.441,
+  "end": 152.711
+ },
+ {
+  "uid": "u027",
+  "word": "together.",
+  "start": 152.711,
+  "end": 153.195
+ },
+ {
+  "uid": "u028",
+  "word": "If",
+  "start": 153.289,
+  "end": 153.44
+ },
+ {
+  "uid": "u028",
+  "word": "it",
+  "start": 153.44,
+  "end": 153.592
+ },
+ {
+  "uid": "u028",
+  "word": "catches",
+  "start": 153.592,
+  "end": 153.996
+ },
+ {
+  "uid": "u028",
+  "word": "them,",
+  "start": 153.996,
+  "end": 154.249
+ },
+ {
+  "uid": "u028",
+  "word": "the",
+  "start": 154.4,
+  "end": 154.603
+ },
+ {
+  "uid": "u028",
+  "word": "beams",
+  "start": 154.603,
+  "end": 154.906
+ },
+ {
+  "uid": "u028",
+  "word": "overlap,",
+  "start": 154.906,
+  "end": 155.31
+ },
+ {
+  "uid": "u028",
+  "word": "they",
+  "start": 155.462,
+  "end": 155.714
+ },
+ {
+  "uid": "u028",
+  "word": "interfere,",
+  "start": 155.714,
+  "end": 156.22
+ },
+ {
+  "uid": "u028",
+  "word": "and",
+  "start": 156.371,
+  "end": 156.574
+ },
+ {
+  "uid": "u028",
+  "word": "the",
+  "start": 156.574,
+  "end": 156.776
+ },
+ {
+  "uid": "u028",
+  "word": "lines",
+  "start": 156.776,
+  "end": 157.079
+ },
+ {
+  "uid": "u028",
+  "word": "reappear,",
+  "start": 157.079,
+  "end": 157.534
+ },
+ {
+  "uid": "u028",
+  "word": "sharp.",
+  "start": 157.685,
+  "end": 157.989
+ },
+ {
+  "uid": "u029",
+  "word": "But",
+  "start": 158.099,
+  "end": 158.316
+ },
+ {
+  "uid": "u029",
+  "word": "if",
+  "start": 158.316,
+  "end": 158.479
+ },
+ {
+  "uid": "u029",
+  "word": "the",
+  "start": 158.479,
+  "end": 158.696
+ },
+ {
+  "uid": "u029",
+  "word": "fan",
+  "start": 158.696,
+  "end": 158.914
+ },
+ {
+  "uid": "u029",
+  "word": "is",
+  "start": 158.914,
+  "end": 159.077
+ },
+ {
+  "uid": "u029",
+  "word": "too",
+  "start": 159.077,
+  "end": 159.294
+ },
+ {
+  "uid": "u029",
+  "word": "wide",
+  "start": 159.294,
+  "end": 159.566
+ },
+ {
+  "uid": "u029",
+  "word": "and",
+  "start": 159.566,
+  "end": 159.783
+ },
+ {
+  "uid": "u029",
+  "word": "the",
+  "start": 159.783,
+  "end": 160.001
+ },
+ {
+  "uid": "u029",
+  "word": "side",
+  "start": 160.001,
+  "end": 160.272
+ },
+ {
+  "uid": "u029",
+  "word": "beams",
+  "start": 160.272,
+  "end": 160.598
+ },
+ {
+  "uid": "u029",
+  "word": "miss",
+  "start": 160.598,
+  "end": 160.87
+ },
+ {
+  "uid": "u029",
+  "word": "the",
+  "start": 160.87,
+  "end": 161.088
+ },
+ {
+  "uid": "u029",
+  "word": "lens,",
+  "start": 161.088,
+  "end": 161.359
+ },
+ {
+  "uid": "u029",
+  "word": "only",
+  "start": 161.522,
+  "end": 161.794
+ },
+ {
+  "uid": "u029",
+  "word": "the",
+  "start": 161.794,
+  "end": 162.011
+ },
+ {
+  "uid": "u029",
+  "word": "straight",
+  "start": 162.011,
+  "end": 162.5
+ },
+ {
+  "uid": "u029",
+  "word": "beam",
+  "start": 162.5,
+  "end": 162.772
+ },
+ {
+  "uid": "u029",
+  "word": "gets",
+  "start": 162.772,
+  "end": 163.044
+ },
+ {
+  "uid": "u029",
+  "word": "through.",
+  "start": 163.044,
+  "end": 163.479
+ },
+ {
+  "uid": "u030",
+  "word": "The",
+  "start": 163.561,
+  "end": 163.778
+ },
+ {
+  "uid": "u030",
+  "word": "wafer",
+  "start": 163.778,
+  "end": 164.104
+ },
+ {
+  "uid": "u030",
+  "word": "then",
+  "start": 164.104,
+  "end": 164.376
+ },
+ {
+  "uid": "u030",
+  "word": "receives",
+  "start": 164.376,
+  "end": 164.864
+ },
+ {
+  "uid": "u030",
+  "word": "a",
+  "start": 164.864,
+  "end": 164.973
+ },
+ {
+  "uid": "u030",
+  "word": "flat,",
+  "start": 164.973,
+  "end": 165.244
+ },
+ {
+  "uid": "u030",
+  "word": "even",
+  "start": 165.407,
+  "end": 165.678
+ },
+ {
+  "uid": "u030",
+  "word": "glow.",
+  "start": 165.678,
+  "end": 165.95
+ },
+ {
+  "uid": "u030",
+  "word": "The",
+  "start": 166.276,
+  "end": 166.493
+ },
+ {
+  "uid": "u030",
+  "word": "pattern",
+  "start": 166.493,
+  "end": 166.927
+ },
+ {
+  "uid": "u030",
+  "word": "is",
+  "start": 166.927,
+  "end": 167.09
+ },
+ {
+  "uid": "u030",
+  "word": "simply",
+  "start": 167.09,
+  "end": 167.47
+ },
+ {
+  "uid": "u030",
+  "word": "gone.",
+  "start": 167.47,
+  "end": 167.741
+ },
+ {
+  "uid": "u031",
+  "word": "So",
+  "start": 167.828,
+  "end": 167.993
+ },
+ {
+  "uid": "u031",
+  "word": "there",
+  "start": 167.993,
+  "end": 168.322
+ },
+ {
+  "uid": "u031",
+  "word": "is",
+  "start": 168.322,
+  "end": 168.487
+ },
+ {
+  "uid": "u031",
+  "word": "a",
+  "start": 168.487,
+  "end": 168.597
+ },
+ {
+  "uid": "u031",
+  "word": "hard",
+  "start": 168.597,
+  "end": 168.872
+ },
+ {
+  "uid": "u031",
+  "word": "limit:",
+  "start": 168.872,
+  "end": 169.202
+ },
+ {
+  "uid": "u031",
+  "word": "below",
+  "start": 169.421,
+  "end": 169.751
+ },
+ {
+  "uid": "u031",
+  "word": "a",
+  "start": 169.751,
+  "end": 169.861
+ },
+ {
+  "uid": "u031",
+  "word": "certain",
+  "start": 169.861,
+  "end": 170.3
+ },
+ {
+  "uid": "u031",
+  "word": "size,",
+  "start": 170.3,
+  "end": 170.575
+ },
+ {
+  "uid": "u031",
+  "word": "a",
+  "start": 170.74,
+  "end": 170.85
+ },
+ {
+  "uid": "u031",
+  "word": "line",
+  "start": 170.85,
+  "end": 171.124
+ },
+ {
+  "uid": "u031",
+  "word": "cannot",
+  "start": 171.124,
+  "end": 171.509
+ },
+ {
+  "uid": "u031",
+  "word": "be",
+  "start": 171.509,
+  "end": 171.674
+ },
+ {
+  "uid": "u031",
+  "word": "printed",
+  "start": 171.674,
+  "end": 172.113
+ },
+ {
+  "uid": "u031",
+  "word": "at",
+  "start": 172.113,
+  "end": 172.278
+ },
+ {
+  "uid": "u031",
+  "word": "all.",
+  "start": 172.278,
+  "end": 172.498
+ },
+ {
+  "uid": "u032",
+  "word": "Engineers",
+  "start": 172.605,
+  "end": 173.158
+ },
+ {
+  "uid": "u032",
+  "word": "write",
+  "start": 173.158,
+  "end": 173.489
+ },
+ {
+  "uid": "u032",
+  "word": "that",
+  "start": 173.489,
+  "end": 173.765
+ },
+ {
+  "uid": "u032",
+  "word": "limit",
+  "start": 173.765,
+  "end": 174.096
+ },
+ {
+  "uid": "u032",
+  "word": "as",
+  "start": 174.096,
+  "end": 174.262
+ },
+ {
+  "uid": "u032",
+  "word": "a",
+  "start": 174.262,
+  "end": 174.372
+ },
+ {
+  "uid": "u032",
+  "word": "short",
+  "start": 174.372,
+  "end": 174.704
+ },
+ {
+  "uid": "u032",
+  "word": "formula.",
+  "start": 174.704,
+  "end": 175.145
+ },
+ {
+  "uid": "u033",
+  "word": "The",
+  "start": 175.252,
+  "end": 175.495
+ },
+ {
+  "uid": "u033",
+  "word": "smallest",
+  "start": 175.495,
+  "end": 176.043
+ },
+ {
+  "uid": "u033",
+  "word": "feature",
+  "start": 176.043,
+  "end": 176.529
+ },
+ {
+  "uid": "u033",
+  "word": "equals",
+  "start": 176.529,
+  "end": 176.955
+ },
+ {
+  "uid": "u033",
+  "word": "a",
+  "start": 176.955,
+  "end": 177.076
+ },
+ {
+  "uid": "u033",
+  "word": "factor",
+  "start": 177.076,
+  "end": 177.502
+ },
+ {
+  "uid": "u033",
+  "word": "called",
+  "start": 177.502,
+  "end": 177.928
+ },
+ {
+  "uid": "u033",
+  "word": "k",
+  "start": 177.928,
+  "end": 178.049
+ },
+ {
+  "uid": "u033",
+  "word": "one,",
+  "start": 178.049,
+  "end": 178.293
+ },
+ {
+  "uid": "u033",
+  "word": "times",
+  "start": 178.475,
+  "end": 178.84
+ },
+ {
+  "uid": "u033",
+  "word": "the",
+  "start": 178.84,
+  "end": 179.083
+ },
+ {
+  "uid": "u033",
+  "word": "wavelength,",
+  "start": 179.083,
+  "end": 179.752
+ },
+ {
+  "uid": "u033",
+  "word": "divided",
+  "start": 179.934,
+  "end": 180.421
+ },
+ {
+  "uid": "u033",
+  "word": "by",
+  "start": 180.421,
+  "end": 180.603
+ },
+ {
+  "uid": "u033",
+  "word": "the",
+  "start": 180.603,
+  "end": 180.847
+ },
+ {
+  "uid": "u033",
+  "word": "numerical",
+  "start": 180.847,
+  "end": 181.455
+ },
+ {
+  "uid": "u033",
+  "word": "aperture.",
+  "start": 181.455,
+  "end": 182.002
+ },
+ {
+  "uid": "u034",
+  "word": "Read",
+  "start": 182.089,
+  "end": 182.339
+ },
+ {
+  "uid": "u034",
+  "word": "it",
+  "start": 182.339,
+  "end": 182.489
+ },
+ {
+  "uid": "u034",
+  "word": "as",
+  "start": 182.489,
+  "end": 182.639
+ },
+ {
+  "uid": "u034",
+  "word": "three",
+  "start": 182.639,
+  "end": 182.939
+ },
+ {
+  "uid": "u034",
+  "word": "knobs",
+  "start": 182.939,
+  "end": 183.239
+ },
+ {
+  "uid": "u034",
+  "word": "you",
+  "start": 183.239,
+  "end": 183.439
+ },
+ {
+  "uid": "u034",
+  "word": "can",
+  "start": 183.439,
+  "end": 183.639
+ },
+ {
+  "uid": "u034",
+  "word": "turn.",
+  "start": 183.639,
+  "end": 183.889
+ },
+ {
+  "uid": "u035",
+  "word": "The",
+  "start": 183.999,
+  "end": 184.238
+ },
+ {
+  "uid": "u035",
+  "word": "numerical",
+  "start": 184.238,
+  "end": 184.836
+ },
+ {
+  "uid": "u035",
+  "word": "aperture",
+  "start": 184.836,
+  "end": 185.375
+ },
+ {
+  "uid": "u035",
+  "word": "measures",
+  "start": 185.375,
+  "end": 185.913
+ },
+ {
+  "uid": "u035",
+  "word": "how",
+  "start": 185.913,
+  "end": 186.152
+ },
+ {
+  "uid": "u035",
+  "word": "wide",
+  "start": 186.152,
+  "end": 186.451
+ },
+ {
+  "uid": "u035",
+  "word": "a",
+  "start": 186.451,
+  "end": 186.571
+ },
+ {
+  "uid": "u035",
+  "word": "fan",
+  "start": 186.571,
+  "end": 186.81
+ },
+ {
+  "uid": "u035",
+  "word": "the",
+  "start": 186.81,
+  "end": 187.049
+ },
+ {
+  "uid": "u035",
+  "word": "lens",
+  "start": 187.049,
+  "end": 187.349
+ },
+ {
+  "uid": "u035",
+  "word": "can",
+  "start": 187.349,
+  "end": 187.588
+ },
+ {
+  "uid": "u035",
+  "word": "collect.",
+  "start": 187.588,
+  "end": 188.066
+ },
+ {
+  "uid": "u035",
+  "word": "A",
+  "start": 188.425,
+  "end": 188.545
+ },
+ {
+  "uid": "u035",
+  "word": "bigger",
+  "start": 188.545,
+  "end": 188.964
+ },
+ {
+  "uid": "u035",
+  "word": "opening",
+  "start": 188.964,
+  "end": 189.442
+ },
+ {
+  "uid": "u035",
+  "word": "catches",
+  "start": 189.442,
+  "end": 189.921
+ },
+ {
+  "uid": "u035",
+  "word": "wider",
+  "start": 189.921,
+  "end": 190.28
+ },
+ {
+  "uid": "u035",
+  "word": "beams.",
+  "start": 190.28,
+  "end": 190.639
+ },
+ {
+  "uid": "u036",
+  "word": "The",
+  "start": 190.739,
+  "end": 190.944
+ },
+ {
+  "uid": "u036",
+  "word": "factor",
+  "start": 190.944,
+  "end": 191.303
+ },
+ {
+  "uid": "u036",
+  "word": "k",
+  "start": 191.303,
+  "end": 191.405
+ },
+ {
+  "uid": "u036",
+  "word": "one",
+  "start": 191.405,
+  "end": 191.61
+ },
+ {
+  "uid": "u036",
+  "word": "is",
+  "start": 191.61,
+  "end": 191.764
+ },
+ {
+  "uid": "u036",
+  "word": "cleverness:",
+  "start": 191.764,
+  "end": 192.328
+ },
+ {
+  "uid": "u036",
+  "word": "tricks",
+  "start": 192.533,
+  "end": 192.892
+ },
+ {
+  "uid": "u036",
+  "word": "in",
+  "start": 192.892,
+  "end": 193.046
+ },
+ {
+  "uid": "u036",
+  "word": "the",
+  "start": 193.046,
+  "end": 193.251
+ },
+ {
+  "uid": "u036",
+  "word": "lighting",
+  "start": 193.251,
+  "end": 193.713
+ },
+ {
+  "uid": "u036",
+  "word": "and",
+  "start": 193.713,
+  "end": 193.918
+ },
+ {
+  "uid": "u036",
+  "word": "the",
+  "start": 193.918,
+  "end": 194.123
+ },
+ {
+  "uid": "u036",
+  "word": "mask",
+  "start": 194.123,
+  "end": 194.379
+ },
+ {
+  "uid": "u036",
+  "word": "that",
+  "start": 194.379,
+  "end": 194.636
+ },
+ {
+  "uid": "u036",
+  "word": "squeeze",
+  "start": 194.636,
+  "end": 195.046
+ },
+ {
+  "uid": "u036",
+  "word": "out",
+  "start": 195.046,
+  "end": 195.251
+ },
+ {
+  "uid": "u036",
+  "word": "a",
+  "start": 195.251,
+  "end": 195.353
+ },
+ {
+  "uid": "u036",
+  "word": "little",
+  "start": 195.353,
+  "end": 195.712
+ },
+ {
+  "uid": "u036",
+  "word": "more.",
+  "start": 195.712,
+  "end": 195.969
+ },
+ {
+  "uid": "u037",
+  "word": "And",
+  "start": 196.072,
+  "end": 196.298
+ },
+ {
+  "uid": "u037",
+  "word": "the",
+  "start": 196.298,
+  "end": 196.523
+ },
+ {
+  "uid": "u037",
+  "word": "wavelength",
+  "start": 196.523,
+  "end": 197.144
+ },
+ {
+  "uid": "u037",
+  "word": "is",
+  "start": 197.144,
+  "end": 197.314
+ },
+ {
+  "uid": "u037",
+  "word": "the",
+  "start": 197.314,
+  "end": 197.539
+ },
+ {
+  "uid": "u037",
+  "word": "size",
+  "start": 197.539,
+  "end": 197.821
+ },
+ {
+  "uid": "u037",
+  "word": "of",
+  "start": 197.821,
+  "end": 197.991
+ },
+ {
+  "uid": "u037",
+  "word": "the",
+  "start": 197.991,
+  "end": 198.217
+ },
+ {
+  "uid": "u037",
+  "word": "wave",
+  "start": 198.217,
+  "end": 198.499
+ },
+ {
+  "uid": "u037",
+  "word": "itself.",
+  "start": 198.499,
+  "end": 198.894
+ },
+ {
+  "uid": "u037",
+  "word": "Shorter",
+  "start": 199.232,
+  "end": 199.684
+ },
+ {
+  "uid": "u037",
+  "word": "waves",
+  "start": 199.684,
+  "end": 200.022
+ },
+ {
+  "uid": "u037",
+  "word": "fan",
+  "start": 200.022,
+  "end": 200.248
+ },
+ {
+  "uid": "u037",
+  "word": "out",
+  "start": 200.248,
+  "end": 200.474
+ },
+ {
+  "uid": "u037",
+  "word": "less,",
+  "start": 200.474,
+  "end": 200.756
+ },
+ {
+  "uid": "u037",
+  "word": "so",
+  "start": 200.925,
+  "end": 201.095
+ },
+ {
+  "uid": "u037",
+  "word": "they",
+  "start": 201.095,
+  "end": 201.377
+ },
+ {
+  "uid": "u037",
+  "word": "can",
+  "start": 201.377,
+  "end": 201.603
+ },
+ {
+  "uid": "u037",
+  "word": "draw",
+  "start": 201.603,
+  "end": 201.885
+ },
+ {
+  "uid": "u037",
+  "word": "finer",
+  "start": 201.885,
+  "end": 202.223
+ },
+ {
+  "uid": "u037",
+  "word": "lines.",
+  "start": 202.223,
+  "end": 202.562
+ },
+ {
+  "uid": "u038",
+  "word": "Every",
+  "start": 202.654,
+  "end": 202.974
+ },
+ {
+  "uid": "u038",
+  "word": "chipmaking",
+  "start": 202.974,
+  "end": 203.561
+ },
+ {
+  "uid": "u038",
+  "word": "machine",
+  "start": 203.561,
+  "end": 203.988
+ },
+ {
+  "uid": "u038",
+  "word": "ever",
+  "start": 203.988,
+  "end": 204.255
+ },
+ {
+  "uid": "u038",
+  "word": "built",
+  "start": 204.255,
+  "end": 204.575
+ },
+ {
+  "uid": "u038",
+  "word": "is",
+  "start": 204.575,
+  "end": 204.736
+ },
+ {
+  "uid": "u038",
+  "word": "an",
+  "start": 204.736,
+  "end": 204.896
+ },
+ {
+  "uid": "u038",
+  "word": "attempt",
+  "start": 204.896,
+  "end": 205.323
+ },
+ {
+  "uid": "u038",
+  "word": "to",
+  "start": 205.323,
+  "end": 205.483
+ },
+ {
+  "uid": "u038",
+  "word": "turn",
+  "start": 205.483,
+  "end": 205.75
+ },
+ {
+  "uid": "u038",
+  "word": "one",
+  "start": 205.75,
+  "end": 205.963
+ },
+ {
+  "uid": "u038",
+  "word": "of",
+  "start": 205.963,
+  "end": 206.123
+ },
+ {
+  "uid": "u038",
+  "word": "these",
+  "start": 206.123,
+  "end": 206.444
+ },
+ {
+  "uid": "u038",
+  "word": "three",
+  "start": 206.444,
+  "end": 206.764
+ },
+ {
+  "uid": "u038",
+  "word": "knobs.",
+  "start": 206.764,
+  "end": 207.084
+ },
+ {
+  "uid": "u039",
+  "word": "For",
+  "start": 207.177,
+  "end": 207.378
+ },
+ {
+  "uid": "u039",
+  "word": "decades,",
+  "start": 207.378,
+  "end": 207.781
+ },
+ {
+  "uid": "u039",
+  "word": "the",
+  "start": 207.932,
+  "end": 208.134
+ },
+ {
+  "uid": "u039",
+  "word": "industry",
+  "start": 208.134,
+  "end": 208.587
+ },
+ {
+  "uid": "u039",
+  "word": "turned",
+  "start": 208.587,
+  "end": 208.939
+ },
+ {
+  "uid": "u039",
+  "word": "the",
+  "start": 208.939,
+  "end": 209.141
+ },
+ {
+  "uid": "u039",
+  "word": "wavelength",
+  "start": 209.141,
+  "end": 209.695
+ },
+ {
+  "uid": "u039",
+  "word": "knob.",
+  "start": 209.695,
+  "end": 209.947
+ },
+ {
+  "uid": "u040",
+  "word": "Mercury",
+  "start": 210.045,
+  "end": 210.489
+ },
+ {
+  "uid": "u040",
+  "word": "lamps",
+  "start": 210.489,
+  "end": 210.822
+ },
+ {
+  "uid": "u040",
+  "word": "gave",
+  "start": 210.822,
+  "end": 211.099
+ },
+ {
+  "uid": "u040",
+  "word": "light",
+  "start": 211.099,
+  "end": 211.432
+ },
+ {
+  "uid": "u040",
+  "word": "at",
+  "start": 211.432,
+  "end": 211.599
+ },
+ {
+  "uid": "u040",
+  "word": "four",
+  "start": 211.599,
+  "end": 211.876
+ },
+ {
+  "uid": "u040",
+  "word": "hundred",
+  "start": 211.876,
+  "end": 212.32
+ },
+ {
+  "uid": "u040",
+  "word": "and",
+  "start": 212.32,
+  "end": 212.542
+ },
+ {
+  "uid": "u040",
+  "word": "thirty",
+  "start": 212.542,
+  "end": 212.93
+ },
+ {
+  "uid": "u040",
+  "word": "six",
+  "start": 212.93,
+  "end": 213.152
+ },
+ {
+  "uid": "u040",
+  "word": "nanometres,",
+  "start": 213.152,
+  "end": 213.763
+ },
+ {
+  "uid": "u040",
+  "word": "then",
+  "start": 213.929,
+  "end": 214.206
+ },
+ {
+  "uid": "u040",
+  "word": "three",
+  "start": 214.206,
+  "end": 214.539
+ },
+ {
+  "uid": "u040",
+  "word": "hundred",
+  "start": 214.539,
+  "end": 214.983
+ },
+ {
+  "uid": "u040",
+  "word": "and",
+  "start": 214.983,
+  "end": 215.205
+ },
+ {
+  "uid": "u040",
+  "word": "sixty",
+  "start": 215.205,
+  "end": 215.538
+ },
+ {
+  "uid": "u040",
+  "word": "five.",
+  "start": 215.538,
+  "end": 215.815
+ },
+ {
+  "uid": "u041",
+  "word": "Then",
+  "start": 215.912,
+  "end": 216.18
+ },
+ {
+  "uid": "u041",
+  "word": "came",
+  "start": 216.18,
+  "end": 216.448
+ },
+ {
+  "uid": "u041",
+  "word": "lasers,",
+  "start": 216.448,
+  "end": 216.823
+ },
+ {
+  "uid": "u041",
+  "word": "at",
+  "start": 216.984,
+  "end": 217.145
+ },
+ {
+  "uid": "u041",
+  "word": "two",
+  "start": 217.145,
+  "end": 217.359
+ },
+ {
+  "uid": "u041",
+  "word": "hundred",
+  "start": 217.359,
+  "end": 217.788
+ },
+ {
+  "uid": "u041",
+  "word": "and",
+  "start": 217.788,
+  "end": 218.002
+ },
+ {
+  "uid": "u041",
+  "word": "forty",
+  "start": 218.002,
+  "end": 218.324
+ },
+ {
+  "uid": "u041",
+  "word": "eight",
+  "start": 218.324,
+  "end": 218.645
+ },
+ {
+  "uid": "u041",
+  "word": "nanometres,",
+  "start": 218.645,
+  "end": 219.235
+ },
+ {
+  "uid": "u041",
+  "word": "and",
+  "start": 219.395,
+  "end": 219.61
+ },
+ {
+  "uid": "u041",
+  "word": "then",
+  "start": 219.61,
+  "end": 219.878
+ },
+ {
+  "uid": "u041",
+  "word": "one",
+  "start": 219.878,
+  "end": 220.092
+ },
+ {
+  "uid": "u041",
+  "word": "hundred",
+  "start": 220.092,
+  "end": 220.521
+ },
+ {
+  "uid": "u041",
+  "word": "and",
+  "start": 220.521,
+  "end": 220.735
+ },
+ {
+  "uid": "u041",
+  "word": "ninety",
+  "start": 220.735,
+  "end": 221.11
+ },
+ {
+  "uid": "u041",
+  "word": "three.",
+  "start": 221.11,
+  "end": 221.432
+ },
+ {
+  "uid": "u042",
+  "word": "And",
+  "start": 221.554,
+  "end": 221.736
+ },
+ {
+  "uid": "u042",
+  "word": "there",
+  "start": 221.736,
+  "end": 222.009
+ },
+ {
+  "uid": "u042",
+  "word": "the",
+  "start": 222.009,
+  "end": 222.191
+ },
+ {
+  "uid": "u042",
+  "word": "wavelength",
+  "start": 222.191,
+  "end": 222.692
+ },
+ {
+  "uid": "u042",
+  "word": "knob",
+  "start": 222.692,
+  "end": 222.919
+ },
+ {
+  "uid": "u042",
+  "word": "got",
+  "start": 222.919,
+  "end": 223.101
+ },
+ {
+  "uid": "u042",
+  "word": "stuck.",
+  "start": 223.101,
+  "end": 223.374
+ },
+ {
+  "uid": "u043",
+  "word": "Below",
+  "start": 223.475,
+  "end": 223.826
+ },
+ {
+  "uid": "u043",
+  "word": "about",
+  "start": 223.826,
+  "end": 224.177
+ },
+ {
+  "uid": "u043",
+  "word": "one",
+  "start": 224.177,
+  "end": 224.41
+ },
+ {
+  "uid": "u043",
+  "word": "hundred",
+  "start": 224.41,
+  "end": 224.878
+ },
+ {
+  "uid": "u043",
+  "word": "and",
+  "start": 224.878,
+  "end": 225.112
+ },
+ {
+  "uid": "u043",
+  "word": "fifty",
+  "start": 225.112,
+  "end": 225.462
+ },
+ {
+  "uid": "u043",
+  "word": "nanometres,",
+  "start": 225.462,
+  "end": 226.105
+ },
+ {
+  "uid": "u043",
+  "word": "almost",
+  "start": 226.28,
+  "end": 226.689
+ },
+ {
+  "uid": "u043",
+  "word": "every",
+  "start": 226.689,
+  "end": 227.04
+ },
+ {
+  "uid": "u043",
+  "word": "lens",
+  "start": 227.04,
+  "end": 227.332
+ },
+ {
+  "uid": "u043",
+  "word": "material",
+  "start": 227.332,
+  "end": 227.858
+ },
+ {
+  "uid": "u043",
+  "word": "absorbs",
+  "start": 227.858,
+  "end": 228.325
+ },
+ {
+  "uid": "u043",
+  "word": "the",
+  "start": 228.325,
+  "end": 228.559
+ },
+ {
+  "uid": "u043",
+  "word": "light",
+  "start": 228.559,
+  "end": 228.91
+ },
+ {
+  "uid": "u043",
+  "word": "instead",
+  "start": 228.91,
+  "end": 229.377
+ },
+ {
+  "uid": "u043",
+  "word": "of",
+  "start": 229.377,
+  "end": 229.553
+ },
+ {
+  "uid": "u043",
+  "word": "bending",
+  "start": 229.553,
+  "end": 230.02
+ },
+ {
+  "uid": "u043",
+  "word": "it.",
+  "start": 230.02,
+  "end": 230.195
+ },
+ {
+  "uid": "u044",
+  "word": "So",
+  "start": 230.291,
+  "end": 230.439
+ },
+ {
+  "uid": "u044",
+  "word": "engineers",
+  "start": 230.439,
+  "end": 230.933
+ },
+ {
+  "uid": "u044",
+  "word": "turned",
+  "start": 230.933,
+  "end": 231.28
+ },
+ {
+  "uid": "u044",
+  "word": "the",
+  "start": 231.28,
+  "end": 231.477
+ },
+ {
+  "uid": "u044",
+  "word": "other",
+  "start": 231.477,
+  "end": 231.774
+ },
+ {
+  "uid": "u044",
+  "word": "knobs.",
+  "start": 231.774,
+  "end": 232.071
+ },
+ {
+  "uid": "u045",
+  "word": "They",
+  "start": 232.179,
+  "end": 232.447
+ },
+ {
+  "uid": "u045",
+  "word": "filled",
+  "start": 232.447,
+  "end": 232.822
+ },
+ {
+  "uid": "u045",
+  "word": "the",
+  "start": 232.822,
+  "end": 233.036
+ },
+ {
+  "uid": "u045",
+  "word": "gap",
+  "start": 233.036,
+  "end": 233.25
+ },
+ {
+  "uid": "u045",
+  "word": "between",
+  "start": 233.25,
+  "end": 233.679
+ },
+ {
+  "uid": "u045",
+  "word": "the",
+  "start": 233.679,
+  "end": 233.893
+ },
+ {
+  "uid": "u045",
+  "word": "lens",
+  "start": 233.893,
+  "end": 234.161
+ },
+ {
+  "uid": "u045",
+  "word": "and",
+  "start": 234.161,
+  "end": 234.375
+ },
+ {
+  "uid": "u045",
+  "word": "the",
+  "start": 234.375,
+  "end": 234.589
+ },
+ {
+  "uid": "u045",
+  "word": "wafer",
+  "start": 234.589,
+  "end": 234.91
+ },
+ {
+  "uid": "u045",
+  "word": "with",
+  "start": 234.91,
+  "end": 235.178
+ },
+ {
+  "uid": "u045",
+  "word": "water,",
+  "start": 235.178,
+  "end": 235.499
+ },
+ {
+  "uid": "u045",
+  "word": "which",
+  "start": 235.66,
+  "end": 235.981
+ },
+ {
+  "uid": "u045",
+  "word": "bends",
+  "start": 235.981,
+  "end": 236.303
+ },
+ {
+  "uid": "u045",
+  "word": "light",
+  "start": 236.303,
+  "end": 236.624
+ },
+ {
+  "uid": "u045",
+  "word": "more",
+  "start": 236.624,
+  "end": 236.892
+ },
+ {
+  "uid": "u045",
+  "word": "than",
+  "start": 236.892,
+  "end": 237.16
+ },
+ {
+  "uid": "u045",
+  "word": "air,",
+  "start": 237.16,
+  "end": 237.374
+ },
+ {
+  "uid": "u045",
+  "word": "so",
+  "start": 237.534,
+  "end": 237.695
+ },
+ {
+  "uid": "u045",
+  "word": "the",
+  "start": 237.695,
+  "end": 237.909
+ },
+ {
+  "uid": "u045",
+  "word": "lens",
+  "start": 237.909,
+  "end": 238.177
+ },
+ {
+  "uid": "u045",
+  "word": "could",
+  "start": 238.177,
+  "end": 238.498
+ },
+ {
+  "uid": "u045",
+  "word": "collect",
+  "start": 238.498,
+  "end": 238.927
+ },
+ {
+  "uid": "u045",
+  "word": "a",
+  "start": 238.927,
+  "end": 239.034
+ },
+ {
+  "uid": "u045",
+  "word": "wider",
+  "start": 239.034,
+  "end": 239.355
+ },
+ {
+  "uid": "u045",
+  "word": "fan.",
+  "start": 239.355,
+  "end": 239.569
+ },
+ {
+  "uid": "u046",
+  "word": "When",
+  "start": 239.667,
+  "end": 239.951
+ },
+ {
+  "uid": "u046",
+  "word": "even",
+  "start": 239.951,
+  "end": 240.234
+ },
+ {
+  "uid": "u046",
+  "word": "that",
+  "start": 240.234,
+  "end": 240.518
+ },
+ {
+  "uid": "u046",
+  "word": "was",
+  "start": 240.518,
+  "end": 240.744
+ },
+ {
+  "uid": "u046",
+  "word": "not",
+  "start": 240.744,
+  "end": 240.971
+ },
+ {
+  "uid": "u046",
+  "word": "enough,",
+  "start": 240.971,
+  "end": 241.368
+ },
+ {
+  "uid": "u046",
+  "word": "they",
+  "start": 241.538,
+  "end": 241.822
+ },
+ {
+  "uid": "u046",
+  "word": "split",
+  "start": 241.822,
+  "end": 242.162
+ },
+ {
+  "uid": "u046",
+  "word": "each",
+  "start": 242.162,
+  "end": 242.445
+ },
+ {
+  "uid": "u046",
+  "word": "layer",
+  "start": 242.445,
+  "end": 242.785
+ },
+ {
+  "uid": "u046",
+  "word": "into",
+  "start": 242.785,
+  "end": 243.069
+ },
+ {
+  "uid": "u046",
+  "word": "two,",
+  "start": 243.069,
+  "end": 243.295
+ },
+ {
+  "uid": "u046",
+  "word": "three,",
+  "start": 243.466,
+  "end": 243.806
+ },
+ {
+  "uid": "u046",
+  "word": "even",
+  "start": 243.976,
+  "end": 244.259
+ },
+ {
+  "uid": "u046",
+  "word": "four",
+  "start": 244.259,
+  "end": 244.543
+ },
+ {
+  "uid": "u046",
+  "word": "separate",
+  "start": 244.543,
+  "end": 245.053
+ },
+ {
+  "uid": "u046",
+  "word": "exposures,",
+  "start": 245.053,
+  "end": 245.62
+ },
+ {
+  "uid": "u046",
+  "word": "each",
+  "start": 245.79,
+  "end": 246.073
+ },
+ {
+  "uid": "u046",
+  "word": "printing",
+  "start": 246.073,
+  "end": 246.583
+ },
+ {
+  "uid": "u046",
+  "word": "only",
+  "start": 246.583,
+  "end": 246.867
+ },
+ {
+  "uid": "u046",
+  "word": "some",
+  "start": 246.867,
+  "end": 247.15
+ },
+ {
+  "uid": "u046",
+  "word": "of",
+  "start": 247.15,
+  "end": 247.32
+ },
+ {
+  "uid": "u046",
+  "word": "the",
+  "start": 247.32,
+  "end": 247.547
+ },
+ {
+  "uid": "u046",
+  "word": "lines.",
+  "start": 247.547,
+  "end": 247.887
+ },
+ {
+  "uid": "u047",
+  "word": "It",
+  "start": 247.966,
+  "end": 248.132
+ },
+ {
+  "uid": "u047",
+  "word": "worked,",
+  "start": 248.132,
+  "end": 248.519
+ },
+ {
+  "uid": "u047",
+  "word": "but",
+  "start": 248.685,
+  "end": 248.907
+ },
+ {
+  "uid": "u047",
+  "word": "every",
+  "start": 248.907,
+  "end": 249.239
+ },
+ {
+  "uid": "u047",
+  "word": "extra",
+  "start": 249.239,
+  "end": 249.571
+ },
+ {
+  "uid": "u047",
+  "word": "pass",
+  "start": 249.571,
+  "end": 249.848
+ },
+ {
+  "uid": "u047",
+  "word": "costs",
+  "start": 249.848,
+  "end": 250.18
+ },
+ {
+  "uid": "u047",
+  "word": "time",
+  "start": 250.18,
+  "end": 250.456
+ },
+ {
+  "uid": "u047",
+  "word": "and",
+  "start": 250.456,
+  "end": 250.678
+ },
+ {
+  "uid": "u047",
+  "word": "money,",
+  "start": 250.678,
+  "end": 251.01
+ },
+ {
+  "uid": "u047",
+  "word": "and",
+  "start": 251.176,
+  "end": 251.397
+ },
+ {
+  "uid": "u047",
+  "word": "has",
+  "start": 251.397,
+  "end": 251.618
+ },
+ {
+  "uid": "u047",
+  "word": "to",
+  "start": 251.618,
+  "end": 251.784
+ },
+ {
+  "uid": "u047",
+  "word": "line",
+  "start": 251.784,
+  "end": 252.061
+ },
+ {
+  "uid": "u047",
+  "word": "up",
+  "start": 252.061,
+  "end": 252.227
+ },
+ {
+  "uid": "u047",
+  "word": "perfectly",
+  "start": 252.227,
+  "end": 252.781
+ },
+ {
+  "uid": "u047",
+  "word": "with",
+  "start": 252.781,
+  "end": 253.057
+ },
+ {
+  "uid": "u047",
+  "word": "the",
+  "start": 253.057,
+  "end": 253.279
+ },
+ {
+  "uid": "u047",
+  "word": "others.",
+  "start": 253.279,
+  "end": 253.666
+ },
+ {
+  "uid": "u048",
+  "word": "To",
+  "start": 253.757,
+  "end": 253.917
+ },
+ {
+  "uid": "u048",
+  "word": "keep",
+  "start": 253.917,
+  "end": 254.183
+ },
+ {
+  "uid": "u048",
+  "word": "shrinking,",
+  "start": 254.183,
+  "end": 254.714
+ },
+ {
+  "uid": "u048",
+  "word": "the",
+  "start": 254.874,
+  "end": 255.087
+ },
+ {
+  "uid": "u048",
+  "word": "industry",
+  "start": 255.087,
+  "end": 255.565
+ },
+ {
+  "uid": "u048",
+  "word": "had",
+  "start": 255.565,
+  "end": 255.778
+ },
+ {
+  "uid": "u048",
+  "word": "to",
+  "start": 255.778,
+  "end": 255.937
+ },
+ {
+  "uid": "u048",
+  "word": "turn",
+  "start": 255.937,
+  "end": 256.203
+ },
+ {
+  "uid": "u048",
+  "word": "the",
+  "start": 256.203,
+  "end": 256.416
+ },
+ {
+  "uid": "u048",
+  "word": "wavelength",
+  "start": 256.416,
+  "end": 257.001
+ },
+ {
+  "uid": "u048",
+  "word": "knob",
+  "start": 257.001,
+  "end": 257.266
+ },
+ {
+  "uid": "u048",
+  "word": "again,",
+  "start": 257.266,
+  "end": 257.585
+ },
+ {
+  "uid": "u048",
+  "word": "and",
+  "start": 257.745,
+  "end": 257.958
+ },
+ {
+  "uid": "u048",
+  "word": "by",
+  "start": 257.958,
+  "end": 258.117
+ },
+ {
+  "uid": "u048",
+  "word": "an",
+  "start": 258.117,
+  "end": 258.277
+ },
+ {
+  "uid": "u048",
+  "word": "enormous",
+  "start": 258.277,
+  "end": 258.755
+ },
+ {
+  "uid": "u048",
+  "word": "amount.",
+  "start": 258.755,
+  "end": 259.127
+ },
+ {
+  "uid": "u049",
+  "word": "The",
+  "start": 259.219,
+  "end": 259.444
+ },
+ {
+  "uid": "u049",
+  "word": "target",
+  "start": 259.444,
+  "end": 259.838
+ },
+ {
+  "uid": "u049",
+  "word": "was",
+  "start": 259.838,
+  "end": 260.064
+ },
+ {
+  "uid": "u049",
+  "word": "thirteen",
+  "start": 260.064,
+  "end": 260.571
+ },
+ {
+  "uid": "u049",
+  "word": "and",
+  "start": 260.571,
+  "end": 260.796
+ },
+ {
+  "uid": "u049",
+  "word": "a",
+  "start": 260.796,
+  "end": 260.909
+ },
+ {
+  "uid": "u049",
+  "word": "half",
+  "start": 260.909,
+  "end": 261.191
+ },
+ {
+  "uid": "u049",
+  "word": "nanometres,",
+  "start": 261.191,
+  "end": 261.811
+ },
+ {
+  "uid": "u049",
+  "word": "fourteen",
+  "start": 261.98,
+  "end": 262.487
+ },
+ {
+  "uid": "u049",
+  "word": "times",
+  "start": 262.487,
+  "end": 262.825
+ },
+ {
+  "uid": "u049",
+  "word": "shorter.",
+  "start": 262.825,
+  "end": 263.276
+ },
+ {
+  "uid": "u049",
+  "word": "Extreme",
+  "start": 263.614,
+  "end": 264.064
+ },
+ {
+  "uid": "u049",
+  "word": "ultraviolet",
+  "start": 264.064,
+  "end": 264.741
+ },
+ {
+  "uid": "u049",
+  "word": "light.",
+  "start": 264.741,
+  "end": 265.079
+ },
+ {
+  "uid": "u050",
+  "word": "In",
+  "start": 265.172,
+  "end": 265.335
+ },
+ {
+  "uid": "u050",
+  "word": "nineteen",
+  "start": 265.335,
+  "end": 265.822
+ },
+ {
+  "uid": "u050",
+  "word": "eighty",
+  "start": 265.822,
+  "end": 266.201
+ },
+ {
+  "uid": "u050",
+  "word": "six,",
+  "start": 266.201,
+  "end": 266.418
+ },
+ {
+  "uid": "u050",
+  "word": "a",
+  "start": 266.581,
+  "end": 266.689
+ },
+ {
+  "uid": "u050",
+  "word": "Japanese",
+  "start": 266.689,
+  "end": 267.177
+ },
+ {
+  "uid": "u050",
+  "word": "researcher,",
+  "start": 267.177,
+  "end": 267.773
+ },
+ {
+  "uid": "u050",
+  "word": "Hiroo",
+  "start": 267.935,
+  "end": 268.26
+ },
+ {
+  "uid": "u050",
+  "word": "Kinoshita,",
+  "start": 268.26,
+  "end": 268.802
+ },
+ {
+  "uid": "u050",
+  "word": "showed",
+  "start": 268.965,
+  "end": 269.344
+ },
+ {
+  "uid": "u050",
+  "word": "the",
+  "start": 269.344,
+  "end": 269.561
+ },
+ {
+  "uid": "u050",
+  "word": "first",
+  "start": 269.561,
+  "end": 269.886
+ },
+ {
+  "uid": "u050",
+  "word": "images",
+  "start": 269.886,
+  "end": 270.265
+ },
+ {
+  "uid": "u050",
+  "word": "printed",
+  "start": 270.265,
+  "end": 270.699
+ },
+ {
+  "uid": "u050",
+  "word": "with",
+  "start": 270.699,
+  "end": 270.969
+ },
+ {
+  "uid": "u050",
+  "word": "it.",
+  "start": 270.969,
+  "end": 271.132
+ },
+ {
+  "uid": "u051",
+  "word": "Turning",
+  "start": 271.262,
+  "end": 271.702
+ },
+ {
+  "uid": "u051",
+  "word": "that",
+  "start": 271.702,
+  "end": 271.977
+ },
+ {
+  "uid": "u051",
+  "word": "experiment",
+  "start": 271.977,
+  "end": 272.582
+ },
+ {
+  "uid": "u051",
+  "word": "into",
+  "start": 272.582,
+  "end": 272.857
+ },
+ {
+  "uid": "u051",
+  "word": "a",
+  "start": 272.857,
+  "end": 272.967
+ },
+ {
+  "uid": "u051",
+  "word": "factory",
+  "start": 272.967,
+  "end": 273.407
+ },
+ {
+  "uid": "u051",
+  "word": "tool",
+  "start": 273.407,
+  "end": 273.682
+ },
+ {
+  "uid": "u051",
+  "word": "took",
+  "start": 273.682,
+  "end": 273.957
+ },
+ {
+  "uid": "u051",
+  "word": "nearly",
+  "start": 273.957,
+  "end": 274.342
+ },
+ {
+  "uid": "u051",
+  "word": "three",
+  "start": 274.342,
+  "end": 274.672
+ },
+ {
+  "uid": "u051",
+  "word": "decades.",
+  "start": 274.672,
+  "end": 275.112
+ },
+ {
+  "uid": "u052",
+  "word": "Because",
+  "start": 275.209,
+  "end": 275.62
+ },
+ {
+  "uid": "u052",
+  "word": "at",
+  "start": 275.62,
+  "end": 275.774
+ },
+ {
+  "uid": "u052",
+  "word": "thirteen",
+  "start": 275.774,
+  "end": 276.237
+ },
+ {
+  "uid": "u052",
+  "word": "and",
+  "start": 276.237,
+  "end": 276.442
+ },
+ {
+  "uid": "u052",
+  "word": "a",
+  "start": 276.442,
+  "end": 276.545
+ },
+ {
+  "uid": "u052",
+  "word": "half",
+  "start": 276.545,
+  "end": 276.802
+ },
+ {
+  "uid": "u052",
+  "word": "nanometres,",
+  "start": 276.802,
+  "end": 277.368
+ },
+ {
+  "uid": "u052",
+  "word": "almost",
+  "start": 277.522,
+  "end": 277.882
+ },
+ {
+  "uid": "u052",
+  "word": "everything",
+  "start": 277.882,
+  "end": 278.447
+ },
+ {
+  "uid": "u052",
+  "word": "we",
+  "start": 278.447,
+  "end": 278.601
+ },
+ {
+  "uid": "u052",
+  "word": "know",
+  "start": 278.601,
+  "end": 278.858
+ },
+ {
+  "uid": "u052",
+  "word": "about",
+  "start": 278.858,
+  "end": 279.167
+ },
+ {
+  "uid": "u052",
+  "word": "building",
+  "start": 279.167,
+  "end": 279.629
+ },
+ {
+  "uid": "u052",
+  "word": "optics",
+  "start": 279.629,
+  "end": 279.989
+ },
+ {
+  "uid": "u052",
+  "word": "stops",
+  "start": 279.989,
+  "end": 280.297
+ },
+ {
+  "uid": "u052",
+  "word": "working.",
+  "start": 280.297,
+  "end": 280.709
+ },
+ {
+  "uid": "u053",
+  "word": "Problem",
+  "start": 280.809,
+  "end": 281.238
+ },
+ {
+  "uid": "u053",
+  "word": "number",
+  "start": 281.238,
+  "end": 281.614
+ },
+ {
+  "uid": "u053",
+  "word": "one:",
+  "start": 281.614,
+  "end": 281.828
+ },
+ {
+  "uid": "u053",
+  "word": "nothing",
+  "start": 282.043,
+  "end": 282.472
+ },
+ {
+  "uid": "u053",
+  "word": "glows",
+  "start": 282.472,
+  "end": 282.794
+ },
+ {
+  "uid": "u053",
+  "word": "at",
+  "start": 282.794,
+  "end": 282.954
+ },
+ {
+  "uid": "u053",
+  "word": "this",
+  "start": 282.954,
+  "end": 283.223
+ },
+ {
+  "uid": "u053",
+  "word": "wavelength.",
+  "start": 283.223,
+  "end": 283.812
+ },
+ {
+  "uid": "u053",
+  "word": "Not",
+  "start": 284.134,
+  "end": 284.349
+ },
+ {
+  "uid": "u053",
+  "word": "a",
+  "start": 284.349,
+  "end": 284.456
+ },
+ {
+  "uid": "u053",
+  "word": "lamp,",
+  "start": 284.456,
+  "end": 284.724
+ },
+ {
+  "uid": "u053",
+  "word": "and",
+  "start": 284.885,
+  "end": 285.1
+ },
+ {
+  "uid": "u053",
+  "word": "not",
+  "start": 285.1,
+  "end": 285.314
+ },
+ {
+  "uid": "u053",
+  "word": "an",
+  "start": 285.314,
+  "end": 285.475
+ },
+ {
+  "uid": "u053",
+  "word": "ordinary",
+  "start": 285.475,
+  "end": 285.958
+ },
+ {
+  "uid": "u053",
+  "word": "laser.",
+  "start": 285.958,
+  "end": 286.279
+ },
+ {
+  "uid": "u054",
+  "word": "To",
+  "start": 286.376,
+  "end": 286.537
+ },
+ {
+  "uid": "u054",
+  "word": "make",
+  "start": 286.537,
+  "end": 286.805
+ },
+ {
+  "uid": "u054",
+  "word": "it,",
+  "start": 286.805,
+  "end": 286.966
+ },
+ {
+  "uid": "u054",
+  "word": "you",
+  "start": 287.127,
+  "end": 287.342
+ },
+ {
+  "uid": "u054",
+  "word": "need",
+  "start": 287.342,
+  "end": 287.61
+ },
+ {
+  "uid": "u054",
+  "word": "matter",
+  "start": 287.61,
+  "end": 287.985
+ },
+ {
+  "uid": "u054",
+  "word": "so",
+  "start": 287.985,
+  "end": 288.146
+ },
+ {
+  "uid": "u054",
+  "word": "hot",
+  "start": 288.146,
+  "end": 288.361
+ },
+ {
+  "uid": "u054",
+  "word": "that",
+  "start": 288.361,
+  "end": 288.629
+ },
+ {
+  "uid": "u054",
+  "word": "its",
+  "start": 288.629,
+  "end": 288.844
+ },
+ {
+  "uid": "u054",
+  "word": "atoms",
+  "start": 288.844,
+  "end": 289.166
+ },
+ {
+  "uid": "u054",
+  "word": "are",
+  "start": 289.166,
+  "end": 289.38
+ },
+ {
+  "uid": "u054",
+  "word": "stripped",
+  "start": 289.38,
+  "end": 289.863
+ },
+ {
+  "uid": "u054",
+  "word": "of",
+  "start": 289.863,
+  "end": 290.024
+ },
+ {
+  "uid": "u054",
+  "word": "many",
+  "start": 290.024,
+  "end": 290.292
+ },
+ {
+  "uid": "u054",
+  "word": "of",
+  "start": 290.292,
+  "end": 290.453
+ },
+ {
+  "uid": "u054",
+  "word": "their",
+  "start": 290.453,
+  "end": 290.775
+ },
+ {
+  "uid": "u054",
+  "word": "electrons.",
+  "start": 290.775,
+  "end": 291.311
+ },
+ {
+  "uid": "u054",
+  "word": "A",
+  "start": 291.633,
+  "end": 291.74
+ },
+ {
+  "uid": "u054",
+  "word": "plasma.",
+  "start": 291.74,
+  "end": 292.116
+ },
+ {
+  "uid": "u055",
+  "word": "Tin",
+  "start": 292.201,
+  "end": 292.44
+ },
+ {
+  "uid": "u055",
+  "word": "turns",
+  "start": 292.44,
+  "end": 292.797
+ },
+ {
+  "uid": "u055",
+  "word": "out",
+  "start": 292.797,
+  "end": 293.035
+ },
+ {
+  "uid": "u055",
+  "word": "to",
+  "start": 293.035,
+  "end": 293.214
+ },
+ {
+  "uid": "u055",
+  "word": "be",
+  "start": 293.214,
+  "end": 293.393
+ },
+ {
+  "uid": "u055",
+  "word": "ideal:",
+  "start": 293.393,
+  "end": 293.75
+ },
+ {
+  "uid": "u055",
+  "word": "highly",
+  "start": 293.988,
+  "end": 294.405
+ },
+ {
+  "uid": "u055",
+  "word": "charged",
+  "start": 294.405,
+  "end": 294.882
+ },
+ {
+  "uid": "u055",
+  "word": "tin",
+  "start": 294.882,
+  "end": 295.12
+ },
+ {
+  "uid": "u055",
+  "word": "ions",
+  "start": 295.12,
+  "end": 295.418
+ },
+ {
+  "uid": "u055",
+  "word": "give",
+  "start": 295.418,
+  "end": 295.716
+ },
+ {
+  "uid": "u055",
+  "word": "off",
+  "start": 295.716,
+  "end": 295.954
+ },
+ {
+  "uid": "u055",
+  "word": "much",
+  "start": 295.954,
+  "end": 296.252
+ },
+ {
+  "uid": "u055",
+  "word": "of",
+  "start": 296.252,
+  "end": 296.43
+ },
+ {
+  "uid": "u055",
+  "word": "their",
+  "start": 296.43,
+  "end": 296.788
+ },
+ {
+  "uid": "u055",
+  "word": "light",
+  "start": 296.788,
+  "end": 297.145
+ },
+ {
+  "uid": "u055",
+  "word": "in",
+  "start": 297.145,
+  "end": 297.324
+ },
+ {
+  "uid": "u055",
+  "word": "a",
+  "start": 297.324,
+  "end": 297.443
+ },
+ {
+  "uid": "u055",
+  "word": "narrow",
+  "start": 297.443,
+  "end": 297.86
+ },
+ {
+  "uid": "u055",
+  "word": "band",
+  "start": 297.86,
+  "end": 298.158
+ },
+ {
+  "uid": "u055",
+  "word": "around",
+  "start": 298.158,
+  "end": 298.575
+ },
+ {
+  "uid": "u055",
+  "word": "thirteen",
+  "start": 298.575,
+  "end": 299.111
+ },
+ {
+  "uid": "u055",
+  "word": "and",
+  "start": 299.111,
+  "end": 299.349
+ },
+ {
+  "uid": "u055",
+  "word": "a",
+  "start": 299.349,
+  "end": 299.468
+ },
+ {
+  "uid": "u055",
+  "word": "half",
+  "start": 299.468,
+  "end": 299.766
+ },
+ {
+  "uid": "u055",
+  "word": "nanometres.",
+  "start": 299.766,
+  "end": 300.421
+ },
+ {
+  "uid": "u056",
+  "word": "So",
+  "start": 300.51,
+  "end": 300.673
+ },
+ {
+  "uid": "u056",
+  "word": "the",
+  "start": 300.673,
+  "end": 300.891
+ },
+ {
+  "uid": "u056",
+  "word": "machine",
+  "start": 300.891,
+  "end": 301.326
+ },
+ {
+  "uid": "u056",
+  "word": "makes",
+  "start": 301.326,
+  "end": 301.652
+ },
+ {
+  "uid": "u056",
+  "word": "tin",
+  "start": 301.652,
+  "end": 301.87
+ },
+ {
+  "uid": "u056",
+  "word": "plasma,",
+  "start": 301.87,
+  "end": 302.25
+ },
+ {
+  "uid": "u056",
+  "word": "one",
+  "start": 302.414,
+  "end": 302.631
+ },
+ {
+  "uid": "u056",
+  "word": "droplet",
+  "start": 302.631,
+  "end": 303.066
+ },
+ {
+  "uid": "u056",
+  "word": "at",
+  "start": 303.066,
+  "end": 303.229
+ },
+ {
+  "uid": "u056",
+  "word": "a",
+  "start": 303.229,
+  "end": 303.338
+ },
+ {
+  "uid": "u056",
+  "word": "time.",
+  "start": 303.338,
+  "end": 303.61
+ },
+ {
+  "uid": "u057",
+  "word": "A",
+  "start": 303.71,
+  "end": 303.836
+ },
+ {
+  "uid": "u057",
+  "word": "generator",
+  "start": 303.836,
+  "end": 304.463
+ },
+ {
+  "uid": "u057",
+  "word": "fires",
+  "start": 304.463,
+  "end": 304.84
+ },
+ {
+  "uid": "u057",
+  "word": "a",
+  "start": 304.84,
+  "end": 304.966
+ },
+ {
+  "uid": "u057",
+  "word": "stream",
+  "start": 304.966,
+  "end": 305.405
+ },
+ {
+  "uid": "u057",
+  "word": "of",
+  "start": 305.405,
+  "end": 305.593
+ },
+ {
+  "uid": "u057",
+  "word": "molten",
+  "start": 305.593,
+  "end": 306.033
+ },
+ {
+  "uid": "u057",
+  "word": "tin",
+  "start": 306.033,
+  "end": 306.284
+ },
+ {
+  "uid": "u057",
+  "word": "droplets,",
+  "start": 306.284,
+  "end": 306.849
+ },
+ {
+  "uid": "u057",
+  "word": "each",
+  "start": 307.037,
+  "end": 307.351
+ },
+ {
+  "uid": "u057",
+  "word": "about",
+  "start": 307.351,
+  "end": 307.728
+ },
+ {
+  "uid": "u057",
+  "word": "thirty",
+  "start": 307.728,
+  "end": 308.167
+ },
+ {
+  "uid": "u057",
+  "word": "micrometres",
+  "start": 308.167,
+  "end": 308.921
+ },
+ {
+  "uid": "u057",
+  "word": "across.",
+  "start": 308.921,
+  "end": 309.36
+ },
+ {
+  "uid": "u058",
+  "word": "A",
+  "start": 309.439,
+  "end": 309.554
+ },
+ {
+  "uid": "u058",
+  "word": "carbon",
+  "start": 309.554,
+  "end": 309.956
+ },
+ {
+  "uid": "u058",
+  "word": "dioxide",
+  "start": 309.956,
+  "end": 310.416
+ },
+ {
+  "uid": "u058",
+  "word": "laser,",
+  "start": 310.416,
+  "end": 310.76
+ },
+ {
+  "uid": "u058",
+  "word": "built",
+  "start": 310.933,
+  "end": 311.278
+ },
+ {
+  "uid": "u058",
+  "word": "by",
+  "start": 311.278,
+  "end": 311.45
+ },
+ {
+  "uid": "u058",
+  "word": "the",
+  "start": 311.45,
+  "end": 311.68
+ },
+ {
+  "uid": "u058",
+  "word": "German",
+  "start": 311.68,
+  "end": 312.082
+ },
+ {
+  "uid": "u058",
+  "word": "company",
+  "start": 312.082,
+  "end": 312.542
+ },
+ {
+  "uid": "u058",
+  "word": "Trumpf,",
+  "start": 312.542,
+  "end": 312.944
+ },
+ {
+  "uid": "u058",
+  "word": "waits",
+  "start": 313.117,
+  "end": 313.461
+ },
+ {
+  "uid": "u058",
+  "word": "for",
+  "start": 313.461,
+  "end": 313.691
+ },
+ {
+  "uid": "u058",
+  "word": "them.",
+  "start": 313.691,
+  "end": 313.979
+ },
+ {
+  "uid": "u059",
+  "word": "Its",
+  "start": 314.078,
+  "end": 314.316
+ },
+ {
+  "uid": "u059",
+  "word": "pulses",
+  "start": 314.316,
+  "end": 314.733
+ },
+ {
+  "uid": "u059",
+  "word": "pass",
+  "start": 314.733,
+  "end": 315.031
+ },
+ {
+  "uid": "u059",
+  "word": "through",
+  "start": 315.031,
+  "end": 315.507
+ },
+ {
+  "uid": "u059",
+  "word": "four",
+  "start": 315.507,
+  "end": 315.805
+ },
+ {
+  "uid": "u059",
+  "word": "amplifier",
+  "start": 315.805,
+  "end": 316.401
+ },
+ {
+  "uid": "u059",
+  "word": "stages,",
+  "start": 316.401,
+  "end": 316.818
+ },
+ {
+  "uid": "u059",
+  "word": "until",
+  "start": 316.996,
+  "end": 317.354
+ },
+ {
+  "uid": "u059",
+  "word": "the",
+  "start": 317.354,
+  "end": 317.592
+ },
+ {
+  "uid": "u059",
+  "word": "beam",
+  "start": 317.592,
+  "end": 317.89
+ },
+ {
+  "uid": "u059",
+  "word": "carries",
+  "start": 317.89,
+  "end": 318.366
+ },
+ {
+  "uid": "u059",
+  "word": "tens",
+  "start": 318.366,
+  "end": 318.664
+ },
+ {
+  "uid": "u059",
+  "word": "of",
+  "start": 318.664,
+  "end": 318.842
+ },
+ {
+  "uid": "u059",
+  "word": "kilowatts.",
+  "start": 318.842,
+  "end": 319.438
+ },
+ {
+  "uid": "u060",
+  "word": "The",
+  "start": 319.529,
+  "end": 319.746
+ },
+ {
+  "uid": "u060",
+  "word": "first,",
+  "start": 319.746,
+  "end": 320.071
+ },
+ {
+  "uid": "u060",
+  "word": "weaker",
+  "start": 320.234,
+  "end": 320.614
+ },
+ {
+  "uid": "u060",
+  "word": "pulse",
+  "start": 320.614,
+  "end": 320.939
+ },
+ {
+  "uid": "u060",
+  "word": "hits",
+  "start": 320.939,
+  "end": 321.21
+ },
+ {
+  "uid": "u060",
+  "word": "the",
+  "start": 321.21,
+  "end": 321.427
+ },
+ {
+  "uid": "u060",
+  "word": "droplet",
+  "start": 321.427,
+  "end": 321.86
+ },
+ {
+  "uid": "u060",
+  "word": "and",
+  "start": 321.86,
+  "end": 322.077
+ },
+ {
+  "uid": "u060",
+  "word": "flattens",
+  "start": 322.077,
+  "end": 322.565
+ },
+ {
+  "uid": "u060",
+  "word": "it",
+  "start": 322.565,
+  "end": 322.728
+ },
+ {
+  "uid": "u060",
+  "word": "into",
+  "start": 322.728,
+  "end": 322.999
+ },
+ {
+  "uid": "u060",
+  "word": "a",
+  "start": 322.999,
+  "end": 323.107
+ },
+ {
+  "uid": "u060",
+  "word": "thin",
+  "start": 323.107,
+  "end": 323.378
+ },
+ {
+  "uid": "u060",
+  "word": "disc.",
+  "start": 323.378,
+  "end": 323.649
+ },
+ {
+  "uid": "u061",
+  "word": "Why",
+  "start": 323.742,
+  "end": 323.962
+ },
+ {
+  "uid": "u061",
+  "word": "flatten",
+  "start": 323.962,
+  "end": 324.401
+ },
+ {
+  "uid": "u061",
+  "word": "it?",
+  "start": 324.401,
+  "end": 324.566
+ },
+ {
+  "uid": "u061",
+  "word": "A",
+  "start": 324.896,
+  "end": 325.006
+ },
+ {
+  "uid": "u061",
+  "word": "small",
+  "start": 325.006,
+  "end": 325.335
+ },
+ {
+  "uid": "u061",
+  "word": "sphere",
+  "start": 325.335,
+  "end": 325.72
+ },
+ {
+  "uid": "u061",
+  "word": "is",
+  "start": 325.72,
+  "end": 325.885
+ },
+ {
+  "uid": "u061",
+  "word": "a",
+  "start": 325.885,
+  "end": 325.995
+ },
+ {
+  "uid": "u061",
+  "word": "hard",
+  "start": 325.995,
+  "end": 326.27
+ },
+ {
+  "uid": "u061",
+  "word": "target,",
+  "start": 326.27,
+  "end": 326.654
+ },
+ {
+  "uid": "u061",
+  "word": "and",
+  "start": 326.819,
+  "end": 327.039
+ },
+ {
+  "uid": "u061",
+  "word": "most",
+  "start": 327.039,
+  "end": 327.314
+ },
+ {
+  "uid": "u061",
+  "word": "of",
+  "start": 327.314,
+  "end": 327.478
+ },
+ {
+  "uid": "u061",
+  "word": "its",
+  "start": 327.478,
+  "end": 327.698
+ },
+ {
+  "uid": "u061",
+  "word": "tin",
+  "start": 327.698,
+  "end": 327.918
+ },
+ {
+  "uid": "u061",
+  "word": "is",
+  "start": 327.918,
+  "end": 328.083
+ },
+ {
+  "uid": "u061",
+  "word": "hidden",
+  "start": 328.083,
+  "end": 328.467
+ },
+ {
+  "uid": "u061",
+  "word": "inside.",
+  "start": 328.467,
+  "end": 328.852
+ },
+ {
+  "uid": "u062",
+  "word": "A",
+  "start": 328.937,
+  "end": 329.038
+ },
+ {
+  "uid": "u062",
+  "word": "wide,",
+  "start": 329.038,
+  "end": 329.29
+ },
+ {
+  "uid": "u062",
+  "word": "thin",
+  "start": 329.441,
+  "end": 329.693
+ },
+ {
+  "uid": "u062",
+  "word": "disc",
+  "start": 329.693,
+  "end": 329.944
+ },
+ {
+  "uid": "u062",
+  "word": "spreads",
+  "start": 329.944,
+  "end": 330.347
+ },
+ {
+  "uid": "u062",
+  "word": "that",
+  "start": 330.347,
+  "end": 330.599
+ },
+ {
+  "uid": "u062",
+  "word": "tin",
+  "start": 330.599,
+  "end": 330.8
+ },
+ {
+  "uid": "u062",
+  "word": "out,",
+  "start": 330.8,
+  "end": 331.002
+ },
+ {
+  "uid": "u062",
+  "word": "where",
+  "start": 331.153,
+  "end": 331.455
+ },
+ {
+  "uid": "u062",
+  "word": "the",
+  "start": 331.455,
+  "end": 331.656
+ },
+ {
+  "uid": "u062",
+  "word": "main",
+  "start": 331.656,
+  "end": 331.908
+ },
+ {
+  "uid": "u062",
+  "word": "pulse",
+  "start": 331.908,
+  "end": 332.21
+ },
+ {
+  "uid": "u062",
+  "word": "can",
+  "start": 332.21,
+  "end": 332.412
+ },
+ {
+  "uid": "u062",
+  "word": "reach",
+  "start": 332.412,
+  "end": 332.714
+ },
+ {
+  "uid": "u062",
+  "word": "all",
+  "start": 332.714,
+  "end": 332.915
+ },
+ {
+  "uid": "u062",
+  "word": "of",
+  "start": 332.915,
+  "end": 333.066
+ },
+ {
+  "uid": "u062",
+  "word": "it.",
+  "start": 333.066,
+  "end": 333.217
+ },
+ {
+  "uid": "u063",
+  "word": "Then",
+  "start": 333.321,
+  "end": 333.593
+ },
+ {
+  "uid": "u063",
+  "word": "the",
+  "start": 333.593,
+  "end": 333.811
+ },
+ {
+  "uid": "u063",
+  "word": "main",
+  "start": 333.811,
+  "end": 334.084
+ },
+ {
+  "uid": "u063",
+  "word": "pulse",
+  "start": 334.084,
+  "end": 334.41
+ },
+ {
+  "uid": "u063",
+  "word": "hits",
+  "start": 334.41,
+  "end": 334.683
+ },
+ {
+  "uid": "u063",
+  "word": "the",
+  "start": 334.683,
+  "end": 334.901
+ },
+ {
+  "uid": "u063",
+  "word": "disc",
+  "start": 334.901,
+  "end": 335.173
+ },
+ {
+  "uid": "u063",
+  "word": "and",
+  "start": 335.173,
+  "end": 335.391
+ },
+ {
+  "uid": "u063",
+  "word": "turns",
+  "start": 335.391,
+  "end": 335.718
+ },
+ {
+  "uid": "u063",
+  "word": "it",
+  "start": 335.718,
+  "end": 335.882
+ },
+ {
+  "uid": "u063",
+  "word": "into",
+  "start": 335.882,
+  "end": 336.154
+ },
+ {
+  "uid": "u063",
+  "word": "plasma",
+  "start": 336.154,
+  "end": 336.536
+ },
+ {
+  "uid": "u063",
+  "word": "at",
+  "start": 336.536,
+  "end": 336.699
+ },
+ {
+  "uid": "u063",
+  "word": "around",
+  "start": 336.699,
+  "end": 337.08
+ },
+ {
+  "uid": "u063",
+  "word": "two",
+  "start": 337.08,
+  "end": 337.298
+ },
+ {
+  "uid": "u063",
+  "word": "hundred",
+  "start": 337.298,
+  "end": 337.734
+ },
+ {
+  "uid": "u063",
+  "word": "thousand",
+  "start": 337.734,
+  "end": 338.225
+ },
+ {
+  "uid": "u063",
+  "word": "degrees.",
+  "start": 338.225,
+  "end": 338.661
+ },
+ {
+  "uid": "u064",
+  "word": "Fifty",
+  "start": 338.769,
+  "end": 339.145
+ },
+ {
+  "uid": "u064",
+  "word": "thousand",
+  "start": 339.145,
+  "end": 339.708
+ },
+ {
+  "uid": "u064",
+  "word": "times",
+  "start": 339.708,
+  "end": 340.084
+ },
+ {
+  "uid": "u064",
+  "word": "a",
+  "start": 340.084,
+  "end": 340.209
+ },
+ {
+  "uid": "u064",
+  "word": "second,",
+  "start": 340.209,
+  "end": 340.647
+ },
+ {
+  "uid": "u064",
+  "word": "a",
+  "start": 340.835,
+  "end": 340.96
+ },
+ {
+  "uid": "u064",
+  "word": "tiny",
+  "start": 340.96,
+  "end": 341.273
+ },
+ {
+  "uid": "u064",
+  "word": "star",
+  "start": 341.273,
+  "end": 341.586
+ },
+ {
+  "uid": "u064",
+  "word": "is",
+  "start": 341.586,
+  "end": 341.774
+ },
+ {
+  "uid": "u064",
+  "word": "born",
+  "start": 341.774,
+  "end": 342.087
+ },
+ {
+  "uid": "u064",
+  "word": "and",
+  "start": 342.087,
+  "end": 342.337
+ },
+ {
+  "uid": "u064",
+  "word": "dies",
+  "start": 342.337,
+  "end": 342.65
+ },
+ {
+  "uid": "u064",
+  "word": "inside",
+  "start": 342.65,
+  "end": 343.088
+ },
+ {
+  "uid": "u064",
+  "word": "the",
+  "start": 343.088,
+  "end": 343.339
+ },
+ {
+  "uid": "u064",
+  "word": "machine.",
+  "start": 343.339,
+  "end": 343.839
+ },
+ {
+  "uid": "u065",
+  "word": "And",
+  "start": 343.945,
+  "end": 344.175
+ },
+ {
+  "uid": "u065",
+  "word": "it",
+  "start": 344.175,
+  "end": 344.348
+ },
+ {
+  "uid": "u065",
+  "word": "is",
+  "start": 344.348,
+  "end": 344.521
+ },
+ {
+  "uid": "u065",
+  "word": "brutally",
+  "start": 344.521,
+  "end": 345.04
+ },
+ {
+  "uid": "u065",
+  "word": "inefficient.",
+  "start": 345.04,
+  "end": 345.732
+ },
+ {
+  "uid": "u065",
+  "word": "Only",
+  "start": 346.078,
+  "end": 346.367
+ },
+ {
+  "uid": "u065",
+  "word": "about",
+  "start": 346.367,
+  "end": 346.713
+ },
+ {
+  "uid": "u065",
+  "word": "five",
+  "start": 346.713,
+  "end": 347.001
+ },
+ {
+  "uid": "u065",
+  "word": "percent",
+  "start": 347.001,
+  "end": 347.462
+ },
+ {
+  "uid": "u065",
+  "word": "of",
+  "start": 347.462,
+  "end": 347.635
+ },
+ {
+  "uid": "u065",
+  "word": "the",
+  "start": 347.635,
+  "end": 347.866
+ },
+ {
+  "uid": "u065",
+  "word": "laser",
+  "start": 347.866,
+  "end": 348.212
+ },
+ {
+  "uid": "u065",
+  "word": "energy",
+  "start": 348.212,
+  "end": 348.615
+ },
+ {
+  "uid": "u065",
+  "word": "comes",
+  "start": 348.615,
+  "end": 348.961
+ },
+ {
+  "uid": "u065",
+  "word": "out",
+  "start": 348.961,
+  "end": 349.192
+ },
+ {
+  "uid": "u065",
+  "word": "as",
+  "start": 349.192,
+  "end": 349.365
+ },
+ {
+  "uid": "u065",
+  "word": "useful",
+  "start": 349.365,
+  "end": 349.769
+ },
+ {
+  "uid": "u065",
+  "word": "light.",
+  "start": 349.769,
+  "end": 350.115
+ },
+ {
+  "uid": "u066",
+  "word": "A",
+  "start": 350.185,
+  "end": 350.29
+ },
+ {
+  "uid": "u066",
+  "word": "large",
+  "start": 350.29,
+  "end": 350.603
+ },
+ {
+  "uid": "u066",
+  "word": "curved",
+  "start": 350.603,
+  "end": 350.969
+ },
+ {
+  "uid": "u066",
+  "word": "mirror,",
+  "start": 350.969,
+  "end": 351.335
+ },
+ {
+  "uid": "u066",
+  "word": "the",
+  "start": 351.492,
+  "end": 351.701
+ },
+ {
+  "uid": "u066",
+  "word": "collector,",
+  "start": 351.701,
+  "end": 352.224
+ },
+ {
+  "uid": "u066",
+  "word": "gathers",
+  "start": 352.381,
+  "end": 352.799
+ },
+ {
+  "uid": "u066",
+  "word": "the",
+  "start": 352.799,
+  "end": 353.008
+ },
+ {
+  "uid": "u066",
+  "word": "light",
+  "start": 353.008,
+  "end": 353.321
+ },
+ {
+  "uid": "u066",
+  "word": "and",
+  "start": 353.321,
+  "end": 353.53
+ },
+ {
+  "uid": "u066",
+  "word": "focuses",
+  "start": 353.53,
+  "end": 353.949
+ },
+ {
+  "uid": "u066",
+  "word": "it",
+  "start": 353.949,
+  "end": 354.105
+ },
+ {
+  "uid": "u066",
+  "word": "toward",
+  "start": 354.105,
+  "end": 354.471
+ },
+ {
+  "uid": "u066",
+  "word": "a",
+  "start": 354.471,
+  "end": 354.576
+ },
+ {
+  "uid": "u066",
+  "word": "single",
+  "start": 354.576,
+  "end": 354.942
+ },
+ {
+  "uid": "u066",
+  "word": "point.",
+  "start": 354.942,
+  "end": 355.255
+ },
+ {
+  "uid": "u067",
+  "word": "But",
+  "start": 355.337,
+  "end": 355.567
+ },
+ {
+  "uid": "u067",
+  "word": "every",
+  "start": 355.567,
+  "end": 355.913
+ },
+ {
+  "uid": "u067",
+  "word": "explosion",
+  "start": 355.913,
+  "end": 356.49
+ },
+ {
+  "uid": "u067",
+  "word": "sprays",
+  "start": 356.49,
+  "end": 356.893
+ },
+ {
+  "uid": "u067",
+  "word": "tin",
+  "start": 356.893,
+  "end": 357.124
+ },
+ {
+  "uid": "u067",
+  "word": "at",
+  "start": 357.124,
+  "end": 357.297
+ },
+ {
+  "uid": "u067",
+  "word": "tens",
+  "start": 357.297,
+  "end": 357.585
+ },
+ {
+  "uid": "u067",
+  "word": "of",
+  "start": 357.585,
+  "end": 357.758
+ },
+ {
+  "uid": "u067",
+  "word": "kilometres",
+  "start": 357.758,
+  "end": 358.392
+ },
+ {
+  "uid": "u067",
+  "word": "per",
+  "start": 358.392,
+  "end": 358.623
+ },
+ {
+  "uid": "u067",
+  "word": "second,",
+  "start": 358.623,
+  "end": 359.027
+ },
+ {
+  "uid": "u067",
+  "word": "and",
+  "start": 359.2,
+  "end": 359.43
+ },
+ {
+  "uid": "u067",
+  "word": "even",
+  "start": 359.43,
+  "end": 359.719
+ },
+ {
+  "uid": "u067",
+  "word": "one",
+  "start": 359.719,
+  "end": 359.949
+ },
+ {
+  "uid": "u067",
+  "word": "nanometre",
+  "start": 359.949,
+  "end": 360.526
+ },
+ {
+  "uid": "u067",
+  "word": "of",
+  "start": 360.526,
+  "end": 360.699
+ },
+ {
+  "uid": "u067",
+  "word": "tin",
+  "start": 360.699,
+  "end": 360.929
+ },
+ {
+  "uid": "u067",
+  "word": "on",
+  "start": 360.929,
+  "end": 361.102
+ },
+ {
+  "uid": "u067",
+  "word": "the",
+  "start": 361.102,
+  "end": 361.333
+ },
+ {
+  "uid": "u067",
+  "word": "collector",
+  "start": 361.333,
+  "end": 361.909
+ },
+ {
+  "uid": "u067",
+  "word": "would",
+  "start": 361.909,
+  "end": 362.255
+ },
+ {
+  "uid": "u067",
+  "word": "ruin",
+  "start": 362.255,
+  "end": 362.544
+ },
+ {
+  "uid": "u067",
+  "word": "it.",
+  "start": 362.544,
+  "end": 362.717
+ },
+ {
+  "uid": "u068",
+  "word": "So",
+  "start": 362.803,
+  "end": 362.963
+ },
+ {
+  "uid": "u068",
+  "word": "a",
+  "start": 362.963,
+  "end": 363.07
+ },
+ {
+  "uid": "u068",
+  "word": "constant",
+  "start": 363.07,
+  "end": 363.55
+ },
+ {
+  "uid": "u068",
+  "word": "flow",
+  "start": 363.55,
+  "end": 363.817
+ },
+ {
+  "uid": "u068",
+  "word": "of",
+  "start": 363.817,
+  "end": 363.977
+ },
+ {
+  "uid": "u068",
+  "word": "hydrogen",
+  "start": 363.977,
+  "end": 364.457
+ },
+ {
+  "uid": "u068",
+  "word": "gas",
+  "start": 364.457,
+  "end": 364.67
+ },
+ {
+  "uid": "u068",
+  "word": "sweeps",
+  "start": 364.67,
+  "end": 365.043
+ },
+ {
+  "uid": "u068",
+  "word": "through",
+  "start": 365.043,
+  "end": 365.47
+ },
+ {
+  "uid": "u068",
+  "word": "the",
+  "start": 365.47,
+  "end": 365.683
+ },
+ {
+  "uid": "u068",
+  "word": "chamber,",
+  "start": 365.683,
+  "end": 366.11
+ },
+ {
+  "uid": "u068",
+  "word": "cleaning",
+  "start": 366.27,
+  "end": 366.75
+ },
+ {
+  "uid": "u068",
+  "word": "the",
+  "start": 366.75,
+  "end": 366.963
+ },
+ {
+  "uid": "u068",
+  "word": "tin",
+  "start": 366.963,
+  "end": 367.177
+ },
+ {
+  "uid": "u068",
+  "word": "away",
+  "start": 367.177,
+  "end": 367.443
+ },
+ {
+  "uid": "u068",
+  "word": "before",
+  "start": 367.443,
+  "end": 367.817
+ },
+ {
+  "uid": "u068",
+  "word": "it",
+  "start": 367.817,
+  "end": 367.977
+ },
+ {
+  "uid": "u068",
+  "word": "can",
+  "start": 367.977,
+  "end": 368.19
+ },
+ {
+  "uid": "u068",
+  "word": "settle.",
+  "start": 368.19,
+  "end": 368.563
+ },
+ {
+  "uid": "u069",
+  "word": "The",
+  "start": 368.639,
+  "end": 368.859
+ },
+ {
+  "uid": "u069",
+  "word": "result",
+  "start": 368.859,
+  "end": 369.244
+ },
+ {
+  "uid": "u069",
+  "word": "is",
+  "start": 369.244,
+  "end": 369.409
+ },
+ {
+  "uid": "u069",
+  "word": "more",
+  "start": 369.409,
+  "end": 369.684
+ },
+ {
+  "uid": "u069",
+  "word": "than",
+  "start": 369.684,
+  "end": 369.96
+ },
+ {
+  "uid": "u069",
+  "word": "five",
+  "start": 369.96,
+  "end": 370.235
+ },
+ {
+  "uid": "u069",
+  "word": "hundred",
+  "start": 370.235,
+  "end": 370.675
+ },
+ {
+  "uid": "u069",
+  "word": "watts",
+  "start": 370.675,
+  "end": 371.005
+ },
+ {
+  "uid": "u069",
+  "word": "of",
+  "start": 371.005,
+  "end": 371.171
+ },
+ {
+  "uid": "u069",
+  "word": "extreme",
+  "start": 371.171,
+  "end": 371.611
+ },
+ {
+  "uid": "u069",
+  "word": "ultraviolet",
+  "start": 371.611,
+  "end": 372.271
+ },
+ {
+  "uid": "u069",
+  "word": "light,",
+  "start": 372.271,
+  "end": 372.602
+ },
+ {
+  "uid": "u069",
+  "word": "steady",
+  "start": 372.767,
+  "end": 373.152
+ },
+ {
+  "uid": "u069",
+  "word": "enough",
+  "start": 373.152,
+  "end": 373.537
+ },
+ {
+  "uid": "u069",
+  "word": "to",
+  "start": 373.537,
+  "end": 373.702
+ },
+ {
+  "uid": "u069",
+  "word": "run",
+  "start": 373.702,
+  "end": 373.923
+ },
+ {
+  "uid": "u069",
+  "word": "a",
+  "start": 373.923,
+  "end": 374.033
+ },
+ {
+  "uid": "u069",
+  "word": "factory",
+  "start": 374.033,
+  "end": 374.473
+ },
+ {
+  "uid": "u069",
+  "word": "around",
+  "start": 374.473,
+  "end": 374.858
+ },
+ {
+  "uid": "u069",
+  "word": "the",
+  "start": 374.858,
+  "end": 375.078
+ },
+ {
+  "uid": "u069",
+  "word": "clock.",
+  "start": 375.078,
+  "end": 375.409
+ },
+ {
+  "uid": "u070",
+  "word": "Problem",
+  "start": 375.487,
+  "end": 375.892
+ },
+ {
+  "uid": "u070",
+  "word": "number",
+  "start": 375.892,
+  "end": 376.247
+ },
+ {
+  "uid": "u070",
+  "word": "two:",
+  "start": 376.247,
+  "end": 376.449
+ },
+ {
+  "uid": "u070",
+  "word": "this",
+  "start": 376.652,
+  "end": 376.905
+ },
+ {
+  "uid": "u070",
+  "word": "light",
+  "start": 376.905,
+  "end": 377.209
+ },
+ {
+  "uid": "u070",
+  "word": "is",
+  "start": 377.209,
+  "end": 377.361
+ },
+ {
+  "uid": "u070",
+  "word": "swallowed",
+  "start": 377.361,
+  "end": 377.867
+ },
+ {
+  "uid": "u070",
+  "word": "by",
+  "start": 377.867,
+  "end": 378.019
+ },
+ {
+  "uid": "u070",
+  "word": "everything.",
+  "start": 378.019,
+  "end": 378.577
+ },
+ {
+  "uid": "u071",
+  "word": "Glass",
+  "start": 378.685,
+  "end": 379.008
+ },
+ {
+  "uid": "u071",
+  "word": "absorbs",
+  "start": 379.008,
+  "end": 379.437
+ },
+ {
+  "uid": "u071",
+  "word": "it,",
+  "start": 379.437,
+  "end": 379.598
+ },
+ {
+  "uid": "u071",
+  "word": "so",
+  "start": 379.759,
+  "end": 379.92
+ },
+ {
+  "uid": "u071",
+  "word": "there",
+  "start": 379.92,
+  "end": 380.243
+ },
+ {
+  "uid": "u071",
+  "word": "can",
+  "start": 380.243,
+  "end": 380.457
+ },
+ {
+  "uid": "u071",
+  "word": "be",
+  "start": 380.457,
+  "end": 380.618
+ },
+ {
+  "uid": "u071",
+  "word": "no",
+  "start": 380.618,
+  "end": 380.779
+ },
+ {
+  "uid": "u071",
+  "word": "lenses.",
+  "start": 380.779,
+  "end": 381.155
+ },
+ {
+  "uid": "u072",
+  "word": "Even",
+  "start": 381.235,
+  "end": 381.518
+ },
+ {
+  "uid": "u072",
+  "word": "air",
+  "start": 381.518,
+  "end": 381.744
+ },
+ {
+  "uid": "u072",
+  "word": "absorbs",
+  "start": 381.744,
+  "end": 382.195
+ },
+ {
+  "uid": "u072",
+  "word": "it,",
+  "start": 382.195,
+  "end": 382.365
+ },
+ {
+  "uid": "u072",
+  "word": "so",
+  "start": 382.534,
+  "end": 382.704
+ },
+ {
+  "uid": "u072",
+  "word": "the",
+  "start": 382.704,
+  "end": 382.93
+ },
+ {
+  "uid": "u072",
+  "word": "entire",
+  "start": 382.93,
+  "end": 383.325
+ },
+ {
+  "uid": "u072",
+  "word": "light",
+  "start": 383.325,
+  "end": 383.664
+ },
+ {
+  "uid": "u072",
+  "word": "path",
+  "start": 383.664,
+  "end": 383.946
+ },
+ {
+  "uid": "u072",
+  "word": "has",
+  "start": 383.946,
+  "end": 384.172
+ },
+ {
+  "uid": "u072",
+  "word": "to",
+  "start": 384.172,
+  "end": 384.342
+ },
+ {
+  "uid": "u072",
+  "word": "sit",
+  "start": 384.342,
+  "end": 384.568
+ },
+ {
+  "uid": "u072",
+  "word": "in",
+  "start": 384.568,
+  "end": 384.737
+ },
+ {
+  "uid": "u072",
+  "word": "a",
+  "start": 384.737,
+  "end": 384.85
+ },
+ {
+  "uid": "u072",
+  "word": "vacuum.",
+  "start": 384.85,
+  "end": 385.245
+ },
+ {
+  "uid": "u073",
+  "word": "That",
+  "start": 385.353,
+  "end": 385.606
+ },
+ {
+  "uid": "u073",
+  "word": "leaves",
+  "start": 385.606,
+  "end": 385.961
+ },
+ {
+  "uid": "u073",
+  "word": "mirrors.",
+  "start": 385.961,
+  "end": 386.367
+ },
+ {
+  "uid": "u073",
+  "word": "But",
+  "start": 386.671,
+  "end": 386.874
+ },
+ {
+  "uid": "u073",
+  "word": "an",
+  "start": 386.874,
+  "end": 387.026
+ },
+ {
+  "uid": "u073",
+  "word": "ordinary",
+  "start": 387.026,
+  "end": 387.483
+ },
+ {
+  "uid": "u073",
+  "word": "mirror",
+  "start": 387.483,
+  "end": 387.838
+ },
+ {
+  "uid": "u073",
+  "word": "reflects",
+  "start": 387.838,
+  "end": 388.294
+ },
+ {
+  "uid": "u073",
+  "word": "almost",
+  "start": 388.294,
+  "end": 388.649
+ },
+ {
+  "uid": "u073",
+  "word": "none",
+  "start": 388.649,
+  "end": 388.903
+ },
+ {
+  "uid": "u073",
+  "word": "of",
+  "start": 388.903,
+  "end": 389.055
+ },
+ {
+  "uid": "u073",
+  "word": "this",
+  "start": 389.055,
+  "end": 389.308
+ },
+ {
+  "uid": "u073",
+  "word": "light.",
+  "start": 389.308,
+  "end": 389.613
+ },
+ {
+  "uid": "u074",
+  "word": "So",
+  "start": 389.695,
+  "end": 389.867
+ },
+ {
+  "uid": "u074",
+  "word": "these",
+  "start": 389.867,
+  "end": 390.212
+ },
+ {
+  "uid": "u074",
+  "word": "mirrors",
+  "start": 390.212,
+  "end": 390.672
+ },
+ {
+  "uid": "u074",
+  "word": "are",
+  "start": 390.672,
+  "end": 390.901
+ },
+ {
+  "uid": "u074",
+  "word": "built",
+  "start": 390.901,
+  "end": 391.246
+ },
+ {
+  "uid": "u074",
+  "word": "from",
+  "start": 391.246,
+  "end": 391.533
+ },
+ {
+  "uid": "u074",
+  "word": "layers:",
+  "start": 391.533,
+  "end": 391.936
+ },
+ {
+  "uid": "u074",
+  "word": "about",
+  "start": 392.166,
+  "end": 392.51
+ },
+ {
+  "uid": "u074",
+  "word": "forty",
+  "start": 392.51,
+  "end": 392.855
+ },
+ {
+  "uid": "u074",
+  "word": "pairs",
+  "start": 392.855,
+  "end": 393.2
+ },
+ {
+  "uid": "u074",
+  "word": "of",
+  "start": 393.2,
+  "end": 393.372
+ },
+ {
+  "uid": "u074",
+  "word": "molybdenum",
+  "start": 393.372,
+  "end": 394.004
+ },
+ {
+  "uid": "u074",
+  "word": "and",
+  "start": 394.004,
+  "end": 394.234
+ },
+ {
+  "uid": "u074",
+  "word": "silicon,",
+  "start": 394.234,
+  "end": 394.694
+ },
+ {
+  "uid": "u074",
+  "word": "each",
+  "start": 394.866,
+  "end": 395.154
+ },
+ {
+  "uid": "u074",
+  "word": "pair",
+  "start": 395.154,
+  "end": 395.441
+ },
+ {
+  "uid": "u074",
+  "word": "only",
+  "start": 395.441,
+  "end": 395.728
+ },
+ {
+  "uid": "u074",
+  "word": "about",
+  "start": 395.728,
+  "end": 396.073
+ },
+ {
+  "uid": "u074",
+  "word": "seven",
+  "start": 396.073,
+  "end": 396.418
+ },
+ {
+  "uid": "u074",
+  "word": "nanometres",
+  "start": 396.418,
+  "end": 397.05
+ },
+ {
+  "uid": "u074",
+  "word": "thick.",
+  "start": 397.05,
+  "end": 397.395
+ },
+ {
+  "uid": "u075",
+  "word": "Every",
+  "start": 397.491,
+  "end": 397.831
+ },
+ {
+  "uid": "u075",
+  "word": "boundary",
+  "start": 397.831,
+  "end": 398.34
+ },
+ {
+  "uid": "u075",
+  "word": "between",
+  "start": 398.34,
+  "end": 398.793
+ },
+ {
+  "uid": "u075",
+  "word": "the",
+  "start": 398.793,
+  "end": 399.02
+ },
+ {
+  "uid": "u075",
+  "word": "two",
+  "start": 399.02,
+  "end": 399.246
+ },
+ {
+  "uid": "u075",
+  "word": "materials",
+  "start": 399.246,
+  "end": 399.812
+ },
+ {
+  "uid": "u075",
+  "word": "reflects",
+  "start": 399.812,
+  "end": 400.322
+ },
+ {
+  "uid": "u075",
+  "word": "only",
+  "start": 400.322,
+  "end": 400.605
+ },
+ {
+  "uid": "u075",
+  "word": "a",
+  "start": 400.605,
+  "end": 400.718
+ },
+ {
+  "uid": "u075",
+  "word": "tiny",
+  "start": 400.718,
+  "end": 401.001
+ },
+ {
+  "uid": "u075",
+  "word": "bit",
+  "start": 401.001,
+  "end": 401.228
+ },
+ {
+  "uid": "u075",
+  "word": "of",
+  "start": 401.228,
+  "end": 401.397
+ },
+ {
+  "uid": "u075",
+  "word": "the",
+  "start": 401.397,
+  "end": 401.624
+ },
+ {
+  "uid": "u075",
+  "word": "light.",
+  "start": 401.624,
+  "end": 401.963
+ },
+ {
+  "uid": "u075",
+  "word": "On",
+  "start": 402.303,
+  "end": 402.473
+ },
+ {
+  "uid": "u075",
+  "word": "its",
+  "start": 402.473,
+  "end": 402.699
+ },
+ {
+  "uid": "u075",
+  "word": "own,",
+  "start": 402.699,
+  "end": 402.926
+ },
+ {
+  "uid": "u075",
+  "word": "that",
+  "start": 403.096,
+  "end": 403.379
+ },
+ {
+  "uid": "u075",
+  "word": "is",
+  "start": 403.379,
+  "end": 403.548
+ },
+ {
+  "uid": "u075",
+  "word": "useless.",
+  "start": 403.548,
+  "end": 404.001
+ },
+ {
+  "uid": "u076",
+  "word": "But",
+  "start": 404.083,
+  "end": 404.296
+ },
+ {
+  "uid": "u076",
+  "word": "the",
+  "start": 404.296,
+  "end": 404.509
+ },
+ {
+  "uid": "u076",
+  "word": "layers",
+  "start": 404.509,
+  "end": 404.881
+ },
+ {
+  "uid": "u076",
+  "word": "are",
+  "start": 404.881,
+  "end": 405.094
+ },
+ {
+  "uid": "u076",
+  "word": "spaced",
+  "start": 405.094,
+  "end": 405.466
+ },
+ {
+  "uid": "u076",
+  "word": "at",
+  "start": 405.466,
+  "end": 405.625
+ },
+ {
+  "uid": "u076",
+  "word": "half",
+  "start": 405.625,
+  "end": 405.891
+ },
+ {
+  "uid": "u076",
+  "word": "the",
+  "start": 405.891,
+  "end": 406.104
+ },
+ {
+  "uid": "u076",
+  "word": "wavelength,",
+  "start": 406.104,
+  "end": 406.689
+ },
+ {
+  "uid": "u076",
+  "word": "so",
+  "start": 406.848,
+  "end": 407.008
+ },
+ {
+  "uid": "u076",
+  "word": "every",
+  "start": 407.008,
+  "end": 407.327
+ },
+ {
+  "uid": "u076",
+  "word": "one",
+  "start": 407.327,
+  "end": 407.54
+ },
+ {
+  "uid": "u076",
+  "word": "of",
+  "start": 407.54,
+  "end": 407.699
+ },
+ {
+  "uid": "u076",
+  "word": "those",
+  "start": 407.699,
+  "end": 408.018
+ },
+ {
+  "uid": "u076",
+  "word": "tiny",
+  "start": 408.018,
+  "end": 408.284
+ },
+ {
+  "uid": "u076",
+  "word": "reflections",
+  "start": 408.284,
+  "end": 408.922
+ },
+ {
+  "uid": "u076",
+  "word": "leaves",
+  "start": 408.922,
+  "end": 409.294
+ },
+ {
+  "uid": "u076",
+  "word": "in",
+  "start": 409.294,
+  "end": 409.454
+ },
+ {
+  "uid": "u076",
+  "word": "step",
+  "start": 409.454,
+  "end": 409.72
+ },
+ {
+  "uid": "u076",
+  "word": "with",
+  "start": 409.72,
+  "end": 409.986
+ },
+ {
+  "uid": "u076",
+  "word": "all",
+  "start": 409.986,
+  "end": 410.198
+ },
+ {
+  "uid": "u076",
+  "word": "the",
+  "start": 410.198,
+  "end": 410.411
+ },
+ {
+  "uid": "u076",
+  "word": "others.",
+  "start": 410.411,
+  "end": 410.783
+ },
+ {
+  "uid": "u077",
+  "word": "The",
+  "start": 410.857,
+  "end": 411.084
+ },
+ {
+  "uid": "u077",
+  "word": "wave",
+  "start": 411.084,
+  "end": 411.366
+ },
+ {
+  "uid": "u077",
+  "word": "crests",
+  "start": 411.366,
+  "end": 411.762
+ },
+ {
+  "uid": "u077",
+  "word": "line",
+  "start": 411.762,
+  "end": 412.045
+ },
+ {
+  "uid": "u077",
+  "word": "up,",
+  "start": 412.045,
+  "end": 412.215
+ },
+ {
+  "uid": "u077",
+  "word": "they",
+  "start": 412.385,
+  "end": 412.667
+ },
+ {
+  "uid": "u077",
+  "word": "add",
+  "start": 412.667,
+  "end": 412.894
+ },
+ {
+  "uid": "u077",
+  "word": "together,",
+  "start": 412.894,
+  "end": 413.403
+ },
+ {
+  "uid": "u077",
+  "word": "and",
+  "start": 413.572,
+  "end": 413.799
+ },
+ {
+  "uid": "u077",
+  "word": "dozens",
+  "start": 413.799,
+  "end": 414.195
+ },
+ {
+  "uid": "u077",
+  "word": "of",
+  "start": 414.195,
+  "end": 414.364
+ },
+ {
+  "uid": "u077",
+  "word": "weak",
+  "start": 414.364,
+  "end": 414.647
+ },
+ {
+  "uid": "u077",
+  "word": "echoes",
+  "start": 414.647,
+  "end": 415.043
+ },
+ {
+  "uid": "u077",
+  "word": "become",
+  "start": 415.043,
+  "end": 415.439
+ },
+ {
+  "uid": "u077",
+  "word": "one",
+  "start": 415.439,
+  "end": 415.665
+ },
+ {
+  "uid": "u077",
+  "word": "strong",
+  "start": 415.665,
+  "end": 416.061
+ },
+ {
+  "uid": "u077",
+  "word": "reflection,",
+  "start": 416.061,
+  "end": 416.683
+ },
+ {
+  "uid": "u077",
+  "word": "about",
+  "start": 416.853,
+  "end": 417.192
+ },
+ {
+  "uid": "u077",
+  "word": "seventy",
+  "start": 417.192,
+  "end": 417.645
+ },
+ {
+  "uid": "u077",
+  "word": "percent.",
+  "start": 417.645,
+  "end": 418.097
+ },
+ {
+  "uid": "u078",
+  "word": "It",
+  "start": 418.185,
+  "end": 418.34
+ },
+ {
+  "uid": "u078",
+  "word": "is",
+  "start": 418.34,
+  "end": 418.495
+ },
+ {
+  "uid": "u078",
+  "word": "the",
+  "start": 418.495,
+  "end": 418.702
+ },
+ {
+  "uid": "u078",
+  "word": "same",
+  "start": 418.702,
+  "end": 418.96
+ },
+ {
+  "uid": "u078",
+  "word": "trick",
+  "start": 418.96,
+  "end": 419.271
+ },
+ {
+  "uid": "u078",
+  "word": "that",
+  "start": 419.271,
+  "end": 419.529
+ },
+ {
+  "uid": "u078",
+  "word": "makes",
+  "start": 419.529,
+  "end": 419.839
+ },
+ {
+  "uid": "u078",
+  "word": "a",
+  "start": 419.839,
+  "end": 419.943
+ },
+ {
+  "uid": "u078",
+  "word": "soap",
+  "start": 419.943,
+  "end": 420.201
+ },
+ {
+  "uid": "u078",
+  "word": "bubble",
+  "start": 420.201,
+  "end": 420.563
+ },
+ {
+  "uid": "u078",
+  "word": "shimmer,",
+  "start": 420.563,
+  "end": 420.977
+ },
+ {
+  "uid": "u078",
+  "word": "tuned",
+  "start": 421.132,
+  "end": 421.442
+ },
+ {
+  "uid": "u078",
+  "word": "to",
+  "start": 421.442,
+  "end": 421.597
+ },
+ {
+  "uid": "u078",
+  "word": "a",
+  "start": 421.597,
+  "end": 421.701
+ },
+ {
+  "uid": "u078",
+  "word": "single",
+  "start": 421.701,
+  "end": 422.063
+ },
+ {
+  "uid": "u078",
+  "word": "colour.",
+  "start": 422.063,
+  "end": 422.425
+ },
+ {
+  "uid": "u079",
+  "word": "This",
+  "start": 422.535,
+  "end": 422.759
+ },
+ {
+  "uid": "u079",
+  "word": "is",
+  "start": 422.759,
+  "end": 422.893
+ },
+ {
+  "uid": "u079",
+  "word": "also",
+  "start": 422.893,
+  "end": 423.116
+ },
+ {
+  "uid": "u079",
+  "word": "where",
+  "start": 423.116,
+  "end": 423.385
+ },
+ {
+  "uid": "u079",
+  "word": "the",
+  "start": 423.385,
+  "end": 423.563
+ },
+ {
+  "uid": "u079",
+  "word": "strange",
+  "start": 423.563,
+  "end": 423.921
+ },
+ {
+  "uid": "u079",
+  "word": "number",
+  "start": 423.921,
+  "end": 424.234
+ },
+ {
+  "uid": "u079",
+  "word": "comes",
+  "start": 424.234,
+  "end": 424.502
+ },
+ {
+  "uid": "u079",
+  "word": "from.",
+  "start": 424.502,
+  "end": 424.725
+ },
+ {
+  "uid": "u080",
+  "word": "Silicon",
+  "start": 424.883,
+  "end": 425.34
+ },
+ {
+  "uid": "u080",
+  "word": "starts",
+  "start": 425.34,
+  "end": 425.739
+ },
+ {
+  "uid": "u080",
+  "word": "absorbing",
+  "start": 425.739,
+  "end": 426.31
+ },
+ {
+  "uid": "u080",
+  "word": "strongly",
+  "start": 426.31,
+  "end": 426.823
+ },
+ {
+  "uid": "u080",
+  "word": "just",
+  "start": 426.823,
+  "end": 427.109
+ },
+ {
+  "uid": "u080",
+  "word": "below",
+  "start": 427.109,
+  "end": 427.451
+ },
+ {
+  "uid": "u080",
+  "word": "twelve",
+  "start": 427.451,
+  "end": 427.851
+ },
+ {
+  "uid": "u080",
+  "word": "and",
+  "start": 427.851,
+  "end": 428.079
+ },
+ {
+  "uid": "u080",
+  "word": "a",
+  "start": 428.079,
+  "end": 428.193
+ },
+ {
+  "uid": "u080",
+  "word": "half",
+  "start": 428.193,
+  "end": 428.478
+ },
+ {
+  "uid": "u080",
+  "word": "nanometres,",
+  "start": 428.478,
+  "end": 429.106
+ },
+ {
+  "uid": "u080",
+  "word": "and",
+  "start": 429.277,
+  "end": 429.505
+ },
+ {
+  "uid": "u080",
+  "word": "these",
+  "start": 429.505,
+  "end": 429.848
+ },
+ {
+  "uid": "u080",
+  "word": "mirrors",
+  "start": 429.848,
+  "end": 430.304
+ },
+ {
+  "uid": "u080",
+  "word": "work",
+  "start": 430.304,
+  "end": 430.59
+ },
+ {
+  "uid": "u080",
+  "word": "best",
+  "start": 430.59,
+  "end": 430.875
+ },
+ {
+  "uid": "u080",
+  "word": "just",
+  "start": 430.875,
+  "end": 431.16
+ },
+ {
+  "uid": "u080",
+  "word": "above",
+  "start": 431.16,
+  "end": 431.503
+ },
+ {
+  "uid": "u080",
+  "word": "that",
+  "start": 431.503,
+  "end": 431.788
+ },
+ {
+  "uid": "u080",
+  "word": "edge.",
+  "start": 431.788,
+  "end": 432.073
+ },
+ {
+  "uid": "u081",
+  "word": "Thirteen",
+  "start": 432.178,
+  "end": 432.628
+ },
+ {
+  "uid": "u081",
+  "word": "and",
+  "start": 432.628,
+  "end": 432.828
+ },
+ {
+  "uid": "u081",
+  "word": "a",
+  "start": 432.828,
+  "end": 432.928
+ },
+ {
+  "uid": "u081",
+  "word": "half",
+  "start": 432.928,
+  "end": 433.178
+ },
+ {
+  "uid": "u081",
+  "word": "is",
+  "start": 433.178,
+  "end": 433.328
+ },
+ {
+  "uid": "u081",
+  "word": "where",
+  "start": 433.328,
+  "end": 433.628
+ },
+ {
+  "uid": "u081",
+  "word": "the",
+  "start": 433.628,
+  "end": 433.828
+ },
+ {
+  "uid": "u081",
+  "word": "mirrors",
+  "start": 433.828,
+  "end": 434.228
+ },
+ {
+  "uid": "u081",
+  "word": "work",
+  "start": 434.228,
+  "end": 434.478
+ },
+ {
+  "uid": "u081",
+  "word": "best,",
+  "start": 434.478,
+  "end": 434.728
+ },
+ {
+  "uid": "u081",
+  "word": "and",
+  "start": 434.878,
+  "end": 435.078
+ },
+ {
+  "uid": "u081",
+  "word": "where",
+  "start": 435.078,
+  "end": 435.378
+ },
+ {
+  "uid": "u081",
+  "word": "tin",
+  "start": 435.378,
+  "end": 435.578
+ },
+ {
+  "uid": "u081",
+  "word": "happens",
+  "start": 435.578,
+  "end": 435.978
+ },
+ {
+  "uid": "u081",
+  "word": "to",
+  "start": 435.978,
+  "end": 436.128
+ },
+ {
+  "uid": "u081",
+  "word": "glow",
+  "start": 436.128,
+  "end": 436.378
+ },
+ {
+  "uid": "u081",
+  "word": "brightest.",
+  "start": 436.378,
+  "end": 436.878
+ },
+ {
+  "uid": "u082",
+  "word": "These",
+  "start": 436.979,
+  "end": 437.332
+ },
+ {
+  "uid": "u082",
+  "word": "mirrors",
+  "start": 437.332,
+  "end": 437.802
+ },
+ {
+  "uid": "u082",
+  "word": "must",
+  "start": 437.802,
+  "end": 438.095
+ },
+ {
+  "uid": "u082",
+  "word": "also",
+  "start": 438.095,
+  "end": 438.389
+ },
+ {
+  "uid": "u082",
+  "word": "be",
+  "start": 438.389,
+  "end": 438.565
+ },
+ {
+  "uid": "u082",
+  "word": "smooth",
+  "start": 438.565,
+  "end": 438.976
+ },
+ {
+  "uid": "u082",
+  "word": "beyond",
+  "start": 438.976,
+  "end": 439.388
+ },
+ {
+  "uid": "u082",
+  "word": "belief,",
+  "start": 439.388,
+  "end": 439.799
+ },
+ {
+  "uid": "u082",
+  "word": "with",
+  "start": 439.975,
+  "end": 440.269
+ },
+ {
+  "uid": "u082",
+  "word": "bumps",
+  "start": 440.269,
+  "end": 440.621
+ },
+ {
+  "uid": "u082",
+  "word": "of",
+  "start": 440.621,
+  "end": 440.797
+ },
+ {
+  "uid": "u082",
+  "word": "around",
+  "start": 440.797,
+  "end": 441.209
+ },
+ {
+  "uid": "u082",
+  "word": "fifty",
+  "start": 441.209,
+  "end": 441.561
+ },
+ {
+  "uid": "u082",
+  "word": "picometres,",
+  "start": 441.561,
+  "end": 442.207
+ },
+ {
+  "uid": "u082",
+  "word": "smaller",
+  "start": 442.383,
+  "end": 442.853
+ },
+ {
+  "uid": "u082",
+  "word": "than",
+  "start": 442.853,
+  "end": 443.147
+ },
+ {
+  "uid": "u082",
+  "word": "a",
+  "start": 443.147,
+  "end": 443.264
+ },
+ {
+  "uid": "u082",
+  "word": "single",
+  "start": 443.264,
+  "end": 443.676
+ },
+ {
+  "uid": "u082",
+  "word": "atom.",
+  "start": 443.676,
+  "end": 443.969
+ },
+ {
+  "uid": "u083",
+  "word": "If",
+  "start": 444.062,
+  "end": 444.217
+ },
+ {
+  "uid": "u083",
+  "word": "one",
+  "start": 444.217,
+  "end": 444.424
+ },
+ {
+  "uid": "u083",
+  "word": "of",
+  "start": 444.424,
+  "end": 444.579
+ },
+ {
+  "uid": "u083",
+  "word": "these",
+  "start": 444.579,
+  "end": 444.89
+ },
+ {
+  "uid": "u083",
+  "word": "mirrors",
+  "start": 444.89,
+  "end": 445.304
+ },
+ {
+  "uid": "u083",
+  "word": "were",
+  "start": 445.304,
+  "end": 445.562
+ },
+ {
+  "uid": "u083",
+  "word": "the",
+  "start": 445.562,
+  "end": 445.769
+ },
+ {
+  "uid": "u083",
+  "word": "size",
+  "start": 445.769,
+  "end": 446.028
+ },
+ {
+  "uid": "u083",
+  "word": "of",
+  "start": 446.028,
+  "end": 446.183
+ },
+ {
+  "uid": "u083",
+  "word": "Germany,",
+  "start": 446.183,
+  "end": 446.597
+ },
+ {
+  "uid": "u083",
+  "word": "its",
+  "start": 446.752,
+  "end": 446.959
+ },
+ {
+  "uid": "u083",
+  "word": "biggest",
+  "start": 446.959,
+  "end": 447.373
+ },
+ {
+  "uid": "u083",
+  "word": "bump",
+  "start": 447.373,
+  "end": 447.631
+ },
+ {
+  "uid": "u083",
+  "word": "would",
+  "start": 447.631,
+  "end": 447.942
+ },
+ {
+  "uid": "u083",
+  "word": "be",
+  "start": 447.942,
+  "end": 448.097
+ },
+ {
+  "uid": "u083",
+  "word": "about",
+  "start": 448.097,
+  "end": 448.407
+ },
+ {
+  "uid": "u083",
+  "word": "one",
+  "start": 448.407,
+  "end": 448.614
+ },
+ {
+  "uid": "u083",
+  "word": "millimetre",
+  "start": 448.614,
+  "end": 449.183
+ },
+ {
+  "uid": "u083",
+  "word": "high.",
+  "start": 449.183,
+  "end": 449.442
+ },
+ {
+  "uid": "u084",
+  "word": "Zeiss",
+  "start": 449.545,
+  "end": 449.852
+ },
+ {
+  "uid": "u084",
+  "word": "makes",
+  "start": 449.852,
+  "end": 450.16
+ },
+ {
+  "uid": "u084",
+  "word": "them,",
+  "start": 450.16,
+  "end": 450.416
+ },
+ {
+  "uid": "u084",
+  "word": "in",
+  "start": 450.57,
+  "end": 450.723
+ },
+ {
+  "uid": "u084",
+  "word": "southern",
+  "start": 450.723,
+  "end": 451.185
+ },
+ {
+  "uid": "u084",
+  "word": "Germany.",
+  "start": 451.185,
+  "end": 451.595
+ },
+ {
+  "uid": "u085",
+  "word": "Now",
+  "start": 451.741,
+  "end": 451.913
+ },
+ {
+  "uid": "u085",
+  "word": "follow",
+  "start": 451.913,
+  "end": 452.216
+ },
+ {
+  "uid": "u085",
+  "word": "the",
+  "start": 452.216,
+  "end": 452.388
+ },
+ {
+  "uid": "u085",
+  "word": "light",
+  "start": 452.388,
+  "end": 452.647
+ },
+ {
+  "uid": "u085",
+  "word": "through",
+  "start": 452.647,
+  "end": 452.993
+ },
+ {
+  "uid": "u085",
+  "word": "the",
+  "start": 452.993,
+  "end": 453.165
+ },
+ {
+  "uid": "u085",
+  "word": "machine.",
+  "start": 453.165,
+  "end": 453.511
+ },
+ {
+  "uid": "u086",
+  "word": "From",
+  "start": 453.651,
+  "end": 453.908
+ },
+ {
+  "uid": "u086",
+  "word": "the",
+  "start": 453.908,
+  "end": 454.114
+ },
+ {
+  "uid": "u086",
+  "word": "collector,",
+  "start": 454.114,
+  "end": 454.63
+ },
+ {
+  "uid": "u086",
+  "word": "it",
+  "start": 454.784,
+  "end": 454.939
+ },
+ {
+  "uid": "u086",
+  "word": "bounces",
+  "start": 454.939,
+  "end": 455.351
+ },
+ {
+  "uid": "u086",
+  "word": "off",
+  "start": 455.351,
+  "end": 455.557
+ },
+ {
+  "uid": "u086",
+  "word": "a",
+  "start": 455.557,
+  "end": 455.66
+ },
+ {
+  "uid": "u086",
+  "word": "set",
+  "start": 455.66,
+  "end": 455.866
+ },
+ {
+  "uid": "u086",
+  "word": "of",
+  "start": 455.866,
+  "end": 456.021
+ },
+ {
+  "uid": "u086",
+  "word": "mirrors",
+  "start": 456.021,
+  "end": 456.433
+ },
+ {
+  "uid": "u086",
+  "word": "that",
+  "start": 456.433,
+  "end": 456.691
+ },
+ {
+  "uid": "u086",
+  "word": "shape",
+  "start": 456.691,
+  "end": 457.0
+ },
+ {
+  "uid": "u086",
+  "word": "it",
+  "start": 457.0,
+  "end": 457.154
+ },
+ {
+  "uid": "u086",
+  "word": "into",
+  "start": 457.154,
+  "end": 457.412
+ },
+ {
+  "uid": "u086",
+  "word": "an",
+  "start": 457.412,
+  "end": 457.566
+ },
+ {
+  "uid": "u086",
+  "word": "even,",
+  "start": 457.566,
+  "end": 457.824
+ },
+ {
+  "uid": "u086",
+  "word": "curved",
+  "start": 457.979,
+  "end": 458.339
+ },
+ {
+  "uid": "u086",
+  "word": "slit",
+  "start": 458.339,
+  "end": 458.597
+ },
+ {
+  "uid": "u086",
+  "word": "of",
+  "start": 458.597,
+  "end": 458.752
+ },
+ {
+  "uid": "u086",
+  "word": "light.",
+  "start": 458.752,
+  "end": 459.061
+ },
+ {
+  "uid": "u087",
+  "word": "Then",
+  "start": 459.175,
+  "end": 459.404
+ },
+ {
+  "uid": "u087",
+  "word": "it",
+  "start": 459.404,
+  "end": 459.542
+ },
+ {
+  "uid": "u087",
+  "word": "hits",
+  "start": 459.542,
+  "end": 459.771
+ },
+ {
+  "uid": "u087",
+  "word": "the",
+  "start": 459.771,
+  "end": 459.954
+ },
+ {
+  "uid": "u087",
+  "word": "mask.",
+  "start": 459.954,
+  "end": 460.184
+ },
+ {
+  "uid": "u087",
+  "word": "And",
+  "start": 460.459,
+  "end": 460.642
+ },
+ {
+  "uid": "u087",
+  "word": "the",
+  "start": 460.642,
+  "end": 460.826
+ },
+ {
+  "uid": "u087",
+  "word": "mask,",
+  "start": 460.826,
+  "end": 461.055
+ },
+ {
+  "uid": "u087",
+  "word": "too,",
+  "start": 461.192,
+  "end": 461.376
+ },
+ {
+  "uid": "u087",
+  "word": "has",
+  "start": 461.513,
+  "end": 461.697
+ },
+ {
+  "uid": "u087",
+  "word": "to",
+  "start": 461.697,
+  "end": 461.834
+ },
+ {
+  "uid": "u087",
+  "word": "be",
+  "start": 461.834,
+  "end": 461.972
+ },
+ {
+  "uid": "u087",
+  "word": "a",
+  "start": 461.972,
+  "end": 462.064
+ },
+ {
+  "uid": "u087",
+  "word": "mirror.",
+  "start": 462.064,
+  "end": 462.385
+ },
+ {
+  "uid": "u088",
+  "word": "It",
+  "start": 462.494,
+  "end": 462.661
+ },
+ {
+  "uid": "u088",
+  "word": "is",
+  "start": 462.661,
+  "end": 462.828
+ },
+ {
+  "uid": "u088",
+  "word": "the",
+  "start": 462.828,
+  "end": 463.051
+ },
+ {
+  "uid": "u088",
+  "word": "same",
+  "start": 463.051,
+  "end": 463.33
+ },
+ {
+  "uid": "u088",
+  "word": "stack",
+  "start": 463.33,
+  "end": 463.664
+ },
+ {
+  "uid": "u088",
+  "word": "of",
+  "start": 463.664,
+  "end": 463.831
+ },
+ {
+  "uid": "u088",
+  "word": "molybdenum",
+  "start": 463.831,
+  "end": 464.444
+ },
+ {
+  "uid": "u088",
+  "word": "and",
+  "start": 464.444,
+  "end": 464.667
+ },
+ {
+  "uid": "u088",
+  "word": "silicon,",
+  "start": 464.667,
+  "end": 465.113
+ },
+ {
+  "uid": "u088",
+  "word": "with",
+  "start": 465.28,
+  "end": 465.558
+ },
+ {
+  "uid": "u088",
+  "word": "the",
+  "start": 465.558,
+  "end": 465.781
+ },
+ {
+  "uid": "u088",
+  "word": "chip",
+  "start": 465.781,
+  "end": 466.06
+ },
+ {
+  "uid": "u088",
+  "word": "pattern",
+  "start": 466.06,
+  "end": 466.505
+ },
+ {
+  "uid": "u088",
+  "word": "drawn",
+  "start": 466.505,
+  "end": 466.84
+ },
+ {
+  "uid": "u088",
+  "word": "on",
+  "start": 466.84,
+  "end": 467.007
+ },
+ {
+  "uid": "u088",
+  "word": "top",
+  "start": 467.007,
+  "end": 467.23
+ },
+ {
+  "uid": "u088",
+  "word": "in",
+  "start": 467.23,
+  "end": 467.397
+ },
+ {
+  "uid": "u088",
+  "word": "a",
+  "start": 467.397,
+  "end": 467.508
+ },
+ {
+  "uid": "u088",
+  "word": "metal",
+  "start": 467.508,
+  "end": 467.843
+ },
+ {
+  "uid": "u088",
+  "word": "that",
+  "start": 467.843,
+  "end": 468.121
+ },
+ {
+  "uid": "u088",
+  "word": "absorbs",
+  "start": 468.121,
+  "end": 468.567
+ },
+ {
+  "uid": "u088",
+  "word": "the",
+  "start": 468.567,
+  "end": 468.79
+ },
+ {
+  "uid": "u088",
+  "word": "light.",
+  "start": 468.79,
+  "end": 469.124
+ },
+ {
+  "uid": "u089",
+  "word": "The",
+  "start": 469.224,
+  "end": 469.437
+ },
+ {
+  "uid": "u089",
+  "word": "light",
+  "start": 469.437,
+  "end": 469.756
+ },
+ {
+  "uid": "u089",
+  "word": "strikes",
+  "start": 469.756,
+  "end": 470.181
+ },
+ {
+  "uid": "u089",
+  "word": "it",
+  "start": 470.181,
+  "end": 470.341
+ },
+ {
+  "uid": "u089",
+  "word": "at",
+  "start": 470.341,
+  "end": 470.5
+ },
+ {
+  "uid": "u089",
+  "word": "a",
+  "start": 470.5,
+  "end": 470.607
+ },
+ {
+  "uid": "u089",
+  "word": "slight",
+  "start": 470.607,
+  "end": 470.979
+ },
+ {
+  "uid": "u089",
+  "word": "angle,",
+  "start": 470.979,
+  "end": 471.298
+ },
+ {
+  "uid": "u089",
+  "word": "about",
+  "start": 471.458,
+  "end": 471.777
+ },
+ {
+  "uid": "u089",
+  "word": "six",
+  "start": 471.777,
+  "end": 471.989
+ },
+ {
+  "uid": "u089",
+  "word": "degrees,",
+  "start": 471.989,
+  "end": 472.415
+ },
+ {
+  "uid": "u089",
+  "word": "so",
+  "start": 472.574,
+  "end": 472.734
+ },
+ {
+  "uid": "u089",
+  "word": "the",
+  "start": 472.734,
+  "end": 472.947
+ },
+ {
+  "uid": "u089",
+  "word": "reflected",
+  "start": 472.947,
+  "end": 473.479
+ },
+ {
+  "uid": "u089",
+  "word": "beam",
+  "start": 473.479,
+  "end": 473.744
+ },
+ {
+  "uid": "u089",
+  "word": "can",
+  "start": 473.744,
+  "end": 473.957
+ },
+ {
+  "uid": "u089",
+  "word": "travel",
+  "start": 473.957,
+  "end": 474.329
+ },
+ {
+  "uid": "u089",
+  "word": "on",
+  "start": 474.329,
+  "end": 474.489
+ },
+ {
+  "uid": "u089",
+  "word": "without",
+  "start": 474.489,
+  "end": 474.914
+ },
+ {
+  "uid": "u089",
+  "word": "hitting",
+  "start": 474.914,
+  "end": 475.34
+ },
+ {
+  "uid": "u089",
+  "word": "the",
+  "start": 475.34,
+  "end": 475.553
+ },
+ {
+  "uid": "u089",
+  "word": "incoming",
+  "start": 475.553,
+  "end": 476.031
+ },
+ {
+  "uid": "u089",
+  "word": "one.",
+  "start": 476.031,
+  "end": 476.244
+ },
+ {
+  "uid": "u090",
+  "word": "Then",
+  "start": 476.361,
+  "end": 476.649
+ },
+ {
+  "uid": "u090",
+  "word": "six",
+  "start": 476.649,
+  "end": 476.88
+ },
+ {
+  "uid": "u090",
+  "word": "more",
+  "start": 476.88,
+  "end": 477.169
+ },
+ {
+  "uid": "u090",
+  "word": "mirrors",
+  "start": 477.169,
+  "end": 477.631
+ },
+ {
+  "uid": "u090",
+  "word": "shrink",
+  "start": 477.631,
+  "end": 478.035
+ },
+ {
+  "uid": "u090",
+  "word": "the",
+  "start": 478.035,
+  "end": 478.266
+ },
+ {
+  "uid": "u090",
+  "word": "pattern",
+  "start": 478.266,
+  "end": 478.728
+ },
+ {
+  "uid": "u090",
+  "word": "four",
+  "start": 478.728,
+  "end": 479.017
+ },
+ {
+  "uid": "u090",
+  "word": "times",
+  "start": 479.017,
+  "end": 479.364
+ },
+ {
+  "uid": "u090",
+  "word": "and",
+  "start": 479.364,
+  "end": 479.595
+ },
+ {
+  "uid": "u090",
+  "word": "focus",
+  "start": 479.595,
+  "end": 479.941
+ },
+ {
+  "uid": "u090",
+  "word": "it",
+  "start": 479.941,
+  "end": 480.114
+ },
+ {
+  "uid": "u090",
+  "word": "onto",
+  "start": 480.114,
+  "end": 480.403
+ },
+ {
+  "uid": "u090",
+  "word": "the",
+  "start": 480.403,
+  "end": 480.634
+ },
+ {
+  "uid": "u090",
+  "word": "wafer.",
+  "start": 480.634,
+  "end": 480.981
+ },
+ {
+  "uid": "u091",
+  "word": "Count",
+  "start": 481.065,
+  "end": 481.365
+ },
+ {
+  "uid": "u091",
+  "word": "the",
+  "start": 481.365,
+  "end": 481.564
+ },
+ {
+  "uid": "u091",
+  "word": "bounces.",
+  "start": 481.564,
+  "end": 481.964
+ },
+ {
+  "uid": "u091",
+  "word": "There",
+  "start": 482.263,
+  "end": 482.562
+ },
+ {
+  "uid": "u091",
+  "word": "are",
+  "start": 482.562,
+  "end": 482.762
+ },
+ {
+  "uid": "u091",
+  "word": "around",
+  "start": 482.762,
+  "end": 483.111
+ },
+ {
+  "uid": "u091",
+  "word": "ten",
+  "start": 483.111,
+  "end": 483.311
+ },
+ {
+  "uid": "u091",
+  "word": "of",
+  "start": 483.311,
+  "end": 483.461
+ },
+ {
+  "uid": "u091",
+  "word": "them,",
+  "start": 483.461,
+  "end": 483.71
+ },
+ {
+  "uid": "u091",
+  "word": "and",
+  "start": 483.86,
+  "end": 484.059
+ },
+ {
+  "uid": "u091",
+  "word": "each",
+  "start": 484.059,
+  "end": 484.309
+ },
+ {
+  "uid": "u091",
+  "word": "one",
+  "start": 484.309,
+  "end": 484.509
+ },
+ {
+  "uid": "u091",
+  "word": "keeps",
+  "start": 484.509,
+  "end": 484.808
+ },
+ {
+  "uid": "u091",
+  "word": "only",
+  "start": 484.808,
+  "end": 485.057
+ },
+ {
+  "uid": "u091",
+  "word": "about",
+  "start": 485.057,
+  "end": 485.357
+ },
+ {
+  "uid": "u091",
+  "word": "seventy",
+  "start": 485.357,
+  "end": 485.756
+ },
+ {
+  "uid": "u091",
+  "word": "percent.",
+  "start": 485.756,
+  "end": 486.155
+ },
+ {
+  "uid": "u092",
+  "word": "Seventy",
+  "start": 486.238,
+  "end": 486.679
+ },
+ {
+  "uid": "u092",
+  "word": "percent",
+  "start": 486.679,
+  "end": 487.119
+ },
+ {
+  "uid": "u092",
+  "word": "of",
+  "start": 487.119,
+  "end": 487.284
+ },
+ {
+  "uid": "u092",
+  "word": "seventy",
+  "start": 487.284,
+  "end": 487.725
+ },
+ {
+  "uid": "u092",
+  "word": "percent",
+  "start": 487.725,
+  "end": 488.165
+ },
+ {
+  "uid": "u092",
+  "word": "of",
+  "start": 488.165,
+  "end": 488.331
+ },
+ {
+  "uid": "u092",
+  "word": "seventy",
+  "start": 488.331,
+  "end": 488.771
+ },
+ {
+  "uid": "u092",
+  "word": "percent,",
+  "start": 488.771,
+  "end": 489.212
+ },
+ {
+  "uid": "u092",
+  "word": "again",
+  "start": 489.377,
+  "end": 489.707
+ },
+ {
+  "uid": "u092",
+  "word": "and",
+  "start": 489.707,
+  "end": 489.928
+ },
+ {
+  "uid": "u092",
+  "word": "again.",
+  "start": 489.928,
+  "end": 490.258
+ },
+ {
+  "uid": "u093",
+  "word": "Of",
+  "start": 490.345,
+  "end": 490.499
+ },
+ {
+  "uid": "u093",
+  "word": "the",
+  "start": 490.499,
+  "end": 490.703
+ },
+ {
+  "uid": "u093",
+  "word": "light",
+  "start": 490.703,
+  "end": 491.01
+ },
+ {
+  "uid": "u093",
+  "word": "that",
+  "start": 491.01,
+  "end": 491.265
+ },
+ {
+  "uid": "u093",
+  "word": "leaves",
+  "start": 491.265,
+  "end": 491.623
+ },
+ {
+  "uid": "u093",
+  "word": "the",
+  "start": 491.623,
+  "end": 491.828
+ },
+ {
+  "uid": "u093",
+  "word": "source,",
+  "start": 491.828,
+  "end": 492.185
+ },
+ {
+  "uid": "u093",
+  "word": "only",
+  "start": 492.339,
+  "end": 492.594
+ },
+ {
+  "uid": "u093",
+  "word": "a",
+  "start": 492.594,
+  "end": 492.696
+ },
+ {
+  "uid": "u093",
+  "word": "few",
+  "start": 492.696,
+  "end": 492.901
+ },
+ {
+  "uid": "u093",
+  "word": "percent",
+  "start": 492.901,
+  "end": 493.31
+ },
+ {
+  "uid": "u093",
+  "word": "ever",
+  "start": 493.31,
+  "end": 493.565
+ },
+ {
+  "uid": "u093",
+  "word": "reaches",
+  "start": 493.565,
+  "end": 493.974
+ },
+ {
+  "uid": "u093",
+  "word": "the",
+  "start": 493.974,
+  "end": 494.179
+ },
+ {
+  "uid": "u093",
+  "word": "wafer.",
+  "start": 494.179,
+  "end": 494.485
+ },
+ {
+  "uid": "u094",
+  "word": "That",
+  "start": 494.569,
+  "end": 494.832
+ },
+ {
+  "uid": "u094",
+  "word": "is",
+  "start": 494.832,
+  "end": 494.99
+ },
+ {
+  "uid": "u094",
+  "word": "why",
+  "start": 494.99,
+  "end": 495.201
+ },
+ {
+  "uid": "u094",
+  "word": "the",
+  "start": 495.201,
+  "end": 495.411
+ },
+ {
+  "uid": "u094",
+  "word": "source",
+  "start": 495.411,
+  "end": 495.779
+ },
+ {
+  "uid": "u094",
+  "word": "has",
+  "start": 495.779,
+  "end": 495.99
+ },
+ {
+  "uid": "u094",
+  "word": "to",
+  "start": 495.99,
+  "end": 496.148
+ },
+ {
+  "uid": "u094",
+  "word": "be",
+  "start": 496.148,
+  "end": 496.305
+ },
+ {
+  "uid": "u094",
+  "word": "so",
+  "start": 496.305,
+  "end": 496.463
+ },
+ {
+  "uid": "u094",
+  "word": "violent:",
+  "start": 496.463,
+  "end": 496.884
+ },
+ {
+  "uid": "u094",
+  "word": "almost",
+  "start": 497.095,
+  "end": 497.463
+ },
+ {
+  "uid": "u094",
+  "word": "all",
+  "start": 497.463,
+  "end": 497.673
+ },
+ {
+  "uid": "u094",
+  "word": "its",
+  "start": 497.673,
+  "end": 497.884
+ },
+ {
+  "uid": "u094",
+  "word": "light",
+  "start": 497.884,
+  "end": 498.199
+ },
+ {
+  "uid": "u094",
+  "word": "is",
+  "start": 498.199,
+  "end": 498.357
+ },
+ {
+  "uid": "u094",
+  "word": "spent",
+  "start": 498.357,
+  "end": 498.673
+ },
+ {
+  "uid": "u094",
+  "word": "getting",
+  "start": 498.673,
+  "end": 499.094
+ },
+ {
+  "uid": "u094",
+  "word": "there.",
+  "start": 499.094,
+  "end": 499.409
+ },
+ {
+  "uid": "u095",
+  "word": "Even",
+  "start": 499.507,
+  "end": 499.795
+ },
+ {
+  "uid": "u095",
+  "word": "then,",
+  "start": 499.795,
+  "end": 500.083
+ },
+ {
+  "uid": "u095",
+  "word": "the",
+  "start": 500.256,
+  "end": 500.487
+ },
+ {
+  "uid": "u095",
+  "word": "machine",
+  "start": 500.487,
+  "end": 500.947
+ },
+ {
+  "uid": "u095",
+  "word": "cannot",
+  "start": 500.947,
+  "end": 501.351
+ },
+ {
+  "uid": "u095",
+  "word": "expose",
+  "start": 501.351,
+  "end": 501.754
+ },
+ {
+  "uid": "u095",
+  "word": "a",
+  "start": 501.754,
+  "end": 501.869
+ },
+ {
+  "uid": "u095",
+  "word": "whole",
+  "start": 501.869,
+  "end": 502.215
+ },
+ {
+  "uid": "u095",
+  "word": "chip",
+  "start": 502.215,
+  "end": 502.503
+ },
+ {
+  "uid": "u095",
+  "word": "at",
+  "start": 502.503,
+  "end": 502.675
+ },
+ {
+  "uid": "u095",
+  "word": "once.",
+  "start": 502.675,
+  "end": 502.963
+ },
+ {
+  "uid": "u095",
+  "word": "The",
+  "start": 503.309,
+  "end": 503.539
+ },
+ {
+  "uid": "u095",
+  "word": "light",
+  "start": 503.539,
+  "end": 503.885
+ },
+ {
+  "uid": "u095",
+  "word": "only",
+  "start": 503.885,
+  "end": 504.173
+ },
+ {
+  "uid": "u095",
+  "word": "covers",
+  "start": 504.173,
+  "end": 504.576
+ },
+ {
+  "uid": "u095",
+  "word": "a",
+  "start": 504.576,
+  "end": 504.691
+ },
+ {
+  "uid": "u095",
+  "word": "thin",
+  "start": 504.691,
+  "end": 504.979
+ },
+ {
+  "uid": "u095",
+  "word": "slit.",
+  "start": 504.979,
+  "end": 505.267
+ },
+ {
+  "uid": "u096",
+  "word": "So",
+  "start": 505.353,
+  "end": 505.501
+ },
+ {
+  "uid": "u096",
+  "word": "the",
+  "start": 505.501,
+  "end": 505.7
+ },
+ {
+  "uid": "u096",
+  "word": "mask",
+  "start": 505.7,
+  "end": 505.948
+ },
+ {
+  "uid": "u096",
+  "word": "and",
+  "start": 505.948,
+  "end": 506.146
+ },
+ {
+  "uid": "u096",
+  "word": "the",
+  "start": 506.146,
+  "end": 506.344
+ },
+ {
+  "uid": "u096",
+  "word": "wafer",
+  "start": 506.344,
+  "end": 506.642
+ },
+ {
+  "uid": "u096",
+  "word": "move",
+  "start": 506.642,
+  "end": 506.89
+ },
+ {
+  "uid": "u096",
+  "word": "in",
+  "start": 506.89,
+  "end": 507.038
+ },
+ {
+  "uid": "u096",
+  "word": "opposite",
+  "start": 507.038,
+  "end": 507.485
+ },
+ {
+  "uid": "u096",
+  "word": "directions,",
+  "start": 507.485,
+  "end": 508.03
+ },
+ {
+  "uid": "u096",
+  "word": "sweeping",
+  "start": 508.179,
+  "end": 508.625
+ },
+ {
+  "uid": "u096",
+  "word": "the",
+  "start": 508.625,
+  "end": 508.824
+ },
+ {
+  "uid": "u096",
+  "word": "pattern",
+  "start": 508.824,
+  "end": 509.22
+ },
+ {
+  "uid": "u096",
+  "word": "through",
+  "start": 509.22,
+  "end": 509.617
+ },
+ {
+  "uid": "u096",
+  "word": "that",
+  "start": 509.617,
+  "end": 509.865
+ },
+ {
+  "uid": "u096",
+  "word": "slit.",
+  "start": 509.865,
+  "end": 510.113
+ },
+ {
+  "uid": "u097",
+  "word": "Because",
+  "start": 510.217,
+  "end": 510.668
+ },
+ {
+  "uid": "u097",
+  "word": "the",
+  "start": 510.668,
+  "end": 510.894
+ },
+ {
+  "uid": "u097",
+  "word": "image",
+  "start": 510.894,
+  "end": 511.232
+ },
+ {
+  "uid": "u097",
+  "word": "is",
+  "start": 511.232,
+  "end": 511.401
+ },
+ {
+  "uid": "u097",
+  "word": "shrunk",
+  "start": 511.401,
+  "end": 511.796
+ },
+ {
+  "uid": "u097",
+  "word": "four",
+  "start": 511.796,
+  "end": 512.078
+ },
+ {
+  "uid": "u097",
+  "word": "times,",
+  "start": 512.078,
+  "end": 512.417
+ },
+ {
+  "uid": "u097",
+  "word": "the",
+  "start": 512.586,
+  "end": 512.812
+ },
+ {
+  "uid": "u097",
+  "word": "mask",
+  "start": 512.812,
+  "end": 513.094
+ },
+ {
+  "uid": "u097",
+  "word": "has",
+  "start": 513.094,
+  "end": 513.319
+ },
+ {
+  "uid": "u097",
+  "word": "to",
+  "start": 513.319,
+  "end": 513.488
+ },
+ {
+  "uid": "u097",
+  "word": "travel",
+  "start": 513.488,
+  "end": 513.883
+ },
+ {
+  "uid": "u097",
+  "word": "four",
+  "start": 513.883,
+  "end": 514.165
+ },
+ {
+  "uid": "u097",
+  "word": "times",
+  "start": 514.165,
+  "end": 514.504
+ },
+ {
+  "uid": "u097",
+  "word": "faster",
+  "start": 514.504,
+  "end": 514.899
+ },
+ {
+  "uid": "u097",
+  "word": "than",
+  "start": 514.899,
+  "end": 515.181
+ },
+ {
+  "uid": "u097",
+  "word": "the",
+  "start": 515.181,
+  "end": 515.406
+ },
+ {
+  "uid": "u097",
+  "word": "wafer,",
+  "start": 515.406,
+  "end": 515.745
+ },
+ {
+  "uid": "u097",
+  "word": "in",
+  "start": 515.914,
+  "end": 516.083
+ },
+ {
+  "uid": "u097",
+  "word": "perfect",
+  "start": 516.083,
+  "end": 516.535
+ },
+ {
+  "uid": "u097",
+  "word": "step.",
+  "start": 516.535,
+  "end": 516.817
+ },
+ {
+  "uid": "u098",
+  "word": "The",
+  "start": 516.905,
+  "end": 517.127
+ },
+ {
+  "uid": "u098",
+  "word": "mask",
+  "start": 517.127,
+  "end": 517.403
+ },
+ {
+  "uid": "u098",
+  "word": "stage",
+  "start": 517.403,
+  "end": 517.736
+ },
+ {
+  "uid": "u098",
+  "word": "whips",
+  "start": 517.736,
+  "end": 518.068
+ },
+ {
+  "uid": "u098",
+  "word": "back",
+  "start": 518.068,
+  "end": 518.344
+ },
+ {
+  "uid": "u098",
+  "word": "and",
+  "start": 518.344,
+  "end": 518.566
+ },
+ {
+  "uid": "u098",
+  "word": "forth",
+  "start": 518.566,
+  "end": 518.898
+ },
+ {
+  "uid": "u098",
+  "word": "with",
+  "start": 518.898,
+  "end": 519.175
+ },
+ {
+  "uid": "u098",
+  "word": "accelerations",
+  "start": 519.175,
+  "end": 519.949
+ },
+ {
+  "uid": "u098",
+  "word": "of",
+  "start": 519.949,
+  "end": 520.115
+ },
+ {
+  "uid": "u098",
+  "word": "more",
+  "start": 520.115,
+  "end": 520.392
+ },
+ {
+  "uid": "u098",
+  "word": "than",
+  "start": 520.392,
+  "end": 520.669
+ },
+ {
+  "uid": "u098",
+  "word": "twenty",
+  "start": 520.669,
+  "end": 521.056
+ },
+ {
+  "uid": "u098",
+  "word": "times",
+  "start": 521.056,
+  "end": 521.388
+ },
+ {
+  "uid": "u098",
+  "word": "the",
+  "start": 521.388,
+  "end": 521.61
+ },
+ {
+  "uid": "u098",
+  "word": "pull",
+  "start": 521.61,
+  "end": 521.887
+ },
+ {
+  "uid": "u098",
+  "word": "of",
+  "start": 521.887,
+  "end": 522.053
+ },
+ {
+  "uid": "u098",
+  "word": "gravity.",
+  "start": 522.053,
+  "end": 522.495
+ },
+ {
+  "uid": "u099",
+  "word": "Then",
+  "start": 522.59,
+  "end": 522.846
+ },
+ {
+  "uid": "u099",
+  "word": "the",
+  "start": 522.846,
+  "end": 523.052
+ },
+ {
+  "uid": "u099",
+  "word": "wafer",
+  "start": 523.052,
+  "end": 523.359
+ },
+ {
+  "uid": "u099",
+  "word": "steps",
+  "start": 523.359,
+  "end": 523.667
+ },
+ {
+  "uid": "u099",
+  "word": "to",
+  "start": 523.667,
+  "end": 523.821
+ },
+ {
+  "uid": "u099",
+  "word": "the",
+  "start": 523.821,
+  "end": 524.026
+ },
+ {
+  "uid": "u099",
+  "word": "next",
+  "start": 524.026,
+  "end": 524.283
+ },
+ {
+  "uid": "u099",
+  "word": "patch,",
+  "start": 524.283,
+  "end": 524.591
+ },
+ {
+  "uid": "u099",
+  "word": "and",
+  "start": 524.745,
+  "end": 524.95
+ },
+ {
+  "uid": "u099",
+  "word": "the",
+  "start": 524.95,
+  "end": 525.155
+ },
+ {
+  "uid": "u099",
+  "word": "dance",
+  "start": 525.155,
+  "end": 525.463
+ },
+ {
+  "uid": "u099",
+  "word": "repeats,",
+  "start": 525.463,
+  "end": 525.873
+ },
+ {
+  "uid": "u099",
+  "word": "around",
+  "start": 526.027,
+  "end": 526.386
+ },
+ {
+  "uid": "u099",
+  "word": "a",
+  "start": 526.386,
+  "end": 526.489
+ },
+ {
+  "uid": "u099",
+  "word": "hundred",
+  "start": 526.489,
+  "end": 526.899
+ },
+ {
+  "uid": "u099",
+  "word": "times",
+  "start": 526.899,
+  "end": 527.207
+ },
+ {
+  "uid": "u099",
+  "word": "per",
+  "start": 527.207,
+  "end": 527.412
+ },
+ {
+  "uid": "u099",
+  "word": "wafer.",
+  "start": 527.412,
+  "end": 527.72
+ },
+ {
+  "uid": "u100",
+  "word": "Every",
+  "start": 527.817,
+  "end": 528.169
+ },
+ {
+  "uid": "u100",
+  "word": "new",
+  "start": 528.169,
+  "end": 528.404
+ },
+ {
+  "uid": "u100",
+  "word": "layer",
+  "start": 528.404,
+  "end": 528.756
+ },
+ {
+  "uid": "u100",
+  "word": "has",
+  "start": 528.756,
+  "end": 528.991
+ },
+ {
+  "uid": "u100",
+  "word": "to",
+  "start": 528.991,
+  "end": 529.168
+ },
+ {
+  "uid": "u100",
+  "word": "land",
+  "start": 529.168,
+  "end": 529.461
+ },
+ {
+  "uid": "u100",
+  "word": "on",
+  "start": 529.461,
+  "end": 529.638
+ },
+ {
+  "uid": "u100",
+  "word": "the",
+  "start": 529.638,
+  "end": 529.872
+ },
+ {
+  "uid": "u100",
+  "word": "one",
+  "start": 529.872,
+  "end": 530.107
+ },
+ {
+  "uid": "u100",
+  "word": "beneath",
+  "start": 530.107,
+  "end": 530.577
+ },
+ {
+  "uid": "u100",
+  "word": "it",
+  "start": 530.577,
+  "end": 530.754
+ },
+ {
+  "uid": "u100",
+  "word": "to",
+  "start": 530.754,
+  "end": 530.93
+ },
+ {
+  "uid": "u100",
+  "word": "within",
+  "start": 530.93,
+  "end": 531.341
+ },
+ {
+  "uid": "u100",
+  "word": "about",
+  "start": 531.341,
+  "end": 531.693
+ },
+ {
+  "uid": "u100",
+  "word": "a",
+  "start": 531.693,
+  "end": 531.811
+ },
+ {
+  "uid": "u100",
+  "word": "nanometre.",
+  "start": 531.811,
+  "end": 532.398
+ },
+ {
+  "uid": "u100",
+  "word": "A",
+  "start": 532.751,
+  "end": 532.868
+ },
+ {
+  "uid": "u100",
+  "word": "handful",
+  "start": 532.868,
+  "end": 533.338
+ },
+ {
+  "uid": "u100",
+  "word": "of",
+  "start": 533.338,
+  "end": 533.514
+ },
+ {
+  "uid": "u100",
+  "word": "atoms.",
+  "start": 533.514,
+  "end": 533.867
+ },
+ {
+  "uid": "u101",
+  "word": "A",
+  "start": 533.971,
+  "end": 534.077
+ },
+ {
+  "uid": "u101",
+  "word": "modern",
+  "start": 534.077,
+  "end": 534.451
+ },
+ {
+  "uid": "u101",
+  "word": "machine",
+  "start": 534.451,
+  "end": 534.877
+ },
+ {
+  "uid": "u101",
+  "word": "does",
+  "start": 534.877,
+  "end": 535.144
+ },
+ {
+  "uid": "u101",
+  "word": "all",
+  "start": 535.144,
+  "end": 535.357
+ },
+ {
+  "uid": "u101",
+  "word": "of",
+  "start": 535.357,
+  "end": 535.517
+ },
+ {
+  "uid": "u101",
+  "word": "this",
+  "start": 535.517,
+  "end": 535.784
+ },
+ {
+  "uid": "u101",
+  "word": "for",
+  "start": 535.784,
+  "end": 535.997
+ },
+ {
+  "uid": "u101",
+  "word": "around",
+  "start": 535.997,
+  "end": 536.371
+ },
+ {
+  "uid": "u101",
+  "word": "two",
+  "start": 536.371,
+  "end": 536.584
+ },
+ {
+  "uid": "u101",
+  "word": "hundred",
+  "start": 536.584,
+  "end": 537.011
+ },
+ {
+  "uid": "u101",
+  "word": "wafers",
+  "start": 537.011,
+  "end": 537.384
+ },
+ {
+  "uid": "u101",
+  "word": "every",
+  "start": 537.384,
+  "end": 537.704
+ },
+ {
+  "uid": "u101",
+  "word": "hour.",
+  "start": 537.704,
+  "end": 537.971
+ },
+ {
+  "uid": "u102",
+  "word": "You",
+  "start": 538.067,
+  "end": 538.264
+ },
+ {
+  "uid": "u102",
+  "word": "might",
+  "start": 538.264,
+  "end": 538.561
+ },
+ {
+  "uid": "u102",
+  "word": "think",
+  "start": 538.561,
+  "end": 538.857
+ },
+ {
+  "uid": "u102",
+  "word": "a",
+  "start": 538.857,
+  "end": 538.956
+ },
+ {
+  "uid": "u102",
+  "word": "shorter",
+  "start": 538.956,
+  "end": 539.351
+ },
+ {
+  "uid": "u102",
+  "word": "wave",
+  "start": 539.351,
+  "end": 539.598
+ },
+ {
+  "uid": "u102",
+  "word": "simply",
+  "start": 539.598,
+  "end": 539.944
+ },
+ {
+  "uid": "u102",
+  "word": "means",
+  "start": 539.944,
+  "end": 540.241
+ },
+ {
+  "uid": "u102",
+  "word": "sharper",
+  "start": 540.241,
+  "end": 540.636
+ },
+ {
+  "uid": "u102",
+  "word": "lines.",
+  "start": 540.636,
+  "end": 540.933
+ },
+ {
+  "uid": "u102",
+  "word": "But",
+  "start": 541.229,
+  "end": 541.427
+ },
+ {
+  "uid": "u102",
+  "word": "there",
+  "start": 541.427,
+  "end": 541.723
+ },
+ {
+  "uid": "u102",
+  "word": "is",
+  "start": 541.723,
+  "end": 541.871
+ },
+ {
+  "uid": "u102",
+  "word": "a",
+  "start": 541.871,
+  "end": 541.97
+ },
+ {
+  "uid": "u102",
+  "word": "catch.",
+  "start": 541.97,
+  "end": 542.267
+ },
+ {
+  "uid": "u103",
+  "word": "Light",
+  "start": 542.345,
+  "end": 542.692
+ },
+ {
+  "uid": "u103",
+  "word": "arrives",
+  "start": 542.692,
+  "end": 543.155
+ },
+ {
+  "uid": "u103",
+  "word": "in",
+  "start": 543.155,
+  "end": 543.329
+ },
+ {
+  "uid": "u103",
+  "word": "tiny",
+  "start": 543.329,
+  "end": 543.618
+ },
+ {
+  "uid": "u103",
+  "word": "packets",
+  "start": 543.618,
+  "end": 544.081
+ },
+ {
+  "uid": "u103",
+  "word": "of",
+  "start": 544.081,
+  "end": 544.255
+ },
+ {
+  "uid": "u103",
+  "word": "energy",
+  "start": 544.255,
+  "end": 544.66
+ },
+ {
+  "uid": "u103",
+  "word": "called",
+  "start": 544.66,
+  "end": 545.065
+ },
+ {
+  "uid": "u103",
+  "word": "photons,",
+  "start": 545.065,
+  "end": 545.529
+ },
+ {
+  "uid": "u103",
+  "word": "and",
+  "start": 545.702,
+  "end": 545.934
+ },
+ {
+  "uid": "u103",
+  "word": "a",
+  "start": 545.934,
+  "end": 546.05
+ },
+ {
+  "uid": "u103",
+  "word": "shorter",
+  "start": 546.05,
+  "end": 546.513
+ },
+ {
+  "uid": "u103",
+  "word": "wave",
+  "start": 546.513,
+  "end": 546.802
+ },
+ {
+  "uid": "u103",
+  "word": "packs",
+  "start": 546.802,
+  "end": 547.15
+ },
+ {
+  "uid": "u103",
+  "word": "more",
+  "start": 547.15,
+  "end": 547.439
+ },
+ {
+  "uid": "u103",
+  "word": "energy",
+  "start": 547.439,
+  "end": 547.844
+ },
+ {
+  "uid": "u103",
+  "word": "into",
+  "start": 547.844,
+  "end": 548.134
+ },
+ {
+  "uid": "u103",
+  "word": "each",
+  "start": 548.134,
+  "end": 548.423
+ },
+ {
+  "uid": "u103",
+  "word": "one.",
+  "start": 548.423,
+  "end": 548.655
+ },
+ {
+  "uid": "u104",
+  "word": "An",
+  "start": 548.776,
+  "end": 548.982
+ },
+ {
+  "uid": "u104",
+  "word": "extreme",
+  "start": 548.982,
+  "end": 549.532
+ },
+ {
+  "uid": "u104",
+  "word": "ultraviolet",
+  "start": 549.532,
+  "end": 550.356
+ },
+ {
+  "uid": "u104",
+  "word": "photon",
+  "start": 550.356,
+  "end": 550.837
+ },
+ {
+  "uid": "u104",
+  "word": "carries",
+  "start": 550.837,
+  "end": 551.386
+ },
+ {
+  "uid": "u104",
+  "word": "about",
+  "start": 551.386,
+  "end": 551.798
+ },
+ {
+  "uid": "u104",
+  "word": "fourteen",
+  "start": 551.798,
+  "end": 552.416
+ },
+ {
+  "uid": "u104",
+  "word": "times",
+  "start": 552.416,
+  "end": 552.828
+ },
+ {
+  "uid": "u104",
+  "word": "the",
+  "start": 552.828,
+  "end": 553.103
+ },
+ {
+  "uid": "u104",
+  "word": "energy",
+  "start": 553.103,
+  "end": 553.584
+ },
+ {
+  "uid": "u104",
+  "word": "of",
+  "start": 553.584,
+  "end": 553.79
+ },
+ {
+  "uid": "u104",
+  "word": "the",
+  "start": 553.79,
+  "end": 554.065
+ },
+ {
+  "uid": "u104",
+  "word": "deep",
+  "start": 554.065,
+  "end": 554.408
+ },
+ {
+  "uid": "u104",
+  "word": "ultraviolet",
+  "start": 554.408,
+  "end": 555.232
+ },
+ {
+  "uid": "u104",
+  "word": "photons",
+  "start": 555.232,
+  "end": 555.782
+ },
+ {
+  "uid": "u104",
+  "word": "used",
+  "start": 555.782,
+  "end": 556.125
+ },
+ {
+  "uid": "u104",
+  "word": "before.",
+  "start": 556.125,
+  "end": 556.606
+ },
+ {
+  "uid": "u105",
+  "word": "So",
+  "start": 556.692,
+  "end": 556.87
+ },
+ {
+  "uid": "u105",
+  "word": "for",
+  "start": 556.87,
+  "end": 557.107
+ },
+ {
+  "uid": "u105",
+  "word": "the",
+  "start": 557.107,
+  "end": 557.344
+ },
+ {
+  "uid": "u105",
+  "word": "same",
+  "start": 557.344,
+  "end": 557.641
+ },
+ {
+  "uid": "u105",
+  "word": "total",
+  "start": 557.641,
+  "end": 557.996
+ },
+ {
+  "uid": "u105",
+  "word": "dose,",
+  "start": 557.996,
+  "end": 558.293
+ },
+ {
+  "uid": "u105",
+  "word": "the",
+  "start": 558.471,
+  "end": 558.708
+ },
+ {
+  "uid": "u105",
+  "word": "wafer",
+  "start": 558.708,
+  "end": 559.063
+ },
+ {
+  "uid": "u105",
+  "word": "receives",
+  "start": 559.063,
+  "end": 559.597
+ },
+ {
+  "uid": "u105",
+  "word": "about",
+  "start": 559.597,
+  "end": 559.953
+ },
+ {
+  "uid": "u105",
+  "word": "fourteen",
+  "start": 559.953,
+  "end": 560.486
+ },
+ {
+  "uid": "u105",
+  "word": "times",
+  "start": 560.486,
+  "end": 560.842
+ },
+ {
+  "uid": "u105",
+  "word": "fewer",
+  "start": 560.842,
+  "end": 561.198
+ },
+ {
+  "uid": "u105",
+  "word": "photons.",
+  "start": 561.198,
+  "end": 561.672
+ },
+ {
+  "uid": "u106",
+  "word": "And",
+  "start": 561.768,
+  "end": 561.992
+ },
+ {
+  "uid": "u106",
+  "word": "photons",
+  "start": 561.992,
+  "end": 562.439
+ },
+ {
+  "uid": "u106",
+  "word": "arrive",
+  "start": 562.439,
+  "end": 562.83
+ },
+ {
+  "uid": "u106",
+  "word": "at",
+  "start": 562.83,
+  "end": 562.998
+ },
+ {
+  "uid": "u106",
+  "word": "random,",
+  "start": 562.998,
+  "end": 563.389
+ },
+ {
+  "uid": "u106",
+  "word": "like",
+  "start": 563.557,
+  "end": 563.836
+ },
+ {
+  "uid": "u106",
+  "word": "the",
+  "start": 563.836,
+  "end": 564.06
+ },
+ {
+  "uid": "u106",
+  "word": "first",
+  "start": 564.06,
+  "end": 564.395
+ },
+ {
+  "uid": "u106",
+  "word": "raindrops",
+  "start": 564.395,
+  "end": 564.955
+ },
+ {
+  "uid": "u106",
+  "word": "of",
+  "start": 564.955,
+  "end": 565.122
+ },
+ {
+  "uid": "u106",
+  "word": "a",
+  "start": 565.122,
+  "end": 565.234
+ },
+ {
+  "uid": "u106",
+  "word": "shower",
+  "start": 565.234,
+  "end": 565.625
+ },
+ {
+  "uid": "u106",
+  "word": "on",
+  "start": 565.625,
+  "end": 565.793
+ },
+ {
+  "uid": "u106",
+  "word": "a",
+  "start": 565.793,
+  "end": 565.905
+ },
+ {
+  "uid": "u106",
+  "word": "pavement.",
+  "start": 565.905,
+  "end": 566.408
+ },
+ {
+  "uid": "u107",
+  "word": "At",
+  "start": 566.494,
+  "end": 566.672
+ },
+ {
+  "uid": "u107",
+  "word": "a",
+  "start": 566.672,
+  "end": 566.791
+ },
+ {
+  "uid": "u107",
+  "word": "typical",
+  "start": 566.791,
+  "end": 567.267
+ },
+ {
+  "uid": "u107",
+  "word": "dose,",
+  "start": 567.267,
+  "end": 567.564
+ },
+ {
+  "uid": "u107",
+  "word": "a",
+  "start": 567.742,
+  "end": 567.861
+ },
+ {
+  "uid": "u107",
+  "word": "square",
+  "start": 567.861,
+  "end": 568.277
+ },
+ {
+  "uid": "u107",
+  "word": "of",
+  "start": 568.277,
+  "end": 568.455
+ },
+ {
+  "uid": "u107",
+  "word": "resist",
+  "start": 568.455,
+  "end": 568.871
+ },
+ {
+  "uid": "u107",
+  "word": "ten",
+  "start": 568.871,
+  "end": 569.109
+ },
+ {
+  "uid": "u107",
+  "word": "nanometres",
+  "start": 569.109,
+  "end": 569.763
+ },
+ {
+  "uid": "u107",
+  "word": "on",
+  "start": 569.763,
+  "end": 569.941
+ },
+ {
+  "uid": "u107",
+  "word": "a",
+  "start": 569.941,
+  "end": 570.06
+ },
+ {
+  "uid": "u107",
+  "word": "side",
+  "start": 570.06,
+  "end": 570.357
+ },
+ {
+  "uid": "u107",
+  "word": "catches",
+  "start": 570.357,
+  "end": 570.833
+ },
+ {
+  "uid": "u107",
+  "word": "only",
+  "start": 570.833,
+  "end": 571.13
+ },
+ {
+  "uid": "u107",
+  "word": "around",
+  "start": 571.13,
+  "end": 571.546
+ },
+ {
+  "uid": "u107",
+  "word": "two",
+  "start": 571.546,
+  "end": 571.784
+ },
+ {
+  "uid": "u107",
+  "word": "thousand",
+  "start": 571.784,
+  "end": 572.319
+ },
+ {
+  "uid": "u107",
+  "word": "of",
+  "start": 572.319,
+  "end": 572.497
+ },
+ {
+  "uid": "u107",
+  "word": "them.",
+  "start": 572.497,
+  "end": 572.794
+ },
+ {
+  "uid": "u108",
+  "word": "Some",
+  "start": 572.894,
+  "end": 573.145
+ },
+ {
+  "uid": "u108",
+  "word": "patches",
+  "start": 573.145,
+  "end": 573.547
+ },
+ {
+  "uid": "u108",
+  "word": "catch",
+  "start": 573.547,
+  "end": 573.848
+ },
+ {
+  "uid": "u108",
+  "word": "a",
+  "start": 573.848,
+  "end": 573.948
+ },
+ {
+  "uid": "u108",
+  "word": "few",
+  "start": 573.948,
+  "end": 574.149
+ },
+ {
+  "uid": "u108",
+  "word": "more,",
+  "start": 574.149,
+  "end": 574.4
+ },
+ {
+  "uid": "u108",
+  "word": "some",
+  "start": 574.551,
+  "end": 574.802
+ },
+ {
+  "uid": "u108",
+  "word": "a",
+  "start": 574.802,
+  "end": 574.902
+ },
+ {
+  "uid": "u108",
+  "word": "few",
+  "start": 574.902,
+  "end": 575.103
+ },
+ {
+  "uid": "u108",
+  "word": "less.",
+  "start": 575.103,
+  "end": 575.354
+ },
+ {
+  "uid": "u109",
+  "word": "Where",
+  "start": 575.474,
+  "end": 575.808
+ },
+ {
+  "uid": "u109",
+  "word": "too",
+  "start": 575.808,
+  "end": 576.03
+ },
+ {
+  "uid": "u109",
+  "word": "few",
+  "start": 576.03,
+  "end": 576.253
+ },
+ {
+  "uid": "u109",
+  "word": "land,",
+  "start": 576.253,
+  "end": 576.531
+ },
+ {
+  "uid": "u109",
+  "word": "a",
+  "start": 576.698,
+  "end": 576.809
+ },
+ {
+  "uid": "u109",
+  "word": "line",
+  "start": 576.809,
+  "end": 577.087
+ },
+ {
+  "uid": "u109",
+  "word": "comes",
+  "start": 577.087,
+  "end": 577.421
+ },
+ {
+  "uid": "u109",
+  "word": "out",
+  "start": 577.421,
+  "end": 577.643
+ },
+ {
+  "uid": "u109",
+  "word": "thin",
+  "start": 577.643,
+  "end": 577.921
+ },
+ {
+  "uid": "u109",
+  "word": "or",
+  "start": 577.921,
+  "end": 578.088
+ },
+ {
+  "uid": "u109",
+  "word": "broken.",
+  "start": 578.088,
+  "end": 578.478
+ },
+ {
+  "uid": "u109",
+  "word": "Where",
+  "start": 578.812,
+  "end": 579.145
+ },
+ {
+  "uid": "u109",
+  "word": "too",
+  "start": 579.145,
+  "end": 579.368
+ },
+ {
+  "uid": "u109",
+  "word": "many",
+  "start": 579.368,
+  "end": 579.646
+ },
+ {
+  "uid": "u109",
+  "word": "land,",
+  "start": 579.646,
+  "end": 579.924
+ },
+ {
+  "uid": "u109",
+  "word": "two",
+  "start": 580.091,
+  "end": 580.313
+ },
+ {
+  "uid": "u109",
+  "word": "lines",
+  "start": 580.313,
+  "end": 580.647
+ },
+ {
+  "uid": "u109",
+  "word": "can",
+  "start": 580.647,
+  "end": 580.87
+ },
+ {
+  "uid": "u109",
+  "word": "merge",
+  "start": 580.87,
+  "end": 581.203
+ },
+ {
+  "uid": "u109",
+  "word": "into",
+  "start": 581.203,
+  "end": 581.482
+ },
+ {
+  "uid": "u109",
+  "word": "one.",
+  "start": 581.482,
+  "end": 581.704
+ },
+ {
+  "uid": "u110",
+  "word": "Engineers",
+  "start": 581.801,
+  "end": 582.343
+ },
+ {
+  "uid": "u110",
+  "word": "call",
+  "start": 582.343,
+  "end": 582.614
+ },
+ {
+  "uid": "u110",
+  "word": "these",
+  "start": 582.614,
+  "end": 582.94
+ },
+ {
+  "uid": "u110",
+  "word": "stochastic",
+  "start": 582.94,
+  "end": 583.536
+ },
+ {
+  "uid": "u110",
+  "word": "effects,",
+  "start": 583.536,
+  "end": 583.969
+ },
+ {
+  "uid": "u110",
+  "word": "and",
+  "start": 584.132,
+  "end": 584.349
+ },
+ {
+  "uid": "u110",
+  "word": "they",
+  "start": 584.349,
+  "end": 584.62
+ },
+ {
+  "uid": "u110",
+  "word": "are",
+  "start": 584.62,
+  "end": 584.837
+ },
+ {
+  "uid": "u110",
+  "word": "now",
+  "start": 584.837,
+  "end": 585.053
+ },
+ {
+  "uid": "u110",
+  "word": "one",
+  "start": 585.053,
+  "end": 585.27
+ },
+ {
+  "uid": "u110",
+  "word": "of",
+  "start": 585.27,
+  "end": 585.433
+ },
+ {
+  "uid": "u110",
+  "word": "the",
+  "start": 585.433,
+  "end": 585.65
+ },
+ {
+  "uid": "u110",
+  "word": "hardest",
+  "start": 585.65,
+  "end": 586.083
+ },
+ {
+  "uid": "u110",
+  "word": "limits",
+  "start": 586.083,
+  "end": 586.463
+ },
+ {
+  "uid": "u110",
+  "word": "in",
+  "start": 586.463,
+  "end": 586.625
+ },
+ {
+  "uid": "u110",
+  "word": "chipmaking.",
+  "start": 586.625,
+  "end": 587.221
+ },
+ {
+  "uid": "u111",
+  "word": "The",
+  "start": 587.305,
+  "end": 587.545
+ },
+ {
+  "uid": "u111",
+  "word": "cure",
+  "start": 587.545,
+  "end": 587.845
+ },
+ {
+  "uid": "u111",
+  "word": "is",
+  "start": 587.845,
+  "end": 588.025
+ },
+ {
+  "uid": "u111",
+  "word": "more",
+  "start": 588.025,
+  "end": 588.325
+ },
+ {
+  "uid": "u111",
+  "word": "photons:",
+  "start": 588.325,
+  "end": 588.805
+ },
+ {
+  "uid": "u111",
+  "word": "a",
+  "start": 589.045,
+  "end": 589.165
+ },
+ {
+  "uid": "u111",
+  "word": "brighter",
+  "start": 589.165,
+  "end": 589.705
+ },
+ {
+  "uid": "u111",
+  "word": "source,",
+  "start": 589.705,
+  "end": 590.125
+ },
+ {
+  "uid": "u111",
+  "word": "or",
+  "start": 590.305,
+  "end": 590.485
+ },
+ {
+  "uid": "u111",
+  "word": "a",
+  "start": 590.485,
+  "end": 590.605
+ },
+ {
+  "uid": "u111",
+  "word": "longer",
+  "start": 590.605,
+  "end": 591.025
+ },
+ {
+  "uid": "u111",
+  "word": "exposure.",
+  "start": 591.025,
+  "end": 591.565
+ },
+ {
+  "uid": "u111",
+  "word": "And",
+  "start": 591.925,
+  "end": 592.165
+ },
+ {
+  "uid": "u111",
+  "word": "every",
+  "start": 592.165,
+  "end": 592.525
+ },
+ {
+  "uid": "u111",
+  "word": "extra",
+  "start": 592.525,
+  "end": 592.885
+ },
+ {
+  "uid": "u111",
+  "word": "photon",
+  "start": 592.885,
+  "end": 593.305
+ },
+ {
+  "uid": "u111",
+  "word": "costs",
+  "start": 593.305,
+  "end": 593.665
+ },
+ {
+  "uid": "u111",
+  "word": "time.",
+  "start": 593.665,
+  "end": 593.965
+ },
+ {
+  "uid": "u112",
+  "word": "That",
+  "start": 594.077,
+  "end": 594.331
+ },
+ {
+  "uid": "u112",
+  "word": "is",
+  "start": 594.331,
+  "end": 594.484
+ },
+ {
+  "uid": "u112",
+  "word": "why",
+  "start": 594.484,
+  "end": 594.688
+ },
+ {
+  "uid": "u112",
+  "word": "the",
+  "start": 594.688,
+  "end": 594.891
+ },
+ {
+  "uid": "u112",
+  "word": "race",
+  "start": 594.891,
+  "end": 595.146
+ },
+ {
+  "uid": "u112",
+  "word": "for",
+  "start": 595.146,
+  "end": 595.349
+ },
+ {
+  "uid": "u112",
+  "word": "more",
+  "start": 595.349,
+  "end": 595.604
+ },
+ {
+  "uid": "u112",
+  "word": "source",
+  "start": 595.604,
+  "end": 595.96
+ },
+ {
+  "uid": "u112",
+  "word": "power",
+  "start": 595.96,
+  "end": 596.266
+ },
+ {
+  "uid": "u112",
+  "word": "never",
+  "start": 596.266,
+  "end": 596.571
+ },
+ {
+  "uid": "u112",
+  "word": "stops.",
+  "start": 596.571,
+  "end": 596.877
+ },
+ {
+  "uid": "u113",
+  "word": "With",
+  "start": 596.979,
+  "end": 597.251
+ },
+ {
+  "uid": "u113",
+  "word": "the",
+  "start": 597.251,
+  "end": 597.468
+ },
+ {
+  "uid": "u113",
+  "word": "wavelength",
+  "start": 597.468,
+  "end": 598.066
+ },
+ {
+  "uid": "u113",
+  "word": "fixed,",
+  "start": 598.066,
+  "end": 598.392
+ },
+ {
+  "uid": "u113",
+  "word": "one",
+  "start": 598.555,
+  "end": 598.772
+ },
+ {
+  "uid": "u113",
+  "word": "knob",
+  "start": 598.772,
+  "end": 599.044
+ },
+ {
+  "uid": "u113",
+  "word": "is",
+  "start": 599.044,
+  "end": 599.206
+ },
+ {
+  "uid": "u113",
+  "word": "left",
+  "start": 599.206,
+  "end": 599.478
+ },
+ {
+  "uid": "u113",
+  "word": "to",
+  "start": 599.478,
+  "end": 599.641
+ },
+ {
+  "uid": "u113",
+  "word": "turn:",
+  "start": 599.641,
+  "end": 599.913
+ },
+ {
+  "uid": "u113",
+  "word": "the",
+  "start": 600.13,
+  "end": 600.347
+ },
+ {
+  "uid": "u113",
+  "word": "numerical",
+  "start": 600.347,
+  "end": 600.89
+ },
+ {
+  "uid": "u113",
+  "word": "aperture.",
+  "start": 600.89,
+  "end": 601.379
+ },
+ {
+  "uid": "u114",
+  "word": "Today's",
+  "start": 601.481,
+  "end": 601.965
+ },
+ {
+  "uid": "u114",
+  "word": "standard",
+  "start": 601.965,
+  "end": 602.509
+ },
+ {
+  "uid": "u114",
+  "word": "machines",
+  "start": 602.509,
+  "end": 603.053
+ },
+ {
+  "uid": "u114",
+  "word": "collect",
+  "start": 603.053,
+  "end": 603.537
+ },
+ {
+  "uid": "u114",
+  "word": "light",
+  "start": 603.537,
+  "end": 603.9
+ },
+ {
+  "uid": "u114",
+  "word": "with",
+  "start": 603.9,
+  "end": 604.203
+ },
+ {
+  "uid": "u114",
+  "word": "a",
+  "start": 604.203,
+  "end": 604.324
+ },
+ {
+  "uid": "u114",
+  "word": "numerical",
+  "start": 604.324,
+  "end": 604.929
+ },
+ {
+  "uid": "u114",
+  "word": "aperture",
+  "start": 604.929,
+  "end": 605.473
+ },
+ {
+  "uid": "u114",
+  "word": "of",
+  "start": 605.473,
+  "end": 605.654
+ },
+ {
+  "uid": "u114",
+  "word": "zero",
+  "start": 605.654,
+  "end": 605.957
+ },
+ {
+  "uid": "u114",
+  "word": "point",
+  "start": 605.957,
+  "end": 606.32
+ },
+ {
+  "uid": "u114",
+  "word": "three",
+  "start": 606.32,
+  "end": 606.683
+ },
+ {
+  "uid": "u114",
+  "word": "three,",
+  "start": 606.683,
+  "end": 607.046
+ },
+ {
+  "uid": "u114",
+  "word": "enough",
+  "start": 607.227,
+  "end": 607.651
+ },
+ {
+  "uid": "u114",
+  "word": "for",
+  "start": 607.651,
+  "end": 607.893
+ },
+ {
+  "uid": "u114",
+  "word": "lines",
+  "start": 607.893,
+  "end": 608.255
+ },
+ {
+  "uid": "u114",
+  "word": "about",
+  "start": 608.255,
+  "end": 608.618
+ },
+ {
+  "uid": "u114",
+  "word": "thirteen",
+  "start": 608.618,
+  "end": 609.163
+ },
+ {
+  "uid": "u114",
+  "word": "nanometres",
+  "start": 609.163,
+  "end": 609.828
+ },
+ {
+  "uid": "u114",
+  "word": "wide.",
+  "start": 609.828,
+  "end": 610.131
+ },
+ {
+  "uid": "u115",
+  "word": "The",
+  "start": 610.217,
+  "end": 610.461
+ },
+ {
+  "uid": "u115",
+  "word": "newest",
+  "start": 610.461,
+  "end": 610.886
+ },
+ {
+  "uid": "u115",
+  "word": "generation",
+  "start": 610.886,
+  "end": 611.556
+ },
+ {
+  "uid": "u115",
+  "word": "opens",
+  "start": 611.556,
+  "end": 611.921
+ },
+ {
+  "uid": "u115",
+  "word": "that",
+  "start": 611.921,
+  "end": 612.225
+ },
+ {
+  "uid": "u115",
+  "word": "to",
+  "start": 612.225,
+  "end": 612.407
+ },
+ {
+  "uid": "u115",
+  "word": "zero",
+  "start": 612.407,
+  "end": 612.712
+ },
+ {
+  "uid": "u115",
+  "word": "point",
+  "start": 612.712,
+  "end": 613.076
+ },
+ {
+  "uid": "u115",
+  "word": "five",
+  "start": 613.076,
+  "end": 613.381
+ },
+ {
+  "uid": "u115",
+  "word": "five,",
+  "start": 613.381,
+  "end": 613.685
+ },
+ {
+  "uid": "u115",
+  "word": "for",
+  "start": 613.867,
+  "end": 614.111
+ },
+ {
+  "uid": "u115",
+  "word": "lines",
+  "start": 614.111,
+  "end": 614.476
+ },
+ {
+  "uid": "u115",
+  "word": "of",
+  "start": 614.476,
+  "end": 614.658
+ },
+ {
+  "uid": "u115",
+  "word": "about",
+  "start": 614.658,
+  "end": 615.023
+ },
+ {
+  "uid": "u115",
+  "word": "eight",
+  "start": 615.023,
+  "end": 615.388
+ },
+ {
+  "uid": "u115",
+  "word": "nanometres.",
+  "start": 615.388,
+  "end": 616.057
+ },
+ {
+  "uid": "u116",
+  "word": "Catching",
+  "start": 616.137,
+  "end": 616.64
+ },
+ {
+  "uid": "u116",
+  "word": "a",
+  "start": 616.64,
+  "end": 616.752
+ },
+ {
+  "uid": "u116",
+  "word": "wider",
+  "start": 616.752,
+  "end": 617.087
+ },
+ {
+  "uid": "u116",
+  "word": "fan",
+  "start": 617.087,
+  "end": 617.311
+ },
+ {
+  "uid": "u116",
+  "word": "means",
+  "start": 617.311,
+  "end": 617.647
+ },
+ {
+  "uid": "u116",
+  "word": "bigger",
+  "start": 617.647,
+  "end": 618.038
+ },
+ {
+  "uid": "u116",
+  "word": "mirrors,",
+  "start": 618.038,
+  "end": 618.485
+ },
+ {
+  "uid": "u116",
+  "word": "and",
+  "start": 618.653,
+  "end": 618.877
+ },
+ {
+  "uid": "u116",
+  "word": "steeper",
+  "start": 618.877,
+  "end": 619.324
+ },
+ {
+  "uid": "u116",
+  "word": "angles",
+  "start": 619.324,
+  "end": 619.716
+ },
+ {
+  "uid": "u116",
+  "word": "at",
+  "start": 619.716,
+  "end": 619.883
+ },
+ {
+  "uid": "u116",
+  "word": "the",
+  "start": 619.883,
+  "end": 620.107
+ },
+ {
+  "uid": "u116",
+  "word": "mask.",
+  "start": 620.107,
+  "end": 620.387
+ },
+ {
+  "uid": "u117",
+  "word": "So",
+  "start": 620.489,
+  "end": 620.653
+ },
+ {
+  "uid": "u117",
+  "word": "these",
+  "start": 620.653,
+  "end": 620.98
+ },
+ {
+  "uid": "u117",
+  "word": "machines",
+  "start": 620.98,
+  "end": 621.472
+ },
+ {
+  "uid": "u117",
+  "word": "shrink",
+  "start": 621.472,
+  "end": 621.854
+ },
+ {
+  "uid": "u117",
+  "word": "the",
+  "start": 621.854,
+  "end": 622.073
+ },
+ {
+  "uid": "u117",
+  "word": "image",
+  "start": 622.073,
+  "end": 622.4
+ },
+ {
+  "uid": "u117",
+  "word": "eight",
+  "start": 622.4,
+  "end": 622.728
+ },
+ {
+  "uid": "u117",
+  "word": "times",
+  "start": 622.728,
+  "end": 623.056
+ },
+ {
+  "uid": "u117",
+  "word": "one",
+  "start": 623.056,
+  "end": 623.274
+ },
+ {
+  "uid": "u117",
+  "word": "way",
+  "start": 623.274,
+  "end": 623.493
+ },
+ {
+  "uid": "u117",
+  "word": "and",
+  "start": 623.493,
+  "end": 623.711
+ },
+ {
+  "uid": "u117",
+  "word": "four",
+  "start": 623.711,
+  "end": 623.984
+ },
+ {
+  "uid": "u117",
+  "word": "times",
+  "start": 623.984,
+  "end": 624.312
+ },
+ {
+  "uid": "u117",
+  "word": "the",
+  "start": 624.312,
+  "end": 624.53
+ },
+ {
+  "uid": "u117",
+  "word": "other,",
+  "start": 624.53,
+  "end": 624.858
+ },
+ {
+  "uid": "u117",
+  "word": "giving",
+  "start": 625.022,
+  "end": 625.404
+ },
+ {
+  "uid": "u117",
+  "word": "up",
+  "start": 625.404,
+  "end": 625.568
+ },
+ {
+  "uid": "u117",
+  "word": "half",
+  "start": 625.568,
+  "end": 625.841
+ },
+ {
+  "uid": "u117",
+  "word": "the",
+  "start": 625.841,
+  "end": 626.059
+ },
+ {
+  "uid": "u117",
+  "word": "exposure",
+  "start": 626.059,
+  "end": 626.551
+ },
+ {
+  "uid": "u117",
+  "word": "field.",
+  "start": 626.551,
+  "end": 626.879
+ },
+ {
+  "uid": "u118",
+  "word": "The",
+  "start": 626.964,
+  "end": 627.19
+ },
+ {
+  "uid": "u118",
+  "word": "first",
+  "start": 627.19,
+  "end": 627.529
+ },
+ {
+  "uid": "u118",
+  "word": "commercial",
+  "start": 627.529,
+  "end": 628.15
+ },
+ {
+  "uid": "u118",
+  "word": "one",
+  "start": 628.15,
+  "end": 628.376
+ },
+ {
+  "uid": "u118",
+  "word": "was",
+  "start": 628.376,
+  "end": 628.601
+ },
+ {
+  "uid": "u118",
+  "word": "assembled",
+  "start": 628.601,
+  "end": 629.166
+ },
+ {
+  "uid": "u118",
+  "word": "at",
+  "start": 629.166,
+  "end": 629.335
+ },
+ {
+  "uid": "u118",
+  "word": "Intel,",
+  "start": 629.335,
+  "end": 629.674
+ },
+ {
+  "uid": "u118",
+  "word": "and",
+  "start": 629.843,
+  "end": 630.069
+ },
+ {
+  "uid": "u118",
+  "word": "each",
+  "start": 630.069,
+  "end": 630.352
+ },
+ {
+  "uid": "u118",
+  "word": "costs",
+  "start": 630.352,
+  "end": 630.69
+ },
+ {
+  "uid": "u118",
+  "word": "around",
+  "start": 630.69,
+  "end": 631.086
+ },
+ {
+  "uid": "u118",
+  "word": "three",
+  "start": 631.086,
+  "end": 631.424
+ },
+ {
+  "uid": "u118",
+  "word": "hundred",
+  "start": 631.424,
+  "end": 631.876
+ },
+ {
+  "uid": "u118",
+  "word": "and",
+  "start": 631.876,
+  "end": 632.102
+ },
+ {
+  "uid": "u118",
+  "word": "sixty",
+  "start": 632.102,
+  "end": 632.441
+ },
+ {
+  "uid": "u118",
+  "word": "million",
+  "start": 632.441,
+  "end": 632.892
+ },
+ {
+  "uid": "u118",
+  "word": "dollars.",
+  "start": 632.892,
+  "end": 633.344
+ },
+ {
+  "uid": "u119",
+  "word": "Only",
+  "start": 633.438,
+  "end": 633.713
+ },
+ {
+  "uid": "u119",
+  "word": "one",
+  "start": 633.713,
+  "end": 633.933
+ },
+ {
+  "uid": "u119",
+  "word": "company",
+  "start": 633.933,
+  "end": 634.373
+ },
+ {
+  "uid": "u119",
+  "word": "in",
+  "start": 634.373,
+  "end": 634.538
+ },
+ {
+  "uid": "u119",
+  "word": "the",
+  "start": 634.538,
+  "end": 634.758
+ },
+ {
+  "uid": "u119",
+  "word": "world",
+  "start": 634.758,
+  "end": 635.088
+ },
+ {
+  "uid": "u119",
+  "word": "sells",
+  "start": 635.088,
+  "end": 635.418
+ },
+ {
+  "uid": "u119",
+  "word": "these",
+  "start": 635.418,
+  "end": 635.748
+ },
+ {
+  "uid": "u119",
+  "word": "machines:",
+  "start": 635.748,
+  "end": 636.243
+ },
+ {
+  "uid": "u119",
+  "word": "the",
+  "start": 636.463,
+  "end": 636.683
+ },
+ {
+  "uid": "u119",
+  "word": "Dutch",
+  "start": 636.683,
+  "end": 637.013
+ },
+ {
+  "uid": "u119",
+  "word": "company",
+  "start": 637.013,
+  "end": 637.453
+ },
+ {
+  "uid": "u119",
+  "word": "ASML.",
+  "start": 637.453,
+  "end": 637.728
+ },
+ {
+  "uid": "u120",
+  "word": "So",
+  "start": 637.833,
+  "end": 637.996
+ },
+ {
+  "uid": "u120",
+  "word": "look",
+  "start": 637.996,
+  "end": 638.269
+ },
+ {
+  "uid": "u120",
+  "word": "back",
+  "start": 638.269,
+  "end": 638.541
+ },
+ {
+  "uid": "u120",
+  "word": "at",
+  "start": 638.541,
+  "end": 638.705
+ },
+ {
+  "uid": "u120",
+  "word": "that",
+  "start": 638.705,
+  "end": 638.977
+ },
+ {
+  "uid": "u120",
+  "word": "flying",
+  "start": 638.977,
+  "end": 639.359
+ },
+ {
+  "uid": "u120",
+  "word": "drop",
+  "start": 639.359,
+  "end": 639.631
+ },
+ {
+  "uid": "u120",
+  "word": "of",
+  "start": 639.631,
+  "end": 639.795
+ },
+ {
+  "uid": "u120",
+  "word": "tin.",
+  "start": 639.795,
+  "end": 640.013
+ },
+ {
+  "uid": "u121",
+  "word": "The",
+  "start": 640.127,
+  "end": 640.342
+ },
+ {
+  "uid": "u121",
+  "word": "tin,",
+  "start": 640.342,
+  "end": 640.557
+ },
+ {
+  "uid": "u121",
+  "word": "the",
+  "start": 640.718,
+  "end": 640.933
+ },
+ {
+  "uid": "u121",
+  "word": "laser",
+  "start": 640.933,
+  "end": 641.255
+ },
+ {
+  "uid": "u121",
+  "word": "and",
+  "start": 641.255,
+  "end": 641.47
+ },
+ {
+  "uid": "u121",
+  "word": "the",
+  "start": 641.47,
+  "end": 641.685
+ },
+ {
+  "uid": "u121",
+  "word": "plasma",
+  "start": 641.685,
+  "end": 642.062
+ },
+ {
+  "uid": "u121",
+  "word": "exist",
+  "start": 642.062,
+  "end": 642.384
+ },
+ {
+  "uid": "u121",
+  "word": "because",
+  "start": 642.384,
+  "end": 642.814
+ },
+ {
+  "uid": "u121",
+  "word": "nothing",
+  "start": 642.814,
+  "end": 643.244
+ },
+ {
+  "uid": "u121",
+  "word": "else",
+  "start": 643.244,
+  "end": 643.513
+ },
+ {
+  "uid": "u121",
+  "word": "glows",
+  "start": 643.513,
+  "end": 643.835
+ },
+ {
+  "uid": "u121",
+  "word": "at",
+  "start": 643.835,
+  "end": 643.997
+ },
+ {
+  "uid": "u121",
+  "word": "this",
+  "start": 643.997,
+  "end": 644.265
+ },
+ {
+  "uid": "u121",
+  "word": "wavelength.",
+  "start": 644.265,
+  "end": 644.857
+ },
+ {
+  "uid": "u122",
+  "word": "The",
+  "start": 644.948,
+  "end": 645.149
+ },
+ {
+  "uid": "u122",
+  "word": "vacuum",
+  "start": 645.149,
+  "end": 645.501
+ },
+ {
+  "uid": "u122",
+  "word": "and",
+  "start": 645.501,
+  "end": 645.702
+ },
+ {
+  "uid": "u122",
+  "word": "the",
+  "start": 645.702,
+  "end": 645.903
+ },
+ {
+  "uid": "u122",
+  "word": "layered",
+  "start": 645.903,
+  "end": 646.305
+ },
+ {
+  "uid": "u122",
+  "word": "mirrors",
+  "start": 646.305,
+  "end": 646.707
+ },
+ {
+  "uid": "u122",
+  "word": "exist",
+  "start": 646.707,
+  "end": 647.009
+ },
+ {
+  "uid": "u122",
+  "word": "because",
+  "start": 647.009,
+  "end": 647.411
+ },
+ {
+  "uid": "u122",
+  "word": "everything",
+  "start": 647.411,
+  "end": 647.964
+ },
+ {
+  "uid": "u122",
+  "word": "else",
+  "start": 647.964,
+  "end": 648.215
+ },
+ {
+  "uid": "u122",
+  "word": "swallows",
+  "start": 648.215,
+  "end": 648.667
+ },
+ {
+  "uid": "u122",
+  "word": "it.",
+  "start": 648.667,
+  "end": 648.818
+ },
+ {
+  "uid": "u123",
+  "word": "The",
+  "start": 648.959,
+  "end": 649.18
+ },
+ {
+  "uid": "u123",
+  "word": "scanning,",
+  "start": 649.18,
+  "end": 649.68
+ },
+ {
+  "uid": "u123",
+  "word": "the",
+  "start": 649.846,
+  "end": 650.068
+ },
+ {
+  "uid": "u123",
+  "word": "speed",
+  "start": 650.068,
+  "end": 650.4
+ },
+ {
+  "uid": "u123",
+  "word": "and",
+  "start": 650.4,
+  "end": 650.622
+ },
+ {
+  "uid": "u123",
+  "word": "the",
+  "start": 650.622,
+  "end": 650.844
+ },
+ {
+  "uid": "u123",
+  "word": "nanometre",
+  "start": 650.844,
+  "end": 651.399
+ },
+ {
+  "uid": "u123",
+  "word": "precision",
+  "start": 651.399,
+  "end": 651.953
+ },
+ {
+  "uid": "u123",
+  "word": "exist",
+  "start": 651.953,
+  "end": 652.286
+ },
+ {
+  "uid": "u123",
+  "word": "because",
+  "start": 652.286,
+  "end": 652.73
+ },
+ {
+  "uid": "u123",
+  "word": "the",
+  "start": 652.73,
+  "end": 652.951
+ },
+ {
+  "uid": "u123",
+  "word": "light",
+  "start": 652.951,
+  "end": 653.284
+ },
+ {
+  "uid": "u123",
+  "word": "can",
+  "start": 653.284,
+  "end": 653.506
+ },
+ {
+  "uid": "u123",
+  "word": "only",
+  "start": 653.506,
+  "end": 653.783
+ },
+ {
+  "uid": "u123",
+  "word": "fill",
+  "start": 653.783,
+  "end": 654.06
+ },
+ {
+  "uid": "u123",
+  "word": "a",
+  "start": 654.06,
+  "end": 654.171
+ },
+ {
+  "uid": "u123",
+  "word": "slit.",
+  "start": 654.171,
+  "end": 654.449
+ },
+ {
+  "uid": "u124",
+  "word": "And",
+  "start": 654.547,
+  "end": 654.781
+ },
+ {
+  "uid": "u124",
+  "word": "the",
+  "start": 654.781,
+  "end": 655.016
+ },
+ {
+  "uid": "u124",
+  "word": "endless",
+  "start": 655.016,
+  "end": 655.485
+ },
+ {
+  "uid": "u124",
+  "word": "hunger",
+  "start": 655.485,
+  "end": 655.895
+ },
+ {
+  "uid": "u124",
+  "word": "for",
+  "start": 655.895,
+  "end": 656.13
+ },
+ {
+  "uid": "u124",
+  "word": "power",
+  "start": 656.13,
+  "end": 656.482
+ },
+ {
+  "uid": "u124",
+  "word": "exists",
+  "start": 656.482,
+  "end": 656.892
+ },
+ {
+  "uid": "u124",
+  "word": "because",
+  "start": 656.892,
+  "end": 657.361
+ },
+ {
+  "uid": "u124",
+  "word": "each",
+  "start": 657.361,
+  "end": 657.655
+ },
+ {
+  "uid": "u124",
+  "word": "photon",
+  "start": 657.655,
+  "end": 658.065
+ },
+ {
+  "uid": "u124",
+  "word": "carries",
+  "start": 658.065,
+  "end": 658.534
+ },
+ {
+  "uid": "u124",
+  "word": "so",
+  "start": 658.534,
+  "end": 658.71
+ },
+ {
+  "uid": "u124",
+  "word": "much",
+  "start": 658.71,
+  "end": 659.003
+ },
+ {
+  "uid": "u124",
+  "word": "energy",
+  "start": 659.003,
+  "end": 659.414
+ },
+ {
+  "uid": "u124",
+  "word": "that",
+  "start": 659.414,
+  "end": 659.707
+ },
+ {
+  "uid": "u124",
+  "word": "too",
+  "start": 659.707,
+  "end": 659.942
+ },
+ {
+  "uid": "u124",
+  "word": "few",
+  "start": 659.942,
+  "end": 660.176
+ },
+ {
+  "uid": "u124",
+  "word": "arrive.",
+  "start": 660.176,
+  "end": 660.587
+ },
+ {
+  "uid": "u125",
+  "word": "All",
+  "start": 660.681,
+  "end": 660.913
+ },
+ {
+  "uid": "u125",
+  "word": "of",
+  "start": 660.913,
+  "end": 661.086
+ },
+ {
+  "uid": "u125",
+  "word": "it",
+  "start": 661.086,
+  "end": 661.26
+ },
+ {
+  "uid": "u125",
+  "word": "traces",
+  "start": 661.26,
+  "end": 661.666
+ },
+ {
+  "uid": "u125",
+  "word": "back",
+  "start": 661.666,
+  "end": 661.956
+ },
+ {
+  "uid": "u125",
+  "word": "to",
+  "start": 661.956,
+  "end": 662.13
+ },
+ {
+  "uid": "u125",
+  "word": "that",
+  "start": 662.13,
+  "end": 662.42
+ },
+ {
+  "uid": "u125",
+  "word": "one",
+  "start": 662.42,
+  "end": 662.652
+ },
+ {
+  "uid": "u125",
+  "word": "stubborn",
+  "start": 662.652,
+  "end": 663.173
+ },
+ {
+  "uid": "u125",
+  "word": "fact:",
+  "start": 663.173,
+  "end": 663.463
+ },
+ {
+  "uid": "u125",
+  "word": "light",
+  "start": 663.695,
+  "end": 664.043
+ },
+ {
+  "uid": "u125",
+  "word": "is",
+  "start": 664.043,
+  "end": 664.217
+ },
+ {
+  "uid": "u125",
+  "word": "a",
+  "start": 664.217,
+  "end": 664.333
+ },
+ {
+  "uid": "u125",
+  "word": "wave,",
+  "start": 664.333,
+  "end": 664.623
+ },
+ {
+  "uid": "u125",
+  "word": "and",
+  "start": 664.796,
+  "end": 665.028
+ },
+ {
+  "uid": "u125",
+  "word": "a",
+  "start": 665.028,
+  "end": 665.144
+ },
+ {
+  "uid": "u125",
+  "word": "wave",
+  "start": 665.144,
+  "end": 665.434
+ },
+ {
+  "uid": "u125",
+  "word": "cannot",
+  "start": 665.434,
+  "end": 665.84
+ },
+ {
+  "uid": "u125",
+  "word": "draw",
+  "start": 665.84,
+  "end": 666.13
+ },
+ {
+  "uid": "u125",
+  "word": "a",
+  "start": 666.13,
+  "end": 666.246
+ },
+ {
+  "uid": "u125",
+  "word": "detail",
+  "start": 666.246,
+  "end": 666.651
+ },
+ {
+  "uid": "u125",
+  "word": "much",
+  "start": 666.651,
+  "end": 666.941
+ },
+ {
+  "uid": "u125",
+  "word": "smaller",
+  "start": 666.941,
+  "end": 667.405
+ },
+ {
+  "uid": "u125",
+  "word": "than",
+  "start": 667.405,
+  "end": 667.695
+ },
+ {
+  "uid": "u125",
+  "word": "itself.",
+  "start": 667.695,
+  "end": 668.101
+ },
+ {
+  "uid": "u126",
+  "word": "This",
+  "start": 668.19,
+  "end": 668.456
+ },
+ {
+  "uid": "u126",
+  "word": "machine",
+  "start": 668.456,
+  "end": 668.881
+ },
+ {
+  "uid": "u126",
+  "word": "is",
+  "start": 668.881,
+  "end": 669.041
+ },
+ {
+  "uid": "u126",
+  "word": "what",
+  "start": 669.041,
+  "end": 669.307
+ },
+ {
+  "uid": "u126",
+  "word": "it",
+  "start": 669.307,
+  "end": 669.467
+ },
+ {
+  "uid": "u126",
+  "word": "looks",
+  "start": 669.467,
+  "end": 669.786
+ },
+ {
+  "uid": "u126",
+  "word": "like",
+  "start": 669.786,
+  "end": 670.052
+ },
+ {
+  "uid": "u126",
+  "word": "when",
+  "start": 670.052,
+  "end": 670.318
+ },
+ {
+  "uid": "u126",
+  "word": "people",
+  "start": 670.318,
+  "end": 670.69
+ },
+ {
+  "uid": "u126",
+  "word": "refuse",
+  "start": 670.69,
+  "end": 671.062
+ },
+ {
+  "uid": "u126",
+  "word": "to",
+  "start": 671.062,
+  "end": 671.222
+ },
+ {
+  "uid": "u126",
+  "word": "accept",
+  "start": 671.222,
+  "end": 671.594
+ },
+ {
+  "uid": "u126",
+  "word": "that.",
+  "start": 671.594,
+  "end": 671.86
+ },
+ {
+  "uid": "u127",
+  "word": "The",
+  "start": 671.976,
+  "end": 672.197
+ },
+ {
+  "uid": "u127",
+  "word": "next",
+  "start": 672.197,
+  "end": 672.472
+ },
+ {
+  "uid": "u127",
+  "word": "time",
+  "start": 672.472,
+  "end": 672.748
+ },
+ {
+  "uid": "u127",
+  "word": "you",
+  "start": 672.748,
+  "end": 672.969
+ },
+ {
+  "uid": "u127",
+  "word": "pick",
+  "start": 672.969,
+  "end": 673.245
+ },
+ {
+  "uid": "u127",
+  "word": "up",
+  "start": 673.245,
+  "end": 673.41
+ },
+ {
+  "uid": "u127",
+  "word": "your",
+  "start": 673.41,
+  "end": 673.686
+ },
+ {
+  "uid": "u127",
+  "word": "phone,",
+  "start": 673.686,
+  "end": 674.017
+ },
+ {
+  "uid": "u127",
+  "word": "remember:",
+  "start": 674.182,
+  "end": 674.679
+ },
+ {
+  "uid": "u127",
+  "word": "somewhere",
+  "start": 674.899,
+  "end": 675.451
+ },
+ {
+  "uid": "u127",
+  "word": "inside",
+  "start": 675.451,
+  "end": 675.837
+ },
+ {
+  "uid": "u127",
+  "word": "it",
+  "start": 675.837,
+  "end": 676.002
+ },
+ {
+  "uid": "u127",
+  "word": "are",
+  "start": 676.002,
+  "end": 676.223
+ },
+ {
+  "uid": "u127",
+  "word": "lines",
+  "start": 676.223,
+  "end": 676.554
+ },
+ {
+  "uid": "u127",
+  "word": "drawn",
+  "start": 676.554,
+  "end": 676.885
+ },
+ {
+  "uid": "u127",
+  "word": "by",
+  "start": 676.885,
+  "end": 677.05
+ },
+ {
+  "uid": "u127",
+  "word": "a",
+  "start": 677.05,
+  "end": 677.161
+ },
+ {
+  "uid": "u127",
+  "word": "star",
+  "start": 677.161,
+  "end": 677.436
+ },
+ {
+  "uid": "u127",
+  "word": "smaller",
+  "start": 677.436,
+  "end": 677.878
+ },
+ {
+  "uid": "u127",
+  "word": "than",
+  "start": 677.878,
+  "end": 678.154
+ },
+ {
+  "uid": "u127",
+  "word": "a",
+  "start": 678.154,
+  "end": 678.264
+ },
+ {
+  "uid": "u127",
+  "word": "grain",
+  "start": 678.264,
+  "end": 678.595
+ },
+ {
+  "uid": "u127",
+  "word": "of",
+  "start": 678.595,
+  "end": 678.76
+ },
+ {
+  "uid": "u127",
+  "word": "dust.",
+  "start": 678.76,
+  "end": 679.036
+ }
+]

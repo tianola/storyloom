@@ -67,7 +67,24 @@ def _air(n, rng, sample_rate):
     return np.fft.irfft(spec, n=n)
 
 
-def synthesize(duration_s, seed=SEED, sample_rate=SAMPLE_RATE, fade_end_s=None):
+def apply_drops(bed, drops, sample_rate, out_s=0.12, back_s=1.8):
+    """Silence the bed over each (start_s, end_s): a quick fade out, then a slow return, so a
+    line that breaks the story is heard with nothing under it."""
+    n = len(bed)
+    gain = np.ones(n)
+    for start, end in drops:
+        a, b = int(start * sample_rate), int(end * sample_rate)
+        o, r = int(out_s * sample_rate), int(back_s * sample_rate)
+        lo = max(0, a - o)
+        gain[lo:a] = np.minimum(gain[lo:a], np.linspace(1.0, 0.0, a - lo)) if a > lo else gain[lo:a]
+        gain[max(0, a):min(n, b)] = 0.0
+        if b < n:
+            m = min(n, b + r) - b
+            gain[b:b + m] = np.minimum(gain[b:b + m], np.linspace(0.0, 1.0, r)[:m])
+    return bed * gain[:, None]
+
+
+def synthesize(duration_s, seed=SEED, sample_rate=SAMPLE_RATE, fade_end_s=None, drops=()):
     """Stereo float32 bed of exactly `duration_s`, deterministic for a given seed.
 
     `fade_end_s` is where the outro closes; the tail after it is digital silence. Left unset the
@@ -80,7 +97,11 @@ def synthesize(duration_s, seed=SEED, sample_rate=SAMPLE_RATE, fade_end_s=None):
     left = np.zeros(n, dtype=np.float64)
     right = np.zeros(n, dtype=np.float64)
 
-    for index, (root, intervals) in enumerate(CHORDS):
+    index = -1
+    while True:
+        # the progression loops: a film longer than four holds would otherwise play air alone
+        index += 1
+        root, intervals = CHORDS[index % len(CHORDS)]
         start = int((index * HOLD_S) * sample_rate)
         if start >= n:
             break
@@ -115,14 +136,16 @@ def synthesize(duration_s, seed=SEED, sample_rate=SAMPLE_RATE, fade_end_s=None):
     if fade_end > closed:
         bed[closed:fade_end] *= np.linspace(1.0, 0.0, fade_end - closed)[:, None]
     bed[fade_end:] *= 0.0
+    if drops:
+        bed = apply_drops(bed, drops, sample_rate)
     return bed.astype(np.float32)
 
 
-def write_bed(path, duration_s, fade_end_s=None, seed=SEED, sample_rate=SAMPLE_RATE):
+def write_bed(path, duration_s, fade_end_s=None, seed=SEED, sample_rate=SAMPLE_RATE, drops=()):
     """Render the bed to a 16-bit PCM file, creating its directory if needed."""
     import wave
 
-    bed = synthesize(duration_s, seed=seed, sample_rate=sample_rate, fade_end_s=fade_end_s)
+    bed = synthesize(duration_s, seed=seed, sample_rate=sample_rate, fade_end_s=fade_end_s, drops=drops)
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     pcm = (np.clip(bed, -1.0, 1.0) * 32767.0).astype("<i2")
     with wave.open(str(path), "wb") as fh:
@@ -156,9 +179,63 @@ def apply_gain_db(src, gain_db, dst):
     return Path(dst)
 
 
-def mix_under(voice_path, bed_path, output_path, offset_db=MUSIC_UNDER_VOICE_DB):
-    """Sum voice and bed into one file, with the bed a stated LUFS distance under the voice."""
+def _read(path):
+    """(rate, float64 samples [n, channels]) of a 16-bit PCM wav."""
+    import wave
+    with wave.open(str(path), "rb") as fh:
+        rate, ch = fh.getframerate(), fh.getnchannels()
+        data = np.frombuffer(fh.readframes(fh.getnframes()), dtype="<i2").astype(np.float64) / 32768.0
+    return rate, data.reshape(-1, ch)
+
+
+def duck_gain(voice, voice_rate, n_out, out_rate, duck):
+    """Linear gain, one value per output sample: 1 in the pauses, pulled down while the voice is
+    over `threshold`, by a compressor of `ratio` with a soft `knee` (dB), attack and release.
+
+    Written here rather than with ffmpeg's sidechaincompress, which gave a different file on every
+    run (its two inputs arrive in frames whose sizes depend on thread scheduling), and a bed that
+    is not byte-identical cannot be re-assembled into the take that was approved."""
+    hop = max(1, voice_rate // 100)                                   # 10 ms
+    mono = voice.mean(axis=1) if voice.ndim > 1 else voice
+    n = len(mono) // hop
+    level = np.sqrt((mono[:n * hop].reshape(n, hop) ** 2).mean(axis=1)) + 1e-9
+    env = np.empty(n)
+    up = 1 - np.exp(-0.010 / (duck["attack_ms"] / 1000))
+    down = 1 - np.exp(-0.010 / (duck["release_ms"] / 1000))
+    e = 0.0
+    for i, x in enumerate(level):
+        e += (up if x > e else down) * (x - e)
+        env[i] = e
+    over = 20 * np.log10(env) - 20 * np.log10(duck["threshold"])
+    k = duck["knee"] / 2
+    slope = 1 - 1 / duck["ratio"]
+    cut = np.where(over <= -k, 0.0, np.where(over >= k, over * slope, slope * (over + k) ** 2 / (4 * k)))
+    times = (np.arange(n) + 0.5) * hop / voice_rate
+    return 10 ** (-np.interp(np.arange(n_out) / out_rate, times, cut) / 20)
+
+
+def mix_under(voice_path, bed_path, output_path, offset_db=MUSIC_UNDER_VOICE_DB, duck=None):
+    """Sum voice and bed into one file, with the bed a stated LUFS distance under the voice.
+
+    With `duck` (audio.ducking in the contract, the default) the bed is lifted by `lift_db` and
+    taken back down while a line is spoken (`duck_gain`): the music keeps its distance under the
+    words and rises in the pauses between them, the way an editor rides it, instead of holding
+    one level for ten minutes.
+    """
     gain = gain_for(voice_path, bed_path, offset_db)
+    duck = style_contract(ROOT)["audio"].get("ducking") if duck is None else duck
+    if duck:
+        import wave
+        bed_rate, bed = _read(bed_path)
+        voice_rate, voice = _read(voice_path)
+        bed = bed * (10 ** ((gain + duck["lift_db"]) / 20)) * duck_gain(voice, voice_rate, len(bed), bed_rate, duck)[:, None]
+        ducked = Path(output_path).with_name(f"{Path(output_path).stem}-bed-ducked.wav")
+        with wave.open(str(ducked), "wb") as fh:
+            fh.setnchannels(bed.shape[1])
+            fh.setsampwidth(2)
+            fh.setframerate(bed_rate)
+            fh.writeframes((np.clip(bed, -1.0, 1.0) * 32767.0).astype("<i2").tobytes())
+        bed_path, gain = ducked, 0.0
     graph = (
         "[0:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo[a0];"
         f"[1:a]volume={gain}dB,aresample=48000,"

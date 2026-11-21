@@ -50,6 +50,9 @@ def archive_mix(episode, contract=None):
     Returns [(code, message)]; empty when the share and per-act floors are met."""
     from workflow import archive
     episode = Path(episode)
+    doc = episode / "episode.json"
+    if doc.is_file() and not json.loads(doc.read_text(encoding="utf-8")).get("archive", {}).get("enabled", True):
+        return []          # an episode that declares itself 3D-only owes no archive share
     contract = contract or json.loads((ROOT / "workflow" / "style.json").read_text(encoding="utf-8"))
     shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
@@ -58,6 +61,37 @@ def archive_mix(episode, contract=None):
                  "seconds": (u["endSample"] - u["startSample"]) / rate}
                 for u in manifest["utterances"] if u["id"] in shots]
     return [(f.code, f.message) for f in archive.mix_findings(timeline, contract, mode="warn")]
+
+
+def archive_evidence(episode):
+    """Errors for archive shots that are texture rather than evidence (`archive.evidence`).
+
+    Applies to any shots.json, hand-written or planned: the record must name a specific thing in
+    `depicts`, and every line it plays under must say that name."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import plan_shots
+    episode = Path(episode)
+    shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
+    path = episode / "archive.json"
+    records = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
+    said = {u["id"]: u.get("text", "") for u in manifest["utterances"]}
+    rule = plan_shots.load_evidence_rule()
+    errors, seen = [], set()
+    for uid, shot in shots.items():
+        if shot["kind"] != "archive":
+            continue
+        name = shot["name"]
+        record = records.get(name)
+        if record is None:
+            continue                       # missing records are the ingest's finding, not this one
+        if name not in seen:
+            seen.add(name)
+            errors += plan_shots.depicts_problems(name, record, rule)
+        if not plan_shots.depicts_problems(name, record, rule) and not plan_shots.names_it(said.get(uid, ""), record, rule):
+            errors.append(f"archive '{name}' plays under {uid}, which never names {record.get('depicts')}: "
+                          f"\"{said.get(uid, '')[:80]}\"")
+    return errors
 
 
 def catalog_digest(catalog):
@@ -75,18 +109,29 @@ RULES = f"""Return ONE JSON object: {{"beats": {{"<beat name>": {{...}}, ...}}}}
 Each beat entry:
   "scene":   a scene name from the catalog
   "params":  optional, only parameters that scene declares
-  "shots":   optional [{{"view": "<view of that scene>" or "at:<anchor>", "start": seconds}}]; leave out for the default (a cut every 4-5 s)
+  "cut":     "travel" (default: one continuous camera move through the scene's views, no cuts) for explaining how
+             something works; "montage" (quick 1-2.5 s cuts between views and close-ups) for the hook and moments of
+             tension or surprise; "steady" (a cut every 4-5 s) rarely
+  "shots":   optional [{{"view": "<view>" or "at:<anchor>", "to": "<view to travel to>", "start": seconds}}]; leave out to use "cut"
   "labels":  up to {MAX_LABELS} [{{"text": "<=32 chars", "anchor": "<anchor of that scene>", "at": fraction of the beat (0-1), or "word:<a word the narrator says>"}}]
   "actions": optional [{{"name": "<action of that scene>", "at": fraction or "word:<w>"}}]
   "hud":     optional [{{"text", "screen": [u, v], "at"}}] for text fixed to the screen
   "counter": optional {{"template": "${{:,}} billion", "from", "to", "screen": [u, v], "curve": "exp", "color": "warm"}}
-Rules: pick the scene whose picture the sentence is about, not a decorative one; tag only things the narrator names;
-tie a label to the word it explains with "word:"; vary scenes between neighbouring beats; never invent a number
-the narration does not say. Use only names that appear in the catalog."""
+Rules: this is a story, not a slide deck. Stay in a place while the story stays there: neighbouring beats about the
+same thing reuse the same scene with a different view or action instead of jumping to a new diagram per sentence.
+Put the cast in the scene doing something (walking to the thing, reacting, waiting) rather than standing beside it.
+Text is rare: label only a thing the viewer could not otherwise name, tie it to its word with "word:", and leave
+numbers to the narrator; at most {{text}} labels/HUD/counters a minute and at most {{charts}} chart beat in the film.
+Never invent a number the narration does not say. Use only names that appear in the catalog."""
+
+
+def rules_text():
+    rule = json.loads((ROOT / "workflow" / "style.json").read_text(encoding="utf-8"))["storyboard"]
+    return RULES.replace("{text}", str(rule["text_per_minute_max"])).replace("{charts}", str(rule["chart_beats_max"]))
 
 
 def build_prompt(beats, catalog, errors=None, previous=None):
-    parts = ["You plan the 3D pictures of a narrated explainer video.", RULES,
+    parts = ["You plan the 3D pictures of a narrated documentary that tells a story.", rules_text(),
              "SCENE CATALOG\n" + catalog_digest(catalog),
              "BEATS (name, seconds on screen, narration)\n" +
              "\n".join(f"- {b['name']} ({b['seconds']} s): {b['text']}" for b in beats)]
@@ -124,7 +169,46 @@ def problems(board, beats, catalog):
     for name, beat in ((board.get("beats") or {}).items() if isinstance(board, dict) else []):
         if len(beat.get("labels") or []) > MAX_LABELS:
             errors.append(f"beat '{name}': at most {MAX_LABELS} labels")
+    return errors + shape_problems(board, lengths)
+
+
+def shape_problems(board, lengths, contract=None):
+    """What makes a storyboard a slide deck: too much text, chart beats, one uniform cut."""
+    rule = (contract or json.loads((ROOT / "workflow" / "style.json").read_text(encoding="utf-8")))["storyboard"]
+    beats = (board.get("beats") or {}) if isinstance(board, dict) else {}
+    if not beats:
+        return []
+    errors = []
+    minutes = sum(float(lengths.get(n) or 0) for n in beats) / 60 or 1.0
+    text = sum(len(b.get("labels") or []) + len(b.get("hud") or []) + (1 if b.get("counter") else 0) for b in beats.values())
+    if text > max(2, rule["text_per_minute_max"] * minutes):
+        errors.append(f"{text} pieces of on-screen text in {minutes:.1f} min of 3D ({text / minutes:.1f} a minute, at most "
+                      f"{rule['text_per_minute_max']}): let the picture and the narrator carry it; keep only words the viewer must read")
+    charts = [n for n, b in beats.items() if b.get("scene") in rule["chart_scenes"]]
+    if len(charts) > rule["chart_beats_max"]:
+        errors.append(f"{len(charts)} chart beats ({', '.join(charts)}), at most {rule['chart_beats_max']}: "
+                      "show what the number means (a scene, a comparison the cast acts out) instead of a chart")
+    def cut_of(name, b):
+        return sb.cut_of(name, b, lengths)
+    cuts = [cut_of(n, b) for n, b in beats.items()]
+    if len(beats) >= 4 and cuts.count("montage") < rule["montage_beats_min"]:
+        errors.append(f"no beat is cut as a montage (\"cut\": \"montage\"): the hook and the moments of tension need quick cuts")
+    if len(beats) >= 4 and cuts.count("travel") / len(cuts) < rule["travel_beats_min_share"]:
+        errors.append(f"{cuts.count('travel')} of {len(cuts)} beats are one continuous camera move (\"cut\": \"travel\", the default); "
+                      f"at least {rule['travel_beats_min_share']:.0%} should be, so explanations hold instead of cutting every few seconds")
     return errors
+
+
+def staging_advice_for(episode, board):
+    """Advice (never errors) from the episode's line timing: who is in frame when they speak, shot-length
+    floors, the narrator's spot. Needs mouth_timing.json and shot_lengths.json; quiet without them."""
+    def load(name):
+        path = Path(episode) / name
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+    lines, lengths = load("mouth_timing.json"), load("shot_lengths.json")
+    if lengths is None:
+        return []
+    return sb.staging_advice(board, lines or {}, lengths, load("word_timing.json") or {})
 
 
 def plan(beats, catalog, ask, repairs=3):
@@ -170,7 +254,11 @@ def main(argv=None):
         errors = problems(board, beats, catalog)
         mix = archive_mix(episode)
         errors += [f"archive mix: {message}" for code, message in mix]
-        print("\n".join(errors) or f"storyboard OK ({len(beats)} beats)")
+        errors += [f"archive evidence: {e}" for e in archive_evidence(episode)]
+        advice = [f"advice: {w}" for w in staging_advice_for(episode, board)]
+        print("\n".join(errors + advice) or f"storyboard OK ({len(beats)} beats)")
+        if advice and not errors:
+            print(f"storyboard OK ({len(beats)} beats), {len(advice)} piece(s) of advice")
         return 1 if errors else 0
     if args.brief or not args.ask_cmd:
         path = episode / "storyboard-brief.md"

@@ -1,0 +1,1107 @@
+{
+ "beats": {
+  "b01-droplet": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "droplet",
+     "start": 7.0
+    },
+    {
+     "view": "collector",
+     "start": 17.5
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 11.4
+    },
+    {
+     "name": "ignite",
+     "at": 15.2
+    }
+   ],
+   "labels": [
+    {
+     "text": "Molten tin, 30 micrometres",
+     "anchor": "droplet",
+     "at": 7.3
+    },
+    {
+     "text": "CO2 laser, from below",
+     "anchor": "laser",
+     "at": 11.6
+    },
+    {
+     "text": "Plasma",
+     "anchor": "plasma",
+     "at": 18.0
+    }
+   ]
+  },
+  "b02-again": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 0.02
+    },
+    {
+     "name": "ignite",
+     "at": 0.12
+    }
+   ],
+   "hud": [
+    {
+     "text": "50,000 times a second",
+     "screen": [
+      0.5,
+      0.86
+     ],
+     "at": 2.2,
+     "color": "warm"
+    }
+   ]
+  },
+  "b04-machine": {
+   "scene": "light-path",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "travel",
+     "at": 0.03
+    }
+   ]
+  },
+  "b06-projector": {
+   "scene": "litho-exposure",
+   "shots": [
+    {
+     "view": "mask",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 6.4
+    },
+    {
+     "view": "wafer",
+     "start": 21.3
+    }
+   ],
+   "actions": [
+    {
+     "name": "expose",
+     "at": 6.6
+    }
+   ],
+   "labels": [
+    {
+     "text": "Mask: one layer, 4x larger",
+     "anchor": "mask",
+     "at": 1.05
+    },
+    {
+     "text": "Optics shrink it 4x",
+     "anchor": "lens",
+     "at": 8.0
+    },
+    {
+     "text": "Photoresist",
+     "anchor": "resist",
+     "at": 21.6
+    }
+   ]
+  },
+  "b07-gap": {
+   "scene": "wave-slit",
+   "params": {
+    "gap": "both"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "gap",
+     "start": 14.3
+    }
+   ],
+   "labels": [
+    {
+     "text": "Wave passes straight",
+     "anchor": "wide",
+     "at": 9.6
+    },
+    {
+     "text": "Diffraction: it spreads",
+     "anchor": "narrow",
+     "at": 15.0
+    }
+   ]
+  },
+  "b08-grating": {
+   "scene": "grating-lens",
+   "params": {
+    "mode": "catch"
+   },
+   "shots": [
+    {
+     "view": "mask",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 7.3
+    },
+    {
+     "view": "lens",
+     "start": 18.0
+    },
+    {
+     "view": "wide",
+     "start": 24.0
+    }
+   ],
+   "actions": [
+    {
+     "name": "light",
+     "at": 1.5
+    }
+   ],
+   "labels": [
+    {
+     "text": "Fine lines = a grating",
+     "anchor": "mask",
+     "at": 2.0
+    },
+    {
+     "text": "Beams fan out",
+     "anchor": "fan",
+     "at": 8.0
+    },
+    {
+     "text": "Lens catches the fan",
+     "anchor": "lens",
+     "at": 18.4
+    },
+    {
+     "text": "Lines rebuilt",
+     "anchor": "wafer",
+     "at": 24.4
+    }
+   ]
+  },
+  "b09-miss": {
+   "scene": "grating-lens",
+   "params": {
+    "mode": "miss"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "lens",
+     "start": 5.5
+    }
+   ],
+   "actions": [
+    {
+     "name": "light",
+     "at": 0.03
+    }
+   ],
+   "labels": [
+    {
+     "text": "Side beams miss the lens",
+     "anchor": "fan",
+     "at": 1.5
+    },
+    {
+     "text": "Even glow: pattern lost",
+     "anchor": "wafer",
+     "at": 5.8
+    }
+   ]
+  },
+  "b10-formula": {
+   "scene": "formula",
+   "params": {
+    "highlight": "all"
+   },
+   "shots": [
+    {
+     "view": "terms",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 9.5
+    }
+   ],
+   "actions": [
+    {
+     "name": "light",
+     "at": 11.2
+    }
+   ]
+  },
+  "b11-wavelength-knob": {
+   "scene": "formula",
+   "params": {
+    "highlight": "lambda"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "light",
+     "at": 0.03
+    }
+   ]
+  },
+  "b12-lasers": {
+   "scene": "wavelengths",
+   "params": {
+    "values": [
+     436,
+     365,
+     248,
+     193
+    ],
+    "names": [
+     "436 nm, mercury",
+     "365 nm, mercury",
+     "248 nm, laser",
+     "193 nm, laser"
+    ]
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "draw",
+     "at": 0.03
+    }
+   ]
+  },
+  "b13-other-knobs": {
+   "scene": "formula",
+   "params": {
+    "highlight": "na"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "light",
+     "at": 0.03
+    }
+   ]
+  },
+  "b14-patterning": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Exposure 1",
+     "Exposure 2",
+     "Exposure 3",
+     "Exposure 4"
+    ]
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "last",
+     "start": 8.3
+    }
+   ],
+   "actions": [
+    {
+     "name": "run",
+     "at": 1.05
+    }
+   ]
+  },
+  "b15-euv": {
+   "scene": "wavelengths",
+   "params": {
+    "values": [
+     193,
+     13.5
+    ],
+    "names": [
+     "193 nm, deep UV",
+     "13.5 nm, extreme UV"
+    ]
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "short",
+     "start": 11.4
+    }
+   ],
+   "actions": [
+    {
+     "name": "draw",
+     "at": 2.0
+    }
+   ],
+   "hud": [
+    {
+     "text": "14 times shorter",
+     "screen": [
+      0.5,
+      0.1
+     ],
+     "at": 6.0,
+     "color": "warm"
+    }
+   ]
+  },
+  "b16-problem-one": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "droplet",
+     "start": 11.2
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 12.0
+    },
+    {
+     "name": "ignite",
+     "at": 14.4
+    }
+   ],
+   "labels": [
+    {
+     "text": "Plasma",
+     "anchor": "plasma",
+     "at": 15.0
+    }
+   ]
+  },
+  "b17-tin": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "droplet",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 11.5
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 1.05
+    },
+    {
+     "name": "ignite",
+     "at": 2.2
+    }
+   ],
+   "labels": [
+    {
+     "text": "Tin ions glow at 13.5 nm",
+     "anchor": "plasma",
+     "at": 3.0
+    },
+    {
+     "text": "Droplet generator",
+     "anchor": "nozzle",
+     "at": 11.8
+    },
+    {
+     "text": "Catcher",
+     "anchor": "catcher",
+     "at": 13.5
+    }
+   ]
+  },
+  "b18-pulses": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "droplet",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 19.2
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 1.2
+    },
+    {
+     "name": "ignite",
+     "at": 14.2
+    }
+   ],
+   "labels": [
+    {
+     "text": "Weak pre-pulse",
+     "anchor": "laser",
+     "at": 1.05
+    },
+    {
+     "text": "Flattened into a disc",
+     "anchor": "droplet",
+     "at": 9.6,
+     "until": 13.6
+    },
+    {
+     "text": "Main pulse: 200,000 degrees",
+     "anchor": "plasma",
+     "at": 14.6
+    }
+   ]
+  },
+  "b19-collector": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "collector",
+     "start": 6.3
+    },
+    {
+     "view": "wide",
+     "start": 18.9
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 0.01
+    },
+    {
+     "name": "ignite",
+     "at": 0.03
+    }
+   ],
+   "labels": [
+    {
+     "text": "Collector mirror",
+     "anchor": "collector",
+     "at": 6.6
+    },
+    {
+     "text": "Intermediate focus",
+     "anchor": "focus",
+     "at": 9.0
+    }
+   ],
+   "hud": [
+    {
+     "text": "about 5% becomes useful light",
+     "screen": [
+      0.5,
+      0.86
+     ],
+     "at": 2.0,
+     "until": 6.2,
+     "color": "warm"
+    }
+   ]
+  },
+  "b20-absorbed": {
+   "scene": "light-path",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "projection",
+     "start": 9.9
+    }
+   ],
+   "actions": [
+    {
+     "name": "travel",
+     "at": 0.03
+    }
+   ],
+   "hud": [
+    {
+     "text": "no lenses, no air: only mirrors, in a vacuum",
+     "screen": [
+      0.5,
+      0.88
+     ],
+     "at": 5.9,
+     "color": "cool"
+    }
+   ]
+  },
+  "b21-bragg": {
+   "scene": "bragg-mirror",
+   "params": {
+    "pairs": 8
+   },
+   "shots": [
+    {
+     "view": "layers",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 7.8
+    }
+   ],
+   "actions": [
+    {
+     "name": "reflect",
+     "at": 7.8
+    }
+   ],
+   "labels": [
+    {
+     "text": "Molybdenum",
+     "anchor": "molybdenum",
+     "at": 2.0
+    },
+    {
+     "text": "Silicon",
+     "anchor": "silicon",
+     "at": 3.4
+    },
+    {
+     "text": "Echoes leave in step",
+     "anchor": "reflected",
+     "at": 15.0
+    }
+   ],
+   "hud": [
+    {
+     "text": "about 70% reflected",
+     "screen": [
+      0.84,
+      0.32
+     ],
+     "at": 22.5,
+     "color": "warm"
+    },
+    {
+     "text": "real mirrors: about 40 pairs, each about 7 nm",
+     "screen": [
+      0.5,
+      0.08
+     ],
+     "at": 3.0,
+     "until": 7.6
+    }
+   ]
+  },
+  "b22-why-13": {
+   "scene": "line-chart",
+   "params": {
+    "points": [
+     0,
+     0,
+     0,
+     0.3,
+     4,
+     8.6,
+     9.2,
+     7.4,
+     5.2,
+     3.6,
+     2.4,
+     1.6
+    ],
+    "bars": [
+     0,
+     0,
+     0,
+     0,
+     0.5,
+     3,
+     9,
+     4,
+     1.2,
+     0.4,
+     0.1,
+     0
+    ]
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "draw",
+     "at": 2.6
+    }
+   ],
+   "hud": [
+    {
+     "text": "mirror reflectivity",
+     "screen": [
+      0.24,
+      0.86
+     ],
+     "at": 3.0,
+     "color": "cool"
+    },
+    {
+     "text": "tin glow",
+     "screen": [
+      0.78,
+      0.86
+     ],
+     "at": 9.8,
+     "color": "warm"
+    },
+    {
+     "text": "peak: 13.5 nm",
+     "screen": [
+      0.5,
+      0.12
+     ],
+     "at": 10.6
+    }
+   ]
+  },
+  "b23-follow": {
+   "scene": "light-path",
+   "shots": [
+    {
+     "view": "source",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "travel",
+     "at": 0.02
+    }
+   ]
+  },
+  "b24-mask": {
+   "scene": "light-path",
+   "shots": [
+    {
+     "view": "mask",
+     "start": 0
+    }
+   ],
+   "labels": [
+    {
+     "text": "Pattern in light-absorbing metal",
+     "anchor": "mask",
+     "at": 1.5
+    }
+   ],
+   "hud": [
+    {
+     "text": "about 6 degrees",
+     "screen": [
+      0.78,
+      0.86
+     ],
+     "at": 8.0,
+     "color": "warm"
+    }
+   ]
+  },
+  "b25-bounces": {
+   "scene": "light-path",
+   "params": {
+    "keep": 0.7
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "travel",
+     "at": 0.03
+    }
+   ],
+   "counter": {
+    "template": "{:,}% of the light left",
+    "from": 100,
+    "to": 3,
+    "curve": "exp",
+    "start": 0.6,
+    "end": 13.0,
+    "screen": [
+     0.22,
+     0.9
+    ],
+    "color": "warm"
+   }
+  },
+  "b26-slit": {
+   "scene": "scanner",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "labels": [
+    {
+     "text": "A thin, curved slit of light",
+     "anchor": "slit",
+     "at": 2.4
+    }
+   ]
+  },
+  "b27-scan": {
+   "scene": "scanner",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "mask",
+     "start": 6.7
+    },
+    {
+     "view": "wafer",
+     "start": 12.4
+    }
+   ],
+   "labels": [
+    {
+     "text": "Mask: 4x faster",
+     "anchor": "mask",
+     "at": 1.05
+    },
+    {
+     "text": "Projection optics",
+     "anchor": "optics",
+     "at": 3.0
+    },
+    {
+     "text": "Next 26 x 33 mm field",
+     "anchor": "field",
+     "at": 13.0
+    }
+   ],
+   "hud": [
+    {
+     "text": "within about 1 nanometre",
+     "screen": [
+      0.5,
+      0.88
+     ],
+     "at": 17.8,
+     "color": "warm"
+    }
+   ]
+  },
+  "b28-photons": {
+   "scene": "photon-rain",
+   "params": {
+    "photons": "many"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "rain",
+     "at": 0.02
+    },
+    {
+     "name": "develop",
+     "at": 0.97
+    }
+   ]
+  },
+  "b29-energy": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 14
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "fill",
+     "at": 1.05
+    }
+   ],
+   "labels": [
+    {
+     "text": "1 extreme UV photon",
+     "anchor": "one",
+     "at": 0.8
+    },
+    {
+     "text": "14 deep UV photons",
+     "anchor": "many",
+     "at": 3.0
+    }
+   ]
+  },
+  "b30-shot-noise": {
+   "scene": "photon-rain",
+   "params": {
+    "photons": "few"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "close",
+     "start": 9.0
+    },
+    {
+     "view": "wide",
+     "start": 20.8
+    }
+   ],
+   "actions": [
+    {
+     "name": "rain",
+     "at": 0.01
+    },
+    {
+     "name": "develop",
+     "at": 9.6
+    }
+   ],
+   "hud": [
+    {
+     "text": "around 2,000 photons per 10 nm square, and only some are absorbed",
+     "screen": [
+      0.5,
+      0.88
+     ],
+     "at": 1.05,
+     "until": 6.4,
+     "color": "warm"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Too few: line breaks",
+     "anchor": "line",
+     "at": 10.6
+    }
+   ]
+  },
+  "b31-high-na": {
+   "scene": "grating-lens",
+   "params": {
+    "mode": "open"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    },
+    {
+     "view": "lens",
+     "start": 13.2
+    },
+    {
+     "view": "wide",
+     "start": 23.5
+    }
+   ],
+   "actions": [
+    {
+     "name": "light",
+     "at": 0.03
+    }
+   ],
+   "hud": [
+    {
+     "text": "NA 0.33: about 13 nm",
+     "screen": [
+      0.24,
+      0.88
+     ],
+     "at": 4.6,
+     "color": "cool"
+    },
+    {
+     "text": "NA 0.55: about 8 nm",
+     "screen": [
+      0.76,
+      0.88
+     ],
+     "at": 13.4,
+     "color": "warm"
+    }
+   ]
+  },
+  "b32-look-back": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "droplet",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 0.1
+    },
+    {
+     "name": "ignite",
+     "at": 0.4
+    }
+   ]
+  },
+  "b33-mirrors": {
+   "scene": "bragg-mirror",
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "reflect",
+     "at": 0.02
+    }
+   ]
+  },
+  "b34-scanning": {
+   "scene": "scanner",
+   "shots": [
+    {
+     "view": "wafer",
+     "start": 0
+    }
+   ]
+  },
+  "b35-power": {
+   "scene": "photon-rain",
+   "params": {
+    "photons": "few",
+    "seed": 4
+   },
+   "shots": [
+    {
+     "view": "close",
+     "start": 0
+    }
+   ],
+   "actions": [
+    {
+     "name": "rain",
+     "at": 0.02
+    },
+    {
+     "name": "develop",
+     "at": 0.85
+    }
+   ]
+  },
+  "b36-wave": {
+   "scene": "wave-slit",
+   "params": {
+    "gap": "narrow"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0
+    }
+   ]
+  },
+  "b37-star": {
+   "scene": "tin-source",
+   "shots": [
+    {
+     "view": "droplet",
+     "start": 0
+    },
+    {
+     "view": "wide",
+     "start": 4.0
+    }
+   ],
+   "actions": [
+    {
+     "name": "flatten",
+     "at": 1.05
+    },
+    {
+     "name": "ignite",
+     "at": 3.0
+    }
+   ]
+  }
+ }
+}

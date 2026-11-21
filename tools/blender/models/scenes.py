@@ -37,6 +37,7 @@ class Set:
         self.frames = f(seconds)
         self.views = {}
         self.pins = {}
+        self.holds = {}        # anchor -> the objects a close-up on it has to keep whole in frame
         self.actions = {}      # name -> (fn(t0, t1), default start fraction, default span seconds)
         self.sequence = []     # default order of views
         self.lens = 50.0
@@ -49,7 +50,9 @@ class Set:
         if name not in self.sequence:
             self.sequence.append(name)
 
-    def pin(self, name, xyz, follow=None):
+    def pin(self, name, xyz, follow=None, hold=None):
+        """An anchor labels and close-ups aim at. `hold` lists what a close-up on it must keep
+        whole (a sentence, a title, a building); without it the close-up keeps its fixed distance."""
         e = kit._link(bpy.data.objects.new(f"pin-{name}", None))
         if follow is not None:
             bpy.context.view_layer.update()
@@ -58,6 +61,8 @@ class Set:
         else:
             e.location = xyz
         self.pins[name] = e
+        if hold:
+            self.holds[name] = list(hold)
         return e
 
     def action(self, name, fn, at=0.15, span=2.0):
@@ -633,9 +638,20 @@ def document(p, sec):
     paper = kit.box("paper", (0, 0, 0), (4.4, 0.04, 6.0), kit.base(), bevel=0)
     parts = [paper]
     ink_mat = kit.epoxy()
-    title = str(p.get("title", ""))[:28]
+    title = " ".join(str(p.get("title", "")).split())[:60]
+    title_obs = []
     if title:
-        parts.append(kit.flat_text("title", title, (0, -0.03, 2.35), 0.34, ink_mat, rot=(math.radians(90), 0, 0)))
+        # a real title is quoted whole: wrap it onto two lines and shrink it to fit the sheet, never cut it
+        rows_t = [title]
+        if len(title) > 22:
+            words = title.split()
+            cut = min(range(1, len(words)), key=lambda k: abs(len(" ".join(words[:k])) - len(title) / 2), default=1)
+            rows_t = [" ".join(words[:cut]), " ".join(words[cut:])]
+        size = min(0.34, 3.9 / (0.56 * max(len(r) for r in rows_t)))
+        for k, row in enumerate(rows_t):
+            z = 2.35 + (0.25 if len(rows_t) == 2 else 0.0) - k * size * 1.45
+            title_obs.append(kit.flat_text(f"title{k}", row, (0, -0.03, z), size, ink_mat, rot=(math.radians(90), 0, 0)))
+            parts.append(title_obs[-1])
     else:
         parts.append(kit.boxes("title-bar", [placed((-0.6, -0.025, 2.35), (2.6, 0.01, 0.26))], ink_mat))
     rng = random.Random(7)
@@ -651,12 +667,18 @@ def document(p, sec):
                      bevel=0)
     marker.scale[0] = 0.001
     parts.append(marker)
+    # never rendered: the region a close-up on the mark holds (the line and a little paper around
+    # it), so it frames the line instead of slicing through the title above it
+    hold = kit.box("mark-hold", (0, -0.03, mark_z - 0.3), (3.4, 0.01, 1.0), ink_mat, bevel=0)
+    hold.hide_render = True
+    hold["hold_box"] = True
+    parts.append(hold)
     g = kit.group("sheet", parts)
     g.location = (0, 0, 3.4)
     g.rotation_euler = (tilt, 0, 0)
     bpy.context.view_layer.update()
-    s.pin("title", (0.9, -0.6, 5.7))
-    s.pin("mark", (0.6, -0.1, 3.4 + mark_z))
+    s.pin("title", (0.9, -0.6, 5.7), hold=title_obs or None)
+    s.pin("mark", (0.6, -0.1, 3.4 + mark_z), hold=[hold])
 
     def mark_(t0, t1):
         marker.keyframe_insert("scale", frame=f(t0))
@@ -666,7 +688,7 @@ def document(p, sec):
         marker.keyframe_insert("scale", frame=f(t1))
         marker.keyframe_insert("location", frame=f(t1))
     s.action("mark", mark_, at=0.4, span=1.2)
-    s.view("wide", (0, 0, 3.4), 11.5, -96, 3.9)
+    s.view("wide", (0, 0, 3.4), 14.0, -96, 3.9)   # far enough to hold the whole sheet, title included
     s.view("mark", (0.2, -0.2, 3.4 + mark_z), 5.6, -80, 3.6 + mark_z)
     s.lens, s.gain = 45.0, 2.0
     return s
@@ -710,3 +732,16 @@ SCENES = {
     "people-row": people_row, "meeting-table": meeting_table, "org-radial": org_radial, "campus": campus,
     "pages": pages, "document": document, "statement": statement,
 }
+
+
+# optics scenes (wave, lens, mirror, scanner...) live in their own module
+import optics  # noqa: E402
+SCENES.update(optics.SCENES)
+# compute scenes (tokens, layers, memory, racks, cooling) live in their own module too
+import compute  # noqa: E402
+SCENES.update(compute.SCENES)
+import characters  # noqa: E402
+SCENES.update(characters.SCENES)
+# living places (a town, a hospital, an asylum) with pixel people, lit by the time of day
+import world  # noqa: E402
+SCENES.update(world.SCENES)

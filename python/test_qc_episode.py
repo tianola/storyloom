@@ -136,6 +136,55 @@ class HookRule(unittest.TestCase):
         self.assertEqual(qc_episode.check_hook(11.242, CONTRACT), [])
 
 
+class CutDetectionCrossCheck(unittest.TestCase):
+    KNOWN = [2.0, 4.0, 5.2, 6.5, 30.0, 31.2, 40.0, 52.0, 53.3, 60.0]
+
+    def test_a_detector_that_misses_cuts_is_flagged_with_the_edits_own_rhythm(self):
+        detected = [2.05, 4.1, 30.0, 52.2]                    # finds 4 of 10
+        findings = qc_episode.check_cut_detection(detected, self.KNOWN, 70.0, CONTRACT)
+        self.assertEqual([f.code for f in findings], ["cut_detector_misses"])
+        self.assertEqual(findings[0].severity, "warn")
+        self.assertIn("found 4 of the 10 cuts", findings[0].message)
+
+    def test_a_detector_that_finds_the_edit_is_quiet(self):
+        detected = [k + 0.04 for k in self.KNOWN]
+        self.assertEqual(qc_episode.check_cut_detection(detected, self.KNOWN, 70.0, CONTRACT), [])
+
+    def test_a_picture_drifting_behind_the_voice_fails(self):
+        known = [i * 2.0 + 1.0 for i in range(30)]                       # a cut every 2 s for a minute
+        drifting = [k + 0.02 + 0.6 * k / 60.0 for k in known]          # 0.02 s late at the start, 0.62 at the end
+        codes = [f.code for f in qc_episode.check_cut_detection(drifting, known, 61.0, CONTRACT)]
+        self.assertIn("picture_out_of_sync", codes)
+        in_sync = [k + 0.03 for k in known]
+        self.assertNotIn("picture_out_of_sync",
+                         [f.code for f in qc_episode.check_cut_detection(in_sync, known, 61.0, CONTRACT)])
+
+    def test_without_a_storyboard_there_is_nothing_to_compare(self):
+        self.assertEqual(qc_episode.check_cut_detection([1.0], None, 70.0, CONTRACT), [])
+
+
+class EmptyShotRule(unittest.TestCase):
+    def test_a_dark_frame_with_one_small_light_is_empty_and_a_set_is_not(self):
+        dark = np.full((180, 320), 0.04, np.float32)
+        dark[80:100, 150:160] = 0.9                                     # a phone glowing in the dark
+        rng = np.random.default_rng(1)
+        busy = np.kron(rng.random((18, 32)), np.ones((10, 10))).astype(np.float32)   # a set full of parts
+        findings = qc_episode.check_empty_shots([(12.0, dark), (30.0, busy)], CONTRACT)
+        self.assertEqual([(f.code, f.subject, f.severity) for f in findings], [("empty_shot", "12.0s", "warn")])
+
+
+class FramingReports(unittest.TestCase):
+    def test_the_builders_framing_report_is_read_for_rendered_beats_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            r = Path(tmp) / "renders" / "3d"
+            r.mkdir(parents=True)
+            (r / "beat-01.mp4").write_bytes(b"x")
+            (r / "beat-01.framing.json").write_text(json.dumps(["shot 2 (1.2-3.1s): the frame edge cuts through text 'Why does my cat sound like'"]))
+            (r / "beat-02.framing.json").write_text(json.dumps(["stale: no render beside it"]))
+            findings = qc_episode.check_framing_reports(Path(tmp))
+        self.assertEqual([(f.code, f.subject, f.severity) for f in findings], [("framing", "beat-01", "warn")])
+
+
 class AudioRule(unittest.TestCase):
     """Measured on the shipped master: -25.3 LUFS integrated, -3.4 dBFS true peak, mono 24 kHz."""
 

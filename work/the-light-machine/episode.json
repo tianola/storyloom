@@ -1,0 +1,18 @@
+{
+ "slug": "the-light-machine",
+ "title": "The Machine That Prints the Future",
+ "language": "English",
+ "workflow_version": 3,
+ "duration_target_seconds": [
+  600,
+  900
+ ],
+ "archive": {
+  "enabled": true
+ },
+ "rollout": {
+  "builder": "tools/blender/storyboard_beats.py",
+  "baseline": "1080p",
+  "finish_beats": []
+ }
+}

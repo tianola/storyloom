@@ -6,8 +6,12 @@ The voice is synthesised sentence by sentence, and sentences come out at differe
 line can sit several LU away from a long one). Because the film cuts on sentences, that step in
 level lands exactly on the cut, which `qc_episode` reports as `cut_loudness_jump`. Levelling gives
 every utterance the same integrated loudness (the episode median) with a bounded gain, keeping each
-file's exact length so the timeline does not move. Transition sounds are synthesised here (filtered
-noise sweeps) so nothing licensed enters the master.
+file's exact length so the timeline does not move.
+
+Effects are laid by tools/sound_design.py, read off the storyboard (hits, air on moves, actions,
+rooms, the reversal). The single sweep per beat change below (`transition_track`, 24 dB under
+the voice) is only the fallback for an episode with no storyboard.json. Everything is synthesised,
+so nothing licensed enters the master.
 """
 import argparse
 import json
@@ -46,6 +50,33 @@ def level_gains(measured, max_gain=MAX_GAIN_DB):
     return {uid: float(np.clip(target - value, -max_gain, max_gain)) for uid, value in measured.items()}
 
 
+def thought_style(path=None):
+    """The inner-voice treatment amounts, from workflow/style.json (`audio.thought`)."""
+    path = Path(path) if path else ROOT / "workflow" / "style.json"
+    return json.loads(path.read_text(encoding="utf-8"))["audio"]["thought"]
+
+
+def treat_thought(samples, rate, style=None):
+    """Inner voice: gain_db under the levelled line, a one-pole low-pass at lowpass_hz (applied twice,
+    12 dB/oct) and one very quiet short slap. Same length as the input."""
+    style = style or thought_style()
+    x = np.asarray(samples, dtype=np.float64)
+    alpha = 1.0 - np.exp(-2.0 * np.pi * float(style["lowpass_hz"]) / rate)
+    for _ in range(2):
+        y = np.empty_like(x)
+        acc = 0.0
+        for i in range(len(x)):
+            acc += alpha * (x[i] - acc)
+            y[i] = acc
+        x = y
+    delay = int(float(style.get("slap_ms", 0)) * rate / 1000)
+    if delay > 0 and delay < len(x):
+        slap = np.zeros_like(x)
+        slap[delay:] = x[:-delay] * 10 ** (float(style.get("slap_db", -18.0)) / 20)
+        x = x + slap
+    return x * 10 ** (float(style["gain_db"]) / 20)
+
+
 def level_utterances(episode, manifest):
     """-> {uid: {"before_lufs", "gain_db"}}; writes `vo/levelled/<file>` and returns the gains."""
     vo = Path(episode) / "vo"
@@ -58,7 +89,10 @@ def level_utterances(episode, manifest):
         gain = 10 ** (gains[u["id"]] / 20)
         peak = float(np.abs(samples).max()) or 1.0
         gain = min(gain, PEAK_CEILING / peak)
-        write_wav(out / u["file"], rate, samples * gain)
+        leveled = samples * gain
+        if u.get("mode") == "thought":
+            leveled = treat_thought(leveled, rate)
+        write_wav(out / u["file"], rate, leveled)
     return {uid: {"before_lufs": round(measured[uid], 2), "gain_db": round(gains[uid], 2)} for uid in measured}
 
 
@@ -182,7 +216,16 @@ def finish_voice(episode, manifest, shots=None, sound=True):
         voice = mixed.copy()
     if sound and shots:
         rms = float(np.sqrt((voice ** 2).mean())) or 0.05
-        mixed = mixed + transition_track(rate, len(voice), cut_points(manifest, shots), rms)
+        if (episode / "storyboard.json").exists():
+            # the full design: hits on every cut, air on moves, actions, rooms, the reversal
+            import sound_design
+            events = sound_design.plan_events(episode)
+            mixed = mixed + sound_design.design_track(rate, len(voice), events, rms)
+            report["_sound"] = {"cuts": len(events["cuts"]), "travels": len(events["travels"]),
+                                "actions": len(events["actions"]), "reversal": events["reversal"],
+                                "music_drops": sound_design.music_drops(events)}
+        else:
+            mixed = mixed + transition_track(rate, len(voice), cut_points(manifest, shots), rms)
         peak = float(np.abs(mixed).max())
         if peak > PEAK_CEILING:
             mixed *= PEAK_CEILING / peak

@@ -1,0 +1,104 @@
+[
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "wafer-ibm",
+  "message": "u007 holds the archival layer for 6.5s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "chip-die",
+  "message": "u011 holds the archival layer for 7.4s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "ucl-litho",
+  "message": "u014 holds the archival layer for 6.3s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "zeiss-otus",
+  "message": "u043 holds the archival layer for 6.8s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "asml-lens",
+  "message": "u045 holds the archival layer for 7.5s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "tsmc-fab6",
+  "message": "u069 holds the archival layer for 6.8s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "mirror-grind",
+  "message": "u082 holds the archival layer for 7.1s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "archival_shot_long",
+  "subject": "intel-d1x",
+  "message": "u118 holds the archival layer for 6.5s against the contract's 6.0s ceiling \u2014 past that length the removal test applies: mute it and cut it, and if nothing is lost it was padding. Measured on the narration clock, not on shot_lengths.json, which is per beat and already rounded up. This stays advice until the first archival episode's measured distribution calibrates it; that distribution is what promotes it, and `archive_rhythm.archival_share_status` says the figure is ours until retention data says otherwise"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b06-projector",
+  "message": "u016 moves at 1.66 for 6.5s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b06-projector",
+  "message": "u018 moves at 1.47 for 6.1s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b08-grating",
+  "message": "u025 moves at 1.75 for 6.7s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b08-grating",
+  "message": "u028 moves at 1.87 for 4.8s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b20-absorbed",
+  "message": "u070 moves at 1.63 for 3.2s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b20-absorbed",
+  "message": "u071 moves at 1.32 for 2.6s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b22-why-13",
+  "message": "u080 moves at 1.90 for 7.3s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b24-mask",
+  "message": "u089 moves at 2.00 for 7.1s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ },
+ {
+  "severity": "warn",
+  "code": "slow_shot",
+  "subject": "b29-energy",
+  "message": "u105 moves at 1.91 for 5.1s \u2014 above the still threshold but the slowest band in the episode; check it is a deliberate drift"
+ }
+]

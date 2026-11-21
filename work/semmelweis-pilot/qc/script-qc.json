@@ -1,0 +1,46 @@
+{
+ "findings": [
+  {
+   "severity": "error",
+   "rule": "length",
+   "line": null,
+   "message": "script runs about 131 s (308 words); the target is 600-900 s, so about 1108 more words are needed"
+  },
+  {
+   "severity": "warn",
+   "rule": "chapters",
+   "line": "u001",
+   "message": "chapter '1865' runs about 23 s; chapters of 45-240 s hold attention"
+  },
+  {
+   "severity": "warn",
+   "rule": "chapters",
+   "line": "u015",
+   "message": "chapter 'The bell' runs about 30 s; chapters of 45-240 s hold attention"
+  },
+  {
+   "severity": "warn",
+   "rule": "chapters",
+   "line": "u019",
+   "message": "chapter 'March 1847' runs about 26 s; chapters of 45-240 s hold attention"
+  },
+  {
+   "severity": "error",
+   "rule": "story",
+   "line": null,
+   "message": "story.json 'payoff' must name the line that answers the question"
+  }
+ ],
+ "stats": {
+  "lines": 23,
+  "words": 308,
+  "estimated_seconds": 131,
+  "chapters": 4,
+  "verified_claims": 27,
+  "numeric_share": 0.286,
+  "numeric_run": 3,
+  "numeric_run_from": "u006",
+  "turns_per_minute": 2.3,
+  "questions_per_minute": 0.92
+ }
+}

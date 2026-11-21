@@ -1,0 +1,38 @@
+{
+ "script": {
+  "inputs": "d7d5df43e20dc0f87f99192d6419d83b4c503c44",
+  "finished": "2026-11-15T20:42:31"
+ },
+ "narration": {
+  "inputs": "1883d22c5228c58566a2eeb63325208b20c57a61",
+  "finished": "2026-11-15T20:45:37"
+ },
+ "shots": {
+  "inputs": "55f2b7f55488a37e4575223eb7e06942c95f69cb",
+  "finished": "2026-11-16T02:16:19"
+ },
+ "captions": {
+  "inputs": "41993433a732dbf903638054c28d978cfa398c75",
+  "finished": "2026-11-16T02:16:19"
+ },
+ "lengths": {
+  "inputs": "41993433a732dbf903638054c28d978cfa398c75",
+  "finished": "2026-11-16T02:16:19"
+ },
+ "plan": {
+  "inputs": "c567ffaa4b840b00b77658b6797041cb2c1ccf42",
+  "finished": "2026-11-16T02:16:20"
+ },
+ "ingest": {
+  "inputs": "aa8a5eff662adf7b29bb3acff96c4d9e3bbcd083",
+  "finished": "2026-11-16T02:17:15"
+ },
+ "render": {
+  "inputs": "dc979dda894e2cd47cfa0a61a744fa8e61fdd9fe",
+  "finished": "2026-11-16T03:27:46"
+ },
+ "assemble": {
+  "inputs": "3812804d40d2d211a4c6a68a0087bb9a358c7763",
+  "finished": "2026-11-16T03:41:28"
+ }
+}

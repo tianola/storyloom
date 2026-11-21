@@ -1,0 +1,8 @@
+file 'beat-01-030.png'
+file 'beat-01-045.png'
+file 'beat-01-070.png'
+file 'beat-01-090.png'
+file 'beat-02-030.png'
+file 'beat-02-045.png'
+file 'beat-02-070.png'
+file 'beat-02-090.png'
