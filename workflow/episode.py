@@ -28,7 +28,7 @@ import json
 from pathlib import Path, PurePosixPath
 
 from workflow.archive import (ledger as archive_ledger, paths as archive_paths,
-                              records as archive_records)
+                              records as archive_records, relative_posix_problem)
 
 SHOTS_FILENAME = "shots.json"
 EPISODE_DOCUMENT = "episode.json"
@@ -122,9 +122,10 @@ def dist_path(episode) -> Path:
 
 
 def _relative_posix(value: str, name: str, base: str = "episode") -> str:
-    if not isinstance(value, str) or not value.strip():
+    problem = relative_posix_problem(value)
+    if problem == "empty":
         raise ValueError(f"{name}: must be a non-empty relative path")
-    if "\\" in value or PurePosixPath(value).is_absolute() or ".." in PurePosixPath(value).parts:
+    if problem:
         raise ValueError(f"{name}: must be a {base}-relative POSIX path, got {value!r}")
     return value
 

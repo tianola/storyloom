@@ -1,0 +1,54 @@
+{
+ "question": "u004",
+ "payoff": "u127",
+ "follow": "cat",
+ "people": [
+  {
+   "name": "Daniel Colladon",
+   "line": "u011"
+  },
+  {
+   "name": "Philip Gage",
+   "line": "u023"
+  },
+  {
+   "name": "Rico Sennrich",
+   "line": "u026"
+  },
+  {
+   "name": "William Wulf",
+   "line": "u063"
+  },
+  {
+   "name": "Sally McKee",
+   "line": "u063"
+  },
+  {
+   "name": "Mark Horowitz",
+   "line": "u068"
+  },
+  {
+   "name": "Bryan Black",
+   "line": "u073"
+  },
+  {
+   "name": "Woosuk Kwon",
+   "line": "u089"
+  },
+  {
+   "name": "Tri Dao",
+   "line": "u094"
+  },
+  {
+   "name": "Sam Altman",
+   "line": "u112"
+  }
+ ],
+ "note": "we follow the word cat from the question to the answer; every stop meets the same wall: moving a number costs more than using it; the viewer is handed the obvious guess (it is thinking, the maths is huge) in line 5 and it is broken in line 50",
+ "guess": "u005",
+ "reversal": "u050",
+ "hook": {
+  "kind": "shock",
+  "image": "a rack taller than a person looming out of the haze, its 72 chips lighting tray by tray, a tiny cat at its foot for scale; then the answer stuttering onto a screen"
+ }
+}

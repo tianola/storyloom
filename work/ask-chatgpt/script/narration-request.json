@@ -1,0 +1,641 @@
+{
+ "voice": "af_heart",
+ "speed": 1.0,
+ "utterances": [
+  {
+   "id": "u001",
+   "file": "u001.wav",
+   "text": "The kind of machine that answers your questions weighs more than a tonne and draws as much power as a hundred homes."
+  },
+  {
+   "id": "u002",
+   "file": "u002.wav",
+   "text": "Ask it why your cat sounds like a carburettor, and watch what that monster does. A few words. A pause. A few more words."
+  },
+  {
+   "id": "u003",
+   "file": "u003.wav",
+   "text": "It is the most powerful computer most of us will ever touch, and yet it writes like someone pecking at a keyboard."
+  },
+  {
+   "id": "u004",
+   "file": "u004.wav",
+   "text": "So why does it stutter?"
+  },
+  {
+   "id": "u005",
+   "file": "u005.wav",
+   "text": "The obvious guess is that it is thinking hard, that every single word takes a staggering amount of maths."
+  },
+  {
+   "id": "u006",
+   "file": "u006.wav",
+   "text": "Keep that guess in mind, because we are going to test it. The real answer explains nearly everything about the buildings behind artificial intelligence."
+  },
+  {
+   "id": "u007",
+   "file": "u007.wav",
+   "text": "To see it, let's follow a single word of your question on its trip. The word cat."
+  },
+  {
+   "id": "u008",
+   "file": "u008.wav",
+   "text": "Cat leaves your phone as a radio wave and reaches a mast down the street."
+  },
+  {
+   "id": "u009",
+   "file": "u009.wav",
+   "text": "From there it travels as light, trapped inside a strand of glass thinner than a hair."
+  },
+  {
+   "id": "u010",
+   "file": "u010.wav",
+   "text": "But how do you keep light inside a bent piece of glass?"
+  },
+  {
+   "id": "u011",
+   "file": "u011.wav",
+   "text": "In eighteen forty two, a Swiss physicist called Daniel Colladon showed the trick with a jet of water."
+  },
+  {
+   "id": "u012",
+   "file": "u012.wav",
+   "text": "Light that hits the inside of the jet at a shallow angle cannot escape, so it follows the water as it curves."
+  },
+  {
+   "id": "u013",
+   "file": "u013.wav",
+   "text": "Glass fibre does exactly the same thing, bouncing the light off its walls over and over."
+  },
+  {
+   "id": "u014",
+   "file": "u014.wav",
+   "text": "In twenty seventeen, a team at Heriot Watt University in Edinburgh actually filmed it."
+  },
+  {
+   "id": "u015",
+   "file": "u015.wav",
+   "text": "Their camera caught a pulse of light racing around a coil of fibre, loop after loop."
+  },
+  {
+   "id": "u016",
+   "file": "u016.wav",
+   "text": "In glass, light covers about two hundred thousand kilometres every second."
+  },
+  {
+   "id": "u017",
+   "file": "u017.wav",
+   "text": "A thousand kilometres of cable costs cat about five thousandths of a second."
+  },
+  {
+   "id": "u018",
+   "file": "u018.wav",
+   "text": "So the trip is not the slow part. Hold on to that."
+  },
+  {
+   "id": "u019",
+   "file": "u019.wav",
+   "text": "The light ends in a warehouse of computers, like the one built for OpenAI in Abilene, Texas."
+  },
+  {
+   "id": "u020",
+   "file": "u020.wav",
+   "text": "And there cat runs into its first problem. The chips inside cannot read."
+  },
+  {
+   "id": "u021",
+   "file": "u021.wav",
+   "text": "They only understand numbers, so your question has to be chopped into pieces first."
+  },
+  {
+   "id": "u022",
+   "file": "u022.wav",
+   "text": "The way it gets chopped comes from an unlikely place."
+  },
+  {
+   "id": "u023",
+   "file": "u023.wav",
+   "text": "In February nineteen ninety four, a programmer in Colorado Springs called Philip Gage wrote a magazine article about shrinking files."
+  },
+  {
+   "id": "u024",
+   "file": "u024.wav",
+   "text": "His idea was simple. Find the pair of characters that appears most often, and replace it with a new symbol."
+  },
+  {
+   "id": "u025",
+   "file": "u025.wav",
+   "text": "Then do it again, and again, until the file is small."
+  },
+  {
+   "id": "u026",
+   "file": "u026.wav",
+   "text": "Two decades later, Rico Sennrich and his colleagues borrowed that trick to split words for translation software."
+  },
+  {
+   "id": "u027",
+   "file": "u027.wav",
+   "text": "Common words end up as single pieces, rare ones as fragments, and every piece gets a number."
+  },
+  {
+   "id": "u028",
+   "file": "u028.wav",
+   "text": "ChatGPT's tokenizer works the same way. In it, cat with a space in front is number nine thousand and fifty nine."
+  },
+  {
+   "id": "u029",
+   "file": "u029.wav",
+   "text": "That number is a key. It unlocks a long list of other numbers, a kind of address for the meaning of the word."
+  },
+  {
+   "id": "u030",
+   "file": "u030.wav",
+   "text": "On a map, two numbers say where something is."
+  },
+  {
+   "id": "u031",
+   "file": "u031.wav",
+   "text": "Here every token gets thousands of them, so it sits somewhere in a space with thousands of directions."
+  },
+  {
+   "id": "u032",
+   "file": "u032.wav",
+   "text": "Training arranges that space so that cat ends up near dog, and a long way from carburettor."
+  },
+  {
+   "id": "u033",
+   "file": "u033.wav",
+   "text": "But cat is not done yet. Now comes the climb."
+  },
+  {
+   "id": "u034",
+   "file": "u034.wav",
+   "text": "OpenAI does not say how big the models behind ChatGPT are."
+  },
+  {
+   "id": "u035",
+   "file": "u035.wav",
+   "text": "But in twenty twenty five it published an open model built the same way, with the blueprint."
+  },
+  {
+   "id": "u036",
+   "file": "u036.wav",
+   "text": "That model is made of about a hundred and seventeen billion numbers, called weights."
+  },
+  {
+   "id": "u037",
+   "file": "u037.wav",
+   "text": "Nobody typed them in. Training tuned them, step by step, on trillions of tokens of text."
+  },
+  {
+   "id": "u038",
+   "file": "u038.wav",
+   "text": "They are stacked in thirty six layers, like the floors of a tower, and cat has to climb every floor."
+  },
+  {
+   "id": "u039",
+   "file": "u039.wav",
+   "text": "On each floor, cat looks back at every word before it and decides which ones matter. That step is called attention."
+  },
+  {
+   "id": "u040",
+   "file": "u040.wav",
+   "text": "It is how the word it gets linked to the thing it refers to."
+  },
+  {
+   "id": "u041",
+   "file": "u041.wav",
+   "text": "Then cat visits a crowd of smaller networks on that floor, called experts."
+  },
+  {
+   "id": "u042",
+   "file": "u042.wav",
+   "text": "But it does not visit all of them. A small router sends it to just four out of a hundred and twenty eight."
+  },
+  {
+   "id": "u043",
+   "file": "u043.wav",
+   "text": "So on the whole climb, cat only touches about five billion weights."
+  },
+  {
+   "id": "u044",
+   "file": "u044.wav",
+   "text": "Each touch is a multiplication and an addition, so that is roughly ten billion operations for a single new word."
+  },
+  {
+   "id": "u045",
+   "file": "u045.wav",
+   "text": "What comes out of the top floor is not a sentence. It is a score for every possible next piece."
+  },
+  {
+   "id": "u046",
+   "file": "u046.wav",
+   "text": "The system picks one, usually a likely one, with a little randomness so it does not sound like a robot."
+  },
+  {
+   "id": "u047",
+   "file": "u047.wav",
+   "text": "And then the whole climb starts again from the ground floor, for the next piece."
+  },
+  {
+   "id": "u048",
+   "file": "u048.wav",
+   "text": "A long answer means hundreds of climbs, one after another."
+  },
+  {
+   "id": "u049",
+   "file": "u049.wav",
+   "text": "Ten billion operations for every word. So that must be the stutter, right? The maths?"
+  },
+  {
+   "id": "u050",
+   "file": "u050.wav",
+   "text": "Actually, no. That guess is wrong. The arithmetic is the easy part."
+  },
+  {
+   "id": "u051",
+   "file": "u051.wav",
+   "text": "To see what the real problem is, picture the chip as a factory."
+  },
+  {
+   "id": "u052",
+   "file": "u052.wav",
+   "text": "The workers who do the multiplying sit at desks. The weights do not live with them."
+  },
+  {
+   "id": "u053",
+   "file": "u053.wav",
+   "text": "They live in a warehouse next door, and for every new piece of the answer, they have to be trucked in."
+  },
+  {
+   "id": "u054",
+   "file": "u054.wav",
+   "text": "All of the weights that cat touches, every time. For that open model, the load is about five gigabytes."
+  },
+  {
+   "id": "u055",
+   "file": "u055.wav",
+   "text": "Now take a Blackwell chip from NVIDIA, the kind in that Texas warehouse."
+  },
+  {
+   "id": "u056",
+   "file": "u056.wav",
+   "text": "Its workers can finish ten billion operations in about four millionths of a second."
+  },
+  {
+   "id": "u057",
+   "file": "u057.wav",
+   "text": "Its memory can deliver about eight terabytes a second, which sounds enormous."
+  },
+  {
+   "id": "u058",
+   "file": "u058.wav",
+   "text": "But watch the race. At that speed, the five gigabyte delivery takes more than six hundred millionths of a second."
+  },
+  {
+   "id": "u059",
+   "file": "u059.wav",
+   "text": "The truck takes over a hundred times longer than the work."
+  },
+  {
+   "id": "u060",
+   "file": "u060.wav",
+   "text": "So when the chip writes for just you, its workers sit idle more than ninety nine percent of the time."
+  },
+  {
+   "id": "u061",
+   "file": "u061.wav",
+   "text": "That is the pause you see. Engineers call it being memory bound."
+  },
+  {
+   "id": "u062",
+   "file": "u062.wav",
+   "text": "And none of this surprised the people who saw it coming."
+  },
+  {
+   "id": "u063",
+   "file": "u063.wav",
+   "text": "In nineteen ninety four, two computer scientists at the University of Virginia, William Wulf and Sally McKee, wrote a short paper with a blunt title."
+  },
+  {
+   "id": "u064",
+   "file": "u064.wav",
+   "text": "Hitting the Memory Wall."
+  },
+  {
+   "id": "u065",
+   "file": "u065.wav",
+   "text": "Processors were getting faster much more quickly than memory, they pointed out, and the gap kept widening."
+  },
+  {
+   "id": "u066",
+   "file": "u066.wav",
+   "text": "Sooner or later, they warned, every program would end up waiting for memory instead of computing. Cat's climb is exactly that case."
+  },
+  {
+   "id": "u067",
+   "file": "u067.wav",
+   "text": "They were right, and the wall is not just about time. It is about energy."
+  },
+  {
+   "id": "u068",
+   "file": "u068.wav",
+   "text": "Twenty years later, the Stanford engineer Mark Horowitz put numbers on it."
+  },
+  {
+   "id": "u069",
+   "file": "u069.wav",
+   "text": "Fetching a number from a memory chip cost about a hundred and seventy times more energy than multiplying two numbers."
+  },
+  {
+   "id": "u070",
+   "file": "u070.wav",
+   "text": "The distance is the cost. Every bit has to be pushed down a wire, and the longer the wire, the more it burns."
+  },
+  {
+   "id": "u071",
+   "file": "u071.wav",
+   "text": "So the question for everyone building these machines became: how do you stop moving so much?"
+  },
+  {
+   "id": "u072",
+   "file": "u072.wav",
+   "text": "The first answer was to move the warehouse."
+  },
+  {
+   "id": "u073",
+   "file": "u073.wav",
+   "text": "At AMD, a team led by Bryan Black had been working on it since two thousand eight."
+  },
+  {
+   "id": "u074",
+   "file": "u074.wav",
+   "text": "Their problem was graphics memory. Its power use simply would not scale to what the next chips needed."
+  },
+  {
+   "id": "u075",
+   "file": "u075.wav",
+   "text": "So instead of spreading memory chips around the board, they stacked them into towers."
+  },
+  {
+   "id": "u076",
+   "file": "u076.wav",
+   "text": "Tiny wires run straight down through the silicon, connecting every floor of the tower at once."
+  },
+  {
+   "id": "u077",
+   "file": "u077.wav",
+   "text": "Then they set the towers right beside the processor, on the same slab of silicon."
+  },
+  {
+   "id": "u078",
+   "file": "u078.wav",
+   "text": "In June twenty fifteen, AMD's Fiji was the first graphics chip to ship with this stacked memory."
+  },
+  {
+   "id": "u079",
+   "file": "u079.wav",
+   "text": "Today it is called high bandwidth memory, and every Blackwell chip carries its own towers of it."
+  },
+  {
+   "id": "u080",
+   "file": "u080.wav",
+   "text": "The road from warehouse to factory is now as short as anyone can make it."
+  },
+  {
+   "id": "u081",
+   "file": "u081.wav",
+   "text": "But there is a catch. Even on that short road, the truck still takes hundreds of times longer than the work."
+  },
+  {
+   "id": "u082",
+   "file": "u082.wav",
+   "text": "So the second answer was to stop sending the truck for just one person."
+  },
+  {
+   "id": "u083",
+   "file": "u083.wav",
+   "text": "Every conversation uses exactly the same weights."
+  },
+  {
+   "id": "u084",
+   "file": "u084.wav",
+   "text": "So the system gathers many conversations together, and a single delivery carries cat along with everyone else's words."
+  },
+  {
+   "id": "u085",
+   "file": "u085.wav",
+   "text": "The workers who would nap for you stay busy for a crowd. This is called batching."
+  },
+  {
+   "id": "u086",
+   "file": "u086.wav",
+   "text": "Except batching has a problem of its own. Every conversation needs a scratchpad."
+  },
+  {
+   "id": "u087",
+   "file": "u087.wav",
+   "text": "For every word you send or receive, the model keeps the notes it made during attention, so it never has to redo them."
+  },
+  {
+   "id": "u088",
+   "file": "u088.wav",
+   "text": "Those notes grow with every word and every person, and they fill the memory up."
+  },
+  {
+   "id": "u089",
+   "file": "u089.wav",
+   "text": "In twenty twenty three, Woosuk Kwon and his colleagues at Berkeley measured how badly."
+  },
+  {
+   "id": "u090",
+   "file": "u090.wav",
+   "text": "In the serving systems of the time, as little as a fifth of that scratchpad memory held actual notes."
+  },
+  {
+   "id": "u091",
+   "file": "u091.wav",
+   "text": "The rest was reserved just in case, or lost in gaps between conversations."
+  },
+  {
+   "id": "u092",
+   "file": "u092.wav",
+   "text": "Their fix came from an old idea in operating systems. Cut memory into small pages and hand them out only when needed."
+  },
+  {
+   "id": "u093",
+   "file": "u093.wav",
+   "text": "With almost nothing wasted, the same chips could handle two to four times as many requests."
+  },
+  {
+   "id": "u094",
+   "file": "u094.wav",
+   "text": "A year earlier, Tri Dao and his colleagues had applied the same lesson inside attention itself."
+  },
+  {
+   "id": "u095",
+   "file": "u095.wav",
+   "text": "Their method, called FlashAttention, keeps the work in a tiny fast memory on the chip, so less has to travel back and forth."
+  },
+  {
+   "id": "u096",
+   "file": "u096.wav",
+   "text": "The third answer was to make the cargo lighter."
+  },
+  {
+   "id": "u097",
+   "file": "u097.wav",
+   "text": "In that open model, most weights are stored in just over four bits each, instead of the usual sixteen."
+  },
+  {
+   "id": "u098",
+   "file": "u098.wav",
+   "text": "Smaller numbers mean a lighter truck on every trip, and the whole model fits on a single chip."
+  },
+  {
+   "id": "u099",
+   "file": "u099.wav",
+   "text": "But the biggest models do not fit on one chip, and a busy service needs thousands of them."
+  },
+  {
+   "id": "u100",
+   "file": "u100.wav",
+   "text": "So the chips are wired together, and here the fight against distance gets physical."
+  },
+  {
+   "id": "u101",
+   "file": "u101.wav",
+   "text": "This is NVIDIA's rack for Blackwell, a cabinet taller than a person that weighs more than a tonne."
+  },
+  {
+   "id": "u102",
+   "file": "u102.wav",
+   "text": "It holds seventy two of those chips, along with thirty six Grace processors to manage them."
+  },
+  {
+   "id": "u103",
+   "file": "u103.wav",
+   "text": "Behind them runs a spine of copper cables, more than three kilometres of it, linking every chip to every other."
+  },
+  {
+   "id": "u104",
+   "file": "u104.wav",
+   "text": "NVIDIA says the rack acts like a single, massive GPU."
+  },
+  {
+   "id": "u105",
+   "file": "u105.wav",
+   "text": "A model can be cut into slices and spread across it, so each chip only fetches its own slice of cat's climb."
+  },
+  {
+   "id": "u106",
+   "file": "u106.wav",
+   "text": "Where does all that effort go in the end?"
+  },
+  {
+   "id": "u107",
+   "file": "u107.wav",
+   "text": "It turns into heat. One of these racks draws about a hundred and twenty kilowatts, about as much as a hundred American homes."
+  },
+  {
+   "id": "u108",
+   "file": "u108.wav",
+   "text": "Air cannot carry that away, so liquid runs through metal plates pressed onto every chip."
+  },
+  {
+   "id": "u109",
+   "file": "u109.wav",
+   "text": "The heat has to go somewhere, and many sites dump it into the sky through cooling towers."
+  },
+  {
+   "id": "u110",
+   "file": "u110.wav",
+   "text": "A tower lets a small part of the water evaporate, and the evaporation pulls heat out of the rest."
+  },
+  {
+   "id": "u111",
+   "file": "u111.wav",
+   "text": "That is where the water in the headlines goes."
+  },
+  {
+   "id": "u112",
+   "file": "u112.wav",
+   "text": "Days after ChatGPT launched, its chief executive Sam Altman wrote that the compute costs were eye-watering."
+  },
+  {
+   "id": "u113",
+   "file": "u113.wav",
+   "text": "How much does cat's trip actually cost, then?"
+  },
+  {
+   "id": "u114",
+   "file": "u114.wav",
+   "text": "In twenty twenty five, he put an average query at about a third of a watt hour, about what an oven uses in a second or so."
+  },
+  {
+   "id": "u115",
+   "file": "u115.wav",
+   "text": "Tiny, for one question. But ChatGPT gets around two and a half billion prompts a day."
+  },
+  {
+   "id": "u116",
+   "file": "u116.wav",
+   "text": "Together, that is a steady load of about thirty five megawatts, the power of roughly thirty thousand homes."
+  },
+  {
+   "id": "u117",
+   "file": "u117.wav",
+   "text": "And yet that is a single service, in an industry that is still building."
+  },
+  {
+   "id": "u118",
+   "file": "u118.wav",
+   "text": "Which brings us back to cat."
+  },
+  {
+   "id": "u119",
+   "file": "u119.wav",
+   "text": "Light carried it through glass, a trick from a jet of water in eighteen forty two."
+  },
+  {
+   "id": "u120",
+   "file": "u120.wav",
+   "text": "A file compression idea from a nineteen ninety four magazine turned it into a number."
+  },
+  {
+   "id": "u121",
+   "file": "u121.wav",
+   "text": "It climbed a tower of weights that had to be trucked in, again and again, for every piece of the answer."
+  },
+  {
+   "id": "u122",
+   "file": "u122.wav",
+   "text": "Stacked memory shortened the road, batching shared the truck, and smaller numbers lightened the load."
+  },
+  {
+   "id": "u123",
+   "file": "u123.wav",
+   "text": "Every one of those inventions fights the same wall that two scientists described in nineteen ninety four."
+  },
+  {
+   "id": "u124",
+   "file": "u124.wav",
+   "text": "Moving a number costs more than using it."
+  },
+  {
+   "id": "u125",
+   "file": "u125.wav",
+   "text": "So the next time an answer appears a few words at a time, watch the rhythm."
+  },
+  {
+   "id": "u126",
+   "file": "u126.wav",
+   "text": "That little stutter is not the machine thinking."
+  },
+  {
+   "id": "u127",
+   "file": "u127.wav",
+   "text": "It is the machine waiting for the truck."
+  }
+ ]
+}

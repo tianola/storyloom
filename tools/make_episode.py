@@ -27,6 +27,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime
@@ -43,20 +44,43 @@ def _files(episode, *names):
     return [episode / n for n in names]
 
 
+def _optional(episode, *names):
+    """Inputs that only some episodes have (characters' voices): counted once they exist, so an
+    episode without them keeps the digest it was built with."""
+    return [episode / n for n in names if (episode / n).is_file()]
+
+
+def has_characters(episode):
+    """True when the episode casts characters who speak in their own voice (script/cast.json)."""
+    return (episode / "script" / "cast.json").is_file()
+
+
+def beat_renders(episode):
+    """renders/3d/<beat>.mp4 for every 3D beat in shots.json: what the render stage owes the edit."""
+    shots = episode / "shots.json"
+    if not shots.is_file():
+        return []
+    beats = {s["name"] for s in json.loads(shots.read_text(encoding="utf-8")).values() if s.get("kind") == "3d"}
+    return [f"renders/3d/{b}.mp4" for b in sorted(beats)]
+
+
 def inputs_of(stage, episode):
     """Files whose content decides whether a finished stage is still valid."""
     style = ROOT / "workflow" / "style.json"
     table = {
         "script": _files(episode, "script/narration.md", "script/chapters.json", "script/claims.json",
-                         "research/sources.md") + [style],
-        "narration": _files(episode, "script/narration.md"),
+                         "research/sources.md") + [style] + _optional(episode, "script/cast.json", "script/dramatisation.json"),
+        "narration": _files(episode, "script/narration.md") + _optional(episode, "script/cast.json", "script/pronounce.json"),
         "shots": _files(episode, "vo/manifest.json", "archive.json", "script/shots-hint.json"),
         "captions": _files(episode, "vo/manifest.json", "shots.json"),
         "lengths": _files(episode, "vo/manifest.json", "shots.json"),
         "plan": _files(episode, "shot_lengths.json", "shots.json", "vo/manifest.json") + [ROOT / "workflow" / "scenes.json"],
         "ingest": _files(episode, "archive.json", "shots.json"),
-        "render": _files(episode, "storyboard.json", "shot_lengths.json", "word_timing.json"),
-        "assemble": _files(episode, "vo/manifest.json", "shots.json", "shot_lengths.json", "storyboard.json"),
+        "render": _files(episode, "storyboard.json", "shot_lengths.json", "word_timing.json")
+        + _optional(episode, "mouth_timing.json"),
+        # a re-rendered beat changes the film, so the renders themselves are inputs of the edit
+        "assemble": _files(episode, "vo/manifest.json", "shots.json", "shot_lengths.json", "storyboard.json",
+                           *beat_renders(episode)),
         "qc": [episode / f"{episode.name}.mp4"],
     }
     return table[stage]
@@ -76,11 +100,12 @@ def outputs_exist(stage, episode):
         "script": ["qc/script-qc.json"],
         "narration": ["vo/manifest.json"],
         "shots": ["shots.json"],
-        "captions": ["vo/captions.srt", "word_timing.json"],
+        "captions": ["vo/captions.srt", "word_timing.json"] + (["mouth_timing.json"] if has_characters(episode) else []),
         "lengths": ["shot_lengths.json"],
         "plan": ["storyboard.json"],
         "ingest": [],
-        "render": [],
+        # a beat deleted to be redrawn is a missing output, not a finished stage
+        "render": beat_renders(episode),
         "assemble": [f"{episode.name}.mp4"],
         "qc": ["qc/qc-report.json"],
     }[stage]
@@ -92,9 +117,39 @@ def narration_request(episode):
     import qc_script
     existing = episode / "script" / "narration-request.json"
     base = json.loads(existing.read_text(encoding="utf-8")) if existing.exists() else {}
-    script = qc_script.read_script(episode)
-    return {"voice": base.get("voice", "af_heart"), "speed": base.get("speed", 1.0),
-            "utterances": [{"id": uid, "file": f"{uid}.wav", "text": text} for uid, text in script.items()]}
+    lines = qc_script.read_lines(episode)
+    cast = qc_script.read_cast(episode)
+    say_path = episode / "script" / "pronounce.json"
+    say = json.loads(say_path.read_text(encoding="utf-8")) if say_path.exists() else {}
+    narrator = (cast.get(qc_script.NARRATOR) or {}).get("voice") or base.get("voice", "af_heart")
+    utterances = []
+    for uid, line in lines.items():
+        u = {"id": uid, "file": f"{uid}.wav", "text": line["text"]}
+        role = cast.get(line["speaker"]) or {}
+        voice = role.get("voice", narrator)
+        if "speed" in role:              # a cast member's own pace (ElevenLabs takes 0.7-1.2)
+            u["speed"] = role["speed"]
+        # respelling helps the local voice; ElevenLabs reads names well and is given the real text
+        spoken = line["directed"] if voice.startswith("eleven:") else respell(line["text"], say)
+        if spoken != line["text"]:
+            u["spoken"] = spoken
+        if line["speaker"] != qc_script.NARRATOR:
+            u.update(speaker=line["speaker"], mode=line["mode"], voice=voice)
+        utterances.append(u)
+    return {"voice": narrator, "speed": base.get("speed", 1.0), "utterances": utterances}
+
+
+def respell(text, say):
+    """The text as the voice should read it: whole words swapped by script/pronounce.json, one for one
+    (punctuation kept), so captions keep the real spelling and word counts still line up."""
+    if not say:
+        return text
+    word = re.compile(r"[A-Za-z][A-Za-z-]*")
+
+    def swap(m):
+        new = say.get(m.group(0))
+        return new if new and len(new.split()) == 1 else m.group(0)
+    return word.sub(swap, text)
 
 
 def commands(stage, episode, args):
@@ -111,7 +166,12 @@ def commands(stage, episode, args):
     if stage == "shots":
         return [[PY, str(tools / "plan_shots.py"), "--episode", ep]]
     if stage == "captions":
-        return [[PY, str(tools / "captions.py"), "--episode", ep]]
+        # exact word times from the voice model first (skipped with a note when onnx is missing),
+        # then captions and word_timing.json, which use them wherever they match the wav
+        return [[PY, str(tools / "word_marks.py"), "--episode", ep, "--model", str(Path(args.models) / "kokoro-v1.0.onnx")],
+                [PY, str(tools / "captions.py"), "--episode", ep]] + (
+               # mouths for characters who speak on screen (an episode with only the narrator has none)
+               [[PY, str(tools / "lip_sync.py"), "--episode", ep]] if has_characters(episode) else [])
     if stage == "lengths":
         return [[PY, str(tools / "assemble_episode.py"), "--episode", ep, "--shot-lengths-only"]]
     if stage == "plan":

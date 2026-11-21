@@ -1,10 +1,11 @@
-"""The "explainer" look: a dark stage where the subject is lit by what it does.
+"""The "explainer" look: a studio set where the subject is lit by what it does.
 
-fern-minimal (kit.stage) is a matte tabletop under one raking sun, cut on sentences.
-This is the other register, for the stretches that take a system apart: near-black
-world, emissive accents with bloom, shallow depth of field, and ONE camera path that
-travels from the whole object down into its smallest part without a cut. Motion comes
-from the mechanism itself: signals running along traces, parts lighting as they work.
+Every storyboard beat is built in it (`open_set` then `shoot`): a haze sky with a horizon
+instead of a black void, an evenly glossy concrete floor that reflects what glows on it
+(screen-traced reflections), a warm key and cool rim from the first view plus a fill and
+an overhead softbox sized to the whole set, emissive accents with bloom, and shallow depth
+of field. Motion comes from the mechanism itself: signals running along traces, parts
+lighting as they work. Tags (`auto_tag`) take a free slot at the frame's edge.
 """
 import math
 
@@ -12,6 +13,7 @@ import bmesh
 import bpy
 from mathutils import Matrix, Vector
 
+import camera_plan
 import kit
 from kit import FPS
 
@@ -27,7 +29,7 @@ def _keys_linear(id_data):
 
 
 def open_set(seconds, res=None):
-    """Empty dark world, ready for objects. Returns the frame count.
+    """An empty set under the haze sky, ready for objects. Returns the frame count.
 
     Split from the camera so a scene can be built first and then asked which views it
     offers: `shoot()` places the camera afterwards.
@@ -43,68 +45,177 @@ def open_set(seconds, res=None):
     w, h = res or (canvas["width"], canvas["height"])
     kit.common.setup_scene(FPS, 1, frames, w, h)
     scene = bpy.context.scene
-    scene.eevee.use_raytracing = False
-    world = bpy.data.worlds.new("Dark World")
-    world.use_nodes = True
-    bg = world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (0.004, 0.006, 0.012, 1.0)
-    bg.inputs["Strength"].default_value = 1.0
-    scene.world = world
+    # screen-traced reflections and AO: the floor mirrors what glows on it and parts sit on
+    # the ground instead of floating in it
+    scene.eevee.use_raytracing = True
+    if hasattr(scene.eevee, "ray_tracing_method"):
+        scene.eevee.ray_tracing_method = "SCREEN"
+    if hasattr(scene.eevee, "use_fast_gi"):
+        scene.eevee.use_fast_gi = True
+    scene.view_settings.exposure = 0.25
+    scene.world = haze_world()
     return frames
 
 
-def dark_stage(seconds, path, *, lens=35.0, fstop=4.0, bloom=True, res=None, screen_depth=0.92):
-    """Black world, two soft lights, and a camera that follows `path` in one move.
+HORIZON = (0.050, 0.060, 0.078)     # the haze where the floor meets the sky
+ZENITH = (0.006, 0.008, 0.014)
 
-    path: [(seconds, camera_xyz, look_at_xyz), ...]. Both the camera and the point it
-    looks at are keyed with Bezier handles, so the travel eases through every waypoint
-    instead of stopping at it. Focus rides on the look-at point.
-    """
-    frames = open_set(seconds, res)
-    scene = bpy.context.scene
 
-    aim = kit._link(bpy.data.objects.new("cam-target", None))
-    cam = kit.common.add_camera("camera", path[0][1], path[0][2], lens=lens)
-    cam.data.clip_start = 0.005
-    cam.data.clip_end = 500.0
-    track = cam.constraints.new("TRACK_TO")
-    track.target = aim
-    track.track_axis = "TRACK_NEGATIVE_Z"
-    track.up_axis = "UP_Y"
-    for t, pos, look in path:
-        frame = max(1, round(t * FPS))
-        cam.location = pos
-        cam.keyframe_insert("location", frame=frame)
-        aim.location = look
-        aim.keyframe_insert("location", frame=frame)
-    cam.data.dof.use_dof = True
-    cam.data.dof.focus_object = aim
-    cam.data.dof.aperture_fstop = fstop
+def haze_world():
+    """A sky with depth instead of a black void: dark overhead, a cool haze at the horizon,
+    and a faint even fill so the shadow side of a part is dark grey rather than missing."""
+    world = bpy.data.worlds.new("Haze World")
+    world.use_nodes = True
+    nt = world.node_tree
+    bg = nt.nodes["Background"]
+    coord = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(coord.outputs["Generated"], sep.inputs["Vector"])
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    ramp.color_ramp.elements[0].position = 0.0
+    ramp.color_ramp.elements[0].color = (*HORIZON, 1.0)
+    ramp.color_ramp.elements[1].position = 0.45
+    ramp.color_ramp.elements[1].color = (*ZENITH, 1.0)
+    up = nt.nodes.new("ShaderNodeMath")
+    up.operation = "ABSOLUTE"
+    nt.links.new(sep.outputs["Z"], up.inputs[0])
+    nt.links.new(up.outputs[0], ramp.inputs["Fac"])
+    fill = nt.nodes.new("ShaderNodeBackground")
+    fill.inputs["Color"].default_value = (0.030, 0.034, 0.044, 1.0)
+    fill.inputs["Strength"].default_value = 1.0
+    path = nt.nodes.new("ShaderNodeLightPath")
+    mix = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(path.outputs["Is Camera Ray"], mix.inputs["Fac"])
+    nt.links.new(fill.outputs[0], mix.inputs[1])
+    nt.links.new(bg.outputs[0], mix.inputs[2])
+    nt.links.new(ramp.outputs["Color"], bg.inputs["Color"])
+    bg.inputs["Strength"].default_value = 1.0
+    nt.links.new(mix.outputs[0], nt.nodes["World Output"].inputs["Surface"])
+    return world
 
-    if bloom:
-        import detail
-        detail.add_glare(scene, glare_type="BLOOM", threshold=1.0, size=6)
 
-    # Everything drawn "on the screen" hangs off this rig. It sits at the lens and is
-    # scaled, frame by frame, to just inside the focus distance: scaling about the lens
-    # changes how far away a tag is without changing where or how large it appears, so
-    # tags stay sharp through a dive instead of dissolving in the depth of field.
-    rig = kit._link(bpy.data.objects.new("screen-rig", None))
-    rig.parent = cam
-    for frame in range(1, frames + 1, 2):
-        scene.frame_set(frame)
-        bpy.context.view_layer.update()
-        d = screen_depth * (aim.matrix_world.translation - cam.matrix_world.translation).length
-        rig.scale = (d, d, d)
-        rig.keyframe_insert("scale", frame=frame)
-    scene.frame_set(1)
+def stage_floor(centre, floor_z, grid, reach):
+    """A large floor that reads as a material: speckled, slightly glossy concrete with faint
+    tile seams every `grid` units, fading into the horizon haze far from the camera, so a
+    small part stands somewhere instead of hanging in a black void."""
+    m = bpy.data.materials.new("look-floor")
+    m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    coord = nt.nodes.new("ShaderNodeTexCoord")
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 1.4
+    noise.inputs["Detail"].default_value = 6.0
+    noise.inputs["Roughness"].default_value = 0.62
+    nt.links.new(coord.outputs["Object"], noise.inputs["Vector"])
+    tone = nt.nodes.new("ShaderNodeValToRGB")
+    tone.color_ramp.elements[0].position = 0.35
+    tone.color_ramp.elements[0].color = (0.036, 0.039, 0.046, 1.0)
+    tone.color_ramp.elements[1].position = 0.70
+    tone.color_ramp.elements[1].color = (0.050, 0.054, 0.062, 1.0)
+    nt.links.new(noise.outputs["Fac"], tone.inputs["Fac"])
+    # one even sheen: varying the roughness breaks a light's reflection into patches that
+    # read as smoke on the floor
+    b.inputs["Roughness"].default_value = 0.42
+    b.inputs["Specular IOR Level"].default_value = 0.35
 
-    st = kit.Stage(cam, path[-1][2], frames)
-    st.rig = rig
-    st.mid_cam = Vector(path[len(path) // 2][1])
-    st.floor_z = -1e9
-    kit.LAST = st
-    return st
+    # tile seams: distance to the nearest grid line, in both directions
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(coord.outputs["Object"], sep.inputs["Vector"])
+
+    def seam(axis):
+        scale = nt.nodes.new("ShaderNodeMath")
+        scale.operation = "MULTIPLY"
+        scale.inputs[1].default_value = 1.0 / max(grid, 0.05)
+        nt.links.new(sep.outputs[axis], scale.inputs[0])
+        ping = nt.nodes.new("ShaderNodeMath")
+        ping.operation = "PINGPONG"
+        ping.inputs[1].default_value = 0.5
+        nt.links.new(scale.outputs[0], ping.inputs[0])
+        edge = nt.nodes.new("ShaderNodeMath")
+        edge.operation = "LESS_THAN"
+        edge.inputs[1].default_value = 0.012
+        nt.links.new(ping.outputs[0], edge.inputs[0])
+        return edge
+
+    seams = nt.nodes.new("ShaderNodeMix")
+    seams.data_type = "RGBA"
+    seams.inputs["B"].default_value = (0.10, 0.11, 0.13, 1.0)
+    seams.inputs["Factor"].default_value = 0.0
+    if grid:
+        lines = nt.nodes.new("ShaderNodeMath")
+        lines.operation = "MAXIMUM"
+        nt.links.new(seam("X").outputs[0], lines.inputs[0])
+        nt.links.new(seam("Y").outputs[0], lines.inputs[1])
+        nt.links.new(lines.outputs[0], seams.inputs["Factor"])
+    nt.links.new(tone.outputs["Color"], seams.inputs["A"])
+
+    # far floor melts into the haze, so there is a horizon and no hard edge
+    view = nt.nodes.new("ShaderNodeCameraData")
+    far = nt.nodes.new("ShaderNodeMapRange")
+    far.inputs["From Min"].default_value = reach * 2.5
+    far.inputs["From Max"].default_value = reach * 9.0
+    nt.links.new(view.outputs["View Distance"], far.inputs["Value"])
+    fade = nt.nodes.new("ShaderNodeMix")
+    fade.data_type = "RGBA"
+    fade.inputs["B"].default_value = (*HORIZON, 1.0)
+    nt.links.new(far.outputs["Result"], fade.inputs["Factor"])
+    nt.links.new(seams.outputs["Result"], fade.inputs["A"])
+    nt.links.new(fade.outputs["Result"], b.inputs["Base Color"])
+    glow = nt.nodes.new("ShaderNodeMath")
+    glow.operation = "MULTIPLY"
+    glow.inputs[1].default_value = 0.9
+    nt.links.new(far.outputs["Result"], glow.inputs[0])
+    b.inputs["Emission Color"].default_value = (*HORIZON, 1.0)
+    nt.links.new(glow.outputs[0], b.inputs["Emission Strength"])
+
+    size = max(400.0, reach * 40)
+    return kit.box("bench", (centre[0], centre[1], floor_z - 0.05), (size, size, 0.1), m, bevel=0)
+
+
+def set_bounds(exclude=()):
+    """Centre and half-size of everything built so far: lights are placed for the whole set,
+    not only for the first shot, so a cut to the far side still finds it lit."""
+    lo, hi = Vector((1e9, 1e9, 1e9)), Vector((-1e9, -1e9, -1e9))
+    found = False
+    for ob in bpy.context.scene.objects:
+        if ob.type not in {"MESH", "CURVE", "FONT"} or ob in exclude or ob.hide_render:
+            continue
+        for corner in ob.bound_box:
+            p = ob.matrix_world @ Vector(corner)
+            lo = Vector(map(min, lo, p))
+            hi = Vector(map(max, hi, p))
+            found = True
+    if not found:
+        return Vector((0, 0, 0.5)), 3.0
+    centre = (lo + hi) / 2
+    return centre, max(1.5, min(40.0, ((hi - lo).length / 2)))
+
+
+def light_set(target, mid, reach, *, gain=1.0, key_side=1.0):
+    """Warm key, cool rim, a low fill and an overhead softbox.
+
+    The key and rim keep their old placement from the first view (their energy is what the
+    scenes were tuned against); the fill and the softbox are sized to the whole set so a cut
+    to its far side, or a wide view of it, is still lit like the same room."""
+    centre, half = set_bounds()
+    key = Vector(kit.key_location(mid, target, elevation=38.0, side=key_side, yaw=-10.0, distance=reach))
+    key += Vector(target)
+    soft_light("key", key, target, 5.2 * gain * reach ** 2, (1.0, 0.80, 0.62), size=reach * 0.7)
+    back = Vector(target) + (Vector(target) - Vector(mid)).normalized() * reach * 0.9
+    back.z = target[2] + reach * 0.55
+    back += Vector((-(mid.y - target[1]), mid.x - target[0], 0)).normalized() * reach * 0.5 * -key_side
+    soft_light("rim", back, target, 8.0 * gain * reach ** 2, (0.45, 0.70, 1.0), size=reach * 0.5)
+    span = max(half, reach * 0.6)
+    side = (Vector(mid) - centre)
+    side.z = 0
+    side = side.normalized() if side.length > 1e-6 else Vector((0, -1, 0))
+    across = Vector((-side.y, side.x, 0)) * key_side
+    fill = centre - across * span * 1.6 + side * span * 0.8
+    fill.z = centre.z + span * 0.5
+    soft_light("fill", fill, centre, 1.6 * gain * span ** 2, (0.62, 0.74, 1.0), size=span * 1.4)
+    top = centre + Vector((0, 0, span * 2.2))
+    soft_light("softbox", top, centre, 2.4 * gain * span ** 2, (0.95, 0.93, 0.90), size=span * 2.0)
 
 
 def soft_light(name, location, target, energy, color, size=6.0):
@@ -302,58 +413,12 @@ def counter(text_obj, start, end, value_at, template="{:,}"):
     return update
 
 
-def orbit_stage(seconds, *, target=(0, 0, 0.5), radius=(11.0, 9.0), azimuth=(-70.0, -40.0),
-                height=(6.0, 5.0), lens=50.0, fstop=6.3, floor_z=0.0, floor_grid=1.0, key_side=1.0, gain=1.0,
-                **_ignored):
-    """kit.stage's call shape in the explainer look: the same slow arc around a subject,
-    on the dark stage, lit by a warm key and a cool rim placed from the camera."""
-    steps = max(2, int(seconds))
-    path = []
-    for i in range(steps + 1):
-        t = i / steps
-        path.append((seconds * t,
-                     tuple(kit._orbit_point(target, radius[0] + (radius[1] - radius[0]) * t,
-                                            azimuth[0] + (azimuth[1] - azimuth[0]) * t,
-                                            height[0] + (height[1] - height[0]) * t)),
-                     target))
-    st = dark_stage(seconds, path, lens=lens, fstop=fstop, screen_depth=0.45)
-    _keys_linear(st.cam)
-    st.target = target
-    st.floor_z = floor_z
-    reach = sum(radius) / 2
-    mid = kit._orbit_point(target, reach, sum(azimuth) / 2, sum(height) / 2)
-    key = Vector(kit.key_location(mid, target, elevation=38.0, side=key_side, yaw=-10.0, distance=reach))
-    key += Vector(target)
-    soft_light("key", key, target, 4.6 * gain * reach ** 2, (1.0, 0.80, 0.62), size=reach * 0.6)
-    back = Vector(target) + (Vector(target) - Vector(mid)).normalized() * reach * 0.9
-    back.z = target[2] + reach * 0.55
-    back += Vector((-(mid.y - target[1]), mid.x - target[0], 0)).normalized() * reach * 0.5 * -key_side
-    soft_light("rim", back, target, 8.0 * gain * reach ** 2, (0.45, 0.70, 1.0), size=reach * 0.5)
-    kit.box("bench", (target[0], target[1], floor_z - 0.05), (120, 120, 0.1),
-            kit.mat("look-bench", (0.012, 0.014, 0.018), roughness=0.8), bevel=0)
-    if floor_grid:
-        n = 22
-        dots = [((target[0] + (i - n / 2) * floor_grid, target[1] + (j - n / 2) * floor_grid, floor_z + 0.004),
-                 0.03, 0.008) for i in range(n + 1) for j in range(n + 1)]
-        kit.cylinders("floor-grid", dots, kit.mat("look-grid", (0.10, 0.12, 0.15), roughness=0.8), segments=8)
-    return st
-
-
-def tag(st, text, anchor, screen, *, size=0.040, appear_at=1, follow=None, until=None):
-    """kit.label's call shape, drawn as a pill."""
-    u, v = screen
-    half_u = (len(text) * 0.255 + 0.75) * size * 9 / 16
-    if not (0.02 < u - half_u and u + half_u < 0.98 and 0.05 < v < 0.95):
-        st.problems.append(f"tag '{text}' leaves the frame: u={u - half_u:.2f}..{u + half_u:.2f} v={v:.2f}")
-    return pill(st, text, anchor, screen, start=appear_at / FPS, until=until, size=size, follow=follow)
-
-
 # ---------------------------------------------------------------------------
 # Several camera set-ups inside one beat
 # ---------------------------------------------------------------------------
 
 def shoot(shots, *, lens=50.0, fstop=6.3, floor_z=0.0, floor_grid=1.0, gain=1.0, key_side=1.0,
-          screen_depth=0.45, bloom=True):
+          screen_depth=0.45, bloom=True, lighting="studio"):
     """Camera, lights and floor for a set built after `open_set()`.
 
     shots: [{"start": seconds, "target": xyz, "radius": (a, b), "azimuth": (a, b),
@@ -385,18 +450,31 @@ def shoot(shots, *, lens=50.0, fstop=6.3, floor_z=0.0, floor_grid=1.0, gain=1.0,
         f1 = frames if i == len(shots) - 1 else round(shots[i + 1]["start"] * FPS)
         f1 = max(f1, f0 + 4)
         bounds.append((f0, f1))
-        for k in range(5):
-            t = k / 4
-            frame = round(f0 + (f1 - f0) * t)
-            pos = kit._orbit_point(shot["target"],
-                                   shot["radius"][0] + (shot["radius"][1] - shot["radius"][0]) * t,
+        travel = "target_to" in shot          # one continuous move from one view to another
+        glide = travel and shot.get("glide") == "log"
+        keys = 31 if glide else 9 if travel else 5
+        # a travel holds still at both ends (staging.md: 0.5-1 s before a move, 1-2 s after): the first
+        # two and last two keys share a progress, and the keys between them are eased
+        plan = camera_plan.travel_keys((f1 - f0) / FPS, keys) if travel else [(k / (keys - 1), k / (keys - 1)) for k in range(keys)]
+        for frac, t in plan:
+            frame = round(f0 + (f1 - f0) * frac)
+            (r0, r1), (h0, h1) = shot["radius"], shot["height"]
+            if glide and r0 > 0 and r1 > 0:
+                # a long descent (a town from the air down to one window): the distance shrinks by the
+                # same ratio every second, so the end does not rush; height and aim follow the distance
+                r = r0 * (r1 / r0) ** t
+                u = (r0 - r) / (r0 - r1) if r0 != r1 else t
+            else:
+                r, u = r0 + (r1 - r0) * t, t
+            target = Vector(shot["target"]).lerp(Vector(shot.get("target_to", shot["target"])), u)
+            pos = kit._orbit_point(tuple(target), r,
                                    shot["azimuth"][0] + (shot["azimuth"][1] - shot["azimuth"][0]) * t,
-                                   shot["height"][0] + (shot["height"][1] - shot["height"][0]) * t)
+                                   h0 + (h1 - h0) * u)
             cam.location = pos
             cam.keyframe_insert("location", frame=frame)
-            aim.location = shot["target"]
+            aim.location = target
             aim.keyframe_insert("location", frame=frame)
-            d = screen_depth * (pos - Vector(shot["target"])).length
+            d = screen_depth * (pos - target).length
             rig.scale = (d, d, d)
             rig.keyframe_insert("scale", frame=frame)
     for ob in (cam, aim, rig):
@@ -408,20 +486,10 @@ def shoot(shots, *, lens=50.0, fstop=6.3, floor_z=0.0, floor_grid=1.0, gain=1.0,
     target = first["target"]
     reach = sum(first["radius"]) / 2
     mid = kit._orbit_point(target, reach, sum(first["azimuth"]) / 2, sum(first["height"]) / 2)
-    key = Vector(kit.key_location(mid, target, elevation=38.0, side=key_side, yaw=-10.0, distance=reach))
-    key += Vector(target)
-    soft_light("key", key, target, 4.6 * gain * reach ** 2, (1.0, 0.80, 0.62), size=reach * 0.6)
-    back = Vector(target) + (Vector(target) - Vector(mid)).normalized() * reach * 0.9
-    back.z = target[2] + reach * 0.55
-    back += Vector((-(mid.y - target[1]), mid.x - target[0], 0)).normalized() * reach * 0.5 * -key_side
-    soft_light("rim", back, target, 8.0 * gain * reach ** 2, (0.45, 0.70, 1.0), size=reach * 0.5)
-    kit.box("bench", (target[0], target[1], floor_z - 0.05), (160, 160, 0.1),
-            kit.mat("look-bench", (0.012, 0.014, 0.018), roughness=0.8), bevel=0)
-    if floor_grid:
-        n = 26
-        dots = [((target[0] + (i - n / 2) * floor_grid, target[1] + (j - n / 2) * floor_grid, floor_z + 0.004),
-                 0.03, 0.008) for i in range(n + 1) for j in range(n + 1)]
-        kit.cylinders("floor-grid", dots, kit.mat("look-grid", (0.10, 0.12, 0.15), roughness=0.8), segments=8)
+    if lighting == "studio":
+        light_set(target, mid, reach, gain=gain, key_side=key_side)
+        stage_floor(target, floor_z, floor_grid, reach)
+    # "world": the scene lit itself (sky, sun or moon, lamps) and stands on its own ground
 
     st = kit.Stage(cam, target, frames)
     st.rig = rig

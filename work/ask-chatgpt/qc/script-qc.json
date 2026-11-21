@@ -1,0 +1,15 @@
+{
+ "findings": [],
+ "stats": {
+  "lines": 127,
+  "words": 2016,
+  "estimated_seconds": 854,
+  "chapters": 11,
+  "verified_claims": 39,
+  "numeric_share": 0.287,
+  "numeric_run": 4,
+  "numeric_run_from": "u114",
+  "turns_per_minute": 1.69,
+  "questions_per_minute": 0.49
+ }
+}

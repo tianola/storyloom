@@ -27,6 +27,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import statistics
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -769,6 +770,130 @@ def check_cut_loudness(pairs, deltas, contract) -> list[Finding]:
 
 # ---------------------------------------------------------------- orchestration
 
+def measure_cuts(master: Path) -> list[float]:
+    """Cut times in seconds, found by ffmpeg's scene detector the way the references were measured."""
+    run_ = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(master), "-an",
+                           "-vf", "scale=320:-2,scdet=threshold=10:sc_pass=0", "-f", "null", "-"],
+                          capture_output=True, text=True, encoding="utf-8", errors="replace")
+    return [float(m) for m in re.findall(r"lavfi\.scd\.time: ([0-9.]+)", run_.stderr)]
+
+
+def check_cut_rhythm(cuts: list[float], duration: float, contract: dict) -> list[Finding]:
+    """Uniform cutting reads as slides; the reference films mix quick montage with long held moves."""
+    rule = contract["rhythm"]["cuts"]
+    bounds = [0.0] + sorted(cuts) + [duration]
+    lengths = [b - a for a, b in zip(bounds, bounds[1:]) if b - a > 0.2]
+    if len(lengths) < 3:
+        return []
+    findings = []
+    median = statistics.median(lengths)
+    if median > rule["median_max_seconds"]:
+        findings.append(error("cut_rhythm_slow", "master",
+                              f"the median shot runs {median:.1f}s (reference films 1.5-3.3s, at most "
+                              f"{rule['median_max_seconds']}s): the film cuts at one even pace, which reads as slides"))
+    short = sum(x < rule["short_seconds"] for x in lengths) / len(lengths)
+    if short < rule["short_share_min"]:
+        findings.append(error("cut_rhythm_no_montage", "master",
+                              f"{short:.0%} of shots are under {rule['short_seconds']}s (reference films 17-51%, at least "
+                              f"{rule['short_share_min']:.0%}): no quick montage anywhere"))
+    if max(lengths) < rule["held_shot_min_seconds"]:
+        findings.append(error("cut_rhythm_no_hold", "master",
+                              f"the longest shot is {max(lengths):.1f}s (reference films 53s and more, at least "
+                              f"{rule['held_shot_min_seconds']:.0f}s): nothing is explained in one held, moving shot"))
+    return findings
+
+
+def known_cuts(episode: Path) -> list[float] | None:
+    """The cuts the edit was built with (beat changes and every planned shot change), read off
+    the storyboard by tools/sound_design.py; None when the episode has no storyboard."""
+    if not (Path(episode) / "storyboard.json").exists():
+        return None
+    import sound_design
+    return [t for t, _ in sound_design.plan_events(episode)["cuts"]]
+
+
+def check_cut_detection(detected: list[float], known: list[float] | None, duration: float,
+                        contract: dict) -> list[Finding]:
+    """The rhythm gate reads the detector, the way the reference films were measured. On a dark,
+    slowly lit master the detector misses cuts (33 of 47 on ask-chatgpt's first story cut), so its
+    reading is set against the edit we know: how many known cuts it found, and the rhythm of the
+    known edit itself. Advice only; the gate stays on the detector for comparability."""
+    rule = contract["rhythm"]["cuts"]
+    if not known or not detected:
+        return []
+    findings = []
+    # Where the picture sits against the voice: the edit's cuts are on the narration clock, the
+    # detector's are on the picture's. Their offset, third by third, is the A/V sync of the film.
+    near = [(k, min(detected, key=lambda d: abs(d - k)) - k) for k in known]
+    near = [(k, off) for k, off in near if abs(off) < 1.0]
+    bound = rule["sync_offset_max_seconds"]
+    span = max(k for k in known) or 1.0
+    for part in range(3):
+        offs = [off for k, off in near if part * span / 3 <= k < (part + 1) * span / 3 + (part == 2)]
+        if len(offs) >= 5 and abs(statistics.median(offs)) > bound:
+            findings.append(error("picture_out_of_sync", f"{part * span / 3:.0f}-{(part + 1) * span / 3:.0f}s",
+                                  f"the cuts land {statistics.median(offs):+.2f}s from where the edit put them "
+                                  f"(median of {len(offs)}; at most {bound}s): picture and voice have drifted apart"))
+    tol = rule["known_cut_match_seconds"]
+    found = sum(any(abs(d - k) <= tol for d in detected) for k in known)
+    recall = found / len(known)
+    bounds = [0.0] + sorted(known) + [duration]
+    lengths = [b - a for a, b in zip(bounds, bounds[1:]) if b - a > 0.2]
+    median = statistics.median(lengths) if lengths else 0.0
+    short = sum(x < rule["short_seconds"] for x in lengths) / max(1, len(lengths))
+    summary = (f"the detector found {found} of the {len(known)} cuts in the edit ({recall:.0%}); the edit itself "
+               f"has a median shot of {median:.1f}s, {short:.0%} under {rule['short_seconds']}s and a longest "
+               f"shot of {max(lengths, default=0):.1f}s")
+    if recall < rule["detector_recall_min"]:
+        findings.append(warn("cut_detector_misses", "master", summary + " — the rhythm reading above undercounts "
+                             "cuts; trust the edit's numbers and look at the dark or slow transitions it missed"))
+    elif rule.get("report_known_rhythm"):
+        findings.append(warn("cut_rhythm_known", "master", summary))
+    return findings
+
+
+def shot_frames(master: Path, cuts: list[float], duration: float, width=320, height=180):
+    """[(middle_s, gray frame 0..1)] for every shot at least 0.6 s long, in one decode at 2 fps."""
+    fps = 2
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(master), "-vf", f"fps={fps},scale={width}:{height}",
+                          "-f", "rawvideo", "-pix_fmt", "gray", "-"], capture_output=True, check=True).stdout
+    frames = np.frombuffer(raw, np.uint8).reshape(-1, height, width).astype(np.float32) / 255.0
+    bounds = [0.0] + sorted(cuts) + [duration]
+    return [((a + b) / 2, frames[min(len(frames) - 1, int((a + b) / 2 * fps))])
+            for a, b in zip(bounds, bounds[1:]) if b - a >= 0.6 and len(frames)]
+
+
+def check_empty_shots(frames, contract) -> list[Finding]:
+    """Shots with almost nothing in them: the share of the picture carrying an edge (a luminance
+    step over `edge_step`) is under `edge_share_min`. On ask-chatgpt v4 the median shot had 11%
+    and the ones a reviewer called empty (a black screen, a phone alone in the dark) had under 2%.
+    Advice until other episodes calibrate it."""
+    rule = contract["qc"]["empty_shots"]
+    findings = []
+    for t, f in frames:
+        gy, gx = np.gradient(f)
+        share = float((np.hypot(gx, gy) > rule["edge_step"]).mean())
+        if share < rule["edge_share_min"]:
+            findings.append(warn("empty_shot", f"{t:.1f}s",
+                                 f"the shot around {t:.1f}s carries detail in {share:.1%} of the picture (at least "
+                                 f"{rule['edge_share_min']:.0%}): frame something, or move closer"))
+    return findings
+
+
+def check_framing_reports(episode: Path) -> list[Finding]:
+    """What the builder could not frame (renders/3d/<beat>.framing.json, written beside each
+    render): labels whose part is off screen, text the frame edge cuts through. The builder knows
+    the geometry exactly, so these are facts about the picture, reported here so they are read."""
+    findings = []
+    for path in sorted((Path(episode) / "renders" / "3d").glob("*.framing.json")):
+        beat = path.name[:-len(".framing.json")]
+        if not (path.with_name(f"{beat}.mp4")).exists():
+            continue
+        for line in json.loads(path.read_text(encoding="utf-8")):
+            findings.append(warn("framing", beat, line))
+    return findings
+
+
 def run(episode: Path, master: Path, contract: dict | None = None,
         motions: dict[str, float] | None = None, measure: bool = True) -> list[Finding]:
     """Every check, in the order an operator would want to read the failures."""
@@ -802,6 +927,7 @@ def run(episode: Path, master: Path, contract: dict | None = None,
     findings += check_archive_mix(shots, contract, document)
     findings += check_archival_rhythm(shots, contract)
     findings += check_shared_finish(episode, graded_path(episode), contract)
+    findings += check_framing_reports(episode)
 
     if streams["audio_streams"]:
         integrated, peak, lra = loudness(master)
@@ -813,6 +939,11 @@ def run(episode: Path, master: Path, contract: dict | None = None,
         motions = measure_motions(master, shots)
         findings += check_static_holds(shots, motions, contract)
         findings += check_slow_shots(shots, motions, contract)
+        detected = measure_cuts(master)
+        findings += check_cut_rhythm(detected, streams["duration"], contract)
+        known = known_cuts(episode)
+        findings += check_cut_detection(detected, known, streams["duration"], contract)
+        findings += check_empty_shots(shot_frames(master, known or detected, streams["duration"]), contract)
         hook_window = contract["rhythm"]["hook_max_seconds"]
         findings += check_hook(motion(master, 0.5, min(hook_window, streams["duration"] - 1.0)),
                                contract)

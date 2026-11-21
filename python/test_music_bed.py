@@ -83,6 +83,18 @@ class Synthesis(unittest.TestCase):
         self.assertGreater(rms(bed[20 * SR:25 * SR]), 0.2 * rms(bed[:5 * SR]))
 
 
+    def test_a_film_longer_than_the_chord_progression_still_has_music_under_it(self):
+        """The four chords run ~200 s; past that the bed used to be air alone (-35 dB), so every
+        longer episode shipped with nothing audible under the voice."""
+        seconds = int(len(music_bed.CHORDS) * music_bed.HOLD_S) + 120
+        bed = music_bed.synthesize(float(seconds), fade_end_s=float(seconds))
+        rms = lambda s: float(np.sqrt(np.mean(np.square(s))))
+        early = rms(bed[20 * SR:30 * SR])
+        for start in range(30, seconds - 30, 30):
+            self.assertGreater(rms(bed[start * SR:(start + 10) * SR]), 0.2 * early,
+                               f"bed has gone quiet by {start}s")
+
+
 class OffsetMath(unittest.TestCase):
     def test_the_gain_moves_the_bed_to_the_contracted_offset(self):
         self.assertEqual(music_bed.bed_gain_db(voice_lufs=-25.3, bed_lufs=-30.0,
@@ -192,6 +204,26 @@ class Mixing(unittest.TestCase):
         first = self.mixed(self.voice, self.bed, "mix-a")
         second = self.mixed(self.voice, self.bed, "mix-b")
         self.assertEqual(first.read_bytes(), second.read_bytes())
+
+
+class Ducking(unittest.TestCase):
+    DUCK = {"lift_db": 5.0, "threshold": 0.03, "ratio": 2.5, "attack_ms": 40, "release_ms": 300, "knee": 3}
+
+    def test_the_bed_is_pulled_down_while_the_voice_speaks_and_returns_in_the_pause(self):
+        rate = 24000
+        t = np.arange(4 * rate) / rate
+        voice = 0.12 * np.sin(2 * np.pi * 200 * t) * (t < 2.0)          # two seconds of speech, then a pause
+        g = music_bed.duck_gain(voice, rate, 4 * SR, SR, self.DUCK)
+        cut_db = -20 * np.log10(g)
+        self.assertGreater(cut_db[int(1.5 * SR)], 4.0)                    # well under the voice
+        self.assertLess(cut_db[int(3.5 * SR)], 0.1)                       # back up 1.5 s into the pause
+        self.assertTrue(np.all(np.diff(cut_db[int(2.05 * SR):int(3.0 * SR)]) <= 1e-9))   # released, not jumped
+
+    def test_the_gain_is_the_same_every_time(self):
+        rate = 24000
+        voice = np.random.default_rng(3).standard_normal(2 * rate) * 0.05
+        a = music_bed.duck_gain(voice, rate, 2 * SR, SR, self.DUCK)
+        self.assertTrue(np.array_equal(a, music_bed.duck_gain(voice, rate, 2 * SR, SR, self.DUCK)))
 
 
 if __name__ == "__main__":

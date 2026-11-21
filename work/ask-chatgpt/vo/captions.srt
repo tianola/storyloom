@@ -1,0 +1,1123 @@
+1
+00:00:00,048 --> 00:00:04,423
+The kind of machine that answers your ques
+tions weighs more than a tonne and draws
+
+2
+00:00:04,498 --> 00:00:06,443
+as much power as a hundred homes.
+
+3
+00:00:06,541 --> 00:00:08,741
+Ask it why your cat
+sounds like a carburettor,
+
+4
+00:00:08,791 --> 00:00:10,616
+and watch what that monster does.
+
+5
+00:00:10,616 --> 00:00:11,766
+A few words.
+
+6
+00:00:11,766 --> 00:00:12,591
+A pause.
+
+7
+00:00:12,591 --> 00:00:13,718
+A few more words.
+
+8
+00:00:13,793 --> 00:00:17,693
+It is the most powerful computer
+most of us will ever touch,
+
+9
+00:00:17,743 --> 00:00:20,202
+and yet it writes like
+someone pecking at a keyboard.
+
+10
+00:00:20,343 --> 00:00:21,462
+So why does it stutter?
+
+11
+00:00:21,509 --> 00:00:24,259
+The obvious guess is
+that it is thinking hard,
+
+12
+00:00:24,309 --> 00:00:27,221
+that every single word takes
+a staggering amount of maths.
+
+13
+00:00:27,290 --> 00:00:30,915
+Keep that guess in mind,
+because we are going to test it.
+
+14
+00:00:30,990 --> 00:00:35,415
+The real answer explains nearly everything
+about the buildings behind artificial
+
+15
+00:00:35,465 --> 00:00:36,257
+intelligence.
+
+16
+00:00:36,297 --> 00:00:39,922
+To see it, let's follow a single
+word of your question on its trip.
+
+17
+00:00:39,972 --> 00:00:40,822
+The word cat.
+
+18
+00:00:40,862 --> 00:00:44,906
+Cat leaves your phone as a radio wave
+and reaches a mast down the street.
+
+19
+00:00:45,001 --> 00:00:46,776
+From there it travels as light,
+
+20
+00:00:46,851 --> 00:00:49,280
+trapped inside a strand of
+glass thinner than a hair.
+
+21
+00:00:49,370 --> 00:00:52,096
+But how do you keep light
+inside a bent piece of glass?
+
+22
+00:00:52,169 --> 00:00:57,019
+In eighteen forty two, a Swiss physicist
+called Daniel Colladon showed the trick
+
+23
+00:00:57,069 --> 00:00:58,091
+with a jet of water.
+
+24
+00:00:58,189 --> 00:01:02,489
+Light that hits the inside of the
+jet at a shallow angle cannot escape,
+
+25
+00:01:02,539 --> 00:01:04,470
+so it follows the water as it curves.
+
+26
+00:01:04,520 --> 00:01:07,095
+Glass fibre does exactly the same thing,
+
+27
+00:01:07,145 --> 00:01:09,525
+bouncing the light off
+its walls over and over.
+
+28
+00:01:09,601 --> 00:01:14,726
+In twenty seventeen, a team at Heriot Watt
+University in Edinburgh actually filmed
+
+29
+00:01:14,776 --> 00:01:14,955
+it.
+
+30
+00:01:14,995 --> 00:01:18,470
+Their camera caught a pulse of
+light racing around a coil of fibre,
+
+31
+00:01:18,570 --> 00:01:19,481
+loop after loop.
+
+32
+00:01:19,521 --> 00:01:23,754
+In glass, light covers about two hundred
+thousand kilometres every second.
+
+33
+00:01:23,828 --> 00:01:28,342
+A thousand kilometres of cable costs
+cat about five thousandths of a second.
+
+34
+00:01:28,456 --> 00:01:30,331
+So the trip is not the slow part.
+
+35
+00:01:30,406 --> 00:01:31,297
+Hold on to that.
+
+36
+00:01:31,337 --> 00:01:33,862
+The light ends in a
+warehouse of computers,
+
+37
+00:01:33,912 --> 00:01:36,712
+like the one built for OpenAI in Abilene,
+
+38
+00:01:36,762 --> 00:01:37,377
+Texas.
+
+39
+00:01:37,417 --> 00:01:39,942
+And there cat runs into its first problem.
+
+40
+00:01:39,992 --> 00:01:41,717
+The chips inside cannot read.
+
+41
+00:01:41,765 --> 00:01:43,690
+They only understand numbers,
+
+42
+00:01:43,740 --> 00:01:46,453
+so your question has to be
+chopped into pieces first.
+
+43
+00:01:46,526 --> 00:01:49,205
+The way it gets chopped
+comes from an unlikely place.
+
+44
+00:01:49,278 --> 00:01:51,128
+In February nineteen ninety four,
+
+45
+00:01:51,128 --> 00:01:56,353
+a programmer in Colorado Springs called
+Philip Gage wrote a magazine article about
+
+46
+00:01:56,428 --> 00:01:57,362
+shrinking files.
+
+47
+00:01:57,402 --> 00:01:59,127
+His idea was simple.
+
+48
+00:01:59,227 --> 00:02:02,102
+Find the pair of characters
+that appears most often,
+
+49
+00:02:02,152 --> 00:02:03,733
+and replace it with a new symbol.
+
+50
+00:02:03,806 --> 00:02:05,456
+Then do it again, and again,
+
+51
+00:02:05,506 --> 00:02:06,720
+until the file is small.
+
+52
+00:02:06,793 --> 00:02:11,518
+Two decades later, Rico Sennrich and his
+colleagues borrowed that trick to split
+
+53
+00:02:11,568 --> 00:02:13,333
+words for translation software.
+
+54
+00:02:13,406 --> 00:02:15,881
+Common words end up as single pieces,
+
+55
+00:02:15,956 --> 00:02:19,008
+rare ones as fragments, and
+every piece gets a number.
+
+56
+00:02:19,077 --> 00:02:22,202
+ChatGPT's tokenizer works the same way.
+
+57
+00:02:22,302 --> 00:02:26,624
+In it, cat with a space in front is
+number nine thousand and fifty nine.
+
+58
+00:02:26,697 --> 00:02:28,322
+That number is a key.
+
+59
+00:02:28,397 --> 00:02:30,647
+It unlocks a long list of other numbers,
+
+60
+00:02:30,647 --> 00:02:32,725
+a kind of address for
+the meaning of the word.
+
+61
+00:02:32,890 --> 00:02:34,986
+On a map, two numbers
+say where something is.
+
+62
+00:02:35,081 --> 00:02:37,531
+Here every token gets thousands of them,
+
+63
+00:02:37,581 --> 00:02:40,555
+so it sits somewhere in a space
+with thousands of directions.
+
+64
+00:02:40,649 --> 00:02:44,349
+Training arranges that space
+so that cat ends up near dog,
+
+65
+00:02:44,399 --> 00:02:46,123
+and a long way from carburettor.
+
+66
+00:02:46,171 --> 00:02:47,671
+But cat is not done yet.
+
+67
+00:02:47,746 --> 00:02:48,875
+Now comes the climb.
+
+68
+00:02:48,926 --> 00:02:53,099
+OpenAI does not say how big
+the models behind ChatGPT are.
+
+69
+00:02:53,147 --> 00:02:57,222
+But in twenty twenty five it published
+an open model built the same way,
+
+70
+00:02:57,272 --> 00:02:58,059
+with the blueprint.
+
+71
+00:02:58,099 --> 00:03:01,624
+That model is made of about a hundred
+and seventeen billion numbers,
+
+72
+00:03:01,674 --> 00:03:02,522
+called weights.
+
+73
+00:03:02,562 --> 00:03:04,112
+Nobody typed them in.
+
+74
+00:03:04,187 --> 00:03:06,337
+Training tuned them, step by step,
+
+75
+00:03:06,437 --> 00:03:08,203
+on trillions of tokens of text.
+
+76
+00:03:08,276 --> 00:03:10,326
+They are stacked in thirty six layers,
+
+77
+00:03:10,376 --> 00:03:11,926
+like the floors of a tower,
+
+78
+00:03:11,976 --> 00:03:13,835
+and cat has to climb every floor.
+
+79
+00:03:13,954 --> 00:03:18,929
+On each floor, cat looks back at every wor
+d before it and decides which ones matter.
+
+80
+00:03:19,004 --> 00:03:20,555
+That step is called attention.
+
+81
+00:03:20,656 --> 00:03:23,819
+It is how the word it gets
+linked to the thing it refers to.
+
+82
+00:03:23,892 --> 00:03:27,067
+Then cat visits a crowd of
+smaller networks on that floor,
+
+83
+00:03:27,117 --> 00:03:28,029
+called experts.
+
+84
+00:03:28,069 --> 00:03:29,919
+But it does not visit all of them.
+
+85
+00:03:29,919 --> 00:03:33,802
+A small router sends it to just four
+out of a hundred and twenty eight.
+
+86
+00:03:33,922 --> 00:03:37,707
+So on the whole climb, cat only
+touches about five billion weights.
+
+87
+00:03:37,780 --> 00:03:41,055
+Each touch is a multiplication
+and an addition,
+
+88
+00:03:41,105 --> 00:03:44,982
+so that is roughly ten billion
+operations for a single new word.
+
+89
+00:03:45,050 --> 00:03:47,825
+What comes out of the top
+floor is not a sentence.
+
+90
+00:03:47,900 --> 00:03:50,378
+It is a score for every
+possible next piece.
+
+91
+00:03:50,427 --> 00:03:53,277
+The system picks one,
+usually a likely one,
+
+92
+00:03:53,327 --> 00:03:56,203
+with a little randomness so it
+does not sound like a robot.
+
+93
+00:03:56,276 --> 00:03:59,201
+And then the whole climb starts
+again from the ground floor,
+
+94
+00:03:59,251 --> 00:04:00,185
+for the next piece.
+
+95
+00:04:00,225 --> 00:04:02,650
+A long answer means hundreds of climbs,
+
+96
+00:04:02,700 --> 00:04:03,596
+one after another.
+
+97
+00:04:03,636 --> 00:04:06,111
+Ten billion operations for every word.
+
+98
+00:04:06,161 --> 00:04:07,261
+So that must be the stutter,
+
+99
+00:04:07,311 --> 00:04:07,921
+right?
+
+100
+00:04:07,961 --> 00:04:08,591
+The maths?
+
+101
+00:04:08,631 --> 00:04:09,656
+Actually, no.
+
+102
+00:04:09,706 --> 00:04:10,856
+That guess is wrong.
+
+103
+00:04:10,906 --> 00:04:12,630
+The arithmetic is the easy part.
+
+104
+00:04:12,702 --> 00:04:14,627
+To see what the real problem is,
+
+105
+00:04:14,677 --> 00:04:16,170
+picture the chip as a factory.
+
+106
+00:04:16,219 --> 00:04:19,119
+The workers who do the
+multiplying sit at desks.
+
+107
+00:04:19,169 --> 00:04:20,694
+The weights do not live with them.
+
+108
+00:04:20,766 --> 00:04:22,766
+They live in a warehouse next door,
+
+109
+00:04:22,816 --> 00:04:24,691
+and for every new piece of the answer,
+
+110
+00:04:24,741 --> 00:04:25,877
+they have to be trucked in.
+
+111
+00:04:25,996 --> 00:04:27,746
+All of the weights that cat touches,
+
+112
+00:04:27,796 --> 00:04:28,946
+every time.
+
+113
+00:04:28,996 --> 00:04:32,042
+For that open model, the
+load is about five gigabytes.
+
+114
+00:04:32,141 --> 00:04:34,416
+Now take a Blackwell chip from NVIDIA,
+
+115
+00:04:34,466 --> 00:04:36,139
+the kind in that Texas warehouse.
+
+116
+00:04:36,212 --> 00:04:40,960
+Its workers can finish ten billion operati
+ons in about four millionths of a second.
+
+117
+00:04:41,033 --> 00:04:44,133
+Its memory can deliver about
+eight terabytes a second,
+
+118
+00:04:44,183 --> 00:04:45,333
+which sounds enormous.
+
+119
+00:04:45,402 --> 00:04:46,902
+But watch the race.
+
+120
+00:04:47,002 --> 00:04:51,527
+At that speed, the five gigabyte delivery
+takes more than six hundred millionths of
+
+121
+00:04:51,477 --> 00:04:52,125
+a second.
+
+122
+00:04:52,165 --> 00:04:54,848
+The truck takes over a hundred
+times longer than the work.
+
+123
+00:04:54,942 --> 00:04:56,867
+So when the chip writes for just you,
+
+124
+00:04:56,942 --> 00:05:00,139
+its workers sit idle more than
+ninety nine percent of the time.
+
+125
+00:05:00,212 --> 00:05:01,787
+That is the pause you see.
+
+126
+00:05:01,837 --> 00:05:03,851
+Engineers call it being memory bound.
+
+127
+00:05:03,924 --> 00:05:06,667
+And none of this surprised
+the people who saw it coming.
+
+128
+00:05:06,740 --> 00:05:11,440
+In nineteen ninety four, two computer
+scientists at the University of Virginia,
+
+129
+00:05:11,515 --> 00:05:13,590
+William Wulf and Sally McKee,
+
+130
+00:05:13,640 --> 00:05:15,670
+wrote a short paper with a blunt title.
+
+131
+00:05:15,763 --> 00:05:16,970
+Hitting the Memory Wall.
+
+132
+00:05:17,019 --> 00:05:20,319
+Processors were getting faster
+much more quickly than memory,
+
+133
+00:05:20,369 --> 00:05:22,880
+they pointed out, and
+the gap kept widening.
+
+134
+00:05:23,024 --> 00:05:24,974
+Sooner or later, they warned,
+
+135
+00:05:25,049 --> 00:05:28,824
+every program would end up waiting
+for memory instead of computing.
+
+136
+00:05:28,899 --> 00:05:30,923
+Cat's climb is exactly that case.
+
+137
+00:05:31,017 --> 00:05:33,942
+They were right, and the
+wall is not just about time.
+
+138
+00:05:34,017 --> 00:05:35,017
+It is about energy.
+
+139
+00:05:35,066 --> 00:05:39,221
+Twenty years later, the Stanford
+engineer Mark Horowitz put numbers on it.
+
+140
+00:05:39,315 --> 00:05:43,590
+Fetching a number from a memory chip cost
+about a hundred and seventy times more
+
+141
+00:05:43,640 --> 00:05:45,984
+energy than multiplying two numbers.
+
+142
+00:05:46,053 --> 00:05:47,853
+The distance is the cost.
+
+143
+00:05:47,928 --> 00:05:50,028
+Every bit has to be pushed down a wire,
+
+144
+00:05:50,078 --> 00:05:52,213
+and the longer the
+wire, the more it burns.
+
+145
+00:05:52,307 --> 00:05:55,707
+So the question for everyone
+building these machines became:
+
+146
+00:05:55,782 --> 00:05:57,397
+how do you stop moving so much?
+
+147
+00:05:57,445 --> 00:05:59,658
+The first answer was
+to move the warehouse.
+
+148
+00:05:59,760 --> 00:06:04,608
+At AMD, a team led by Bryan Black had been
+working on it since two thousand eight.
+
+149
+00:06:04,656 --> 00:06:06,806
+Their problem was graphics memory.
+
+150
+00:06:06,881 --> 00:06:10,389
+Its power use simply would not
+scale to what the next chips needed.
+
+151
+00:06:10,508 --> 00:06:13,333
+So instead of spreading
+memory chips around the board,
+
+152
+00:06:13,383 --> 00:06:14,826
+they stacked them into towers.
+
+153
+00:06:14,900 --> 00:06:17,800
+Tiny wires run straight
+down through the silicon,
+
+154
+00:06:17,850 --> 00:06:20,203
+connecting every floor
+of the tower at once.
+
+155
+00:06:20,276 --> 00:06:23,151
+Then they set the towers
+right beside the processor,
+
+156
+00:06:23,226 --> 00:06:24,683
+on the same slab of silicon.
+
+157
+00:06:24,756 --> 00:06:29,731
+In June twenty fifteen, AMD's Fiji was
+the first graphics chip to ship with this
+
+158
+00:06:29,781 --> 00:06:30,625
+stacked memory.
+
+159
+00:06:30,665 --> 00:06:33,240
+Today it is called high bandwidth memory,
+
+160
+00:06:33,290 --> 00:06:35,883
+and every Blackwell chip
+carries its own towers of it.
+
+161
+00:06:35,934 --> 00:06:40,064
+The road from warehouse to factory is
+now as short as anyone can make it.
+
+162
+00:06:40,133 --> 00:06:41,583
+But there is a catch.
+
+163
+00:06:41,658 --> 00:06:45,583
+Even on that short road, the truck still
+takes hundreds of times longer than the
+
+164
+00:06:45,633 --> 00:06:46,006
+work.
+
+165
+00:06:46,046 --> 00:06:49,984
+So the second answer was to stop
+sending the truck for just one person.
+
+166
+00:06:50,057 --> 00:06:53,099
+Every conversation uses
+exactly the same weights.
+
+167
+00:06:53,193 --> 00:06:56,218
+So the system gathers many
+conversations together,
+
+168
+00:06:56,268 --> 00:06:59,926
+and a single delivery carries cat
+along with everyone else's words.
+
+169
+00:06:59,973 --> 00:07:02,973
+The workers who would nap for
+you stay busy for a crowd.
+
+170
+00:07:03,048 --> 00:07:04,320
+This is called batching.
+
+171
+00:07:04,414 --> 00:07:06,914
+Except batching has a problem of its own.
+
+172
+00:07:06,989 --> 00:07:09,035
+Every conversation needs a scratchpad.
+
+173
+00:07:09,129 --> 00:07:11,354
+For every word you send or receive,
+
+174
+00:07:11,404 --> 00:07:14,354
+the model keeps the notes
+it made during attention,
+
+175
+00:07:14,404 --> 00:07:15,819
+so it never has to redo them.
+
+176
+00:07:15,892 --> 00:07:18,867
+Those notes grow with every
+word and every person,
+
+177
+00:07:18,917 --> 00:07:20,192
+and they fill the memory up.
+
+178
+00:07:20,265 --> 00:07:24,515
+In twenty twenty three, Woosuk Kwon and
+his colleagues at Berkeley measured how
+
+179
+00:07:24,565 --> 00:07:25,068
+badly.
+
+180
+00:07:25,108 --> 00:07:27,208
+In the serving systems of the time,
+
+181
+00:07:27,283 --> 00:07:31,051
+as little as a fifth of that
+scratchpad memory held actual notes.
+
+182
+00:07:31,099 --> 00:07:33,349
+The rest was reserved just in case,
+
+183
+00:07:33,399 --> 00:07:35,744
+or lost in gaps between conversations.
+
+184
+00:07:35,792 --> 00:07:39,567
+Their fix came from an old
+idea in operating systems.
+
+185
+00:07:39,642 --> 00:07:43,445
+Cut memory into small pages and
+hand them out only when needed.
+
+186
+00:07:43,493 --> 00:07:45,243
+With almost nothing wasted,
+
+187
+00:07:45,293 --> 00:07:48,650
+the same chips could handle two
+to four times as many requests.
+
+188
+00:07:48,702 --> 00:07:53,327
+A year earlier, Tri Dao and his colleagues
+had applied the same lesson inside
+
+189
+00:07:53,352 --> 00:07:54,312
+attention itself.
+
+190
+00:07:54,352 --> 00:07:56,627
+Their method, called FlashAttention,
+
+191
+00:07:56,677 --> 00:07:59,702
+keeps the work in a tiny
+fast memory on the chip,
+
+192
+00:07:59,777 --> 00:08:01,771
+so less has to travel back and forth.
+
+193
+00:08:01,844 --> 00:08:04,374
+The third answer was to
+make the cargo lighter.
+
+194
+00:08:04,449 --> 00:08:08,849
+In that open model, most weights are
+stored in just over four bits each,
+
+195
+00:08:08,899 --> 00:08:10,304
+instead of the usual sixteen.
+
+196
+00:08:10,444 --> 00:08:13,469
+Smaller numbers mean a
+lighter truck on every trip,
+
+197
+00:08:13,519 --> 00:08:15,445
+and the whole model fits on a single chip.
+
+198
+00:08:15,493 --> 00:08:18,143
+But the biggest models
+do not fit on one chip,
+
+199
+00:08:18,193 --> 00:08:20,394
+and a busy service
+needs thousands of them.
+
+200
+00:08:20,489 --> 00:08:22,314
+So the chips are wired together,
+
+201
+00:08:22,364 --> 00:08:24,683
+and here the fight against
+distance gets physical.
+
+202
+00:08:24,734 --> 00:08:27,009
+This is NVIDIA's rack for Blackwell,
+
+203
+00:08:27,009 --> 00:08:30,102
+a cabinet taller than a person
+that weighs more than a tonne.
+
+204
+00:08:30,174 --> 00:08:32,324
+It holds seventy two of those chips,
+
+205
+00:08:32,399 --> 00:08:35,306
+along with thirty six Grace
+processors to manage them.
+
+206
+00:08:35,358 --> 00:08:38,008
+Behind them runs a spine of copper cables,
+
+207
+00:08:38,083 --> 00:08:39,958
+more than three kilometres of it,
+
+208
+00:08:40,033 --> 00:08:41,707
+linking every chip to every other.
+
+209
+00:08:41,780 --> 00:08:44,105
+NVIDIA says the rack acts like a single,
+
+210
+00:08:44,180 --> 00:08:45,355
+massive GPU.
+
+211
+00:08:45,428 --> 00:08:48,703
+A model can be cut into
+slices and spread across it,
+
+212
+00:08:48,753 --> 00:08:51,776
+so each chip only fetches
+its own slice of cat's climb.
+
+213
+00:08:51,870 --> 00:08:53,632
+Where does all that effort go in the end?
+
+214
+00:08:53,705 --> 00:08:55,205
+It turns into heat.
+
+215
+00:08:55,280 --> 00:08:58,730
+One of these racks draws about
+a hundred and twenty kilowatts,
+
+216
+00:08:58,780 --> 00:09:00,992
+about as much as a hundred American homes.
+
+217
+00:09:01,068 --> 00:09:02,843
+Air cannot carry that away,
+
+218
+00:09:02,918 --> 00:09:05,941
+so liquid runs through metal
+plates pressed onto every chip.
+
+219
+00:09:05,989 --> 00:09:07,689
+The heat has to go somewhere,
+
+220
+00:09:07,739 --> 00:09:10,784
+and many sites dump it into
+the sky through cooling towers.
+
+221
+00:09:10,857 --> 00:09:13,882
+A tower lets a small part
+of the water evaporate,
+
+222
+00:09:13,932 --> 00:09:16,245
+and the evaporation pulls
+heat out of the rest.
+
+223
+00:09:16,343 --> 00:09:18,592
+That is where the water
+in the headlines goes.
+
+224
+00:09:18,690 --> 00:09:21,165
+Days after ChatGPT launched,
+
+225
+00:09:21,240 --> 00:09:25,739
+its chief executive Sam Altman wrote
+that the compute costs were eye-watering.
+
+226
+00:09:25,833 --> 00:09:27,733
+How much does cat's trip actually cost,
+
+227
+00:09:27,783 --> 00:09:28,161
+then?
+
+228
+00:09:28,201 --> 00:09:33,126
+In twenty twenty five, he put an average
+query at about a third of a watt hour,
+
+229
+00:09:33,201 --> 00:09:35,616
+about what an oven uses in a second or so.
+
+230
+00:09:35,689 --> 00:09:37,514
+Tiny, for one question.
+
+231
+00:09:37,564 --> 00:09:41,013
+But ChatGPT gets around two and
+a half billion prompts a day.
+
+232
+00:09:41,086 --> 00:09:44,661
+Together, that is a steady load
+of about thirty five megawatts,
+
+233
+00:09:44,711 --> 00:09:47,050
+the power of roughly
+thirty thousand homes.
+
+234
+00:09:47,127 --> 00:09:49,077
+And yet that is a single service,
+
+235
+00:09:49,127 --> 00:09:50,806
+in an industry that is still building.
+
+236
+00:09:50,895 --> 00:09:52,384
+Which brings us back to cat.
+
+237
+00:09:52,507 --> 00:09:54,157
+Light carried it through glass,
+
+238
+00:09:54,157 --> 00:09:56,821
+a trick from a jet of water
+in eighteen forty two.
+
+239
+00:09:56,894 --> 00:10:01,294
+A file compression idea from a nineteen
+ninety four magazine turned it into a
+
+240
+00:10:01,294 --> 00:10:01,718
+number.
+
+241
+00:10:01,758 --> 00:10:04,483
+It climbed a tower of weights
+that had to be trucked in,
+
+242
+00:10:04,558 --> 00:10:07,210
+again and again, for
+every piece of the answer.
+
+243
+00:10:07,326 --> 00:10:09,151
+Stacked memory shortened the road,
+
+244
+00:10:09,201 --> 00:10:10,651
+batching shared the truck,
+
+245
+00:10:10,701 --> 00:10:12,523
+and smaller numbers lightened the load.
+
+246
+00:10:12,596 --> 00:10:17,496
+Every one of those inventions fights the
+same wall that two scientists described in
+
+247
+00:10:17,546 --> 00:10:18,533
+nineteen ninety four.
+
+248
+00:10:18,573 --> 00:10:20,736
+Moving a number costs more than using it.
+
+249
+00:10:20,830 --> 00:10:23,805
+So the next time an answer
+appears a few words at a time,
+
+250
+00:10:23,880 --> 00:10:24,758
+watch the rhythm.
+
+251
+00:10:24,798 --> 00:10:27,136
+That little stutter is
+not the machine thinking.
+
+252
+00:10:27,237 --> 00:10:29,013
+It is the machine waiting for the truck.

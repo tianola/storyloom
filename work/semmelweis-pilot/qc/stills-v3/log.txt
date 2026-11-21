@@ -1,0 +1,148 @@
+Blender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)
+RNA_float_set: NodeSocket.default_value not found.
+Fra:99 Mem:64.90M (Peak 65.17M) | Time:00:04.54 | Rendering 1 / 16 samples
+Fra:99 Mem:64.90M (Peak 65.17M) | Time:00:04.72 | Rendering 16 / 16 samples
+Fra:99 Mem:32.83M (Peak 72.82M) | Time:00:04.73 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-01-015.png'
+Time: 00:04.95 (Saving: 00:00.19)
+
+Fra:330 Mem:64.90M (Peak 64.90M) | Time:00:00.09 | Rendering 1 / 16 samples
+Fra:330 Mem:64.90M (Peak 64.90M) | Time:00:00.36 | Rendering 16 / 16 samples
+Fra:330 Mem:32.81M (Peak 72.81M) | Time:00:00.37 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-01-050.png'
+Time: 00:00.44 (Saving: 00:00.04)
+
+Fra:561 Mem:64.90M (Peak 64.90M) | Time:00:00.07 | Rendering 1 / 16 samples
+Fra:561 Mem:64.90M (Peak 64.90M) | Time:00:00.22 | Rendering 16 / 16 samples
+Fra:561 Mem:32.81M (Peak 72.81M) | Time:00:00.23 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-01-085.png'
+Time: 00:00.30 (Saving: 00:00.04)
+
+RNA_float_set: NodeSocket.default_value not found.
+Fra:50 Mem:174.69M (Peak 179.97M) | Time:00:00.73 | Rendering 1 / 16 samples
+Fra:50 Mem:174.69M (Peak 179.97M) | Time:00:01.06 | Rendering 16 / 16 samples
+Fra:50 Mem:141.21M (Peak 182.60M) | Time:00:01.07 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-02-015.png'
+Time: 00:01.14 (Saving: 00:00.04)
+
+Fra:165 Mem:177.36M (Peak 180.91M) | Time:00:00.27 | Rendering 1 / 16 samples
+Fra:165 Mem:177.36M (Peak 180.91M) | Time:00:00.78 | Rendering 16 / 16 samples
+Fra:165 Mem:141.14M (Peak 185.27M) | Time:00:00.80 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-02-050.png'
+Time: 00:00.88 (Saving: 00:00.05)
+
+Fra:280 Mem:177.66M (Peak 181.35M) | Time:00:00.33 | Rendering 1 / 16 samples
+Fra:280 Mem:177.66M (Peak 181.35M) | Time:00:01.42 | Rendering 16 / 16 samples
+Fra:280 Mem:141.33M (Peak 185.57M) | Time:00:01.43 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-02-085.png'
+Time: 00:01.50 (Saving: 00:00.05)
+
+RNA_float_set: NodeSocket.default_value not found.
+Fra:126 Mem:184.15M (Peak 187.69M) | Time:00:00.32 | Rendering 1 / 16 samples
+Fra:126 Mem:184.15M (Peak 187.69M) | Time:00:00.66 | Rendering 16 / 16 samples
+Fra:126 Mem:148.27M (Peak 192.06M) | Time:00:00.68 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-03-015.png'
+Time: 00:00.76 (Saving: 00:00.05)
+
+Fra:420 Mem:185.04M (Peak 188.76M) | Time:00:00.31 | Rendering 1 / 16 samples
+Fra:420 Mem:185.04M (Peak 188.76M) | Time:00:00.58 | Rendering 16 / 16 samples
+Fra:420 Mem:148.71M (Peak 192.95M) | Time:00:00.59 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-03-050.png'
+Time: 00:00.66 (Saving: 00:00.04)
+
+Fra:714 Mem:185.13M (Peak 188.90M) | Time:00:00.30 | Rendering 1 / 16 samples
+Fra:714 Mem:185.13M (Peak 188.90M) | Time:00:00.52 | Rendering 16 / 16 samples
+Fra:714 Mem:148.76M (Peak 193.04M) | Time:00:00.53 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-03-085.png'
+Time: 00:00.64 (Saving: 00:00.06)
+
+RNA_float_set: NodeSocket.default_value not found.
+Fra:40 Mem:169.20M (Peak 172.64M) | Time:00:00.28 | Rendering 1 / 16 samples
+Fra:40 Mem:169.20M (Peak 172.64M) | Time:00:00.57 | Rendering 16 / 16 samples
+Fra:40 Mem:133.49M (Peak 177.12M) | Time:00:00.59 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-04-015.png'
+Time: 00:00.65 (Saving: 00:00.04)
+
+Fra:135 Mem:170.01M (Peak 173.59M) | Time:00:00.27 | Rendering 1 / 16 samples
+Fra:135 Mem:170.01M (Peak 173.59M) | Time:00:00.48 | Rendering 16 / 16 samples
+Fra:135 Mem:133.87M (Peak 177.92M) | Time:00:00.49 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-04-050.png'
+Time: 00:00.55 (Saving: 00:00.04)
+
+Fra:229 Mem:170.21M (Peak 173.90M) | Time:00:00.26 | Rendering 1 / 16 samples
+Fra:229 Mem:170.21M (Peak 173.90M) | Time:00:00.47 | Rendering 16 / 16 samples
+Fra:229 Mem:134.00M (Peak 178.12M) | Time:00:00.49 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-04-085.png'
+Time: 00:00.55 (Saving: 00:00.04)
+
+RNA_float_set: NodeSocket.default_value not found.
+Fra:117 Mem:104.17M (Peak 104.17M) | Time:00:00.17 | Rendering 1 / 16 samples
+Fra:117 Mem:104.17M (Peak 104.17M) | Time:00:00.45 | Rendering 16 / 16 samples
+Fra:117 Mem:71.89M (Peak 112.08M) | Time:00:00.47 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-05-015.png'
+Time: 00:00.55 (Saving: 00:00.05)
+
+Fra:390 Mem:104.26M (Peak 105.43M) | Time:00:00.09 | Rendering 1 / 16 samples
+Fra:390 Mem:104.26M (Peak 105.43M) | Time:00:00.38 | Rendering 16 / 16 samples
+Fra:390 Mem:71.96M (Peak 112.17M) | Time:00:00.40 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-05-050.png'
+Time: 00:00.47 (Saving: 00:00.04)
+
+Fra:663 Mem:104.26M (Peak 104.26M) | Time:00:00.16 | Rendering 1 / 16 samples
+Fra:663 Mem:104.26M (Peak 104.26M) | Time:00:00.44 | Rendering 16 / 16 samples
+Fra:663 Mem:71.96M (Peak 112.17M) | Time:00:00.46 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-05-085.png'
+Time: 00:00.54 (Saving: 00:00.05)
+
+RNA_float_set: NodeSocket.default_value not found.
+Fra:81 Mem:174.02M (Peak 177.56M) | Time:00:00.22 | Rendering 1 / 16 samples
+Fra:81 Mem:174.01M (Peak 177.56M) | Time:00:00.41 | Rendering 16 / 16 samples
+Fra:81 Mem:138.22M (Peak 181.92M) | Time:00:00.42 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-06-015.png'
+Time: 00:00.49 (Saving: 00:00.04)
+
+Fra:270 Mem:174.85M (Peak 178.53M) | Time:00:00.17 | Rendering 1 / 16 samples
+Fra:270 Mem:174.85M (Peak 178.53M) | Time:00:00.43 | Rendering 16 / 16 samples
+Fra:270 Mem:138.64M (Peak 182.76M) | Time:00:00.44 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-06-050.png'
+Time: 00:00.50 (Saving: 00:00.04)
+
+Fra:459 Mem:175.05M (Peak 178.84M) | Time:00:00.18 | Rendering 1 / 16 samples
+Fra:459 Mem:175.05M (Peak 178.84M) | Time:00:00.34 | Rendering 16 / 16 samples
+Fra:459 Mem:138.77M (Peak 182.96M) | Time:00:00.35 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-06-085.png'
+Time: 00:00.41 (Saving: 00:00.04)
+
+RNA_float_set: NodeSocket.default_value not found.
+Fra:27 Mem:104.30M (Peak 104.30M) | Time:00:00.09 | Rendering 1 / 16 samples
+Fra:27 Mem:104.30M (Peak 104.30M) | Time:00:00.35 | Rendering 16 / 16 samples
+Fra:27 Mem:72.00M (Peak 112.21M) | Time:00:00.37 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-07-015.png'
+Time: 00:00.43 (Saving: 00:00.04)
+
+Fra:90 Mem:104.30M (Peak 104.30M) | Time:00:00.09 | Rendering 1 / 16 samples
+Fra:90 Mem:104.30M (Peak 104.30M) | Time:00:00.36 | Rendering 16 / 16 samples
+Fra:90 Mem:72.00M (Peak 112.21M) | Time:00:00.38 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-07-050.png'
+Time: 00:00.45 (Saving: 00:00.04)
+
+Fra:153 Mem:104.30M (Peak 104.30M) | Time:00:00.10 | Rendering 1 / 16 samples
+Fra:153 Mem:104.30M (Peak 104.30M) | Time:00:00.39 | Rendering 16 / 16 samples
+Fra:153 Mem:72.00M (Peak 112.21M) | Time:00:00.41 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3\beat-07-085.png'
+Time: 00:00.48 (Saving: 00:00.04)
+
+    CAMERA beat-01: camera_speed: shot 1 (0.0-3.0s) pans 0.15 frame widths/s (6.7 deg/s), over the 0.14 limit (one frame width per 7 s)
+    FRAMING beat-01: camera_speed: shot 1 (0.0-3.0s) pans 0.15 frame widths/s (6.7 deg/s), over the 0.14 limit (one frame width per 7 s)
+  [1/7] beat-01 stills in 8.9s
+  [2/7] beat-02 stills in 27.8s
+  [3/7] beat-03 stills in 14.4s
+  [4/7] beat-04 stills in 9.0s
+  [5/7] beat-05 stills in 3.4s
+  [6/7] beat-06 stills in 9.0s
+    CAMERA beat-07: camera_speed: shot 1 (0.0-4.0s) pans 0.28 frame widths/s (17.6 deg/s), over the 0.14 limit (one frame width per 7 s)
+    FRAMING beat-07: camera_speed: shot 1 (0.0-4.0s) pans 0.28 frame widths/s (17.6 deg/s), over the 0.14 limit (one frame width per 7 s)
+  [7/7] beat-07 stills in 1.9s
+7 beats -> F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-v3
+
+Blender quit

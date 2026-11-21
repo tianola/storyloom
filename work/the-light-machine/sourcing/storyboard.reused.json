@@ -1,0 +1,382 @@
+{
+ "beats": {
+  "beat-01": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Laser",
+     "Molten tin drop",
+     "Your phone"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.2
+    }
+   ],
+   "counter": {
+    "template": "{:,} drops a second",
+    "from": 1,
+    "to": 50000,
+    "screen": [
+     0.5,
+     0.86
+    ],
+    "curve": "exp",
+    "color": "warm"
+   }
+  },
+  "beat-02": {
+   "scene": "chip-teardown",
+   "params": {
+    "package": "ai"
+   },
+   "labels": [
+    {
+     "text": "Tiny switches",
+     "anchor": "logic",
+     "at": "word:switches"
+    },
+    {
+     "text": "Drawn with light",
+     "anchor": "memory",
+     "at": 0.75
+    }
+   ]
+  },
+  "beat-06": {
+   "scene": "line-chart",
+   "actions": [
+    {
+     "name": "draw",
+     "at": 0.05
+    }
+   ],
+   "labels": [
+    {
+     "text": "Longer waves smear",
+     "anchor": "line_start",
+     "at": "word:smear"
+    },
+    {
+     "text": "Shorter waves, finer lines",
+     "anchor": "line_end",
+     "at": "word:finer"
+    }
+   ],
+   "hud": [
+    {
+     "text": "13.5 nm",
+     "screen": [
+      0.82,
+      0.18
+     ],
+     "at": "word:thirteen"
+    }
+   ]
+  },
+  "beat-07": {
+   "scene": "document",
+   "params": {
+    "lines": 12,
+    "mark": 7,
+    "title": "Finer pencil"
+   },
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:finer"
+    }
+   ],
+   "labels": [
+    {
+     "text": "The whole promise",
+     "anchor": "mark",
+     "at": "word:promise"
+    }
+   ]
+  },
+  "beat-10": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Japan",
+     "EUV LLC",
+     "ASML + Zeiss",
+     "Prototype"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.1
+    }
+   ],
+   "labels": [
+    {
+     "text": "2001",
+     "anchor": "node4",
+     "at": "word:one"
+    }
+   ]
+  },
+  "beat-13": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Molten tin",
+     "Droplet",
+     "Vacuum chamber"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.3
+    }
+   ],
+   "labels": [
+    {
+     "text": "25 micrometres wide",
+     "anchor": "node2",
+     "at": "word:twenty-five"
+    },
+    {
+     "text": "70 m/s",
+     "anchor": "node3",
+     "at": "word:seventy"
+    }
+   ]
+  },
+  "beat-14": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 60
+   },
+   "actions": [
+    {
+     "name": "fill",
+     "at": "word:fifty"
+    }
+   ],
+   "labels": [
+    {
+     "text": "One droplet",
+     "anchor": "one",
+     "at": "word:droplet"
+    },
+    {
+     "text": "50,000 every second",
+     "anchor": "many",
+     "at": "word:fifty"
+    }
+   ]
+  },
+  "beat-15": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Laser",
+     "Tin droplet",
+     "Plasma",
+     "EUV light"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": "word:plasma"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Hot plasma",
+     "anchor": "node3",
+     "at": "word:plasma"
+    },
+    {
+     "text": "EUV light",
+     "anchor": "node4",
+     "at": "word:extreme"
+    }
+   ]
+  },
+  "beat-16": {
+   "scene": "scale-compare",
+   "params": {
+    "many": 90
+   },
+   "actions": [
+    {
+     "name": "fill",
+     "at": 0.35
+    }
+   ],
+   "counter": {
+    "template": "{:,} explosions",
+    "from": 1,
+    "to": 50000,
+    "screen": [
+     0.5,
+     0.86
+    ],
+    "curve": "exp",
+    "color": "warm"
+   },
+   "labels": [
+    {
+     "text": "One droplet, one explosion",
+     "anchor": "one",
+     "at": "word:droplet"
+    }
+   ]
+  },
+  "beat-18": {
+   "scene": "document",
+   "params": {
+    "lines": 10,
+    "mark": 4,
+    "title": "All matter absorbs EUV"
+   },
+   "actions": [
+    {
+     "name": "mark",
+     "at": "word:vacuum"
+    }
+   ],
+   "labels": [
+    {
+     "text": "So: a vacuum",
+     "anchor": "mark",
+     "at": "word:vacuum"
+    }
+   ]
+  },
+  "beat-24": {
+   "scene": "chip-teardown",
+   "params": {
+    "package": "bga"
+   },
+   "labels": [
+    {
+     "text": "A tiny angle becomes an error",
+     "anchor": "die",
+     "at": "word:angle"
+    },
+    {
+     "text": "One mirror maker",
+     "anchor": "balls",
+     "at": "word:single"
+    }
+   ]
+  },
+  "beat-25": {
+   "scene": "people-row",
+   "params": {
+    "count": 3,
+    "lead": 3
+   },
+   "labels": [
+    {
+     "text": "Trumpf: the laser",
+     "anchor": "person1",
+     "at": "word:Trumpf"
+    },
+    {
+     "text": "Zeiss: the mirrors",
+     "anchor": "person2",
+     "at": "word:Zeiss"
+    },
+    {
+     "text": "ASML: the machine",
+     "anchor": "person3",
+     "at": "word:ASML"
+    }
+   ]
+  },
+  "beat-27": {
+   "scene": "campus",
+   "labels": [
+    {
+     "text": "First high-NA tool: Intel",
+     "anchor": "building",
+     "at": "word:Intel"
+    }
+   ],
+   "hud": [
+    {
+     "text": "Numerical aperture 0.55",
+     "screen": [
+      0.5,
+      0.15
+     ],
+     "at": "word:numerical"
+    }
+   ]
+  },
+  "beat-31": {
+   "scene": "layer-stack",
+   "params": {
+    "layers": [
+     "Brighter source",
+     "Sensitive coating",
+     "The price"
+    ],
+    "highlight": "The price",
+    "base": "none"
+   },
+   "labels": [
+    {
+     "text": "Speed, cost, or another error",
+     "anchor": "layer3",
+     "at": 0.7
+    }
+   ]
+  },
+  "beat-32": {
+   "scene": "flow-diagram",
+   "params": {
+    "nodes": [
+     "Tin",
+     "Laser",
+     "Vacuum",
+     "Mirrors",
+     "Shorter wavelength"
+    ]
+   },
+   "actions": [
+    {
+     "name": "run",
+     "at": 0.1
+    }
+   ],
+   "labels": [
+    {
+     "text": "Everything buys one thing",
+     "anchor": "node5",
+     "at": "word:wavelength"
+    }
+   ]
+  },
+  "beat-33": {
+   "scene": "chip-teardown",
+   "params": {
+    "package": "ai"
+   },
+   "actions": [
+    {
+     "name": "open",
+     "at": 0.3
+    }
+   ],
+   "labels": [
+    {
+     "text": "Chips made with this light",
+     "anchor": "logic",
+     "at": "word:Chips"
+    }
+   ]
+  }
+ }
+}

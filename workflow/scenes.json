@@ -644,6 +644,1158 @@
     "centre"
    ],
    "actions": []
+  },
+  "wave-slit": {
+   "description": "A wave meets a gap: through a wide gap it carries straight on, past a narrow one it spreads out (diffraction).",
+   "params": {
+    "gap": {
+     "type": "enum",
+     "values": [
+      "both",
+      "wide",
+      "narrow"
+     ],
+     "default": "both",
+     "doc": "which gap to show; both stacks wide above narrow"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "gap": "narrow"
+    },
+    {
+     "gap": "wide"
+    }
+   ],
+   "views": [
+    "wide",
+    "gap"
+   ],
+   "anchors": [
+    "wide",
+    "narrow"
+   ],
+   "actions": []
+  },
+  "grating-lens": {
+   "description": "Fine lines on a mask split light into a fan of beams; a lens that catches them rebuilds the lines on the wafer, a lens that misses them leaves an even glow.",
+   "params": {
+    "mode": {
+     "type": "enum",
+     "values": [
+      "catch",
+      "miss",
+      "shorten",
+      "open"
+     ],
+     "default": "catch",
+     "doc": "catch: narrow fan, lines print; miss: wide fan, small lens, pattern lost; shorten: the fan narrows (shorter wavelength) until it is caught; open: the lens widens (bigger NA) until it catches the fan"
+    },
+    "light": {
+     "type": "enum",
+     "values": [
+      "euv",
+      "duv"
+     ],
+     "default": "euv",
+     "doc": "colour of the light"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "mode": "miss"
+    },
+    {
+     "mode": "shorten"
+    },
+    {
+     "mode": "open"
+    }
+   ],
+   "views": [
+    "wide",
+    "lens",
+    "mask"
+   ],
+   "anchors": [
+    "mask",
+    "fan",
+    "lens",
+    "wafer",
+    "straight"
+   ],
+   "actions": [
+    "light"
+   ]
+  },
+  "formula": {
+   "description": "The resolution limit written out (smallest feature = k1 x wavelength / NA) with a knob under each term; the term being talked about lights up and its knob turns.",
+   "params": {
+    "highlight": {
+     "type": "enum",
+     "values": [
+      "all",
+      "k1",
+      "lambda",
+      "na",
+      "none"
+     ],
+     "default": "all",
+     "doc": "which term lights up; all turns the three knobs in turn"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "highlight": "na"
+    }
+   ],
+   "views": [
+    "wide",
+    "terms",
+    "knobs"
+   ],
+   "anchors": [
+    "cd",
+    "k1",
+    "lambda",
+    "na",
+    "knob-k1",
+    "knob-lambda",
+    "knob-na"
+   ],
+   "actions": [
+    "light"
+   ]
+  },
+  "wavelengths": {
+   "description": "Waves drawn to scale one above another, longest on top: how much shorter one wavelength is than another.",
+   "params": {
+    "values": {
+     "type": "number[]",
+     "default": [
+      436,
+      365,
+      248,
+      193,
+      13.5
+     ],
+     "doc": "wavelengths in nm, top to bottom; anchors wave1..waveN",
+     "max_items": 6
+    },
+    "names": {
+     "type": "string[]",
+     "default": [],
+     "doc": "label for each wave (default '<value> nm')",
+     "max_items": 6
+    }
+   },
+   "examples": [
+    {},
+    {
+     "values": [
+      193,
+      13.5,
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   ],
+   "views": [
+    "wide",
+    "short"
+   ],
+   "anchors": [
+    "wave1",
+    "wave2",
+    "wave3",
+    "wave4",
+    "wave5",
+    "wave6"
+   ],
+   "actions": [
+    "draw"
+   ]
+  },
+  "litho-exposure": {
+   "description": "A projector in reverse: light through a mask, shrunk by the optics, prints the pattern into the resist on a wafer.",
+   "params": {
+    "light": {
+     "type": "enum",
+     "values": [
+      "duv",
+      "euv"
+     ],
+     "default": "duv",
+     "doc": "colour of the light"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "wafer",
+    "mask"
+   ],
+   "anchors": [
+    "light",
+    "mask",
+    "lens",
+    "resist",
+    "pattern"
+   ],
+   "actions": [
+    "expose"
+   ]
+  },
+  "tin-source": {
+   "description": "The laser-produced-plasma source as laid out in a production scanner: tin droplets fly horizontally from a generator to a catcher; the CO2 laser comes up through the collector's central hole; a weak pulse flattens a droplet into a disc (flatten), the main pulse makes plasma and the upward-facing collector focuses its light to the intermediate focus above (ignite).",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "droplet",
+    "collector"
+   ],
+   "anchors": [
+    "droplet",
+    "nozzle",
+    "catcher",
+    "laser",
+    "collector",
+    "plasma",
+    "focus"
+   ],
+   "actions": [
+    "flatten",
+    "ignite"
+   ]
+  },
+  "bragg-mirror": {
+   "description": "A cut through a multilayer mirror: every boundary reflects a weak wave, all of them leave in step, and together they make one strong reflection.",
+   "params": {
+    "pairs": {
+     "type": "int",
+     "default": 8,
+     "doc": "layer pairs drawn (3-12)",
+     "min": 3,
+     "max": 12
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "layers"
+   ],
+   "anchors": [
+    "incoming",
+    "layers",
+    "molybdenum",
+    "silicon",
+    "reflected"
+   ],
+   "actions": [
+    "reflect"
+   ]
+  },
+  "light-path": {
+   "description": "The route the light takes through the machine: source, collector, illuminator mirrors, the mask, six projection mirrors, the wafer; the beam fades at every bounce.",
+   "params": {
+    "keep": {
+     "type": "number",
+     "default": 0.7,
+     "doc": "fraction of light each bounce keeps (sets how fast the beam fades)",
+     "min": 0.3,
+     "max": 1.0
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "source",
+    "projection",
+    "mask"
+   ],
+   "anchors": [
+    "source",
+    "collector",
+    "illuminator",
+    "mask",
+    "projection",
+    "wafer"
+   ],
+   "actions": [
+    "travel"
+   ]
+  },
+  "scanner": {
+   "description": "A step-and-scan exposure: the mask and the wafer move in opposite directions, the mask four times faster, through a fixed curved slit of light with the projection optics between them; the wafer steps to the next 26 x 33 mm field and the scan runs back.",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "wafer",
+    "mask"
+   ],
+   "anchors": [
+    "mask",
+    "slit",
+    "optics",
+    "wafer",
+    "field"
+   ],
+   "actions": [
+    "scan"
+   ]
+  },
+  "photon-rain": {
+   "description": "Photons land at random on a grid of resist through a slot in a mask; each square brightens with what it caught, then the print develops: with few photons the line comes out ragged.",
+   "params": {
+    "photons": {
+     "type": "enum",
+     "values": [
+      "few",
+      "many"
+     ],
+     "default": "few",
+     "doc": "about 4 or about 30 photons per square"
+    },
+    "seed": {
+     "type": "int",
+     "default": 11,
+     "doc": "random seed",
+     "min": 0,
+     "max": 9999
+    }
+   },
+   "examples": [
+    {},
+    {
+     "photons": "many"
+    }
+   ],
+   "views": [
+    "wide",
+    "close"
+   ],
+   "anchors": [
+    "line",
+    "tile",
+    "mask"
+   ],
+   "actions": [
+    "develop",
+    "rain"
+   ]
+  },
+  "token-stream": {
+   "description": "A chat window: the question at the top, the answer arriving one token at a time with an uneven rhythm (stream). With fetch, a strip below shows memory feeding a chip, one pulse per token.",
+   "params": {
+    "prompt": {
+     "type": "string",
+     "default": "",
+     "doc": "the question; empty = 'Why does my cat sound like a carburettor?'"
+    },
+    "answer": {
+     "type": "string",
+     "default": "",
+     "doc": "answer tokens separated by |, a leading space marks a new word"
+    },
+    "fetch": {
+     "type": "bool",
+     "default": false,
+     "doc": "show the memory-to-chip strip (adds the `low` view and `memory`, `chip` anchors)"
+    },
+    "seed": {
+     "type": "int",
+     "default": 5,
+     "min": 0,
+     "max": 9999,
+     "doc": "rhythm seed"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "fetch": true
+    }
+   ],
+   "views": [
+    "wide",
+    "close",
+    "low"
+   ],
+   "anchors": [
+    "answer",
+    "chip",
+    "cursor",
+    "memory",
+    "prompt"
+   ],
+   "actions": [
+    "stream",
+    "type"
+   ]
+  },
+  "fiber-trip": {
+   "description": "A phone sends radio waves to a mast; from there the request runs as pulses of light down an optical fibre to a data centre (send); pulses come back (reply). With markers, distance ticks from 0 to 1,000 km stand along the fibre.",
+   "params": {
+    "markers": {
+     "type": "bool",
+     "default": false,
+     "doc": "distance ticks along the fibre"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "markers": true
+    }
+   ],
+   "views": [
+    "wide",
+    "phone",
+    "fibre",
+    "building"
+   ],
+   "anchors": [
+    "building",
+    "fibre",
+    "mast",
+    "phone"
+   ],
+   "actions": [
+    "reply",
+    "send"
+   ]
+  },
+  "tokenizer": {
+   "description": "A sentence breaks into tokens (split), each gets its id in the vocabulary (number), each id picks out a column of numbers (embed). Defaults are a real sentence and its OpenAI o200k token ids.",
+   "params": {
+    "tokens": {
+     "type": "string",
+     "default": "",
+     "doc": "tokens separated by |; empty = the default sentence"
+    },
+    "ids": {
+     "type": "string",
+     "default": "",
+     "doc": "ids separated by |, one per token"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "tokens",
+    "vector"
+   ],
+   "anchors": [
+    "id",
+    "rare",
+    "sentence",
+    "token",
+    "vector"
+   ],
+   "actions": [
+    "embed",
+    "number",
+    "split"
+   ]
+  },
+  "embedding-space": {
+   "description": "Words as points: a flat map with two coordinates lifts into a space (lift), more axes fan out for the thousands of directions (dims), an arrow and its numbers point to one word (point). Animals cluster together, far from machines.",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "flat",
+    "animals",
+    "machines"
+   ],
+   "anchors": [
+    "apple",
+    "carburettor",
+    "cat",
+    "dog",
+    "origin"
+   ],
+   "actions": [
+    "dims",
+    "lift",
+    "point"
+   ]
+  },
+  "model-layers": {
+   "description": "A model as a stack of layers of weights: a token's list of numbers rises through every layer, each lighting as it passes (pass); at one layer it looks back at earlier tokens, brighter links mattering more (attend).",
+   "params": {
+    "layers": {
+     "type": "int",
+     "default": 36,
+     "min": 4,
+     "max": 48,
+     "doc": "number of layers"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "layer",
+    "attention"
+   ],
+   "anchors": [
+    "attention",
+    "layer",
+    "stack",
+    "token",
+    "weights"
+   ],
+   "actions": [
+    "attend",
+    "pass"
+   ]
+  },
+  "experts": {
+   "description": "A mixture-of-experts layer: 128 expert blocks in a grid; for each token a router lights only four of them (route).",
+   "params": {
+    "experts": {
+     "type": "int",
+     "default": 128,
+     "min": 8,
+     "max": 256,
+     "doc": "experts in the layer"
+    },
+    "pick": {
+     "type": "int",
+     "default": 4,
+     "min": 1,
+     "max": 8,
+     "doc": "experts chosen per token"
+    },
+    "tokens": {
+     "type": "int",
+     "default": 4,
+     "min": 1,
+     "max": 12,
+     "doc": "tokens routed"
+    },
+    "seed": {
+     "type": "int",
+     "default": 2,
+     "min": 0,
+     "max": 9999,
+     "doc": "random seed"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "router",
+    "grid"
+   ],
+   "anchors": [
+    "expert",
+    "grid",
+    "router",
+    "token"
+   ],
+   "actions": [
+    "route"
+   ]
+  },
+  "next-token": {
+   "description": "The last layer scores candidate next tokens as bars (score); one is picked and joins the sentence (pick); the model runs again and again, one token each time (loop).",
+   "params": {
+    "prefix": {
+     "type": "string",
+     "default": "",
+     "doc": "the sentence so far"
+    },
+    "candidates": {
+     "type": "string",
+     "default": "",
+     "doc": "token:probability pairs separated by |"
+    },
+    "choose": {
+     "type": "int",
+     "default": 0,
+     "min": 0,
+     "max": 8,
+     "doc": "index of the picked candidate"
+    },
+    "next": {
+     "type": "string",
+     "default": "",
+     "doc": "tokens appended by loop, separated by |"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "bars",
+    "sentence"
+   ],
+   "anchors": [
+    "bars",
+    "chosen",
+    "model",
+    "sentence"
+   ],
+   "actions": [
+    "loop",
+    "pick",
+    "score"
+   ]
+  },
+  "accelerator": {
+   "description": "A two-die accelerator package from above with four HBM stacks beside each die; weights stream from the stacks into the dies continuously. decode: the multipliers flash for an instant per token, then wait; prefill and batch: they stay busy (compute).",
+   "params": {
+    "mode": {
+     "type": "enum",
+     "values": [
+      "decode",
+      "prefill",
+      "batch"
+     ],
+     "default": "decode",
+     "doc": "how busy the multipliers are"
+    },
+    "period": {
+     "type": "number",
+     "default": 0.6,
+     "doc": "seconds between flashes in decode"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "mode": "prefill"
+    }
+   ],
+   "views": [
+    "wide",
+    "memory",
+    "compute",
+    "bus"
+   ],
+   "anchors": [
+    "bus",
+    "compute",
+    "joint",
+    "memory",
+    "package"
+   ],
+   "actions": [
+    "compute"
+   ]
+  },
+  "compare": {
+   "description": "Labelled horizontal bars with their values. race: all grow at the same speed, so a short one finishes at once while a long one keeps going; grow: they rise together. A value lo-hi draws a range.",
+   "params": {
+    "items": {
+     "type": "string",
+     "default": "",
+     "doc": "label:value:shown text, separated by |"
+    },
+    "mode": {
+     "type": "enum",
+     "values": [
+      "race",
+      "grow"
+     ],
+     "default": "race",
+     "doc": "how the bars grow"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "mode": "grow"
+    }
+   ],
+   "views": [
+    "wide",
+    "start"
+   ],
+   "anchors": [
+    "end",
+    "first",
+    "last"
+   ],
+   "actions": [
+    "run"
+   ]
+  },
+  "wire-trip": {
+   "description": "A number fetched from a distant memory chip crawls down a long wire that warms as it passes to a multiplier (send); a number from the register next door arrives at once (local).",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "wire",
+    "multiplier"
+   ],
+   "anchors": [
+    "memory",
+    "multiplier",
+    "register",
+    "wire"
+   ],
+   "actions": [
+    "local",
+    "send"
+   ]
+  },
+  "hbm-stack": {
+   "description": "A high-bandwidth-memory stack beside a two-die GPU on a silicon interposer: a base logic die with DRAM dies on top joined by microbumps and through-silicon vias; it comes apart (explode) and the vias and interposer wires light (signal).",
+   "params": {
+    "layers": {
+     "type": "int",
+     "default": 8,
+     "min": 4,
+     "max": 16,
+     "doc": "DRAM dies in the stack"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "stack",
+    "tsv",
+    "wires",
+    "gpu"
+   ],
+   "anchors": [
+    "base",
+    "bumps",
+    "dram",
+    "gpu",
+    "interposer",
+    "joint",
+    "stack",
+    "tsv",
+    "wires"
+   ],
+   "actions": [
+    "explode",
+    "signal"
+   ]
+  },
+  "batching": {
+   "description": "One fetch of the weights feeds many conversations at once, each getting its next token (share). single: one conversation only. cache: each conversation also keeps a growing column of notes and the memory fills toward its limit (adds the `cache` view).",
+   "params": {
+    "mode": {
+     "type": "enum",
+     "values": [
+      "batch",
+      "single",
+      "cache"
+     ],
+     "default": "batch",
+     "doc": "what is shown"
+    },
+    "users": {
+     "type": "int",
+     "default": 8,
+     "min": 2,
+     "max": 12,
+     "doc": "conversations"
+    },
+    "cycles": {
+     "type": "int",
+     "default": 6,
+     "min": 2,
+     "max": 12,
+     "doc": "tokens produced"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "mode": "cache"
+    }
+   ],
+   "views": [
+    "wide",
+    "weights",
+    "users",
+    "cache"
+   ],
+   "anchors": [
+    "cache",
+    "capacity",
+    "memory",
+    "user",
+    "weights"
+   ],
+   "actions": [
+    "share"
+   ]
+  },
+  "bit-width": {
+   "description": "A weight written with sixteen bits shrinks to four (shrink); two lanes of the same width carry numbers to a chip, four times as many at four bits (flow).",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "number",
+    "lanes"
+   ],
+   "anchors": [
+    "chip",
+    "narrow",
+    "number",
+    "wide"
+   ],
+   "actions": [
+    "flow",
+    "shrink"
+   ]
+  },
+  "gpu-rack": {
+   "description": "A rack laid out like a GB200 NVL72: power shelves, ten and eight compute trays of four GPUs around nine switch trays, a copper cable spine at the back, liquid manifolds. pull: one tray slides out to show two GPUs and a CPU per board under cold plates; link: the spine lights; slice: the 72 GPUs light in groups; cool: coolant runs.",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "front",
+    "back",
+    "tray"
+   ],
+   "anchors": [
+    "coldplate",
+    "compute",
+    "gpu",
+    "manifold",
+    "power",
+    "spine",
+    "switch",
+    "tray"
+   ],
+   "actions": [
+    "cool",
+    "link",
+    "pull",
+    "slice"
+   ]
+  },
+  "heat-loop": {
+   "description": "A rack hands its heat to a coolant loop, a coolant distribution unit passes it to facility water, which runs to a mechanical-draft cooling tower where a little water evaporates and the vapour carries the heat away (flow, evaporate).",
+   "params": {},
+   "examples": [
+    {}
+   ],
+   "views": [
+    "wide",
+    "rack",
+    "tower",
+    "pipes"
+   ],
+   "anchors": [
+    "cdu",
+    "pipes",
+    "plume",
+    "rack",
+    "tower"
+   ],
+   "actions": [
+    "evaporate",
+    "flow"
+   ]
+  },
+  "chip-factory": {
+   "description": "Inside a chip drawn as a factory floor: twelve desks of multipliers with workers (pixel-art sprites and glossy toy figures mixed), a memory tower far to the left, a road and a gate between them, a little truck carrying a glowing load of weights. Default: most workers doze, waiting; busy: every desk lit and every worker awake (prefill or a big batch). deliver: the truck drives from memory to the gate and the desks flash once.",
+   "params": {
+    "workers": {
+     "type": "enum",
+     "values": [
+      "mixed",
+      "pixel",
+      "toy",
+      "basic"
+     ],
+     "default": "mixed",
+     "doc": "how the workers are drawn"
+    },
+    "busy": {
+     "type": "bool",
+     "default": false,
+     "doc": "everyone working, desks lit"
+    },
+    "truck_x": {
+     "type": "number",
+     "default": -4.2,
+     "doc": "where the truck stands on the road before any delivery"
+    },
+    "seed": {
+     "type": "int",
+     "default": 3,
+     "min": 0,
+     "max": 9999,
+     "doc": "which desks get which kind of worker"
+    },
+    "poses": {
+     "type": "string",
+     "default": "",
+     "doc": "per-desk poses separated by | (sleep, wait, sit, work); empty = mostly asleep"
+    },
+    "guides": {
+     "type": "bool",
+     "default": false,
+     "doc": "stand the explorer and the token by the road (cast does this per shot instead)"
+    },
+    "word": {
+     "type": "string",
+     "default": "cat",
+     "doc": "the token the guide token carries"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "busy": true
+    }
+   ],
+   "views": [
+    "wide",
+    "workers",
+    "road"
+   ],
+   "anchors": [
+    "desk",
+    "memory",
+    "truck",
+    "workers"
+   ],
+   "actions": [
+    "deliver"
+   ]
+  },
+  "vienna": {
+   "description": "Vienna in the 1840s: plastered houses on cobbled streets, chimney smoke, lamps a lamplighter lights one by one, windows lighting house by house, people walking and greeting; the general hospital across the end of the main street with one open lit window where Semmelweis writes at his desk. The streets are dressed: shop awnings and signboards, shutters and balconies, a market with sellers and buyers, handcarts pushed along, barrels and crates by the doors, a pump, trees by the hospital, washing across the back streets, birds over the roofs, neighbours talking. The court has cobbles, a pump, benches, trees, a stretcher carried across, students talking; the assistant's room has books, papers, a candle and a bed; the dissecting room has jars on shelves, a basin and late students.",
+   "params": {
+    "time": {
+     "type": "enum",
+     "values": [
+      "dusk",
+      "night",
+      "dawn",
+      "dusk>night",
+      "night>dawn"
+     ],
+     "default": "dusk>night",
+     "doc": "time of day; a>b changes over the beat"
+    },
+    "seed": {
+     "type": "int",
+     "default": 7,
+     "min": 0,
+     "max": 9999,
+     "doc": "which houses, colours and walkers"
+    },
+    "lit": {
+     "type": "number",
+     "default": 0.6,
+     "doc": "share of window storeys that light"
+    },
+    "lights_from": {
+     "type": "number",
+     "default": 0.05,
+     "doc": "windows start lighting at this fraction of the beat"
+    },
+    "lights_until": {
+     "type": "number",
+     "default": 0.6,
+     "doc": "all lit windows are on by this fraction"
+    },
+    "lamps_from": {
+     "type": "number",
+     "default": 0.08,
+     "doc": "the lamplighter starts at this fraction"
+    },
+    "lamps_until": {
+     "type": "number",
+     "default": 0.55,
+     "doc": "the last lamp is lit at this fraction"
+    },
+    "walkers": {
+     "type": "int",
+     "default": 8,
+     "min": 0,
+     "max": 30,
+     "doc": "people on the main street (the first two meet and greet)"
+    },
+    "tint": {
+     "type": "number",
+     "default": 0.55,
+     "doc": "brightness of the street people (dim at night)"
+    },
+    "smoke": {
+     "type": "bool",
+     "default": true,
+     "doc": "chimney smoke"
+    },
+    "groups": {
+     "type": "int",
+     "default": 3,
+     "min": 0,
+     "max": 8,
+     "doc": "groups of two or three neighbours standing and talking by the house fronts"
+    },
+    "birds": {
+     "type": "bool",
+     "default": true,
+     "doc": "a flock crossing over the roofs"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "aerial",
+    "roofs",
+    "street",
+    "hospital",
+    "window",
+    "court",
+    "doors",
+    "first-door",
+    "second-door",
+    "anatomy",
+    "market",
+    "street-low",
+    "room",
+    "desk",
+    "court-wide",
+    "pump",
+    "court-low",
+    "anatomy-close",
+    "jars"
+   ],
+   "anchors": [
+    "first",
+    "hospital",
+    "jars",
+    "second",
+    "table",
+    "window",
+    "writer"
+   ],
+   "actions": [
+    "greet"
+   ]
+  },
+  "asylum": {
+   "description": "1865, night: a high wall with an arched gate under a flickering lantern; guards bring a man in, their shadows on the wall; a cell with a barred window, moonlight, a door that shuts. Violence is implied, never shown. The cell has a barred window with moonlight falling through it onto straw, a bucket, a stool and a chain.",
+   "params": {
+    "drag_from": {
+     "type": "number",
+     "default": 0.12,
+     "doc": "the guards start walking him in (fraction)"
+    },
+    "drag_until": {
+     "type": "number",
+     "default": 0.55,
+     "doc": "they are through the gate (fraction)"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "street",
+    "gate",
+    "cell",
+    "bars",
+    "cell-close"
+   ],
+   "anchors": [
+    "door",
+    "gate",
+    "lantern",
+    "window"
+   ],
+   "actions": [
+    "door-shut"
+   ]
+  },
+  "ward": {
+   "description": "Vienna General Hospital, the First Obstetric Clinic, 1846: a long whitewashed ward (24 x 8 x 5 m) with a beamed ceiling, tall windows on one side letting in cool daylight, a worn plank floor. Two rows of seven iron beds with straw mattresses, a woman lying in most of them (pixel billboards, their faces worried or sad; a few beds stripped with folded linen), tin cups and jugs on small night tables, a crucifix on the far wall, a wash stand with basin and towel and a linen cupboard (water only: no chlorine yet), and by the door a table with the register and an oil lamp. A doctor and three students examine at the first bed, a midwife goes from bed to bed and stops to talk, a woman in labour is held up by a second midwife. Action bell: the priest carrying the viaticum and the altar boy ringing a bell come in at the far door and walk the aisle to a bed; the patients they pass turn their heads and look worried. Daylight by day; at dusk and night a few oil lamps are lit.",
+   "params": {
+    "time": {
+     "type": "enum",
+     "values": [
+      "dawn",
+      "day",
+      "dusk",
+      "night",
+      "day>dusk",
+      "dusk>night"
+     ],
+     "default": "day",
+     "doc": "time of day; a>b changes over the beat (more oil lamps are lit at dusk and night)"
+    },
+    "seed": {
+     "type": "int",
+     "default": 5,
+     "min": 0,
+     "max": 9999,
+     "doc": "which patients look which way, how the group talks"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "time": "night"
+    }
+   ],
+   "views": [
+    "ward-wide",
+    "ward-aisle",
+    "ward-bed",
+    "ward-door",
+    "ward-priest"
+   ],
+   "anchors": [
+    "basin",
+    "bed",
+    "bell",
+    "door",
+    "ledger"
+   ],
+   "actions": [
+    "bell"
+   ]
   }
  }
 }

@@ -1,4 +1,4 @@
-"""Shared kit for the reusable model library: materials, instanced meshes, staging, labels.
+"""Shared kit for the reusable model library: materials, instanced meshes, text, the Stage record.
 
 Everything a beat needs that is not a specific object lives here, so a beat file reads as
 "which model, which move" and never as a pile of primitives. The palette, canvas and key
@@ -64,7 +64,6 @@ TONE = {"base": BASE, "accent_glow": 0.0}
 
 def base():      return mat("kit-base", TONE["base"], roughness=0.55)
 def ground():    return mat("kit-ground", GROUND, roughness=0.9)
-def floor_mat(): return mat("kit-floor", tuple(c * 0.42 for c in GROUND), roughness=0.9)
 def accent():    return mat("kit-accent", ACCENT, metallic=METAL_MAX, roughness=0.45, emission=TONE["accent_glow"])
 def epoxy():     return mat("kit-epoxy", (0.022, 0.024, 0.028), roughness=0.62)
 def pcb():       return mat("kit-pcb", (0.035, 0.085, 0.075), roughness=0.6)
@@ -173,12 +172,14 @@ def cylinders(name, items, material, segments=16):
     return soften(_mesh_object(name, bm, material))
 
 
-def balls(name, locations, radius, material):
+def balls(name, locations, radius, material, subdivisions=1, smooth=False):
+    """Many spheres as one object; `smooth` for anything seen close enough to read as round."""
     bm = bmesh.new()
     for loc in locations:
-        bmesh.ops.create_icosphere(bm, subdivisions=1, radius=radius,
+        bmesh.ops.create_icosphere(bm, subdivisions=subdivisions, radius=radius,
                                    matrix=Matrix.Translation(loc))
-    return _mesh_object(name, bm, material)
+    ob = _mesh_object(name, bm, material)
+    return soften(ob, angle=180.0) if smooth else ob
 
 
 def rod(name, a, b, radius, material, verts=8):
@@ -265,7 +266,7 @@ def _linear(ob):
 
 
 # ---------------------------------------------------------------------------
-# Staging: floor, camera move, key light
+# The Stage record a beat is built on (the set itself is look.open_set / look.shoot)
 # ---------------------------------------------------------------------------
 
 LAST = None
@@ -280,177 +281,9 @@ class Stage:
         self.floor_z = 0.0
 
 
-def _world(ambient):
-    """Dark backdrop for the lens, soft sky for the lighting.
-
-    A world dim enough to be the backdrop leaves every shadow pure black, and a lifted
-    part then hides whatever it was lifted off. Light Path splits the two jobs.
-    """
-    world = bpy.data.worlds.new("Studio World")
-    world.use_nodes = True
-    nt = world.node_tree
-    nt.nodes.clear()
-    out = nt.nodes.new("ShaderNodeOutputWorld")
-    seen = nt.nodes.new("ShaderNodeBackground")
-    seen.inputs["Color"].default_value = (0.012, 0.016, 0.026, 1.0)
-    sky = nt.nodes.new("ShaderNodeBackground")
-    sky.inputs["Color"].default_value = (0.62, 0.68, 0.80, 1.0)
-    sky.inputs["Strength"].default_value = ambient
-    path = nt.nodes.new("ShaderNodeLightPath")
-    mix = nt.nodes.new("ShaderNodeMixShader")
-    nt.links.new(path.outputs["Is Camera Ray"], mix.inputs["Fac"])
-    nt.links.new(sky.outputs["Background"], mix.inputs[1])
-    nt.links.new(seen.outputs["Background"], mix.inputs[2])
-    nt.links.new(mix.outputs["Shader"], out.inputs["Surface"])
-    bpy.context.scene.world = world
-
-
 def _orbit_point(target, radius, azimuth_deg, height):
     a = math.radians(azimuth_deg)
     return Vector((target[0] + radius * math.cos(a), target[1] + radius * math.sin(a), height))
-
-
-def stage(seconds, *, target=(0, 0, 0.5), radius=(11.0, 9.0), azimuth=(-70.0, -40.0),
-          height=(6.0, 5.0), lens=50.0, floor=True, floor_z=0.0, floor_grid=1.0,
-          key_side=1.0, key_energy=3.6, fill=60.0, world_strength=0.55, res=None):
-    """Build the shared set for one beat and return the camera.
-
-    The camera travels an arc around `target` (radius, azimuth and height each go from
-    their first value to their second) while a Track-To keeps the subject framed, so the
-    move is one slow drift for the length of the sentence. The key sun is derived from
-    the camera at the shot's mid frame, never typed in.
-    """
-    frames = int(round(seconds * FPS))
-    common.wipe()
-    reset_materials()
-    TONE.update(base=BASE, accent_glow=0.0)
-    canvas = STYLE["canvas"]
-    w, h = res or (canvas["width"], canvas["height"])
-    common.setup_scene(FPS, 1, frames, w, h)
-    # Nothing in the library is transparent, and ray tracing is what setup_scene turns on
-    # for glass. Measured on riva-chip at 1080p/32 samples: 1.32 s a frame with it,
-    # 0.75 s without, for a picture that does not change.
-    bpy.context.scene.eevee.use_raytracing = False
-    _world(world_strength)
-
-    aim = _link(bpy.data.objects.new("cam-target", None))
-    aim.location = target
-    start = _orbit_point(target, radius[0], azimuth[0], height[0])
-    cam = common.add_camera("camera", start, target, lens=lens)
-    track = cam.constraints.new("TRACK_TO")
-    track.target = aim
-    track.track_axis = "TRACK_NEGATIVE_Z"
-    track.up_axis = "UP_Y"
-    steps = max(2, frames // 15)
-    for i in range(steps + 1):
-        t = i / steps
-        cam.location = _orbit_point(
-            target,
-            radius[0] + (radius[1] - radius[0]) * t,
-            azimuth[0] + (azimuth[1] - azimuth[0]) * t,
-            height[0] + (height[1] - height[0]) * t)
-        cam.keyframe_insert("location", frame=1 + round(t * (frames - 1)))
-    _linear(cam)
-
-    mid_cam = _orbit_point(target, sum(radius) / 2, sum(azimuth) / 2, sum(height) / 2)
-    lighting = STYLE["lighting"]
-    key = key_location(mid_cam, target, elevation=lighting["key_elevation_deg"] + 18.0,
-                       side=key_side, yaw=lighting["key_yaw_deg"])
-    common.add_sun_light("key", key, key_energy, angle=math.radians(3.0))
-    if fill:
-        # A wide, weak overhead fill: it lifts the shadow side enough to read form and
-        # is far too soft to compete with the key for the shadow direction.
-        lamp = common.add_area_light("fill", (target[0], target[1], target[2] + 9.0), fill,
-                                     size=14.0)
-        lamp.rotation_euler = (0, 0, 0)
-
-    if floor:
-        box("floor", (target[0], target[1], floor_z - 0.05), (90, 90, 0.1), floor_mat(), bevel=0)
-        if floor_grid:
-            # A dotted floor grid: it is what turns a camera drift into visible parallax
-            # instead of a subject sliding over a blank plane.
-            n = 22
-            dots = [((target[0] + (i - n / 2) * floor_grid, target[1] + (j - n / 2) * floor_grid,
-                      floor_z + 0.004), 0.035, 0.008)
-                    for i in range(n + 1) for j in range(n + 1)]
-            cylinders("floor-grid", dots, mid(), segments=8)
-    global LAST
-    LAST = Stage(cam, target, frames)
-    LAST.mid_cam = mid_cam
-    LAST.floor_z = floor_z
-    return LAST
-
-
-def label(st, text, anchor, screen, *, size=0.045, appear_at=1, follow=None, color=None):
-    """A callout that stays put on screen while its leader tracks the 3D point it names.
-
-    `screen` is (u, v) in frame fractions from the bottom-left; `size` is the cap height
-    as a fraction of frame height. The text rides on the camera, so a camera drift can
-    never slide it out of frame; only the leader line moves, which is what tells the
-    viewer the label belongs to the object and not to the picture. `follow` parents the
-    anchor to a part, so the leader stays on a piece that is being lifted away.
-    """
-    u, v = screen
-    half_u = len(text) * size * 0.29 * 9 / 16
-    if not (0.02 < u - half_u and u + half_u < 0.98 and 0.05 < v < 0.95):
-        st.problems.append(f"label '{text}' leaves the frame: u={u - half_u:.2f}..{u + half_u:.2f} v={v:.2f}")
-    material = mat("kit-label", color or BASE, roughness=0.6, emission=1.6)
-    cam = st.cam
-    scene = bpy.context.scene
-    a = Vector(anchor)
-    per_depth = Vector(((2 * u - 1) * 18.0 / cam.data.lens, (2 * v - 1) * 18.0 / cam.data.lens * 9 / 16, -1.0))
-
-    # The text sits at roughly the subject's distance, pulled in wherever its line of
-    # sight would otherwise run into the floor: a label low in the frame at the
-    # subject's depth is under the ground plane and simply does not render.
-    depth = (a - st.mid_cam).length * 0.82
-    for frame in (1, st.frames):
-        scene.frame_set(frame)
-        bpy.context.view_layer.update()
-        ray = cam.matrix_world.to_3x3() @ per_depth
-        if ray.z < -1e-6:
-            depth = min(depth, 0.85 * (cam.matrix_world.translation.z - st.floor_z) / -ray.z)
-    # Parts are left in their final pose, so `follow` offsets are measured there.
-    cap = size * 2 * depth * 18.0 / cam.data.lens * 9 / 16
-    local = per_depth * depth
-
-    txt = flat_text(f"label-{text}", text, local, cap, material, extrude=0.0)
-    txt.parent = cam
-    appear(txt, appear_at, appear_at + 8)
-
-    pin = _link(bpy.data.objects.new(f"anchor-{text}", None))
-    if follow is not None:
-        pin.parent = follow
-        pin.location = a - follow.matrix_world.translation
-    else:
-        pin.location = a
-    dot = ico(f"dot-{text}", (0, 0, 0), cap * 0.16, material, subdivisions=1)
-    dot.parent = pin
-
-    # the leader leaves the text on the side that faces the anchor
-    from bpy_extras.object_utils import world_to_camera_view
-    seen = world_to_camera_view(scene, cam, a)
-    du, dv = seen.x - u, seen.y - v
-    if abs(dv) < 0.07:
-        start = Vector(((1 if du > 0 else -1) * (len(text) * cap * 0.30 + cap * 0.5), 0, 0))
-    else:
-        start = Vector((0, (1 if dv > 0 else -1) * cap * 0.95, 0))
-    bm = bmesh.new()
-    bmesh.ops.create_cube(bm, size=1.0, matrix=Matrix.Translation((0, 0.5, 0)))
-    line = _mesh_object(f"leader-{text}", bm, material)
-    line.parent = cam
-    line.location = local + start
-    line.scale = (cap * 0.05, 1.0, cap * 0.05)
-    stretch = line.constraints.new("STRETCH_TO")
-    stretch.target = pin
-    stretch.rest_length = 1.0
-    stretch.volume = "NO_VOLUME"
-    for ob in (line, dot):
-        ob.hide_render = True
-        ob.keyframe_insert("hide_render", frame=max(1, appear_at - 1))
-        ob.hide_render = False
-        ob.keyframe_insert("hide_render", frame=appear_at)
-    return txt
 
 
 def prism(name, outline, z0, z1, material):

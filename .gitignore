@@ -13,6 +13,10 @@ tools/mograph-gn-presets/
 
 # rendered media and scratch output
 *.mp4
+*.webm
+*.ogv
+*.mkv
+*.mov
 *.wav
 *.blend
 *.blend1
@@ -26,3 +30,10 @@ dist/
 *.log
 onnx_files.txt
 undefined
+
+# Manim's text cache (hash-named SVGs), regenerated on render
+media/texts/
+
+# secrets (API keys): never committed
+.env
+.env.*

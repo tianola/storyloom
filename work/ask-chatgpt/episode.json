@@ -1,0 +1,18 @@
+{
+ "slug": "ask-chatgpt",
+ "title": "What Physically Happens When You Ask ChatGPT a Question",
+ "language": "English",
+ "workflow_version": 3,
+ "duration_target_seconds": [
+  600,
+  900
+ ],
+ "archive": {
+  "enabled": true
+ },
+ "rollout": {
+  "builder": "tools/blender/storyboard_beats.py",
+  "baseline": "1080p",
+  "finish_beats": []
+ }
+}

@@ -28,7 +28,7 @@ SAMPLE_WIDTH = 2
 MAX_TEXT_CHARS = 5000
 SAFE_ID = re.compile(r"[A-Za-z0-9_-]{1,64}")
 RESERVED_ID = re.compile(r"CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9]", re.IGNORECASE)
-ENGLISH_VOICE = re.compile(r"[ab][fm]_[a-z0-9_]{1,31}")
+ENGLISH_VOICE = re.compile(r"[ab][fm]_[a-z0-9_]{1,31}|eleven:[A-Za-z0-9]{16,32}")   # Kokoro English, or ElevenLabs
 
 
 class EngineError(RuntimeError):
@@ -40,7 +40,7 @@ def validate_request(value: dict) -> dict:
         raise ValueError("Request must contain voice, speed and utterances")
     voice = value["voice"]
     if not isinstance(voice, str) or not ENGLISH_VOICE.fullmatch(voice):
-        raise ValueError("Voice must be an English Kokoro voice ID")
+        raise ValueError("Voice must be an English Kokoro voice ID or eleven:<voice_id>")
     speed = value["speed"]
     wrong_type = type(speed) not in (int, float)
     if wrong_type or (isinstance(speed, float) and not math.isfinite(speed)) or not 0.5 <= speed <= 2.0:
@@ -65,7 +65,33 @@ def validate_request(value: dict) -> dict:
             raise ValueError(f"Utterance text must contain 1 to {MAX_TEXT_CHARS} characters")
         if any(ord(char) < 32 and char not in "\t\n\r" for char in text):
             raise ValueError("Utterance text contains control characters")
+        # optional per-line voice (a character speaking), speaker and a respelt text for synthesis only
+        own = utterance.get("voice")
+        if own is not None and (not isinstance(own, str) or not ENGLISH_VOICE.fullmatch(own)):
+            raise ValueError(f"Utterance {identity!r}: voice must be an English Kokoro voice ID")
+        speaker = utterance.get("speaker")
+        if speaker is not None and (not isinstance(speaker, str) or not SAFE_ID.fullmatch(speaker)):
+            raise ValueError(f"Utterance {identity!r}: speaker must be a safe id")
+        mode = utterance.get("mode")
+        if mode is not None and mode not in ("say", "thought"):
+            raise ValueError(f"Utterance {identity!r}: mode must be 'say' or 'thought'")
+        own_speed = utterance.get("speed")
+        if own_speed is not None and (type(own_speed) not in (int, float) or not 0.7 <= own_speed <= 1.2):
+            raise ValueError(f"Utterance {identity!r}: speed must be a number from 0.7 to 1.2")
+        spoken = utterance.get("spoken")
+        if spoken is not None:
+            if not isinstance(spoken, str) or not spoken.strip() or len(spoken) > MAX_TEXT_CHARS:
+                raise ValueError(f"Utterance {identity!r}: spoken text must contain 1 to {MAX_TEXT_CHARS} characters")
+            # a local voice's respelling must keep the word count (its word marks are matched by
+            # position); an ElevenLabs line may carry [directions], which its alignment skips
+            if not voice_of(value, utterance).startswith("eleven:") and len(spoken.split()) != len(text.split()):
+                raise ValueError(f"Utterance {identity!r}: spoken text must respell word for word")
     return value
+
+
+def voice_of(value: dict, utterance: dict) -> str:
+    """The voice a line is spoken in: its own, else the episode's narrator voice."""
+    return utterance.get("voice") or value["voice"]
 
 
 def build_manifest(voice: str, chunks: list[dict]) -> dict:
@@ -101,18 +127,28 @@ def synthesize(request: dict, output_dir, engine) -> dict:
     value = validate_request(request)
     output_dir = Path(output_dir)
     installed = getattr(engine, "voices", None)
-    if installed is not None and value["voice"] not in installed:
-        raise ValueError(f"Voice {value['voice']!r} is not installed in the engine")
+    if installed is not None:
+        for voice in [value["voice"]] + [u["voice"] for u in value["utterances"] if u.get("voice")]:
+            if voice not in installed and not voice.startswith("eleven:"):
+                raise ValueError(f"Voice {voice!r} is not installed in the engine")
     engine_rate = getattr(engine, "sample_rate", SAMPLE_RATE)
     if engine_rate != SAMPLE_RATE:
         raise EngineError(f"Engine reports {engine_rate} Hz but {SAMPLE_RATE} Hz is required")
 
     chunks = []
     output_dir.mkdir(parents=True, exist_ok=True)
+    cloud = None
     for utterance in value["utterances"]:
         identity, text = utterance["id"], utterance["text"]
+        voice = voice_of(value, utterance)
+        speaker = engine
+        if voice.startswith("eleven:"):
+            if cloud is None:
+                cloud = eleven_engine(output_dir / "eleven-cache")
+            speaker = cloud
         try:
-            audio, sample_rate = engine.create(text, value["voice"], speed=value["speed"])
+            audio, sample_rate = speaker.create(utterance.get("spoken") or text, voice,
+                                                speed=utterance.get("speed", value["speed"]))
         except (ValueError, EngineError):
             raise
         except Exception as error:
@@ -123,8 +159,22 @@ def synthesize(request: dict, output_dir, engine) -> dict:
             raise EngineError(f"Utterance {identity!r} returned an empty waveform")
         filename = f"{identity}.wav"
         samples = write_wav(output_dir / filename, audio)
-        chunks.append({"id": identity, "file": filename, "text": text, "samples": samples})
+        align = output_dir / f"{identity}.align.json"
+        if speaker is cloud and cloud is not None and cloud.last_alignment:
+            align.write_text(json.dumps({"text": text, "alignment": cloud.last_alignment}), encoding="utf-8")
+        elif align.exists():
+            align.unlink()
+        chunk = {"id": identity, "file": filename, "text": text, "samples": samples}
+        if utterance.get("speaker"):
+            chunk.update(speaker=utterance["speaker"], voice=voice, mode=utterance.get("mode", "say"))
+        chunks.append(chunk)
     return build_manifest(value["voice"], chunks)
+
+
+def eleven_engine(cache_dir):
+    """The ElevenLabs engine (python/eleven.py); a seam tests replace."""
+    import eleven
+    return eleven.ElevenEngine(cache_dir)
 
 
 def write_manifest(manifest: dict, path: Path) -> Path:

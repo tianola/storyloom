@@ -1,0 +1,297 @@
+{
+ "mouths": [
+  "rest",
+  "closed",
+  "half",
+  "open",
+  "wide"
+ ],
+ "eyes": [
+  "open",
+  "blink",
+  "narrow"
+ ],
+ "expressions": [
+  "neutral",
+  "worried",
+  "shocked",
+  "angry",
+  "sad",
+  "smile"
+ ],
+ "bust_poses": [
+  "stand",
+  "talk",
+  "point"
+ ],
+ "characters": {
+  "explorer": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": true,
+   "role": "the guide, a fictional narrator"
+  },
+  "semmelweis": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": true,
+   "role": "Ignaz Semmelweis, assistant at the First Clinic from 1846"
+  },
+  "kolletschka": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "Jakob Kolletschka, professor of forensic medicine, his friend"
+  },
+  "student": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "a medical student"
+  },
+  "doctor": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "a senior doctor"
+  },
+  "midwife": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "a midwife of the Second Clinic"
+  },
+  "mother": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "a mother about to give birth"
+  },
+  "townsman": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "a man of the street"
+  },
+  "townswoman": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "a woman of the street"
+  },
+  "baker": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "the baker on the corner"
+  },
+  "lamplighter": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "the lamplighter on his round"
+  },
+  "guard": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "an asylum guard, 1865"
+  },
+  "semmelweis-out": {
+   "poses": [
+    "stand",
+    "talk",
+    "point",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "tip-hat",
+    "hands-head",
+    "plead",
+    "wash",
+    "drink"
+   ],
+   "bust": false,
+   "role": "Semmelweis outdoors"
+  },
+  "priest": {
+   "poses": [
+    "stand",
+    "talk",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4"
+   ],
+   "bust": false,
+   "role": "a Catholic priest carrying the viaticum to a dying patient"
+  },
+  "acolyte": {
+   "poses": [
+    "stand",
+    "talk",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "ring"
+   ],
+   "bust": false,
+   "role": "the altar boy who rings the bell before the priest"
+  },
+  "patient": {
+   "poses": [
+    "lie",
+    "lie-turn"
+   ],
+   "bust": false,
+   "role": "a woman lying in a ward bed, a billboard for the beds",
+   "bed": true
+  }
+ }
+}

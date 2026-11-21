@@ -1,0 +1,751 @@
+WEBVTT
+
+00:00:00.050 --> 00:00:01.776
+Fifty thousand times a second,
+
+00:00:01.948 --> 00:00:05.169
+a machine fires a laser at a
+falling drop of molten tin,
+
+00:00:05.342 --> 00:00:07.010
+and your phone depends on it.
+
+00:00:07.081 --> 00:00:10.695
+It sounds like a stunt, or a
+bad joke told by a physicist,
+
+00:00:10.876 --> 00:00:14.791
+but it is hard to find a manufacturing
+process that matters more.
+
+00:00:14.899 --> 00:00:18.730
+Inside every modern chip are
+enormous numbers of tiny switches,
+
+00:00:18.913 --> 00:00:22.439
+and each one has to be drawn
+with extraordinary precision.
+
+00:00:22.588 --> 00:00:24.127
+The drawing is done with light,
+
+00:00:24.276 --> 00:00:26.708
+and light has a problem:
+it is a blunt pencil.
+
+00:00:26.813 --> 00:00:30.548
+For decades the whole industry has
+been fighting that single fact,
+
+00:00:30.717 --> 00:00:33.263
+by making the pencil
+sharper again and again.
+
+00:00:33.353 --> 00:00:35.136
+This is the story of the latest,
+
+00:00:35.303 --> 00:00:39.203
+strangest sharpening, and of the
+one machine that makes it possible.
+
+00:00:39.305 --> 00:00:41.062
+Here is the strange thing about it:
+
+00:00:41.263 --> 00:00:43.722
+you will almost certainly
+never see this machine,
+
+00:00:43.873 --> 00:00:46.785
+and most people could not name
+the company that builds it.
+
+00:00:46.878 --> 00:00:49.712
+It is called extreme
+ultraviolet lithography,
+
+00:00:49.901 --> 00:00:53.868
+usually shortened to EUV, and
+it took decades to get working.
+
+00:00:53.951 --> 00:00:56.343
+To see why anyone would
+go to such lengths,
+
+00:00:56.509 --> 00:00:59.291
+we first need to see how
+a chip is actually drawn.
+
+00:00:59.369 --> 00:01:01.915
+A chip starts as a
+polished disc of silicon,
+
+00:01:02.088 --> 00:01:05.559
+coated with a thin layer of a
+material that reacts to light.
+
+00:01:05.651 --> 00:01:09.730
+A pattern is then shone onto that
+coating through a stencil called a mask,
+
+00:01:09.895 --> 00:01:12.761
+and the pattern is shrunk
+by optics on its way down.
+
+00:01:12.872 --> 00:01:15.138
+Where the light lands,
+the coating changes,
+
+00:01:15.289 --> 00:01:18.462
+and the chip maker can etch the
+shape into the silicon beneath.
+
+00:01:18.568 --> 00:01:20.236
+Then the disc is coated again,
+
+00:01:20.403 --> 00:01:22.070
+and the whole process repeats,
+
+00:01:22.237 --> 00:01:26.518
+layer after layer, until the wiring of
+a processor is built up like a city.
+
+00:01:26.632 --> 00:01:31.075
+The size of the smallest line you can draw
+depends on the wavelength of the light,
+
+00:01:31.237 --> 00:01:33.892
+the distance between one
+wave crest and the next.
+
+00:01:33.992 --> 00:01:37.942
+Long waves smear detail the way a
+thick marker smears a signature,
+
+00:01:38.122 --> 00:01:42.012
+so to draw finer lines, engineers
+kept moving to shorter waves.
+
+00:01:42.089 --> 00:01:45.274
+The answer this machine uses
+is a very short wavelength,
+
+00:01:45.445 --> 00:01:47.208
+thirteen and a half nanometres,
+
+00:01:47.379 --> 00:01:49.939
+which is the extreme
+ultraviolet of the name.
+
+00:01:50.066 --> 00:01:53.202
+That one decision, to move
+to such a short wavelength,
+
+00:01:53.370 --> 00:01:56.786
+turned a hard problem into one
+that looked almost impossible.
+
+00:01:56.873 --> 00:01:59.200
+A shorter wavelength means a finer pencil,
+
+00:01:59.366 --> 00:02:01.970
+which is the entire
+promise of this technology,
+
+00:02:02.136 --> 00:02:05.073
+and the rest of this film
+is the price of keeping it.
+
+00:02:05.191 --> 00:02:07.801
+The idea is older than most people expect.
+
+00:02:07.902 --> 00:02:11.825
+The EUV story begins in the middle
+of the nineteen-eighties in Japan,
+
+00:02:11.998 --> 00:02:16.382
+in a small research effort that most
+of the industry did not take seriously.
+
+00:02:16.468 --> 00:02:20.070
+Nobody could be sure the physics
+would ever become a factory tool,
+
+00:02:20.233 --> 00:02:22.798
+and for years it stayed
+a laboratory curiosity.
+
+00:02:22.899 --> 00:02:27.220
+American chipmakers pooled their
+effort in a group called the EUV LLC,
+
+00:02:27.405 --> 00:02:32.589
+while in Europe the Dutch company ASML joi
+ned with the German optics maker Zeiss in
+
+00:02:32.589 --> 00:02:34.379
+a consortium called EUCLIDES.
+
+00:02:34.472 --> 00:02:36.941
+It is worth pausing on
+how unusual this was,
+
+00:02:37.109 --> 00:02:39.522
+because it was not one
+company's invention.
+
+00:02:39.656 --> 00:02:41.466
+Researchers in Japan began it,
+
+00:02:41.647 --> 00:02:44.059
+American chipmakers pooled their effort,
+
+00:02:44.240 --> 00:02:47.196
+and a European consortium
+linked ASML with Zeiss.
+
+00:02:47.283 --> 00:02:49.353
+Then, in two thousand and one,
+
+00:02:49.547 --> 00:02:54.981
+ASML assigned a small group of people and
+modest resources to build a prototype EUV
+
+00:02:54.981 --> 00:02:55.468
+system.
+
+00:02:55.508 --> 00:02:58.312
+The first prototypes shipped
+in two thousand and six,
+
+00:02:58.471 --> 00:03:01.328
+and they were still a long
+way from making real chips.
+
+00:03:01.437 --> 00:03:03.366
+So in two thousand and twelve,
+
+00:03:03.558 --> 00:03:08.829
+Intel, Samsung and TSMC agreed to contribu
+te to ASML's research and development,
+
+00:03:09.022 --> 00:03:11.657
+because they needed the machine to exist.
+
+00:03:11.741 --> 00:03:15.472
+Rivals sharing the cost of one machine
+tells you how badly they needed it,
+
+00:03:15.624 --> 00:03:17.741
+and how little any of them could do alone.
+
+00:03:17.823 --> 00:03:19.575
+In two thousand and thirteen,
+
+00:03:19.756 --> 00:03:22.474
+ASML shipped its first
+EUV production system,
+
+00:03:22.655 --> 00:03:25.193
+nearly three decades after the first idea.
+
+00:03:25.288 --> 00:03:26.864
+Now we can open the machine,
+
+00:03:27.033 --> 00:03:31.480
+and the first thing to understand is
+that nature offers no easy source of this
+
+00:03:31.480 --> 00:03:31.873
+light.
+
+00:03:31.913 --> 00:03:34.007
+It is not made by any ordinary lamp,
+
+00:03:34.181 --> 00:03:36.799
+so the machine has to
+create it from scratch,
+
+00:03:36.974 --> 00:03:38.603
+with a controlled explosion.
+
+00:03:38.717 --> 00:03:39.717
+The fuel is tin.
+
+00:03:39.881 --> 00:03:42.227
+The machine ejects molten tin droplets,
+
+00:03:42.407 --> 00:03:44.753
+each about twenty-five micrometres wide,
+
+00:03:44.933 --> 00:03:48.541
+at about seventy metres per
+second through a vacuum chamber.
+
+00:03:48.648 --> 00:03:51.577
+Each droplet is a target
+narrower than a human hair,
+
+00:03:51.746 --> 00:03:53.718
+and it has to be hit exactly right.
+
+00:03:53.791 --> 00:03:57.131
+The machine drops fifty thousand
+of these droplets every second.
+
+00:03:57.235 --> 00:03:59.576
+A carbon dioxide laser hits each one,
+
+00:03:59.766 --> 00:04:01.853
+and the laser fires a dual pulse,
+
+00:04:02.043 --> 00:04:05.775
+a weaker pre-pulse first and a
+stronger main pulse after it.
+
+00:04:05.885 --> 00:04:07.495
+The result is a hot plasma,
+
+00:04:07.674 --> 00:04:12.502
+and as it blazes, it gives off the extreme
+ultraviolet light the whole machine
+
+00:04:12.502 --> 00:04:13.575
+exists to collect.
+
+00:04:13.672 --> 00:04:15.273
+The timing has to be perfect,
+
+00:04:15.439 --> 00:04:17.095
+fifty thousand times a second,
+
+00:04:17.261 --> 00:04:20.242
+with the laser aimed at a
+target that is barely there.
+
+00:04:20.359 --> 00:04:22.028
+Let us slow the whole thing down,
+
+00:04:22.180 --> 00:04:24.859
+to see what one second looks
+like inside the chamber.
+
+00:04:24.947 --> 00:04:29.685
+A droplet is ejected, travelling through
+the vacuum at about seventy metres per
+
+00:04:29.685 --> 00:04:34.017
+second, and meets a laser pulse timed
+to arrive at the very same instant.
+
+00:04:34.099 --> 00:04:35.731
+Then another droplet follows,
+
+00:04:35.900 --> 00:04:38.827
+and another, fifty thousand
+in that single second,
+
+00:04:38.996 --> 00:04:43.329
+each one a separate explosion that must
+happen in the same place as the last.
+
+00:04:43.432 --> 00:04:45.857
+And the laser is a
+machine in its own right,
+
+00:04:46.022 --> 00:04:48.502
+with four amplifying
+lasers feeding one beam.
+
+00:04:48.595 --> 00:04:51.690
+The driver laser, built by
+the German company Trumpf,
+
+00:04:51.859 --> 00:04:55.405
+has more than four hundred and
+fifty thousand individual parts.
+
+00:04:55.497 --> 00:05:00.083
+All of that, to make a flash of light
+that lasts a tiny fraction of a second and
+
+00:05:00.083 --> 00:05:00.907
+then vanishes.
+
+00:05:00.947 --> 00:05:03.328
+None of this is meant
+as a laboratory trick;
+
+00:05:03.545 --> 00:05:06.251
+the machine is built to
+run inside a chip factory,
+
+00:05:06.414 --> 00:05:08.417
+where it has to work again and again.
+
+00:05:08.500 --> 00:05:10.955
+Collecting that flash
+brings the next problem,
+
+00:05:11.115 --> 00:05:12.930
+because the light is easy to lose.
+
+00:05:13.023 --> 00:05:15.811
+At this wavelength, all
+matter absorbs the light,
+
+00:05:15.975 --> 00:05:18.983
+including air, so the machine
+has to run in a vacuum.
+
+00:05:19.091 --> 00:05:23.391
+That is also why the optical path is
+built from mirrors rather than lenses.
+
+00:05:23.496 --> 00:05:25.481
+But a mirror is not simple here either,
+
+00:05:25.633 --> 00:05:29.806
+because each one still absorbs around thir
+ty percent of the light that reaches it.
+
+00:05:29.917 --> 00:05:31.393
+To reflect anything at all,
+
+00:05:31.557 --> 00:05:36.037
+the mirrors are built from many alternatin
+g thin layers of silicon and molybdenum.
+
+00:05:36.147 --> 00:05:40.201
+The layers act together like a hall
+of mirrors at a microscopic scale,
+
+00:05:40.375 --> 00:05:43.387
+adding up many weak reflections
+into one useful one.
+
+00:05:43.497 --> 00:05:45.491
+Even so, after a chain of mirrors,
+
+00:05:45.657 --> 00:05:47.597
+much of the original light is gone.
+
+00:05:47.699 --> 00:05:50.093
+That is why the source
+has to be so violent,
+
+00:05:50.256 --> 00:05:52.649
+and why every watt of
+light matters so much.
+
+00:05:52.734 --> 00:05:54.437
+Even the stencil has to change,
+
+00:05:54.602 --> 00:05:57.514
+and this is one of the
+cleverest parts of the design.
+
+00:05:57.619 --> 00:06:02.077
+An ordinary mask lets light pass through
+its clear parts and blocks it elsewhere,
+
+00:06:02.242 --> 00:06:05.269
+but at this wavelength, all
+matter absorbs the light.
+
+00:06:05.363 --> 00:06:06.936
+So the mask is a mirror too,
+
+00:06:07.105 --> 00:06:11.093
+built from forty to fifty alternating
+layers of silicon and molybdenum.
+
+00:06:11.197 --> 00:06:14.859
+The light bounces off it, carries
+the pattern toward the silicon,
+
+00:06:15.023 --> 00:06:19.067
+and every extra reflection along the
+way costs more of the precious light.
+
+00:06:19.186 --> 00:06:20.596
+Think about what that means:
+
+00:06:20.797 --> 00:06:22.509
+the machine is a chain of mirrors,
+
+00:06:22.660 --> 00:06:24.926
+from the flash of tin
+to the disc of silicon.
+
+00:06:25.023 --> 00:06:26.288
+The mirrors have a second,
+
+00:06:26.434 --> 00:06:28.283
+quieter demand, which is smoothness.
+
+00:06:28.371 --> 00:06:33.024
+Zeiss polishes the mirror blanks to a surf
+ace roughness of about fifty picometres,
+
+00:06:33.194 --> 00:06:35.521
+a fraction of the width of a single atom.
+
+00:06:35.635 --> 00:06:38.327
+Stretch one of these mirrors
+to the area of Germany,
+
+00:06:38.482 --> 00:06:41.225
+and its tallest bump would
+stand one millimetre high.
+
+00:06:41.321 --> 00:06:46.308
+The source that reports this calls Zeiss t
+he only company on Earth that knows how to
+
+00:06:46.308 --> 00:06:47.481
+grind an EUV mirror.
+
+00:06:47.572 --> 00:06:50.591
+Any larger flaw would bend
+the light by a tiny angle,
+
+00:06:50.762 --> 00:06:54.692
+and a tiny angle at this scale
+becomes an error on the finished chip.
+
+00:06:54.771 --> 00:06:59.584
+So the machine that prints the future depe
+nds on mirrors made by a single company,
+
+00:06:59.760 --> 00:07:02.401
+polished to a degree
+that is hard to imagine.
+
+00:07:02.484 --> 00:07:05.914
+Put it together, and you can see
+how strange the whole device is.
+
+00:07:05.993 --> 00:07:07.635
+There is a droplet generator,
+
+00:07:07.805 --> 00:07:10.297
+a laser with hundreds
+of thousands of parts,
+
+00:07:10.467 --> 00:07:13.753
+a vacuum chamber, and mirrors
+of astonishing smoothness.
+
+00:07:13.853 --> 00:07:15.337
+The laser comes from Trumpf,
+
+00:07:15.496 --> 00:07:18.623
+the mirrors from Zeiss, and
+the machine itself from ASML,
+
+00:07:18.782 --> 00:07:21.643
+and the system works only
+when every one of them does.
+
+00:07:21.737 --> 00:07:27.004
+Today ASML is the only company that
+produces and sells EUV systems for chip
+
+00:07:27.004 --> 00:07:27.819
+production.
+
+00:07:27.859 --> 00:07:32.439
+Anyone who wants chips drawn with this
+light has exactly one supplier to turn to.
+
+00:07:32.531 --> 00:07:34.298
+It is a rare thing in industry,
+
+00:07:34.468 --> 00:07:36.861
+a single point that so much can depend on.
+
+00:07:36.979 --> 00:07:38.698
+Yet the story does not end there,
+
+00:07:38.855 --> 00:07:41.096
+because the lines on
+a chip keep shrinking,
+
+00:07:41.252 --> 00:07:43.389
+and even this light is getting too blunt.
+
+00:07:43.485 --> 00:07:46.856
+The next step is a machine with
+a bigger opening for the light,
+
+00:07:47.017 --> 00:07:49.745
+measured by a number called
+the numerical aperture.
+
+00:07:49.823 --> 00:07:51.897
+The first commercial high-NA tool,
+
+00:07:52.086 --> 00:07:55.228
+with a numerical aperture
+of zero point five five,
+
+00:07:55.417 --> 00:07:56.863
+was assembled at Intel.
+
+00:07:56.978 --> 00:08:01.318
+Machines of this kind cost around three
+hundred and sixty million dollars each.
+
+00:08:01.385 --> 00:08:04.975
+A larger numerical aperture lets
+the machine draw finer lines,
+
+00:08:05.148 --> 00:08:07.985
+but it makes everything
+else harder to get right.
+
+00:08:08.073 --> 00:08:10.020
+And there is a deeper limit waiting,
+
+00:08:10.182 --> 00:08:12.563
+one that no amount of
+money can polish away.
+
+00:08:12.659 --> 00:08:16.692
+EUV lithography is particularly
+sensitive to stochastic effects,
+
+00:08:16.881 --> 00:08:20.599
+which is a careful way of saying
+that chance gets involved.
+
+00:08:20.671 --> 00:08:25.021
+At these scales, each tiny patch of the
+pattern receives a limited number of
+
+00:08:25.021 --> 00:08:29.481
+particles of light, and a limited number
+fluctuates from one patch to the next.
+
+00:08:29.577 --> 00:08:31.279
+Some patches get a little too much,
+
+00:08:31.425 --> 00:08:35.413
+some a little too little, and a line that
+should be straight comes out slightly
+
+00:08:35.413 --> 00:08:35.713
+torn.
+
+00:08:35.753 --> 00:08:38.646
+Picture a light shower
+falling on a grid of tiles:
+
+00:08:38.878 --> 00:08:42.523
+no two tiles ever collect exactly
+the same number of raindrops.
+
+00:08:42.611 --> 00:08:44.019
+The more the lines shrink,
+
+00:08:44.182 --> 00:08:45.969
+the more that randomness matters,
+
+00:08:46.131 --> 00:08:47.973
+and no engineer can switch it off,
+
+00:08:48.135 --> 00:08:50.951
+because it is built into
+the nature of light itself.
+
+00:08:51.038 --> 00:08:55.104
+Engineers fight this with brighter
+sources and more sensitive coatings,
+
+00:08:55.276 --> 00:08:56.765
+but every fix has a price,
+
+00:08:56.937 --> 00:08:59.858
+in speed, in cost or in
+some other kind of error.
+
+00:08:59.975 --> 00:09:01.568
+That is the real frontier,
+
+00:09:01.752 --> 00:09:05.120
+no longer a question of better
+lenses or better lasers,
+
+00:09:05.304 --> 00:09:08.305
+but of how to draw cleanly
+with so few particles.
+
+00:09:08.382 --> 00:09:10.046
+Everything we have seen so far,
+
+00:09:10.207 --> 00:09:12.943
+the tin, the laser, the
+vacuum and the mirrors,
+
+00:09:13.104 --> 00:09:14.660
+is a way of buying one thing:
+
+00:09:14.875 --> 00:09:16.002
+a shorter wavelength.
+
+00:09:16.115 --> 00:09:18.719
+What makes the story
+gripping is the contrast:
+
+00:09:18.945 --> 00:09:21.323
+a tool so delicate that picometres matter,
+
+00:09:21.493 --> 00:09:23.305
+built to run on a factory floor.
+
+00:09:23.411 --> 00:09:27.711
+Chips made with this light trace back to
+a droplet of tin meeting a pulse of light.
+
+00:09:27.815 --> 00:09:30.924
+That is the quiet miracle
+of modern manufacturing:
+
+00:09:31.172 --> 00:09:35.275
+it hides its strangest ideas inside
+things small enough to forget.
+
+00:09:35.369 --> 00:09:37.685
+And it asks a good
+question about progress:
+
+00:09:37.900 --> 00:09:39.462
+when the physics pushes back,
+
+00:09:39.623 --> 00:09:42.209
+how far will people go
+to keep the pencil sharp?
+
+00:09:42.302 --> 00:09:44.002
+So the next time you hold a phone,
+
+00:09:44.152 --> 00:09:45.652
+think about what is inside it.
+
+00:09:45.737 --> 00:09:50.592
+A pattern drawn by light, shaped by
+mirrors polished past what seems possible,
+
+00:09:50.774 --> 00:09:54.477
+powered by tin drops exploding
+fifty thousand times a second.
+
+00:09:54.559 --> 00:09:57.969
+It took decades and a company
+most people have never heard of.
+
+00:09:58.077 --> 00:10:00.087
+And the strangest part is that it works,
+
+00:10:00.237 --> 00:10:02.397
+quietly, in a factory somewhere near you.

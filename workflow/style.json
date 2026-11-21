@@ -57,7 +57,33 @@
     "motion_slow_max": 2.0,
     "max_shot_seconds": 20.0,
     "rule": "no image holds without motion or a cut for longer than ten seconds",
+    "cuts": {
+      "detector": "ffmpeg scdet, threshold 10, on a 320-pixel-wide copy of the master",
+      "median_max_seconds": 3.5,
+      "short_seconds": 1.5,
+      "short_share_min": 0.12,
+      "held_shot_min_seconds": 20.0,
+      "known_cut_match_seconds": 0.3,
+      "sync_offset_max_seconds": 0.1,
+      "sync_basis": "2026-11-18, ask-chatgpt v4: the detected cuts landed +0.14 s after the edit's cuts in the first 80 s and +0.65 s in the last 80 s, because every per-line segment was cut with -t and rounded to whole frames on its own. Three frames at 30 fps is the bound; the fix cuts segments by their frame position on the film clock",
+      "detector_recall_min": 0.7,
+      "report_known_rhythm": false,
+      "known_cuts_basis": "2026-11-18: the edit's own cuts come from the storyboard (tools/sound_design.py plan_events). On ask-chatgpt's first story cut the detector found 33 of 47 real cuts within 0.7 s; below 70% the rhythm reading is flagged as an undercount. Advice, not a gate: the gate keeps the detector so it stays comparable with the reference films",
+      "basis": "house style — measured with this detector on six reference films (fern x3, Veritasium x3): median shot 1.48-3.25 s, 17-51% of shots under 1.5 s, longest held shot 53-228 s. The rejected ask-chatgpt cut: median 5.53 s, 7% short. Uniform pacing is a slop tell (docs/research/fern-archive-blend.md section 4); the references are bimodal, quick montage plus long explanatory moves. docs/research/story-not-slides.md"
+    },
     "motion_scale": "mean absolute greyscale difference between frames one second apart, measured on the graded master by tools/qc_episode.py. Calibrated 2026-11-10 on all 32 Artemis II shots: the still population (both cards, both manim shots) measures 0.618-0.937 and every 3D camera move measures 1.685 or more, so 1.3 sits in the empty band between them. look_pass adds film grain, which is why a frozen frame scores 0.62 rather than 0. The slow band ends at 2.0 because the next gap in the same distribution is 1.766 to 2.580."
+  },
+
+  "storyboard": {
+    "why": "The rejected ask-chatgpt cut put 60 pieces of text on screen in under nine minutes of 3D (30 labels, 27 HUD lines, 3 counters, 6.8 a minute) and four bar-chart beats. In the six reference films text is rare: fern shows chapter cards and the odd place or date, Veritasium a few labels inside an animation and big numbers set into footage. Charts flash for about a second (fern's Coca-Cola revenue bars: 1.0 s and 2.4 s) instead of carrying a beat. docs/research/story-not-slides.md",
+    "text_per_minute_max": 2.0,
+    "text_per_minute_basis": "house style — labels + HUD lines + counters per minute of 3D screen time; a third of the rejected cut's 6.8",
+    "chart_scenes": ["bar-chart", "compare", "line-chart", "presenter-screen"],
+    "chart_beats_max": 1,
+    "chart_beats_basis": "house style — at most one beat in a film may be a chart; a number that matters gets a picture or a gag instead",
+    "montage_beats_min": 1,
+    "travel_beats_min_share": 0.4,
+    "cut_basis": "house style — the reference films are bimodal: median shot 1.3-3.2 s (montage) with held explanatory moves of 34-169 s; the rejected cut was uniform (median 5.4 s, longest 15.6 s). A storyboard needs both kinds"
   },
 
   "canvas": {
@@ -73,11 +99,34 @@
     "loudness_tolerance_lu": 1.0,
     "true_peak_max_dbfs": -1.0,
     "encode_true_peak_headroom_db": 0.5,
+    "aac_bitrate": "384k",
+    "why_aac_384k": "2026-11-16, euv-machine: the delivery filter landed the PCM at -1.5 dBFS true peak, and ffmpeg's native aac at 192k turned one transient at 608.2 s into +1.9 dBFS, 3.4 dB of codec overshoot that no headroom can budget for. The same PCM measured -1.4 at 320k and -1.5 at 384k, and 384 kbps stereo is the AAC-LC rate YouTube recommends for upload, so the master is encoded there",
     "loudness_range_lu": 11.0,
     "channels_min": 2,
     "sample_rate_min": 48000,
-    "music_under_voice_db": -10.0,
+    "music_under_voice_db": -9.0,
+    "why_minus_9": "2026-11-16, euv-machine: a denser narration (p5 momentary -31.6 LUFS against the-light-machine's -32.8) leaves shorter gaps, and at -10 the bed lifted the floor between the words by only +1.9 dB against the 2.0 dB bound, so on a fast read it was barely there. One dB more keeps it well under the voice and audible in the gaps",
     "music_floor_lift_min_db": 2.0,
+    "ducking": {"lift_db": 5.0, "threshold": 0.03, "ratio": 2.5, "attack_ms": 40, "release_ms": 300, "knee": 3,
+                "basis": "2026-11-18, improvement 4 of docs/research/other-video-pipelines.md: editors duck music under dialogue (DaVinci Resolve, Audition auto-ducking). The bed is lifted 5 dB and keyed down by the narration in numpy (music_bed.duck_gain; ffmpeg's sidechaincompress gave a different file every run). Measured on ask-chatgpt, first 300 s in 100 ms windows: flat bed -35.8 dB under speech and -35.6 in pauses; ducked -36.0 under speech and -31.4 in pauses, so the words keep their distance and the pauses gain 4.2 dB"},
+    "thought": {"gain_db": -4.0, "lowpass_hz": 6000, "slap_ms": 35, "slap_db": -18.0,
+                "why": "an inner-voice line ([name:thought]) must read as inside the head, not as a second person talking: 4 dB under the levelled sentence, the top rolled off above 6 kHz (a close, soft, slightly muffled voice) and one very quiet 35 ms slap for a room around it. Subtle on purpose, the words must stay as clear as the narrator's (staging.md section 7)"},
+    "sound_design": {
+      "why": "2026-11-18, ask-chatgpt: the owner compared the cut with Fern and Veritasium and the track was one quiet sweep per beat change, 24 dB under the voice. The reference films lay a hit on every cut, air under every camera move, a sound on every part that switches on and a room tone for every place; tools/sound_design.py reads all of these off the storyboard",
+      "levels_db_under_voice": {"hit": 2.0, "whoosh": 3.0, "thud": 2.0, "travel": 6.0, "action": 5.0,
+                                "room": 21.0, "riser": 3.0, "boom": 1.0},
+      "levels_basis": "house style: each sound's peak (rooms: their RMS) in dB under the voice's RMS. A 0.3 s knock at full peak carries about 12 dB less energy than its peak, so a hit 2 dB under the voice's RMS is heard about 14 LU under the voice; the first try at 15 dB put the whole effects track 28 LU under the voice, inaudible under a bed 9 LU down",
+      "effects_under_voice_lu": [14.0, 24.0],
+      "room_trim_db": {"hum": 0.0, "flow": 0.0, "air": -2.0, "data": -3.0, "room": -4.0},
+      "rooms": {"_default": "room", "_archive": "room",
+                "server-racks": "hum", "gpu-rack": "hum", "hbm-stack": "hum", "heat-loop": "flow",
+                "fiber-trip": "air", "scale-compare": "air", "token-stream": "data", "tokenizer": "data",
+                "model-layers": "data", "experts": "data", "embedding-space": "data", "bit-width": "data",
+                "wire-trip": "data", "batching": "room", "chip-factory": "room", "document": "room"},
+      "reversal_music_drop_seconds": 3.0,
+      "reverb": {"rt60_s": 0.7, "predelay_ms": 18, "wet": 0.35,
+                 "basis": "house style: a short synthetic room (0.7 s decay) under the hits, air and pops, so they sit in a space instead of on top of the picture; rooms stay dry. Improvement 4 of docs/research/other-video-pipelines.md"}
+    },
     "rule": "the platform normalises to -14 LUFS, so a quiet master is turned up by the platform and a loud one is turned down; ship at the target and the viewer hears what was mixed",
     "measured_on_artemis_ii": "-25.3 LUFS integrated, -3.4 dBFS true peak, mono 24 kHz — 11.3 LU under target, which is why this section exists",
     "why_not_a_plain_gain": "the measured +11.3 dB needed to reach target would have taken the -3.4 dBFS true peak to +7.9 dBFS, which clips; two-pass loudnorm with linear=true reaches the target and limits only where the ceiling demands it",
@@ -90,7 +139,9 @@
     "duration_tolerance_seconds": 2.0,
     "captions_required": true,
     "licence_required_keys": ["id", "provider", "license", "url", "file"],
-    "rule": "an episode is finished when the gate prints no errors, not when the render exits zero"
+    "rule": "an episode is finished when the gate prints no errors, not when the render exits zero",
+    "empty_shots": {"edge_step": 0.04, "edge_share_min": 0.02,
+                    "basis": "2026-11-18, ask-chatgpt v4, the middle frame of each of 141 shots at 320 px: median 11% of the picture carries an edge; the shots a reviewer called empty (a black screen, a phone alone in the dark, a dim screen) were 0.6-1.8%, and everything from 3% up had a subject. Advice, not a gate, until another episode calibrates it (improvement 2 of docs/research/other-video-pipelines.md)"}
   },
 
   "voice": {
@@ -98,7 +149,8 @@
     "voice": "af_heart",
     "sample_rate": 24000,
     "speed": 1,
-    "rule": "one voice for every episode; the API key stays in the environment, never in this file"
+    "rule": "one narrator voice for every episode; the API key stays in the environment, never in this file",
+    "characters": "characters who speak in their own voice (a `[name]` or `[name:thought]` line in narration.md) are cast per episode in script/cast.json with an installed English Kokoro voice or an ElevenLabs voice (`eleven:<voice_id>`, key in ELEVENLABS_API_KEY or the git-ignored .env.local; every line is cached in vo/eleven-cache so a re-run costs no credits); names the voice misreads are respelt for synthesis only in script/pronounce.json; every such line is declared in script/dramatisation.json (basis: verified claims, note: what is imagined)"
   },
 
   "script": {
@@ -112,7 +164,41 @@
     "chapter_min": 3,
     "chapter_seconds": [45, 240],
     "sensitive_terms": ["marriage", "divorce", "personal life", "affair", "lawsuit", "arrest", "health", "illness", "death", "scandal"],
-    "rule": "tools/qc_script.py runs before narration is synthesised: a script that is too short, opens slowly, has no chapters, carries a line no source stands behind, or writes numbers a voice cannot read never reaches the renderer"
+    "rule": "tools/qc_script.py runs before narration is synthesised: a script that is too short, opens slowly, has no chapters, carries a line no source stands behind, or writes numbers a voice cannot read never reaches the renderer",
+
+    "story": {
+      "why": "The owner rejected the ask-chatgpt cut as a presentation. Measured on six reference films (fern: Coca-Cola Freestyle, Secret Service, modern cars; Veritasium: fiber optics, Google Maps, jet engines; docs/research/story-not-slides.md) with the same regexes as here: they turn the story (but, problem, turns out...) 1.5-3.1 times a minute, ask 0.35-0.73 questions a minute, put numbers in 16-32% of sentences and never more than 6 numeric sentences in a row. The rejected cut: 0.9 turns, 0.27 questions, 47% numeric, a run of 10. A script reads as a fact list when numbers outrun problems.",
+      "numeric_sentence_share_max": 0.32,
+      "numeric_sentence_share_basis": "house style — the highest reference value (Google Maps, 32%)",
+      "numeric_run_max": 6,
+      "numeric_run_warn": 4,
+      "numeric_run_basis": "house style — reference maxima 2-6 consecutive sentences carrying a number",
+      "turns_per_minute_min": 1.4,
+      "turns_per_minute_basis": "house style — reference minimum 1.47 (Secret Service)",
+      "turn_words": ["but", "yet", "however", "except", "problem", "instead", "turns out", "wrong", "actually", "until", "unfortunately", "impossible", "failed", "fail"],
+      "questions_per_minute_min": 0.35,
+      "questions_per_minute_basis": "house style — reference minimum 0.35 (fiber optics, Coca-Cola)",
+      "story_file": "script/story.json",
+      "story_file_doc": "{\"question\": \"u006\", \"payoff\": \"u137\", \"follow\": \"cat\", \"guess\": \"u008\", \"reversal\": \"u052\", \"hook\": {\"kind\": \"mystery\", \"image\": \"a pulse of light filmed racing around a coil of fibre\"}, \"people\": [{\"name\": \"Charles Kao\", \"line\": \"u016\"}]} — the open question the film owes the viewer, the line that pays it off, the wrong explanation a viewer would assume and the line that breaks it, who or what the viewer follows, and the real people whose decisions move the story",
+      "question_by_seconds": 30,
+      "question_by_seconds_basis": "YouTube's Intro retention segment is the first 30 s (docs/research/fern-archive-blend.md section 3)",
+      "payoff_after_fraction": 0.8,
+      "follow_chapter_share_min": 0.6,
+      "people_min": 2,
+      "people_basis": "house style — every reference film moves through named people (Kao, Maurer, Keck; Dijkstra; Clint Hill; the Coca-Cola spreadsheet analyst); the rejected cut had none",
+      "hook": {
+        "kinds": ["shock", "mystery", "contradiction", "stakes"],
+        "soft_openers": ["in this video", "today", "have you ever", "ever wondered", "welcome", "hi", "hello",
+                         "let's talk", "let us talk", "let's take a look", "so"],
+        "gap_words": ["but", "yet", "still", "nobody", "no one", "never", "even though", "and yet", "impossible"],
+        "gap_by_seconds": 20,
+        "why": "2026-11-18, the owner: the start has to be shocking, interesting or a mystery, something that pulls the viewer in. The first 30 s are YouTube's intro retention segment (docs/research/fern-archive-blend.md section 3); the earlier opening ('You ask ChatGPT why your cat sounds like a carburettor...') was a mild scene-setter",
+        "basis": "house style; the gap rule reuses the turn words measured on the reference films"
+      },
+      "guess_by_fraction": 0.2,
+      "reversal_window": [0.25, 0.7],
+      "turn_basis": "house style, not measured on the reference films — Derek Muller's PhD work (University of Sydney, 2008), on which Veritasium is built, found that science videos which first state the common wrong explanation and then refute it teach more than clear expositions; the second ask-chatgpt cut gave its answer in line 5 of 127, so the midpoint 'actually, no' broke nothing the viewer believed"
+    }
   },
 
   "cadence": {
@@ -148,6 +234,15 @@
       "forbidden": "an archival clip used merely to avoid shooting or building the equivalent shot (fair-use standard and editor craft converge on this from opposite directions)"
     },
 
+    "evidence": {
+      "rule": "an archival record shows one specific, named thing (a person, an event, a product model, a document, a named place) and may only play under a line that names it. A clip of 'a data centre' under a line about data centres is illustration, not evidence, and is what the owner rejected as AI slop",
+      "depicts_field": "depicts",
+      "depicts_doc": "list of the names the clip is evidence of, as the narration says them (e.g. [\"Abilene\"], [\"GB200 NVL72\"], [\"Charles Kao\"]); matched case-insensitively against the line text",
+      "generic_terms": ["data centre", "data center", "server", "servers", "rack", "racks", "cable", "cables", "fibre", "fiber", "chip", "chips", "computer", "keyboard", "typing", "laptop", "phone", "cooling", "chiller", "chillers", "pipes", "hall", "warehouse", "network", "light", "laser", "memory", "processor", "gpu", "tower", "water", "office", "city", "people"],
+      "generic_terms_why": "nouns that name a category rather than a thing; a depicts list made only of these is stock footage by definition",
+      "min_name_chars": 3
+    },
+
     "episode_profile": {
       "why": "The archival layer is part of the house style from here on, for every episode, so the obligation is stated as data the build reads rather than a habit someone has to remember. Before this block the layer was a capability an episode could fall out of without anything noticing: tools/assemble_episode.py, tools/qc_episode.py and workflow/init_episode.py each carry no reference to it, and an archive.json sitting in an episode directory was the only thing that made the layer exist.",
       "mode": "warn",
@@ -162,10 +257,10 @@
         "layers_why": "the visual taxonomy as contract data. The render queue, the canvas test and the QC gate read this list, so a fifth kind becomes one edit here instead of four tuples that can quietly disagree about what the film is made of.",
         "measured_on": "screen seconds summed per layer, from shots.json against the vo/manifest.json clock",
         "measured_on_basis": "house style — a share in shot counts is carried by one-second inserts laid over long beats, which is the failure the reference cut-ups do not have; seconds are what the viewer actually receives",
-        "min_share": { "3d": 0.0, "manim": 0.0, "cards": 0.0, "archive": 0.20,
-                       "basis": "house style — no archive-documentation body publishes a source share, so 20% of screen time is a taste decision, stated as a floor and open to revision from the first archival episode's distribution" },
-        "min_per_act": { "3d": 0, "manim": 0, "cards": 0, "archive": 1,
-                         "basis": "house style — one archival shot per act is what keeps the layer a voice in every part of the argument rather than a texture dump in the first two minutes" },
+        "min_share": { "3d": 0.0, "manim": 0.0, "cards": 0.0, "archive": 0.0,
+                       "basis": "house style — owner decision 2026-11-17 after the ask-chatgpt cut: a share floor made the planner fill 20% of the film with generic data-centre clips, which the owner called random and AI slop. Measured on fern and Veritasium (docs/research/story-not-slides.md): their archive is always the specific thing the line names (the real shooting, the real ad, the real Corning lab), so the amount follows the evidence there is, not a quota. No floor; archive.evidence decides which clips may appear at all" },
+        "min_per_act": { "3d": 0, "manim": 0, "cards": 0, "archive": 0,
+                         "basis": "house style — same decision: a per-act quota is the same padding pressure spread thinner" },
         "act_seconds": [180.0, 300.0],
         "act_seconds_basis": "house style — an act is a three-to-five-minute span; the rhythm section bounds a single shot, not a structure, so the partition is ours",
         "act_rule": "a shot belongs to the act its start falls in; the last act may run short rather than leave a tail unmetered"

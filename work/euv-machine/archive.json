@@ -1,0 +1,366 @@
+{
+ "sun-171": {
+  "asset": "assets/archive/sun-171.mp4",
+  "licence": "arch-001",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 30.0
+ },
+ "chip-die-b": {
+  "asset": "assets/archive/chip-die-b.mp4",
+  "licence": "arch-002",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 30.0
+ },
+ "wafer-ibm": {
+  "asset": "assets/archive/ibm-wafer.mp4",
+  "licence": "arch-003",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "euv-tool": {
+  "asset": "assets/archive/euv-tool.jpg",
+  "licence": "arch-004",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "chip-die": {
+  "asset": "assets/archive/chip-die.mp4",
+  "licence": "arch-005",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 30.0
+ },
+ "cleanroom": {
+  "asset": "assets/archive/cleanroom.jpg",
+  "licence": "arch-006",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "st-wafer": {
+  "asset": "assets/archive/st-wafer.mp4",
+  "licence": "arch-007",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "native_fps": 25.0,
+  "motion_mode": "retime_to_natural"
+ },
+ "ucl-litho": {
+  "asset": "assets/archive/ucl-litho.jpg",
+  "licence": "arch-008",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "ucl-scientist": {
+  "asset": "assets/archive/ucl-scientist.jpg",
+  "licence": "arch-009",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_person",
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "mercury-lamp": {
+  "asset": "assets/archive/mercury-lamp.jpg",
+  "licence": "arch-010",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "period_look",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "zeiss-otus": {
+  "asset": "assets/archive/zeiss-otus.jpg",
+  "licence": "arch-011",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "asml-lens": {
+  "asset": "assets/archive/asml-lens.jpg",
+  "licence": "arch-012",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "asml-8tower": {
+  "asset": "assets/archive/asml-8tower.jpg",
+  "licence": "arch-013",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "co2-laser": {
+  "asset": "assets/archive/co2-laser.jpg",
+  "licence": "arch-014",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "laser-cut": {
+  "asset": "assets/archive/laser-cut.mp4",
+  "licence": "arch-015",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "filmed_event",
+  "native_fps": 30.0
+ },
+ "tsmc-fab6": {
+  "asset": "assets/archive/tsmc-fab6.jpg",
+  "licence": "arch-016",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "vacuum-chamber": {
+  "asset": "assets/archive/vacuum-chamber.mp4",
+  "licence": "arch-017",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "soap-film": {
+  "asset": "assets/archive/soap-film.jpg",
+  "licence": "arch-018",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "filmed_event",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "mirror-grind": {
+  "asset": "assets/archive/mirror-grind.mp4",
+  "licence": "arch-019",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 25.0,
+  "motion_mode": "retime_to_natural"
+ },
+ "gold-mirror": {
+  "asset": "assets/archive/gold-mirror.mp4",
+  "licence": "arch-020",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "zeiss-oberkochen": {
+  "asset": "assets/archive/zeiss-oberkochen.jpg",
+  "licence": "arch-021",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "ibm-ray-a": {
+  "asset": "assets/archive/ibm-ray-a.mp4",
+  "licence": "arch-022",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "ibm-mask-a": {
+  "asset": "assets/archive/ibm-mask-a.mp4",
+  "licence": "arch-023",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "ibm-ray-c": {
+  "asset": "assets/archive/ibm-ray-c.mp4",
+  "licence": "arch-024",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "ibm-mask-b": {
+  "asset": "assets/archive/ibm-mask-b.mp4",
+  "licence": "arch-025",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "instrument_footage",
+  "native_fps": 29.97
+ },
+ "st-backend": {
+  "asset": "assets/archive/st-backend.mp4",
+  "licence": "arch-026",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "native_fps": 25.0,
+  "motion_mode": "retime_to_natural"
+ },
+ "raindrops": {
+  "asset": "assets/archive/raindrops.mp4",
+  "licence": "arch-027",
+  "form": "clip",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "filmed_event",
+  "native_fps": 23.976,
+  "motion_mode": "retime_to_natural"
+ },
+ "intel-d1x": {
+  "asset": "assets/archive/intel-d1x.png",
+  "licence": "arch-028",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "asml-hq": {
+  "asset": "assets/archive/asml-hq.jpg",
+  "licence": "arch-029",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": 1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ },
+ "tainan-temple": {
+  "asset": "assets/archive/tainan-temple.jpg",
+  "licence": "arch-030",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_place",
+  "still_move": {
+   "pan_deg": -1.5,
+   "zoom_from": 1.03,
+   "zoom_to": 1.16
+  }
+ }
+}

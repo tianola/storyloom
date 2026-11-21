@@ -1,0 +1,560 @@
+{
+ "u001": {
+  "before_lufs": -23.33,
+  "gain_db": 0.82
+ },
+ "u002": {
+  "before_lufs": -22.38,
+  "gain_db": -0.13
+ },
+ "u003": {
+  "before_lufs": -22.33,
+  "gain_db": -0.18
+ },
+ "u004": {
+  "before_lufs": -21.48,
+  "gain_db": -1.03
+ },
+ "u005": {
+  "before_lufs": -22.56,
+  "gain_db": 0.05
+ },
+ "u006": {
+  "before_lufs": -22.84,
+  "gain_db": 0.33
+ },
+ "u007": {
+  "before_lufs": -22.8,
+  "gain_db": 0.29
+ },
+ "u008": {
+  "before_lufs": -22.5,
+  "gain_db": -0.01
+ },
+ "u009": {
+  "before_lufs": -22.67,
+  "gain_db": 0.16
+ },
+ "u010": {
+  "before_lufs": -22.47,
+  "gain_db": -0.04
+ },
+ "u011": {
+  "before_lufs": -22.58,
+  "gain_db": 0.07
+ },
+ "u012": {
+  "before_lufs": -22.65,
+  "gain_db": 0.14
+ },
+ "u013": {
+  "before_lufs": -22.57,
+  "gain_db": 0.06
+ },
+ "u014": {
+  "before_lufs": -22.59,
+  "gain_db": 0.08
+ },
+ "u015": {
+  "before_lufs": -22.88,
+  "gain_db": 0.37
+ },
+ "u016": {
+  "before_lufs": -23.2,
+  "gain_db": 0.69
+ },
+ "u017": {
+  "before_lufs": -23.07,
+  "gain_db": 0.56
+ },
+ "u018": {
+  "before_lufs": -21.76,
+  "gain_db": -0.75
+ },
+ "u019": {
+  "before_lufs": -23.28,
+  "gain_db": 0.77
+ },
+ "u020": {
+  "before_lufs": -22.2,
+  "gain_db": -0.31
+ },
+ "u021": {
+  "before_lufs": -22.78,
+  "gain_db": 0.27
+ },
+ "u022": {
+  "before_lufs": -22.42,
+  "gain_db": -0.09
+ },
+ "u023": {
+  "before_lufs": -22.7,
+  "gain_db": 0.19
+ },
+ "u024": {
+  "before_lufs": -22.42,
+  "gain_db": -0.09
+ },
+ "u025": {
+  "before_lufs": -22.12,
+  "gain_db": -0.39
+ },
+ "u026": {
+  "before_lufs": -23.0,
+  "gain_db": 0.49
+ },
+ "u027": {
+  "before_lufs": -22.42,
+  "gain_db": -0.09
+ },
+ "u028": {
+  "before_lufs": -22.13,
+  "gain_db": -0.38
+ },
+ "u029": {
+  "before_lufs": -22.68,
+  "gain_db": 0.17
+ },
+ "u030": {
+  "before_lufs": -22.03,
+  "gain_db": -0.48
+ },
+ "u031": {
+  "before_lufs": -22.27,
+  "gain_db": -0.24
+ },
+ "u032": {
+  "before_lufs": -22.51,
+  "gain_db": 0.0
+ },
+ "u033": {
+  "before_lufs": -22.04,
+  "gain_db": -0.47
+ },
+ "u034": {
+  "before_lufs": -23.28,
+  "gain_db": 0.77
+ },
+ "u035": {
+  "before_lufs": -22.25,
+  "gain_db": -0.26
+ },
+ "u036": {
+  "before_lufs": -23.15,
+  "gain_db": 0.64
+ },
+ "u037": {
+  "before_lufs": -22.13,
+  "gain_db": -0.38
+ },
+ "u038": {
+  "before_lufs": -22.83,
+  "gain_db": 0.32
+ },
+ "u039": {
+  "before_lufs": -22.52,
+  "gain_db": 0.01
+ },
+ "u040": {
+  "before_lufs": -22.84,
+  "gain_db": 0.33
+ },
+ "u041": {
+  "before_lufs": -22.77,
+  "gain_db": 0.26
+ },
+ "u042": {
+  "before_lufs": -22.56,
+  "gain_db": 0.05
+ },
+ "u043": {
+  "before_lufs": -22.78,
+  "gain_db": 0.27
+ },
+ "u044": {
+  "before_lufs": -22.27,
+  "gain_db": -0.24
+ },
+ "u045": {
+  "before_lufs": -22.24,
+  "gain_db": -0.27
+ },
+ "u046": {
+  "before_lufs": -22.55,
+  "gain_db": 0.04
+ },
+ "u047": {
+  "before_lufs": -23.01,
+  "gain_db": 0.5
+ },
+ "u048": {
+  "before_lufs": -22.97,
+  "gain_db": 0.46
+ },
+ "u049": {
+  "before_lufs": -22.42,
+  "gain_db": -0.09
+ },
+ "u050": {
+  "before_lufs": -22.22,
+  "gain_db": -0.29
+ },
+ "u051": {
+  "before_lufs": -22.64,
+  "gain_db": 0.13
+ },
+ "u052": {
+  "before_lufs": -22.41,
+  "gain_db": -0.1
+ },
+ "u053": {
+  "before_lufs": -22.37,
+  "gain_db": -0.14
+ },
+ "u054": {
+  "before_lufs": -21.9,
+  "gain_db": -0.61
+ },
+ "u055": {
+  "before_lufs": -22.76,
+  "gain_db": 0.25
+ },
+ "u056": {
+  "before_lufs": -22.53,
+  "gain_db": 0.02
+ },
+ "u057": {
+  "before_lufs": -22.54,
+  "gain_db": 0.03
+ },
+ "u058": {
+  "before_lufs": -22.18,
+  "gain_db": -0.33
+ },
+ "u059": {
+  "before_lufs": -22.55,
+  "gain_db": 0.04
+ },
+ "u060": {
+  "before_lufs": -22.37,
+  "gain_db": -0.14
+ },
+ "u061": {
+  "before_lufs": -21.99,
+  "gain_db": -0.52
+ },
+ "u062": {
+  "before_lufs": -22.49,
+  "gain_db": -0.02
+ },
+ "u063": {
+  "before_lufs": -22.74,
+  "gain_db": 0.23
+ },
+ "u064": {
+  "before_lufs": -22.12,
+  "gain_db": -0.39
+ },
+ "u065": {
+  "before_lufs": -22.41,
+  "gain_db": -0.1
+ },
+ "u066": {
+  "before_lufs": -22.37,
+  "gain_db": -0.14
+ },
+ "u067": {
+  "before_lufs": -22.1,
+  "gain_db": -0.41
+ },
+ "u068": {
+  "before_lufs": -22.49,
+  "gain_db": -0.02
+ },
+ "u069": {
+  "before_lufs": -22.69,
+  "gain_db": 0.18
+ },
+ "u070": {
+  "before_lufs": -22.16,
+  "gain_db": -0.35
+ },
+ "u071": {
+  "before_lufs": -22.52,
+  "gain_db": 0.01
+ },
+ "u072": {
+  "before_lufs": -22.26,
+  "gain_db": -0.25
+ },
+ "u073": {
+  "before_lufs": -22.96,
+  "gain_db": 0.45
+ },
+ "u074": {
+  "before_lufs": -22.14,
+  "gain_db": -0.37
+ },
+ "u075": {
+  "before_lufs": -23.24,
+  "gain_db": 0.73
+ },
+ "u076": {
+  "before_lufs": -22.67,
+  "gain_db": 0.16
+ },
+ "u077": {
+  "before_lufs": -22.75,
+  "gain_db": 0.24
+ },
+ "u078": {
+  "before_lufs": -22.45,
+  "gain_db": -0.06
+ },
+ "u079": {
+  "before_lufs": -22.53,
+  "gain_db": 0.02
+ },
+ "u080": {
+  "before_lufs": -22.38,
+  "gain_db": -0.13
+ },
+ "u081": {
+  "before_lufs": -22.14,
+  "gain_db": -0.37
+ },
+ "u082": {
+  "before_lufs": -22.52,
+  "gain_db": 0.01
+ },
+ "u083": {
+  "before_lufs": -22.69,
+  "gain_db": 0.18
+ },
+ "u084": {
+  "before_lufs": -23.29,
+  "gain_db": 0.78
+ },
+ "u085": {
+  "before_lufs": -22.44,
+  "gain_db": -0.07
+ },
+ "u086": {
+  "before_lufs": -22.42,
+  "gain_db": -0.09
+ },
+ "u087": {
+  "before_lufs": -22.36,
+  "gain_db": -0.15
+ },
+ "u088": {
+  "before_lufs": -22.94,
+  "gain_db": 0.43
+ },
+ "u089": {
+  "before_lufs": -22.71,
+  "gain_db": 0.2
+ },
+ "u090": {
+  "before_lufs": -23.07,
+  "gain_db": 0.56
+ },
+ "u091": {
+  "before_lufs": -22.71,
+  "gain_db": 0.2
+ },
+ "u092": {
+  "before_lufs": -22.29,
+  "gain_db": -0.22
+ },
+ "u093": {
+  "before_lufs": -23.07,
+  "gain_db": 0.56
+ },
+ "u094": {
+  "before_lufs": -22.83,
+  "gain_db": 0.32
+ },
+ "u095": {
+  "before_lufs": -22.61,
+  "gain_db": 0.1
+ },
+ "u096": {
+  "before_lufs": -22.12,
+  "gain_db": -0.39
+ },
+ "u097": {
+  "before_lufs": -22.69,
+  "gain_db": 0.18
+ },
+ "u098": {
+  "before_lufs": -22.68,
+  "gain_db": 0.17
+ },
+ "u099": {
+  "before_lufs": -22.43,
+  "gain_db": -0.08
+ },
+ "u100": {
+  "before_lufs": -22.22,
+  "gain_db": -0.29
+ },
+ "u101": {
+  "before_lufs": -22.5,
+  "gain_db": -0.01
+ },
+ "u102": {
+  "before_lufs": -21.73,
+  "gain_db": -0.78
+ },
+ "u103": {
+  "before_lufs": -22.38,
+  "gain_db": -0.13
+ },
+ "u104": {
+  "before_lufs": -23.19,
+  "gain_db": 0.68
+ },
+ "u105": {
+  "before_lufs": -22.4,
+  "gain_db": -0.11
+ },
+ "u106": {
+  "before_lufs": -22.18,
+  "gain_db": -0.33
+ },
+ "u107": {
+  "before_lufs": -22.22,
+  "gain_db": -0.29
+ },
+ "u108": {
+  "before_lufs": -22.37,
+  "gain_db": -0.14
+ },
+ "u109": {
+  "before_lufs": -22.55,
+  "gain_db": 0.04
+ },
+ "u110": {
+  "before_lufs": -22.16,
+  "gain_db": -0.35
+ },
+ "u111": {
+  "before_lufs": -23.3,
+  "gain_db": 0.79
+ },
+ "u112": {
+  "before_lufs": -22.72,
+  "gain_db": 0.21
+ },
+ "u113": {
+  "before_lufs": -22.45,
+  "gain_db": -0.06
+ },
+ "u114": {
+  "before_lufs": -22.13,
+  "gain_db": -0.38
+ },
+ "u115": {
+  "before_lufs": -22.33,
+  "gain_db": -0.18
+ },
+ "u116": {
+  "before_lufs": -23.48,
+  "gain_db": 0.97
+ },
+ "u117": {
+  "before_lufs": -22.6,
+  "gain_db": 0.09
+ },
+ "u118": {
+  "before_lufs": -21.35,
+  "gain_db": -1.16
+ },
+ "u119": {
+  "before_lufs": -22.43,
+  "gain_db": -0.08
+ },
+ "u120": {
+  "before_lufs": -22.83,
+  "gain_db": 0.32
+ },
+ "u121": {
+  "before_lufs": -22.63,
+  "gain_db": 0.12
+ },
+ "u122": {
+  "before_lufs": -22.08,
+  "gain_db": -0.43
+ },
+ "u123": {
+  "before_lufs": -23.17,
+  "gain_db": 0.66
+ },
+ "u124": {
+  "before_lufs": -21.94,
+  "gain_db": -0.57
+ },
+ "u125": {
+  "before_lufs": -22.65,
+  "gain_db": 0.14
+ },
+ "u126": {
+  "before_lufs": -22.03,
+  "gain_db": -0.48
+ },
+ "u127": {
+  "before_lufs": -22.07,
+  "gain_db": -0.44
+ },
+ "_ride": {
+  "cuts": [
+   52.096,
+   58.090666666666664,
+   69.52533333333334,
+   74.944,
+   272.04266666666666,
+   276.13866666666667,
+   334.99733333333336,
+   339.22133333333335,
+   384.68266666666665,
+   395.8826666666667,
+   440.192,
+   445.0346666666667,
+   504.68266666666665,
+   515.3066666666666,
+   558.592,
+   565.7386666666666
+  ],
+  "deltas_lu": [
+   1.1,
+   1.8,
+   1.6,
+   1.2,
+   1.5,
+   1.2,
+   -0.5,
+   1.2,
+   1.2,
+   1.4,
+   1.1,
+   1.8,
+   1.3,
+   1.7,
+   1.3,
+   1.6
+  ]
+ },
+ "_sound": {
+  "cuts": 140,
+  "travels": 35,
+  "actions": 43,
+  "reversal": 248.55466666666666,
+  "music_drops": [
+   [
+    247.15466666666666,
+    251.55466666666666
+   ]
+  ]
+ }
+}

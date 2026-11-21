@@ -1,0 +1,641 @@
+{
+ "voice": "af_heart",
+ "speed": 1.0,
+ "utterances": [
+  {
+   "id": "u001",
+   "file": "u001.wav",
+   "text": "In a factory in Taiwan, a drop of molten tin is flying through a vacuum at two hundred and fifty kilometres an hour."
+  },
+  {
+   "id": "u002",
+   "file": "u002.wav",
+   "text": "It is about thirty micrometres wide, smaller than the width of a human hair."
+  },
+  {
+   "id": "u003",
+   "file": "u003.wav",
+   "text": "A laser pulse hits it and squashes it flat, like a pancake."
+  },
+  {
+   "id": "u004",
+   "file": "u004.wav",
+   "text": "A moment later, a far stronger pulse hits the pancake and turns it into plasma, about forty times hotter than the surface of the Sun."
+  },
+  {
+   "id": "u005",
+   "file": "u005.wav",
+   "text": "For an instant, that plasma glows with a kind of light that barely exists on Earth."
+  },
+  {
+   "id": "u006",
+   "file": "u006.wav",
+   "text": "Then the next drop arrives, and the whole thing happens again, fifty thousand times every second."
+  },
+  {
+   "id": "u007",
+   "file": "u007.wav",
+   "text": "The drops, the lasers, the tiny artificial stars: all of it exists to draw lines on a computer chip."
+  },
+  {
+   "id": "u008",
+   "file": "u008.wav",
+   "text": "Lines only a few dozen atoms wide."
+  },
+  {
+   "id": "u009",
+   "file": "u009.wav",
+   "text": "To understand why anyone would build something this extreme, we need one stubborn fact about light."
+  },
+  {
+   "id": "u010",
+   "file": "u010.wav",
+   "text": "By the end, every strange part of this machine will make sense, because each one fights that single fact."
+  },
+  {
+   "id": "u011",
+   "file": "u011.wav",
+   "text": "A modern chip is a city of tiny switches called transistors, tens of billions of them, wired together in stacked layers."
+  },
+  {
+   "id": "u012",
+   "file": "u012.wav",
+   "text": "Nobody builds them one at a time. They are printed all at once, like a photograph."
+  },
+  {
+   "id": "u013",
+   "file": "u013.wav",
+   "text": "It starts with a polished disc of silicon, called a wafer."
+  },
+  {
+   "id": "u014",
+   "file": "u014.wav",
+   "text": "The wafer is coated with a thin film called photoresist, a material that changes wherever light falls on it."
+  },
+  {
+   "id": "u015",
+   "file": "u015.wav",
+   "text": "Above it sits the mask, a plate carrying the pattern for one layer, drawn four times larger than it will end up."
+  },
+  {
+   "id": "u016",
+   "file": "u016.wav",
+   "text": "Light shines through the mask, and a set of optics shrinks the image four times and focuses it onto the wafer."
+  },
+  {
+   "id": "u017",
+   "file": "u017.wav",
+   "text": "It is a slide projector run backwards: instead of throwing a small picture onto a wall, it squeezes a big picture onto a tiny patch."
+  },
+  {
+   "id": "u018",
+   "file": "u018.wav",
+   "text": "Where the light lands, the resist changes. Wash it, etch it, and the pattern is cut into the layer underneath."
+  },
+  {
+   "id": "u019",
+   "file": "u019.wav",
+   "text": "Then the wafer is coated again and the next layer is printed on top, dozens of times."
+  },
+  {
+   "id": "u020",
+   "file": "u020.wav",
+   "text": "So the size of a transistor comes down to one question: how small a detail can you project with light?"
+  },
+  {
+   "id": "u021",
+   "file": "u021.wav",
+   "text": "The answer depends on what light is. Light is a wave."
+  },
+  {
+   "id": "u022",
+   "file": "u022.wav",
+   "text": "Watch a wave arrive at a gap. If the gap is wide, the wave passes almost straight through."
+  },
+  {
+   "id": "u023",
+   "file": "u023.wav",
+   "text": "But if the gap is narrow, close to the size of the wave itself, the wave spreads out on the other side. This spreading is called diffraction."
+  },
+  {
+   "id": "u024",
+   "file": "u024.wav",
+   "text": "A chip pattern is nothing but narrow gaps. A row of fine lines on a mask behaves like what physicists call a grating."
+  },
+  {
+   "id": "u025",
+   "file": "u025.wav",
+   "text": "Light passing through a grating does not just carry straight on. It splits into separate beams that fan out at an angle."
+  },
+  {
+   "id": "u026",
+   "file": "u026.wav",
+   "text": "And here is the key: the finer the lines, the wider that fan opens."
+  },
+  {
+   "id": "u027",
+   "file": "u027.wav",
+   "text": "To rebuild the pattern on the wafer, the lens has to catch those angled beams and bring them back together."
+  },
+  {
+   "id": "u028",
+   "file": "u028.wav",
+   "text": "If it catches them, the beams overlap, they interfere, and the lines reappear, sharp."
+  },
+  {
+   "id": "u029",
+   "file": "u029.wav",
+   "text": "But if the fan is too wide and the side beams miss the lens, only the straight beam gets through."
+  },
+  {
+   "id": "u030",
+   "file": "u030.wav",
+   "text": "The wafer then receives a flat, even glow. The pattern is simply gone."
+  },
+  {
+   "id": "u031",
+   "file": "u031.wav",
+   "text": "So there is a hard limit: below a certain size, a line cannot be printed at all."
+  },
+  {
+   "id": "u032",
+   "file": "u032.wav",
+   "text": "Engineers write that limit as a short formula."
+  },
+  {
+   "id": "u033",
+   "file": "u033.wav",
+   "text": "The smallest feature equals a factor called k one, times the wavelength, divided by the numerical aperture."
+  },
+  {
+   "id": "u034",
+   "file": "u034.wav",
+   "text": "Read it as three knobs you can turn."
+  },
+  {
+   "id": "u035",
+   "file": "u035.wav",
+   "text": "The numerical aperture measures how wide a fan the lens can collect. A bigger opening catches wider beams."
+  },
+  {
+   "id": "u036",
+   "file": "u036.wav",
+   "text": "The factor k one is cleverness: tricks in the lighting and the mask that squeeze out a little more."
+  },
+  {
+   "id": "u037",
+   "file": "u037.wav",
+   "text": "And the wavelength is the size of the wave itself. Shorter waves fan out less, so they can draw finer lines."
+  },
+  {
+   "id": "u038",
+   "file": "u038.wav",
+   "text": "Every chipmaking machine ever built is an attempt to turn one of these three knobs."
+  },
+  {
+   "id": "u039",
+   "file": "u039.wav",
+   "text": "For decades, the industry turned the wavelength knob."
+  },
+  {
+   "id": "u040",
+   "file": "u040.wav",
+   "text": "Mercury lamps gave light at four hundred and thirty six nanometres, then three hundred and sixty five."
+  },
+  {
+   "id": "u041",
+   "file": "u041.wav",
+   "text": "Then came lasers, at two hundred and forty eight nanometres, and then one hundred and ninety three."
+  },
+  {
+   "id": "u042",
+   "file": "u042.wav",
+   "text": "And there the wavelength knob got stuck."
+  },
+  {
+   "id": "u043",
+   "file": "u043.wav",
+   "text": "Below about one hundred and fifty nanometres, almost every lens material absorbs the light instead of bending it."
+  },
+  {
+   "id": "u044",
+   "file": "u044.wav",
+   "text": "So engineers turned the other knobs."
+  },
+  {
+   "id": "u045",
+   "file": "u045.wav",
+   "text": "They filled the gap between the lens and the wafer with water, which bends light more than air, so the lens could collect a wider fan."
+  },
+  {
+   "id": "u046",
+   "file": "u046.wav",
+   "text": "When even that was not enough, they split each layer into two, three, even four separate exposures, each printing only some of the lines."
+  },
+  {
+   "id": "u047",
+   "file": "u047.wav",
+   "text": "It worked, but every extra pass costs time and money, and has to line up perfectly with the others."
+  },
+  {
+   "id": "u048",
+   "file": "u048.wav",
+   "text": "To keep shrinking, the industry had to turn the wavelength knob again, and by an enormous amount."
+  },
+  {
+   "id": "u049",
+   "file": "u049.wav",
+   "text": "The target was thirteen and a half nanometres, fourteen times shorter. Extreme ultraviolet light."
+  },
+  {
+   "id": "u050",
+   "file": "u050.wav",
+   "text": "In nineteen eighty six, a Japanese researcher, Hiroo Kinoshita, showed the first images printed with it."
+  },
+  {
+   "id": "u051",
+   "file": "u051.wav",
+   "text": "Turning that experiment into a factory tool took nearly three decades."
+  },
+  {
+   "id": "u052",
+   "file": "u052.wav",
+   "text": "Because at thirteen and a half nanometres, almost everything we know about building optics stops working."
+  },
+  {
+   "id": "u053",
+   "file": "u053.wav",
+   "text": "Problem number one: nothing glows at this wavelength. Not a lamp, and not an ordinary laser."
+  },
+  {
+   "id": "u054",
+   "file": "u054.wav",
+   "text": "To make it, you need matter so hot that its atoms are stripped of many of their electrons. A plasma."
+  },
+  {
+   "id": "u055",
+   "file": "u055.wav",
+   "text": "Tin turns out to be ideal: highly charged tin ions give off much of their light in a narrow band around thirteen and a half nanometres."
+  },
+  {
+   "id": "u056",
+   "file": "u056.wav",
+   "text": "So the machine makes tin plasma, one droplet at a time."
+  },
+  {
+   "id": "u057",
+   "file": "u057.wav",
+   "text": "A generator fires a stream of molten tin droplets, each about thirty micrometres across."
+  },
+  {
+   "id": "u058",
+   "file": "u058.wav",
+   "text": "A carbon dioxide laser, built by the German company Trumpf, waits for them."
+  },
+  {
+   "id": "u059",
+   "file": "u059.wav",
+   "text": "Its pulses pass through four amplifier stages, until the beam carries tens of kilowatts."
+  },
+  {
+   "id": "u060",
+   "file": "u060.wav",
+   "text": "The first, weaker pulse hits the droplet and flattens it into a thin disc."
+  },
+  {
+   "id": "u061",
+   "file": "u061.wav",
+   "text": "Why flatten it? A small sphere is a hard target, and most of its tin is hidden inside."
+  },
+  {
+   "id": "u062",
+   "file": "u062.wav",
+   "text": "A wide, thin disc spreads that tin out, where the main pulse can reach all of it."
+  },
+  {
+   "id": "u063",
+   "file": "u063.wav",
+   "text": "Then the main pulse hits the disc and turns it into plasma at around two hundred thousand degrees."
+  },
+  {
+   "id": "u064",
+   "file": "u064.wav",
+   "text": "Fifty thousand times a second, a tiny star is born and dies inside the machine."
+  },
+  {
+   "id": "u065",
+   "file": "u065.wav",
+   "text": "And it is brutally inefficient. Only about five percent of the laser energy comes out as useful light."
+  },
+  {
+   "id": "u066",
+   "file": "u066.wav",
+   "text": "A large curved mirror, the collector, gathers the light and focuses it toward a single point."
+  },
+  {
+   "id": "u067",
+   "file": "u067.wav",
+   "text": "But every explosion sprays tin at tens of kilometres per second, and even one nanometre of tin on the collector would ruin it."
+  },
+  {
+   "id": "u068",
+   "file": "u068.wav",
+   "text": "So a constant flow of hydrogen gas sweeps through the chamber, cleaning the tin away before it can settle."
+  },
+  {
+   "id": "u069",
+   "file": "u069.wav",
+   "text": "The result is more than five hundred watts of extreme ultraviolet light, steady enough to run a factory around the clock."
+  },
+  {
+   "id": "u070",
+   "file": "u070.wav",
+   "text": "Problem number two: this light is swallowed by everything."
+  },
+  {
+   "id": "u071",
+   "file": "u071.wav",
+   "text": "Glass absorbs it, so there can be no lenses."
+  },
+  {
+   "id": "u072",
+   "file": "u072.wav",
+   "text": "Even air absorbs it, so the entire light path has to sit in a vacuum."
+  },
+  {
+   "id": "u073",
+   "file": "u073.wav",
+   "text": "That leaves mirrors. But an ordinary mirror reflects almost none of this light."
+  },
+  {
+   "id": "u074",
+   "file": "u074.wav",
+   "text": "So these mirrors are built from layers: about forty pairs of molybdenum and silicon, each pair only about seven nanometres thick."
+  },
+  {
+   "id": "u075",
+   "file": "u075.wav",
+   "text": "Every boundary between the two materials reflects only a tiny bit of the light. On its own, that is useless."
+  },
+  {
+   "id": "u076",
+   "file": "u076.wav",
+   "text": "But the layers are spaced at half the wavelength, so every one of those tiny reflections leaves in step with all the others."
+  },
+  {
+   "id": "u077",
+   "file": "u077.wav",
+   "text": "The wave crests line up, they add together, and dozens of weak echoes become one strong reflection, about seventy percent."
+  },
+  {
+   "id": "u078",
+   "file": "u078.wav",
+   "text": "It is the same trick that makes a soap bubble shimmer, tuned to a single colour."
+  },
+  {
+   "id": "u079",
+   "file": "u079.wav",
+   "text": "This is also where the strange number comes from."
+  },
+  {
+   "id": "u080",
+   "file": "u080.wav",
+   "text": "Silicon starts absorbing strongly just below twelve and a half nanometres, and these mirrors work best just above that edge."
+  },
+  {
+   "id": "u081",
+   "file": "u081.wav",
+   "text": "Thirteen and a half is where the mirrors work best, and where tin happens to glow brightest."
+  },
+  {
+   "id": "u082",
+   "file": "u082.wav",
+   "text": "These mirrors must also be smooth beyond belief, with bumps of around fifty picometres, smaller than a single atom."
+  },
+  {
+   "id": "u083",
+   "file": "u083.wav",
+   "text": "If one of these mirrors were the size of Germany, its biggest bump would be about one millimetre high."
+  },
+  {
+   "id": "u084",
+   "file": "u084.wav",
+   "text": "Zeiss makes them, in southern Germany."
+  },
+  {
+   "id": "u085",
+   "file": "u085.wav",
+   "text": "Now follow the light through the machine."
+  },
+  {
+   "id": "u086",
+   "file": "u086.wav",
+   "text": "From the collector, it bounces off a set of mirrors that shape it into an even, curved slit of light."
+  },
+  {
+   "id": "u087",
+   "file": "u087.wav",
+   "text": "Then it hits the mask. And the mask, too, has to be a mirror."
+  },
+  {
+   "id": "u088",
+   "file": "u088.wav",
+   "text": "It is the same stack of molybdenum and silicon, with the chip pattern drawn on top in a metal that absorbs the light."
+  },
+  {
+   "id": "u089",
+   "file": "u089.wav",
+   "text": "The light strikes it at a slight angle, about six degrees, so the reflected beam can travel on without hitting the incoming one."
+  },
+  {
+   "id": "u090",
+   "file": "u090.wav",
+   "text": "Then six more mirrors shrink the pattern four times and focus it onto the wafer."
+  },
+  {
+   "id": "u091",
+   "file": "u091.wav",
+   "text": "Count the bounces. There are around ten of them, and each one keeps only about seventy percent."
+  },
+  {
+   "id": "u092",
+   "file": "u092.wav",
+   "text": "Seventy percent of seventy percent of seventy percent, again and again."
+  },
+  {
+   "id": "u093",
+   "file": "u093.wav",
+   "text": "Of the light that leaves the source, only a few percent ever reaches the wafer."
+  },
+  {
+   "id": "u094",
+   "file": "u094.wav",
+   "text": "That is why the source has to be so violent: almost all its light is spent getting there."
+  },
+  {
+   "id": "u095",
+   "file": "u095.wav",
+   "text": "Even then, the machine cannot expose a whole chip at once. The light only covers a thin slit."
+  },
+  {
+   "id": "u096",
+   "file": "u096.wav",
+   "text": "So the mask and the wafer move in opposite directions, sweeping the pattern through that slit."
+  },
+  {
+   "id": "u097",
+   "file": "u097.wav",
+   "text": "Because the image is shrunk four times, the mask has to travel four times faster than the wafer, in perfect step."
+  },
+  {
+   "id": "u098",
+   "file": "u098.wav",
+   "text": "The mask stage whips back and forth with accelerations of more than twenty times the pull of gravity."
+  },
+  {
+   "id": "u099",
+   "file": "u099.wav",
+   "text": "Then the wafer steps to the next patch, and the dance repeats, around a hundred times per wafer."
+  },
+  {
+   "id": "u100",
+   "file": "u100.wav",
+   "text": "Every new layer has to land on the one beneath it to within about a nanometre. A handful of atoms."
+  },
+  {
+   "id": "u101",
+   "file": "u101.wav",
+   "text": "A modern machine does all of this for around two hundred wafers every hour."
+  },
+  {
+   "id": "u102",
+   "file": "u102.wav",
+   "text": "You might think a shorter wave simply means sharper lines. But there is a catch."
+  },
+  {
+   "id": "u103",
+   "file": "u103.wav",
+   "text": "Light arrives in tiny packets of energy called photons, and a shorter wave packs more energy into each one."
+  },
+  {
+   "id": "u104",
+   "file": "u104.wav",
+   "text": "An extreme ultraviolet photon carries about fourteen times the energy of the deep ultraviolet photons used before."
+  },
+  {
+   "id": "u105",
+   "file": "u105.wav",
+   "text": "So for the same total dose, the wafer receives about fourteen times fewer photons."
+  },
+  {
+   "id": "u106",
+   "file": "u106.wav",
+   "text": "And photons arrive at random, like the first raindrops of a shower on a pavement."
+  },
+  {
+   "id": "u107",
+   "file": "u107.wav",
+   "text": "At a typical dose, a square of resist ten nanometres on a side catches only around two thousand of them."
+  },
+  {
+   "id": "u108",
+   "file": "u108.wav",
+   "text": "Some patches catch a few more, some a few less."
+  },
+  {
+   "id": "u109",
+   "file": "u109.wav",
+   "text": "Where too few land, a line comes out thin or broken. Where too many land, two lines can merge into one."
+  },
+  {
+   "id": "u110",
+   "file": "u110.wav",
+   "text": "Engineers call these stochastic effects, and they are now one of the hardest limits in chipmaking."
+  },
+  {
+   "id": "u111",
+   "file": "u111.wav",
+   "text": "The cure is more photons: a brighter source, or a longer exposure. And every extra photon costs time."
+  },
+  {
+   "id": "u112",
+   "file": "u112.wav",
+   "text": "That is why the race for more source power never stops."
+  },
+  {
+   "id": "u113",
+   "file": "u113.wav",
+   "text": "With the wavelength fixed, one knob is left to turn: the numerical aperture."
+  },
+  {
+   "id": "u114",
+   "file": "u114.wav",
+   "text": "Today's standard machines collect light with a numerical aperture of zero point three three, enough for lines about thirteen nanometres wide."
+  },
+  {
+   "id": "u115",
+   "file": "u115.wav",
+   "text": "The newest generation opens that to zero point five five, for lines of about eight nanometres."
+  },
+  {
+   "id": "u116",
+   "file": "u116.wav",
+   "text": "Catching a wider fan means bigger mirrors, and steeper angles at the mask."
+  },
+  {
+   "id": "u117",
+   "file": "u117.wav",
+   "text": "So these machines shrink the image eight times one way and four times the other, giving up half the exposure field."
+  },
+  {
+   "id": "u118",
+   "file": "u118.wav",
+   "text": "The first commercial one was assembled at Intel, and each costs around three hundred and sixty million dollars."
+  },
+  {
+   "id": "u119",
+   "file": "u119.wav",
+   "text": "Only one company in the world sells these machines: the Dutch company ASML."
+  },
+  {
+   "id": "u120",
+   "file": "u120.wav",
+   "text": "So look back at that flying drop of tin."
+  },
+  {
+   "id": "u121",
+   "file": "u121.wav",
+   "text": "The tin, the laser and the plasma exist because nothing else glows at this wavelength."
+  },
+  {
+   "id": "u122",
+   "file": "u122.wav",
+   "text": "The vacuum and the layered mirrors exist because everything else swallows it."
+  },
+  {
+   "id": "u123",
+   "file": "u123.wav",
+   "text": "The scanning, the speed and the nanometre precision exist because the light can only fill a slit."
+  },
+  {
+   "id": "u124",
+   "file": "u124.wav",
+   "text": "And the endless hunger for power exists because each photon carries so much energy that too few arrive."
+  },
+  {
+   "id": "u125",
+   "file": "u125.wav",
+   "text": "All of it traces back to that one stubborn fact: light is a wave, and a wave cannot draw a detail much smaller than itself."
+  },
+  {
+   "id": "u126",
+   "file": "u126.wav",
+   "text": "This machine is what it looks like when people refuse to accept that."
+  },
+  {
+   "id": "u127",
+   "file": "u127.wav",
+   "text": "The next time you pick up your phone, remember: somewhere inside it are lines drawn by a star smaller than a grain of dust."
+  }
+ ]
+}

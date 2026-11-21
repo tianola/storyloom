@@ -44,6 +44,28 @@ class MakeEpisode(unittest.TestCase):
             self.assertEqual(M.status("script", ep, state, False)[0], "run")
             self.assertEqual(M.status("script", ep, state, True)[1], "forced")
 
+    def test_a_deleted_beat_render_reopens_render_and_assemble(self):
+        """Deleting a beat's mp4 is how a beat is sent back to Blender; the stage must notice.
+
+        2026-11-16, euv-machine: 12 beats were deleted for a geometry fix and `--from ingest`
+        reported render and assemble as done, because render declared no outputs and assemble did
+        not read the renders, so the master kept the old beats and QC passed on them.
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            ep = Path(tmp) / "ep"
+            (ep / "renders" / "3d").mkdir(parents=True)
+            shots = {"u001": {"kind": "3d", "name": "b01"}, "u002": {"kind": "archive", "name": "a"},
+                     "u003": {"kind": "3d", "name": "b02"}}
+            (ep / "shots.json").write_text(json.dumps(shots), encoding="utf-8")
+            for b in ("b01", "b02"):
+                (ep / "renders" / "3d" / f"{b}.mp4").write_bytes(b"old " + b.encode())
+            state = {s: {"inputs": M.digest(M.inputs_of(s, ep)), "finished": "now"} for s in ("render", "assemble")}
+            self.assertEqual(M.status("render", ep, state, False)[0], "done")
+            (ep / "renders" / "3d" / "b02.mp4").unlink()
+            self.assertEqual(M.status("render", ep, state, False), ("run", "outputs missing"))
+            (ep / "renders" / "3d" / "b02.mp4").write_bytes(b"redrawn")
+            self.assertEqual(M.status("assemble", ep, state, False)[0], "run")
+
     def test_plan_without_a_planner_or_storyboard_is_blocked_with_a_brief(self):
         with tempfile.TemporaryDirectory() as tmp:
             ep = Path(tmp) / "ep"

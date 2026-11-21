@@ -45,6 +45,10 @@ LEDGER_NAME = archive.paths(CONTRACT)["ledger_filename"]
 CEILING = float(CONTRACT["archive"]["archive_rhythm"]["max_archival_shot_seconds"])
 LUMA_WINDOW = float(CONTRACT["archive"]["cohesion"]["blend_luma_window_fraction"])
 CUT_MAX = float(CONTRACT["archive"]["cohesion"]["loudness_delta_across_cuts_max_lu"])
+# the shipped contract has no archive floor any more; the mix machinery is tested on one that does
+FLOORED = json.loads(json.dumps(CONTRACT))
+FLOORED["archive"]["episode_profile"]["mix"]["min_share"]["archive"] = 0.20
+FLOORED["archive"]["episode_profile"]["mix"]["min_per_act"]["archive"] = 1
 # A complete, valid archival episode: one shot, its record, its rights row.
 GOOD_EPISODE = {RECORDS_NAME: GOOD_RECORD, LEDGER_NAME: [GOOD_LEDGER_ROW]}
 
@@ -173,7 +177,7 @@ class MixAdapter(unittest.TestCase):
         read from `start`, `start` read from `duration` — moves a printed number."""
         findings = qc_episode.check_archive_mix(
             timeline(("u001", "3d", "sls", 60.0), ("u002", "archive", "eva", 10.0)),
-            CONTRACT, {})
+            FLOORED, {})
         self.assertEqual(codes(findings), ["archive_share_low"])
         self.assertIn("0.143", findings[0].message)
         self.assertIn("70.0", findings[0].message)
@@ -184,20 +188,20 @@ class MixRung(unittest.TestCase):
     def test_the_warn_rung_reports_the_mix_without_refusing_it(self):
         findings = qc_episode.check_archive_mix(
             timeline(("u001", "3d", "sls", 100.0), ("u002", "archive", "eva", 5.0)),
-            CONTRACT, {})
+            FLOORED, {})
         self.assertTrue(findings)
         self.assertEqual({f.severity for f in findings}, {"warn"})
 
     def test_closed_turns_the_same_finding_into_an_error_with_the_same_text(self):
         shots = timeline(("u001", "3d", "sls", 100.0), ("u002", "archive", "eva", 5.0))
-        warned = qc_episode.check_archive_mix(shots, CONTRACT, {})
-        refused = qc_episode.check_archive_mix(shots, CONTRACT, {"archive": {"mode": "closed"}})
+        warned = qc_episode.check_archive_mix(shots, FLOORED, {})
+        refused = qc_episode.check_archive_mix(shots, FLOORED, {"archive": {"mode": "closed"}})
         self.assertEqual(codes(refused), codes(warned))
         self.assertEqual([f.message for f in refused], [f.message for f in warned])
         self.assertEqual({f.severity for f in refused}, {"error"})
 
     def test_off_judges_nothing_at_all(self):
-        contract = json.loads(json.dumps(CONTRACT))
+        contract = json.loads(json.dumps(FLOORED))
         contract["archive"]["episode_profile"]["mode"] = "off"
         self.assertEqual(qc_episode.check_archive_mix(
             timeline(("u001", "3d", "sls", 100.0)), contract, {}), [])
@@ -205,13 +209,13 @@ class MixRung(unittest.TestCase):
     def test_a_film_with_no_archival_layer_says_so_once(self):
         findings = qc_episode.check_archive_mix(
             timeline(("u001", "3d", "sls", 100.0), ("u002", "manim", "orbit", 30.0)),
-            CONTRACT, {})
+            FLOORED, {})
         self.assertEqual(codes(findings), ["archive_layer_missing"])
 
     def test_a_layer_the_taxonomy_never_budgeted_is_reported_not_folded_in(self):
         findings = qc_episode.check_archive_mix(
             timeline(("u001", "archive", "eva", 20.0), ("u002", "live-action", "street", 20.0)),
-            CONTRACT, {})
+            FLOORED, {})
         self.assertIn("layer_unknown", codes(findings))
         self.assertEqual(findings[0].severity, "warn")
 
@@ -221,7 +225,7 @@ class MixRung(unittest.TestCase):
                                 "approved_by": "the owner", "expires": "2099-01-01"}}
         findings = qc_episode.check_archive_mix(
             timeline(("u001", "3d", "sls", 100.0), ("u002", "archive", "eva", 5.0)),
-            CONTRACT, document)
+            FLOORED, document)
         self.assertTrue(findings)
         self.assertEqual({f.severity for f in findings}, {"warn"})
 
@@ -609,7 +613,7 @@ class GateWiring(unittest.TestCase):
         return episode_dir(Path(tempfile.mkdtemp(dir=self.tmp.name)), files, **kwargs)
 
     def test_a_3d_only_episode_is_told_its_archival_layer_is_missing(self):
-        findings = qc_episode.run(episode=self.episode(archival=False, shots=[
+        findings = qc_episode.run(contract=FLOORED, episode=self.episode(archival=False, shots=[
             ("u001", "3d", "sls-launch", 25.0), ("u002", "3d", "earth", 25.0)]),
             master=self.master)
         self.assertEqual(codes(archival_findings(findings)), ["archive_layer_missing"])
@@ -633,7 +637,7 @@ class GateWiring(unittest.TestCase):
                          [("archive_shot_without_record", "apollo-boot")])
 
     def test_the_rendered_report_names_the_layer(self):
-        findings = qc_episode.run(episode=self.episode(archival=False, shots=[
+        findings = qc_episode.run(contract=FLOORED, episode=self.episode(archival=False, shots=[
             ("u001", "3d", "sls-launch", 25.0)]), master=self.master)
         self.assertIn("archive_layer_missing", qc_episode.render(findings))
 

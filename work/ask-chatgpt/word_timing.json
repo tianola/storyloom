@@ -1,0 +1,8164 @@
+{
+ "beat-00": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "kind",
+   "start": 0.1
+  },
+  {
+   "word": "of",
+   "start": 0.325
+  },
+  {
+   "word": "machine",
+   "start": 0.4
+  },
+  {
+   "word": "that",
+   "start": 0.9
+  },
+  {
+   "word": "answers",
+   "start": 1.075
+  },
+  {
+   "word": "your",
+   "start": 1.475
+  },
+  {
+   "word": "questions",
+   "start": 1.6
+  },
+  {
+   "word": "weighs",
+   "start": 2.525
+  },
+  {
+   "word": "more",
+   "start": 2.8
+  },
+  {
+   "word": "than",
+   "start": 3.025
+  },
+  {
+   "word": "a",
+   "start": 3.1
+  },
+  {
+   "word": "tonne",
+   "start": 3.275
+  },
+  {
+   "word": "and",
+   "start": 3.75
+  },
+  {
+   "word": "draws",
+   "start": 3.9
+  },
+  {
+   "word": "as",
+   "start": 4.45
+  },
+  {
+   "word": "much",
+   "start": 4.6
+  },
+  {
+   "word": "power",
+   "start": 4.875
+  },
+  {
+   "word": "as",
+   "start": 5.425
+  },
+  {
+   "word": "a",
+   "start": 5.475
+  },
+  {
+   "word": "hundred",
+   "start": 5.6
+  },
+  {
+   "word": "homes.",
+   "start": 5.925
+  }
+ ],
+ "beat-01": [
+  {
+   "word": "Ask",
+   "start": 0.0
+  },
+  {
+   "word": "it",
+   "start": 0.225
+  },
+  {
+   "word": "why",
+   "start": 0.35
+  },
+  {
+   "word": "your",
+   "start": 0.525
+  },
+  {
+   "word": "cat",
+   "start": 0.675
+  },
+  {
+   "word": "sounds",
+   "start": 0.95
+  },
+  {
+   "word": "like",
+   "start": 1.25
+  },
+  {
+   "word": "a",
+   "start": 1.35
+  },
+  {
+   "word": "carburettor,",
+   "start": 1.475
+  },
+  {
+   "word": "and",
+   "start": 2.25
+  },
+  {
+   "word": "watch",
+   "start": 2.375
+  },
+  {
+   "word": "what",
+   "start": 2.7
+  },
+  {
+   "word": "that",
+   "start": 2.85
+  },
+  {
+   "word": "monster",
+   "start": 3.025
+  },
+  {
+   "word": "does.",
+   "start": 3.475
+  },
+  {
+   "word": "A",
+   "start": 4.075
+  },
+  {
+   "word": "few",
+   "start": 4.35
+  },
+  {
+   "word": "words.",
+   "start": 4.55
+  },
+  {
+   "word": "A",
+   "start": 5.225
+  },
+  {
+   "word": "pause.",
+   "start": 5.5
+  },
+  {
+   "word": "A",
+   "start": 6.05
+  },
+  {
+   "word": "few",
+   "start": 6.325
+  },
+  {
+   "word": "more",
+   "start": 6.5
+  },
+  {
+   "word": "words.",
+   "start": 6.725
+  },
+  {
+   "word": "It",
+   "start": 7.252
+  },
+  {
+   "word": "is",
+   "start": 7.502
+  },
+  {
+   "word": "the",
+   "start": 7.652
+  },
+  {
+   "word": "most",
+   "start": 7.727
+  },
+  {
+   "word": "powerful",
+   "start": 8.027
+  },
+  {
+   "word": "computer",
+   "start": 8.577
+  },
+  {
+   "word": "most",
+   "start": 9.302
+  },
+  {
+   "word": "of",
+   "start": 9.602
+  },
+  {
+   "word": "us",
+   "start": 9.652
+  },
+  {
+   "word": "will",
+   "start": 9.877
+  },
+  {
+   "word": "ever",
+   "start": 10.077
+  },
+  {
+   "word": "touch,",
+   "start": 10.377
+  },
+  {
+   "word": "and",
+   "start": 11.202
+  },
+  {
+   "word": "yet",
+   "start": 11.327
+  },
+  {
+   "word": "it",
+   "start": 11.552
+  },
+  {
+   "word": "writes",
+   "start": 11.677
+  },
+  {
+   "word": "like",
+   "start": 11.977
+  },
+  {
+   "word": "someone",
+   "start": 12.202
+  },
+  {
+   "word": "pecking",
+   "start": 12.577
+  },
+  {
+   "word": "at",
+   "start": 12.952
+  },
+  {
+   "word": "a",
+   "start": 12.952
+  },
+  {
+   "word": "keyboard.",
+   "start": 13.127
+  }
+ ],
+ "beat-02": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "why",
+   "start": 0.175
+  },
+  {
+   "word": "does",
+   "start": 0.35
+  },
+  {
+   "word": "it",
+   "start": 0.475
+  },
+  {
+   "word": "stutter?",
+   "start": 0.575
+  },
+  {
+   "word": "The",
+   "start": 1.166
+  },
+  {
+   "word": "obvious",
+   "start": 1.341
+  },
+  {
+   "word": "guess",
+   "start": 1.841
+  },
+  {
+   "word": "is",
+   "start": 2.316
+  },
+  {
+   "word": "that",
+   "start": 2.466
+  },
+  {
+   "word": "it",
+   "start": 2.591
+  },
+  {
+   "word": "is",
+   "start": 2.691
+  },
+  {
+   "word": "thinking",
+   "start": 2.866
+  },
+  {
+   "word": "hard,",
+   "start": 3.216
+  },
+  {
+   "word": "that",
+   "start": 3.966
+  },
+  {
+   "word": "every",
+   "start": 4.166
+  },
+  {
+   "word": "single",
+   "start": 4.491
+  },
+  {
+   "word": "word",
+   "start": 4.841
+  },
+  {
+   "word": "takes",
+   "start": 5.191
+  },
+  {
+   "word": "a",
+   "start": 5.391
+  },
+  {
+   "word": "staggering",
+   "start": 5.566
+  },
+  {
+   "word": "amount",
+   "start": 6.066
+  },
+  {
+   "word": "of",
+   "start": 6.341
+  },
+  {
+   "word": "maths.",
+   "start": 6.441
+  },
+  {
+   "word": "Keep",
+   "start": 6.947
+  },
+  {
+   "word": "that",
+   "start": 7.222
+  },
+  {
+   "word": "guess",
+   "start": 7.472
+  },
+  {
+   "word": "in",
+   "start": 7.772
+  },
+  {
+   "word": "mind,",
+   "start": 7.897
+  },
+  {
+   "word": "because",
+   "start": 8.622
+  },
+  {
+   "word": "we",
+   "start": 8.947
+  },
+  {
+   "word": "are",
+   "start": 9.047
+  },
+  {
+   "word": "going",
+   "start": 9.172
+  },
+  {
+   "word": "to",
+   "start": 9.447
+  },
+  {
+   "word": "test",
+   "start": 9.572
+  },
+  {
+   "word": "it.",
+   "start": 9.947
+  },
+  {
+   "word": "The",
+   "start": 10.647
+  },
+  {
+   "word": "real",
+   "start": 10.797
+  },
+  {
+   "word": "answer",
+   "start": 11.097
+  },
+  {
+   "word": "explains",
+   "start": 11.547
+  },
+  {
+   "word": "nearly",
+   "start": 12.197
+  },
+  {
+   "word": "everything",
+   "start": 12.572
+  },
+  {
+   "word": "about",
+   "start": 13.072
+  },
+  {
+   "word": "the",
+   "start": 13.297
+  },
+  {
+   "word": "buildings",
+   "start": 13.397
+  },
+  {
+   "word": "behind",
+   "start": 13.947
+  },
+  {
+   "word": "artificial",
+   "start": 14.472
+  },
+  {
+   "word": "intelligence.",
+   "start": 15.122
+  },
+  {
+   "word": "To",
+   "start": 15.954
+  },
+  {
+   "word": "see",
+   "start": 16.104
+  },
+  {
+   "word": "it,",
+   "start": 16.304
+  },
+  {
+   "word": "let's",
+   "start": 16.554
+  },
+  {
+   "word": "follow",
+   "start": 16.829
+  },
+  {
+   "word": "a",
+   "start": 17.079
+  },
+  {
+   "word": "single",
+   "start": 17.329
+  },
+  {
+   "word": "word",
+   "start": 17.704
+  },
+  {
+   "word": "of",
+   "start": 17.929
+  },
+  {
+   "word": "your",
+   "start": 18.004
+  },
+  {
+   "word": "question",
+   "start": 18.129
+  },
+  {
+   "word": "on",
+   "start": 18.654
+  },
+  {
+   "word": "its",
+   "start": 18.729
+  },
+  {
+   "word": "trip.",
+   "start": 18.929
+  },
+  {
+   "word": "The",
+   "start": 19.629
+  },
+  {
+   "word": "word",
+   "start": 19.754
+  },
+  {
+   "word": "cat.",
+   "start": 20.054
+  }
+ ],
+ "beat-03": [
+  {
+   "word": "Cat",
+   "start": 0.0
+  },
+  {
+   "word": "leaves",
+   "start": 0.3
+  },
+  {
+   "word": "your",
+   "start": 0.575
+  },
+  {
+   "word": "phone",
+   "start": 0.75
+  },
+  {
+   "word": "as",
+   "start": 1.125
+  },
+  {
+   "word": "a",
+   "start": 1.175
+  },
+  {
+   "word": "radio",
+   "start": 1.325
+  },
+  {
+   "word": "wave",
+   "start": 1.8
+  },
+  {
+   "word": "and",
+   "start": 2.475
+  },
+  {
+   "word": "reaches",
+   "start": 2.6
+  },
+  {
+   "word": "a",
+   "start": 2.875
+  },
+  {
+   "word": "mast",
+   "start": 3.0
+  },
+  {
+   "word": "down",
+   "start": 3.375
+  },
+  {
+   "word": "the",
+   "start": 3.55
+  },
+  {
+   "word": "street.",
+   "start": 3.65
+  },
+  {
+   "word": "From",
+   "start": 4.139
+  },
+  {
+   "word": "there",
+   "start": 4.339
+  },
+  {
+   "word": "it",
+   "start": 4.639
+  },
+  {
+   "word": "travels",
+   "start": 4.739
+  },
+  {
+   "word": "as",
+   "start": 5.164
+  },
+  {
+   "word": "light,",
+   "start": 5.314
+  },
+  {
+   "word": "trapped",
+   "start": 5.989
+  },
+  {
+   "word": "inside",
+   "start": 6.314
+  },
+  {
+   "word": "a",
+   "start": 6.639
+  },
+  {
+   "word": "strand",
+   "start": 6.764
+  },
+  {
+   "word": "of",
+   "start": 7.089
+  },
+  {
+   "word": "glass",
+   "start": 7.214
+  },
+  {
+   "word": "thinner",
+   "start": 7.614
+  },
+  {
+   "word": "than",
+   "start": 7.864
+  },
+  {
+   "word": "a",
+   "start": 7.939
+  },
+  {
+   "word": "hair.",
+   "start": 8.089
+  },
+  {
+   "word": "But",
+   "start": 8.508
+  },
+  {
+   "word": "how",
+   "start": 8.658
+  },
+  {
+   "word": "do",
+   "start": 8.808
+  },
+  {
+   "word": "you",
+   "start": 8.933
+  },
+  {
+   "word": "keep",
+   "start": 9.058
+  },
+  {
+   "word": "light",
+   "start": 9.308
+  },
+  {
+   "word": "inside",
+   "start": 9.708
+  },
+  {
+   "word": "a",
+   "start": 10.058
+  },
+  {
+   "word": "bent",
+   "start": 10.183
+  },
+  {
+   "word": "piece",
+   "start": 10.433
+  },
+  {
+   "word": "of",
+   "start": 10.658
+  },
+  {
+   "word": "glass?",
+   "start": 10.758
+  }
+ ],
+ "colladon-1884": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "eighteen",
+   "start": 0.15
+  },
+  {
+   "word": "forty",
+   "start": 0.6
+  },
+  {
+   "word": "two,",
+   "start": 0.9
+  },
+  {
+   "word": "a",
+   "start": 1.45
+  },
+  {
+   "word": "Swiss",
+   "start": 1.75
+  },
+  {
+   "word": "physicist",
+   "start": 2.075
+  },
+  {
+   "word": "called",
+   "start": 2.65
+  },
+  {
+   "word": "Daniel",
+   "start": 2.95
+  },
+  {
+   "word": "Colladon",
+   "start": 3.375
+  },
+  {
+   "word": "showed",
+   "start": 4.225
+  },
+  {
+   "word": "the",
+   "start": 4.45
+  },
+  {
+   "word": "trick",
+   "start": 4.575
+  },
+  {
+   "word": "with",
+   "start": 4.9
+  },
+  {
+   "word": "a",
+   "start": 4.975
+  },
+  {
+   "word": "jet",
+   "start": 5.15
+  },
+  {
+   "word": "of",
+   "start": 5.4
+  },
+  {
+   "word": "water.",
+   "start": 5.5
+  }
+ ],
+ "beat-04": [
+  {
+   "word": "Light",
+   "start": 0.0
+  },
+  {
+   "word": "that",
+   "start": 0.3
+  },
+  {
+   "word": "hits",
+   "start": 0.525
+  },
+  {
+   "word": "the",
+   "start": 0.8
+  },
+  {
+   "word": "inside",
+   "start": 0.975
+  },
+  {
+   "word": "of",
+   "start": 1.375
+  },
+  {
+   "word": "the",
+   "start": 1.45
+  },
+  {
+   "word": "jet",
+   "start": 1.55
+  },
+  {
+   "word": "at",
+   "start": 2.05
+  },
+  {
+   "word": "a",
+   "start": 2.05
+  },
+  {
+   "word": "shallow",
+   "start": 2.25
+  },
+  {
+   "word": "angle",
+   "start": 2.65
+  },
+  {
+   "word": "cannot",
+   "start": 3.1
+  },
+  {
+   "word": "escape,",
+   "start": 3.45
+  },
+  {
+   "word": "so",
+   "start": 4.35
+  },
+  {
+   "word": "it",
+   "start": 4.475
+  },
+  {
+   "word": "follows",
+   "start": 4.575
+  },
+  {
+   "word": "the",
+   "start": 5.0
+  },
+  {
+   "word": "water",
+   "start": 5.15
+  },
+  {
+   "word": "as",
+   "start": 5.55
+  },
+  {
+   "word": "it",
+   "start": 5.675
+  },
+  {
+   "word": "curves.",
+   "start": 5.775
+  },
+  {
+   "word": "Glass",
+   "start": 6.331
+  },
+  {
+   "word": "fibre",
+   "start": 6.731
+  },
+  {
+   "word": "does",
+   "start": 7.106
+  },
+  {
+   "word": "exactly",
+   "start": 7.281
+  },
+  {
+   "word": "the",
+   "start": 7.856
+  },
+  {
+   "word": "same",
+   "start": 8.006
+  },
+  {
+   "word": "thing,",
+   "start": 8.306
+  },
+  {
+   "word": "bouncing",
+   "start": 8.956
+  },
+  {
+   "word": "the",
+   "start": 9.381
+  },
+  {
+   "word": "light",
+   "start": 9.481
+  },
+  {
+   "word": "off",
+   "start": 9.781
+  },
+  {
+   "word": "its",
+   "start": 9.931
+  },
+  {
+   "word": "walls",
+   "start": 10.106
+  },
+  {
+   "word": "over",
+   "start": 10.556
+  },
+  {
+   "word": "and",
+   "start": 10.856
+  },
+  {
+   "word": "over.",
+   "start": 10.956
+  }
+ ],
+ "spad-pulse": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "twenty",
+   "start": 0.125
+  },
+  {
+   "word": "seventeen,",
+   "start": 0.425
+  },
+  {
+   "word": "a",
+   "start": 1.3
+  },
+  {
+   "word": "team",
+   "start": 1.575
+  },
+  {
+   "word": "at",
+   "start": 1.9
+  },
+  {
+   "word": "Heriot",
+   "start": 2.025
+  },
+  {
+   "word": "Watt",
+   "start": 2.475
+  },
+  {
+   "word": "University",
+   "start": 2.75
+  },
+  {
+   "word": "in",
+   "start": 3.45
+  },
+  {
+   "word": "Edinburgh",
+   "start": 3.575
+  },
+  {
+   "word": "actually",
+   "start": 4.375
+  },
+  {
+   "word": "filmed",
+   "start": 4.875
+  },
+  {
+   "word": "it.",
+   "start": 5.175
+  }
+ ],
+ "beat-05": [
+  {
+   "word": "Their",
+   "start": 0.0
+  },
+  {
+   "word": "camera",
+   "start": 0.225
+  },
+  {
+   "word": "caught",
+   "start": 0.65
+  },
+  {
+   "word": "a",
+   "start": 0.8
+  },
+  {
+   "word": "pulse",
+   "start": 0.925
+  },
+  {
+   "word": "of",
+   "start": 1.225
+  },
+  {
+   "word": "light",
+   "start": 1.35
+  },
+  {
+   "word": "racing",
+   "start": 1.625
+  },
+  {
+   "word": "around",
+   "start": 2.05
+  },
+  {
+   "word": "a",
+   "start": 2.25
+  },
+  {
+   "word": "coil",
+   "start": 2.375
+  },
+  {
+   "word": "of",
+   "start": 2.625
+  },
+  {
+   "word": "fibre,",
+   "start": 2.75
+  },
+  {
+   "word": "loop",
+   "start": 3.575
+  },
+  {
+   "word": "after",
+   "start": 3.85
+  },
+  {
+   "word": "loop.",
+   "start": 4.15
+  },
+  {
+   "word": "In",
+   "start": 4.526
+  },
+  {
+   "word": "glass,",
+   "start": 4.676
+  },
+  {
+   "word": "light",
+   "start": 5.351
+  },
+  {
+   "word": "covers",
+   "start": 5.626
+  },
+  {
+   "word": "about",
+   "start": 6.051
+  },
+  {
+   "word": "two",
+   "start": 6.351
+  },
+  {
+   "word": "hundred",
+   "start": 6.551
+  },
+  {
+   "word": "thousand",
+   "start": 6.851
+  },
+  {
+   "word": "kilometres",
+   "start": 7.226
+  },
+  {
+   "word": "every",
+   "start": 8.001
+  },
+  {
+   "word": "second.",
+   "start": 8.301
+  },
+  {
+   "word": "A",
+   "start": 8.833
+  },
+  {
+   "word": "thousand",
+   "start": 8.958
+  },
+  {
+   "word": "kilometres",
+   "start": 9.458
+  },
+  {
+   "word": "of",
+   "start": 10.008
+  },
+  {
+   "word": "cable",
+   "start": 10.133
+  },
+  {
+   "word": "costs",
+   "start": 10.533
+  },
+  {
+   "word": "cat",
+   "start": 11.308
+  },
+  {
+   "word": "about",
+   "start": 11.508
+  },
+  {
+   "word": "five",
+   "start": 11.858
+  },
+  {
+   "word": "thousandths",
+   "start": 12.208
+  },
+  {
+   "word": "of",
+   "start": 12.758
+  },
+  {
+   "word": "a",
+   "start": 12.758
+  },
+  {
+   "word": "second.",
+   "start": 12.883
+  },
+  {
+   "word": "So",
+   "start": 13.461
+  },
+  {
+   "word": "the",
+   "start": 13.586
+  },
+  {
+   "word": "trip",
+   "start": 13.686
+  },
+  {
+   "word": "is",
+   "start": 13.961
+  },
+  {
+   "word": "not",
+   "start": 14.111
+  },
+  {
+   "word": "the",
+   "start": 14.286
+  },
+  {
+   "word": "slow",
+   "start": 14.411
+  },
+  {
+   "word": "part.",
+   "start": 14.736
+  },
+  {
+   "word": "Hold",
+   "start": 15.411
+  },
+  {
+   "word": "on",
+   "start": 15.736
+  },
+  {
+   "word": "to",
+   "start": 15.861
+  },
+  {
+   "word": "that.",
+   "start": 15.936
+  }
+ ],
+ "beat-06": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "light",
+   "start": 0.125
+  },
+  {
+   "word": "ends",
+   "start": 0.475
+  },
+  {
+   "word": "in",
+   "start": 0.85
+  },
+  {
+   "word": "a",
+   "start": 0.875
+  },
+  {
+   "word": "warehouse",
+   "start": 1.025
+  },
+  {
+   "word": "of",
+   "start": 1.45
+  },
+  {
+   "word": "computers,",
+   "start": 1.55
+  },
+  {
+   "word": "like",
+   "start": 2.575
+  },
+  {
+   "word": "the",
+   "start": 2.75
+  },
+  {
+   "word": "one",
+   "start": 2.85
+  },
+  {
+   "word": "built",
+   "start": 3.075
+  },
+  {
+   "word": "for",
+   "start": 3.35
+  },
+  {
+   "word": "OpenAI",
+   "start": 3.55
+  },
+  {
+   "word": "in",
+   "start": 4.6
+  },
+  {
+   "word": "Abilene,",
+   "start": 4.775
+  },
+  {
+   "word": "Texas.",
+   "start": 5.425
+  },
+  {
+   "word": "And",
+   "start": 6.08
+  },
+  {
+   "word": "there",
+   "start": 6.18
+  },
+  {
+   "word": "cat",
+   "start": 6.38
+  },
+  {
+   "word": "runs",
+   "start": 6.73
+  },
+  {
+   "word": "into",
+   "start": 7.055
+  },
+  {
+   "word": "its",
+   "start": 7.305
+  },
+  {
+   "word": "first",
+   "start": 7.48
+  },
+  {
+   "word": "problem.",
+   "start": 7.78
+  },
+  {
+   "word": "The",
+   "start": 8.655
+  },
+  {
+   "word": "chips",
+   "start": 8.755
+  },
+  {
+   "word": "inside",
+   "start": 9.08
+  },
+  {
+   "word": "cannot",
+   "start": 9.68
+  },
+  {
+   "word": "read.",
+   "start": 10.005
+  },
+  {
+   "word": "They",
+   "start": 10.428
+  },
+  {
+   "word": "only",
+   "start": 10.628
+  },
+  {
+   "word": "understand",
+   "start": 10.978
+  },
+  {
+   "word": "numbers,",
+   "start": 11.553
+  },
+  {
+   "word": "so",
+   "start": 12.403
+  },
+  {
+   "word": "your",
+   "start": 12.553
+  },
+  {
+   "word": "question",
+   "start": 12.703
+  },
+  {
+   "word": "has",
+   "start": 13.228
+  },
+  {
+   "word": "to",
+   "start": 13.428
+  },
+  {
+   "word": "be",
+   "start": 13.503
+  },
+  {
+   "word": "chopped",
+   "start": 13.703
+  },
+  {
+   "word": "into",
+   "start": 14.053
+  },
+  {
+   "word": "pieces",
+   "start": 14.278
+  },
+  {
+   "word": "first.",
+   "start": 14.703
+  }
+ ],
+ "beat-07": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "way",
+   "start": 0.1
+  },
+  {
+   "word": "it",
+   "start": 0.275
+  },
+  {
+   "word": "gets",
+   "start": 0.375
+  },
+  {
+   "word": "chopped",
+   "start": 0.65
+  },
+  {
+   "word": "comes",
+   "start": 1.2
+  },
+  {
+   "word": "from",
+   "start": 1.5
+  },
+  {
+   "word": "an",
+   "start": 1.65
+  },
+  {
+   "word": "unlikely",
+   "start": 1.775
+  },
+  {
+   "word": "place.",
+   "start": 2.25
+  },
+  {
+   "word": "In",
+   "start": 2.752
+  },
+  {
+   "word": "February",
+   "start": 2.927
+  },
+  {
+   "word": "nineteen",
+   "start": 3.402
+  },
+  {
+   "word": "ninety",
+   "start": 3.727
+  },
+  {
+   "word": "four,",
+   "start": 4.027
+  },
+  {
+   "word": "a",
+   "start": 4.602
+  },
+  {
+   "word": "programmer",
+   "start": 4.902
+  },
+  {
+   "word": "in",
+   "start": 5.602
+  },
+  {
+   "word": "Colorado",
+   "start": 5.752
+  },
+  {
+   "word": "Springs",
+   "start": 6.377
+  },
+  {
+   "word": "called",
+   "start": 7.052
+  },
+  {
+   "word": "Philip",
+   "start": 7.327
+  },
+  {
+   "word": "Gage",
+   "start": 7.627
+  },
+  {
+   "word": "wrote",
+   "start": 8.377
+  },
+  {
+   "word": "a",
+   "start": 8.502
+  },
+  {
+   "word": "magazine",
+   "start": 8.627
+  },
+  {
+   "word": "article",
+   "start": 9.127
+  },
+  {
+   "word": "about",
+   "start": 9.577
+  },
+  {
+   "word": "shrinking",
+   "start": 9.902
+  },
+  {
+   "word": "files.",
+   "start": 10.302
+  },
+  {
+   "word": "His",
+   "start": 10.876
+  },
+  {
+   "word": "idea",
+   "start": 11.101
+  },
+  {
+   "word": "was",
+   "start": 11.601
+  },
+  {
+   "word": "simple.",
+   "start": 11.776
+  },
+  {
+   "word": "Find",
+   "start": 12.701
+  },
+  {
+   "word": "the",
+   "start": 12.976
+  },
+  {
+   "word": "pair",
+   "start": 13.076
+  },
+  {
+   "word": "of",
+   "start": 13.326
+  },
+  {
+   "word": "characters",
+   "start": 13.451
+  },
+  {
+   "word": "that",
+   "start": 14.076
+  },
+  {
+   "word": "appears",
+   "start": 14.201
+  },
+  {
+   "word": "most",
+   "start": 14.651
+  },
+  {
+   "word": "often,",
+   "start": 14.901
+  },
+  {
+   "word": "and",
+   "start": 15.626
+  },
+  {
+   "word": "replace",
+   "start": 15.726
+  },
+  {
+   "word": "it",
+   "start": 16.226
+  },
+  {
+   "word": "with",
+   "start": 16.376
+  },
+  {
+   "word": "a",
+   "start": 16.451
+  },
+  {
+   "word": "new",
+   "start": 16.576
+  },
+  {
+   "word": "symbol.",
+   "start": 16.801
+  }
+ ],
+ "beat-08": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "do",
+   "start": 0.225
+  },
+  {
+   "word": "it",
+   "start": 0.375
+  },
+  {
+   "word": "again,",
+   "start": 0.5
+  },
+  {
+   "word": "and",
+   "start": 0.975
+  },
+  {
+   "word": "again,",
+   "start": 1.075
+  },
+  {
+   "word": "until",
+   "start": 1.7
+  },
+  {
+   "word": "the",
+   "start": 1.9
+  },
+  {
+   "word": "file",
+   "start": 2.05
+  },
+  {
+   "word": "is",
+   "start": 2.375
+  },
+  {
+   "word": "small.",
+   "start": 2.5
+  },
+  {
+   "word": "Two",
+   "start": 2.987
+  },
+  {
+   "word": "decades",
+   "start": 3.162
+  },
+  {
+   "word": "later,",
+   "start": 3.562
+  },
+  {
+   "word": "Rico",
+   "start": 4.237
+  },
+  {
+   "word": "Sennrich",
+   "start": 4.637
+  },
+  {
+   "word": "and",
+   "start": 5.162
+  },
+  {
+   "word": "his",
+   "start": 5.262
+  },
+  {
+   "word": "colleagues",
+   "start": 5.437
+  },
+  {
+   "word": "borrowed",
+   "start": 6.312
+  },
+  {
+   "word": "that",
+   "start": 6.737
+  },
+  {
+   "word": "trick",
+   "start": 6.937
+  },
+  {
+   "word": "to",
+   "start": 7.312
+  },
+  {
+   "word": "split",
+   "start": 7.437
+  },
+  {
+   "word": "words",
+   "start": 7.762
+  },
+  {
+   "word": "for",
+   "start": 8.137
+  },
+  {
+   "word": "translation",
+   "start": 8.287
+  },
+  {
+   "word": "software.",
+   "start": 8.987
+  },
+  {
+   "word": "Common",
+   "start": 9.6
+  },
+  {
+   "word": "words",
+   "start": 9.975
+  },
+  {
+   "word": "end",
+   "start": 10.35
+  },
+  {
+   "word": "up",
+   "start": 10.6
+  },
+  {
+   "word": "as",
+   "start": 10.775
+  },
+  {
+   "word": "single",
+   "start": 10.925
+  },
+  {
+   "word": "pieces,",
+   "start": 11.225
+  },
+  {
+   "word": "rare",
+   "start": 12.15
+  },
+  {
+   "word": "ones",
+   "start": 12.425
+  },
+  {
+   "word": "as",
+   "start": 12.725
+  },
+  {
+   "word": "fragments,",
+   "start": 12.875
+  },
+  {
+   "word": "and",
+   "start": 13.75
+  },
+  {
+   "word": "every",
+   "start": 13.9
+  },
+  {
+   "word": "piece",
+   "start": 14.2
+  },
+  {
+   "word": "gets",
+   "start": 14.5
+  },
+  {
+   "word": "a",
+   "start": 14.675
+  },
+  {
+   "word": "number.",
+   "start": 14.8
+  }
+ ],
+ "beat-09": [
+  {
+   "word": "ChatGPT's",
+   "start": 0.0
+  },
+  {
+   "word": "tokenizer",
+   "start": 0.925
+  },
+  {
+   "word": "works",
+   "start": 1.675
+  },
+  {
+   "word": "the",
+   "start": 1.975
+  },
+  {
+   "word": "same",
+   "start": 2.1
+  },
+  {
+   "word": "way.",
+   "start": 2.375
+  },
+  {
+   "word": "In",
+   "start": 3.225
+  },
+  {
+   "word": "it,",
+   "start": 3.4
+  },
+  {
+   "word": "cat",
+   "start": 3.95
+  },
+  {
+   "word": "with",
+   "start": 4.175
+  },
+  {
+   "word": "a",
+   "start": 4.25
+  },
+  {
+   "word": "space",
+   "start": 4.4
+  },
+  {
+   "word": "in",
+   "start": 4.775
+  },
+  {
+   "word": "front",
+   "start": 4.95
+  },
+  {
+   "word": "is",
+   "start": 5.425
+  },
+  {
+   "word": "number",
+   "start": 5.575
+  },
+  {
+   "word": "nine",
+   "start": 5.875
+  },
+  {
+   "word": "thousand",
+   "start": 6.175
+  },
+  {
+   "word": "and",
+   "start": 6.725
+  },
+  {
+   "word": "fifty",
+   "start": 6.85
+  },
+  {
+   "word": "nine.",
+   "start": 7.15
+  },
+  {
+   "word": "That",
+   "start": 7.62
+  },
+  {
+   "word": "number",
+   "start": 7.87
+  },
+  {
+   "word": "is",
+   "start": 8.245
+  },
+  {
+   "word": "a",
+   "start": 8.295
+  },
+  {
+   "word": "key.",
+   "start": 8.47
+  },
+  {
+   "word": "It",
+   "start": 9.32
+  },
+  {
+   "word": "unlocks",
+   "start": 9.445
+  },
+  {
+   "word": "a",
+   "start": 9.795
+  },
+  {
+   "word": "long",
+   "start": 10.02
+  },
+  {
+   "word": "list",
+   "start": 10.37
+  },
+  {
+   "word": "of",
+   "start": 10.57
+  },
+  {
+   "word": "other",
+   "start": 10.67
+  },
+  {
+   "word": "numbers,",
+   "start": 10.92
+  },
+  {
+   "word": "a",
+   "start": 11.57
+  },
+  {
+   "word": "kind",
+   "start": 11.77
+  },
+  {
+   "word": "of",
+   "start": 11.945
+  },
+  {
+   "word": "address",
+   "start": 12.02
+  },
+  {
+   "word": "for",
+   "start": 12.52
+  },
+  {
+   "word": "the",
+   "start": 12.62
+  },
+  {
+   "word": "meaning",
+   "start": 12.745
+  },
+  {
+   "word": "of",
+   "start": 13.07
+  },
+  {
+   "word": "the",
+   "start": 13.17
+  },
+  {
+   "word": "word.",
+   "start": 13.27
+  },
+  {
+   "word": "On",
+   "start": 13.813
+  },
+  {
+   "word": "a",
+   "start": 13.838
+  },
+  {
+   "word": "map,",
+   "start": 13.963
+  },
+  {
+   "word": "two",
+   "start": 14.438
+  },
+  {
+   "word": "numbers",
+   "start": 14.588
+  },
+  {
+   "word": "say",
+   "start": 14.913
+  },
+  {
+   "word": "where",
+   "start": 15.088
+  },
+  {
+   "word": "something",
+   "start": 15.238
+  },
+  {
+   "word": "is.",
+   "start": 15.613
+  }
+ ],
+ "beat-10": [
+  {
+   "word": "Here",
+   "start": 0.0
+  },
+  {
+   "word": "every",
+   "start": 0.25
+  },
+  {
+   "word": "token",
+   "start": 0.575
+  },
+  {
+   "word": "gets",
+   "start": 1.025
+  },
+  {
+   "word": "thousands",
+   "start": 1.35
+  },
+  {
+   "word": "of",
+   "start": 1.825
+  },
+  {
+   "word": "them,",
+   "start": 1.9
+  },
+  {
+   "word": "so",
+   "start": 2.5
+  },
+  {
+   "word": "it",
+   "start": 2.625
+  },
+  {
+   "word": "sits",
+   "start": 2.75
+  },
+  {
+   "word": "somewhere",
+   "start": 3.0
+  },
+  {
+   "word": "in",
+   "start": 3.375
+  },
+  {
+   "word": "a",
+   "start": 3.4
+  },
+  {
+   "word": "space",
+   "start": 3.55
+  },
+  {
+   "word": "with",
+   "start": 4.025
+  },
+  {
+   "word": "thousands",
+   "start": 4.225
+  },
+  {
+   "word": "of",
+   "start": 4.7
+  },
+  {
+   "word": "directions.",
+   "start": 4.8
+  },
+  {
+   "word": "Training",
+   "start": 5.568
+  },
+  {
+   "word": "arranges",
+   "start": 5.993
+  },
+  {
+   "word": "that",
+   "start": 6.518
+  },
+  {
+   "word": "space",
+   "start": 6.743
+  },
+  {
+   "word": "so",
+   "start": 7.243
+  },
+  {
+   "word": "that",
+   "start": 7.368
+  },
+  {
+   "word": "cat",
+   "start": 7.593
+  },
+  {
+   "word": "ends",
+   "start": 7.918
+  },
+  {
+   "word": "up",
+   "start": 8.193
+  },
+  {
+   "word": "near",
+   "start": 8.318
+  },
+  {
+   "word": "dog,",
+   "start": 8.543
+  },
+  {
+   "word": "and",
+   "start": 9.318
+  },
+  {
+   "word": "a",
+   "start": 9.368
+  },
+  {
+   "word": "long",
+   "start": 9.543
+  },
+  {
+   "word": "way",
+   "start": 9.868
+  },
+  {
+   "word": "from",
+   "start": 10.143
+  },
+  {
+   "word": "carburettor.",
+   "start": 10.343
+  },
+  {
+   "word": "But",
+   "start": 11.09
+  },
+  {
+   "word": "cat",
+   "start": 11.265
+  },
+  {
+   "word": "is",
+   "start": 11.49
+  },
+  {
+   "word": "not",
+   "start": 11.64
+  },
+  {
+   "word": "done",
+   "start": 11.865
+  },
+  {
+   "word": "yet.",
+   "start": 12.09
+  },
+  {
+   "word": "Now",
+   "start": 12.665
+  },
+  {
+   "word": "comes",
+   "start": 12.965
+  },
+  {
+   "word": "the",
+   "start": 13.215
+  },
+  {
+   "word": "climb.",
+   "start": 13.315
+  },
+  {
+   "word": "OpenAI",
+   "start": 13.845
+  },
+  {
+   "word": "does",
+   "start": 14.82
+  },
+  {
+   "word": "not",
+   "start": 14.97
+  },
+  {
+   "word": "say",
+   "start": 15.17
+  },
+  {
+   "word": "how",
+   "start": 15.47
+  },
+  {
+   "word": "big",
+   "start": 15.72
+  },
+  {
+   "word": "the",
+   "start": 15.92
+  },
+  {
+   "word": "models",
+   "start": 16.02
+  },
+  {
+   "word": "behind",
+   "start": 16.395
+  },
+  {
+   "word": "ChatGPT",
+   "start": 16.895
+  },
+  {
+   "word": "are.",
+   "start": 17.82
+  }
+ ],
+ "beat-11": [
+  {
+   "word": "But",
+   "start": 0.0
+  },
+  {
+   "word": "in",
+   "start": 0.125
+  },
+  {
+   "word": "twenty",
+   "start": 0.25
+  },
+  {
+   "word": "twenty",
+   "start": 0.575
+  },
+  {
+   "word": "five",
+   "start": 0.875
+  },
+  {
+   "word": "it",
+   "start": 1.5
+  },
+  {
+   "word": "published",
+   "start": 1.625
+  },
+  {
+   "word": "an",
+   "start": 2.05
+  },
+  {
+   "word": "open",
+   "start": 2.175
+  },
+  {
+   "word": "model",
+   "start": 2.575
+  },
+  {
+   "word": "built",
+   "start": 2.925
+  },
+  {
+   "word": "the",
+   "start": 3.15
+  },
+  {
+   "word": "same",
+   "start": 3.275
+  },
+  {
+   "word": "way,",
+   "start": 3.575
+  },
+  {
+   "word": "with",
+   "start": 4.125
+  },
+  {
+   "word": "the",
+   "start": 4.25
+  },
+  {
+   "word": "blueprint.",
+   "start": 4.35
+  },
+  {
+   "word": "That",
+   "start": 4.952
+  },
+  {
+   "word": "model",
+   "start": 5.152
+  },
+  {
+   "word": "is",
+   "start": 5.502
+  },
+  {
+   "word": "made",
+   "start": 5.652
+  },
+  {
+   "word": "of",
+   "start": 5.877
+  },
+  {
+   "word": "about",
+   "start": 5.952
+  },
+  {
+   "word": "a",
+   "start": 6.102
+  },
+  {
+   "word": "hundred",
+   "start": 6.277
+  },
+  {
+   "word": "and",
+   "start": 6.727
+  },
+  {
+   "word": "seventeen",
+   "start": 6.877
+  },
+  {
+   "word": "billion",
+   "start": 7.427
+  },
+  {
+   "word": "numbers,",
+   "start": 7.777
+  },
+  {
+   "word": "called",
+   "start": 8.527
+  },
+  {
+   "word": "weights.",
+   "start": 8.852
+  },
+  {
+   "word": "Nobody",
+   "start": 9.415
+  },
+  {
+   "word": "typed",
+   "start": 9.865
+  },
+  {
+   "word": "them",
+   "start": 10.165
+  },
+  {
+   "word": "in.",
+   "start": 10.315
+  },
+  {
+   "word": "Training",
+   "start": 11.04
+  },
+  {
+   "word": "tuned",
+   "start": 11.49
+  },
+  {
+   "word": "them,",
+   "start": 11.74
+  },
+  {
+   "word": "step",
+   "start": 12.24
+  },
+  {
+   "word": "by",
+   "start": 12.515
+  },
+  {
+   "word": "step,",
+   "start": 12.74
+  },
+  {
+   "word": "on",
+   "start": 13.29
+  },
+  {
+   "word": "trillions",
+   "start": 13.44
+  },
+  {
+   "word": "of",
+   "start": 13.915
+  },
+  {
+   "word": "tokens",
+   "start": 14.04
+  },
+  {
+   "word": "of",
+   "start": 14.49
+  },
+  {
+   "word": "text.",
+   "start": 14.59
+  }
+ ],
+ "beat-12": [
+  {
+   "word": "They",
+   "start": 0.0
+  },
+  {
+   "word": "are",
+   "start": 0.125
+  },
+  {
+   "word": "stacked",
+   "start": 0.275
+  },
+  {
+   "word": "in",
+   "start": 0.675
+  },
+  {
+   "word": "thirty",
+   "start": 0.85
+  },
+  {
+   "word": "six",
+   "start": 1.15
+  },
+  {
+   "word": "layers,",
+   "start": 1.4
+  },
+  {
+   "word": "like",
+   "start": 2.1
+  },
+  {
+   "word": "the",
+   "start": 2.25
+  },
+  {
+   "word": "floors",
+   "start": 2.375
+  },
+  {
+   "word": "of",
+   "start": 2.725
+  },
+  {
+   "word": "a",
+   "start": 2.725
+  },
+  {
+   "word": "tower,",
+   "start": 2.875
+  },
+  {
+   "word": "and",
+   "start": 3.7
+  },
+  {
+   "word": "cat",
+   "start": 3.85
+  },
+  {
+   "word": "has",
+   "start": 4.15
+  },
+  {
+   "word": "to",
+   "start": 4.35
+  },
+  {
+   "word": "climb",
+   "start": 4.475
+  },
+  {
+   "word": "every",
+   "start": 4.85
+  },
+  {
+   "word": "floor.",
+   "start": 5.175
+  },
+  {
+   "word": "On",
+   "start": 5.678
+  },
+  {
+   "word": "each",
+   "start": 5.778
+  },
+  {
+   "word": "floor,",
+   "start": 6.053
+  },
+  {
+   "word": "cat",
+   "start": 6.603
+  },
+  {
+   "word": "looks",
+   "start": 6.903
+  },
+  {
+   "word": "back",
+   "start": 7.153
+  },
+  {
+   "word": "at",
+   "start": 7.378
+  },
+  {
+   "word": "every",
+   "start": 7.503
+  },
+  {
+   "word": "word",
+   "start": 7.803
+  },
+  {
+   "word": "before",
+   "start": 8.053
+  },
+  {
+   "word": "it",
+   "start": 8.428
+  },
+  {
+   "word": "and",
+   "start": 8.828
+  },
+  {
+   "word": "decides",
+   "start": 8.928
+  },
+  {
+   "word": "which",
+   "start": 9.403
+  },
+  {
+   "word": "ones",
+   "start": 9.553
+  },
+  {
+   "word": "matter.",
+   "start": 9.828
+  },
+  {
+   "word": "That",
+   "start": 10.728
+  },
+  {
+   "word": "step",
+   "start": 10.953
+  },
+  {
+   "word": "is",
+   "start": 11.228
+  },
+  {
+   "word": "called",
+   "start": 11.378
+  },
+  {
+   "word": "attention.",
+   "start": 11.678
+  },
+  {
+   "word": "It",
+   "start": 12.38
+  },
+  {
+   "word": "is",
+   "start": 12.655
+  },
+  {
+   "word": "how",
+   "start": 12.83
+  },
+  {
+   "word": "the",
+   "start": 13.005
+  },
+  {
+   "word": "word",
+   "start": 13.155
+  },
+  {
+   "word": "it",
+   "start": 13.38
+  },
+  {
+   "word": "gets",
+   "start": 13.48
+  },
+  {
+   "word": "linked",
+   "start": 13.78
+  },
+  {
+   "word": "to",
+   "start": 14.355
+  },
+  {
+   "word": "the",
+   "start": 14.43
+  },
+  {
+   "word": "thing",
+   "start": 14.58
+  },
+  {
+   "word": "it",
+   "start": 14.755
+  },
+  {
+   "word": "refers",
+   "start": 14.83
+  },
+  {
+   "word": "to.",
+   "start": 15.28
+  }
+ ],
+ "beat-13": [
+  {
+   "word": "Then",
+   "start": 0.0
+  },
+  {
+   "word": "cat",
+   "start": 0.25
+  },
+  {
+   "word": "visits",
+   "start": 0.55
+  },
+  {
+   "word": "a",
+   "start": 0.825
+  },
+  {
+   "word": "crowd",
+   "start": 0.95
+  },
+  {
+   "word": "of",
+   "start": 1.275
+  },
+  {
+   "word": "smaller",
+   "start": 1.45
+  },
+  {
+   "word": "networks",
+   "start": 1.85
+  },
+  {
+   "word": "on",
+   "start": 2.3
+  },
+  {
+   "word": "that",
+   "start": 2.375
+  },
+  {
+   "word": "floor,",
+   "start": 2.575
+  },
+  {
+   "word": "called",
+   "start": 3.225
+  },
+  {
+   "word": "experts.",
+   "start": 3.5
+  },
+  {
+   "word": "But",
+   "start": 4.177
+  },
+  {
+   "word": "it",
+   "start": 4.302
+  },
+  {
+   "word": "does",
+   "start": 4.377
+  },
+  {
+   "word": "not",
+   "start": 4.577
+  },
+  {
+   "word": "visit",
+   "start": 4.852
+  },
+  {
+   "word": "all",
+   "start": 5.177
+  },
+  {
+   "word": "of",
+   "start": 5.352
+  },
+  {
+   "word": "them.",
+   "start": 5.452
+  },
+  {
+   "word": "A",
+   "start": 6.027
+  },
+  {
+   "word": "small",
+   "start": 6.352
+  },
+  {
+   "word": "router",
+   "start": 6.702
+  },
+  {
+   "word": "sends",
+   "start": 7.127
+  },
+  {
+   "word": "it",
+   "start": 7.452
+  },
+  {
+   "word": "to",
+   "start": 7.577
+  },
+  {
+   "word": "just",
+   "start": 7.702
+  },
+  {
+   "word": "four",
+   "start": 8.052
+  },
+  {
+   "word": "out",
+   "start": 8.377
+  },
+  {
+   "word": "of",
+   "start": 8.477
+  },
+  {
+   "word": "a",
+   "start": 8.477
+  },
+  {
+   "word": "hundred",
+   "start": 8.602
+  },
+  {
+   "word": "and",
+   "start": 9.152
+  },
+  {
+   "word": "twenty",
+   "start": 9.277
+  },
+  {
+   "word": "eight.",
+   "start": 9.577
+  },
+  {
+   "word": "So",
+   "start": 10.03
+  },
+  {
+   "word": "on",
+   "start": 10.23
+  },
+  {
+   "word": "the",
+   "start": 10.33
+  },
+  {
+   "word": "whole",
+   "start": 10.43
+  },
+  {
+   "word": "climb,",
+   "start": 10.68
+  },
+  {
+   "word": "cat",
+   "start": 11.405
+  },
+  {
+   "word": "only",
+   "start": 11.63
+  },
+  {
+   "word": "touches",
+   "start": 11.88
+  },
+  {
+   "word": "about",
+   "start": 12.23
+  },
+  {
+   "word": "five",
+   "start": 12.58
+  },
+  {
+   "word": "billion",
+   "start": 13.005
+  },
+  {
+   "word": "weights.",
+   "start": 13.38
+  },
+  {
+   "word": "Each",
+   "start": 13.888
+  },
+  {
+   "word": "touch",
+   "start": 14.188
+  },
+  {
+   "word": "is",
+   "start": 14.563
+  },
+  {
+   "word": "a",
+   "start": 14.613
+  },
+  {
+   "word": "multiplication",
+   "start": 14.738
+  },
+  {
+   "word": "and",
+   "start": 16.013
+  },
+  {
+   "word": "an",
+   "start": 16.138
+  },
+  {
+   "word": "addition,",
+   "start": 16.213
+  },
+  {
+   "word": "so",
+   "start": 17.213
+  },
+  {
+   "word": "that",
+   "start": 17.363
+  },
+  {
+   "word": "is",
+   "start": 17.563
+  },
+  {
+   "word": "roughly",
+   "start": 17.713
+  },
+  {
+   "word": "ten",
+   "start": 18.138
+  },
+  {
+   "word": "billion",
+   "start": 18.513
+  },
+  {
+   "word": "operations",
+   "start": 18.913
+  },
+  {
+   "word": "for",
+   "start": 19.863
+  },
+  {
+   "word": "a",
+   "start": 19.963
+  },
+  {
+   "word": "single",
+   "start": 20.163
+  },
+  {
+   "word": "new",
+   "start": 20.538
+  },
+  {
+   "word": "word.",
+   "start": 20.713
+  }
+ ],
+ "beat-14": [
+  {
+   "word": "What",
+   "start": 0.0
+  },
+  {
+   "word": "comes",
+   "start": 0.15
+  },
+  {
+   "word": "out",
+   "start": 0.425
+  },
+  {
+   "word": "of",
+   "start": 0.525
+  },
+  {
+   "word": "the",
+   "start": 0.575
+  },
+  {
+   "word": "top",
+   "start": 0.675
+  },
+  {
+   "word": "floor",
+   "start": 1.0
+  },
+  {
+   "word": "is",
+   "start": 1.425
+  },
+  {
+   "word": "not",
+   "start": 1.575
+  },
+  {
+   "word": "a",
+   "start": 1.675
+  },
+  {
+   "word": "sentence.",
+   "start": 1.875
+  },
+  {
+   "word": "It",
+   "start": 2.85
+  },
+  {
+   "word": "is",
+   "start": 2.975
+  },
+  {
+   "word": "a",
+   "start": 3.025
+  },
+  {
+   "word": "score",
+   "start": 3.2
+  },
+  {
+   "word": "for",
+   "start": 3.65
+  },
+  {
+   "word": "every",
+   "start": 3.85
+  },
+  {
+   "word": "possible",
+   "start": 4.15
+  },
+  {
+   "word": "next",
+   "start": 4.675
+  },
+  {
+   "word": "piece.",
+   "start": 4.95
+  },
+  {
+   "word": "The",
+   "start": 5.377
+  },
+  {
+   "word": "system",
+   "start": 5.527
+  },
+  {
+   "word": "picks",
+   "start": 5.902
+  },
+  {
+   "word": "one,",
+   "start": 6.202
+  },
+  {
+   "word": "usually",
+   "start": 6.877
+  },
+  {
+   "word": "a",
+   "start": 7.227
+  },
+  {
+   "word": "likely",
+   "start": 7.427
+  },
+  {
+   "word": "one,",
+   "start": 7.852
+  },
+  {
+   "word": "with",
+   "start": 8.277
+  },
+  {
+   "word": "a",
+   "start": 8.352
+  },
+  {
+   "word": "little",
+   "start": 8.477
+  },
+  {
+   "word": "randomness",
+   "start": 8.727
+  },
+  {
+   "word": "so",
+   "start": 9.427
+  },
+  {
+   "word": "it",
+   "start": 9.552
+  },
+  {
+   "word": "does",
+   "start": 9.627
+  },
+  {
+   "word": "not",
+   "start": 9.802
+  },
+  {
+   "word": "sound",
+   "start": 10.127
+  },
+  {
+   "word": "like",
+   "start": 10.402
+  },
+  {
+   "word": "a",
+   "start": 10.502
+  },
+  {
+   "word": "robot.",
+   "start": 10.627
+  },
+  {
+   "word": "And",
+   "start": 11.226
+  },
+  {
+   "word": "then",
+   "start": 11.326
+  },
+  {
+   "word": "the",
+   "start": 11.551
+  },
+  {
+   "word": "whole",
+   "start": 11.651
+  },
+  {
+   "word": "climb",
+   "start": 11.951
+  },
+  {
+   "word": "starts",
+   "start": 12.351
+  },
+  {
+   "word": "again",
+   "start": 12.626
+  },
+  {
+   "word": "from",
+   "start": 12.951
+  },
+  {
+   "word": "the",
+   "start": 13.101
+  },
+  {
+   "word": "ground",
+   "start": 13.201
+  },
+  {
+   "word": "floor,",
+   "start": 13.601
+  },
+  {
+   "word": "for",
+   "start": 14.201
+  },
+  {
+   "word": "the",
+   "start": 14.301
+  },
+  {
+   "word": "next",
+   "start": 14.401
+  },
+  {
+   "word": "piece.",
+   "start": 14.701
+  }
+ ],
+ "beat-15": [
+  {
+   "word": "A",
+   "start": 0.0
+  },
+  {
+   "word": "long",
+   "start": 0.125
+  },
+  {
+   "word": "answer",
+   "start": 0.475
+  },
+  {
+   "word": "means",
+   "start": 0.875
+  },
+  {
+   "word": "hundreds",
+   "start": 1.125
+  },
+  {
+   "word": "of",
+   "start": 1.525
+  },
+  {
+   "word": "climbs,",
+   "start": 1.625
+  },
+  {
+   "word": "one",
+   "start": 2.475
+  },
+  {
+   "word": "after",
+   "start": 2.65
+  },
+  {
+   "word": "another.",
+   "start": 2.925
+  },
+  {
+   "word": "Ten",
+   "start": 3.411
+  },
+  {
+   "word": "billion",
+   "start": 3.661
+  },
+  {
+   "word": "operations",
+   "start": 4.061
+  },
+  {
+   "word": "for",
+   "start": 4.811
+  },
+  {
+   "word": "every",
+   "start": 4.986
+  },
+  {
+   "word": "word.",
+   "start": 5.286
+  },
+  {
+   "word": "So",
+   "start": 5.936
+  },
+  {
+   "word": "that",
+   "start": 6.086
+  },
+  {
+   "word": "must",
+   "start": 6.286
+  },
+  {
+   "word": "be",
+   "start": 6.461
+  },
+  {
+   "word": "the",
+   "start": 6.561
+  },
+  {
+   "word": "stutter,",
+   "start": 6.661
+  },
+  {
+   "word": "right?",
+   "start": 7.086
+  },
+  {
+   "word": "The",
+   "start": 7.736
+  },
+  {
+   "word": "maths?",
+   "start": 7.861
+  },
+  {
+   "word": "Actually,",
+   "start": 8.406
+  },
+  {
+   "word": "no.",
+   "start": 8.906
+  },
+  {
+   "word": "That",
+   "start": 9.481
+  },
+  {
+   "word": "guess",
+   "start": 9.681
+  },
+  {
+   "word": "is",
+   "start": 9.906
+  },
+  {
+   "word": "wrong.",
+   "start": 10.056
+  },
+  {
+   "word": "The",
+   "start": 10.681
+  },
+  {
+   "word": "arithmetic",
+   "start": 10.831
+  },
+  {
+   "word": "is",
+   "start": 11.456
+  },
+  {
+   "word": "the",
+   "start": 11.556
+  },
+  {
+   "word": "easy",
+   "start": 11.731
+  },
+  {
+   "word": "part.",
+   "start": 12.031
+  },
+  {
+   "word": "To",
+   "start": 12.477
+  },
+  {
+   "word": "see",
+   "start": 12.627
+  },
+  {
+   "word": "what",
+   "start": 12.827
+  },
+  {
+   "word": "the",
+   "start": 12.977
+  },
+  {
+   "word": "real",
+   "start": 13.127
+  },
+  {
+   "word": "problem",
+   "start": 13.427
+  },
+  {
+   "word": "is,",
+   "start": 13.902
+  },
+  {
+   "word": "picture",
+   "start": 14.452
+  },
+  {
+   "word": "the",
+   "start": 14.827
+  },
+  {
+   "word": "chip",
+   "start": 14.927
+  },
+  {
+   "word": "as",
+   "start": 15.227
+  },
+  {
+   "word": "a",
+   "start": 15.277
+  },
+  {
+   "word": "factory.",
+   "start": 15.402
+  }
+ ],
+ "beat-16": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "workers",
+   "start": 0.125
+  },
+  {
+   "word": "who",
+   "start": 0.625
+  },
+  {
+   "word": "do",
+   "start": 0.775
+  },
+  {
+   "word": "the",
+   "start": 0.9
+  },
+  {
+   "word": "multiplying",
+   "start": 1.025
+  },
+  {
+   "word": "sit",
+   "start": 1.8
+  },
+  {
+   "word": "at",
+   "start": 1.95
+  },
+  {
+   "word": "desks.",
+   "start": 2.05
+  },
+  {
+   "word": "The",
+   "start": 2.95
+  },
+  {
+   "word": "weights",
+   "start": 3.075
+  },
+  {
+   "word": "do",
+   "start": 3.4
+  },
+  {
+   "word": "not",
+   "start": 3.525
+  },
+  {
+   "word": "live",
+   "start": 3.825
+  },
+  {
+   "word": "with",
+   "start": 4.025
+  },
+  {
+   "word": "them.",
+   "start": 4.2
+  },
+  {
+   "word": "They",
+   "start": 4.547
+  },
+  {
+   "word": "live",
+   "start": 4.772
+  },
+  {
+   "word": "in",
+   "start": 4.972
+  },
+  {
+   "word": "a",
+   "start": 4.997
+  },
+  {
+   "word": "warehouse",
+   "start": 5.147
+  },
+  {
+   "word": "next",
+   "start": 5.647
+  },
+  {
+   "word": "door,",
+   "start": 5.922
+  },
+  {
+   "word": "and",
+   "start": 6.597
+  },
+  {
+   "word": "for",
+   "start": 6.722
+  },
+  {
+   "word": "every",
+   "start": 6.922
+  },
+  {
+   "word": "new",
+   "start": 7.222
+  },
+  {
+   "word": "piece",
+   "start": 7.397
+  },
+  {
+   "word": "of",
+   "start": 7.647
+  },
+  {
+   "word": "the",
+   "start": 7.722
+  },
+  {
+   "word": "answer,",
+   "start": 7.872
+  },
+  {
+   "word": "they",
+   "start": 8.522
+  },
+  {
+   "word": "have",
+   "start": 8.647
+  },
+  {
+   "word": "to",
+   "start": 8.872
+  },
+  {
+   "word": "be",
+   "start": 8.947
+  },
+  {
+   "word": "trucked",
+   "start": 9.097
+  },
+  {
+   "word": "in.",
+   "start": 9.397
+  },
+  {
+   "word": "All",
+   "start": 9.777
+  },
+  {
+   "word": "of",
+   "start": 9.977
+  },
+  {
+   "word": "the",
+   "start": 10.077
+  },
+  {
+   "word": "weights",
+   "start": 10.177
+  },
+  {
+   "word": "that",
+   "start": 10.502
+  },
+  {
+   "word": "cat",
+   "start": 10.652
+  },
+  {
+   "word": "touches,",
+   "start": 10.902
+  },
+  {
+   "word": "every",
+   "start": 11.577
+  },
+  {
+   "word": "time.",
+   "start": 11.877
+  },
+  {
+   "word": "For",
+   "start": 12.777
+  },
+  {
+   "word": "that",
+   "start": 12.902
+  },
+  {
+   "word": "open",
+   "start": 13.102
+  },
+  {
+   "word": "model,",
+   "start": 13.477
+  },
+  {
+   "word": "the",
+   "start": 14.002
+  },
+  {
+   "word": "load",
+   "start": 14.127
+  },
+  {
+   "word": "is",
+   "start": 14.377
+  },
+  {
+   "word": "about",
+   "start": 14.477
+  },
+  {
+   "word": "five",
+   "start": 14.827
+  },
+  {
+   "word": "gigabytes.",
+   "start": 15.202
+  }
+ ],
+ "nvb-hgx": [
+  {
+   "word": "Now",
+   "start": 0.0
+  },
+  {
+   "word": "take",
+   "start": 0.275
+  },
+  {
+   "word": "a",
+   "start": 0.4
+  },
+  {
+   "word": "Blackwell",
+   "start": 0.525
+  },
+  {
+   "word": "chip",
+   "start": 1.0
+  },
+  {
+   "word": "from",
+   "start": 1.275
+  },
+  {
+   "word": "NVIDIA,",
+   "start": 1.45
+  },
+  {
+   "word": "the",
+   "start": 2.325
+  },
+  {
+   "word": "kind",
+   "start": 2.425
+  },
+  {
+   "word": "in",
+   "start": 2.725
+  },
+  {
+   "word": "that",
+   "start": 2.8
+  },
+  {
+   "word": "Texas",
+   "start": 3.0
+  },
+  {
+   "word": "warehouse.",
+   "start": 3.425
+  }
+ ],
+ "beat-17": [
+  {
+   "word": "Its",
+   "start": 0.0
+  },
+  {
+   "word": "workers",
+   "start": 0.2
+  },
+  {
+   "word": "can",
+   "start": 0.7
+  },
+  {
+   "word": "finish",
+   "start": 0.875
+  },
+  {
+   "word": "ten",
+   "start": 1.225
+  },
+  {
+   "word": "billion",
+   "start": 1.55
+  },
+  {
+   "word": "operations",
+   "start": 1.875
+  },
+  {
+   "word": "in",
+   "start": 3.025
+  },
+  {
+   "word": "about",
+   "start": 3.1
+  },
+  {
+   "word": "four",
+   "start": 3.45
+  },
+  {
+   "word": "millionths",
+   "start": 3.7
+  },
+  {
+   "word": "of",
+   "start": 4.175
+  },
+  {
+   "word": "a",
+   "start": 4.175
+  },
+  {
+   "word": "second.",
+   "start": 4.3
+  },
+  {
+   "word": "Its",
+   "start": 4.821
+  },
+  {
+   "word": "memory",
+   "start": 5.021
+  },
+  {
+   "word": "can",
+   "start": 5.446
+  },
+  {
+   "word": "deliver",
+   "start": 5.621
+  },
+  {
+   "word": "about",
+   "start": 6.096
+  },
+  {
+   "word": "eight",
+   "start": 6.446
+  },
+  {
+   "word": "terabytes",
+   "start": 6.671
+  },
+  {
+   "word": "a",
+   "start": 7.146
+  },
+  {
+   "word": "second,",
+   "start": 7.271
+  },
+  {
+   "word": "which",
+   "start": 7.971
+  },
+  {
+   "word": "sounds",
+   "start": 8.146
+  },
+  {
+   "word": "enormous.",
+   "start": 8.521
+  },
+  {
+   "word": "But",
+   "start": 9.19
+  },
+  {
+   "word": "watch",
+   "start": 9.34
+  },
+  {
+   "word": "the",
+   "start": 9.665
+  },
+  {
+   "word": "race.",
+   "start": 9.765
+  },
+  {
+   "word": "At",
+   "start": 10.79
+  },
+  {
+   "word": "that",
+   "start": 10.915
+  },
+  {
+   "word": "speed,",
+   "start": 11.14
+  },
+  {
+   "word": "the",
+   "start": 11.865
+  },
+  {
+   "word": "five",
+   "start": 12.04
+  },
+  {
+   "word": "gigabyte",
+   "start": 12.44
+  },
+  {
+   "word": "delivery",
+   "start": 12.865
+  },
+  {
+   "word": "takes",
+   "start": 13.465
+  },
+  {
+   "word": "more",
+   "start": 13.765
+  },
+  {
+   "word": "than",
+   "start": 13.94
+  },
+  {
+   "word": "six",
+   "start": 14.165
+  },
+  {
+   "word": "hundred",
+   "start": 14.415
+  },
+  {
+   "word": "millionths",
+   "start": 14.765
+  },
+  {
+   "word": "of",
+   "start": 15.265
+  },
+  {
+   "word": "a",
+   "start": 15.265
+  },
+  {
+   "word": "second.",
+   "start": 15.415
+  }
+ ],
+ "beat-18": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "truck",
+   "start": 0.15
+  },
+  {
+   "word": "takes",
+   "start": 0.5
+  },
+  {
+   "word": "over",
+   "start": 0.75
+  },
+  {
+   "word": "a",
+   "start": 0.825
+  },
+  {
+   "word": "hundred",
+   "start": 1.0
+  },
+  {
+   "word": "times",
+   "start": 1.35
+  },
+  {
+   "word": "longer",
+   "start": 1.725
+  },
+  {
+   "word": "than",
+   "start": 2.125
+  },
+  {
+   "word": "the",
+   "start": 2.225
+  },
+  {
+   "word": "work.",
+   "start": 2.325
+  },
+  {
+   "word": "So",
+   "start": 2.777
+  },
+  {
+   "word": "when",
+   "start": 2.952
+  },
+  {
+   "word": "the",
+   "start": 3.102
+  },
+  {
+   "word": "chip",
+   "start": 3.202
+  },
+  {
+   "word": "writes",
+   "start": 3.477
+  },
+  {
+   "word": "for",
+   "start": 3.752
+  },
+  {
+   "word": "just",
+   "start": 3.877
+  },
+  {
+   "word": "you,",
+   "start": 4.127
+  },
+  {
+   "word": "its",
+   "start": 4.777
+  },
+  {
+   "word": "workers",
+   "start": 4.977
+  },
+  {
+   "word": "sit",
+   "start": 5.477
+  },
+  {
+   "word": "idle",
+   "start": 5.652
+  },
+  {
+   "word": "more",
+   "start": 6.052
+  },
+  {
+   "word": "than",
+   "start": 6.252
+  },
+  {
+   "word": "ninety",
+   "start": 6.452
+  },
+  {
+   "word": "nine",
+   "start": 6.802
+  },
+  {
+   "word": "percent",
+   "start": 7.052
+  },
+  {
+   "word": "of",
+   "start": 7.402
+  },
+  {
+   "word": "the",
+   "start": 7.477
+  },
+  {
+   "word": "time.",
+   "start": 7.577
+  },
+  {
+   "word": "That",
+   "start": 8.047
+  },
+  {
+   "word": "is",
+   "start": 8.322
+  },
+  {
+   "word": "the",
+   "start": 8.447
+  },
+  {
+   "word": "pause",
+   "start": 8.572
+  },
+  {
+   "word": "you",
+   "start": 8.897
+  },
+  {
+   "word": "see.",
+   "start": 9.047
+  },
+  {
+   "word": "Engineers",
+   "start": 9.672
+  },
+  {
+   "word": "call",
+   "start": 10.322
+  },
+  {
+   "word": "it",
+   "start": 10.547
+  },
+  {
+   "word": "being",
+   "start": 10.622
+  },
+  {
+   "word": "memory",
+   "start": 10.872
+  },
+  {
+   "word": "bound.",
+   "start": 11.272
+  },
+  {
+   "word": "And",
+   "start": 11.759
+  },
+  {
+   "word": "none",
+   "start": 11.934
+  },
+  {
+   "word": "of",
+   "start": 12.109
+  },
+  {
+   "word": "this",
+   "start": 12.209
+  },
+  {
+   "word": "surprised",
+   "start": 12.659
+  },
+  {
+   "word": "the",
+   "start": 13.234
+  },
+  {
+   "word": "people",
+   "start": 13.334
+  },
+  {
+   "word": "who",
+   "start": 13.659
+  },
+  {
+   "word": "saw",
+   "start": 13.809
+  },
+  {
+   "word": "it",
+   "start": 13.984
+  },
+  {
+   "word": "coming.",
+   "start": 14.084
+  }
+ ],
+ "beat-19": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "nineteen",
+   "start": 0.125
+  },
+  {
+   "word": "ninety",
+   "start": 0.45
+  },
+  {
+   "word": "four,",
+   "start": 0.775
+  },
+  {
+   "word": "two",
+   "start": 1.425
+  },
+  {
+   "word": "computer",
+   "start": 1.65
+  },
+  {
+   "word": "scientists",
+   "start": 2.075
+  },
+  {
+   "word": "at",
+   "start": 2.8
+  },
+  {
+   "word": "the",
+   "start": 2.875
+  },
+  {
+   "word": "University",
+   "start": 2.975
+  },
+  {
+   "word": "of",
+   "start": 3.625
+  },
+  {
+   "word": "Virginia,",
+   "start": 3.725
+  },
+  {
+   "word": "William",
+   "start": 4.775
+  },
+  {
+   "word": "Wulf",
+   "start": 5.15
+  },
+  {
+   "word": "and",
+   "start": 5.5
+  },
+  {
+   "word": "Sally",
+   "start": 5.675
+  },
+  {
+   "word": "McKee,",
+   "start": 6.025
+  },
+  {
+   "word": "wrote",
+   "start": 6.9
+  },
+  {
+   "word": "a",
+   "start": 7.05
+  },
+  {
+   "word": "short",
+   "start": 7.25
+  },
+  {
+   "word": "paper",
+   "start": 7.55
+  },
+  {
+   "word": "with",
+   "start": 8.025
+  },
+  {
+   "word": "a",
+   "start": 8.1
+  },
+  {
+   "word": "blunt",
+   "start": 8.225
+  },
+  {
+   "word": "title.",
+   "start": 8.475
+  },
+  {
+   "word": "Hitting",
+   "start": 9.023
+  },
+  {
+   "word": "the",
+   "start": 9.348
+  },
+  {
+   "word": "Memory",
+   "start": 9.448
+  },
+  {
+   "word": "Wall.",
+   "start": 9.848
+  },
+  {
+   "word": "Processors",
+   "start": 10.279
+  },
+  {
+   "word": "were",
+   "start": 11.004
+  },
+  {
+   "word": "getting",
+   "start": 11.129
+  },
+  {
+   "word": "faster",
+   "start": 11.429
+  },
+  {
+   "word": "much",
+   "start": 11.854
+  },
+  {
+   "word": "more",
+   "start": 12.104
+  },
+  {
+   "word": "quickly",
+   "start": 12.279
+  },
+  {
+   "word": "than",
+   "start": 12.654
+  },
+  {
+   "word": "memory,",
+   "start": 12.804
+  },
+  {
+   "word": "they",
+   "start": 13.629
+  },
+  {
+   "word": "pointed",
+   "start": 13.754
+  },
+  {
+   "word": "out,",
+   "start": 14.154
+  },
+  {
+   "word": "and",
+   "start": 14.754
+  },
+  {
+   "word": "the",
+   "start": 14.854
+  },
+  {
+   "word": "gap",
+   "start": 14.954
+  },
+  {
+   "word": "kept",
+   "start": 15.254
+  },
+  {
+   "word": "widening.",
+   "start": 15.554
+  }
+ ],
+ "beat-20": [
+  {
+   "word": "Sooner",
+   "start": 0.0
+  },
+  {
+   "word": "or",
+   "start": 0.4
+  },
+  {
+   "word": "later,",
+   "start": 0.525
+  },
+  {
+   "word": "they",
+   "start": 1.0
+  },
+  {
+   "word": "warned,",
+   "start": 1.2
+  },
+  {
+   "word": "every",
+   "start": 2.025
+  },
+  {
+   "word": "program",
+   "start": 2.325
+  },
+  {
+   "word": "would",
+   "start": 2.75
+  },
+  {
+   "word": "end",
+   "start": 2.875
+  },
+  {
+   "word": "up",
+   "start": 3.125
+  },
+  {
+   "word": "waiting",
+   "start": 3.275
+  },
+  {
+   "word": "for",
+   "start": 3.65
+  },
+  {
+   "word": "memory",
+   "start": 3.8
+  },
+  {
+   "word": "instead",
+   "start": 4.35
+  },
+  {
+   "word": "of",
+   "start": 4.675
+  },
+  {
+   "word": "computing.",
+   "start": 4.775
+  },
+  {
+   "word": "Cat's",
+   "start": 5.875
+  },
+  {
+   "word": "climb",
+   "start": 6.2
+  },
+  {
+   "word": "is",
+   "start": 6.6
+  },
+  {
+   "word": "exactly",
+   "start": 6.725
+  },
+  {
+   "word": "that",
+   "start": 7.3
+  },
+  {
+   "word": "case.",
+   "start": 7.5
+  },
+  {
+   "word": "They",
+   "start": 7.993
+  },
+  {
+   "word": "were",
+   "start": 8.093
+  },
+  {
+   "word": "right,",
+   "start": 8.268
+  },
+  {
+   "word": "and",
+   "start": 8.768
+  },
+  {
+   "word": "the",
+   "start": 8.868
+  },
+  {
+   "word": "wall",
+   "start": 9.018
+  },
+  {
+   "word": "is",
+   "start": 9.368
+  },
+  {
+   "word": "not",
+   "start": 9.518
+  },
+  {
+   "word": "just",
+   "start": 9.718
+  },
+  {
+   "word": "about",
+   "start": 9.918
+  },
+  {
+   "word": "time.",
+   "start": 10.168
+  },
+  {
+   "word": "It",
+   "start": 10.993
+  },
+  {
+   "word": "is",
+   "start": 11.118
+  },
+  {
+   "word": "about",
+   "start": 11.218
+  },
+  {
+   "word": "energy.",
+   "start": 11.468
+  }
+ ],
+ "horowitz-2025": [
+  {
+   "word": "Twenty",
+   "start": 0.0
+  },
+  {
+   "word": "years",
+   "start": 0.325
+  },
+  {
+   "word": "later,",
+   "start": 0.6
+  },
+  {
+   "word": "the",
+   "start": 1.25
+  },
+  {
+   "word": "Stanford",
+   "start": 1.375
+  },
+  {
+   "word": "engineer",
+   "start": 1.9
+  },
+  {
+   "word": "Mark",
+   "start": 2.4
+  },
+  {
+   "word": "Horowitz",
+   "start": 2.675
+  },
+  {
+   "word": "put",
+   "start": 3.275
+  },
+  {
+   "word": "numbers",
+   "start": 3.425
+  },
+  {
+   "word": "on",
+   "start": 3.775
+  },
+  {
+   "word": "it.",
+   "start": 3.975
+  }
+ ],
+ "beat-21": [
+  {
+   "word": "Fetching",
+   "start": 0.0
+  },
+  {
+   "word": "a",
+   "start": 0.325
+  },
+  {
+   "word": "number",
+   "start": 0.5
+  },
+  {
+   "word": "from",
+   "start": 0.85
+  },
+  {
+   "word": "a",
+   "start": 0.925
+  },
+  {
+   "word": "memory",
+   "start": 1.05
+  },
+  {
+   "word": "chip",
+   "start": 1.45
+  },
+  {
+   "word": "cost",
+   "start": 2.025
+  },
+  {
+   "word": "about",
+   "start": 2.325
+  },
+  {
+   "word": "a",
+   "start": 2.475
+  },
+  {
+   "word": "hundred",
+   "start": 2.65
+  },
+  {
+   "word": "and",
+   "start": 3.15
+  },
+  {
+   "word": "seventy",
+   "start": 3.3
+  },
+  {
+   "word": "times",
+   "start": 3.675
+  },
+  {
+   "word": "more",
+   "start": 4.1
+  },
+  {
+   "word": "energy",
+   "start": 4.325
+  },
+  {
+   "word": "than",
+   "start": 5.125
+  },
+  {
+   "word": "multiplying",
+   "start": 5.275
+  },
+  {
+   "word": "two",
+   "start": 6.025
+  },
+  {
+   "word": "numbers.",
+   "start": 6.175
+  },
+  {
+   "word": "The",
+   "start": 6.738
+  },
+  {
+   "word": "distance",
+   "start": 6.863
+  },
+  {
+   "word": "is",
+   "start": 7.413
+  },
+  {
+   "word": "the",
+   "start": 7.563
+  },
+  {
+   "word": "cost.",
+   "start": 7.663
+  },
+  {
+   "word": "Every",
+   "start": 8.613
+  },
+  {
+   "word": "bit",
+   "start": 8.913
+  },
+  {
+   "word": "has",
+   "start": 9.113
+  },
+  {
+   "word": "to",
+   "start": 9.313
+  },
+  {
+   "word": "be",
+   "start": 9.388
+  },
+  {
+   "word": "pushed",
+   "start": 9.538
+  },
+  {
+   "word": "down",
+   "start": 9.788
+  },
+  {
+   "word": "a",
+   "start": 9.963
+  },
+  {
+   "word": "wire,",
+   "start": 10.088
+  },
+  {
+   "word": "and",
+   "start": 10.763
+  },
+  {
+   "word": "the",
+   "start": 10.863
+  },
+  {
+   "word": "longer",
+   "start": 10.963
+  },
+  {
+   "word": "the",
+   "start": 11.338
+  },
+  {
+   "word": "wire,",
+   "start": 11.438
+  },
+  {
+   "word": "the",
+   "start": 11.963
+  },
+  {
+   "word": "more",
+   "start": 12.063
+  },
+  {
+   "word": "it",
+   "start": 12.263
+  },
+  {
+   "word": "burns.",
+   "start": 12.363
+  },
+  {
+   "word": "So",
+   "start": 12.992
+  },
+  {
+   "word": "the",
+   "start": 13.117
+  },
+  {
+   "word": "question",
+   "start": 13.217
+  },
+  {
+   "word": "for",
+   "start": 13.692
+  },
+  {
+   "word": "everyone",
+   "start": 13.892
+  },
+  {
+   "word": "building",
+   "start": 14.417
+  },
+  {
+   "word": "these",
+   "start": 14.817
+  },
+  {
+   "word": "machines",
+   "start": 15.042
+  },
+  {
+   "word": "became:",
+   "start": 15.592
+  },
+  {
+   "word": "how",
+   "start": 16.467
+  },
+  {
+   "word": "do",
+   "start": 16.592
+  },
+  {
+   "word": "you",
+   "start": 16.717
+  },
+  {
+   "word": "stop",
+   "start": 16.842
+  },
+  {
+   "word": "moving",
+   "start": 17.217
+  },
+  {
+   "word": "so",
+   "start": 17.567
+  },
+  {
+   "word": "much?",
+   "start": 17.717
+  }
+ ],
+ "beat-22": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "first",
+   "start": 0.15
+  },
+  {
+   "word": "answer",
+   "start": 0.45
+  },
+  {
+   "word": "was",
+   "start": 1.1
+  },
+  {
+   "word": "to",
+   "start": 1.275
+  },
+  {
+   "word": "move",
+   "start": 1.375
+  },
+  {
+   "word": "the",
+   "start": 1.55
+  },
+  {
+   "word": "warehouse.",
+   "start": 1.65
+  },
+  {
+   "word": "At",
+   "start": 2.315
+  },
+  {
+   "word": "AMD,",
+   "start": 2.49
+  },
+  {
+   "word": "a",
+   "start": 3.39
+  },
+  {
+   "word": "team",
+   "start": 3.69
+  },
+  {
+   "word": "led",
+   "start": 3.99
+  },
+  {
+   "word": "by",
+   "start": 4.19
+  },
+  {
+   "word": "Bryan",
+   "start": 4.39
+  },
+  {
+   "word": "Black",
+   "start": 4.79
+  },
+  {
+   "word": "had",
+   "start": 5.165
+  },
+  {
+   "word": "been",
+   "start": 5.265
+  },
+  {
+   "word": "working",
+   "start": 5.44
+  },
+  {
+   "word": "on",
+   "start": 5.79
+  },
+  {
+   "word": "it",
+   "start": 5.89
+  },
+  {
+   "word": "since",
+   "start": 6.04
+  },
+  {
+   "word": "two",
+   "start": 6.265
+  },
+  {
+   "word": "thousand",
+   "start": 6.44
+  },
+  {
+   "word": "eight.",
+   "start": 6.84
+  },
+  {
+   "word": "Their",
+   "start": 7.211
+  },
+  {
+   "word": "problem",
+   "start": 7.411
+  },
+  {
+   "word": "was",
+   "start": 7.861
+  },
+  {
+   "word": "graphics",
+   "start": 8.061
+  },
+  {
+   "word": "memory.",
+   "start": 8.536
+  },
+  {
+   "word": "Its",
+   "start": 9.436
+  },
+  {
+   "word": "power",
+   "start": 9.636
+  },
+  {
+   "word": "use",
+   "start": 9.961
+  },
+  {
+   "word": "simply",
+   "start": 10.436
+  },
+  {
+   "word": "would",
+   "start": 10.761
+  },
+  {
+   "word": "not",
+   "start": 10.911
+  },
+  {
+   "word": "scale",
+   "start": 11.186
+  },
+  {
+   "word": "to",
+   "start": 11.586
+  },
+  {
+   "word": "what",
+   "start": 11.711
+  },
+  {
+   "word": "the",
+   "start": 11.861
+  },
+  {
+   "word": "next",
+   "start": 11.961
+  },
+  {
+   "word": "chips",
+   "start": 12.211
+  },
+  {
+   "word": "needed.",
+   "start": 12.536
+  },
+  {
+   "word": "So",
+   "start": 13.063
+  },
+  {
+   "word": "instead",
+   "start": 13.313
+  },
+  {
+   "word": "of",
+   "start": 13.663
+  },
+  {
+   "word": "spreading",
+   "start": 13.763
+  },
+  {
+   "word": "memory",
+   "start": 14.213
+  },
+  {
+   "word": "chips",
+   "start": 14.613
+  },
+  {
+   "word": "around",
+   "start": 14.938
+  },
+  {
+   "word": "the",
+   "start": 15.188
+  },
+  {
+   "word": "board,",
+   "start": 15.288
+  },
+  {
+   "word": "they",
+   "start": 15.938
+  },
+  {
+   "word": "stacked",
+   "start": 16.113
+  },
+  {
+   "word": "them",
+   "start": 16.438
+  },
+  {
+   "word": "into",
+   "start": 16.563
+  },
+  {
+   "word": "towers.",
+   "start": 16.788
+  }
+ ],
+ "beat-23": [
+  {
+   "word": "Tiny",
+   "start": 0.0
+  },
+  {
+   "word": "wires",
+   "start": 0.375
+  },
+  {
+   "word": "run",
+   "start": 0.9
+  },
+  {
+   "word": "straight",
+   "start": 1.175
+  },
+  {
+   "word": "down",
+   "start": 1.575
+  },
+  {
+   "word": "through",
+   "start": 1.875
+  },
+  {
+   "word": "the",
+   "start": 2.025
+  },
+  {
+   "word": "silicon,",
+   "start": 2.125
+  },
+  {
+   "word": "connecting",
+   "start": 2.95
+  },
+  {
+   "word": "every",
+   "start": 3.525
+  },
+  {
+   "word": "floor",
+   "start": 3.85
+  },
+  {
+   "word": "of",
+   "start": 4.125
+  },
+  {
+   "word": "the",
+   "start": 4.225
+  },
+  {
+   "word": "tower",
+   "start": 4.325
+  },
+  {
+   "word": "at",
+   "start": 4.8
+  },
+  {
+   "word": "once.",
+   "start": 4.875
+  },
+  {
+   "word": "Then",
+   "start": 5.376
+  },
+  {
+   "word": "they",
+   "start": 5.601
+  },
+  {
+   "word": "set",
+   "start": 5.751
+  },
+  {
+   "word": "the",
+   "start": 5.926
+  },
+  {
+   "word": "towers",
+   "start": 6.026
+  },
+  {
+   "word": "right",
+   "start": 6.626
+  },
+  {
+   "word": "beside",
+   "start": 6.901
+  },
+  {
+   "word": "the",
+   "start": 7.201
+  },
+  {
+   "word": "processor,",
+   "start": 7.301
+  },
+  {
+   "word": "on",
+   "start": 8.326
+  },
+  {
+   "word": "the",
+   "start": 8.426
+  },
+  {
+   "word": "same",
+   "start": 8.576
+  },
+  {
+   "word": "slab",
+   "start": 8.901
+  },
+  {
+   "word": "of",
+   "start": 9.201
+  },
+  {
+   "word": "silicon.",
+   "start": 9.301
+  }
+ ],
+ "fiji": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "June",
+   "start": 0.2
+  },
+  {
+   "word": "twenty",
+   "start": 0.525
+  },
+  {
+   "word": "fifteen,",
+   "start": 0.825
+  },
+  {
+   "word": "AMD's",
+   "start": 1.725
+  },
+  {
+   "word": "Fiji",
+   "start": 2.325
+  },
+  {
+   "word": "was",
+   "start": 2.775
+  },
+  {
+   "word": "the",
+   "start": 2.9
+  },
+  {
+   "word": "first",
+   "start": 3.075
+  },
+  {
+   "word": "graphics",
+   "start": 3.375
+  },
+  {
+   "word": "chip",
+   "start": 3.85
+  },
+  {
+   "word": "to",
+   "start": 4.325
+  },
+  {
+   "word": "ship",
+   "start": 4.475
+  },
+  {
+   "word": "with",
+   "start": 4.7
+  },
+  {
+   "word": "this",
+   "start": 4.85
+  },
+  {
+   "word": "stacked",
+   "start": 5.025
+  },
+  {
+   "word": "memory.",
+   "start": 5.4
+  }
+ ],
+ "hbm-p100": [
+  {
+   "word": "Today",
+   "start": 0.0
+  },
+  {
+   "word": "it",
+   "start": 0.4
+  },
+  {
+   "word": "is",
+   "start": 0.475
+  },
+  {
+   "word": "called",
+   "start": 0.625
+  },
+  {
+   "word": "high",
+   "start": 1.0
+  },
+  {
+   "word": "bandwidth",
+   "start": 1.325
+  },
+  {
+   "word": "memory,",
+   "start": 1.825
+  },
+  {
+   "word": "and",
+   "start": 2.625
+  },
+  {
+   "word": "every",
+   "start": 2.8
+  },
+  {
+   "word": "Blackwell",
+   "start": 3.1
+  },
+  {
+   "word": "chip",
+   "start": 3.575
+  },
+  {
+   "word": "carries",
+   "start": 3.85
+  },
+  {
+   "word": "its",
+   "start": 4.225
+  },
+  {
+   "word": "own",
+   "start": 4.35
+  },
+  {
+   "word": "towers",
+   "start": 4.6
+  },
+  {
+   "word": "of",
+   "start": 4.975
+  },
+  {
+   "word": "it.",
+   "start": 5.075
+  }
+ ],
+ "beat-24": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "road",
+   "start": 0.125
+  },
+  {
+   "word": "from",
+   "start": 0.45
+  },
+  {
+   "word": "warehouse",
+   "start": 0.625
+  },
+  {
+   "word": "to",
+   "start": 1.125
+  },
+  {
+   "word": "factory",
+   "start": 1.25
+  },
+  {
+   "word": "is",
+   "start": 2.15
+  },
+  {
+   "word": "now",
+   "start": 2.3
+  },
+  {
+   "word": "as",
+   "start": 2.575
+  },
+  {
+   "word": "short",
+   "start": 2.75
+  },
+  {
+   "word": "as",
+   "start": 3.075
+  },
+  {
+   "word": "anyone",
+   "start": 3.25
+  },
+  {
+   "word": "can",
+   "start": 3.625
+  },
+  {
+   "word": "make",
+   "start": 3.75
+  },
+  {
+   "word": "it.",
+   "start": 3.975
+  },
+  {
+   "word": "But",
+   "start": 4.199
+  },
+  {
+   "word": "there",
+   "start": 4.349
+  },
+  {
+   "word": "is",
+   "start": 4.549
+  },
+  {
+   "word": "a",
+   "start": 4.599
+  },
+  {
+   "word": "catch.",
+   "start": 4.774
+  },
+  {
+   "word": "Even",
+   "start": 5.724
+  },
+  {
+   "word": "on",
+   "start": 6.049
+  },
+  {
+   "word": "that",
+   "start": 6.149
+  },
+  {
+   "word": "short",
+   "start": 6.399
+  },
+  {
+   "word": "road,",
+   "start": 6.649
+  },
+  {
+   "word": "the",
+   "start": 7.249
+  },
+  {
+   "word": "truck",
+   "start": 7.374
+  },
+  {
+   "word": "still",
+   "start": 7.674
+  },
+  {
+   "word": "takes",
+   "start": 7.924
+  },
+  {
+   "word": "hundreds",
+   "start": 8.199
+  },
+  {
+   "word": "of",
+   "start": 8.624
+  },
+  {
+   "word": "times",
+   "start": 8.724
+  },
+  {
+   "word": "longer",
+   "start": 9.099
+  },
+  {
+   "word": "than",
+   "start": 9.499
+  },
+  {
+   "word": "the",
+   "start": 9.599
+  },
+  {
+   "word": "work.",
+   "start": 9.699
+  },
+  {
+   "word": "So",
+   "start": 10.112
+  },
+  {
+   "word": "the",
+   "start": 10.237
+  },
+  {
+   "word": "second",
+   "start": 10.362
+  },
+  {
+   "word": "answer",
+   "start": 10.687
+  },
+  {
+   "word": "was",
+   "start": 11.362
+  },
+  {
+   "word": "to",
+   "start": 11.562
+  },
+  {
+   "word": "stop",
+   "start": 11.687
+  },
+  {
+   "word": "sending",
+   "start": 12.062
+  },
+  {
+   "word": "the",
+   "start": 12.362
+  },
+  {
+   "word": "truck",
+   "start": 12.462
+  },
+  {
+   "word": "for",
+   "start": 12.912
+  },
+  {
+   "word": "just",
+   "start": 13.037
+  },
+  {
+   "word": "one",
+   "start": 13.312
+  },
+  {
+   "word": "person.",
+   "start": 13.537
+  }
+ ],
+ "beat-25": [
+  {
+   "word": "Every",
+   "start": 0.0
+  },
+  {
+   "word": "conversation",
+   "start": 0.3
+  },
+  {
+   "word": "uses",
+   "start": 1.275
+  },
+  {
+   "word": "exactly",
+   "start": 1.625
+  },
+  {
+   "word": "the",
+   "start": 2.175
+  },
+  {
+   "word": "same",
+   "start": 2.325
+  },
+  {
+   "word": "weights.",
+   "start": 2.625
+  },
+  {
+   "word": "So",
+   "start": 3.136
+  },
+  {
+   "word": "the",
+   "start": 3.261
+  },
+  {
+   "word": "system",
+   "start": 3.411
+  },
+  {
+   "word": "gathers",
+   "start": 3.886
+  },
+  {
+   "word": "many",
+   "start": 4.361
+  },
+  {
+   "word": "conversations",
+   "start": 4.611
+  },
+  {
+   "word": "together,",
+   "start": 5.361
+  },
+  {
+   "word": "and",
+   "start": 6.211
+  },
+  {
+   "word": "a",
+   "start": 6.261
+  },
+  {
+   "word": "single",
+   "start": 6.436
+  },
+  {
+   "word": "delivery",
+   "start": 6.786
+  },
+  {
+   "word": "carries",
+   "start": 7.286
+  },
+  {
+   "word": "cat",
+   "start": 7.711
+  },
+  {
+   "word": "along",
+   "start": 7.986
+  },
+  {
+   "word": "with",
+   "start": 8.386
+  },
+  {
+   "word": "everyone",
+   "start": 8.586
+  },
+  {
+   "word": "else's",
+   "start": 8.986
+  },
+  {
+   "word": "words.",
+   "start": 9.411
+  },
+  {
+   "word": "The",
+   "start": 9.916
+  },
+  {
+   "word": "workers",
+   "start": 10.041
+  },
+  {
+   "word": "who",
+   "start": 10.491
+  },
+  {
+   "word": "would",
+   "start": 10.616
+  },
+  {
+   "word": "nap",
+   "start": 10.791
+  },
+  {
+   "word": "for",
+   "start": 11.066
+  },
+  {
+   "word": "you",
+   "start": 11.216
+  },
+  {
+   "word": "stay",
+   "start": 11.341
+  },
+  {
+   "word": "busy",
+   "start": 11.616
+  },
+  {
+   "word": "for",
+   "start": 11.916
+  },
+  {
+   "word": "a",
+   "start": 11.991
+  },
+  {
+   "word": "crowd.",
+   "start": 12.141
+  },
+  {
+   "word": "This",
+   "start": 12.991
+  },
+  {
+   "word": "is",
+   "start": 13.291
+  },
+  {
+   "word": "called",
+   "start": 13.441
+  },
+  {
+   "word": "batching.",
+   "start": 13.716
+  }
+ ],
+ "beat-26": [
+  {
+   "word": "Except",
+   "start": 0.0
+  },
+  {
+   "word": "batching",
+   "start": 0.375
+  },
+  {
+   "word": "has",
+   "start": 0.925
+  },
+  {
+   "word": "a",
+   "start": 1.025
+  },
+  {
+   "word": "problem",
+   "start": 1.15
+  },
+  {
+   "word": "of",
+   "start": 1.55
+  },
+  {
+   "word": "its",
+   "start": 1.625
+  },
+  {
+   "word": "own.",
+   "start": 1.8
+  },
+  {
+   "word": "Every",
+   "start": 2.575
+  },
+  {
+   "word": "conversation",
+   "start": 2.875
+  },
+  {
+   "word": "needs",
+   "start": 3.6
+  },
+  {
+   "word": "a",
+   "start": 3.775
+  },
+  {
+   "word": "scratchpad.",
+   "start": 3.9
+  },
+  {
+   "word": "For",
+   "start": 4.715
+  },
+  {
+   "word": "every",
+   "start": 4.915
+  },
+  {
+   "word": "word",
+   "start": 5.215
+  },
+  {
+   "word": "you",
+   "start": 5.465
+  },
+  {
+   "word": "send",
+   "start": 5.64
+  },
+  {
+   "word": "or",
+   "start": 6.015
+  },
+  {
+   "word": "receive,",
+   "start": 6.14
+  },
+  {
+   "word": "the",
+   "start": 6.99
+  },
+  {
+   "word": "model",
+   "start": 7.115
+  },
+  {
+   "word": "keeps",
+   "start": 7.515
+  },
+  {
+   "word": "the",
+   "start": 7.815
+  },
+  {
+   "word": "notes",
+   "start": 7.915
+  },
+  {
+   "word": "it",
+   "start": 8.24
+  },
+  {
+   "word": "made",
+   "start": 8.365
+  },
+  {
+   "word": "during",
+   "start": 8.665
+  },
+  {
+   "word": "attention,",
+   "start": 8.94
+  },
+  {
+   "word": "so",
+   "start": 9.99
+  },
+  {
+   "word": "it",
+   "start": 10.115
+  },
+  {
+   "word": "never",
+   "start": 10.24
+  },
+  {
+   "word": "has",
+   "start": 10.54
+  },
+  {
+   "word": "to",
+   "start": 10.74
+  },
+  {
+   "word": "redo",
+   "start": 10.865
+  },
+  {
+   "word": "them.",
+   "start": 11.165
+  },
+  {
+   "word": "Those",
+   "start": 11.478
+  },
+  {
+   "word": "notes",
+   "start": 11.778
+  },
+  {
+   "word": "grow",
+   "start": 12.103
+  },
+  {
+   "word": "with",
+   "start": 12.353
+  },
+  {
+   "word": "every",
+   "start": 12.553
+  },
+  {
+   "word": "word",
+   "start": 12.853
+  },
+  {
+   "word": "and",
+   "start": 13.228
+  },
+  {
+   "word": "every",
+   "start": 13.353
+  },
+  {
+   "word": "person,",
+   "start": 13.653
+  },
+  {
+   "word": "and",
+   "start": 14.503
+  },
+  {
+   "word": "they",
+   "start": 14.603
+  },
+  {
+   "word": "fill",
+   "start": 14.803
+  },
+  {
+   "word": "the",
+   "start": 15.028
+  },
+  {
+   "word": "memory",
+   "start": 15.128
+  },
+  {
+   "word": "up.",
+   "start": 15.528
+  }
+ ],
+ "vllm-paper": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "twenty",
+   "start": 0.15
+  },
+  {
+   "word": "twenty",
+   "start": 0.45
+  },
+  {
+   "word": "three,",
+   "start": 0.775
+  },
+  {
+   "word": "Woosuk",
+   "start": 1.5
+  },
+  {
+   "word": "Kwon",
+   "start": 1.925
+  },
+  {
+   "word": "and",
+   "start": 2.3
+  },
+  {
+   "word": "his",
+   "start": 2.4
+  },
+  {
+   "word": "colleagues",
+   "start": 2.575
+  },
+  {
+   "word": "at",
+   "start": 3.1
+  },
+  {
+   "word": "Berkeley",
+   "start": 3.2
+  },
+  {
+   "word": "measured",
+   "start": 3.75
+  },
+  {
+   "word": "how",
+   "start": 4.1
+  },
+  {
+   "word": "badly.",
+   "start": 4.3
+  }
+ ],
+ "beat-27": [
+  {
+   "word": "In",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.1
+  },
+  {
+   "word": "serving",
+   "start": 0.25
+  },
+  {
+   "word": "systems",
+   "start": 0.65
+  },
+  {
+   "word": "of",
+   "start": 1.125
+  },
+  {
+   "word": "the",
+   "start": 1.225
+  },
+  {
+   "word": "time,",
+   "start": 1.325
+  },
+  {
+   "word": "as",
+   "start": 2.175
+  },
+  {
+   "word": "little",
+   "start": 2.35
+  },
+  {
+   "word": "as",
+   "start": 2.625
+  },
+  {
+   "word": "a",
+   "start": 2.675
+  },
+  {
+   "word": "fifth",
+   "start": 2.9
+  },
+  {
+   "word": "of",
+   "start": 3.225
+  },
+  {
+   "word": "that",
+   "start": 3.325
+  },
+  {
+   "word": "scratchpad",
+   "start": 3.55
+  },
+  {
+   "word": "memory",
+   "start": 4.15
+  },
+  {
+   "word": "held",
+   "start": 4.8
+  },
+  {
+   "word": "actual",
+   "start": 5.1
+  },
+  {
+   "word": "notes.",
+   "start": 5.5
+  },
+  {
+   "word": "The",
+   "start": 5.991
+  },
+  {
+   "word": "rest",
+   "start": 6.116
+  },
+  {
+   "word": "was",
+   "start": 6.416
+  },
+  {
+   "word": "reserved",
+   "start": 6.566
+  },
+  {
+   "word": "just",
+   "start": 7.116
+  },
+  {
+   "word": "in",
+   "start": 7.391
+  },
+  {
+   "word": "case,",
+   "start": 7.541
+  },
+  {
+   "word": "or",
+   "start": 8.291
+  },
+  {
+   "word": "lost",
+   "start": 8.516
+  },
+  {
+   "word": "in",
+   "start": 8.941
+  },
+  {
+   "word": "gaps",
+   "start": 9.091
+  },
+  {
+   "word": "between",
+   "start": 9.491
+  },
+  {
+   "word": "conversations.",
+   "start": 9.791
+  },
+  {
+   "word": "Their",
+   "start": 10.684
+  },
+  {
+   "word": "fix",
+   "start": 10.934
+  },
+  {
+   "word": "came",
+   "start": 11.309
+  },
+  {
+   "word": "from",
+   "start": 11.609
+  },
+  {
+   "word": "an",
+   "start": 11.759
+  },
+  {
+   "word": "old",
+   "start": 11.884
+  },
+  {
+   "word": "idea",
+   "start": 12.159
+  },
+  {
+   "word": "in",
+   "start": 12.734
+  },
+  {
+   "word": "operating",
+   "start": 12.909
+  },
+  {
+   "word": "systems.",
+   "start": 13.459
+  },
+  {
+   "word": "Cut",
+   "start": 14.534
+  },
+  {
+   "word": "memory",
+   "start": 14.784
+  },
+  {
+   "word": "into",
+   "start": 15.259
+  },
+  {
+   "word": "small",
+   "start": 15.534
+  },
+  {
+   "word": "pages",
+   "start": 15.809
+  },
+  {
+   "word": "and",
+   "start": 16.659
+  },
+  {
+   "word": "hand",
+   "start": 16.784
+  },
+  {
+   "word": "them",
+   "start": 16.984
+  },
+  {
+   "word": "out",
+   "start": 17.134
+  },
+  {
+   "word": "only",
+   "start": 17.409
+  },
+  {
+   "word": "when",
+   "start": 17.759
+  },
+  {
+   "word": "needed.",
+   "start": 17.934
+  }
+ ],
+ "beat-28": [
+  {
+   "word": "With",
+   "start": 0.0
+  },
+  {
+   "word": "almost",
+   "start": 0.15
+  },
+  {
+   "word": "nothing",
+   "start": 0.575
+  },
+  {
+   "word": "wasted,",
+   "start": 0.925
+  },
+  {
+   "word": "the",
+   "start": 1.8
+  },
+  {
+   "word": "same",
+   "start": 1.95
+  },
+  {
+   "word": "chips",
+   "start": 2.25
+  },
+  {
+   "word": "could",
+   "start": 2.575
+  },
+  {
+   "word": "handle",
+   "start": 2.7
+  },
+  {
+   "word": "two",
+   "start": 3.1
+  },
+  {
+   "word": "to",
+   "start": 3.25
+  },
+  {
+   "word": "four",
+   "start": 3.375
+  },
+  {
+   "word": "times",
+   "start": 3.625
+  },
+  {
+   "word": "as",
+   "start": 4.15
+  },
+  {
+   "word": "many",
+   "start": 4.3
+  },
+  {
+   "word": "requests.",
+   "start": 4.525
+  },
+  {
+   "word": "A",
+   "start": 5.209
+  },
+  {
+   "word": "year",
+   "start": 5.309
+  },
+  {
+   "word": "earlier,",
+   "start": 5.534
+  },
+  {
+   "word": "Tri",
+   "start": 6.284
+  },
+  {
+   "word": "Dao",
+   "start": 6.584
+  },
+  {
+   "word": "and",
+   "start": 6.934
+  },
+  {
+   "word": "his",
+   "start": 7.034
+  },
+  {
+   "word": "colleagues",
+   "start": 7.209
+  },
+  {
+   "word": "had",
+   "start": 7.809
+  },
+  {
+   "word": "applied",
+   "start": 7.909
+  },
+  {
+   "word": "the",
+   "start": 8.259
+  },
+  {
+   "word": "same",
+   "start": 8.384
+  },
+  {
+   "word": "lesson",
+   "start": 8.684
+  },
+  {
+   "word": "inside",
+   "start": 9.334
+  },
+  {
+   "word": "attention",
+   "start": 9.859
+  },
+  {
+   "word": "itself.",
+   "start": 10.309
+  },
+  {
+   "word": "Their",
+   "start": 10.859
+  },
+  {
+   "word": "method,",
+   "start": 11.059
+  },
+  {
+   "word": "called",
+   "start": 11.584
+  },
+  {
+   "word": "FlashAttention,",
+   "start": 11.934
+  },
+  {
+   "word": "keeps",
+   "start": 13.184
+  },
+  {
+   "word": "the",
+   "start": 13.459
+  },
+  {
+   "word": "work",
+   "start": 13.559
+  },
+  {
+   "word": "in",
+   "start": 13.834
+  },
+  {
+   "word": "a",
+   "start": 13.859
+  },
+  {
+   "word": "tiny",
+   "start": 14.034
+  },
+  {
+   "word": "fast",
+   "start": 14.509
+  },
+  {
+   "word": "memory",
+   "start": 14.909
+  },
+  {
+   "word": "on",
+   "start": 15.359
+  },
+  {
+   "word": "the",
+   "start": 15.459
+  },
+  {
+   "word": "chip,",
+   "start": 15.559
+  },
+  {
+   "word": "so",
+   "start": 16.284
+  },
+  {
+   "word": "less",
+   "start": 16.459
+  },
+  {
+   "word": "has",
+   "start": 16.734
+  },
+  {
+   "word": "to",
+   "start": 16.934
+  },
+  {
+   "word": "travel",
+   "start": 17.034
+  },
+  {
+   "word": "back",
+   "start": 17.434
+  },
+  {
+   "word": "and",
+   "start": 17.709
+  },
+  {
+   "word": "forth.",
+   "start": 17.859
+  }
+ ],
+ "beat-29": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "third",
+   "start": 0.175
+  },
+  {
+   "word": "answer",
+   "start": 0.475
+  },
+  {
+   "word": "was",
+   "start": 1.125
+  },
+  {
+   "word": "to",
+   "start": 1.325
+  },
+  {
+   "word": "make",
+   "start": 1.4
+  },
+  {
+   "word": "the",
+   "start": 1.6
+  },
+  {
+   "word": "cargo",
+   "start": 1.7
+  },
+  {
+   "word": "lighter.",
+   "start": 2.125
+  },
+  {
+   "word": "In",
+   "start": 2.605
+  },
+  {
+   "word": "that",
+   "start": 2.73
+  },
+  {
+   "word": "open",
+   "start": 2.955
+  },
+  {
+   "word": "model,",
+   "start": 3.305
+  },
+  {
+   "word": "most",
+   "start": 4.03
+  },
+  {
+   "word": "weights",
+   "start": 4.355
+  },
+  {
+   "word": "are",
+   "start": 4.63
+  },
+  {
+   "word": "stored",
+   "start": 4.755
+  },
+  {
+   "word": "in",
+   "start": 5.155
+  },
+  {
+   "word": "just",
+   "start": 5.305
+  },
+  {
+   "word": "over",
+   "start": 5.58
+  },
+  {
+   "word": "four",
+   "start": 5.83
+  },
+  {
+   "word": "bits",
+   "start": 6.08
+  },
+  {
+   "word": "each,",
+   "start": 6.33
+  },
+  {
+   "word": "instead",
+   "start": 7.055
+  },
+  {
+   "word": "of",
+   "start": 7.38
+  },
+  {
+   "word": "the",
+   "start": 7.455
+  },
+  {
+   "word": "usual",
+   "start": 7.555
+  },
+  {
+   "word": "sixteen.",
+   "start": 7.93
+  },
+  {
+   "word": "Smaller",
+   "start": 8.6
+  },
+  {
+   "word": "numbers",
+   "start": 9.025
+  },
+  {
+   "word": "mean",
+   "start": 9.575
+  },
+  {
+   "word": "a",
+   "start": 9.675
+  },
+  {
+   "word": "lighter",
+   "start": 9.875
+  },
+  {
+   "word": "truck",
+   "start": 10.225
+  },
+  {
+   "word": "on",
+   "start": 10.525
+  },
+  {
+   "word": "every",
+   "start": 10.675
+  },
+  {
+   "word": "trip,",
+   "start": 10.975
+  },
+  {
+   "word": "and",
+   "start": 11.675
+  },
+  {
+   "word": "the",
+   "start": 11.775
+  },
+  {
+   "word": "whole",
+   "start": 11.875
+  },
+  {
+   "word": "model",
+   "start": 12.1
+  },
+  {
+   "word": "fits",
+   "start": 12.5
+  },
+  {
+   "word": "on",
+   "start": 12.75
+  },
+  {
+   "word": "a",
+   "start": 12.775
+  },
+  {
+   "word": "single",
+   "start": 12.925
+  },
+  {
+   "word": "chip.",
+   "start": 13.25
+  },
+  {
+   "word": "But",
+   "start": 13.649
+  },
+  {
+   "word": "the",
+   "start": 13.774
+  },
+  {
+   "word": "biggest",
+   "start": 13.899
+  },
+  {
+   "word": "models",
+   "start": 14.299
+  },
+  {
+   "word": "do",
+   "start": 14.699
+  },
+  {
+   "word": "not",
+   "start": 14.799
+  },
+  {
+   "word": "fit",
+   "start": 15.099
+  },
+  {
+   "word": "on",
+   "start": 15.299
+  },
+  {
+   "word": "one",
+   "start": 15.424
+  },
+  {
+   "word": "chip,",
+   "start": 15.649
+  },
+  {
+   "word": "and",
+   "start": 16.349
+  },
+  {
+   "word": "a",
+   "start": 16.399
+  },
+  {
+   "word": "busy",
+   "start": 16.524
+  },
+  {
+   "word": "service",
+   "start": 16.849
+  },
+  {
+   "word": "needs",
+   "start": 17.324
+  },
+  {
+   "word": "thousands",
+   "start": 17.699
+  },
+  {
+   "word": "of",
+   "start": 18.224
+  },
+  {
+   "word": "them.",
+   "start": 18.299
+  }
+ ],
+ "beat-30": [
+  {
+   "word": "So",
+   "start": 0.0
+  },
+  {
+   "word": "the",
+   "start": 0.125
+  },
+  {
+   "word": "chips",
+   "start": 0.225
+  },
+  {
+   "word": "are",
+   "start": 0.525
+  },
+  {
+   "word": "wired",
+   "start": 0.675
+  },
+  {
+   "word": "together,",
+   "start": 1.05
+  },
+  {
+   "word": "and",
+   "start": 1.875
+  },
+  {
+   "word": "here",
+   "start": 2.0
+  },
+  {
+   "word": "the",
+   "start": 2.2
+  },
+  {
+   "word": "fight",
+   "start": 2.375
+  },
+  {
+   "word": "against",
+   "start": 2.625
+  },
+  {
+   "word": "distance",
+   "start": 2.925
+  },
+  {
+   "word": "gets",
+   "start": 3.45
+  },
+  {
+   "word": "physical.",
+   "start": 3.725
+  }
+ ],
+ "dgx-gb200": [
+  {
+   "word": "This",
+   "start": 0.0
+  },
+  {
+   "word": "is",
+   "start": 0.2
+  },
+  {
+   "word": "NVIDIA's",
+   "start": 0.425
+  },
+  {
+   "word": "rack",
+   "start": 1.0
+  },
+  {
+   "word": "for",
+   "start": 1.325
+  },
+  {
+   "word": "Blackwell,",
+   "start": 1.475
+  },
+  {
+   "word": "a",
+   "start": 2.275
+  },
+  {
+   "word": "cabinet",
+   "start": 2.525
+  },
+  {
+   "word": "taller",
+   "start": 2.95
+  },
+  {
+   "word": "than",
+   "start": 3.4
+  },
+  {
+   "word": "a",
+   "start": 3.475
+  },
+  {
+   "word": "person",
+   "start": 3.6
+  },
+  {
+   "word": "that",
+   "start": 4.05
+  },
+  {
+   "word": "weighs",
+   "start": 4.2
+  },
+  {
+   "word": "more",
+   "start": 4.525
+  },
+  {
+   "word": "than",
+   "start": 4.75
+  },
+  {
+   "word": "a",
+   "start": 4.825
+  },
+  {
+   "word": "tonne.",
+   "start": 5.0
+  }
+ ],
+ "qct-gh": [
+  {
+   "word": "It",
+   "start": 0.0
+  },
+  {
+   "word": "holds",
+   "start": 0.125
+  },
+  {
+   "word": "seventy",
+   "start": 0.525
+  },
+  {
+   "word": "two",
+   "start": 0.925
+  },
+  {
+   "word": "of",
+   "start": 1.1
+  },
+  {
+   "word": "those",
+   "start": 1.175
+  },
+  {
+   "word": "chips,",
+   "start": 1.425
+  },
+  {
+   "word": "along",
+   "start": 2.225
+  },
+  {
+   "word": "with",
+   "start": 2.525
+  },
+  {
+   "word": "thirty",
+   "start": 2.725
+  },
+  {
+   "word": "six",
+   "start": 3.05
+  },
+  {
+   "word": "Grace",
+   "start": 3.325
+  },
+  {
+   "word": "processors",
+   "start": 3.65
+  },
+  {
+   "word": "to",
+   "start": 4.325
+  },
+  {
+   "word": "manage",
+   "start": 4.45
+  },
+  {
+   "word": "them.",
+   "start": 4.875
+  }
+ ],
+ "beat-31": [
+  {
+   "word": "Behind",
+   "start": 0.0
+  },
+  {
+   "word": "them",
+   "start": 0.45
+  },
+  {
+   "word": "runs",
+   "start": 0.725
+  },
+  {
+   "word": "a",
+   "start": 0.9
+  },
+  {
+   "word": "spine",
+   "start": 1.05
+  },
+  {
+   "word": "of",
+   "start": 1.4
+  },
+  {
+   "word": "copper",
+   "start": 1.525
+  },
+  {
+   "word": "cables,",
+   "start": 1.85
+  },
+  {
+   "word": "more",
+   "start": 2.725
+  },
+  {
+   "word": "than",
+   "start": 2.975
+  },
+  {
+   "word": "three",
+   "start": 3.2
+  },
+  {
+   "word": "kilometres",
+   "start": 3.5
+  },
+  {
+   "word": "of",
+   "start": 4.05
+  },
+  {
+   "word": "it,",
+   "start": 4.2
+  },
+  {
+   "word": "linking",
+   "start": 4.675
+  },
+  {
+   "word": "every",
+   "start": 5.05
+  },
+  {
+   "word": "chip",
+   "start": 5.35
+  },
+  {
+   "word": "to",
+   "start": 5.625
+  },
+  {
+   "word": "every",
+   "start": 5.75
+  },
+  {
+   "word": "other.",
+   "start": 6.025
+  },
+  {
+   "word": "NVIDIA",
+   "start": 6.422
+  },
+  {
+   "word": "says",
+   "start": 6.947
+  },
+  {
+   "word": "the",
+   "start": 7.147
+  },
+  {
+   "word": "rack",
+   "start": 7.247
+  },
+  {
+   "word": "acts",
+   "start": 7.572
+  },
+  {
+   "word": "like",
+   "start": 7.797
+  },
+  {
+   "word": "a",
+   "start": 7.897
+  },
+  {
+   "word": "single,",
+   "start": 8.072
+  },
+  {
+   "word": "massive",
+   "start": 8.822
+  },
+  {
+   "word": "GPU.",
+   "start": 9.347
+  },
+  {
+   "word": "A",
+   "start": 10.07
+  },
+  {
+   "word": "model",
+   "start": 10.17
+  },
+  {
+   "word": "can",
+   "start": 10.595
+  },
+  {
+   "word": "be",
+   "start": 10.695
+  },
+  {
+   "word": "cut",
+   "start": 10.845
+  },
+  {
+   "word": "into",
+   "start": 11.045
+  },
+  {
+   "word": "slices",
+   "start": 11.295
+  },
+  {
+   "word": "and",
+   "start": 12.02
+  },
+  {
+   "word": "spread",
+   "start": 12.17
+  },
+  {
+   "word": "across",
+   "start": 12.445
+  },
+  {
+   "word": "it,",
+   "start": 12.845
+  },
+  {
+   "word": "so",
+   "start": 13.395
+  },
+  {
+   "word": "each",
+   "start": 13.595
+  },
+  {
+   "word": "chip",
+   "start": 13.87
+  },
+  {
+   "word": "only",
+   "start": 14.17
+  },
+  {
+   "word": "fetches",
+   "start": 14.495
+  },
+  {
+   "word": "its",
+   "start": 14.82
+  },
+  {
+   "word": "own",
+   "start": 14.97
+  },
+  {
+   "word": "slice",
+   "start": 15.245
+  },
+  {
+   "word": "of",
+   "start": 15.57
+  },
+  {
+   "word": "cat's",
+   "start": 15.695
+  },
+  {
+   "word": "climb.",
+   "start": 16.02
+  }
+ ],
+ "beat-32": [
+  {
+   "word": "Where",
+   "start": 0.0
+  },
+  {
+   "word": "does",
+   "start": 0.125
+  },
+  {
+   "word": "all",
+   "start": 0.275
+  },
+  {
+   "word": "that",
+   "start": 0.475
+  },
+  {
+   "word": "effort",
+   "start": 0.675
+  },
+  {
+   "word": "go",
+   "start": 1.0
+  },
+  {
+   "word": "in",
+   "start": 1.15
+  },
+  {
+   "word": "the",
+   "start": 1.225
+  },
+  {
+   "word": "end?",
+   "start": 1.375
+  },
+  {
+   "word": "It",
+   "start": 1.835
+  },
+  {
+   "word": "turns",
+   "start": 1.985
+  },
+  {
+   "word": "into",
+   "start": 2.31
+  },
+  {
+   "word": "heat.",
+   "start": 2.56
+  },
+  {
+   "word": "One",
+   "start": 3.41
+  },
+  {
+   "word": "of",
+   "start": 3.56
+  },
+  {
+   "word": "these",
+   "start": 3.635
+  },
+  {
+   "word": "racks",
+   "start": 3.91
+  },
+  {
+   "word": "draws",
+   "start": 4.385
+  },
+  {
+   "word": "about",
+   "start": 4.81
+  },
+  {
+   "word": "a",
+   "start": 4.96
+  },
+  {
+   "word": "hundred",
+   "start": 5.11
+  },
+  {
+   "word": "and",
+   "start": 5.56
+  },
+  {
+   "word": "twenty",
+   "start": 5.685
+  },
+  {
+   "word": "kilowatts,",
+   "start": 6.01
+  },
+  {
+   "word": "about",
+   "start": 6.91
+  },
+  {
+   "word": "as",
+   "start": 7.135
+  },
+  {
+   "word": "much",
+   "start": 7.285
+  },
+  {
+   "word": "as",
+   "start": 7.51
+  },
+  {
+   "word": "a",
+   "start": 7.56
+  },
+  {
+   "word": "hundred",
+   "start": 7.76
+  },
+  {
+   "word": "American",
+   "start": 8.135
+  },
+  {
+   "word": "homes.",
+   "start": 8.635
+  },
+  {
+   "word": "Air",
+   "start": 9.198
+  },
+  {
+   "word": "cannot",
+   "start": 9.448
+  },
+  {
+   "word": "carry",
+   "start": 9.773
+  },
+  {
+   "word": "that",
+   "start": 10.073
+  },
+  {
+   "word": "away,",
+   "start": 10.248
+  },
+  {
+   "word": "so",
+   "start": 11.048
+  },
+  {
+   "word": "liquid",
+   "start": 11.223
+  },
+  {
+   "word": "runs",
+   "start": 11.598
+  },
+  {
+   "word": "through",
+   "start": 11.973
+  },
+  {
+   "word": "metal",
+   "start": 12.223
+  },
+  {
+   "word": "plates",
+   "start": 12.523
+  },
+  {
+   "word": "pressed",
+   "start": 12.923
+  },
+  {
+   "word": "onto",
+   "start": 13.223
+  },
+  {
+   "word": "every",
+   "start": 13.448
+  },
+  {
+   "word": "chip.",
+   "start": 13.748
+  }
+ ],
+ "beat-33": [
+  {
+   "word": "The",
+   "start": 0.0
+  },
+  {
+   "word": "heat",
+   "start": 0.15
+  },
+  {
+   "word": "has",
+   "start": 0.45
+  },
+  {
+   "word": "to",
+   "start": 0.65
+  },
+  {
+   "word": "go",
+   "start": 0.725
+  },
+  {
+   "word": "somewhere,",
+   "start": 0.925
+  },
+  {
+   "word": "and",
+   "start": 1.75
+  },
+  {
+   "word": "many",
+   "start": 1.875
+  },
+  {
+   "word": "sites",
+   "start": 2.125
+  },
+  {
+   "word": "dump",
+   "start": 2.5
+  },
+  {
+   "word": "it",
+   "start": 2.725
+  },
+  {
+   "word": "into",
+   "start": 2.8
+  },
+  {
+   "word": "the",
+   "start": 2.975
+  },
+  {
+   "word": "sky",
+   "start": 3.1
+  },
+  {
+   "word": "through",
+   "start": 3.6
+  },
+  {
+   "word": "cooling",
+   "start": 3.85
+  },
+  {
+   "word": "towers.",
+   "start": 4.25
+  },
+  {
+   "word": "A",
+   "start": 4.868
+  },
+  {
+   "word": "tower",
+   "start": 4.993
+  },
+  {
+   "word": "lets",
+   "start": 5.443
+  },
+  {
+   "word": "a",
+   "start": 5.618
+  },
+  {
+   "word": "small",
+   "start": 5.843
+  },
+  {
+   "word": "part",
+   "start": 6.193
+  },
+  {
+   "word": "of",
+   "start": 6.443
+  },
+  {
+   "word": "the",
+   "start": 6.518
+  },
+  {
+   "word": "water",
+   "start": 6.643
+  },
+  {
+   "word": "evaporate,",
+   "start": 6.968
+  },
+  {
+   "word": "and",
+   "start": 7.943
+  },
+  {
+   "word": "the",
+   "start": 8.043
+  },
+  {
+   "word": "evaporation",
+   "start": 8.143
+  },
+  {
+   "word": "pulls",
+   "start": 8.918
+  },
+  {
+   "word": "heat",
+   "start": 9.293
+  },
+  {
+   "word": "out",
+   "start": 9.568
+  },
+  {
+   "word": "of",
+   "start": 9.668
+  },
+  {
+   "word": "the",
+   "start": 9.718
+  },
+  {
+   "word": "rest.",
+   "start": 9.818
+  },
+  {
+   "word": "That",
+   "start": 10.354
+  },
+  {
+   "word": "is",
+   "start": 10.654
+  },
+  {
+   "word": "where",
+   "start": 10.779
+  },
+  {
+   "word": "the",
+   "start": 10.904
+  },
+  {
+   "word": "water",
+   "start": 11.054
+  },
+  {
+   "word": "in",
+   "start": 11.379
+  },
+  {
+   "word": "the",
+   "start": 11.454
+  },
+  {
+   "word": "headlines",
+   "start": 11.554
+  },
+  {
+   "word": "goes.",
+   "start": 12.104
+  }
+ ],
+ "altman-2019": [
+  {
+   "word": "Days",
+   "start": 0.0
+  },
+  {
+   "word": "after",
+   "start": 0.35
+  },
+  {
+   "word": "ChatGPT",
+   "start": 0.65
+  },
+  {
+   "word": "launched,",
+   "start": 1.675
+  },
+  {
+   "word": "its",
+   "start": 2.55
+  },
+  {
+   "word": "chief",
+   "start": 2.75
+  },
+  {
+   "word": "executive",
+   "start": 3.05
+  },
+  {
+   "word": "Sam",
+   "start": 3.675
+  },
+  {
+   "word": "Altman",
+   "start": 3.975
+  },
+  {
+   "word": "wrote",
+   "start": 4.8
+  },
+  {
+   "word": "that",
+   "start": 5.075
+  },
+  {
+   "word": "the",
+   "start": 5.225
+  },
+  {
+   "word": "compute",
+   "start": 5.325
+  },
+  {
+   "word": "costs",
+   "start": 5.775
+  },
+  {
+   "word": "were",
+   "start": 6.175
+  },
+  {
+   "word": "eye-watering.",
+   "start": 6.375
+  }
+ ],
+ "beat-34": [
+  {
+   "word": "How",
+   "start": 0.0
+  },
+  {
+   "word": "much",
+   "start": 0.125
+  },
+  {
+   "word": "does",
+   "start": 0.35
+  },
+  {
+   "word": "cat's",
+   "start": 0.55
+  },
+  {
+   "word": "trip",
+   "start": 0.875
+  },
+  {
+   "word": "actually",
+   "start": 1.125
+  },
+  {
+   "word": "cost,",
+   "start": 1.575
+  },
+  {
+   "word": "then?",
+   "start": 1.95
+  },
+  {
+   "word": "In",
+   "start": 2.368
+  },
+  {
+   "word": "twenty",
+   "start": 2.518
+  },
+  {
+   "word": "twenty",
+   "start": 2.843
+  },
+  {
+   "word": "five,",
+   "start": 3.143
+  },
+  {
+   "word": "he",
+   "start": 3.868
+  },
+  {
+   "word": "put",
+   "start": 3.993
+  },
+  {
+   "word": "an",
+   "start": 4.143
+  },
+  {
+   "word": "average",
+   "start": 4.268
+  },
+  {
+   "word": "query",
+   "start": 4.693
+  },
+  {
+   "word": "at",
+   "start": 5.293
+  },
+  {
+   "word": "about",
+   "start": 5.393
+  },
+  {
+   "word": "a",
+   "start": 5.543
+  },
+  {
+   "word": "third",
+   "start": 5.743
+  },
+  {
+   "word": "of",
+   "start": 6.043
+  },
+  {
+   "word": "a",
+   "start": 6.043
+  },
+  {
+   "word": "watt",
+   "start": 6.218
+  },
+  {
+   "word": "hour,",
+   "start": 6.543
+  },
+  {
+   "word": "about",
+   "start": 7.368
+  },
+  {
+   "word": "what",
+   "start": 7.643
+  },
+  {
+   "word": "an",
+   "start": 7.793
+  },
+  {
+   "word": "oven",
+   "start": 7.918
+  },
+  {
+   "word": "uses",
+   "start": 8.218
+  },
+  {
+   "word": "in",
+   "start": 8.668
+  },
+  {
+   "word": "a",
+   "start": 8.693
+  },
+  {
+   "word": "second",
+   "start": 8.868
+  },
+  {
+   "word": "or",
+   "start": 9.268
+  },
+  {
+   "word": "so.",
+   "start": 9.468
+  },
+  {
+   "word": "Tiny,",
+   "start": 9.856
+  },
+  {
+   "word": "for",
+   "start": 10.406
+  },
+  {
+   "word": "one",
+   "start": 10.556
+  },
+  {
+   "word": "question.",
+   "start": 10.781
+  },
+  {
+   "word": "But",
+   "start": 11.731
+  },
+  {
+   "word": "ChatGPT",
+   "start": 11.906
+  },
+  {
+   "word": "gets",
+   "start": 12.956
+  },
+  {
+   "word": "around",
+   "start": 13.206
+  },
+  {
+   "word": "two",
+   "start": 13.506
+  },
+  {
+   "word": "and",
+   "start": 13.656
+  },
+  {
+   "word": "a",
+   "start": 13.706
+  },
+  {
+   "word": "half",
+   "start": 13.831
+  },
+  {
+   "word": "billion",
+   "start": 14.081
+  },
+  {
+   "word": "prompts",
+   "start": 14.481
+  },
+  {
+   "word": "a",
+   "start": 14.756
+  },
+  {
+   "word": "day.",
+   "start": 14.881
+  }
+ ],
+ "beat-35": [
+  {
+   "word": "Together,",
+   "start": 0.0
+  },
+  {
+   "word": "that",
+   "start": 0.65
+  },
+  {
+   "word": "is",
+   "start": 0.85
+  },
+  {
+   "word": "a",
+   "start": 0.9
+  },
+  {
+   "word": "steady",
+   "start": 1.075
+  },
+  {
+   "word": "load",
+   "start": 1.4
+  },
+  {
+   "word": "of",
+   "start": 1.65
+  },
+  {
+   "word": "about",
+   "start": 1.725
+  },
+  {
+   "word": "thirty",
+   "start": 2.05
+  },
+  {
+   "word": "five",
+   "start": 2.35
+  },
+  {
+   "word": "megawatts,",
+   "start": 2.65
+  },
+  {
+   "word": "the",
+   "start": 3.625
+  },
+  {
+   "word": "power",
+   "start": 3.75
+  },
+  {
+   "word": "of",
+   "start": 4.225
+  },
+  {
+   "word": "roughly",
+   "start": 4.375
+  },
+  {
+   "word": "thirty",
+   "start": 4.8
+  },
+  {
+   "word": "thousand",
+   "start": 5.1
+  },
+  {
+   "word": "homes.",
+   "start": 5.5
+  },
+  {
+   "word": "And",
+   "start": 6.041
+  },
+  {
+   "word": "yet",
+   "start": 6.191
+  },
+  {
+   "word": "that",
+   "start": 6.416
+  },
+  {
+   "word": "is",
+   "start": 6.616
+  },
+  {
+   "word": "a",
+   "start": 6.666
+  },
+  {
+   "word": "single",
+   "start": 6.866
+  },
+  {
+   "word": "service,",
+   "start": 7.241
+  },
+  {
+   "word": "in",
+   "start": 8.041
+  },
+  {
+   "word": "an",
+   "start": 8.141
+  },
+  {
+   "word": "industry",
+   "start": 8.241
+  },
+  {
+   "word": "that",
+   "start": 8.741
+  },
+  {
+   "word": "is",
+   "start": 8.891
+  },
+  {
+   "word": "still",
+   "start": 9.016
+  },
+  {
+   "word": "building.",
+   "start": 9.291
+  },
+  {
+   "word": "Which",
+   "start": 9.809
+  },
+  {
+   "word": "brings",
+   "start": 10.059
+  },
+  {
+   "word": "us",
+   "start": 10.284
+  },
+  {
+   "word": "back",
+   "start": 10.459
+  },
+  {
+   "word": "to",
+   "start": 10.734
+  },
+  {
+   "word": "cat.",
+   "start": 10.859
+  },
+  {
+   "word": "Light",
+   "start": 11.421
+  },
+  {
+   "word": "carried",
+   "start": 11.746
+  },
+  {
+   "word": "it",
+   "start": 12.071
+  },
+  {
+   "word": "through",
+   "start": 12.196
+  },
+  {
+   "word": "glass,",
+   "start": 12.396
+  },
+  {
+   "word": "a",
+   "start": 13.071
+  },
+  {
+   "word": "trick",
+   "start": 13.371
+  },
+  {
+   "word": "from",
+   "start": 13.646
+  },
+  {
+   "word": "a",
+   "start": 13.721
+  },
+  {
+   "word": "jet",
+   "start": 13.846
+  },
+  {
+   "word": "of",
+   "start": 14.071
+  },
+  {
+   "word": "water",
+   "start": 14.196
+  },
+  {
+   "word": "in",
+   "start": 14.596
+  },
+  {
+   "word": "eighteen",
+   "start": 14.746
+  },
+  {
+   "word": "forty",
+   "start": 15.146
+  },
+  {
+   "word": "two.",
+   "start": 15.446
+  }
+ ],
+ "beat-36": [
+  {
+   "word": "A",
+   "start": 0.0
+  },
+  {
+   "word": "file",
+   "start": 0.125
+  },
+  {
+   "word": "compression",
+   "start": 0.475
+  },
+  {
+   "word": "idea",
+   "start": 1.05
+  },
+  {
+   "word": "from",
+   "start": 1.725
+  },
+  {
+   "word": "a",
+   "start": 1.8
+  },
+  {
+   "word": "nineteen",
+   "start": 1.925
+  },
+  {
+   "word": "ninety",
+   "start": 2.275
+  },
+  {
+   "word": "four",
+   "start": 2.6
+  },
+  {
+   "word": "magazine",
+   "start": 2.85
+  },
+  {
+   "word": "turned",
+   "start": 3.775
+  },
+  {
+   "word": "it",
+   "start": 4.025
+  },
+  {
+   "word": "into",
+   "start": 4.1
+  },
+  {
+   "word": "a",
+   "start": 4.25
+  },
+  {
+   "word": "number.",
+   "start": 4.4
+  },
+  {
+   "word": "It",
+   "start": 4.864
+  },
+  {
+   "word": "climbed",
+   "start": 4.989
+  },
+  {
+   "word": "a",
+   "start": 5.264
+  },
+  {
+   "word": "tower",
+   "start": 5.439
+  },
+  {
+   "word": "of",
+   "start": 5.789
+  },
+  {
+   "word": "weights",
+   "start": 5.914
+  },
+  {
+   "word": "that",
+   "start": 6.289
+  },
+  {
+   "word": "had",
+   "start": 6.439
+  },
+  {
+   "word": "to",
+   "start": 6.539
+  },
+  {
+   "word": "be",
+   "start": 6.614
+  },
+  {
+   "word": "trucked",
+   "start": 6.739
+  },
+  {
+   "word": "in,",
+   "start": 7.064
+  },
+  {
+   "word": "again",
+   "start": 7.664
+  },
+  {
+   "word": "and",
+   "start": 8.039
+  },
+  {
+   "word": "again,",
+   "start": 8.139
+  },
+  {
+   "word": "for",
+   "start": 8.864
+  },
+  {
+   "word": "every",
+   "start": 9.064
+  },
+  {
+   "word": "piece",
+   "start": 9.364
+  },
+  {
+   "word": "of",
+   "start": 9.639
+  },
+  {
+   "word": "the",
+   "start": 9.714
+  },
+  {
+   "word": "answer.",
+   "start": 9.864
+  },
+  {
+   "word": "Stacked",
+   "start": 10.432
+  },
+  {
+   "word": "memory",
+   "start": 10.807
+  },
+  {
+   "word": "shortened",
+   "start": 11.257
+  },
+  {
+   "word": "the",
+   "start": 11.557
+  },
+  {
+   "word": "road,",
+   "start": 11.657
+  },
+  {
+   "word": "batching",
+   "start": 12.307
+  },
+  {
+   "word": "shared",
+   "start": 12.807
+  },
+  {
+   "word": "the",
+   "start": 13.057
+  },
+  {
+   "word": "truck,",
+   "start": 13.157
+  },
+  {
+   "word": "and",
+   "start": 13.807
+  },
+  {
+   "word": "smaller",
+   "start": 13.957
+  },
+  {
+   "word": "numbers",
+   "start": 14.357
+  },
+  {
+   "word": "lightened",
+   "start": 14.832
+  },
+  {
+   "word": "the",
+   "start": 15.132
+  },
+  {
+   "word": "load.",
+   "start": 15.232
+  }
+ ],
+ "beat-37": [
+  {
+   "word": "Every",
+   "start": 0.0
+  },
+  {
+   "word": "one",
+   "start": 0.3
+  },
+  {
+   "word": "of",
+   "start": 0.425
+  },
+  {
+   "word": "those",
+   "start": 0.525
+  },
+  {
+   "word": "inventions",
+   "start": 0.8
+  },
+  {
+   "word": "fights",
+   "start": 1.875
+  },
+  {
+   "word": "the",
+   "start": 2.225
+  },
+  {
+   "word": "same",
+   "start": 2.375
+  },
+  {
+   "word": "wall",
+   "start": 2.675
+  },
+  {
+   "word": "that",
+   "start": 3.1
+  },
+  {
+   "word": "two",
+   "start": 3.325
+  },
+  {
+   "word": "scientists",
+   "start": 3.575
+  },
+  {
+   "word": "described",
+   "start": 4.225
+  },
+  {
+   "word": "in",
+   "start": 4.85
+  },
+  {
+   "word": "nineteen",
+   "start": 4.95
+  },
+  {
+   "word": "ninety",
+   "start": 5.275
+  },
+  {
+   "word": "four.",
+   "start": 5.575
+  },
+  {
+   "word": "Moving",
+   "start": 5.977
+  },
+  {
+   "word": "a",
+   "start": 6.252
+  },
+  {
+   "word": "number",
+   "start": 6.377
+  },
+  {
+   "word": "costs",
+   "start": 6.902
+  },
+  {
+   "word": "more",
+   "start": 7.302
+  },
+  {
+   "word": "than",
+   "start": 7.477
+  },
+  {
+   "word": "using",
+   "start": 7.602
+  },
+  {
+   "word": "it.",
+   "start": 7.952
+  },
+  {
+   "word": "So",
+   "start": 8.234
+  },
+  {
+   "word": "the",
+   "start": 8.359
+  },
+  {
+   "word": "next",
+   "start": 8.459
+  },
+  {
+   "word": "time",
+   "start": 8.709
+  },
+  {
+   "word": "an",
+   "start": 8.984
+  },
+  {
+   "word": "answer",
+   "start": 9.084
+  },
+  {
+   "word": "appears",
+   "start": 9.509
+  },
+  {
+   "word": "a",
+   "start": 9.784
+  },
+  {
+   "word": "few",
+   "start": 9.959
+  },
+  {
+   "word": "words",
+   "start": 10.159
+  },
+  {
+   "word": "at",
+   "start": 10.434
+  },
+  {
+   "word": "a",
+   "start": 10.434
+  },
+  {
+   "word": "time,",
+   "start": 10.559
+  },
+  {
+   "word": "watch",
+   "start": 11.284
+  },
+  {
+   "word": "the",
+   "start": 11.634
+  },
+  {
+   "word": "rhythm.",
+   "start": 11.734
+  },
+  {
+   "word": "That",
+   "start": 12.202
+  },
+  {
+   "word": "little",
+   "start": 12.402
+  },
+  {
+   "word": "stutter",
+   "start": 12.652
+  },
+  {
+   "word": "is",
+   "start": 13.327
+  },
+  {
+   "word": "not",
+   "start": 13.477
+  },
+  {
+   "word": "the",
+   "start": 13.652
+  },
+  {
+   "word": "machine",
+   "start": 13.727
+  },
+  {
+   "word": "thinking.",
+   "start": 14.102
+  }
+ ],
+ "beat-38": [
+  {
+   "word": "It",
+   "start": 0.0
+  },
+  {
+   "word": "is",
+   "start": 0.175
+  },
+  {
+   "word": "the",
+   "start": 0.3
+  },
+  {
+   "word": "machine",
+   "start": 0.375
+  },
+  {
+   "word": "waiting",
+   "start": 0.875
+  },
+  {
+   "word": "for",
+   "start": 1.2
+  },
+  {
+   "word": "the",
+   "start": 1.3
+  },
+  {
+   "word": "truck.",
+   "start": 1.4
+  }
+ ]
+}

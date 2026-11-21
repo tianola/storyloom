@@ -1,0 +1,102 @@
+{
+  "name": "longform-explainer capability registry",
+  "schema_version": 1,
+  "purpose": "What this machine must have installed before an episode stage runs. #138 audited the capabilities and #139 installed them; installation is a one-time event in a session log while a build is a repeated one, so every stage now asks the same questions again and stops before burning hours on a render.",
+  "measured": "2026-11-12, on this box, by the preflight itself (python -m workflow.capabilities).",
+  "interpreters": {
+    "pipeline": {
+      "python": "python",
+      "version": "3.14.8",
+      "why": "CPython on PATH runs the QC and analysis tools: asr_wer, look_pass, qc_shot_continuity, loudness. Nothing here imports the TTS stack, so it stays on the newest interpreter."
+    },
+    "narration": {
+      "python": ".venv/Scripts/python.exe",
+      "version": "3.12.14",
+      "why": "The repo venv carries the hash-pinned set that 3.14 cannot install: kokoro_onnx, onnxruntime, phonemizer and manim. python/requirements.txt pins every wheel by sha256, so this interpreter is the only reproducible one."
+    }
+  },
+  "capabilities": [
+    {
+      "id": "narration-tts",
+      "phases": ["vo"],
+      "required": true,
+      "why": "Kokoro v1.0 on the pinned venv is the only voice in the pipeline, and a 96-utterance batch takes long enough to fail in that 40 minutes are already spent. The weight file is 325 MB, which is exactly the artefact that half-downloads and still looks present.",
+      "remediation": "Install the pinned set with .venv/Scripts/python.exe -m pip install -r python/requirements.txt (hash-pinned, so a tampered wheel is refused), then re-download kokoro-v1.0.onnx and voices-v1.0.bin into models/kokoro/. Prove one utterance end to end with python/narrate.py before queueing a batch.",
+      "checks": [
+        {"kind": "path", "path": "models/kokoro/kokoro-v1.0.onnx", "min_bytes": 300000000},
+        {"kind": "path", "path": "models/kokoro/voices-v1.0.bin", "min_bytes": 20000000},
+        {"kind": "module", "interpreter": "narration", "name": "kokoro_onnx"},
+        {"kind": "module", "interpreter": "narration", "name": "onnxruntime"},
+        {"kind": "module", "interpreter": "narration", "name": "phonemizer"}
+      ]
+    },
+    {
+      "id": "blender-3d",
+      "phases": ["motion"],
+      "required": true,
+      "why": "The 3D beats are rendered by the Blender build named in workflow/blender.json, and blender is deliberately not on PATH - a re-extracted or renamed directory therefore stays invisible until the first render call fails.",
+      "remediation": "Point the production key of workflow/blender.json at the blender.exe you actually have, or re-extract tools/blender-4.5.15-windows-x64.zip. The escape hatch for one run is the BLENDER_EXE environment variable.",
+      "checks": [
+        {"kind": "blender", "min_bytes": 50000000}
+      ]
+    },
+    {
+      "id": "manim-diagrams",
+      "phases": ["motion"],
+      "required": true,
+      "why": "The diagram and card layer renders through Manim, whose text layout depends on Manimpango. Both are import-time dependencies: a scene file that is otherwise correct dies before the first frame is written.",
+      "remediation": "python -m pip install -r python/requirements.txt with .venv/Scripts/python.exe, then check the interpreter answers with .venv/Scripts/python.exe -m manim --version.",
+      "checks": [
+        {"kind": "module", "interpreter": "narration", "name": "manim"},
+        {"kind": "module", "interpreter": "narration", "name": "manimpango"}
+      ]
+    },
+    {
+      "id": "edit-encode",
+      "phases": ["edit", "dist"],
+      "required": true,
+      "why": "Every cut, scale, loudness and mux pass in tools is an ffmpeg or ffprobe call, and the assembler shells out per segment - a missing binary surfaces as a half-built master rather than as an error at the start.",
+      "remediation": "winget install Gyan.FFmpeg, then confirm the WinGet Links directory is on PATH; re-open the shell so the updated PATH is inherited.",
+      "checks": [
+        {"kind": "executable", "any_of": ["ffmpeg"]},
+        {"kind": "executable", "any_of": ["ffprobe"]}
+      ]
+    },
+    {
+      "id": "qc-intelligibility",
+      "phases": ["qc"],
+      "required": true,
+      "why": "tools/asr_wer.py is the only thing that listens to the rendered narration and reports what it heard. It loads faster-whisper with local_files_only=True, so a cleared Hugging Face cache fails the gate instead of downloading mid-run - and a mispronunciation that ships inside a five-hour render is the failure this capability exists to catch.",
+      "remediation": "python -m pip install faster-whisper numpy into the pipeline interpreter, then warm the offline snapshot once with a networked run: python -c \"from faster_whisper import WhisperModel; WhisperModel('base.en')\".",
+      "checks": [
+        {"kind": "module", "interpreter": "pipeline", "name": "faster_whisper"},
+        {"kind": "module", "interpreter": "pipeline", "name": "numpy"},
+        {"kind": "path", "path": "~/.cache/huggingface/hub/models--Systran--faster-whisper-base.en/snapshots/*/model.bin", "min_bytes": 100000000},
+        {"kind": "executable", "any_of": ["ffmpeg"]}
+      ]
+    },
+    {
+      "id": "archive-analysis",
+      "phases": ["assets"],
+      "required": false,
+      "why": "The archive documentary layer needs scene detection to cut source clips and OCR to read what is burned into them. Optional today because the archive visual kind is #142: until the assembler dispatches it, a missing PyTesseract must not stop a 3D-only episode.",
+      "remediation": "python -m pip install scenedetect pillow pytesseract into the pipeline interpreter. Tesseract itself is installed here at C:/Program Files/Tesseract-OCR/tesseract.exe and is not on PATH, which is why the registry names the full path instead of relying on the lookup.",
+      "checks": [
+        {"kind": "module", "interpreter": "pipeline", "name": "scenedetect"},
+        {"kind": "module", "interpreter": "pipeline", "name": "PIL"},
+        {"kind": "module", "interpreter": "pipeline", "name": "pytesseract"},
+        {"kind": "executable", "any_of": ["tesseract", "C:/Program Files/Tesseract-OCR/tesseract.exe"]}
+      ]
+    },
+    {
+      "id": "latex-for-mathtext",
+      "phases": ["motion"],
+      "required": false,
+      "why": "Manim's MathTex and Tex both shell out to a TeX distribution, and this box has none - no latex, xelatex or pdflatex. Reported rather than enforced because the shipped narration layer uses Text only, so a hard fail here would block renders that do not need it.",
+      "remediation": "winget install MiKTeX.MiKTeX, then run the MiKTeX console once so its first-run package sync completes. Until then keep equations in Text(), which the style contract already expects.",
+      "checks": [
+        {"kind": "executable", "any_of": ["xelatex", "pdflatex", "latex", "tectonic"]}
+      ]
+    }
+  ]
+}

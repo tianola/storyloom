@@ -1,0 +1,24 @@
+{
+  "tool": "tools/look_pass.py",
+  "graded": "F:\\AI-PROJECTS\\longform-explainer\\.claude\\worktrees\\continue-implementation-plan-9d914b\\work\\semmelweis-pilot\\video-graded.mp4",
+  "graded_sha256": "28e117e25c9c314bbd68a92a9a93457459d0e1b996cdd87a680b2294a7cb93f2",
+  "strengths": {
+    "bloom": 0.22,
+    "bloom_sigma": 14.0,
+    "black_point": 0.68,
+    "contrast": 1.03,
+    "saturation": 1.07,
+    "sharpen": 0.45,
+    "grain": 3.5,
+    "vignette": 0.3
+  },
+  "overrides": {},
+  "encode": {
+    "codec": "libx264",
+    "preset": "medium",
+    "crf": 19,
+    "pixel_format": "yuv420p"
+  },
+  "filtergraph": "[0:v]format=gbrp,split=2[base][hl];[hl]curves=master='0/0 0.68/0 1/1',gblur=sigma=14.0[bloom];[base][bloom]blend=all_mode=screen:all_opacity=0.22,eq=contrast=1.03:saturation=1.07,unsharp=5:5:0.45,noise=alls=3.5:allf=t,vignette=0.3",
+  "finished_at": "2026-11-21T12:44:54+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "semmelweis-pilot",
+  "title": "The Man Who Said Wash Your Hands",
+  "language": "English",
+  "workflow_version": 3,
+  "duration_target_seconds": [
+    600,
+    900
+  ],
+  "archive": {
+    "enabled": true
+  },
+  "rollout": {
+    "builder": "tools/blender/storyboard_beats.py",
+    "baseline": "1080p",
+    "finish_beats": []
+  }
+}
