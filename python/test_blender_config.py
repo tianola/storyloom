@@ -14,9 +14,9 @@ class BlenderConfigTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             legacy = root / "tools/blender-4.1.0-windows-x64/blender.exe"
-            self.assertEqual(blender_executable(root), legacy)
+            self.assertEqual(blender_executable(root, {}), legacy)
             config = root / "workflow/blender.json"
             config.parent.mkdir()
             config.write_text(json.dumps({"production": "tools/custom/blender.exe"}))
-            self.assertEqual(blender_executable(root), root / "tools/custom/blender.exe")
+            self.assertEqual(blender_executable(root, {}), root / "tools/custom/blender.exe")
             self.assertEqual(blender_executable(root, {"BLENDER_EXE": "D:/override/blender.exe"}), Path("D:/override/blender.exe"))

@@ -37,3 +37,10 @@ media/texts/
 # secrets (API keys): never committed
 .env
 .env.*
+
+# downloaded CC0 assets (tools/fetch_assets.py fetches them again from workflow/assets.json)
+assets/polyhaven/*
+!assets/polyhaven/manifest.json
+assets/kenney/
+assets/quaternius/
+assets/_zips/

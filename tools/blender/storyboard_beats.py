@@ -132,10 +132,16 @@ def view_to_shot(scene, shot, index, previous):
             az1 -= 360.0
         while azimuth - az1 > 180.0:
             az1 += 360.0
-        return {"start": shot["start"], "target": tuple(target), "target_to": tuple(w["target"]),
-                "radius": (radius, w["radius"]), "azimuth": (azimuth, az1),
-                "height": (height, w["height"]), "glide": shot.get("glide")}, {"target": w["target"], "radius": w["radius"],
-                                                   "azimuth": az1, "height": w["height"]}
+        entry = {"start": shot["start"], "target": tuple(target), "target_to": tuple(w["target"]),
+                 "radius": (radius, w["radius"]), "azimuth": (azimuth, az1),
+                 "height": (height, w["height"]), "glide": shot.get("glide")}
+        # never faster than one frame width per 7 s: a move too long for its time lands short
+        entry, f = camera_plan.govern_travel(entry, duration, scene.lens)
+        if f < 1.0:
+            print(f"    CAMERA {BEAT['name']}: shot {index + 1} travels {f:.0%} of the way to '{to}' "
+                  f"to stay under the pan limit in {duration:.1f}s")
+        return entry, {"target": entry["target_to"], "radius": entry["radius"][1],
+                       "azimuth": entry["azimuth"][1], "height": entry["height"][1]}
     d_az, factor = camera_plan.drift_amount(duration, move)
     return {"start": shot["start"], "target": tuple(target),
             "radius": (radius, radius * factor),

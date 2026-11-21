@@ -1,93 +1,109 @@
 {
  "u001": {
-  "before_lufs": -20.8,
-  "gain_db": 0.39
+  "before_lufs": -20.44,
+  "gain_db": 0.04
  },
  "u002": {
-  "before_lufs": -21.23,
-  "gain_db": 0.82
+  "before_lufs": -20.61,
+  "gain_db": 0.21
  },
  "u003": {
-  "before_lufs": -22.6,
-  "gain_db": 2.19
+  "before_lufs": -18.62,
+  "gain_db": -1.78
  },
  "u004": {
-  "before_lufs": -21.22,
-  "gain_db": 0.81
+  "before_lufs": -20.56,
+  "gain_db": 0.16
  },
  "u005": {
-  "before_lufs": -20.07,
-  "gain_db": -0.34
+  "before_lufs": -20.4,
+  "gain_db": 0.0
  },
  "u006": {
-  "before_lufs": -20.97,
-  "gain_db": 0.56
+  "before_lufs": -20.49,
+  "gain_db": 0.09
  },
  "u007": {
-  "before_lufs": -16.4,
-  "gain_db": -4.01
+  "before_lufs": -21.15,
+  "gain_db": 0.75
  },
  "u008": {
   "before_lufs": -20.05,
-  "gain_db": -0.36
+  "gain_db": -0.35
  },
  "u009": {
-  "before_lufs": -17.86,
-  "gain_db": -2.55
+  "before_lufs": -21.09,
+  "gain_db": 0.69
  },
  "u010": {
-  "before_lufs": -20.9,
-  "gain_db": 0.49
+  "before_lufs": -20.93,
+  "gain_db": 0.53
  },
  "u011": {
-  "before_lufs": -20.65,
-  "gain_db": 0.24
+  "before_lufs": -18.46,
+  "gain_db": -1.94
  },
  "u012": {
-  "before_lufs": -19.56,
-  "gain_db": -0.85
+  "before_lufs": -20.65,
+  "gain_db": 0.25
  },
  "u013": {
-  "before_lufs": -19.19,
-  "gain_db": -1.22
+  "before_lufs": -20.24,
+  "gain_db": -0.16
  },
  "u014": {
-  "before_lufs": -13.25,
-  "gain_db": -7.16
+  "before_lufs": -19.86,
+  "gain_db": -0.54
  },
  "u015": {
-  "before_lufs": -20.41,
-  "gain_db": 0.0
+  "before_lufs": -19.84,
+  "gain_db": -0.56
  },
  "u016": {
-  "before_lufs": -21.34,
-  "gain_db": 0.93
+  "before_lufs": -19.77,
+  "gain_db": -0.63
  },
  "u017": {
-  "before_lufs": -17.16,
-  "gain_db": -3.25
+  "before_lufs": -15.94,
+  "gain_db": -4.46
  },
  "u018": {
-  "before_lufs": -19.79,
-  "gain_db": -0.62
+  "before_lufs": -19.98,
+  "gain_db": -0.42
  },
  "u019": {
-  "before_lufs": -21.92,
-  "gain_db": 1.51
+  "before_lufs": -21.12,
+  "gain_db": 0.72
+ },
+ "u020": {
+  "before_lufs": -16.72,
+  "gain_db": -3.68
+ },
+ "u021": {
+  "before_lufs": -19.91,
+  "gain_db": -0.49
+ },
+ "u022": {
+  "before_lufs": -24.44,
+  "gain_db": 4.04
+ },
+ "u023": {
+  "before_lufs": -22.3,
+  "gain_db": 1.9
  },
  "_ride": {
   "cuts": [],
   "deltas_lu": []
  },
  "_sound": {
-  "cuts": 36,
+  "cuts": 21,
   "travels": 4,
-  "actions": 1,
-  "reversal": 60.80008333333333,
+  "actions": 2,
+  "reversal": 49.060208333333335,
   "music_drops": [
    [
-    59.400083333333335,
-    63.80008333333333
+    47.66020833333334,
+    52.060208333333335
    ]
   ]
  }

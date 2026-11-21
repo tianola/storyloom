@@ -17,3 +17,7 @@ file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementatio
 file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u017.wav'
 file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u018.wav'
 file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u019.wav'
+file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u020.wav'
+file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u021.wav'
+file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u022.wav'
+file 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\vo\u023.wav'

@@ -6,11 +6,11 @@
    "params": {"drag_from": 0.02, "drag_until": 0.3},
    "shots": [
     {"view": "street", "start": 0.0, "move": "drift"},
-    {"view": "at:lantern", "start": 3.0, "move": "lock"},
-    {"view": "gate", "start": 4.4, "move": "lock"},
-    {"view": "cell", "start": 6.8, "move": "lock"},
+    {"view": "at:lantern", "start": 2.4, "move": "lock"},
+    {"view": "gate", "start": 3.6, "move": "lock"},
+    {"view": "cell", "start": 7.6, "move": "lock"},
     {"view": "bars", "start": 8.8, "move": "lock"},
-    {"view": "cell-close", "start": 11.0, "move": "push"},
+    {"view": "cell-close", "start": 10.0, "move": "push"},
     {"view": "cell", "start": 18.9, "move": "pull"}
    ],
    "actions": [{"name": "door-shut", "at": 7.2}],
@@ -22,7 +22,8 @@
    "params": {"time": "dusk", "lights_from": 0.0, "lights_until": 0.9, "walkers": 12, "groups": 3},
    "shots": [
     {"view": "roofs", "start": 0.0, "move": "drift"},
-    {"view": "market", "start": 6.0, "move": "drift"}
+    {"view": "market", "start": 6.0, "move": "drift"},
+    {"view": "street-low", "start": 9.0, "move": "lock"}
    ],
    "cast": [
     {"who": "explorer", "bust": true, "screen": [0.72, 1.0], "height": 0.62, "speaker": "narrator", "pose": "talk",
@@ -46,7 +47,8 @@
    "params": {"time": "dawn", "walkers": 0, "groups": 0},
    "shots": [
     {"view": "doors", "start": 0.0, "move": "drift"},
-    {"view": "second-door", "start": 4.4, "move": "drift"}
+    {"view": "second-door", "start": 4.4, "move": "drift"},
+    {"view": "court-low", "start": 7.0, "move": "lock"}
    ],
    "cast": [
     {"who": "mother", "screen": [0.36, 0.97], "height": 0.62, "speaker": "mother", "shot": 0, "pose": "plead", "face": "worried",
@@ -60,13 +62,16 @@
    "shots": [
     {"view": "ward-wide", "start": 0.0, "move": "drift"},
     {"view": "ward-bed", "start": 5.0, "move": "push"},
-    {"view": "ward-wide", "to": "ward-priest", "start": 8.5},
+    {"view": "at:bell", "start": 8.5, "move": "lock"},
+    {"view": "ward-wide", "to": "ward-priest", "start": 9.7},
     {"view": "ward-door", "start": 13.2, "move": "lock"},
+    {"view": "at:bell", "start": 18.6, "move": "lock"},
+    {"view": "ward-door", "start": 20.0, "move": "lock"},
     {"view": "ward-aisle", "start": 21.4, "move": "pull"}
    ],
    "actions": [{"name": "bell", "at": 8.5}],
    "cast": [
-    {"who": "semmelweis", "screen": [0.48, 0.96], "height": 0.58, "speaker": "semmelweis", "shot": 3, "pose": "stand", "face": "worried",
+    {"who": "semmelweis", "screen": [0.48, 0.96], "height": 0.58, "speaker": "semmelweis", "shot": 4, "pose": "stand", "face": "worried",
      "acts": [{"at": 15.0, "pose": "talk"}, {"at": 20.8, "pose": "stand", "face": "sad"}]}
    ]
   },

@@ -1,5 +1,5 @@
 {
- "status": "running",
+ "status": "done",
  "pid": 12936,
  "log": "F:\\AI-PROJECTS\\longform-explainer\\.claude\\worktrees\\continue-implementation-plan-9d914b\\work\\semmelweis-pilot\\qc\\render-all-1920x1080.log",
  "beats": [
@@ -12,6 +12,6 @@
   "beat-07"
  ],
  "started": "2026-11-21T16:26:02",
- "finished": "2026-11-21T14:43:10",
+ "finished": "2026-11-21T18:01:33",
  "missing": []
 }

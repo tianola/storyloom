@@ -1676,6 +1676,11 @@
      "type": "bool",
      "default": true,
      "doc": "a flock crossing over the roofs"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
     }
    },
    "examples": [
@@ -1727,6 +1732,11 @@
      "type": "number",
      "default": 0.55,
      "doc": "they are through the gate (fraction)"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
     }
    },
    "examples": [
@@ -1771,6 +1781,11 @@
      "min": 0,
      "max": 9999,
      "doc": "which patients look which way, how the group talks"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
     }
    },
    "examples": [

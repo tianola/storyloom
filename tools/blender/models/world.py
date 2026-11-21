@@ -11,6 +11,9 @@ when, who walks where. Pixel people come from `characters.actor`.
 
 Scenes: vienna (the town and the Allgemeines Krankenhaus at the end of the main street),
 asylum (1865: the gate at night and a cell), ward (1846: the First Clinic's long ward).
+
+Each scene takes `assets` (default true): CC0 Poly Haven textures tinted into the palette, a soft HDRI
+for lighting, and a few glTF props (models/assets.py). `{"assets": false}` is the plain look.
 """
 import math
 import random
@@ -19,6 +22,7 @@ import bmesh
 import bpy
 from mathutils import Matrix, Vector
 
+import assets
 import characters
 import kit
 import look
@@ -529,7 +533,7 @@ def subtract(lo, hi, clo, chi):
     return out
 
 
-def hospital(s, glass, lit, x0=40.0, half_y=26.0, depth=12.0, length=50.0, storeys=3, room=None):
+def hospital(s, glass, lit, x0=40.0, half_y=26.0, depth=12.0, length=50.0, storeys=3, room=None, use_assets=False):
     """The general hospital: four long wings of plain plaster round a courtyard, a gate in the
     west front facing the town. Returns the window anchor (a lit room where a man works late)."""
     wall = kit.mat("akh-wall", (0.62, 0.58, 0.48), roughness=0.85)
@@ -558,6 +562,9 @@ def hospital(s, glass, lit, x0=40.0, half_y=26.0, depth=12.0, length=50.0, store
         for a, b in parts:
             body.append(placed(tuple((p + q) / 2 for p, q in zip(a, b)), tuple(q - p for p, q in zip(a, b))))
     kit.boxes("akh", body, wall)
+    if use_assets:           # a herringbone brick floor across the courtyard (textured by assets.upgrade_materials)
+        kit.box("akh-court", (x0 + length / 2, 0, 0.004), (length - 2 * depth, 2 * (half_y - depth), 0.008),
+                kit.mat("akh-court", (0.34, 0.27, 0.22), roughness=0.9), bevel=0)
     kit.boxes("akh-cornice", [placed((cx, cy, h - 0.2), (w + 0.4, d + 0.4, 0.4)) for cx, cy, w, d in wings], trim)
     _roof_prisms("akh-roofs", [(cx, cy, w + 0.6, d + 0.6, h, 3.2, w > d) for cx, cy, w, d in wings], roof)
     # windows of the west front (towards the town) and of the courtyard side of the west wing
@@ -580,7 +587,7 @@ def hospital(s, glass, lit, x0=40.0, half_y=26.0, depth=12.0, length=50.0, store
     return h
 
 
-def room_behind(name, centre, facing, lamp_color=(1.0, 0.6, 0.25)):
+def room_behind(name, centre, facing, lamp_color=(1.0, 0.6, 0.25), use_assets=False):
     """A small lit room behind an open window (the camera can look in): back wall, desk, an oil
     lamp, a ledger. `facing` -1 means the window looks towards -x."""
     cx, cy, cz = centre
@@ -597,7 +604,10 @@ def room_behind(name, centre, facing, lamp_color=(1.0, 0.6, 0.25)):
     kit.boxes(f"{name}-desk", [placed((desk_x, cy + 0.3, cz - 1.2), (0.9, 1.8, 0.08)),
                                placed((desk_x, cy + 0.3, cz - 1.55), (0.8, 1.6, 0.7))], wood)
     kit.boxes(f"{name}-ledger", [placed((desk_x, cy + 0.1, cz - 1.13), (0.45, 0.6, 0.06))], paper)
-    lamp = kit.ico(f"{name}-lamp", (desk_x + facing * 0.1, cy + 0.9, cz - 0.95), 0.12,
+    desk_top = cz - 1.16
+    oil = use_assets and assets.prop("vintage_oil_lamp", (desk_x + facing * 0.1, cy + 0.9, desk_top), 0.0,
+                                     height=0.34, name=f"{name}-oil-lamp")
+    lamp = kit.ico(f"{name}-lamp", (desk_x + facing * 0.1, cy + 0.9, cz - 0.95), 0.05 if oil else 0.12,
                    look.neon(f"{name}-flame", lamp_color, 18.0), subdivisions=2, smooth=True)
     light = bpy.data.lights.new(f"{name}-lamp", "POINT")
     light.energy = 60.0
@@ -629,7 +639,12 @@ def room_behind(name, centre, facing, lamp_color=(1.0, 0.6, 0.25)):
                                  for k in range(9)], paper)
     kit.cylinders(f"{name}-inkwell", [((desk_x + facing * 0.15, cy - 0.35, cz - 1.1), 0.05, 0.08)],
                   kit.mat(f"{name}-ink", (0.02, 0.02, 0.03), roughness=0.2))
-    kit.cylinders(f"{name}-candle", [((desk_x - facing * 0.2, cy - 0.55, cz - 1.05), 0.03, 0.22)], paper)
+    if not (use_assets and assets.prop("wooden_candlestick", (desk_x - facing * 0.2, cy - 0.55, desk_top), 0.0,
+                                       height=0.24, name=f"{name}-candlestick")):
+        kit.cylinders(f"{name}-candle", [((desk_x - facing * 0.2, cy - 0.55, cz - 1.05), 0.03, 0.22)], paper)
+    if use_assets:           # a worn bookcase against the side wall, front to the room
+        assets.prop("wooden_bookshelf_worn", (cx - facing * 1.0, cy - 1.6, floor), math.pi,
+                    height=2.06, name=f"{name}-bookcase")
     kit.ico(f"{name}-candle-flame", (desk_x - facing * 0.2, cy - 0.55, cz - 0.9), 0.025,
             look.neon(f"{name}-candle-flame", lamp_color, 30.0), subdivisions=1)
     kit.boxes(f"{name}-chair", [placed((desk_x - facing * 0.6, cy - 0.2, floor + 0.45), (0.45, 0.45, 0.05)),
@@ -773,7 +788,7 @@ def push(cart, path, f0, f1, ahead=2.3):
     kit._linear(cart)
 
 
-def stall(name, at, mats, rnd, canopy=(0.50, 0.09, 0.07)):
+def stall(name, at, mats, rnd, canopy=(0.50, 0.09, 0.07), use_assets=False):
     """A market stall: trestle table with apples, cabbages and loaves, four posts, a striped canopy.
     `at` is the front centre; the stall stands with its back to the houses (towards -y)."""
     x, y, _ = at
@@ -795,8 +810,14 @@ def stall(name, at, mats, rnd, canopy=(0.50, 0.09, 0.07)):
         pts = [(cx + (rnd.random() - 0.5) * 0.55, y + (rnd.random() - 0.5) * 0.6, 0.9 + r + 0.05 * rnd.random())
                for _ in range(9 if r < 0.1 else 5)]
         kit.balls(f"{name}-{g}", pts, r, kit.mat(f"goods-{g}", colour, roughness=0.6), subdivisions=2, smooth=True)
-    kit.boxes(f"{name}-baskets", [placed((x - 0.9, y + 0.75, 0.2), (0.5, 0.4, 0.4)),
-                                  placed((x + 0.8, y + 0.8, 0.18), (0.45, 0.4, 0.36))], mats["sack"])
+    # wicker baskets and a crate on the ground in front (the boxes stay when the models are missing)
+    if not (use_assets and all(assets.prop(m, loc, rot, height=h, name=f"{name}-{m}")
+                               for m, loc, rot, h in (
+                ("wicker_basket_01", (x - 0.9, y + 0.75, 0.0), 0.4, 0.22),
+                ("wicker_basket_01", (x + 0.8, y + 0.8, 0.0), 2.2, 0.2),
+                ("wooden_crate_01", (x, y + 1.0, 0.0), 0.1, 0.36)))):
+        kit.boxes(f"{name}-baskets", [placed((x - 0.9, y + 0.75, 0.2), (0.5, 0.4, 0.4)),
+                                      placed((x + 0.8, y + 0.8, 0.18), (0.45, 0.4, 0.36))], mats["sack"])
     return (x, y - 0.75, 0)                    # where the seller stands
 
 
@@ -993,7 +1014,7 @@ def clinic_doors(s, n, seconds, seed, time):
     kit.common.aim(fill, (54, 0, 0))
 
 
-def anatomy(s, n, seed, x0=200.0):
+def anatomy(s, n, seed, x0=200.0, use_assets=False):
     """The dissecting room, apart from the town: a long table with a body under a sheet, a lamp
     over it, a professor (Kolletschka) and students around it."""
     wall = kit.mat("anat-wall", (0.45, 0.42, 0.36), roughness=0.9)
@@ -1023,6 +1044,10 @@ def anatomy(s, n, seed, x0=200.0):
     jars = [((x0 + sx - 1.4 + 0.42 * j + 0.1 * rnd.random(), 3.6, 0.9 + 0.7 * k + 0.2), 0.12 + 0.04 * rnd.random(), 0.36)
             for sx in (-4.2, 4.2) for k in range(3) for j in range(7) if rnd.random() < 0.75]
     kit.cylinders("anat-jars", jars, jar_glass)
+    if use_assets:           # two painted shelf units between the jar shelves, a vase on each
+        for sx in (-1.3, 1.3):
+            if assets.prop("painted_wooden_shelves", (x0 + sx, 3.55, 0.0), 0.0, height=1.12, name=f"anat-shelves-{sx:+.1f}"):
+                assets.prop("ceramic_vase_01", (x0 + sx, 3.55, 1.12), 0.0, height=0.32, name=f"anat-vase-{sx:+.1f}")
     kit.cylinders("anat-basin", [((x0 + 5.6, -2.6, 0.45), 0.08, 0.9), ((x0 + 5.6, -2.6, 0.95), 0.45, 0.12)],
                   kit.mat("anat-basin", (0.5, 0.5, 0.48), roughness=0.4))
     kit.boxes("anat-tray", [placed((x0 + 1.6, -0.3, 0.75), (0.7, 0.45, 0.04)),
@@ -1073,6 +1098,7 @@ def vienna(p, seconds):
     n = s.frames
     time = p.get("time", "dusk>night")
     seed = int(p.get("seed", 7))
+    use_assets = bool(p.get("assets", True))
     rnd = random.Random(seed)
     ground = kit.mat("ground-earth", (0.06, 0.055, 0.05), roughness=0.95)
     kit.box("ground", (10, 0, -0.05), (400, 300, 0.1), ground, bevel=0)
@@ -1093,8 +1119,10 @@ def vienna(p, seconds):
     # the street is lived in: a market, carts, barrels by the doors, a pump, trees by the hospital,
     # washing across the back streets, birds over the roofs
     mats = _mats()
-    sellers = [stall(f"stall-{k}", (x, -3.0, 0), mats, rnd, AWNINGS[k % len(AWNINGS)])
+    sellers = [stall(f"stall-{k}", (x, -3.0, 0), mats, rnd, AWNINGS[k % len(AWNINGS)], use_assets=use_assets)
                for k, x in enumerate((-31.0, -28.2, -19.0))]
+    if use_assets:           # a cluster of barrels at the market's west end (clear of the clutter spots)
+        assets.prop("wooden_barrels_01", (-35.5, -3.4, 0.0), 0.3, height=0.92, name="market-barrels")
     clutter("street-clutter", [(-50 + 6.5 * k + rnd.random() * 2, rnd.choice((-3.6, 3.6))) for k in range(13)
                                if not -33 < -50 + 6.5 * k < -16], mats, rnd)
     pump("street-pump", (-6.0, 3.2, 0), mats)
@@ -1109,7 +1137,7 @@ def vienna(p, seconds):
     # the lit room looks down the main street (y = -3, just beside the gate), so the descent from
     # the sky to its window flies along the street between the rooftops, never through a house
     room_y, room_z = -3, 2.0 + 4.2
-    akh_h = hospital(s, akh_glass, akh_lit, room=(room_y, room_z))
+    akh_h = hospital(s, akh_glass, akh_lit, room=(room_y, room_z), use_assets=use_assets)
     # dark glass: one object for every window that never lights (and the hospital's); a storey that
     # lights has its own dark glass, shown only while the storey is dark, so the room behind shows
     dark = kit.mat("glass", (0.015, 0.018, 0.024), roughness=0.25)
@@ -1131,7 +1159,7 @@ def vienna(p, seconds):
     # the hospital: some wards lit all evening; the open window of the assistant's room is pinned
     akh_on = [m for (st, yy, fc), m in akh_lit if (st, yy, fc) != (1, room_y, -1) and rnd.random() < 0.45]
     kit.boxes("akh-lit", akh_on, warm)
-    seat = room_behind("room", (40.0, room_y, room_z), -1)
+    seat = room_behind("room", (40.0, room_y, room_z), -1, use_assets=use_assets)
     s.pin("window", (39.9, room_y, room_z + 0.2))
     s.pin("hospital", (40.0, 0.0, akh_h * 0.6))
     lamps = street_lamps([x for x in range(-60, 36, 12)], [-4.6, 4.6])
@@ -1184,7 +1212,7 @@ def vienna(p, seconds):
         characters.key_cell(writer, frames(t + 3.6), expression="sad")
     s.pins["writer"] = writer
     clinic_doors(s, n, seconds, seed, time)
-    anatomy(s, n, seed)
+    anatomy(s, n, seed, use_assets=use_assets)
     # views (azimuth: the camera's side of the target; height is absolute)
     s.view("aerial", (39.4, room_y, room_z - 0.6), 130.0, 180, 62.0)
     s.view("roofs", (-10, -3, 9.0), 14.0, 230, 14.5)
@@ -1213,6 +1241,9 @@ def vienna(p, seconds):
         pass
 
     s.action("greet", act_greet, at=0.5, span=1.0)
+    if use_assets:
+        assets.scene_hdri("street", time, n)
+        assets.upgrade_materials()
     return s
 
 
@@ -1225,6 +1256,7 @@ def asylum(p, seconds):
     s.lighting = "world"
     s.lens = 45.0
     n = s.frames
+    use_assets = bool(p.get("assets", True))
     wall = kit.mat("asy-wall", (0.36, 0.34, 0.30), roughness=0.9)
     dark = kit.mat("asy-dark", (0.02, 0.018, 0.016))
     iron = kit.mat("asy-iron", (0.05, 0.05, 0.055), roughness=0.5)
@@ -1242,7 +1274,12 @@ def asylum(p, seconds):
             glass.append(placed((x, 8.95, z), (1.0, 0.1, 1.6)))
     kit.boxes("asy-windows", glass, dark)
     lantern_m = look.neon("asy-lantern", (1.0, 0.62, 0.28), 5.0)
-    kit.box("asy-lantern", (0, -0.7, 4.4), (0.4, 0.4, 0.55), lantern_m, bevel=0)
+    # the lantern over the gate: the glTF lantern with a small emissive flame inside it
+    # (the box is the lantern itself when the model is missing)
+    if use_assets and assets.prop("Lantern_01", (0, -0.7, 4.12), 0.0, height=0.58, name="asy-lantern-model"):
+        kit.box("asy-lantern", (0, -0.7, 4.32), (0.12, 0.12, 0.14), lantern_m, bevel=0)
+    else:
+        kit.box("asy-lantern", (0, -0.7, 4.4), (0.4, 0.4, 0.55), lantern_m, bevel=0)
     data = bpy.data.lights.new("asy-lantern", "POINT")
     data.energy = 400.0
     data.color = (1.0, 0.6, 0.28)
@@ -1281,7 +1318,8 @@ def asylum(p, seconds):
     shaft.visible_shadow = False
     straw = kit.mat("cell-straw", (0.42, 0.34, 0.16), roughness=1.0)
     kit.boxes("cell-straw", [placed((cx - 1.3, 1.3, 0.1), (1.1, 2.1, 0.2), 0.08)], straw)
-    kit.cylinders("cell-bucket", [((cx + 2.9, 2.3, 0.25), 0.25, 0.5)], wood)
+    if not (use_assets and assets.prop("wooden_bucket_01", (cx + 2.9, 2.3, 0.0), 0.0, height=0.45, name="cell-bucket-model")):
+        kit.cylinders("cell-bucket", [((cx + 2.9, 2.3, 0.25), 0.25, 0.5)], wood)
     kit.boxes("cell-stool", [placed((cx + 2.0, 0.8, 0.45), (0.5, 0.5, 0.06))]
               + [placed((cx + 2.0 + dx, 0.8 + dy, 0.22), (0.05, 0.05, 0.44)) for dx in (-0.2, 0.2) for dy in (-0.2, 0.2)],
               wood)
@@ -1340,6 +1378,9 @@ def asylum(p, seconds):
 
     s.action("door-shut", shut, at=0.6, span=0.6)
     s.floor_grid = 0
+    if use_assets:
+        assets.scene_hdri("asylum", "night", n)          # none: the night stays dark
+        assets.upgrade_materials()
     return s
 
 
@@ -1385,6 +1426,7 @@ def ward(p, seconds):
     time = p.get("time", "day")
     t0_, t1_ = _times(time)
     seed = int(p.get("seed", 5))
+    use_assets = bool(p.get("assets", True))
     rnd = random.Random(seed)
     tint = WARD_TINT[t0_]
     L, HW, H = WARD_L, WARD_HW, WARD_H
@@ -1467,7 +1509,10 @@ def ward(p, seconds):
             if not occupied:                                          # stripped: a pillow and folded linen
                 put("linen", (x, h * 3.55, 0.62), (0.5, 0.3, 0.1))
                 put("blanket", (x, h * 2.2, 0.64), (0.7, 0.45, 0.14))
-            put("wood", (x + 0.72, h * 3.7, 0.35), (0.4, 0.4, 0.7))
+            if not (use_assets and assets.prop("painted_wooden_nightstand", (x + 0.72, h * 3.7, 0.0),
+                                               math.pi if h < 0 else 0.0, height=0.7,
+                                               name=f"ward-nightstand-{row:+d}-{i}")):
+                put("wood", (x + 0.72, h * 3.7, 0.35), (0.4, 0.4, 0.7))
             if (i + (row > 0)) % 4 != 3:
                 cups.append(((x + 0.65, h * 3.7, 0.74), 0.035, 0.09))
                 if i % 2 == 0:
@@ -1653,6 +1698,9 @@ def ward(p, seconds):
                 characters.key_cell(ob, frames(tp + 2.5), pose="lie", expression=base)
 
     s.action("bell", act_bell, at=0.1, span=14.0)
+    if use_assets:
+        assets.scene_hdri("ward", time, n)
+        assets.upgrade_materials()
     return s
 
 

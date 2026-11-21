@@ -1,0 +1,752 @@
+{
+ "cobblestone_floor_01": {
+  "kind": "textures",
+  "use": "street cobbles (vienna)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/cobblestone_floor_01",
+  "files": [
+   {
+    "path": "textures/cobblestone_floor_01/cobblestone_floor_01_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_01/cobblestone_floor_01_diff_1k.jpg",
+    "bytes": 459525
+   },
+   {
+    "path": "textures/cobblestone_floor_01/cobblestone_floor_01_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_01/cobblestone_floor_01_nor_gl_1k.jpg",
+    "bytes": 785399
+   },
+   {
+    "path": "textures/cobblestone_floor_01/cobblestone_floor_01_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_01/cobblestone_floor_01_rough_1k.jpg",
+    "bytes": 327745
+   }
+  ]
+ },
+ "rough_plaster_03": {
+  "kind": "textures",
+  "use": "house facades (vienna)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/rough_plaster_03",
+  "files": [
+   {
+    "path": "textures/rough_plaster_03/rough_plaster_03_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_plaster_03/rough_plaster_03_diff_1k.jpg",
+    "bytes": 631540
+   },
+   {
+    "path": "textures/rough_plaster_03/rough_plaster_03_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_plaster_03/rough_plaster_03_nor_gl_1k.jpg",
+    "bytes": 833585
+   },
+   {
+    "path": "textures/rough_plaster_03/rough_plaster_03_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_plaster_03/rough_plaster_03_rough_1k.jpg",
+    "bytes": 341554
+   }
+  ]
+ },
+ "plaster_brick_pattern": {
+  "kind": "textures",
+  "use": "worn facades, courtyard walls (vienna)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/plaster_brick_pattern",
+  "files": [
+   {
+    "path": "textures/plaster_brick_pattern/plaster_brick_pattern_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plaster_brick_pattern/plaster_brick_pattern_diff_1k.jpg",
+    "bytes": 544108
+   },
+   {
+    "path": "textures/plaster_brick_pattern/plaster_brick_pattern_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plaster_brick_pattern/plaster_brick_pattern_nor_gl_1k.jpg",
+    "bytes": 1058657
+   },
+   {
+    "path": "textures/plaster_brick_pattern/plaster_brick_pattern_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plaster_brick_pattern/plaster_brick_pattern_rough_1k.jpg",
+    "bytes": 335558
+   }
+  ]
+ },
+ "dark_wooden_planks": {
+  "kind": "textures",
+  "use": "floorboards (room, ward)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/dark_wooden_planks",
+  "files": [
+   {
+    "path": "textures/dark_wooden_planks/dark_wooden_planks_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wooden_planks/dark_wooden_planks_diff_1k.jpg",
+    "bytes": 701221
+   },
+   {
+    "path": "textures/dark_wooden_planks/dark_wooden_planks_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wooden_planks/dark_wooden_planks_nor_gl_1k.jpg",
+    "bytes": 658444
+   },
+   {
+    "path": "textures/dark_wooden_planks/dark_wooden_planks_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wooden_planks/dark_wooden_planks_rough_1k.jpg",
+    "bytes": 673968
+   }
+  ]
+ },
+ "roof_tiles": {
+  "kind": "textures",
+  "use": "roofs (vienna)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/roof_tiles",
+  "files": [
+   {
+    "path": "textures/roof_tiles/roof_tiles_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_diff_1k.jpg",
+    "bytes": 1105673
+   },
+   {
+    "path": "textures/roof_tiles/roof_tiles_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_nor_gl_1k.jpg",
+    "bytes": 883229
+   },
+   {
+    "path": "textures/roof_tiles/roof_tiles_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_rough_1k.jpg",
+    "bytes": 919232
+   }
+  ]
+ },
+ "castle_brick_07": {
+  "kind": "textures",
+  "use": "stone walls (asylum cell, dissecting room)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/castle_brick_07",
+  "files": [
+   {
+    "path": "textures/castle_brick_07/castle_brick_07_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/castle_brick_07/castle_brick_07_diff_1k.jpg",
+    "bytes": 658783
+   },
+   {
+    "path": "textures/castle_brick_07/castle_brick_07_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/castle_brick_07/castle_brick_07_nor_gl_1k.jpg",
+    "bytes": 999461
+   },
+   {
+    "path": "textures/castle_brick_07/castle_brick_07_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/castle_brick_07/castle_brick_07_rough_1k.jpg",
+    "bytes": 418046
+   }
+  ]
+ },
+ "herringbone_brick": {
+  "kind": "textures",
+  "use": "corridor and court floors (hospital)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/herringbone_brick",
+  "files": [
+   {
+    "path": "textures/herringbone_brick/herringbone_brick_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/herringbone_brick/herringbone_brick_diff_1k.jpg",
+    "bytes": 754232
+   },
+   {
+    "path": "textures/herringbone_brick/herringbone_brick_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/herringbone_brick/herringbone_brick_nor_gl_1k.jpg",
+    "bytes": 1025568
+   },
+   {
+    "path": "textures/herringbone_brick/herringbone_brick_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/herringbone_brick/herringbone_brick_rough_1k.jpg",
+    "bytes": 601886
+   }
+  ]
+ },
+ "farmland_overcast": {
+  "kind": "hdris",
+  "use": "soft daylight for streets",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/farmland_overcast",
+  "files": [
+   {
+    "path": "hdris/farmland_overcast/farmland_overcast_1k.hdr",
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/farmland_overcast_1k.hdr",
+    "bytes": 1654770
+   }
+  ]
+ },
+ "belfast_sunset_puresky": {
+  "kind": "hdris",
+  "use": "dusk sky",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/belfast_sunset_puresky",
+  "files": [
+   {
+    "path": "hdris/belfast_sunset_puresky/belfast_sunset_puresky_1k.hdr",
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/belfast_sunset_puresky_1k.hdr",
+    "bytes": 1190247
+   }
+  ]
+ },
+ "hospital_room": {
+  "kind": "hdris",
+  "use": "ward interior light",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/hospital_room",
+  "files": [
+   {
+    "path": "hdris/hospital_room/hospital_room_1k.hdr",
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/hospital_room_1k.hdr",
+    "bytes": 1343726
+   }
+  ]
+ },
+ "abandoned_workshop": {
+  "kind": "hdris",
+  "use": "dissecting room light",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/abandoned_workshop",
+  "files": [
+   {
+    "path": "hdris/abandoned_workshop/abandoned_workshop_1k.hdr",
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/abandoned_workshop_1k.hdr",
+    "bytes": 1697985
+   }
+  ]
+ },
+ "old_bed_frame": {
+  "kind": "models",
+  "use": "ward, asylum cell",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/old_bed_frame",
+  "files": [
+   {
+    "path": "models/old_bed_frame/old_bed_frame_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/old_bed_frame/old_bed_frame_1k.gltf",
+    "bytes": 3326
+   },
+   {
+    "path": "models/old_bed_frame/textures/old_bed_frame_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/old_bed_frame/old_bed_frame_nor_gl_1k.jpg",
+    "bytes": 642790
+   },
+   {
+    "path": "models/old_bed_frame/textures/old_bed_frame_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/old_bed_frame/old_bed_frame_diff_1k.jpg",
+    "bytes": 699001
+   },
+   {
+    "path": "models/old_bed_frame/textures/old_bed_frame_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/old_bed_frame/old_bed_frame_arm_1k.jpg",
+    "bytes": 831931
+   },
+   {
+    "path": "models/old_bed_frame/old_bed_frame.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/old_bed_frame/old_bed_frame.bin",
+    "bytes": 1864580
+   }
+  ]
+ },
+ "wooden_barrels_01": {
+  "kind": "models",
+  "use": "market, street",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wooden_barrels_01",
+  "files": [
+   {
+    "path": "models/wooden_barrels_01/wooden_barrels_01_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_barrels_01/wooden_barrels_01_1k.gltf",
+    "bytes": 31017
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_barrel02_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_barrel02_nor_gl_1k.jpg",
+    "bytes": 555954
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_barrel02_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_barrel02_arm_1k.jpg",
+    "bytes": 848051
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_barrel01_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_barrel01_arm_1k.jpg",
+    "bytes": 852652
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_pieces_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_pieces_nor_gl_1k.jpg",
+    "bytes": 620276
+   },
+   {
+    "path": "models/wooden_barrels_01/wooden_barrels_01.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wooden_barrels_01/wooden_barrels_01.bin",
+    "bytes": 1243556
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_barrel01_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_barrel01_nor_gl_1k.jpg",
+    "bytes": 538634
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_pieces_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_pieces_diff_1k.jpg",
+    "bytes": 672604
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_barrel01_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_barrel01_diff_1k.jpg",
+    "bytes": 605063
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_barrel02_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_barrel02_diff_1k.jpg",
+    "bytes": 618495
+   },
+   {
+    "path": "models/wooden_barrels_01/textures/wooden_barrels_01_pieces_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_barrels_01/wooden_barrels_01_pieces_arm_1k.jpg",
+    "bytes": 904545
+   }
+  ]
+ },
+ "wooden_crate_01": {
+  "kind": "models",
+  "use": "market, street",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wooden_crate_01",
+  "files": [
+   {
+    "path": "models/wooden_crate_01/wooden_crate_01_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_crate_01/wooden_crate_01_1k.gltf",
+    "bytes": 5612
+   },
+   {
+    "path": "models/wooden_crate_01/textures/wooden_crate_01_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_crate_01/wooden_crate_01_diff_1k.jpg",
+    "bytes": 711292
+   },
+   {
+    "path": "models/wooden_crate_01/textures/wooden_crate_01_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_crate_01/wooden_crate_01_nor_gl_1k.jpg",
+    "bytes": 594076
+   },
+   {
+    "path": "models/wooden_crate_01/wooden_crate_01.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wooden_crate_01/wooden_crate_01.bin",
+    "bytes": 189408
+   },
+   {
+    "path": "models/wooden_crate_01/textures/wooden_crate_01_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_crate_01/wooden_crate_01_arm_1k.jpg",
+    "bytes": 776699
+   }
+  ]
+ },
+ "wooden_bucket_01": {
+  "kind": "models",
+  "use": "asylum cell, court pump",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wooden_bucket_01",
+  "files": [
+   {
+    "path": "models/wooden_bucket_01/wooden_bucket_01_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_bucket_01/wooden_bucket_01_1k.gltf",
+    "bytes": 4248
+   },
+   {
+    "path": "models/wooden_bucket_01/textures/wooden_bucket_01_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_bucket_01/wooden_bucket_01_arm_1k.jpg",
+    "bytes": 777463
+   },
+   {
+    "path": "models/wooden_bucket_01/wooden_bucket_01.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wooden_bucket_01/wooden_bucket_01.bin",
+    "bytes": 158408
+   },
+   {
+    "path": "models/wooden_bucket_01/textures/wooden_bucket_01_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_bucket_01/wooden_bucket_01_diff_1k.jpg",
+    "bytes": 698083
+   },
+   {
+    "path": "models/wooden_bucket_01/textures/wooden_bucket_01_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_bucket_01/wooden_bucket_01_nor_gl_1k.jpg",
+    "bytes": 693440
+   }
+  ]
+ },
+ "wicker_basket_01": {
+  "kind": "models",
+  "use": "market stalls",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wicker_basket_01",
+  "files": [
+   {
+    "path": "models/wicker_basket_01/wicker_basket_01_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wicker_basket_01/wicker_basket_01_1k.gltf",
+    "bytes": 2792
+   },
+   {
+    "path": "models/wicker_basket_01/textures/wicker_basket_01_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wicker_basket_01/wicker_basket_01_arm_1k.jpg",
+    "bytes": 874111
+   },
+   {
+    "path": "models/wicker_basket_01/textures/wicker_basket_01_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wicker_basket_01/wicker_basket_01_nor_gl_1k.jpg",
+    "bytes": 549218
+   },
+   {
+    "path": "models/wicker_basket_01/textures/wicker_basket_01_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wicker_basket_01/wicker_basket_01_diff_1k.jpg",
+    "bytes": 679110
+   },
+   {
+    "path": "models/wicker_basket_01/wicker_basket_01.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wicker_basket_01/wicker_basket_01.bin",
+    "bytes": 624920
+   }
+  ]
+ },
+ "Lantern_01": {
+  "kind": "models",
+  "use": "asylum gate, streets",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/Lantern_01",
+  "files": [
+   {
+    "path": "models/Lantern_01/Lantern_01_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/Lantern_01/Lantern_01_1k.gltf",
+    "bytes": 4866
+   },
+   {
+    "path": "models/Lantern_01/textures/Lantern_01_brass_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/Lantern_01/Lantern_01_brass_arm_1k.jpg",
+    "bytes": 229054
+   },
+   {
+    "path": "models/Lantern_01/Lantern_01.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/Lantern_01/Lantern_01.bin",
+    "bytes": 864852
+   },
+   {
+    "path": "models/Lantern_01/textures/Lantern_01_brass_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/Lantern_01/Lantern_01_brass_nor_gl_1k.jpg",
+    "bytes": 180646
+   },
+   {
+    "path": "models/Lantern_01/textures/Lantern_01_brass_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/Lantern_01/Lantern_01_brass_diff_1k.jpg",
+    "bytes": 140998
+   }
+  ]
+ },
+ "wooden_candlestick": {
+  "kind": "models",
+  "use": "his desk",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wooden_candlestick",
+  "files": [
+   {
+    "path": "models/wooden_candlestick/wooden_candlestick_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_candlestick/wooden_candlestick_1k.gltf",
+    "bytes": 2799
+   },
+   {
+    "path": "models/wooden_candlestick/textures/wooden_candlestick_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_candlestick/wooden_candlestick_diff_1k.jpg",
+    "bytes": 768160
+   },
+   {
+    "path": "models/wooden_candlestick/textures/wooden_candlestick_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_candlestick/wooden_candlestick_nor_gl_1k.jpg",
+    "bytes": 530930
+   },
+   {
+    "path": "models/wooden_candlestick/wooden_candlestick.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/wooden_candlestick/wooden_candlestick.bin",
+    "bytes": 6177600
+   },
+   {
+    "path": "models/wooden_candlestick/textures/wooden_candlestick_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_candlestick/wooden_candlestick_arm_1k.jpg",
+    "bytes": 949583
+   }
+  ]
+ },
+ "vintage_oil_lamp": {
+  "kind": "models",
+  "use": "ward register table, his room",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/vintage_oil_lamp",
+  "files": [
+   {
+    "path": "models/vintage_oil_lamp/vintage_oil_lamp_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/vintage_oil_lamp/vintage_oil_lamp_1k.gltf",
+    "bytes": 7786
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_glass_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_glass_diff_1k.jpg",
+    "bytes": 39058
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_nor_gl_1k.jpg",
+    "bytes": 227296
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_flame_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_flame_diff_1k.jpg",
+    "bytes": 92425
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_diff_1k.jpg",
+    "bytes": 536650
+   },
+   {
+    "path": "models/vintage_oil_lamp/vintage_oil_lamp.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/vintage_oil_lamp/vintage_oil_lamp.bin",
+    "bytes": 186096
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_glass_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_glass_nor_gl_1k.jpg",
+    "bytes": 42123
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_arm_1k.jpg",
+    "bytes": 655961
+   },
+   {
+    "path": "models/vintage_oil_lamp/textures/vintage_oil_lamp_glass_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_oil_lamp/vintage_oil_lamp_glass_arm_1k.jpg",
+    "bytes": 282607
+   }
+  ]
+ },
+ "wooden_bookshelf_worn": {
+  "kind": "models",
+  "use": "his room",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wooden_bookshelf_worn",
+  "files": [
+   {
+    "path": "models/wooden_bookshelf_worn/wooden_bookshelf_worn_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_bookshelf_worn/wooden_bookshelf_worn_1k.gltf",
+    "bytes": 2849
+   },
+   {
+    "path": "models/wooden_bookshelf_worn/textures/wooden_bookshelf_worn_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_bookshelf_worn/wooden_bookshelf_worn_nor_gl_1k.jpg",
+    "bytes": 993276
+   },
+   {
+    "path": "models/wooden_bookshelf_worn/wooden_bookshelf_worn.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/wooden_bookshelf_worn/wooden_bookshelf_worn.bin",
+    "bytes": 267964
+   },
+   {
+    "path": "models/wooden_bookshelf_worn/textures/wooden_bookshelf_worn_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_bookshelf_worn/wooden_bookshelf_worn_arm_1k.jpg",
+    "bytes": 713979
+   },
+   {
+    "path": "models/wooden_bookshelf_worn/textures/wooden_bookshelf_worn_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_bookshelf_worn/wooden_bookshelf_worn_diff_1k.jpg",
+    "bytes": 799126
+   }
+  ]
+ },
+ "painted_wooden_shelves": {
+  "kind": "models",
+  "use": "dissecting room jars",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/painted_wooden_shelves",
+  "files": [
+   {
+    "path": "models/painted_wooden_shelves/painted_wooden_shelves_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/painted_wooden_shelves/painted_wooden_shelves_1k.gltf",
+    "bytes": 2858
+   },
+   {
+    "path": "models/painted_wooden_shelves/textures/painted_wooden_shelves_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_shelves/painted_wooden_shelves_nor_gl_1k.jpg",
+    "bytes": 843073
+   },
+   {
+    "path": "models/painted_wooden_shelves/painted_wooden_shelves.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/painted_wooden_shelves/painted_wooden_shelves.bin",
+    "bytes": 20680
+   },
+   {
+    "path": "models/painted_wooden_shelves/textures/painted_wooden_shelves_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_shelves/painted_wooden_shelves_arm_1k.jpg",
+    "bytes": 734506
+   },
+   {
+    "path": "models/painted_wooden_shelves/textures/painted_wooden_shelves_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_shelves/painted_wooden_shelves_diff_1k.jpg",
+    "bytes": 509573
+   }
+  ]
+ },
+ "painted_wooden_nightstand": {
+  "kind": "models",
+  "use": "ward bedsides",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/painted_wooden_nightstand",
+  "files": [
+   {
+    "path": "models/painted_wooden_nightstand/painted_wooden_nightstand_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/painted_wooden_nightstand/painted_wooden_nightstand_1k.gltf",
+    "bytes": 4427
+   },
+   {
+    "path": "models/painted_wooden_nightstand/textures/painted_wooden_nightstand_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_nightstand/painted_wooden_nightstand_nor_gl_1k.jpg",
+    "bytes": 751707
+   },
+   {
+    "path": "models/painted_wooden_nightstand/painted_wooden_nightstand.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/painted_wooden_nightstand/painted_wooden_nightstand.bin",
+    "bytes": 18916
+   },
+   {
+    "path": "models/painted_wooden_nightstand/textures/painted_wooden_nightstand_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_nightstand/painted_wooden_nightstand_arm_1k.jpg",
+    "bytes": 773123
+   },
+   {
+    "path": "models/painted_wooden_nightstand/textures/painted_wooden_nightstand_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_nightstand/painted_wooden_nightstand_diff_1k.jpg",
+    "bytes": 603334
+   }
+  ]
+ },
+ "wooden_table_02": {
+  "kind": "models",
+  "use": "his room, ward",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/wooden_table_02",
+  "files": [
+   {
+    "path": "models/wooden_table_02/wooden_table_02_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_table_02/wooden_table_02_1k.gltf",
+    "bytes": 2687
+   },
+   {
+    "path": "models/wooden_table_02/textures/wooden_table_02_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_table_02/wooden_table_02_diff_1k.jpg",
+    "bytes": 178379
+   },
+   {
+    "path": "models/wooden_table_02/textures/wooden_table_02_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_table_02/wooden_table_02_nor_gl_1k.jpg",
+    "bytes": 122129
+   },
+   {
+    "path": "models/wooden_table_02/wooden_table_02.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/wooden_table_02/wooden_table_02.bin",
+    "bytes": 7576
+   },
+   {
+    "path": "models/wooden_table_02/textures/wooden_table_02_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_table_02/wooden_table_02_arm_1k.jpg",
+    "bytes": 174545
+   }
+  ]
+ },
+ "chemistry_set": {
+  "kind": "models",
+  "use": "dissecting room",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/chemistry_set",
+  "files": [
+   {
+    "path": "models/chemistry_set/chemistry_set_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/chemistry_set/chemistry_set_1k.gltf",
+    "bytes": 79977
+   },
+   {
+    "path": "models/chemistry_set/textures/chemistry_set_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chemistry_set/chemistry_set_nor_gl_1k.jpg",
+    "bytes": 440776
+   },
+   {
+    "path": "models/chemistry_set/textures/chemistry_set_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chemistry_set/chemistry_set_diff_1k.jpg",
+    "bytes": 553332
+   },
+   {
+    "path": "models/chemistry_set/textures/chemistry_set_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chemistry_set/chemistry_set_arm_1k.jpg",
+    "bytes": 950518
+   },
+   {
+    "path": "models/chemistry_set/chemistry_set.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/chemistry_set/chemistry_set.bin",
+    "bytes": 1181556
+   }
+  ]
+ },
+ "ceramic_vase_01": {
+  "kind": "models",
+  "use": "jars on the dissecting-room shelves",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/ceramic_vase_01",
+  "files": [
+   {
+    "path": "models/ceramic_vase_01/ceramic_vase_01_1k.gltf",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ceramic_vase_01/ceramic_vase_01_1k.gltf",
+    "bytes": 2706
+   },
+   {
+    "path": "models/ceramic_vase_01/textures/ceramic_vase_01_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_01/ceramic_vase_01_nor_gl_1k.jpg",
+    "bytes": 36504
+   },
+   {
+    "path": "models/ceramic_vase_01/textures/ceramic_vase_01_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_01/ceramic_vase_01_diff_1k.jpg",
+    "bytes": 32351
+   },
+   {
+    "path": "models/ceramic_vase_01/textures/ceramic_vase_01_arm_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_01/ceramic_vase_01_arm_1k.jpg",
+    "bytes": 74240
+   },
+   {
+    "path": "models/ceramic_vase_01/ceramic_vase_01.bin",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_01/ceramic_vase_01.bin",
+    "bytes": 272656
+   }
+  ]
+ }
+}

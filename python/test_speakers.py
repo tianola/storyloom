@@ -234,3 +234,13 @@ class Synthesis(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WordMarksOverrun(unittest.TestCase):
+    def test_words_past_the_alignment_do_not_crash(self):
+        import eleven
+        al = {"characters": list("hi"), "character_start_times_seconds": [0.0, 0.1],
+              "character_end_times_seconds": [0.1, 0.2]}
+        marks = eleven.word_marks("hi there friend", al)
+        self.assertEqual(len(marks), 3)
+        self.assertEqual(marks[0][0], "hi")

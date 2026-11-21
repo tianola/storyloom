@@ -143,7 +143,10 @@ def word_marks(text, alignment):
         i = said.find(w, pos)
         if i < 0:
             i = pos
-        j = min(len(chars), i + len(w)) - 1
+        if not chars:
+            break
+        i = min(i, len(chars) - 1)  # more words than the alignment placed: the rest sit at the end
+        j = max(i, min(len(chars), i + len(w)) - 1)
         out.append((w, round(starts[i], 3), round(max(ends[j], starts[i] + 0.02), 3)))
         pos = j + 1
     return out

@@ -1,0 +1,344 @@
+20:23:22 | INFO: Data are loaded, start creating Blender stuff
+20:23:22 | INFO: Blender create Mesh node Mesh
+20:23:22 | INFO: Blender create Mesh node Mesh.002
+20:23:22 | INFO: glTF import finished in 0.05s
+20:23:22 | INFO: Data are loaded, start creating Blender stuff
+20:23:22 | INFO: Blender create Mesh node Cylinder
+20:23:22 | INFO: Blender create Mesh node Plane
+20:23:22 | INFO: glTF import finished in 0.01s
+Blender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)
+RNA_float_set: NodeSocket.default_value not found.
+Fra:79 Mem:124.82M (Peak 129.95M) | Time:00:14.25 | Rendering 1 / 16 samples
+Fra:79 Mem:124.82M (Peak 129.95M) | Time:00:15.22 | Rendering 16 / 16 samples
+Fra:79 Mem:92.72M (Peak 132.73M) | Time:00:15.22 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-01-012.png'
+Time: 00:15.50 (Saving: 00:00.24)
+
+Fra:330 Mem:126.33M (Peak 130.68M) | Time:00:00.08 | Rendering 1 / 16 samples
+Fra:330 Mem:126.33M (Peak 130.68M) | Time:00:00.32 | Rendering 16 / 16 samples
+Fra:330 Mem:92.42M (Peak 134.24M) | Time:00:00.33 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-01-050.png'
+Time: 00:00.40 (Saving: 00:00.04)
+
+Fra:561 Mem:126.33M (Peak 130.68M) | Time:00:00.08 | Rendering 1 / 16 samples
+Fra:561 Mem:126.33M (Peak 130.68M) | Time:00:00.32 | Rendering 16 / 16 samples
+Fra:561 Mem:92.42M (Peak 134.24M) | Time:00:00.33 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-01-085.png'
+Time: 00:00.39 (Saving: 00:00.04)
+
+  [1/7] beat-01 stills in 20.7s
+20:23:43 | INFO: Data are loaded, start creating Blender stuff
+20:23:43 | INFO: Blender create Mesh node Vert.001
+20:23:43 | INFO: glTF import finished in 0.03s
+20:23:43 | INFO: Data are loaded, start creating Blender stuff
+20:23:43 | INFO: Blender create Mesh node Cube.005
+20:23:43 | INFO: Blender create Mesh node Cube.020
+20:23:43 | INFO: Blender create Mesh node Cube.001
+20:23:43 | INFO: glTF import finished in 0.01s
+20:23:43 | INFO: Data are loaded, start creating Blender stuff
+20:23:43 | INFO: Blender create Mesh node Plane.018
+20:23:43 | INFO: Blender create Mesh node Plane.025
+20:23:43 | INFO: Blender create Mesh node Plane.026
+20:23:43 | INFO: Blender create Mesh node Plane.020
+20:23:43 | INFO: Blender create Mesh node Plane.028
+20:23:43 | INFO: Blender create Mesh node Plane.024
+20:23:43 | INFO: Blender create Mesh node Plane.027
+20:23:43 | INFO: Blender create Mesh node Plane.029
+20:23:43 | INFO: Blender create Mesh node Plane.021
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.012
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.030
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.035
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.004
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.032
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.034
+20:23:43 | INFO: Blender create Mesh node DiameterSmall.033
+20:23:43 | INFO: Blender create Mesh node Ring.077
+20:23:43 | INFO: Blender create Mesh node Ring.080
+20:23:43 | INFO: Blender create Mesh node Ring.061
+20:23:43 | INFO: glTF import finished in 0.08s
+20:23:43 | INFO: Data are loaded, start creating Blender stuff
+20:23:43 | INFO: Blender create Mesh node Glass.001
+20:23:43 | INFO: Blender create Mesh node Circle.003
+20:23:43 | INFO: Blender create Mesh node Plane.003
+20:23:43 | INFO: glTF import finished in 0.03s
+20:23:43 | INFO: Data are loaded, start creating Blender stuff
+20:23:43 | INFO: Blender create Mesh node Mesh
+20:23:43 | INFO: glTF import finished in 0.21s
+20:23:43 | INFO: Data are loaded, start creating Blender stuff
+20:23:43 | INFO: Blender create Mesh node Cube.009
+20:23:43 | INFO: glTF import finished in 0.03s
+20:23:59 | INFO: Data are loaded, start creating Blender stuff
+20:23:59 | INFO: Blender create Mesh node shevles.001
+20:23:59 | INFO: glTF import finished in 0.04s
+20:23:59 | INFO: Data are loaded, start creating Blender stuff
+20:23:59 | INFO: Blender create Mesh node Cylinder.009
+20:23:59 | INFO: glTF import finished in 0.06s
+RNA_float_set: NodeSocket.default_value not found.
+Fra:40 Mem:488.25M (Peak 540.03M) | Time:00:03.27 | Rendering 1 / 16 samples
+Fra:40 Mem:488.25M (Peak 540.03M) | Time:00:04.76 | Rendering 16 / 16 samples
+Fra:40 Mem:454.61M (Peak 540.03M) | Time:00:04.77 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-02-012.png'
+Time: 00:04.84 (Saving: 00:00.04)
+
+Fra:165 Mem:504.67M (Peak 542.91M) | Time:00:00.44 | Rendering 1 / 16 samples
+Fra:165 Mem:504.67M (Peak 542.91M) | Time:00:01.40 | Rendering 16 / 16 samples
+Fra:165 Mem:454.51M (Peak 542.91M) | Time:00:01.41 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-02-050.png'
+Time: 00:01.48 (Saving: 00:00.04)
+
+Fra:280 Mem:504.96M (Peak 543.35M) | Time:00:00.64 | Rendering 1 / 16 samples
+Fra:280 Mem:504.96M (Peak 543.35M) | Time:00:04.73 | Rendering 16 / 16 samples
+Fra:280 Mem:454.69M (Peak 543.35M) | Time:00:04.73 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-02-085.png'
+Time: 00:04.80 (Saving: 00:00.04)
+
+  [2/7] beat-02 stills in 32.8s
+20:24:16 | INFO: Data are loaded, start creating Blender stuff
+20:24:16 | INFO: Blender create Mesh node Vert.001
+20:24:16 | INFO: glTF import finished in 0.03s
+20:24:16 | INFO: Data are loaded, start creating Blender stuff
+20:24:16 | INFO: Blender create Mesh node Cube.005
+20:24:16 | INFO: Blender create Mesh node Cube.020
+20:24:16 | INFO: Blender create Mesh node Cube.001
+20:24:16 | INFO: glTF import finished in 0.02s
+20:24:16 | INFO: Data are loaded, start creating Blender stuff
+20:24:16 | INFO: Blender create Mesh node Plane.018
+20:24:16 | INFO: Blender create Mesh node Plane.025
+20:24:16 | INFO: Blender create Mesh node Plane.026
+20:24:16 | INFO: Blender create Mesh node Plane.020
+20:24:16 | INFO: Blender create Mesh node Plane.028
+20:24:16 | INFO: Blender create Mesh node Plane.024
+20:24:16 | INFO: Blender create Mesh node Plane.027
+20:24:16 | INFO: Blender create Mesh node Plane.029
+20:24:16 | INFO: Blender create Mesh node Plane.021
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.012
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.030
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.035
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.004
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.032
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.034
+20:24:16 | INFO: Blender create Mesh node DiameterSmall.033
+20:24:16 | INFO: Blender create Mesh node Ring.077
+20:24:16 | INFO: Blender create Mesh node Ring.080
+20:24:16 | INFO: Blender create Mesh node Ring.061
+20:24:16 | INFO: glTF import finished in 0.08s
+20:24:16 | INFO: Data are loaded, start creating Blender stuff
+20:24:16 | INFO: Blender create Mesh node Glass.001
+20:24:16 | INFO: Blender create Mesh node Circle.003
+20:24:16 | INFO: Blender create Mesh node Plane.003
+20:24:16 | INFO: glTF import finished in 0.04s
+20:24:16 | INFO: Data are loaded, start creating Blender stuff
+20:24:16 | INFO: Blender create Mesh node Mesh
+20:24:17 | INFO: glTF import finished in 0.18s
+20:24:17 | INFO: Data are loaded, start creating Blender stuff
+20:24:17 | INFO: Blender create Mesh node Cube.009
+20:24:17 | INFO: glTF import finished in 0.03s
+20:24:25 | INFO: Data are loaded, start creating Blender stuff
+20:24:25 | INFO: Blender create Mesh node shevles.001
+20:24:25 | INFO: glTF import finished in 0.04s
+20:24:25 | INFO: Data are loaded, start creating Blender stuff
+20:24:25 | INFO: Blender create Mesh node Cylinder.009
+20:24:25 | INFO: glTF import finished in 0.05s
+RNA_float_set: NodeSocket.default_value not found.
+Fra:101 Mem:511.74M (Peak 541.75M) | Time:00:00.70 | Rendering 1 / 16 samples
+Fra:101 Mem:511.74M (Peak 541.75M) | Time:00:01.16 | Rendering 16 / 16 samples
+Fra:101 Mem:461.84M (Peak 541.75M) | Time:00:01.17 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-03-012.png'
+Time: 00:01.24 (Saving: 00:00.04)
+
+Fra:420 Mem:512.19M (Peak 550.60M) | Time:00:00.42 | Rendering 1 / 16 samples
+Fra:420 Mem:512.19M (Peak 550.60M) | Time:00:00.80 | Rendering 16 / 16 samples
+Fra:420 Mem:461.92M (Peak 550.60M) | Time:00:00.80 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-03-050.png'
+Time: 00:00.86 (Saving: 00:00.04)
+
+Fra:714 Mem:512.28M (Peak 550.74M) | Time:00:00.46 | Rendering 1 / 16 samples
+Fra:714 Mem:512.28M (Peak 550.74M) | Time:00:01.42 | Rendering 16 / 16 samples
+Fra:714 Mem:461.98M (Peak 550.74M) | Time:00:01.43 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-03-085.png'
+Time: 00:01.50 (Saving: 00:00.04)
+
+  [3/7] beat-03 stills in 16.5s
+20:24:32 | INFO: Data are loaded, start creating Blender stuff
+20:24:32 | INFO: Blender create Mesh node Vert.001
+20:24:33 | INFO: glTF import finished in 0.03s
+20:24:33 | INFO: Data are loaded, start creating Blender stuff
+20:24:33 | INFO: Blender create Mesh node Cube.005
+20:24:33 | INFO: Blender create Mesh node Cube.020
+20:24:33 | INFO: Blender create Mesh node Cube.001
+20:24:33 | INFO: glTF import finished in 0.02s
+20:24:33 | INFO: Data are loaded, start creating Blender stuff
+20:24:33 | INFO: Blender create Mesh node Plane.018
+20:24:33 | INFO: Blender create Mesh node Plane.025
+20:24:33 | INFO: Blender create Mesh node Plane.026
+20:24:33 | INFO: Blender create Mesh node Plane.020
+20:24:33 | INFO: Blender create Mesh node Plane.028
+20:24:33 | INFO: Blender create Mesh node Plane.024
+20:24:33 | INFO: Blender create Mesh node Plane.027
+20:24:33 | INFO: Blender create Mesh node Plane.029
+20:24:33 | INFO: Blender create Mesh node Plane.021
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.012
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.030
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.035
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.004
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.032
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.034
+20:24:33 | INFO: Blender create Mesh node DiameterSmall.033
+20:24:33 | INFO: Blender create Mesh node Ring.077
+20:24:33 | INFO: Blender create Mesh node Ring.080
+20:24:33 | INFO: Blender create Mesh node Ring.061
+20:24:33 | INFO: glTF import finished in 0.09s
+20:24:33 | INFO: Data are loaded, start creating Blender stuff
+20:24:33 | INFO: Blender create Mesh node Glass.001
+20:24:33 | INFO: Blender create Mesh node Circle.003
+20:24:33 | INFO: Blender create Mesh node Plane.003
+20:24:33 | INFO: glTF import finished in 0.04s
+20:24:33 | INFO: Data are loaded, start creating Blender stuff
+20:24:33 | INFO: Blender create Mesh node Mesh
+20:24:33 | INFO: glTF import finished in 0.23s
+20:24:33 | INFO: Data are loaded, start creating Blender stuff
+20:24:33 | INFO: Blender create Mesh node Cube.009
+20:24:33 | INFO: glTF import finished in 0.04s
+20:24:39 | INFO: Data are loaded, start creating Blender stuff
+20:24:39 | INFO: Blender create Mesh node shevles.001
+20:24:39 | INFO: glTF import finished in 0.03s
+20:24:39 | INFO: Data are loaded, start creating Blender stuff
+20:24:39 | INFO: Blender create Mesh node Cylinder.009
+20:24:39 | INFO: glTF import finished in 0.04s
+RNA_float_set: NodeSocket.default_value not found.
+Fra:32 Mem:504.40M (Peak 534.28M) | Time:00:00.67 | Rendering 1 / 16 samples
+Fra:32 Mem:504.38M (Peak 534.28M) | Time:00:00.91 | Rendering 16 / 16 samples
+Fra:32 Mem:454.73M (Peak 534.28M) | Time:00:00.92 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-04-012.png'
+Time: 00:00.99 (Saving: 00:00.04)
+
+Fra:135 Mem:505.24M (Peak 543.52M) | Time:00:00.31 | Rendering 1 / 16 samples
+Fra:135 Mem:505.24M (Peak 543.52M) | Time:00:00.52 | Rendering 16 / 16 samples
+Fra:135 Mem:455.17M (Peak 543.52M) | Time:00:00.52 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-04-050.png'
+Time: 00:00.60 (Saving: 00:00.05)
+
+Fra:229 Mem:505.55M (Peak 543.93M) | Time:00:00.34 | Rendering 1 / 16 samples
+Fra:229 Mem:505.55M (Peak 543.93M) | Time:00:00.59 | Rendering 16 / 16 samples
+Fra:229 Mem:455.29M (Peak 543.93M) | Time:00:00.60 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-04-085.png'
+Time: 00:00.66 (Saving: 00:00.04)
+
+  [4/7] beat-04 stills in 12.4s
+20:24:44 | INFO: Data are loaded, start creating Blender stuff
+20:24:44 | INFO: Blender create Mesh node nightstand.024
+20:24:44 | INFO: Blender create Mesh node nightstand.025
+20:24:44 | INFO: glTF import finished in 0.00s
+RNA_float_set: NodeSocket.default_value not found.
+Fra:94 Mem:382.95M (Peak 386.96M) | Time:00:00.19 | Rendering 1 / 16 samples
+Fra:94 Mem:382.95M (Peak 386.96M) | Time:00:00.48 | Rendering 16 / 16 samples
+Fra:94 Mem:350.59M (Peak 390.86M) | Time:00:00.50 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-05-012.png'
+Time: 00:00.57 (Saving: 00:00.05)
+
+Fra:390 Mem:383.02M (Peak 384.23M) | Time:00:00.11 | Rendering 1 / 16 samples
+Fra:390 Mem:383.02M (Peak 384.23M) | Time:00:00.41 | Rendering 16 / 16 samples
+Fra:390 Mem:350.66M (Peak 390.93M) | Time:00:00.43 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-05-050.png'
+Time: 00:00.50 (Saving: 00:00.05)
+
+Fra:663 Mem:383.02M (Peak 383.02M) | Time:00:00.11 | Rendering 1 / 16 samples
+Fra:663 Mem:383.02M (Peak 383.02M) | Time:00:00.40 | Rendering 16 / 16 samples
+Fra:663 Mem:350.66M (Peak 390.93M) | Time:00:00.41 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-05-085.png'
+Time: 00:00.49 (Saving: 00:00.05)
+
+  [5/7] beat-05 stills in 3.7s
+20:24:48 | INFO: Data are loaded, start creating Blender stuff
+20:24:48 | INFO: Blender create Mesh node Vert.001
+20:24:48 | INFO: glTF import finished in 0.03s
+20:24:48 | INFO: Data are loaded, start creating Blender stuff
+20:24:48 | INFO: Blender create Mesh node Cube.005
+20:24:48 | INFO: Blender create Mesh node Cube.020
+20:24:48 | INFO: Blender create Mesh node Cube.001
+20:24:48 | INFO: glTF import finished in 0.02s
+20:24:48 | INFO: Data are loaded, start creating Blender stuff
+20:24:48 | INFO: Blender create Mesh node Plane.018
+20:24:48 | INFO: Blender create Mesh node Plane.025
+20:24:48 | INFO: Blender create Mesh node Plane.026
+20:24:48 | INFO: Blender create Mesh node Plane.020
+20:24:48 | INFO: Blender create Mesh node Plane.028
+20:24:48 | INFO: Blender create Mesh node Plane.024
+20:24:48 | INFO: Blender create Mesh node Plane.027
+20:24:48 | INFO: Blender create Mesh node Plane.029
+20:24:48 | INFO: Blender create Mesh node Plane.021
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.012
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.030
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.035
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.004
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.032
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.034
+20:24:48 | INFO: Blender create Mesh node DiameterSmall.033
+20:24:48 | INFO: Blender create Mesh node Ring.077
+20:24:48 | INFO: Blender create Mesh node Ring.080
+20:24:48 | INFO: Blender create Mesh node Ring.061
+20:24:48 | INFO: glTF import finished in 0.07s
+20:24:48 | INFO: Data are loaded, start creating Blender stuff
+20:24:48 | INFO: Blender create Mesh node Glass.001
+20:24:48 | INFO: Blender create Mesh node Circle.003
+20:24:49 | INFO: Blender create Mesh node Plane.003
+20:24:49 | INFO: glTF import finished in 0.04s
+20:24:49 | INFO: Data are loaded, start creating Blender stuff
+20:24:49 | INFO: Blender create Mesh node Mesh
+20:24:49 | INFO: glTF import finished in 0.20s
+20:24:49 | INFO: Data are loaded, start creating Blender stuff
+20:24:49 | INFO: Blender create Mesh node Cube.009
+20:24:49 | INFO: glTF import finished in 0.03s
+20:24:54 | INFO: Data are loaded, start creating Blender stuff
+20:24:54 | INFO: Blender create Mesh node shevles.001
+20:24:54 | INFO: glTF import finished in 0.04s
+20:24:54 | INFO: Data are loaded, start creating Blender stuff
+20:24:54 | INFO: Blender create Mesh node Cylinder.009
+20:24:54 | INFO: glTF import finished in 0.06s
+RNA_float_set: NodeSocket.default_value not found.
+Fra:65 Mem:531.23M (Peak 561.16M) | Time:00:00.62 | Rendering 1 / 16 samples
+Fra:65 Mem:531.23M (Peak 561.16M) | Time:00:00.81 | Rendering 16 / 16 samples
+Fra:65 Mem:481.52M (Peak 561.16M) | Time:00:00.82 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-06-012.png'
+Time: 00:00.90 (Saving: 00:00.05)
+
+Fra:270 Mem:532.13M (Peak 570.51M) | Time:00:00.38 | Rendering 1 / 16 samples
+Fra:270 Mem:532.13M (Peak 570.51M) | Time:00:00.58 | Rendering 16 / 16 samples
+Fra:270 Mem:481.98M (Peak 570.51M) | Time:00:00.58 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-06-050.png'
+Time: 00:00.65 (Saving: 00:00.04)
+
+Fra:459 Mem:532.44M (Peak 570.92M) | Time:00:00.34 | Rendering 1 / 16 samples
+Fra:459 Mem:532.44M (Peak 570.92M) | Time:00:00.54 | Rendering 16 / 16 samples
+Fra:459 Mem:482.11M (Peak 570.92M) | Time:00:00.54 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-06-085.png'
+Time: 00:00.61 (Saving: 00:00.05)
+
+  [6/7] beat-06 stills in 10.7s
+20:24:58 | INFO: Data are loaded, start creating Blender stuff
+20:24:58 | INFO: Blender create Mesh node nightstand.024
+20:24:58 | INFO: Blender create Mesh node nightstand.025
+20:24:58 | INFO: glTF import finished in 0.00s
+RNA_float_set: NodeSocket.default_value not found.
+Fra:22 Mem:383.07M (Peak 387.08M) | Time:00:00.21 | Rendering 1 / 16 samples
+Fra:22 Mem:383.07M (Peak 387.08M) | Time:00:00.48 | Rendering 16 / 16 samples
+Fra:22 Mem:350.71M (Peak 390.98M) | Time:00:00.50 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-07-012.png'
+Time: 00:00.56 (Saving: 00:00.04)
+
+Fra:90 Mem:383.07M (Peak 383.07M) | Time:00:00.17 | Rendering 1 / 16 samples
+Fra:90 Mem:383.07M (Peak 383.07M) | Time:00:00.46 | Rendering 16 / 16 samples
+Fra:90 Mem:350.71M (Peak 390.98M) | Time:00:00.49 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-07-050.png'
+Time: 00:00.56 (Saving: 00:00.05)
+
+Fra:153 Mem:383.07M (Peak 383.07M) | Time:00:00.13 | Rendering 1 / 16 samples
+Fra:153 Mem:383.07M (Peak 383.07M) | Time:00:00.43 | Rendering 16 / 16 samples
+Fra:153 Mem:350.71M (Peak 390.98M) | Time:00:00.45 | Compositing
+Saved: 'F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets\beat-07-085.png'
+Time: 00:00.52 (Saving: 00:00.04)
+
+  [7/7] beat-07 stills in 2.4s
+7 beats -> F:\AI-PROJECTS\longform-explainer\.claude\worktrees\continue-implementation-plan-9d914b\work\semmelweis-pilot\qc\stills-assets
+
+Blender quit

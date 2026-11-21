@@ -92,3 +92,29 @@ class Speed(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Governor(unittest.TestCase):
+    def entry(self):
+        return {"start": 0.0, "target": (0.0, 0.0, 1.0), "target_to": (20.0, 0.0, 1.0),
+                "radius": (8.0, 4.0), "azimuth": (180.0, 90.0), "height": (2.0, 1.5)}
+
+    def test_a_fast_travel_is_cut_short_to_the_speed_limit(self):
+        e = self.entry()
+        self.assertGreater(C.shot_speed(e, 4.0)["pan_frames_s"], C.MAX_PAN)
+        slow, f = C.govern_travel(e, 4.0)
+        self.assertLess(f, 1.0)
+        self.assertGreater(f, 0.0)
+        self.assertLessEqual(C.shot_speed(slow, 4.0)["pan_frames_s"], C.MAX_PAN)
+        self.assertEqual(slow["target"], e["target"])
+        self.assertEqual(slow["radius"][0], e["radius"][0])
+
+    def test_a_slow_travel_is_left_alone(self):
+        e = self.entry()
+        same, f = C.govern_travel(e, 400.0)
+        self.assertEqual(f, 1.0)
+        self.assertIs(same, e)
+
+    def test_a_held_shot_is_left_alone(self):
+        e = {"start": 0.0, "target": (0, 0, 1), "radius": (5, 5), "azimuth": (0, 3), "height": (2, 2)}
+        self.assertIs(C.govern_travel(e, 1.0)[0], e)
