@@ -1,5 +1,5 @@
 # STATE
-- Updated: 2026-11-21. Current work: the living-world pilot `work/semmelweis-pilot` (section below). Everything below that section is history.
+- Updated: 2026-11-21 (late). Current work: the living-world pilot `work/semmelweis-pilot` (section below). Everything below that section is history.
 
 ## 2026-11-21 (uncommitted): living-world films, Semmelweis pilot
 ### Decided (user)
@@ -17,6 +17,14 @@
   - Rejected: Sarah, George, Lily, plus the other candidates in `vo/auditions2/`.
 - The key lives only in the env var `ELEVENLABS_API_KEY` or the git-ignored `.env.local`. Never print or commit it. The user pasted it in chat, so advise rotating it.
 - The user is at the PC: give file paths, don't send files.
+
+### 2026-11-21 late: pilot v4 (committed, PR tianola/storyloom#1)
+- Poly Haven CC0 assets: `workflow/assets.json`, `tools/fetch_assets.py`, `tools/blender/models/assets.py` (textured materials tinted to the palette, HDRI light, glTF props); scene param `assets` (default true).
+- `camera_plan.govern_travel`: a too-fast travel lands short instead of rushing.
+- Faster cutaways pass the cut-rhythm gate; the empty beat-05 `at:bell` cutaway became `ward-bed`.
+- Master 116 s, QC PASS (0 errors, 2 deliberate slow_shot warnings).
+- Six user-downloaded CC0 packs extracted to `assets/kenney/`, `assets/quaternius/` (git-ignored, recorded in `assets/packs.json`), not wired yet.
+- A session interruption kills detached Blender too: after one, re-render only the missing beat with `--beat`.
 
 ### Built (all tests pass, 723, except the 7 known Blender-env errors)
 - Narration syntax: `[name] text` (spoken on screen), `[name:thought] text` (inner voice, no mouth), `{direction}` (sent to v3 as `[direction]`, stripped from captions and QC).

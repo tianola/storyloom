@@ -5,9 +5,10 @@
   - a human story drives it;
   - the world keeps moving;
   - the characters speak in their own voices (ElevenLabs v3).
-- Current position: Semmelweis pilot (`work/semmelweis-pilot`, about 100 s). It is re-narrated with the chosen voices (user's own clone as the explorer, Lajos as Semmelweis, Ana as the mother) and is being rendered (`build2.log`). Next: QC, stills, `qc/pilot-gate-status.md`, user review. Expand to a full film only after approval.
+- Current position: Semmelweis pilot v4 (`work/semmelweis-pilot/semmelweis-pilot.mp4`, 116 s) is rendered with Poly Haven CC0 assets and passes episode QC (`qc/pilot-gate-status.md`). Repo: github.com/tianola/storyloom (private). Waiting on the user's review. Next: wire the Kenney/Quaternius packs (`docs/research/asset-packs-catalog.md`, `assets/packs.json`), fix the blown-out cell window in beat-01, then the full 12-15 min script if the user agrees.
+- Assets: `tools/fetch_assets.py` re-fetches `workflow/assets.json` into `assets/polyhaven/` (git-ignored). Single-beat render: `blender -b -P tools/blender/storyboard_beats.py -- --episode <ep> --beat beat-0N`.
 - Run: `PYTHONIOENCODING=utf-8 BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe .venv/Scripts/python.exe -X utf8 tools/make_episode.py --episode work/semmelweis-pilot --only <stages>`. Voice change: `--only narration,captions,lengths`, then rescale the shot starts in `storyboard.json` to the new `shot_lengths.json`.
-- Tests: `python -m unittest discover -s python -p "test_*.py"` (723; 7 known errors need `BLENDER_EXE`).
+- Tests: `python -m unittest discover -s python -p "test_*.py"` (786 pass).
 - Key files:
   - voice: `python/eleven.py`;
   - lip sync and people: `tools/lip_sync.py`, `tools/pixel/people.py`;

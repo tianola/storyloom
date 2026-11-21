@@ -65,7 +65,7 @@
     {"view": "at:bell", "start": 8.5, "move": "lock"},
     {"view": "ward-wide", "to": "ward-priest", "start": 9.7},
     {"view": "ward-door", "start": 13.2, "move": "lock"},
-    {"view": "at:bell", "start": 18.6, "move": "lock"},
+    {"view": "ward-bed", "start": 18.6, "move": "lock"},
     {"view": "ward-door", "start": 20.0, "move": "lock"},
     {"view": "ward-aisle", "start": 21.4, "move": "pull"}
    ],
