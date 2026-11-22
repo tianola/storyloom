@@ -8,6 +8,7 @@ The timing rules (`when`, `default_shots`, `shot_starts`) live here too, without
 Blender builder and the sound design read one definition of when each shot starts.
 """
 import json
+import re
 from pathlib import Path
 
 CATALOG_PATH = Path(__file__).with_name("scenes.json")
@@ -40,9 +41,12 @@ def load_catalog(path=CATALOG_PATH):
 
 def when(spec, seconds, words, default=None, warn=None):
     """Resolve a time spec to seconds inside a beat of `seconds`: a fraction when <= 1.0, seconds
-    when larger, or `word:<text>` looked up in `words` ([{"word", "start"}])."""
+    when larger, `"<n>s"` for exact seconds whatever their size (what a cut list writes, since a cut
+    0.7 s into a beat is not 70% of it), or `word:<text>` looked up in `words` ([{"word", "start"}])."""
     if spec is None:
         return default
+    if isinstance(spec, str) and re.fullmatch(r"\d+(\.\d+)?s", spec):
+        return min(float(spec[:-1]), max(0.0, seconds - 1.0 / 30))
     if isinstance(spec, str):
         if spec.startswith("word:"):
             key = spec[5:].strip().lower()

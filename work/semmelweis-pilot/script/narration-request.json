@@ -18,26 +18,26 @@
   {
    "id": "u003",
    "file": "u003.wav",
+   "text": "The hospital has two maternity clinics. In the first, one mother in nine dies. Yet in the second, it's one in thirty six.",
+   "speed": 1.15
+  },
+  {
+   "id": "u004",
+   "file": "u004.wav",
    "text": "But here's what nobody can explain: why does it matter so much which day she walks in?",
    "speed": 1.15,
    "spoken": "[curious] But here's what nobody can explain: why does it matter so much which day she walks in?"
   },
   {
-   "id": "u004",
-   "file": "u004.wav",
-   "text": "The hospital has two maternity clinics, and they take women in on alternate days.",
-   "speed": 1.15
-  },
-  {
    "id": "u005",
    "file": "u005.wav",
-   "text": "Doctors and medical students run the first one, and midwives run the second.",
+   "text": "They take women in on alternate days.",
    "speed": 1.15
   },
   {
    "id": "u006",
    "file": "u006.wav",
-   "text": "That year, one mother in nine dies in the first clinic. In the second, it's one in thirty six.",
+   "text": "Doctors and medical students run the first one, and midwives run the second.",
    "speed": 1.15
   },
   {

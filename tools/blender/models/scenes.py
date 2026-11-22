@@ -745,3 +745,6 @@ SCENES.update(characters.SCENES)
 # living places (a town, a hospital, an asylum) with pixel people, lit by the time of day
 import world  # noqa: E402
 SCENES.update(world.SCENES)
+# the v6 Semmelweis sets: the evidence board, the death ledger, the wing (morgue -> corridor -> ward)
+import clinic  # noqa: E402
+SCENES.update(clinic.SCENES)

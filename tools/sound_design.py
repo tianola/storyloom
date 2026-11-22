@@ -67,10 +67,71 @@ def beat_shots(spec, seconds, words=(), catalog=None):
     return sorted((s["start"], "to" in s) for s in planned)
 
 
+def plan_events_from_cut(episode, cut):
+    """The same events, read off a resolved cut list instead of shots.json and the beat clock.
+
+    Every shot change is a cut: a change of source is a whoosh (or a thud across the archive edge),
+    a change of view inside one beat a hit. A shot that travels to another view (`source.to`) for
+    two seconds or more is a travel. Rooms follow the runs of one source. Storyboard actions land
+    on the film clock through the beat's own origin (its first shot's start less its in-point).
+    Sounds the cut schedules itself — a J-cut's bell heard before its shot — come from
+    `cutlist.audio_events`.
+    """
+    from edit import cutlist
+    episode = Path(episode)
+    read = lambda name: json.loads((episode / name).read_text(encoding="utf-8"))
+    manifest = read("vo/manifest.json")
+    board = read("storyboard.json")["beats"] if (episode / "storyboard.json").exists() else {}
+    rooms_by_scene = rules()["rooms"]
+    ev = {"cuts": [], "travels": [], "actions": [], "rooms": [], "reversal": None, "sfx": []}
+    shots = cut["shots"]
+    runs = []
+    for i, s in enumerate(shots):
+        src = s["source"]
+        if i:
+            prev = shots[i - 1]["source"]
+            if src["name"] != prev["name"]:
+                edge = (src["kind"] == "archive") != (prev["kind"] == "archive")
+                ev["cuts"].append((s["start"], "thud" if edge else "whoosh"))
+            else:
+                ev["cuts"].append((s["start"], "hit"))
+        if src.get("to") and s["end"] - s["start"] >= 2.0:
+            ev["travels"].append((s["start"], s["end"]))
+        if runs and runs[-1]["name"] == src["name"]:
+            runs[-1]["end"] = s["end"]
+        else:
+            runs.append({"name": src["name"], "kind": src["kind"], "start": s["start"], "end": s["end"],
+                         "origin": s["start"] - src["in"]})
+    for r in runs:
+        if r["kind"] == "black":
+            continue
+        spec = board.get(r["name"]) if r["kind"] == "3d" else None
+        room = rooms_by_scene.get(spec["scene"], rooms_by_scene["_default"]) if spec else rooms_by_scene["_archive"]
+        ev["rooms"].append((r["start"], r["end"], room))
+        for action in (spec or {}).get("actions", []):
+            at = action.get("at")
+            if isinstance(at, (int, float)) and r["start"] <= r["origin"] + at < r["end"]:
+                ev["actions"].append(r["origin"] + at)
+    for e in cutlist.audio_events(cut):
+        ev["sfx"].append((e["at"], e["sfx"]))
+    story = episode / "script" / "story.json"
+    if story.exists():
+        rv = json.loads(story.read_text(encoding="utf-8")).get("reversal")
+        line = next((l for l in cutlist.line_clock(manifest, episode / "vo") if l["id"] == rv), None)
+        if line:
+            ev["reversal"] = line["start"]
+    ev["cuts"].sort()
+    return ev
+
+
 def plan_events(episode):
     """-> {"cuts": [(t, kind)], "travels": [(t0, t1)], "actions": [t], "rooms": [(t0, t1, room)],
            "reversal": t | None} in film seconds."""
     episode = Path(episode)
+    from workflow.episode import resolved_cut
+    cut = resolved_cut(episode)
+    if cut is not None:
+        return plan_events_from_cut(episode, cut)
     read = lambda name: json.loads((episode / name).read_text(encoding="utf-8"))
     manifest, shots = read("vo/manifest.json"), read("shots.json")
     board = read("storyboard.json")["beats"] if (episode / "storyboard.json").exists() else {}
@@ -224,6 +285,24 @@ def boom(rate, length=2.2):
     return np.sin(2 * np.pi * (48.0 - 14.0 * t / length) * t) * np.exp(-t * 2.2)
 
 
+def bell(rate, strikes=3, gap=0.42, length=2.6):
+    """A small hand bell rung a few times: inharmonic partials, each with its own decay."""
+    n = int(length * rate)
+    t = np.arange(n) / rate
+    out = np.zeros(n)
+    f0 = 1320.0
+    for k in range(strikes):
+        start = int(k * gap * rate)
+        tt = t[: n - start]
+        tone = sum(a * np.sin(2 * np.pi * f0 * r * tt) * np.exp(-tt / d)
+                   for r, a, d in ((1.0, 1.0, 0.9), (2.76, 0.45, 0.35), (5.40, 0.25, 0.18), (8.93, 0.12, 0.08)))
+        out[start:] += tone * (0.85 ** k)
+    return out / (np.abs(out).max() or 1.0)
+
+
+SFX = {"bell": bell}
+
+
 def _lay(track, sound, at, rate, gain):
     start = int(at * rate)
     a, b = max(0, start), min(len(track), start + len(sound))
@@ -290,6 +369,8 @@ def design_track(rate, total, ev, voice_rms):
             _lay(track, hit(rate, seed=4000 + i), t - 0.004, rate, g("hit"))
     for i, t in enumerate(ev["actions"]):
         _lay(track, pop(rate, seed=5000 + i), t, rate, g("action"))
+    for t, name in ev.get("sfx", []):
+        _lay(track, SFX[name](rate), t, rate, g("sfx") if "sfx" in lv else g("action"))
     r = ev.get("reversal")
     if r is not None:
         s = riser(rate)

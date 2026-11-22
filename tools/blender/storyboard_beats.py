@@ -276,16 +276,17 @@ def place_actor(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     origin, ray = _screen_ray(cam, u, v)
     target = Vector(scene_set.views[plan[k]["view"]]["target"]) if plan[k].get("view") in scene_set.views else origin + ray * 8
     reach = (target - origin).length
-    if c.get("bust"):
-        foot = origin + ray * reach * 0.5
+    if c.get("bust") or c.get("size") == "hands":
+        foot = origin + ray * reach * float(c.get("depth", 0.5))
     else:
         foot = _ground(origin, ray, reach * 0.8) - ray * (0.03 * reach)
     depth = (foot - origin).dot(cam.matrix_world.to_quaternion() @ Vector((0, 0, -1)))
     frame_h = 2 * depth * math.tan(cam.data.angle_y / 2)
-    size = "bust" if c.get("bust") else "figure"
+    # `size`: figure (default), bust, or any size the character is drawn at (bed, hands)
+    size = c.get("size") or ("bust" if c.get("bust") else "figure")
     ob = characters.actor(f"cast-{n}-{c['who']}", c["who"], tuple(foot), c.get("height", 0.25) * frame_h,
                           size=size, pose=c.get("pose", "stand"), expression=c.get("face", "neutral"),
-                          tint=getattr(scene_set, "sprite_tint", 1.0), shadow=not c.get("bust"))
+                          tint=getattr(scene_set, "sprite_tint", 1.0), shadow=size == "figure")
     characters.key_cell(ob, 1, pose=c.get("pose", "stand"), expression=c.get("face", "neutral"))
     for a in c.get("acts") or []:
         characters.key_cell(ob, max(1, round(when(a["at"], seconds, words, default=0.0) * FPS) + 1),

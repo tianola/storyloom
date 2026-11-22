@@ -4,7 +4,7 @@
    "severity": "error",
    "rule": "length",
    "line": null,
-   "message": "script runs about 185 s (436 words); the target is 600-900 s, so about 980 more words are needed"
+   "message": "script runs about 183 s (433 words); the target is 600-900 s, so about 983 more words are needed"
   },
   {
    "severity": "error",
@@ -15,14 +15,14 @@
  ],
  "stats": {
   "lines": 29,
-  "words": 436,
-  "estimated_seconds": 185,
+  "words": 433,
+  "estimated_seconds": 183,
   "chapters": 3,
   "verified_claims": 27,
-  "numeric_share": 0.178,
-  "numeric_run": 4,
-  "numeric_run_from": "u004",
-  "turns_per_minute": 1.62,
-  "questions_per_minute": 0.97
+  "numeric_share": 0.174,
+  "numeric_run": 3,
+  "numeric_run_from": "u003",
+  "turns_per_minute": 1.96,
+  "questions_per_minute": 0.98
  }
 }

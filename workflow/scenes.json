@@ -1705,7 +1705,11 @@
     "pump",
     "court-low",
     "anatomy-close",
-    "jars"
+    "jars",
+    "gate-approach",
+    "street-birth",
+    "scalpel",
+    "cut-hand"
    ],
    "anchors": [
     "first",
@@ -1714,7 +1718,8 @@
     "second",
     "table",
     "window",
-    "writer"
+    "writer",
+    "scalpel"
    ],
    "actions": [
     "greet"
@@ -1799,18 +1804,228 @@
     "ward-aisle",
     "ward-bed",
     "ward-door",
-    "ward-priest"
+    "ward-priest",
+    "second-bed",
+    "semmelweis-close",
+    "hands-window",
+    "semmelweis-hands",
+    "hands-door",
+    "sickbed"
    ],
    "anchors": [
     "basin",
     "bed",
     "bell",
     "door",
-    "ledger"
+    "ledger",
+    "window"
    ],
    "actions": [
     "bell"
    ]
+  },
+  "board": {
+   "description": "The explorer's evidence board, made physical: a cork board on a dark wall with the two clinic doors sketched on cards with their tallies, a calendar strip, the three hypothesis cards (AIR, POSITION, FEAR) pinned, struck and pulled down, and a desk below where the plan is laid out. The explorer is a storyboard cast member.",
+   "params": {
+    "stage": {
+     "type": "enum",
+     "values": [
+      "h1",
+      "h2",
+      "h3",
+      "air",
+      "position",
+      "fear",
+      "h4"
+     ],
+     "default": "h1",
+     "doc": "h1 doors, tallies, calendar | h2 | h3 cards laid on the desk | air, position, fear that card pinned | h4 all three struck; the actions move it on"
+    }
+   },
+   "examples": [
+    {
+     "stage": "h1"
+    },
+    {
+     "stage": "h2"
+    },
+    {
+     "stage": "h3"
+    },
+    {
+     "stage": "air"
+    },
+    {
+     "stage": "position"
+    },
+    {
+     "stage": "fear"
+    },
+    {
+     "stage": "h4"
+    }
+   ],
+   "views": [
+    "h1-low34",
+    "h1-calendar",
+    "h2-close",
+    "h3-top",
+    "h4-ots",
+    "h4-turn",
+    "card-air",
+    "card-position",
+    "card-fear"
+   ],
+   "anchors": [
+    "air",
+    "board",
+    "calendar",
+    "desk",
+    "fear",
+    "position"
+   ],
+   "actions": [
+    "flip",
+    "lay",
+    "pin",
+    "pull"
+   ]
+  },
+  "ledger": {
+   "description": "The clinic's death register open on a desk by an oil lamp. The pages hold tally crosses only, no legible names, dates or words, under two column marks (I, II) and, for the street-births comparison, a third column under a small drawn street. Action `tally` adds a cross.",
+   "params": {
+    "columns": {
+     "type": "enum",
+     "values": [
+      "clinics",
+      "street"
+     ],
+     "default": "clinics",
+     "doc": "clinics = columns I and II | street = a third column under a drawn street"
+    },
+    "first": {
+     "type": "int",
+     "default": 9,
+     "min": 0,
+     "max": 60,
+     "doc": "crosses in column I at the start"
+    },
+    "second": {
+     "type": "int",
+     "default": 2,
+     "min": 0,
+     "max": 60,
+     "doc": "crosses in column II at the start"
+    },
+    "street": {
+     "type": "int",
+     "default": 0,
+     "min": 0,
+     "max": 60,
+     "doc": "crosses under the drawn street (columns: street)"
+    },
+    "adds": {
+     "type": "int",
+     "default": 1,
+     "min": 0,
+     "max": 20,
+     "doc": "crosses added in column I over the beat (action tally)"
+    },
+    "seed": {
+     "type": "int",
+     "default": 3,
+     "min": 0,
+     "max": 9999,
+     "doc": "where the crosses fall in each column"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "columns": "street",
+     "street": 3
+    }
+   ],
+   "views": [
+    "ledger",
+    "ledger-street"
+   ],
+   "anchors": [
+    "cross",
+    "page"
+   ],
+   "actions": [
+    "tally"
+   ]
+  },
+  "wing": {
+   "description": "The morgue and the First Clinic's ward as one place, so one held shot follows the doctors from the dissecting table, down a corridor past the explorer, into the ward and to a mother's bed without a cut. The body on the table is the one Kolletschka had; the doctor and two students examine it and walk to the ward.",
+   "params": {
+    "seed": {
+     "type": "int",
+     "default": 5,
+     "min": 0,
+     "max": 9999,
+     "doc": "which patients look which way, and the dissecting room's crowd"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures and props (false = the plain look)"
+    },
+    "walk_from": {
+     "type": "number",
+     "default": 0.22,
+     "min": 0,
+     "max": 1,
+     "doc": "fraction of the beat when the walk out of the morgue starts"
+    },
+    "walk_to": {
+     "type": "number",
+     "default": 0.8,
+     "min": 0,
+     "max": 1,
+     "doc": "fraction of the beat when the walk ends at the bed"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "ward-wide",
+    "ward-aisle",
+    "ward-bed",
+    "ward-door",
+    "ward-priest",
+    "second-bed",
+    "semmelweis-close",
+    "hands-window",
+    "semmelweis-hands",
+    "hands-door",
+    "sickbed",
+    "wing-table",
+    "wing-door",
+    "wing-corridor",
+    "wing-ward-door",
+    "wing-aisle",
+    "wing-ward-bed",
+    "wing-hands"
+   ],
+   "anchors": [
+    "basin",
+    "bed",
+    "bell",
+    "body",
+    "corridor",
+    "door",
+    "hands",
+    "jars",
+    "ledger",
+    "scalpel",
+    "table",
+    "window"
+   ],
+   "actions": []
   }
  }
 }

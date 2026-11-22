@@ -24,6 +24,17 @@
   "talk",
   "point"
  ],
+ "bed_poses": [
+  "lie",
+  "lie-turn",
+  "lie-side",
+  "sick"
+ ],
+ "hands_poses": [
+  "open",
+  "reach",
+  "hold"
+ ],
  "characters": {
   "explorer": {
    "poses": [
@@ -38,9 +49,16 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": true,
+   "sizes": [
+    "figure",
+    "bust"
+   ],
    "role": "the guide, a fictional narrator"
   },
   "semmelweis": {
@@ -56,9 +74,17 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": true,
+   "sizes": [
+    "figure",
+    "bust",
+    "hands"
+   ],
    "role": "Ignaz Semmelweis, assistant at the First Clinic from 1846"
   },
   "kolletschka": {
@@ -74,9 +100,16 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure",
+    "bed"
+   ],
    "role": "Jakob Kolletschka, professor of forensic medicine, his friend"
   },
   "student": {
@@ -92,9 +125,16 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure",
+    "hands"
+   ],
    "role": "a medical student"
   },
   "doctor": {
@@ -110,9 +150,16 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure",
+    "hands"
+   ],
    "role": "a senior doctor"
   },
   "midwife": {
@@ -128,9 +175,15 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "a midwife of the Second Clinic"
   },
   "mother": {
@@ -146,9 +199,15 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "a mother about to give birth"
   },
   "townsman": {
@@ -164,9 +223,15 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "a man of the street"
   },
   "townswoman": {
@@ -182,9 +247,15 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "a woman of the street"
   },
   "baker": {
@@ -200,9 +271,15 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "the baker on the corner"
   },
   "lamplighter": {
@@ -218,9 +295,15 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "the lamplighter on his round"
   },
   "guard": {
@@ -236,10 +319,61 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure"
+   ],
    "role": "an asylum guard, 1865"
+  },
+  "priest": {
+   "poses": [
+    "stand",
+    "talk",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4"
+   ],
+   "bust": false,
+   "sizes": [
+    "figure"
+   ],
+   "role": "a Catholic priest carrying the viaticum to a dying patient"
+  },
+  "acolyte": {
+   "poses": [
+    "stand",
+    "talk",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "ring"
+   ],
+   "bust": false,
+   "sizes": [
+    "figure"
+   ],
+   "role": "the altar boy who rings the bell before the priest"
+  },
+  "patient": {
+   "poses": [
+    "lie",
+    "lie-turn",
+    "lie-side",
+    "sick"
+   ],
+   "bust": false,
+   "sizes": [
+    "bed"
+   ],
+   "role": "a woman lying in a ward bed, a billboard for the beds",
+   "bed": true
   },
   "semmelweis-out": {
    "poses": [
@@ -254,44 +388,17 @@
     "hands-head",
     "plead",
     "wash",
-    "drink"
+    "drink",
+    "kneel",
+    "give-birth",
+    "look-hands"
    ],
    "bust": false,
+   "sizes": [
+    "figure",
+    "hands"
+   ],
    "role": "Semmelweis outdoors"
-  },
-  "priest": {
-   "poses": [
-    "stand",
-    "talk",
-    "walk1",
-    "walk2",
-    "walk3",
-    "walk4"
-   ],
-   "bust": false,
-   "role": "a Catholic priest carrying the viaticum to a dying patient"
-  },
-  "acolyte": {
-   "poses": [
-    "stand",
-    "talk",
-    "walk1",
-    "walk2",
-    "walk3",
-    "walk4",
-    "ring"
-   ],
-   "bust": false,
-   "role": "the altar boy who rings the bell before the priest"
-  },
-  "patient": {
-   "poses": [
-    "lie",
-    "lie-turn"
-   ],
-   "bust": false,
-   "role": "a woman lying in a ward bed, a billboard for the beds",
-   "bed": true
   }
  }
 }

@@ -201,6 +201,43 @@
     }
   },
 
+  "graphics": {
+    "_why": "Every 2D graphic (stat cards, tallies, plans, boards, labels, archive mats) draws from this one block, so a number card made for episode two is the same family as the tally made for the pilot. Sizes are fractions of frame height because the canvas is the only source of pixels; the mobile floor is the smallest a label or number may be and still read on a phone held at arm's length. An episode `look` may swap palette entries and nothing else: type, margins and motion are house rules, not episode taste.",
+    "palette": {
+      "ink": "#14181f",
+      "paper": "#f4efe6",
+      "accent": "#d9822b",
+      "warm": "#e0a458",
+      "cool": "#2f6f9f",
+      "data_a": "#2f6f9f",
+      "data_b": "#b84a30",
+      "danger": "#b3261e",
+      "mat": "#15171c"
+    },
+    "type": {
+      "display": 0.2,
+      "number": 0.1,
+      "label": 0.06,
+      "caption": 0.045
+    },
+    "caption_note": "caption is for provenance tags only (credit, source); it matches archive.source_card.height_fraction and is the one tier allowed under the mobile floor. Anything a viewer must read is label or number.",
+    "mobile_floor": { "label": 0.06, "number": 0.1 },
+    "stroke_fraction": 0.004,
+    "corner_radius_fraction": 0.012,
+    "safe_margin_fraction": 0.05,
+    "motion": {
+      "ease_in": "cubic_in",
+      "ease_out": "cubic_out",
+      "settle": "back_out"
+    },
+    "build_stagger_seconds": 0.08,
+    "fonts": {
+      "regular": "tools/fonts/Inter-Regular.ttf",
+      "bold": "tools/fonts/Inter-Bold.ttf",
+      "display": "tools/fonts/InterDisplay-Bold.ttf"
+    }
+  },
+
   "cadence": {
     "videos_per_week": 1,
     "retention_rule": "retention falling inside the first minute means the hook changed, not the topic"

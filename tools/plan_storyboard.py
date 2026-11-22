@@ -21,6 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(1, str(ROOT / "tools"))
 from workflow import storyboard as sb  # noqa: E402
 
 MAX_LABELS = 4
@@ -29,10 +30,15 @@ MAX_LABELS = 4
 def beats_of(episode):
     """The 3D beats an episode needs a storyboard for: [{name, text, seconds}] in film order."""
     episode = Path(episode)
-    shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     lengths = json.loads((episode / "shot_lengths.json").read_text(encoding="utf-8"))
     manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
     said = {u["id"]: u["text"] for u in manifest["utterances"]}
+    from edit import cutlist
+    cut = cutlist.episode_cut(episode)
+    if cut is not None:
+        return [{"name": name, "text": " ".join(said.get(l, "") for l in span["lines"]),
+                 "seconds": lengths.get(name)} for name, span in cutlist.beat_spans(cut).items()]
+    shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     beats = {}
     for uid, shot in shots.items():
         if shot["kind"] != "3d":
@@ -54,6 +60,12 @@ def archive_mix(episode, contract=None):
     if doc.is_file() and not json.loads(doc.read_text(encoding="utf-8")).get("archive", {}).get("enabled", True):
         return []          # an episode that declares itself 3D-only owes no archive share
     contract = contract or json.loads((ROOT / "workflow" / "style.json").read_text(encoding="utf-8"))
+    from edit import cutlist
+    cut = cutlist.episode_cut(episode)
+    if cut is not None:
+        timeline = [{"layer": s["source"]["kind"], "start": s["start"], "seconds": s["end"] - s["start"]}
+                    for s in cut["shots"]]
+        return [(f.code, f.message) for f in archive.mix_findings(timeline, contract, mode="warn")]
     shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
     rate = manifest["sampleRate"]
@@ -71,11 +83,18 @@ def archive_evidence(episode):
     sys.path.insert(0, str(ROOT / "tools"))
     import plan_shots
     episode = Path(episode)
-    shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     path = episode / "archive.json"
     records = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
     said = {u["id"]: u.get("text", "") for u in manifest["utterances"]}
+    from edit import cutlist
+    cut = cutlist.episode_cut(episode)
+    if cut is not None:
+        # a cut-list shot plays under the lines it spans; it is evidence if any of them names it
+        said = {s["id"]: " ".join(said.get(l, "") for l in s.get("lines", [])) for s in cut["shots"]}
+        shots = {s["id"]: {"kind": s["source"]["kind"], "name": s["source"]["name"]} for s in cut["shots"]}
+    else:
+        shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     rule = plan_shots.load_evidence_rule()
     errors, seen = [], set()
     for uid, shot in shots.items():

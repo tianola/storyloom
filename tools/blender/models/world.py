@@ -1014,14 +1014,20 @@ def clinic_doors(s, n, seconds, seed, time):
     kit.common.aim(fill, (54, 0, 0))
 
 
-def anatomy(s, n, seed, x0=200.0, use_assets=False):
+def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False):
     """The dissecting room, apart from the town: a long table with a body under a sheet, a lamp
-    over it, a professor (Kolletschka) and students around it."""
+    over it, a professor (Kolletschka) and students around it (`people`). `west_door` opens the
+    west wall onto the corridor the `wing` scene joins to the ward."""
     wall = kit.mat("anat-wall", (0.45, 0.42, 0.36), roughness=0.9)
     wood = kit.mat("anat-wood", (0.14, 0.08, 0.04), roughness=0.6)
     sheet = kit.mat("anat-sheet", (0.75, 0.73, 0.68), roughness=0.9)
-    kit.boxes("anat-room", [placed((x0, 4.0, 3.0), (14, 0.3, 6)), placed((x0 - 7, 0, 3.0), (0.3, 8, 6)),
-                            placed((x0 + 7, 0, 3.0), (0.3, 8, 6)), placed((x0, 0, -0.02), (14, 8, 0.04))], wall)
+    west = [((x0 - 7.15, -4, 0), (x0 - 6.85, 4, 6))]
+    if west_door:
+        west = subtract(west[0][0], west[0][1], (x0 - 8, -0.75, -1), (x0 - 6, 0.75, 2.5))
+    kit.boxes("anat-room", [placed((x0, 4.0, 3.0), (14, 0.3, 6)), placed((x0 + 7, 0, 3.0), (0.3, 8, 6)),
+                            placed((x0, 0, -0.02), (14, 8, 0.04))]
+              + [placed(tuple((a + b) / 2 for a, b in zip(lo, hi)), tuple(b - a for a, b in zip(lo, hi)))
+                 for lo, hi in west], wall)
     kit.boxes("anat-table", [placed((x0, 0.6, 0.85), (2.4, 0.9, 0.08)), placed((x0 - 1.0, 0.6, 0.42), (0.1, 0.7, 0.84)),
                              placed((x0 + 1.0, 0.6, 0.42), (0.1, 0.7, 0.84))], wood)
     body = kit.box("anat-body", (x0, 0.6, 1.0), (2.0, 0.6, 0.22), sheet, bevel=0.08)
@@ -1054,6 +1060,29 @@ def anatomy(s, n, seed, x0=200.0, use_assets=False):
                             placed((x0 + 1.6, -0.3, 0.37), (0.06, 0.06, 0.74))],
               kit.mat("anat-steel", (0.45, 0.46, 0.48), metallic=0.6, roughness=0.35))
     kit.boxes("anat-door", [placed((x0 + 6.84, -1.5, 1.2), (0.1, 1.3, 2.4))], wood)
+    # a student's scalpel at the sheet's edge; `slip` moves it and a drop of blood spreads on the sheet
+    steel = kit.mat("anat-blade", (0.62, 0.63, 0.66), metallic=0.8, roughness=0.25)
+    scalpel = kit.boxes("anat-scalpel", [placed((x0 + 0.55, 0.3, 1.125), (0.16, 0.012, 0.006), 0.35),
+                                         placed((x0 + 0.42, 0.25, 1.125), (0.14, 0.018, 0.012), 0.35)], steel)
+    blood = kit.mat("anat-blood", (0.32, 0.02, 0.02), roughness=0.35)
+    drop = kit.cylinders("anat-drop", [((x0 + 0.62, 0.22, 1.112), 0.03, 0.004)], blood, segments=20)
+    drop.scale = (0.001, 0.001, 1.0)
+    s.pin("scalpel", (x0 + 0.5, 0.3, 1.13))
+
+    def act_slip(t0, t1):
+        f0, f1 = frames(t0), max(frames(t0) + 3, frames(t0 + 0.25))
+        kit.move(scalpel, f0, f1, (0.07, -0.05, 0.0))
+        drop.scale = (0.001, 0.001, 1.0)
+        drop.keyframe_insert("scale", frame=f1)
+        drop.scale = (1.0, 1.0, 1.0)
+        drop.keyframe_insert("scale", frame=max(f1 + 2, frames(t1)))
+
+    if getattr(s, "slip", False):           # registered only when asked: every action runs once
+        s.action("slip", act_slip, at=0.4, span=0.6)
+    if not people:
+        s.pin("table", (x0, 0.6, 1.0), hold=[body])
+        s.pin("jars", (x0 - 4.2, 3.6, 1.8))
+        return body
     people = [("kolletschka", -1.6, 1.5, "talk"), ("student", 0.0, 1.9, "stand"), ("student", 1.5, 1.6, "stand"),
               ("student", -0.6, 2.7, "stand"), ("student", -2.4, 0.2, "stand"), ("doctor", 2.6, 0.4, "stand")]
     obs = []
@@ -1212,7 +1241,8 @@ def vienna(p, seconds):
         characters.key_cell(writer, frames(t + 3.6), expression="sad")
     s.pins["writer"] = writer
     clinic_doors(s, n, seconds, seed, time)
-    anatomy(s, n, seed, use_assets=use_assets)
+    s.slip = bool(p.get("slip", False))
+    anatomy(s, n, seed, use_assets=use_assets, people=bool(p.get("anatomy_people", True)))
     # views (azimuth: the camera's side of the target; height is absolute)
     s.view("aerial", (39.4, room_y, room_z - 0.6), 130.0, 180, 62.0)
     s.view("roofs", (-10, -3, 9.0), 14.0, 230, 14.5)
@@ -1222,7 +1252,8 @@ def vienna(p, seconds):
     s.view("court", (54, 0, 2.0), 15.0, 0, 3.2)
     s.view("doors", (53.0, 0, 2.0), 21.0, 10, 4.2)
     s.view("first-door", (52.6, -6.0, 1.5), 5.0, 25, 1.8)
-    s.view("second-door", (53.5, 6.5, 1.5), 9.0, -38, 2.2)
+    # matched to first-door: the same lens, height and distance, mirrored about the court's axis
+    s.view("second-door", (52.6, 6.0, 1.5), 5.0, -25, 1.8)
     s.view("anatomy", (200, 0, 1.3), 6.5, -110, 3.0)
     # from up the street (azimuth near the street view's 180), so a move between the two never
     # swings the camera through the house fronts
@@ -1235,6 +1266,11 @@ def vienna(p, seconds):
     s.view("court-low", (57.0, -7.5, 1.2), 7.0, -35, 1.3)
     s.view("anatomy-close", (200.0, 0.8, 1.2), 3.4, -100, 1.9)
     s.view("jars", (195.8, 3.6, 1.8), 2.6, -90, 1.9)
+    # v6: the gate at dawn from the street, a birth on the cobbles just outside it, the scalpel
+    s.view("gate-approach", (35.0, -1.5, 1.3), 9.0, 182, 1.25)
+    s.view("street-birth", (33.4, -2.8, 0.5), 3.4, 205, 0.95)
+    s.view("scalpel", (200.5, 0.3, 1.12), 0.9, -105, 1.55)
+    s.view("cut-hand", (200.6, 0.24, 1.12), 0.55, -80, 1.4)
     s.floor_grid = 0
 
     def act_greet(t0, t1):
@@ -1541,11 +1577,17 @@ def ward(p, seconds):
     put("wood", (3.7, -HW + 1.26, 0.85), (0.42, 0.05, 0.8))
     for dx in (-0.18, 0.18):
         put("wood", (3.7 + dx, -HW + 1.05, 0.22), (0.04, 0.04, 0.44))
-    # the corridor behind each door, so an opening is a passage and not the sky
+    # the corridor behind each door, so an opening is a passage and not the sky; `through` leaves the
+    # far door open onto the real corridor the `wing` scene builds behind it
+    through = bool(p.get("through", False))
     put("corridor", (2.0, -HW - 1.3, 1.2), (2.4, 0.1, 2.4))
-    put("corridor", (L + 1.3, 0.0, 1.2), (0.1, 2.4, 2.4))
+    if not through:
+        put("corridor", (L + 1.3, 0.0, 1.2), (0.1, 2.4, 2.4))
     put("dark", (2.55, -HW + 0.54, 1.15), (1.2, 0.06, 2.3), math.radians(115))   # the corridor door, ajar
-    put("dark", (L - 0.69, -0.58, 1.15), (1.4, 0.06, 2.3), math.radians(170))    # the far door, ajar
+    if not through:
+        put("dark", (L - 0.69, -0.58, 1.15), (1.4, 0.06, 2.3), math.radians(170))    # the far door, ajar
+    else:
+        put("dark", (L - 0.69, -1.25, 1.15), (1.4, 0.06, 2.3), math.radians(100))    # the far door, wide open
     for key, mats in P.items():
         if mats:
             kit.boxes(f"ward-{key}", mats, M[key])
@@ -1602,11 +1644,18 @@ def ward(p, seconds):
     # --- the patients ----------------------------------------------------------------------------------
     exprs = ("neutral", "worried", "sad", "neutral", "worried", "smile", "neutral")
     patients = {}
+    # how the mothers lie: `lie` "back" (the First Clinic's way) or "side" (the midwives' way, every
+    # bed), and `side_bed` [row, index] for one bed already on her side when the rest are not
+    import people as _people
+    side_pose = "lie-side" if "lie-side" in _people.BED_POSES else "lie-turn"
+    lie_all = p.get("lie", "back")
+    side_one = tuple(p.get("side_bed") or ())
     for row, i, x, yc, occupied in beds:
         if not occupied:
             continue
         base = rnd.choice(exprs)
-        ob = characters.actor(f"patient-{row:+d}-{i}", "patient", (x, yc, 0.36), 1.06, size="bed", pose="lie",
+        start_pose = side_pose if lie_all == "side" or (row, i) == side_one else "lie"
+        ob = characters.actor(f"patient-{row:+d}-{i}", "patient", (x, yc, 0.36), 1.06, size="bed", pose=start_pose,
                               expression=base, tint=tint, shadow=False)
         if row < 0:
             ob.scale[0] = -ob.scale[0]                              # her head to the wall on this side too
@@ -1616,6 +1665,7 @@ def ward(p, seconds):
             characters.key_cell(ob, fr, expression=rnd.choice(exprs))
             fr += frames(rnd.uniform(4.0, 9.0))
         patients[(row, i)] = (ob, x, base)
+        ob["start_pose"] = start_pose
     # --- people with tasks -------------------------------------------------------------------------------------
     ex_x, ex_y = WARD_BEDS_X[0], -2.85                                # the examined bed
     groups("ward-exam", [{"who": ["doctor", "student", "student", "student"],
@@ -1665,6 +1715,15 @@ def ward(p, seconds):
     s.view("ward-bed", (ex_x, ex_y, 0.9), 3.7, 133, 1.5)
     s.view("ward-door", (2.9, -3.4, 1.2), 4.8, 80, 1.5)
     s.view("ward-priest", (13.5, 0.5, 1.2), 6.5, 180, 1.4)
+    # v6: the Second Clinic's bed matched to ward-bed (same lens, height and distance, mirrored), a
+    # close on whoever stands at the door, the hands against the window light, the next door
+    s.view("second-bed", (WARD_BEDS_X[1], 2.85, 0.9), 3.7, -133, 1.5)
+    s.view("semmelweis-close", (2.9, -3.0, 1.55), 2.2, 75, 1.6)
+    s.view("hands-window", (WARD_WINDOWS_X[2], HW - 0.9, 1.45), 1.6, -100, 1.45)
+    s.view("semmelweis-hands", (4.2, -2.2, 1.35), 1.9, 70, 1.55)
+    s.view("hands-door", (2.0, -HW + 0.6, 1.2), 2.4, 95, 1.35)
+    s.view("sickbed", (WARD_BEDS_X[3], 2.85, 0.75), 2.6, -120, 1.45)
+    s.pin("window", (WARD_WINDOWS_X[2], HW - 0.2, 2.6))
     s.floor_grid = 0
 
     def act_bell(t0, t1):
@@ -1674,6 +1733,13 @@ def ward(p, seconds):
                 if part is not None:
                     switch(part, f0)
         bx, bh = WARD_BEDS_X[WARD_BELL_BED[1]], 1.4
+        if p.get("bell_route", "aisle") == "side":
+            # the long way round (c18 says only "a less obvious route"): in by the near door and up the
+            # wall side of the aisle, no bell rung; nobody turns
+            characters.walk(priest, [(1.8, -3.2, 0), (2.4, -0.6, 0), (bx - 0.6, 0.0, 0), (bx, bh, 0)], f0, f1,
+                            steps_per_second=1.2)
+            characters.walk(boy, [(1.2, -3.4, 0), (1.9, -0.9, 0), (bx - 1.4, -0.2, 0)], f0, f1, steps_per_second=1.2)
+            return
         characters.walk(priest, [(23.0, 0.0, 0), (22.0, 0.6, 0), (bx + 0.7, 0.6, 0), (bx, bh, 0)], f0, f1,
                         steps_per_second=1.4)
         characters.walk(boy, [(21.6, 0.2, 0), (20.4, 0.55, 0), (bx - 0.9, 0.6, 0)], f0, f1, steps_per_second=1.4)
@@ -1699,7 +1765,23 @@ def ward(p, seconds):
             else:
                 characters.key_cell(ob, frames(tp + 2.5), pose="lie", expression=base)
 
-    s.action("bell", act_bell, at=0.1, span=14.0)
+    if p.get("bell", True):                 # a beat without the priest leaves him out of the ward
+        s.action("bell", act_bell, at=0.1, span=14.0)
+    else:
+        for ob in (priest, boy):
+            for part in (ob, bpy.data.objects.get(ob.get("shadow", ""))):
+                if part is not None:
+                    part.hide_render = True
+                    part.hide_viewport = True
+
+    def act_turn(t0, t1):
+        """The First Clinic's mothers turned onto their side, bed by bed from the door end (c24)."""
+        order = sorted(patients.items(), key=lambda kv: kv[1][1])
+        for k, ((row, idx), (ob, x, base)) in enumerate(order):
+            characters.key_cell(ob, frames(t0 + (t1 - t0) * k / max(1, len(order))), pose=side_pose)
+
+    if p.get("turn"):                       # registered only when asked: every action runs once
+        s.action("turn", act_turn, at=0.5, span=2.0)
     if use_assets:
         assets.scene_hdri("ward", time, n)
         assets.upgrade_materials()

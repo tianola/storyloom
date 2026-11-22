@@ -1,9 +1,9 @@
 {warm, conversational} It's eighteen forty six, and a woman in labour arrives at Vienna General Hospital.
 If she gets a fever after the birth and dies, any doctor here will tell you why. Bad air.
+The hospital has two maternity clinics. In the first, one mother in nine dies. Yet in the second, it's one in thirty six.
 {curious} But here's what nobody can explain: why does it matter so much which day she walks in?
-The hospital has two maternity clinics, and they take women in on alternate days.
+They take women in on alternate days.
 Doctors and medical students run the first one, and midwives run the second.
-That year, one mother in nine dies in the first clinic. In the second, it's one in thirty six.
 And the women know it, so well that they beg on their knees to be taken anywhere else.
 [mother] {desperate, close to tears} Please. Not the first clinic.
 Same building. Same city. Same air. So if you were the doctor here, what would you check first?

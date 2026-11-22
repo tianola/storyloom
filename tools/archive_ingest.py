@@ -545,33 +545,8 @@ def card_lines(text, fits):
     the attribution the card exists to carry was the part that went missing. A single word wider
     than the canvas is left on its own line rather than cut, since a cut word is no credit either.
     """
-    words = str(text).split()
-    # Phrases end after a "/" token or a word ending in ",".
-    phrases, current = [], []
-    for word in words:
-        current.append(word)
-        if word == "/" or word.endswith(","):
-            phrases.append(current)
-            current = []
-    if current:
-        phrases.append(current)
-
-    lines, line = [], []
-    for phrase in phrases:
-        if fits(" ".join(line + phrase)):
-            line += phrase
-            continue
-        if line:
-            lines.append(" ".join(line))
-            line = []
-        for word in phrase:  # only a phrase too wide on its own is broken between words
-            if line and not fits(" ".join(line + [word])):
-                lines.append(" ".join(line))
-                line = []
-            line.append(word)
-    if line:
-        lines.append(" ".join(line))
-    return lines
+    from tools.graphics.archive import card_lines as _card_lines  # the one implementation lives with the other archive graphics
+    return _card_lines(text, fits)
 
 
 def write_card_png(path, text, contract, canvas, *, root=ROOT, font=None):

@@ -1,0 +1,355 @@
+{
+ "beats": {
+  "v6-01-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "gate-approach",
+     "start": 0.0,
+     "move": "drift"
+    },
+    {
+     "view": "hospital",
+     "start": 2.566667,
+     "move": "push"
+    },
+    {
+     "view": "court-low",
+     "start": 5.166667,
+     "move": "drift"
+    },
+    {
+     "view": "court",
+     "start": 10.233333,
+     "move": "lock"
+    }
+   ],
+   "note": "dawn street; a woman in labour, held by a midwife, walks toward the hospital gate; her face, close | she looks up at the facade; low angle push on the hospital | a top-hatted doctor in the court explains to a student, waving at the drain and the smoke | the foul drain and chimney smoke over the court: 'Bad air.'"
+  },
+  "v6-02-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "doors",
+     "start": 0.0,
+     "move": "push"
+    }
+   ],
+   "note": "both doors in one frame; under each a tally builds: 11 marks against 3 per 100 births"
+  },
+  "v6-03-board": {
+   "scene": "board",
+   "shots": [
+    {
+     "view": "h1-low34",
+     "start": 0.0,
+     "move": "push"
+    },
+    {
+     "view": "h1-calendar",
+     "start": 3.633333,
+     "move": "lock"
+    }
+   ],
+   "note": "host at the board's edge; the two door sketches with tallies pinned | insert: his hand flips the calendar strip between the two doors"
+  },
+  "v6-04-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "doors",
+     "start": 0.0,
+     "move": "lock"
+    },
+    {
+     "view": "first-door",
+     "start": 2.733334,
+     "move": "drift"
+    },
+    {
+     "view": "second-door",
+     "start": 6.233334,
+     "move": "drift"
+    },
+    {
+     "view": "first-door",
+     "start": 7.933334,
+     "move": "lock"
+    },
+    {
+     "view": "at:first",
+     "start": 12.3,
+     "move": "push"
+    },
+    {
+     "view": "hospital",
+     "start": 15.833334,
+     "move": "lock"
+    },
+    {
+     "view": "roofs",
+     "start": 16.566667,
+     "move": "lock"
+    },
+    {
+     "view": "court-low",
+     "start": 17.633334,
+     "move": "lock"
+    }
+   ],
+   "note": "the two doors; day labels alternate the open door; the queue of women moves door to door | matched framing A: doctors and students cross the court from the anatomy wing, aprons on, into the First Clinic (the planted clue; never pointed out) | matched framing B: midwives in blue and white at the Second Clinic, same lens and angle | a woman kneels at the First Clinic door, pleading with the porter | close on the mother (on screen before her line) | 'Same building.' | 'Same city.' | 'Same air.' smoke"
+  },
+  "v6-05-board": {
+   "scene": "board",
+   "shots": [
+    {
+     "view": "h2-close",
+     "start": 0.0,
+     "move": "push"
+    }
+   ],
+   "note": "host close, eyes to lens; the blank card held out; holds into the start of u010"
+  },
+  "v6-06-ward": {
+   "scene": "ward",
+   "shots": [
+    {
+     "view": "ward-door",
+     "start": 0.0,
+     "move": "drift"
+    },
+    {
+     "view": "semmelweis-close",
+     "start": 3.966667,
+     "move": "push"
+    }
+   ],
+   "note": "young Semmelweis (the 3D character) steps into the First Clinic ward | his face, close: twenty-eight, new to the job"
+  },
+  "v6-07-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "desk",
+     "start": 0.0,
+     "move": "drift"
+    },
+    {
+     "view": "ledger",
+     "start": 1.866666,
+     "move": "push"
+    }
+   ],
+   "note": "night, his desk, his face | insert: the death ledger, a column of crosses (tally marks only, no legible text)"
+  },
+  "v6-08-board": {
+   "scene": "board",
+   "shots": [
+    {
+     "view": "h3-top",
+     "start": 0.0,
+     "move": "lock"
+    },
+    {
+     "view": "card-air",
+     "start": 3.933334,
+     "move": "push"
+    }
+   ],
+   "note": "top-down: his hands lay three cards in a row | insert 0.7 s: the AIR card pinned"
+  },
+  "v6-09-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "street-birth",
+     "start": 0.0,
+     "move": "push"
+    },
+    {
+     "view": "ledger-street",
+     "start": 4.6,
+     "move": "lock"
+    },
+    {
+     "view": "first-door",
+     "start": 6.3,
+     "move": "push"
+    }
+   ],
+   "note": "the dirtiest air in Vienna: a woman gives birth on the cobbles outside the gate; a midwife kneels by her; carts pass | the ledger: the street-births column stays empty while the First Clinic's fills | Loop A's next question, 'so it's something inside': follow a midwife through the First Clinic door as it shuts; the POSITION card slides in pinned at the corner (the board recurs as an overlay here, not a cutaway)"
+  },
+  "v6-10-ward": {
+   "scene": "ward",
+   "shots": [
+    {
+     "view": "second-bed",
+     "start": 0.0,
+     "move": "lock"
+    },
+    {
+     "view": "ward-wide",
+     "start": 2.533334,
+     "move": "push"
+    }
+   ],
+   "note": "matched framing A: a Second Clinic mother lies on her side | wide First Clinic: the mothers are turned onto their side; every bed now matches"
+  },
+  "v6-11-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "ledger",
+     "start": 0.0,
+     "move": "lock"
+    }
+   ],
+   "note": "'Nothing changes.' a hand adds a cross to the ledger; the bell is HEARD under it (J-cut)"
+  },
+  "v6-12-board": {
+   "scene": "board",
+   "shots": [
+    {
+     "view": "card-fear",
+     "start": 0.0,
+     "move": "push"
+    }
+   ],
+   "note": "insert 0.7 s: the FEAR card pinned"
+  },
+  "v6-13-ward": {
+   "scene": "ward",
+   "shots": [
+    {
+     "view": "ward-wide",
+     "start": 0.0,
+     "move": "drift"
+    },
+    {
+     "view": "at:bell",
+     "start": 5.033334,
+     "move": "lock"
+    },
+    {
+     "view": "ward-door",
+     "start": 6.8,
+     "move": "lock"
+    },
+    {
+     "view": "semmelweis-close",
+     "start": 9.2,
+     "move": "push"
+    }
+   ],
+   "note": "the priest and the bell come down the aisle (existing bell action, route: aisle) | the boy's bell, close; mothers turning toward it | Semmelweis at his door, hearing it (on screen before his line) | his face as the bell passes"
+  },
+  "v6-14-ward": {
+   "scene": "ward",
+   "shots": [
+    {
+     "view": "ward-wide",
+     "start": 0.0,
+     "move": "lock"
+    }
+   ],
+   "note": "the priest by the quieter route, no bell; nobody turns"
+  },
+  "v6-15-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "ledger",
+     "start": 0.0,
+     "move": "lock"
+    }
+   ],
+   "note": "the ledger: another cross"
+  },
+  "v6-16-board": {
+   "scene": "board",
+   "shots": [
+    {
+     "view": "h4-ots",
+     "start": 0.0,
+     "move": "drift"
+    },
+    {
+     "view": "h4-turn",
+     "start": 5.333334,
+     "move": "lock"
+    }
+   ],
+   "note": "behind the host: AIR, POSITION, FEAR struck; he pulls the last one down; only the doors remain | he turns to the lens on 'wrong'"
+  },
+  "v6-17-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "anatomy",
+     "start": 0.0,
+     "move": "drift"
+    }
+   ],
+   "note": "the dissecting room: Kolletschka lecturing at the table (existing staging)"
+  },
+  "v6-18-vienna": {
+   "scene": "vienna",
+   "shots": [
+    {
+     "view": "scalpel",
+     "start": 0.0,
+     "move": "push"
+    },
+    {
+     "view": "cut-hand",
+     "start": 1.566667,
+     "move": "lock"
+    },
+    {
+     "view": "sickbed",
+     "start": 3.366667,
+     "move": "push"
+    }
+   ],
+   "note": "a student's scalpel over the table, close | the blade slips; a cut on his hand, a red drop | Kolletschka fevered in a sickbed; dip to black on 'he dies'"
+  },
+  "v6-19-wing": {
+   "scene": "wing",
+   "shots": [
+    {
+     "view": "wing-table",
+     "start": 0.0,
+     "to": "wing-ward-bed"
+    }
+   ],
+   "note": "THE HELD SHOT (one continuous move, about 23 s): under his thought the camera finds the covered body; doctors examine it ('the same disease'); it follows doctors and students from the table, out the door, down the corridor past the host (u023), in through the First Clinic door to a mother's bed; it ends pushing into the bare hands on 'With the same bare hands.'"
+  },
+  "v6-20-ward": {
+   "scene": "ward",
+   "shots": [
+    {
+     "view": "hands-window",
+     "start": 0.0,
+     "move": "push"
+    },
+    {
+     "view": "semmelweis-hands",
+     "start": 2.133333,
+     "move": "push"
+    }
+   ],
+   "note": "the hands frozen in silhouette against the window light; dust drifts in the beam; slow push | Semmelweis looks down at his own hands"
+  },
+  "v6-21-ward": {
+   "scene": "ward",
+   "shots": [
+    {
+     "view": "hands-door",
+     "start": 0.0,
+     "move": "push"
+    }
+   ],
+   "note": "the same unwashed hands push open the next ward door toward another mother; it swings shut"
+  }
+ }
+}

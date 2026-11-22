@@ -108,15 +108,28 @@ def build(episode, log=print):
     episode = Path(episode)
     import captions
     manifest = json.loads((episode / "vo" / "manifest.json").read_text(encoding="utf-8"))
-    shots = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
+    from edit import cutlist
+    cut = cutlist.episode_cut(episode)
+    shots = None if cut else json.loads((episode / "shots.json").read_text(encoding="utf-8"))
     marks_path = episode / "vo" / "word_marks.json"
     marks = json.loads(marks_path.read_text(encoding="utf-8")) if marks_path.exists() else {}
     rate = manifest["sampleRate"]
     out, origin, estimated = {}, {}, []
-    for u in manifest["utterances"]:
-        beat = shots[u["id"]]["name"]
-        origin.setdefault(beat, u["startSample"])
-        offset = (u["startSample"] - origin[beat]) / rate
+    placements = []                    # (beat, utterance, seconds into the beat)
+    if cut:
+        # a line can play across several beats; each beat it is on screen in gets its mouth
+        starts = {l["id"]: l["start"] for l in cutlist.line_clock(manifest, episode / "vo")}
+        spans = cutlist.beat_spans(cut)
+        for u in manifest["utterances"]:
+            for beat, span in spans.items():
+                if u["id"] in span["lines"]:
+                    placements.append((beat, u, starts[u["id"]] - span["origin"]))
+    else:
+        for u in manifest["utterances"]:
+            beat = shots[u["id"]]["name"]
+            origin.setdefault(beat, u["startSample"])
+            placements.append((beat, u, (u["startSample"] - origin[beat]) / rate))
+    for beat, u, offset in placements:
         # untagged lines are the narrator's: the guide talks on screen too
         entry = {"uid": u["id"], "speaker": u.get("speaker", "narrator"), "mode": u.get("mode", "say"),
                  "start": round(offset, 3), "end": round(offset + u["samples"] / rate, 3), "visemes": []}
