@@ -247,6 +247,17 @@ class TestStillsMove(unittest.TestCase):
 
 
 class TestMirrorGuard(unittest.TestCase):
+    def test_a_still_image_is_read_at_frame_zero(self):
+        # ffprobe gives a jpg one 0.04 s frame; reading its "middle" at 0.02 s decoded nothing and
+        # the guard raised "has no frame" for every still whose light side disagreed
+        for name in ("engraving.jpg", "portrait.JPEG", "scan.png", "page.tif"):
+            self.assertEqual(AI._readable_time(Path(name)), 0.0, name)
+
+    def test_an_image_is_read_without_a_seek(self):
+        # this ffmpeg decodes no frame from a jpg given `-ss`, even `-ss 0`
+        self.assertEqual(AI._seek(Path("engraving.jpg"), 0.0), [])
+        self.assertEqual(AI._seek(Path("clip.mp4"), 1.5), ["-ss", "1.5000"])
+
     def test_agreeing_sides_need_no_flip_at_all(self):
         allowed, why = AI.mirror_decision(record(light_side=key_side(CONTRACT)), CONTRACT,
                                           text_found=False, ocr_available=True)
@@ -313,6 +324,38 @@ class TestSourceCard(unittest.TestCase):
         x, y = AI.card_position(CANVAS, (600, 60), position, CONTRACT)
         self.assertEqual(x, round(margin * CANVAS[0]))
         self.assertEqual(y, CANVAS[1] - 60 - round(margin * CANVAS[1]))
+
+
+    def test_a_long_credit_breaks_at_its_own_phrases_not_mid_name(self):
+        # The Semmelweis pilot's credits ran off the right edge on one line. A width budget of
+        # 40 characters stands in for the pixel one.
+        text = ("Joseph and Peter Schaffer, c. 1784 (via Dorotheum) / "
+                "Wikimedia Commons (public domain)")
+        lines = AI.card_lines(text, lambda line: len(line) <= 40)
+        self.assertTrue(all(len(line) <= 40 for line in lines), lines)
+        self.assertEqual(" ".join(lines), text, "a word went missing in the wrap")
+        self.assertEqual(lines[-1], "Wikimedia Commons (public domain)")
+
+    def test_a_credit_that_fits_stays_on_one_line(self):
+        self.assertEqual(AI.card_lines("Wikimedia Commons", lambda line: True),
+                         ["Wikimedia Commons"])
+
+    def test_the_drawn_plate_keeps_its_text_inside_both_margins(self):
+        # Pixel proof on the real font: nothing opaque in the margin strips on either side.
+        from PIL import Image
+        font = AI.resolve_path(AI.ROOT, CONTRACT["archive"]["source_card"]["font_file"])
+        if not Path(font).exists():
+            self.skipTest("card font not present")
+        text = ("After Jenő Doby (engraving, 1860), scan from Benedek 1983 / "
+                "Wikimedia Commons (public domain)")
+        with tempfile.TemporaryDirectory() as tmp:
+            plate = AI.write_card_png(Path(tmp) / "card.png", text, CONTRACT, CANVAS, font=font)
+            alpha = Image.open(plate).getchannel("A")
+        margin = round(float(CONTRACT["archive"]["source_card"]["edge_margin_fraction"])
+                       * CANVAS[0])
+        left, _, right, _ = alpha.getbbox()
+        self.assertGreaterEqual(left, margin - 1)
+        self.assertLessEqual(right, CANVAS[0] - margin + 1)
 
 
 class TestEncodeArguments(unittest.TestCase):

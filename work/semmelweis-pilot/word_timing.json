@@ -1,1248 +1,1766 @@
 {
- "beat-01": [
+ "akh-engraving": [
   {
-   "word": "Vienna,",
+   "word": "It's",
    "start": 0.0
   },
   {
    "word": "eighteen",
-   "start": 0.358
+   "start": 0.211
   },
   {
-   "word": "sixty",
-   "start": 0.709
+   "word": "forty",
+   "start": 0.548
   },
   {
-   "word": "five.",
-   "start": 1.122
+   "word": "six,",
+   "start": 0.895
   },
   {
-   "word": "A",
-   "start": 1.932
-  },
-  {
-   "word": "doctor",
-   "start": 2.081
-  },
-  {
-   "word": "is",
-   "start": 2.625
-  },
-  {
-   "word": "led",
-   "start": 2.972
-  },
-  {
-   "word": "into",
-   "start": 3.276
-  },
-  {
-   "word": "an",
-   "start": 3.559
-  },
-  {
-   "word": "asylum.",
-   "start": 3.703
-  },
-  {
-   "word": "There,",
-   "start": 4.782
-  },
-  {
-   "word": "it",
-   "start": 5.155
-  },
-  {
-   "word": "is",
-   "start": 5.315
-  },
-  {
-   "word": "said,",
-   "start": 5.486
-  },
-  {
-   "word": "the",
-   "start": 5.902
-  },
-  {
-   "word": "guards",
-   "start": 6.188
-  },
-  {
-   "word": "beat",
-   "start": 6.526
-  },
-  {
-   "word": "him.",
-   "start": 6.842
-  },
-  {
-   "word": "Two",
-   "start": 7.222
-  },
-  {
-   "word": "weeks",
-   "start": 7.412
-  },
-  {
-   "word": "later",
-   "start": 7.679
-  },
-  {
-   "word": "he",
-   "start": 8.119
-  },
-  {
-   "word": "is",
-   "start": 8.385
-  },
-  {
-   "word": "dead.",
-   "start": 8.556
-  },
-  {
-   "word": "I",
-   "start": 9.332
-  },
-  {
-   "word": "see",
-   "start": 9.402
+   "word": "and",
+   "start": 1.415
   },
   {
    "word": "a",
-   "start": 9.662
+   "start": 1.575
   },
   {
-   "word": "time",
-   "start": 9.838
-  },
-  {
-   "word": "when",
-   "start": 10.286
-  },
-  {
-   "word": "only",
-   "start": 10.606
-  },
-  {
-   "word": "cases",
-   "start": 10.955
-  },
-  {
-   "word": "of",
-   "start": 11.475
-  },
-  {
-   "word": "self-infection",
-   "start": 11.662
-  },
-  {
-   "word": "will",
-   "start": 12.766
-  },
-  {
-   "word": "occur",
-   "start": 13.102
+   "word": "woman",
+   "start": 1.682
   },
   {
    "word": "in",
-   "start": 13.582
+   "start": 2.042
+  },
+  {
+   "word": "labour",
+   "start": 2.152
+  },
+  {
+   "word": "arrives",
+   "start": 2.575
+  },
+  {
+   "word": "at",
+   "start": 3.188
+  },
+  {
+   "word": "Vienna",
+   "start": 3.352
+  },
+  {
+   "word": "General",
+   "start": 3.745
+  },
+  {
+   "word": "Hospital.",
+   "start": 4.157
+  }
+ ],
+ "beat-01": [
+  {
+   "word": "If",
+   "start": 0.0
+  },
+  {
+   "word": "she",
+   "start": 0.14
+  },
+  {
+   "word": "gets",
+   "start": 0.324
+  },
+  {
+   "word": "a",
+   "start": 0.62
+  },
+  {
+   "word": "fever",
+   "start": 0.727
+  },
+  {
+   "word": "after",
+   "start": 1.127
   },
   {
    "word": "the",
-   "start": 13.762
+   "start": 1.5
   },
   {
-   "word": "maternity",
-   "start": 13.886
+   "word": "birth",
+   "start": 1.687
   },
   {
-   "word": "hospitals",
-   "start": 14.542
+   "word": "and",
+   "start": 2.06
   },
   {
-   "word": "of",
-   "start": 15.342
+   "word": "dies,",
+   "start": 2.276
   },
   {
-   "word": "the",
-   "start": 15.542
+   "word": "any",
+   "start": 2.92
   },
   {
-   "word": "world.",
-   "start": 15.742
+   "word": "doctor",
+   "start": 3.287
   },
   {
-   "word": "Ignaz",
-   "start": 16.222
+   "word": "here",
+   "start": 3.678
   },
   {
-   "word": "Semmelweis",
-   "start": 16.752
+   "word": "will",
+   "start": 3.902
   },
   {
-   "word": "wrote",
-   "start": 17.479
+   "word": "tell",
+   "start": 4.078
   },
   {
-   "word": "that.",
-   "start": 17.86
+   "word": "you",
+   "start": 4.31
+  },
+  {
+   "word": "why.",
+   "start": 4.51
+  },
+  {
+   "word": "Bad",
+   "start": 5.12
+  },
+  {
+   "word": "air.",
+   "start": 5.64
   },
   {
    "word": "But",
-   "start": 18.252
+   "start": 6.32
   },
   {
-   "word": "most",
-   "start": 18.806
+   "word": "here's",
+   "start": 6.398
   },
   {
-   "word": "doctors",
-   "start": 19.132
+   "word": "what",
+   "start": 6.718
   },
   {
-   "word": "of",
-   "start": 19.702
+   "word": "nobody",
+   "start": 6.967
   },
   {
-   "word": "his",
-   "start": 19.902
+   "word": "can",
+   "start": 7.35
+  },
+  {
+   "word": "explain:",
+   "start": 7.54
+  },
+  {
+   "word": "why",
+   "start": 8.35
+  },
+  {
+   "word": "does",
+   "start": 8.672
+  },
+  {
+   "word": "it",
+   "start": 8.853
+  },
+  {
+   "word": "matter",
+   "start": 9.006
+  },
+  {
+   "word": "so",
+   "start": 9.36
+  },
+  {
+   "word": "much",
+   "start": 9.584
+  },
+  {
+   "word": "which",
+   "start": 9.907
   },
   {
    "word": "day",
-   "start": 20.102
+   "start": 10.3
   },
   {
-   "word": "rejected",
-   "start": 20.413
+   "word": "she",
+   "start": 10.52
   },
   {
-   "word": "it.",
-   "start": 21.062
+   "word": "walks",
+   "start": 10.693
+  },
+  {
+   "word": "in?",
+   "start": 11.067
   }
  ],
  "beat-02": [
   {
-   "word": "In",
+   "word": "The",
    "start": 0.0
   },
   {
-   "word": "his",
-   "start": 0.1
+   "word": "hospital",
+   "start": 0.133
   },
   {
-   "word": "day,",
-   "start": 0.36
+   "word": "has",
+   "start": 0.64
   },
   {
-   "word": "every",
-   "start": 0.96
+   "word": "two",
+   "start": 0.94
   },
   {
-   "word": "doctor",
-   "start": 1.217
+   "word": "maternity",
+   "start": 1.176
   },
   {
-   "word": "knew",
-   "start": 1.624
-  },
-  {
-   "word": "what",
-   "start": 1.928
-  },
-  {
-   "word": "killed",
-   "start": 2.177
-  },
-  {
-   "word": "new",
-   "start": 2.58
-  },
-  {
-   "word": "mothers:",
-   "start": 2.83
-  },
-  {
-   "word": "bad",
-   "start": 3.75
-  },
-  {
-   "word": "air.",
-   "start": 4.11
-  },
-  {
-   "word": "So",
-   "start": 4.73
-  },
-  {
-   "word": "why",
-   "start": 4.85
-  },
-  {
-   "word": "did",
-   "start": 5.15
-  },
-  {
-   "word": "they",
-   "start": 5.362
-  },
-  {
-   "word": "die",
-   "start": 5.55
-  },
-  {
-   "word": "in",
-   "start": 5.81
-  },
-  {
-   "word": "one",
-   "start": 6.03
-  },
-  {
-   "word": "clinic",
-   "start": 6.267
-  },
-  {
-   "word": "of",
-   "start": 6.637
-  },
-  {
-   "word": "Vienna's",
-   "start": 6.747
-  },
-  {
-   "word": "hospital,",
-   "start": 7.232
+   "word": "clinics,",
+   "start": 1.74
   },
   {
    "word": "and",
-   "start": 7.95
+   "start": 2.44
   },
   {
-   "word": "hardly",
-   "start": 8.369
+   "word": "they",
+   "start": 2.608
   },
   {
-   "word": "at",
-   "start": 8.833
+   "word": "take",
+   "start": 2.848
   },
   {
-   "word": "all",
-   "start": 9.0
+   "word": "women",
+   "start": 3.107
   },
   {
    "word": "in",
-   "start": 9.26
+   "start": 3.547
+  },
+  {
+   "word": "on",
+   "start": 3.867
+  },
+  {
+   "word": "alternate",
+   "start": 4.144
+  },
+  {
+   "word": "days.",
+   "start": 4.8
+  },
+  {
+   "word": "Doctors",
+   "start": 5.28
+  },
+  {
+   "word": "and",
+   "start": 5.8
+  },
+  {
+   "word": "medical",
+   "start": 5.97
+  },
+  {
+   "word": "students",
+   "start": 6.391
+  },
+  {
+   "word": "run",
+   "start": 7.06
   },
   {
    "word": "the",
-   "start": 9.44
+   "start": 7.4
   },
   {
-   "word": "next?",
-   "start": 9.58
+   "word": "first",
+   "start": 7.573
+  },
+  {
+   "word": "one,",
+   "start": 7.9
+  },
+  {
+   "word": "and",
+   "start": 8.68
+  },
+  {
+   "word": "midwives",
+   "start": 8.86
+  },
+  {
+   "word": "run",
+   "start": 9.52
+  },
+  {
+   "word": "the",
+   "start": 9.78
+  },
+  {
+   "word": "second.",
+   "start": 9.909
+  },
+  {
+   "word": "That",
+   "start": 10.48
+  },
+  {
+   "word": "year,",
+   "start": 10.744
+  },
+  {
+   "word": "one",
+   "start": 11.22
+  },
+  {
+   "word": "mother",
+   "start": 11.686
+  },
+  {
+   "word": "in",
+   "start": 12.013
+  },
+  {
+   "word": "nine",
+   "start": 12.184
+  },
+  {
+   "word": "dies",
+   "start": 12.52
+  },
+  {
+   "word": "in",
+   "start": 12.893
+  },
+  {
+   "word": "the",
+   "start": 13.02
+  },
+  {
+   "word": "first",
+   "start": 13.133
+  },
+  {
+   "word": "clinic.",
+   "start": 13.457
+  },
+  {
+   "word": "In",
+   "start": 14.12
+  },
+  {
+   "word": "the",
+   "start": 14.37
+  },
+  {
+   "word": "second,",
+   "start": 14.547
+  },
+  {
+   "word": "it's",
+   "start": 15.343
+  },
+  {
+   "word": "one",
+   "start": 15.59
+  },
+  {
+   "word": "in",
+   "start": 15.823
+  },
+  {
+   "word": "thirty",
+   "start": 15.964
+  },
+  {
+   "word": "six.",
+   "start": 16.27
+  },
+  {
+   "word": "And",
+   "start": 16.73
+  },
+  {
+   "word": "the",
+   "start": 16.83
+  },
+  {
+   "word": "women",
+   "start": 16.943
+  },
+  {
+   "word": "know",
+   "start": 17.258
+  },
+  {
+   "word": "it,",
+   "start": 17.503
+  },
+  {
+   "word": "so",
+   "start": 17.95
+  },
+  {
+   "word": "well",
+   "start": 18.464
+  },
+  {
+   "word": "that",
+   "start": 18.816
+  },
+  {
+   "word": "they",
+   "start": 19.232
+  },
+  {
+   "word": "beg",
+   "start": 19.44
+  },
+  {
+   "word": "on",
+   "start": 19.707
+  },
+  {
+   "word": "their",
+   "start": 19.787
+  },
+  {
+   "word": "knees",
+   "start": 19.987
+  },
+  {
+   "word": "to",
+   "start": 20.427
+  },
+  {
+   "word": "be",
+   "start": 20.667
+  },
+  {
+   "word": "taken",
+   "start": 20.787
+  },
+  {
+   "word": "anywhere",
+   "start": 21.182
+  },
+  {
+   "word": "else.",
+   "start": 21.744
+  },
+  {
+   "word": "Please.",
+   "start": 22.619
+  },
+  {
+   "word": "Not",
+   "start": 22.97
+  },
+  {
+   "word": "the",
+   "start": 23.4
+  },
+  {
+   "word": "first",
+   "start": 23.6
+  },
+  {
+   "word": "clinic.",
+   "start": 24.08
+  },
+  {
+   "word": "Same",
+   "start": 24.64
+  },
+  {
+   "word": "building.",
+   "start": 24.853
+  },
+  {
+   "word": "Same",
+   "start": 25.44
+  },
+  {
+   "word": "city.",
+   "start": 25.84
+  },
+  {
+   "word": "Same",
+   "start": 26.496
+  },
+  {
+   "word": "air.",
+   "start": 26.82
+  },
+  {
+   "word": "So",
+   "start": 27.843
+  },
+  {
+   "word": "if",
+   "start": 28.057
+  },
+  {
+   "word": "you",
+   "start": 28.29
+  },
+  {
+   "word": "were",
+   "start": 28.398
+  },
+  {
+   "word": "the",
+   "start": 28.61
+  },
+  {
+   "word": "doctor",
+   "start": 28.739
+  },
+  {
+   "word": "here,",
+   "start": 29.214
+  },
+  {
+   "word": "what",
+   "start": 29.646
+  },
+  {
+   "word": "would",
+   "start": 30.057
+  },
+  {
+   "word": "you",
+   "start": 30.21
+  },
+  {
+   "word": "check",
+   "start": 30.323
+  },
+  {
+   "word": "first?",
+   "start": 30.657
+  }
+ ],
+ "semmelweis-portrait": [
+  {
+   "word": "That",
+   "start": 0.0
+  },
+  {
+   "word": "question",
+   "start": 0.153
+  },
+  {
+   "word": "eats",
+   "start": 0.676
+  },
+  {
+   "word": "at",
+   "start": 1.087
+  },
+  {
+   "word": "a",
+   "start": 1.18
+  },
+  {
+   "word": "young",
+   "start": 1.26
+  },
+  {
+   "word": "doctor",
+   "start": 1.529
+  },
+  {
+   "word": "called",
+   "start": 2.009
+  },
+  {
+   "word": "Ignaz",
+   "start": 2.52
+  },
+  {
+   "word": "Semmelweis.",
+   "start": 3.06
+  },
+  {
+   "word": "He's",
+   "start": 4.05
+  },
+  {
+   "word": "twenty",
+   "start": 4.407
+  },
+  {
+   "word": "eight,",
+   "start": 4.79
+  },
+  {
+   "word": "and",
+   "start": 5.43
+  },
+  {
+   "word": "the",
+   "start": 5.57
+  },
+  {
+   "word": "new",
+   "start": 5.67
+  },
+  {
+   "word": "assistant",
+   "start": 5.846
+  },
+  {
+   "word": "in",
+   "start": 6.377
+  },
+  {
+   "word": "the",
+   "start": 6.47
+  },
+  {
+   "word": "first",
+   "start": 6.63
+  },
+  {
+   "word": "clinic.",
+   "start": 6.899
   }
  ],
  "beat-03": [
   {
-   "word": "Vienna,",
+   "word": "Everything",
    "start": 0.0
   },
   {
-   "word": "eighteen",
-   "start": 0.686
-  },
-  {
-   "word": "forty",
-   "start": 1.037
-  },
-  {
-   "word": "six.",
-   "start": 1.49
-  },
-  {
-   "word": "Semmelweis,",
-   "start": 2.16
-  },
-  {
-   "word": "twenty",
-   "start": 3.264
-  },
-  {
-   "word": "eight,",
-   "start": 3.51
-  },
-  {
-   "word": "is",
-   "start": 4.057
-  },
-  {
-   "word": "the",
-   "start": 4.37
-  },
-  {
-   "word": "new",
-   "start": 4.49
-  },
-  {
-   "word": "assistant",
-   "start": 4.742
-  },
-  {
-   "word": "in",
-   "start": 5.443
-  },
-  {
-   "word": "the",
-   "start": 5.59
-  },
-  {
-   "word": "First",
-   "start": 5.763
-  },
-  {
-   "word": "Clinic.",
-   "start": 6.099
-  },
-  {
-   "word": "Here,",
-   "start": 6.67
-  },
-  {
-   "word": "doctors",
-   "start": 7.29
-  },
-  {
-   "word": "and",
-   "start": 7.73
-  },
-  {
-   "word": "students",
-   "start": 7.843
-  },
-  {
-   "word": "deliver",
-   "start": 8.32
-  },
-  {
-   "word": "the",
-   "start": 8.69
-  },
-  {
-   "word": "babies.",
-   "start": 8.83
-  },
-  {
-   "word": "Next",
-   "start": 9.598
-  },
-  {
-   "word": "door,",
-   "start": 10.104
-  },
-  {
-   "word": "midwives",
-   "start": 10.71
-  },
-  {
-   "word": "do.",
-   "start": 11.267
-  },
-  {
-   "word": "That",
-   "start": 11.72
-  },
-  {
-   "word": "year,",
-   "start": 11.95
-  },
-  {
-   "word": "one",
-   "start": 12.62
-  },
-  {
-   "word": "mother",
-   "start": 12.887
-  },
-  {
-   "word": "in",
-   "start": 13.257
-  },
-  {
-   "word": "nine",
-   "start": 13.374
-  },
-  {
-   "word": "dies",
-   "start": 13.694
-  },
-  {
-   "word": "here.",
-   "start": 14.014
-  },
-  {
-   "word": "Next",
-   "start": 14.606
-  },
-  {
-   "word": "door,",
-   "start": 15.084
-  },
-  {
-   "word": "one",
-   "start": 15.74
-  },
-  {
-   "word": "in",
-   "start": 16.087
-  },
-  {
-   "word": "thirty",
-   "start": 16.346
-  },
-  {
-   "word": "six.",
-   "start": 16.76
-  },
-  {
-   "word": "Yet",
-   "start": 17.26
-  },
-  {
-   "word": "both",
-   "start": 17.564
-  },
-  {
-   "word": "clinics",
-   "start": 17.88
-  },
-  {
-   "word": "share",
-   "start": 18.353
-  },
-  {
-   "word": "one",
-   "start": 18.68
-  },
-  {
-   "word": "hospital,",
-   "start": 18.922
-  },
-  {
-   "word": "and",
-   "start": 19.92
-  },
-  {
-   "word": "the",
-   "start": 20.0
-  },
-  {
-   "word": "same",
-   "start": 20.124
-  },
-  {
-   "word": "Vienna",
-   "start": 20.46
-  },
-  {
-   "word": "air.",
-   "start": 21.02
-  },
-  {
-   "word": "Everything",
-   "start": 21.976
-  },
-  {
    "word": "was",
-   "start": 22.18
+   "start": 0.204
   },
   {
    "word": "in",
-   "start": 22.353
+   "start": 0.377
   },
   {
    "word": "question.",
-   "start": 22.54
+   "start": 0.564
   },
   {
    "word": "Only",
-   "start": 23.34
+   "start": 1.364
   },
   {
    "word": "the",
-   "start": 24.02
+   "start": 2.044
   },
   {
    "word": "large",
-   "start": 24.193
+   "start": 2.217
   },
   {
    "word": "number",
-   "start": 24.506
+   "start": 2.53
   },
   {
    "word": "of",
-   "start": 24.807
+   "start": 2.831
   },
   {
    "word": "deaths",
-   "start": 24.929
+   "start": 2.953
   },
   {
    "word": "was",
-   "start": 25.4
+   "start": 3.424
   },
   {
    "word": "an",
-   "start": 25.633
+   "start": 3.657
   },
   {
    "word": "unquestionable",
-   "start": 25.805
+   "start": 3.829
   },
   {
    "word": "reality.",
-   "start": 26.78
+   "start": 4.804
   }
  ],
  "beat-04": [
-  {
-   "word": "But",
-   "start": 0.0
-  },
-  {
-   "word": "the",
-   "start": 0.12
-  },
-  {
-   "word": "women",
-   "start": 0.293
-  },
-  {
-   "word": "know",
-   "start": 0.608
-  },
-  {
-   "word": "the",
-   "start": 0.84
-  },
-  {
-   "word": "difference.",
-   "start": 1.004
-  },
-  {
-   "word": "Please.",
-   "start": 2.129
-  },
-  {
-   "word": "Not",
-   "start": 2.48
-  },
-  {
-   "word": "the",
-   "start": 2.91
-  },
-  {
-   "word": "first",
-   "start": 3.11
-  },
-  {
-   "word": "clinic.",
-   "start": 3.59
-  },
-  {
-   "word": "He",
-   "start": 4.15
-  },
-  {
-   "word": "wrote",
-   "start": 4.25
-  },
-  {
-   "word": "that",
-   "start": 4.498
-  },
-  {
-   "word": "they",
-   "start": 4.738
-  },
-  {
-   "word": "knelt,",
-   "start": 4.983
-  },
-  {
-   "word": "wringing",
-   "start": 5.543
-  },
-  {
-   "word": "their",
-   "start": 5.917
-  },
-  {
-   "word": "hands,",
-   "start": 6.117
-  },
-  {
-   "word": "begging",
-   "start": 6.95
-  },
-  {
-   "word": "to",
-   "start": 7.327
-  },
-  {
-   "word": "be",
-   "start": 7.433
-  },
-  {
-   "word": "sent",
-   "start": 7.604
-  },
-  {
-   "word": "next",
-   "start": 7.924
-  },
-  {
-   "word": "door.",
-   "start": 8.228
-  }
- ],
- "beat-05": [
   {
    "word": "So",
    "start": 0.0
   },
   {
    "word": "Semmelweis",
-   "start": 0.081
+   "start": 0.14
   },
   {
-   "word": "tests",
-   "start": 0.754
+   "word": "starts",
+   "start": 0.8
   },
   {
-   "word": "every",
-   "start": 1.261
+   "word": "testing",
+   "start": 1.33
   },
   {
-   "word": "explanation,",
-   "start": 1.521
+   "word": "his",
+   "start": 1.74
+  },
+  {
+   "word": "guesses,",
+   "start": 1.98
   },
   {
    "word": "one",
-   "start": 2.461
+   "start": 2.9
   },
   {
-   "word": "by",
-   "start": 2.661
+   "word": "at",
+   "start": 3.22
   },
   {
-   "word": "one.",
-   "start": 2.881
+   "word": "a",
+   "start": 3.42
   },
   {
-   "word": "The",
-   "start": 3.401
+   "word": "time.",
+   "start": 3.54
   },
   {
-   "word": "mothers",
-   "start": 3.891
+   "word": "Maybe",
+   "start": 3.94
   },
   {
-   "word": "deliver",
-   "start": 4.291
+   "word": "it's",
+   "start": 4.32
+  },
+  {
+   "word": "the",
+   "start": 4.6
+  },
+  {
+   "word": "air.",
+   "start": 4.8
+  },
+  {
+   "word": "Yet",
+   "start": 5.34
+  },
+  {
+   "word": "women",
+   "start": 5.797
+  },
+  {
+   "word": "who",
+   "start": 6.21
+  },
+  {
+   "word": "give",
+   "start": 6.498
+  },
+  {
+   "word": "birth",
+   "start": 6.757
+  },
+  {
+   "word": "in",
+   "start": 7.117
+  },
+  {
+   "word": "the",
+   "start": 7.21
+  },
+  {
+   "word": "street,",
+   "start": 7.387
   },
   {
    "word": "on",
-   "start": 4.668
+   "start": 8.183
   },
   {
    "word": "their",
-   "start": 4.748
+   "start": 8.317
   },
   {
-   "word": "side,",
-   "start": 4.961
-  },
-  {
-   "word": "as",
-   "start": 5.494
-  },
-  {
-   "word": "the",
-   "start": 5.641
-  },
-  {
-   "word": "midwives",
-   "start": 5.801
-  },
-  {
-   "word": "do.",
-   "start": 6.241
-  },
-  {
-   "word": "Nothing",
-   "start": 6.621
-  },
-  {
-   "word": "changes.",
-   "start": 7.301
-  },
-  {
-   "word": "But",
-   "start": 8.351
-  },
-  {
-   "word": "there",
-   "start": 8.441
-  },
-  {
-   "word": "is",
-   "start": 8.668
-  },
-  {
-   "word": "the",
-   "start": 8.741
-  },
-  {
-   "word": "bell.",
-   "start": 8.881
-  },
-  {
-   "word": "A",
-   "start": 9.481
-  },
-  {
-   "word": "priest",
-   "start": 9.748
-  },
-  {
-   "word": "crosses",
-   "start": 10.161
-  },
-  {
-   "word": "the",
-   "start": 10.671
-  },
-  {
-   "word": "ward",
-   "start": 10.795
+   "word": "way",
+   "start": 8.51
   },
   {
    "word": "to",
-   "start": 11.104
+   "start": 8.743
   },
   {
    "word": "the",
-   "start": 11.231
+   "start": 8.87
   },
   {
-   "word": "dying,",
-   "start": 11.384
+   "word": "hospital,",
+   "start": 9.001
   },
   {
-   "word": "an",
-   "start": 12.224
+   "word": "hardly",
+   "start": 9.947
   },
   {
-   "word": "attendant",
-   "start": 12.387
+   "word": "ever",
+   "start": 10.338
   },
   {
-   "word": "ringing",
-   "start": 12.951
-  },
-  {
-   "word": "ahead",
-   "start": 13.424
-  },
-  {
-   "word": "of",
-   "start": 13.718
-  },
-  {
-   "word": "him.",
-   "start": 13.851
-  },
-  {
-   "word": "Even",
-   "start": 14.427
-  },
-  {
-   "word": "to",
-   "start": 14.544
-  },
-  {
-   "word": "me",
-   "start": 14.704
-  },
-  {
-   "word": "myself",
-   "start": 14.925
-  },
-  {
-   "word": "it",
-   "start": 15.691
-  },
-  {
-   "word": "had",
-   "start": 15.891
-  },
-  {
-   "word": "a",
-   "start": 16.051
-  },
-  {
-   "word": "strange",
-   "start": 16.151
-  },
-  {
-   "word": "effect",
-   "start": 16.64
-  },
-  {
-   "word": "upon",
-   "start": 17.131
-  },
-  {
-   "word": "my",
-   "start": 17.531
-  },
-  {
-   "word": "nerves,",
-   "start": 17.771
-  },
-  {
-   "word": "when",
-   "start": 18.443
-  },
-  {
-   "word": "I",
-   "start": 18.651
-  },
-  {
-   "word": "heard",
-   "start": 18.771
+   "word": "catch",
+   "start": 10.597
   },
   {
    "word": "the",
-   "start": 18.991
+   "start": 10.95
   },
   {
-   "word": "bell",
-   "start": 19.147
+   "word": "fever.",
+   "start": 11.09
   },
   {
-   "word": "hurry",
-   "start": 19.624
+   "word": "Maybe",
+   "start": 11.57
   },
   {
-   "word": "past",
-   "start": 20.187
+   "word": "it's",
+   "start": 11.863
   },
   {
-   "word": "my",
-   "start": 20.651
+   "word": "how",
+   "start": 12.12
   },
   {
-   "word": "door.",
-   "start": 20.891
+   "word": "they",
+   "start": 12.226
   },
   {
-   "word": "He",
-   "start": 21.291
+   "word": "give",
+   "start": 12.338
   },
   {
-   "word": "sends",
-   "start": 21.374
+   "word": "birth.",
+   "start": 12.61
   },
   {
-   "word": "the",
-   "start": 21.661
+   "word": "The",
+   "start": 13.27
   },
   {
-   "word": "priest",
-   "start": 21.778
-  },
-  {
-   "word": "a",
-   "start": 22.201
-  },
-  {
-   "word": "quieter",
-   "start": 22.341
-  },
-  {
-   "word": "way.",
-   "start": 22.821
-  },
-  {
-   "word": "Still,",
-   "start": 23.548
-  },
-  {
-   "word": "the",
-   "start": 24.121
+   "word": "midwives'",
+   "start": 13.48
   },
   {
    "word": "mothers",
-   "start": 24.421
+   "start": 14.145
   },
   {
-   "word": "die.",
-   "start": 24.941
+   "word": "lie",
+   "start": 14.4
+  },
+  {
+   "word": "on",
+   "start": 14.693
+  },
+  {
+   "word": "their",
+   "start": 14.827
+  },
+  {
+   "word": "side,",
+   "start": 15.056
+  },
+  {
+   "word": "so",
+   "start": 15.793
+  },
+  {
+   "word": "he",
+   "start": 15.98
+  },
+  {
+   "word": "has",
+   "start": 16.18
+  },
+  {
+   "word": "the",
+   "start": 16.34
+  },
+  {
+   "word": "women",
+   "start": 16.5
+  },
+  {
+   "word": "in",
+   "start": 16.753
+  },
+  {
+   "word": "his",
+   "start": 16.9
+  },
+  {
+   "word": "clinic",
+   "start": 17.077
+  },
+  {
+   "word": "do",
+   "start": 17.473
+  },
+  {
+   "word": "the",
+   "start": 17.62
+  },
+  {
+   "word": "same.",
+   "start": 17.804
+  },
+  {
+   "word": "Nothing",
+   "start": 18.22
+  },
+  {
+   "word": "changes.",
+   "start": 18.68
   }
  ],
- "beat-06": [
+ "beat-05": [
+  {
+   "word": "Maybe",
+   "start": 0.0
+  },
+  {
+   "word": "it's",
+   "start": 0.373
+  },
+  {
+   "word": "fear.",
+   "start": 0.64
+  },
+  {
+   "word": "Whenever",
+   "start": 1.404
+  },
+  {
+   "word": "a",
+   "start": 1.84
+  },
+  {
+   "word": "woman",
+   "start": 1.973
+  },
+  {
+   "word": "is",
+   "start": 2.293
+  },
+  {
+   "word": "dying,",
+   "start": 2.48
+  },
+  {
+   "word": "a",
+   "start": 3.24
+  },
+  {
+   "word": "priest",
+   "start": 3.349
+  },
+  {
+   "word": "comes",
+   "start": 3.813
+  },
+  {
+   "word": "through",
+   "start": 4.11
+  },
+  {
+   "word": "the",
+   "start": 4.36
+  },
+  {
+   "word": "ward",
+   "start": 4.56
+  },
+  {
+   "word": "to",
+   "start": 4.96
+  },
+  {
+   "word": "her",
+   "start": 5.16
+  },
+  {
+   "word": "bed,",
+   "start": 5.36
+  },
+  {
+   "word": "and",
+   "start": 6.18
+  },
+  {
+   "word": "a",
+   "start": 6.34
+  },
+  {
+   "word": "man",
+   "start": 6.46
+  },
+  {
+   "word": "walks",
+   "start": 6.753
+  },
+  {
+   "word": "ahead",
+   "start": 7.06
+  },
+  {
+   "word": "of",
+   "start": 7.287
+  },
+  {
+   "word": "him",
+   "start": 7.4
+  },
+  {
+   "word": "ringing",
+   "start": 7.64
+  },
+  {
+   "word": "a",
+   "start": 8.1
+  },
+  {
+   "word": "bell.",
+   "start": 8.22
+  },
+  {
+   "word": "Even",
+   "start": 8.876
+  },
+  {
+   "word": "to",
+   "start": 8.993
+  },
+  {
+   "word": "me",
+   "start": 9.153
+  },
+  {
+   "word": "myself",
+   "start": 9.374
+  },
+  {
+   "word": "it",
+   "start": 10.14
+  },
+  {
+   "word": "had",
+   "start": 10.34
+  },
+  {
+   "word": "a",
+   "start": 10.5
+  },
+  {
+   "word": "strange",
+   "start": 10.6
+  },
+  {
+   "word": "effect",
+   "start": 11.089
+  },
+  {
+   "word": "upon",
+   "start": 11.58
+  },
+  {
+   "word": "my",
+   "start": 11.98
+  },
+  {
+   "word": "nerves,",
+   "start": 12.22
+  },
+  {
+   "word": "when",
+   "start": 12.892
+  },
+  {
+   "word": "I",
+   "start": 13.1
+  },
+  {
+   "word": "heard",
+   "start": 13.22
+  },
+  {
+   "word": "the",
+   "start": 13.44
+  },
+  {
+   "word": "bell",
+   "start": 13.596
+  },
+  {
+   "word": "hurry",
+   "start": 14.073
+  },
+  {
+   "word": "past",
+   "start": 14.636
+  },
+  {
+   "word": "my",
+   "start": 15.1
+  },
+  {
+   "word": "door.",
+   "start": 15.34
+  },
+  {
+   "word": "So",
+   "start": 15.74
+  },
+  {
+   "word": "he",
+   "start": 15.9
+  },
+  {
+   "word": "sends",
+   "start": 16.113
+  },
+  {
+   "word": "the",
+   "start": 16.42
+  },
+  {
+   "word": "priest",
+   "start": 16.609
+  },
+  {
+   "word": "the",
+   "start": 17.08
+  },
+  {
+   "word": "long",
+   "start": 17.308
+  },
+  {
+   "word": "way",
+   "start": 17.56
+  },
+  {
+   "word": "round,",
+   "start": 17.807
+  },
+  {
+   "word": "but",
+   "start": 18.74
+  },
+  {
+   "word": "the",
+   "start": 18.88
+  },
+  {
+   "word": "mothers",
+   "start": 19.0
+  },
+  {
+   "word": "keep",
+   "start": 19.468
+  },
+  {
+   "word": "dying.",
+   "start": 19.727
+  },
+  {
+   "word": "By",
+   "start": 20.282
+  },
+  {
+   "word": "now,",
+   "start": 20.36
+  },
+  {
+   "word": "whatever",
+   "start": 20.691
+  },
+  {
+   "word": "you",
+   "start": 21.3
+  },
+  {
+   "word": "guessed",
+   "start": 21.46
+  },
+  {
+   "word": "first,",
+   "start": 21.807
+  },
+  {
+   "word": "he's",
+   "start": 22.327
+  },
+  {
+   "word": "probably",
+   "start": 22.664
+  },
+  {
+   "word": "tried",
+   "start": 23.087
+  },
+  {
+   "word": "it.",
+   "start": 23.473
+  },
+  {
+   "word": "And",
+   "start": 23.92
+  },
+  {
+   "word": "every",
+   "start": 24.093
+  },
+  {
+   "word": "time,",
+   "start": 24.44
+  },
+  {
+   "word": "he",
+   "start": 24.973
+  },
+  {
+   "word": "was",
+   "start": 25.3
+  },
+  {
+   "word": "wrong.",
+   "start": 25.533
+  }
+ ],
+ "kolletschka-portrait": [
   {
    "word": "Then,",
    "start": 0.0
   },
   {
    "word": "in",
-   "start": 0.357
+   "start": 0.331
   },
   {
    "word": "March",
-   "start": 0.517
+   "start": 0.531
   },
   {
    "word": "eighteen",
-   "start": 0.837
+   "start": 0.926
   },
   {
    "word": "forty",
-   "start": 1.331
+   "start": 1.491
   },
   {
    "word": "seven,",
-   "start": 1.744
+   "start": 1.877
   },
   {
-   "word": "Semmelweis's",
-   "start": 2.584
+   "word": "his",
+   "start": 2.384
   },
   {
    "word": "friend",
-   "start": 3.241
+   "start": 2.831
   },
   {
    "word": "Jakob",
-   "start": 3.724
+   "start": 3.314
   },
   {
-   "word": "Kolletschka",
-   "start": 4.284
-  },
-  {
-   "word": "is",
-   "start": 5.024
-  },
-  {
-   "word": "cut",
-   "start": 5.404
-  },
-  {
-   "word": "by",
-   "start": 5.637
+   "word": "Kolletschka,",
+   "start": 3.874
   },
   {
    "word": "a",
-   "start": 5.824
+   "start": 4.814
   },
   {
-   "word": "student's",
-   "start": 5.954
-  },
-  {
-   "word": "knife",
-   "start": 6.451
-  },
-  {
-   "word": "during",
-   "start": 6.841
-  },
-  {
-   "word": "an",
-   "start": 7.237
-  },
-  {
-   "word": "autopsy,",
-   "start": 7.414
-  },
-  {
-   "word": "and",
-   "start": 8.084
-  },
-  {
-   "word": "dies.",
-   "start": 8.224
-  },
-  {
-   "word": "Day",
-   "start": 9.044
-  },
-  {
-   "word": "and",
-   "start": 9.164
-  },
-  {
-   "word": "night",
-   "start": 9.437
-  },
-  {
-   "word": "I",
-   "start": 9.944
-  },
-  {
-   "word": "was",
-   "start": 10.044
-  },
-  {
-   "word": "haunted",
-   "start": 10.294
-  },
-  {
-   "word": "by",
-   "start": 10.837
-  },
-  {
-   "word": "the",
-   "start": 10.984
-  },
-  {
-   "word": "image",
-   "start": 11.184
+   "word": "professor",
+   "start": 5.022
   },
   {
    "word": "of",
-   "start": 11.637
+   "start": 5.507
+  },
+  {
+   "word": "forensic",
+   "start": 5.667
+  },
+  {
+   "word": "medicine,",
+   "start": 6.147
+  },
+  {
+   "word": "is",
+   "start": 6.841
+  },
+  {
+   "word": "cut",
+   "start": 7.294
+  },
+  {
+   "word": "by",
+   "start": 7.614
+  },
+  {
+   "word": "a",
+   "start": 7.814
+  },
+  {
+   "word": "student's",
+   "start": 7.904
+  },
+  {
+   "word": "knife",
+   "start": 8.401
+  },
+  {
+   "word": "during",
+   "start": 8.791
+  },
+  {
+   "word": "an",
+   "start": 9.161
+  },
+  {
+   "word": "autopsy.",
+   "start": 9.284
+  },
+  {
+   "word": "And",
+   "start": 10.184
+  },
+  {
+   "word": "he",
+   "start": 10.324
+  },
+  {
+   "word": "dies.",
+   "start": 10.58
+  }
+ ],
+ "beat-06": [
+  {
+   "word": "Day",
+   "start": 0.0
+  },
+  {
+   "word": "and",
+   "start": 0.12
+  },
+  {
+   "word": "night",
+   "start": 0.393
+  },
+  {
+   "word": "I",
+   "start": 0.9
+  },
+  {
+   "word": "was",
+   "start": 1.0
+  },
+  {
+   "word": "haunted",
+   "start": 1.25
+  },
+  {
+   "word": "by",
+   "start": 1.793
+  },
+  {
+   "word": "the",
+   "start": 1.94
+  },
+  {
+   "word": "image",
+   "start": 2.14
+  },
+  {
+   "word": "of",
+   "start": 2.593
   },
   {
    "word": "Kolletschka's",
-   "start": 11.804
+   "start": 2.76
   },
   {
    "word": "disease.",
-   "start": 12.644
+   "start": 3.6
   },
   {
-   "word": "But",
-   "start": 13.424
+   "word": "And",
+   "start": 4.38
   },
   {
-   "word": "Kolletschka's",
-   "start": 13.534
+   "word": "when",
+   "start": 4.552
   },
   {
-   "word": "body",
-   "start": 14.162
+   "word": "they",
+   "start": 4.728
   },
   {
-   "word": "shows",
-   "start": 14.421
+   "word": "examine",
+   "start": 4.99
+  },
+  {
+   "word": "his",
+   "start": 5.52
+  },
+  {
+   "word": "friend's",
+   "start": 5.674
+  },
+  {
+   "word": "body,",
+   "start": 6.024
+  },
+  {
+   "word": "they",
+   "start": 6.722
+  },
+  {
+   "word": "find",
+   "start": 6.898
+  },
+  {
+   "word": "something",
+   "start": 7.13
+  },
+  {
+   "word": "he",
+   "start": 7.57
+  },
+  {
+   "word": "can't",
+   "start": 7.79
+  },
+  {
+   "word": "shake.",
+   "start": 8.117
+  },
+  {
+   "word": "It's",
+   "start": 8.717
   },
   {
    "word": "the",
-   "start": 14.794
+   "start": 9.12
   },
   {
    "word": "same",
-   "start": 14.946
+   "start": 9.288
   },
   {
    "word": "disease",
-   "start": 15.134
+   "start": 9.54
   },
   {
-   "word": "as",
-   "start": 15.634
+   "word": "that's",
+   "start": 10.008
+  },
+  {
+   "word": "killing",
+   "start": 10.32
   },
   {
    "word": "the",
-   "start": 15.814
-  },
-  {
-   "word": "dying",
-   "start": 15.941
+   "start": 10.62
   },
   {
    "word": "mothers.",
-   "start": 16.334
+   "start": 10.75
   }
  ],
  "beat-07": [
   {
-   "word": "And",
+   "word": "Now",
    "start": 0.0
   },
   {
-   "word": "the",
-   "start": 0.064
+   "word": "think",
+   "start": 0.097
   },
   {
-   "word": "students",
-   "start": 0.237
+   "word": "about",
+   "start": 0.483
   },
   {
    "word": "who",
-   "start": 0.704
+   "start": 0.83
   },
   {
-   "word": "cut",
-   "start": 0.904
+   "word": "does",
+   "start": 1.15
   },
   {
    "word": "the",
-   "start": 1.164
+   "start": 1.51
   },
   {
-   "word": "dead",
-   "start": 1.304
+   "word": "autopsies",
+   "start": 1.69
+  },
+  {
+   "word": "in",
+   "start": 2.297
+  },
+  {
+   "word": "this",
+   "start": 2.398
+  },
+  {
+   "word": "hospital.",
+   "start": 2.661
+  },
+  {
+   "word": "The",
+   "start": 3.31
+  },
+  {
+   "word": "doctors.",
+   "start": 3.46
+  },
+  {
+   "word": "The",
+   "start": 4.2
+  },
+  {
+   "word": "students.",
+   "start": 4.421
+  },
+  {
+   "word": "The",
+   "start": 5.49
+  },
+  {
+   "word": "same",
+   "start": 5.598
+  },
+  {
+   "word": "people",
+   "start": 5.847
+  },
+  {
+   "word": "who",
+   "start": 6.27
   },
   {
    "word": "walk",
-   "start": 1.704
+   "start": 6.574
   },
   {
-   "word": "straight",
-   "start": 2.077
-  },
-  {
-   "word": "on",
-   "start": 2.557
-  },
-  {
-   "word": "to",
-   "start": 2.717
+   "word": "from",
+   "start": 6.862
   },
   {
    "word": "the",
-   "start": 2.844
+   "start": 7.01
   },
   {
-   "word": "mothers.",
-   "start": 2.974
+   "word": "morgue",
+   "start": 7.15
   },
   {
-   "word": "What",
-   "start": 3.716
+   "word": "straight",
+   "start": 7.594
+  },
+  {
+   "word": "to",
+   "start": 7.977
+  },
+  {
+   "word": "the",
+   "start": 8.05
+  },
+  {
+   "word": "mothers",
+   "start": 8.17
+  },
+  {
+   "word": "in",
+   "start": 8.643
+  },
+  {
+   "word": "the",
+   "start": 8.77
+  },
+  {
+   "word": "first",
+   "start": 8.883
+  },
+  {
+   "word": "clinic.",
+   "start": 9.219
+  },
+  {
+   "word": "With",
+   "start": 9.824
+  },
+  {
+   "word": "the",
+   "start": 9.89
+  },
+  {
+   "word": "same",
+   "start": 10.074
+  },
+  {
+   "word": "bare",
+   "start": 10.394
+  },
+  {
+   "word": "hands.",
+   "start": 10.743
+  },
+  {
+   "word": "So",
+   "start": 11.43
+  },
+  {
+   "word": "what",
+   "start": 11.676
   },
   {
    "word": "are",
-   "start": 3.794
+   "start": 12.08
   },
   {
-   "word": "their",
-   "start": 3.954
+   "word": "those",
+   "start": 12.193
   },
   {
    "word": "hands",
-   "start": 4.234
+   "start": 12.513
   },
   {
    "word": "carrying?",
-   "start": 4.696
+   "start": 12.842
+  },
+  {
+   "word": "Semmelweis",
+   "start": 13.716
+  },
+  {
+   "word": "is",
+   "start": 14.193
+  },
+  {
+   "word": "about",
+   "start": 14.367
+  },
+  {
+   "word": "to",
+   "start": 14.753
+  },
+  {
+   "word": "find",
+   "start": 14.908
+  },
+  {
+   "word": "out.",
+   "start": 15.2
+  },
+  {
+   "word": "And",
+   "start": 15.66
+  },
+  {
+   "word": "what",
+   "start": 15.772
+  },
+  {
+   "word": "happens",
+   "start": 15.96
+  },
+  {
+   "word": "next",
+   "start": 16.444
+  },
+  {
+   "word": "will",
+   "start": 16.78
+  },
+  {
+   "word": "change",
+   "start": 17.157
+  },
+  {
+   "word": "medicine.",
+   "start": 17.571
+  },
+  {
+   "word": "But",
+   "start": 18.3
+  },
+  {
+   "word": "first,",
+   "start": 18.417
+  },
+  {
+   "word": "he'll",
+   "start": 19.017
+  },
+  {
+   "word": "have",
+   "start": 19.182
+  },
+  {
+   "word": "to",
+   "start": 19.337
+  },
+  {
+   "word": "convince",
+   "start": 19.434
+  },
+  {
+   "word": "a",
+   "start": 19.83
+  },
+  {
+   "word": "world",
+   "start": 19.923
+  },
+  {
+   "word": "that",
+   "start": 20.222
+  },
+  {
+   "word": "doesn't",
+   "start": 20.403
+  },
+  {
+   "word": "want",
+   "start": 20.782
+  },
+  {
+   "word": "to",
+   "start": 20.963
+  },
+  {
+   "word": "listen.",
+   "start": 21.127
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
  "u001": {
-  "kind": "3d",
-  "name": "beat-01",
+  "kind": "archive",
+  "name": "akh-engraving",
   "title": "",
   "subtitle": ""
  },
@@ -19,7 +19,7 @@
  },
  "u004": {
   "kind": "3d",
-  "name": "beat-01",
+  "name": "beat-02",
   "title": "",
   "subtitle": ""
  },
@@ -37,25 +37,25 @@
  },
  "u007": {
   "kind": "3d",
-  "name": "beat-03",
+  "name": "beat-02",
   "title": "",
   "subtitle": ""
  },
  "u008": {
   "kind": "3d",
-  "name": "beat-03",
+  "name": "beat-02",
   "title": "",
   "subtitle": ""
  },
  "u009": {
   "kind": "3d",
-  "name": "beat-03",
+  "name": "beat-02",
   "title": "",
   "subtitle": ""
  },
  "u010": {
-  "kind": "3d",
-  "name": "beat-03",
+  "kind": "archive",
+  "name": "semmelweis-portrait",
   "title": "",
   "subtitle": ""
  },
@@ -85,7 +85,7 @@
  },
  "u015": {
   "kind": "3d",
-  "name": "beat-05",
+  "name": "beat-04",
   "title": "",
   "subtitle": ""
  },
@@ -109,13 +109,13 @@
  },
  "u019": {
   "kind": "3d",
-  "name": "beat-06",
+  "name": "beat-05",
   "title": "",
   "subtitle": ""
  },
  "u020": {
-  "kind": "3d",
-  "name": "beat-06",
+  "kind": "archive",
+  "name": "kolletschka-portrait",
   "title": "",
   "subtitle": ""
  },
@@ -127,11 +127,47 @@
  },
  "u022": {
   "kind": "3d",
-  "name": "beat-07",
+  "name": "beat-06",
   "title": "",
   "subtitle": ""
  },
  "u023": {
+  "kind": "3d",
+  "name": "beat-07",
+  "title": "",
+  "subtitle": ""
+ },
+ "u024": {
+  "kind": "3d",
+  "name": "beat-07",
+  "title": "",
+  "subtitle": ""
+ },
+ "u025": {
+  "kind": "3d",
+  "name": "beat-07",
+  "title": "",
+  "subtitle": ""
+ },
+ "u026": {
+  "kind": "3d",
+  "name": "beat-07",
+  "title": "",
+  "subtitle": ""
+ },
+ "u027": {
+  "kind": "3d",
+  "name": "beat-07",
+  "title": "",
+  "subtitle": ""
+ },
+ "u028": {
+  "kind": "3d",
+  "name": "beat-07",
+  "title": "",
+  "subtitle": ""
+ },
+ "u029": {
   "kind": "3d",
   "name": "beat-07",
   "title": "",

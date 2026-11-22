@@ -1623,8 +1623,10 @@ def ward(p, seconds):
                                  (ex_x - 0.95, ex_y + 0.3, 0), (ex_x - 1.05, ex_y - 0.5, 0)],
                           "turns": plan.chatter(seconds, seed=seed + 11, people=4)}], n, seed + 12, tint)
     # the midwife between the beds: walks, stops, talks to a patient, walks on
-    mw = characters.actor("ward-midwife", "midwife", (3.0, 0.8, 0), PERSON_H, tint=tint)
-    for a, b, u0, u1 in (((3.0, 0.8, 0), (7.0, -1.25, 0), 0.04, 0.22), ((7.0, -1.25, 0), (17.5, -1.25, 0), 0.40, 0.62),
+    # she starts 7 m into the room: from (3.0, 0.8) she walked straight across the lens of every
+    # door-end view (ward-wide and ward-aisle stand at x 1.2-1.5) and filled the frame for 2 s
+    mw = characters.actor("ward-midwife", "midwife", (9.0, 1.2, 0), PERSON_H, tint=tint)
+    for a, b, u0, u1 in (((9.0, 1.2, 0), (7.0, -1.25, 0), 0.04, 0.22), ((7.0, -1.25, 0), (17.5, -1.25, 0), 0.40, 0.62),
                          ((17.5, -1.25, 0), (19.8, 1.3, 0), 0.80, 0.90)):
         characters.walk(mw, [a, b], frames(u0 * seconds), max(frames(u0 * seconds) + 2, frames(u1 * seconds)))
     mrnd = random.Random(seed + 21)

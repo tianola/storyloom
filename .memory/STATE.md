@@ -1,5 +1,27 @@
 # STATE
-- Updated: 2026-11-21 (late). Current work: the living-world pilot `work/semmelweis-pilot` (section below). Everything below that section is history.
+- Updated: 2026-11-22. Current work: the living-world pilot `work/semmelweis-pilot`, now v5 (next section). Everything below that is history.
+
+## 2026-11-22: pilot v5, natural narration and real archive (PR tianola/storyloom#2)
+- **User feedback (2026-11-21):** "The narration must sound like someone telling you a story, not someone reading a script… make the viewer wonder, form their own guess, and then find out they were wrong." Don't make it more dramatic.
+- **Study:** Fern and Veritasium, in `docs/research/narration-voice.md` (12 rules). The short form is in the story-film skill, `references/script.md` §5 "Telling, not reading".
+- **Voice:** a blend.
+  - The scenes are told Fern-style: third person, present tense.
+  - The explorer turns to the viewer Veritasium-style at the guess and at the reveal.
+- **New script:** 29 lines and 436 words; the user approved the text before any voice was spent.
+  - The story runs: the puzzle of the two clinics → "what would you check first?" → the guesses fail → Kolletschka → the hands.
+  - `story.json`: guess u002, question u003, reversal u013; the hook kind is mystery.
+- **Archive:** three Commons stills (`pd_expired`) with Ken Burns moves and credit plates: the hospital engraving (u001), the Semmelweis portrait (u010), the Kolletschka portrait (u020).
+- **Fixes:**
+  - the jpg ingest, which used `ffmpeg -ss` on an image and got no frame;
+  - credit plates now wrap inside the margins (`card_lines`);
+  - the HUD label moved clear of a bollard. Moving the HUD nearer the lens is not an option: depth of field would blur it.
+  - the cut rhythm (beat-02 is a 20.5 s held glide, beat-05 and beat-06 are montages);
+  - the midwife's walk start.
+- **Result:** QC PASS. Advisories: two archival holds over 6 s and one slow drift. Details in `qc/pilot-gate-status.md`.
+- **Open:**
+  - the user hasn't said whether to merge PR #2;
+  - whether a line that mentions the 1861 book should bring arch-003 back;
+  - what to do with the stray `.agents/` folder (ask the user; don't delete it).
 
 ## 2026-11-21 (uncommitted): living-world films, Semmelweis pilot
 ### Decided (user)

@@ -159,6 +159,12 @@ def _fps(contract):
 
 # --------------------------------------------------------------------- frame extraction
 
+def _seek(path, t):
+    """`-ss t` for a video; nothing for an image file. With `-ss` (even `-ss 0`) this ffmpeg
+    decodes no frame at all from a jpg, so every still read through here came back empty."""
+    return [] if Path(path).suffix.lower() in IMAGE_SUFFIXES else ["-ss", f"{float(t):.4f}"]
+
+
 def grab_frame(path, t, *, canvas=None, scale_to=None, dst=None):
     """One frame as a PNG, optionally normalised to a known size.
 
@@ -168,7 +174,7 @@ def grab_frame(path, t, *, canvas=None, scale_to=None, dst=None):
     """
     target = scale_to or canvas
     src, out = Path(path), Path(dst) if dst else _scratch() / f"{Path(path).stem}-{float(t):.3f}.png"
-    cmd = ["ffmpeg", "-v", "error", "-ss", f"{float(t):.4f}", "-i", str(src), "-frames:v", "1"]
+    cmd = ["ffmpeg", "-v", "error"] + _seek(src, t) + ["-i", str(src), "-frames:v", "1"]
     if target:
         cmd += ["-vf", f"scale={int(target[0])}:{int(target[1])}"]
     _run(cmd + ["-y", str(out)])
@@ -180,7 +186,7 @@ def grab_frame(path, t, *, canvas=None, scale_to=None, dst=None):
 def _raw_grey(path, t, size=None):
     # `gray`, not `grey`: ffmpeg 9's rawvideo encoder rejects the historic alias outright
     # ("Unknown pixel format requested: grey"), and the name is what a probe is written with.
-    cmd = ["ffmpeg", "-nostdin", "-v", "error", "-ss", f"{float(t):.4f}", "-i", str(path),
+    cmd = ["ffmpeg", "-nostdin", "-v", "error"] + _seek(path, t) + ["-i", str(path),
            "-frames:v", "1", "-pix_fmt", "gray"]
     if size:
         cmd += ["-vf", f"scale={int(size[0])}:{int(size[1])}"]
@@ -293,8 +299,18 @@ def has_readable_text(png, ocr):
     return any(conf >= OCR_MIN_CONFIDENCE for _, conf in ocr_words(png, ocr))
 
 
+IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".bmp"}
+
+
 def _readable_time(path):
-    """A frame worth reading: the middle of what is there, or frame zero for a still image."""
+    """A frame worth reading: the middle of what is there, or frame zero for a still image.
+
+    ffprobe reports a jpg as one 0.04 s frame, so "the middle" of a still is 0.02 s, and
+    `-ss 0.02` on an image decodes nothing: the mirror guard then died on every still whose
+    light side disagreed with the key light. An image file is read at zero.
+    """
+    if Path(path).suffix.lower() in IMAGE_SUFFIXES:
+        return 0.0
     duration = probe_duration(path)
     return duration / 2.0 if duration else 0.0
 
@@ -520,12 +536,51 @@ def _rgb(declared):
     return tuple(int(text[i:i + 2], 16) for i in (0, 2, 4))
 
 
+def card_lines(text, fits):
+    """The credit broken into lines that each pass `fits`, keeping its own phrases together.
+
+    A credit line is written to be read whole, so it is only broken where it already pauses —
+    after " / " (the source and the host), then after ", " — and only then between words. Found on
+    the Semmelweis pilot: every one-line credit ran off the right edge ("… / Wikimedia Comm"), so
+    the attribution the card exists to carry was the part that went missing. A single word wider
+    than the canvas is left on its own line rather than cut, since a cut word is no credit either.
+    """
+    words = str(text).split()
+    # Phrases end after a "/" token or a word ending in ",".
+    phrases, current = [], []
+    for word in words:
+        current.append(word)
+        if word == "/" or word.endswith(","):
+            phrases.append(current)
+            current = []
+    if current:
+        phrases.append(current)
+
+    lines, line = [], []
+    for phrase in phrases:
+        if fits(" ".join(line + phrase)):
+            line += phrase
+            continue
+        if line:
+            lines.append(" ".join(line))
+            line = []
+        for word in phrase:  # only a phrase too wide on its own is broken between words
+            if line and not fits(" ".join(line + [word])):
+                lines.append(" ".join(line))
+                line = []
+            line.append(word)
+    if line:
+        lines.append(" ".join(line))
+    return lines
+
+
 def write_card_png(path, text, contract, canvas, *, root=ROOT, font=None):
     """The credit as outlined text on a full-canvas transparent plate.
 
     Outlined rather than boxed: the stroke is what keeps it legible over a frame we do not
     control, and a full-canvas plate means the overlay never has to know where the picture is
-    inside it.
+    inside it. A credit wider than the canvas between its two margins is set on more lines
+    (`card_lines`) rather than drawn off the edge or shrunk below the contract's size.
     """
     from PIL import Image, ImageDraw, ImageFont
 
@@ -535,11 +590,20 @@ def write_card_png(path, text, contract, canvas, *, root=ROOT, font=None):
     face = ImageFont.truetype(str(font or resolve_path(Path(root), rules["font_file"])), size)
     plate = Image.new("RGBA", canvas, (0, 0, 0, 0))
     draw = ImageDraw.Draw(plate)
-    box = draw.textbbox((0, 0), text, font=face)
+    stroke = max(1, round(size * float(rules["text_stroke_fraction"])))
+    room = canvas[0] - 2 * round(float(rules["edge_margin_fraction"]) * canvas[0])
+
+    def width(line):
+        box = draw.textbbox((0, 0), line, font=face, stroke_width=stroke)
+        return box[2] - box[0]
+
+    body = "\n".join(card_lines(text, lambda line: width(line) <= room))
+    align = "right" if rules["position"].endswith("right") else "left"
+    box = draw.multiline_textbbox((0, 0), body, font=face, stroke_width=stroke, align=align)
     x, y = card_position(canvas, (box[2] - box[0], box[3] - box[1]), rules["position"], contract)
-    draw.text((x - box[0], y - box[1]), text, font=face, fill=_rgb(rules["fill_colour"]) + (255,),
-              stroke_width=max(1, round(size * float(rules["text_stroke_fraction"]))),
-              stroke_fill=_rgb(rules["stroke_colour"]) + (255,))
+    draw.multiline_text((x - box[0], y - box[1]), body, font=face,
+                        fill=_rgb(rules["fill_colour"]) + (255,), align=align,
+                        stroke_width=stroke, stroke_fill=_rgb(rules["stroke_colour"]) + (255,))
     plate.save(path)
     return path
 

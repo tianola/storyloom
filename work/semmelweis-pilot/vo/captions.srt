@@ -1,195 +1,279 @@
 1
-00:00:00,438 --> 00:00:02,290
-Vienna, eighteen sixty five.
+00:00:00,045 --> 00:00:05,180
+It's eighteen forty six, and a woman in
+labour arrives at Vienna General Hospital.
 
 2
-00:00:02,370 --> 00:00:05,220
-A doctor is led into an asylum.
+00:00:05,180 --> 00:00:08,080
+If she gets a fever
+after the birth and dies,
 
 3
-00:00:05,220 --> 00:00:07,540
-There, it is said, the guards beat him.
+00:00:08,100 --> 00:00:10,260
+any doctor here will tell you why.
 
 4
-00:00:07,660 --> 00:00:09,410
-Two weeks later he is dead.
+00:00:10,300 --> 00:00:11,370
+Bad air.
 
 5
-00:00:09,770 --> 00:00:15,700
-I see a time when only cases of self-infec
-tion will occur in the maternity hospitals
+00:00:11,500 --> 00:00:13,530
+But here's what nobody can explain:
 
 6
-00:00:15,780 --> 00:00:16,660
-of the world.
+00:00:13,530 --> 00:00:16,540
+why does it matter so much
+which day she walks in?
 
 7
-00:00:16,660 --> 00:00:18,570
-Ignaz Semmelweis wrote that.
+00:00:16,540 --> 00:00:18,940
+The hospital has two maternity clinics,
 
 8
-00:00:18,690 --> 00:00:21,740
-But most doctors of his day rejected it.
+00:00:18,980 --> 00:00:21,820
+and they take women in on alternate days.
 
 9
-00:00:21,740 --> 00:00:25,410
-In his day, every doctor
-knew what killed new mothers:
+00:00:21,820 --> 00:00:25,180
+Doctors and medical
+students run the first one,
 
 10
-00:00:25,490 --> 00:00:26,430
-bad air.
+00:00:25,220 --> 00:00:27,020
+and midwives run the second.
 
 11
-00:00:26,470 --> 00:00:29,550
-So why did they die in one
-clinic of Vienna's hospital,
+00:00:27,020 --> 00:00:30,500
+That year, one mother in nine
+dies in the first clinic.
 
 12
-00:00:29,690 --> 00:00:31,800
-and hardly at all in the next?
+00:00:30,660 --> 00:00:33,270
+In the second, it's one in thirty six.
 
 13
-00:00:31,800 --> 00:00:33,810
-Vienna, eighteen forty six.
+00:00:33,270 --> 00:00:38,220
+And the women know it, so well that they
+beg on their knees to be taken anywhere
 
 14
-00:00:33,960 --> 00:00:38,470
-Semmelweis, twenty eight, is the
-new assistant in the First Clinic.
+00:00:38,284 --> 00:00:39,119
+else.
 
 15
-00:00:38,470 --> 00:00:41,270
-Here, doctors and students
-deliver the babies.
+00:00:39,159 --> 00:00:39,470
+Please.
 
 16
-00:00:41,398 --> 00:00:43,520
-Next door, midwives do.
+00:00:39,510 --> 00:00:41,180
+Not the first clinic.
 
 17
-00:00:43,520 --> 00:00:46,230
-That year, one mother in nine dies here.
+00:00:41,180 --> 00:00:41,940
+Same building.
 
 18
-00:00:46,406 --> 00:00:49,060
-Next door, one in thirty six.
+00:00:41,980 --> 00:00:42,980
+Same city.
 
 19
-00:00:49,060 --> 00:00:51,700
-Yet both clinics share one hospital,
+00:00:43,036 --> 00:00:44,330
+Same air.
 
 20
-00:00:51,720 --> 00:00:53,220
-and the same Vienna air.
+00:00:44,383 --> 00:00:46,090
+So if you were the doctor here,
 
 21
-00:00:53,776 --> 00:00:54,981
-Everything was in question.
+00:00:46,186 --> 00:00:47,770
+what would you check first?
 
 22
-00:00:55,140 --> 00:00:59,380
+00:00:47,610 --> 00:00:51,550
+That question eats at a young
+doctor called Ignaz Semmelweis.
+
+23
+00:00:51,660 --> 00:00:55,080
+He's twenty eight, and the new
+assistant in the first clinic.
+
+24
+00:00:55,636 --> 00:00:56,841
+Everything was in question.
+
+25
+00:00:57,000 --> 00:01:01,240
 Only the large number of deaths
 was an unquestionable reality.
 
-23
-00:00:59,380 --> 00:01:01,050
-But the women know the difference.
-
-24
-00:01:01,509 --> 00:01:01,820
-Please.
-
-25
-00:01:01,860 --> 00:01:03,530
-Not the first clinic.
-
 26
-00:01:03,530 --> 00:01:06,280
-He wrote that they knelt,
-wringing their hands,
+00:01:01,240 --> 00:01:04,060
+So Semmelweis starts testing his guesses,
 
 27
-00:01:06,330 --> 00:01:07,960
-begging to be sent next door.
+00:01:04,140 --> 00:01:05,180
+one at a time.
 
 28
-00:01:08,079 --> 00:01:10,500
-So Semmelweis tests every explanation,
+00:01:05,180 --> 00:01:06,360
+Maybe it's the air.
 
 29
-00:01:10,540 --> 00:01:11,440
-one by one.
+00:01:06,580 --> 00:01:09,370
+Yet women who give birth in the street,
 
 30
-00:01:11,480 --> 00:01:13,520
-The mothers deliver on their side,
+00:01:09,423 --> 00:01:11,130
+on their way to the hospital,
 
 31
-00:01:13,573 --> 00:01:14,573
-as the midwives do.
+00:01:11,187 --> 00:01:12,810
+hardly ever catch the fever.
 
 32
-00:01:14,700 --> 00:01:15,950
-Nothing changes.
+00:01:12,810 --> 00:01:14,510
+Maybe it's how they give birth.
 
 33
-00:01:16,430 --> 00:01:17,430
-But there is the bell.
+00:01:14,510 --> 00:01:16,980
+The midwives' mothers lie on their side,
 
 34
-00:01:17,560 --> 00:01:20,250
-A priest crosses the ward to the dying,
+00:01:17,033 --> 00:01:19,460
+so he has the women in
+his clinic do the same.
 
 35
-00:01:20,303 --> 00:01:22,250
-an attendant ringing ahead of him.
+00:01:19,460 --> 00:01:20,500
+Nothing changes.
 
 36
-00:01:22,506 --> 00:01:26,490
+00:01:20,500 --> 00:01:21,860
+Maybe it's fear.
+
+37
+00:01:21,904 --> 00:01:23,700
+Whenever a woman is dying,
+
+38
+00:01:23,740 --> 00:01:26,640
+a priest comes through
+the ward to her bed,
+
+39
+00:01:26,680 --> 00:01:29,120
+and a man walks ahead
+of him ringing a bell.
+
+40
+00:01:29,376 --> 00:01:33,360
 Even to me myself it had a
 strange effect upon my nerves,
 
-37
-00:01:26,522 --> 00:01:29,370
+41
+00:01:33,392 --> 00:01:36,240
 when I heard the bell hurry past my door.
 
-38
-00:01:29,370 --> 00:01:31,560
-He sends the priest a quieter way.
-
-39
-00:01:31,627 --> 00:01:33,480
-Still, the mothers die.
-
-40
-00:01:33,566 --> 00:01:36,110
-Then, in March eighteen forty seven,
-
-41
-00:01:36,150 --> 00:01:41,630
-Semmelweis's friend Jakob Kolletschka is c
-ut by a student's knife during an autopsy,
-
 42
-00:01:41,650 --> 00:01:42,570
-and dies.
+00:01:36,240 --> 00:01:39,200
+So he sends the priest the long way round,
 
 43
-00:01:42,610 --> 00:01:46,990
+00:01:39,240 --> 00:01:40,640
+but the mothers keep dying.
+
+44
+00:01:40,782 --> 00:01:42,720
+By now, whatever you guessed first,
+
+45
+00:01:42,827 --> 00:01:44,380
+he's probably tried it.
+
+46
+00:01:44,420 --> 00:01:46,830
+And every time, he was wrong.
+
+47
+00:01:47,086 --> 00:01:49,310
+Then, in March eighteen forty seven,
+
+48
+00:01:49,470 --> 00:01:51,840
+his friend Jakob Kolletschka,
+
+49
+00:01:51,900 --> 00:01:53,740
+a professor of forensic medicine,
+
+50
+00:01:53,927 --> 00:01:57,250
+is cut by a student's
+knife during an autopsy.
+
+51
+00:01:57,270 --> 00:01:58,270
+And he dies.
+
+52
+00:01:58,550 --> 00:02:02,930
 Day and night I was haunted by the
 image of Kolletschka's disease.
 
-44
-00:01:46,990 --> 00:01:50,480
-But Kolletschka's body shows the
-same disease as the dying mothers.
+53
+00:02:02,930 --> 00:02:05,240
+And when they examine his friend's body,
 
-45
-00:01:50,566 --> 00:01:54,110
-And the students who cut the dead
-walk straight on to the mothers.
+54
+00:02:05,272 --> 00:02:07,080
+they find something he can't shake.
 
-46
-00:01:54,282 --> 00:01:56,000
-What are their hands carrying?
+55
+00:02:07,267 --> 00:02:09,870
+It's the same disease
+that's killing the mothers.
+
+56
+00:02:10,080 --> 00:02:13,390
+Now think about who does the
+autopsies in this hospital.
+
+57
+00:02:13,390 --> 00:02:14,240
+The doctors.
+
+58
+00:02:14,280 --> 00:02:15,550
+The students.
+
+59
+00:02:15,570 --> 00:02:19,230
+The same people who walk from the morgue
+straight to the mothers in the first
+
+60
+00:02:19,299 --> 00:02:19,870
+clinic.
+
+61
+00:02:19,904 --> 00:02:21,510
+With the same bare hands.
+
+62
+00:02:21,510 --> 00:02:23,660
+So what are those hands carrying?
+
+63
+00:02:23,796 --> 00:02:25,740
+Semmelweis is about to find out.
+
+64
+00:02:25,740 --> 00:02:28,380
+And what happens next
+will change medicine.
+
+65
+00:02:28,380 --> 00:02:31,630
+But first, he'll have to convince a
+world that doesn't want to listen.

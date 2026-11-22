@@ -5,85 +5,85 @@
     {
       "id": "u001",
       "file": "u001.wav",
-      "text": "Vienna, eighteen sixty five. A doctor is led into an asylum.",
-      "samples": 125281,
+      "text": "It's eighteen forty six, and a woman in labour arrives at Vienna General Hospital.",
+      "samples": 124320,
       "startSample": 0,
-      "endSample": 125281
+      "endSample": 124320
     },
     {
       "id": "u002",
       "file": "u002.wav",
-      "text": "There, it is said, the guards beat him. Two weeks later he is dead.",
-      "samples": 105601,
-      "startSample": 125281,
-      "endSample": 230882
+      "text": "If she gets a fever after the birth and dies, any doctor here will tell you why. Bad air.",
+      "samples": 148559,
+      "startSample": 124320,
+      "endSample": 272879
     },
     {
       "id": "u003",
       "file": "u003.wav",
-      "text": "I see a time when only cases of self-infection will occur in the maternity hospitals of the world.",
-      "samples": 168960,
-      "speaker": "semmelweis",
-      "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
-      "mode": "thought",
-      "startSample": 230882,
-      "endSample": 399842
+      "text": "But here's what nobody can explain: why does it matter so much which day she walks in?",
+      "samples": 124081,
+      "startSample": 272879,
+      "endSample": 396960
     },
     {
       "id": "u004",
       "file": "u004.wav",
-      "text": "Ignaz Semmelweis wrote that. But most doctors of his day rejected it.",
-      "samples": 121921,
-      "startSample": 399842,
-      "endSample": 521763
+      "text": "The hospital has two maternity clinics, and they take women in on alternate days.",
+      "samples": 126720,
+      "startSample": 396960,
+      "endSample": 523680
     },
     {
       "id": "u005",
       "file": "u005.wav",
-      "text": "In his day, every doctor knew what killed new mothers: bad air.",
-      "samples": 109200,
-      "startSample": 521763,
-      "endSample": 630963
+      "text": "Doctors and medical students run the first one, and midwives run the second.",
+      "samples": 124800,
+      "startSample": 523680,
+      "endSample": 648480
     },
     {
       "id": "u006",
       "file": "u006.wav",
-      "text": "So why did they die in one clinic of Vienna's hospital, and hardly at all in the next?",
-      "samples": 132240,
-      "startSample": 630963,
-      "endSample": 763203
+      "text": "That year, one mother in nine dies in the first clinic. In the second, it's one in thirty six.",
+      "samples": 150001,
+      "startSample": 648480,
+      "endSample": 798481
     },
     {
       "id": "u007",
       "file": "u007.wav",
-      "text": "Vienna, eighteen forty six. Semmelweis, twenty eight, is the new assistant in the First Clinic.",
-      "samples": 160081,
-      "startSample": 763203,
-      "endSample": 923284
+      "text": "And the women know it, so well that they beg on their knees to be taken anywhere else.",
+      "samples": 130320,
+      "startSample": 798481,
+      "endSample": 928801
     },
     {
       "id": "u008",
       "file": "u008.wav",
-      "text": "Here, doctors and students deliver the babies. Next door, midwives do.",
-      "samples": 121200,
-      "startSample": 923284,
-      "endSample": 1044484
+      "text": "Please. Not the first clinic.",
+      "samples": 59520,
+      "speaker": "mother",
+      "voice": "eleven:rCmVtv8cYU60uhlsOo1M",
+      "mode": "say",
+      "startSample": 928801,
+      "endSample": 988321
     },
     {
       "id": "u009",
       "file": "u009.wav",
-      "text": "That year, one mother in nine dies here. Next door, one in thirty six.",
-      "samples": 132961,
-      "startSample": 1044484,
-      "endSample": 1177445
+      "text": "Same building. Same city. Same air. So if you were the doctor here, what would you check first?",
+      "samples": 154321,
+      "startSample": 988321,
+      "endSample": 1142642
     },
     {
       "id": "u010",
       "file": "u010.wav",
-      "text": "Yet both clinics share one hospital, and the same Vienna air.",
-      "samples": 99840,
-      "startSample": 1177445,
-      "endSample": 1277285
+      "text": "That question eats at a young doctor called Ignaz Semmelweis. He's twenty eight, and the new assistant in the first clinic.",
+      "samples": 179279,
+      "startSample": 1142642,
+      "endSample": 1321921
     },
     {
       "id": "u011",
@@ -93,51 +93,48 @@
       "speaker": "semmelweis",
       "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
       "mode": "thought",
-      "startSample": 1277285,
-      "endSample": 1425125
+      "startSample": 1321921,
+      "endSample": 1469761
     },
     {
       "id": "u012",
       "file": "u012.wav",
-      "text": "But the women know the difference.",
-      "samples": 40080,
-      "startSample": 1425125,
-      "endSample": 1465205
+      "text": "So Semmelweis starts testing his guesses, one at a time.",
+      "samples": 94560,
+      "startSample": 1469761,
+      "endSample": 1564321
     },
     {
       "id": "u013",
       "file": "u013.wav",
-      "text": "Please. Not the first clinic.",
-      "samples": 59520,
-      "speaker": "mother",
-      "voice": "eleven:rCmVtv8cYU60uhlsOo1M",
-      "mode": "say",
-      "startSample": 1465205,
-      "endSample": 1524725
+      "text": "Maybe it's the air. Yet women who give birth in the street, on their way to the hospital, hardly ever catch the fever.",
+      "samples": 183120,
+      "startSample": 1564321,
+      "endSample": 1747441
     },
     {
       "id": "u014",
       "file": "u014.wav",
-      "text": "He wrote that they knelt, wringing their hands, begging to be sent next door.",
-      "samples": 106320,
-      "startSample": 1524725,
-      "endSample": 1631045
+      "text": "Maybe it's how they give birth. The midwives' mothers lie on their side, so he has the women in his clinic do the same.",
+      "samples": 159600,
+      "startSample": 1747441,
+      "endSample": 1907041
     },
     {
       "id": "u015",
       "file": "u015.wav",
-      "text": "So Semmelweis tests every explanation, one by one. The mothers deliver on their side, as the midwives do. Nothing changes.",
-      "samples": 203280,
-      "startSample": 1631045,
-      "endSample": 1834325
+      "text": "Nothing changes.",
+      "samples": 24960,
+      "startSample": 1907041,
+      "endSample": 1932001
     },
     {
       "id": "u016",
       "file": "u016.wav",
-      "text": "But there is the bell. A priest crosses the ward to the dying, an attendant ringing ahead of him.",
-      "samples": 139679,
-      "startSample": 1834325,
-      "endSample": 1974004
+      "text": "Maybe it's fear. Whenever a woman is dying, a priest comes through the ward to her bed, and a man walks ahead of him ringing a bell.",
+      "samples": 206880,
+      "startSample": 1932001,
+      "endSample": 2138881
     },
     {
       "id": "u017",
@@ -147,60 +144,108 @@
       "speaker": "semmelweis",
       "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
       "mode": "say",
-      "startSample": 1974004,
-      "endSample": 2144884
+      "startSample": 2138881,
+      "endSample": 2309761
     },
     {
       "id": "u018",
       "file": "u018.wav",
-      "text": "He sends the priest a quieter way. Still, the mothers die.",
-      "samples": 94800,
-      "startSample": 2144884,
-      "endSample": 2239684
+      "text": "So he sends the priest the long way round, but the mothers keep dying.",
+      "samples": 105600,
+      "startSample": 2309761,
+      "endSample": 2415361
     },
     {
       "id": "u019",
       "file": "u019.wav",
-      "text": "Then, in March eighteen forty seven, Semmelweis's friend Jakob Kolletschka is cut by a student's knife during an autopsy, and dies.",
-      "samples": 214801,
-      "startSample": 2239684,
-      "endSample": 2454485
+      "text": "By now, whatever you guessed first, he's probably tried it. And every time, he was wrong.",
+      "samples": 148560,
+      "startSample": 2415361,
+      "endSample": 2563921
     },
     {
       "id": "u020",
       "file": "u020.wav",
+      "text": "Then, in March eighteen forty seven, his friend Jakob Kolletschka, a professor of forensic medicine, is cut by a student's knife during an autopsy. And he dies.",
+      "samples": 273121,
+      "startSample": 2563921,
+      "endSample": 2837042
+    },
+    {
+      "id": "u021",
+      "file": "u021.wav",
       "text": "Day and night I was haunted by the image of Kolletschka's disease.",
       "samples": 113280,
       "speaker": "semmelweis",
       "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4",
       "mode": "thought",
-      "startSample": 2454485,
-      "endSample": 2567765
-    },
-    {
-      "id": "u021",
-      "file": "u021.wav",
-      "text": "But Kolletschka's body shows the same disease as the dying mothers.",
-      "samples": 83760,
-      "startSample": 2567765,
-      "endSample": 2651525
+      "startSample": 2837042,
+      "endSample": 2950322
     },
     {
       "id": "u022",
       "file": "u022.wav",
-      "text": "And the students who cut the dead walk straight on to the mothers.",
-      "samples": 87120,
-      "startSample": 2651525,
-      "endSample": 2738645
+      "text": "And when they examine his friend's body, they find something he can't shake. It's the same disease that's killing the mothers.",
+      "samples": 166561,
+      "startSample": 2950322,
+      "endSample": 3116883
     },
     {
       "id": "u023",
       "file": "u023.wav",
-      "text": "What are their hands carrying?",
-      "samples": 45360,
-      "startSample": 2738645,
-      "endSample": 2784005
+      "text": "Now think about who does the autopsies in this hospital.",
+      "samples": 84480,
+      "startSample": 3116883,
+      "endSample": 3201363
+    },
+    {
+      "id": "u024",
+      "file": "u024.wav",
+      "text": "The doctors. The students. The same people who walk from the morgue straight to the mothers in the first clinic.",
+      "samples": 155520,
+      "startSample": 3201363,
+      "endSample": 3356883
+    },
+    {
+      "id": "u025",
+      "file": "u025.wav",
+      "text": "With the same bare hands.",
+      "samples": 39360,
+      "startSample": 3356883,
+      "endSample": 3396243
+    },
+    {
+      "id": "u026",
+      "file": "u026.wav",
+      "text": "So what are those hands carrying?",
+      "samples": 51601,
+      "startSample": 3396243,
+      "endSample": 3447844
+    },
+    {
+      "id": "u027",
+      "file": "u027.wav",
+      "text": "Semmelweis is about to find out.",
+      "samples": 49920,
+      "startSample": 3447844,
+      "endSample": 3497764
+    },
+    {
+      "id": "u028",
+      "file": "u028.wav",
+      "text": "And what happens next will change medicine.",
+      "samples": 63360,
+      "startSample": 3497764,
+      "endSample": 3561124
+    },
+    {
+      "id": "u029",
+      "file": "u029.wav",
+      "text": "But first, he'll have to convince a world that doesn't want to listen.",
+      "samples": 78000,
+      "startSample": 3561124,
+      "endSample": 3639124
     }
   ],
-  "totalSamples": 2784005
+  "totalSamples": 3639124
 }

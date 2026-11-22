@@ -96,6 +96,37 @@ play. The narrator states what is documented; the characters carry emotion.
 - Directions for the voice go in `{braces}` (they reach ElevenLabs v3 as `[direction]`): `{quietly}`, `{dry}`,
   `{pause}`. Use them where the meaning changes, not on every line.
 
+### Telling, not reading (2026-11-21)
+
+The narration must sound like someone telling a story, not reading a script, and must make the viewer guess, then
+find out they were wrong. Full reasoning and sources: `docs/research/narration-voice.md`. Rules (these add to the
+ones above; where a number differs, the stricter existing rule stands):
+
+1. Open cold on one concrete moment, present tense; no dateline sentences (a date goes inside a sentence).
+2. Median 9-13 words, ~20% under 7, a one- or two-word fragment at each turn.
+3. Contractions everywhere; "Now," "So," "And" allowed; "But" opens each reversal; "So" only for a question or conclusion.
+4. "You" 2-3 times, each a host moment (misconception, guess, closing question); no "I" except one earned aside.
+5. Introduce a person once, full name and role in one clause.
+6. Every number with a spoken comparison.
+7. Belief first, then anomaly, then question.
+8. No filler adjectives (incredible, fascinating, shocking).
+9. Don't describe the picture, except a short "This is..." on archive.
+10. Read-aloud test: split any line you would breathe in the middle of.
+11. End on the open question in a pilot, the payoff in a full film.
+12. Real words stay real; every line cites a verified claim; no invented facts.
+
+Guess loop (structure for the opening and each chapter):
+
+- Open on the anomaly, not the shock.
+- Hand over clues before any explanation.
+- State the belief everyone held.
+- Invite the guess out loud, then leave a beat.
+- Test the likely guesses on screen one by one, each failing in a short fragment.
+- Drop the clue the viewer did not see coming; let them reach the answer a beat before the narrator.
+
+Blend-voice exception: scenes stay third person and present tense (above); at the 2-3 host moments the explorer may
+speak to the viewer ("you'd think..."). This does not widen the "you" allowance beyond those moments.
+
 ## 6 Ending
 
 Four moves, 60-120 s: **payoff** (the answer to the opening question), **consequence** (what changed or did not),
