@@ -1,7 +1,15 @@
 # STATE
 - Updated: 2026-11-22 (late). Current work: **Semmelweis pilot v6**, the visual-storytelling and retention pass, on branch `claude/semmelweis-v6` (next section). v5 and everything below it are history.
 
-## 2026-11-22: pilot v6, directing pass + edit architecture (IN PROGRESS, uncommitted, branch `claude/semmelweis-v6`)
+## 2026-11-22: pilot v6, directing pass + edit architecture (COMMITTED as 7955e5a, NOT PUSHED, branch `claude/semmelweis-v6`)
+### Status after commit 7955e5a (2026-11-22, late)
+- Commit `7955e5a` on `claude/semmelweis-v6`, parent `fd0ddcb` (the PR #2 head). 78 files. NOT pushed; the push and any PR wait for the user's approval.
+- Left out of the commit on purpose (untracked): `.agents/`, `work/semmelweis-pilot/v5-backup/`, and two files in `work/semmelweis-pilot/vo/eleven-cache/`.
+- Tests with `BLENDER_EXE` set (`tools/blender-4.5.15-windows-x64/blender.exe` in the main checkout): full suite 932 passed, 2 skipped. Without `BLENDER_EXE`, 7 Blender-only tests error, because `workflow/blender.json` points at that exe, which is absent in the worktree. Those are environment errors, not code failures.
+- Security review: INCOMPLETE. The plugin's API key was rejected (HTTP 401, `invalid x-api-key`), so there was no verdict, and it covered only 2 changed files. Our own audit found no secret patterns, no new network calls, and subprocess calls only with argument lists. Re-run it with valid credentials before pushing.
+- Scene catalog: `board`, `ledger` and `wing` added. `vienna` and `ward` gained the v6 views and anchors, and their descriptions now mention the v6 framings the code comments describe. The `sickbed` view has no description in the code, so none was written for it.
+- Still to do (in order; sprites are DONE): the cut re-grouping, storyboard.json for v6, captions and lengths, the Blender checks and renders, assemble and QC, and the gate-status doc. The PR waits for the user.
+
 ### Approved by the user ("Εγκρίνω, ξεκίνα")
 - The proposal in `work/semmelweis-pilot/directing/`:
   - `visual-pass.md` is the master document: critique, hook maths, the Fern/Veritasium modes, board moments H1–H5, curiosity loops 0/A/B/C/K, sequence vs shot, the 51-shot list, mute test, provenance, assets, the graphics spec, the timing schema and the validation report (59/59).
@@ -84,9 +92,7 @@
   - the contact sheet isn't reviewed.
 
 ### Still to do (in order)
-1. Sprites:
-   - fix the 2 failing tests and review the contact sheet;
-   - check that `characters.atlas_image` handles the hands size and Kolletschka's bed size.
+1. Sprites: DONE in 7955e5a. Both failing tests fixed (test_people_sprites: 19 OK); the contact sheet was viewed; atlas layouts match the cell sizes for hands and bed (each layout is the cell plus a 2 px border).
 2. Graphics: verify the gallery, the memory test and the `draw_graphic` API match.
 3. Re-group beats in `cut.json` so the inserts get light scenes:
    - s22 → `v6-07b-ledger`, s26 → `v6-09b-ledger`, s27 → `v6-09c-vienna`;

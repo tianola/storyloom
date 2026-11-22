@@ -5,14 +5,14 @@
   - a human story drives it;
   - the world keeps moving;
   - the characters speak in their own voices (ElevenLabs v3).
-- **Current position (2026-11-22 late): Semmelweis pilot v6 is being built** on branch `claude/semmelweis-v6`, uncommitted.
+- **Current position (2026-11-22 late): Semmelweis pilot v6 is COMMITTED as `7955e5a` on branch `claude/semmelweis-v6`, NOT PUSHED.** Push and PR wait for the user's approval. The security review is incomplete (plugin key rejected, HTTP 401). Full suite with BLENDER_EXE: 932 passed, 2 skipped.
   - Approved: the directing proposal (`work/semmelweis-pilot/directing/visual-pass.md`), the 2 new lines, and the architecture.
   - Done and tested:
     - `tools/edit/` (cutlist, legacy, assemble), `tools/compose/`, `tools/graphics/`;
     - the cut-aware sound, QC, captions, lip sync and planning;
     - the new voice;
     - `work/semmelweis-pilot/cut.json`.
-  - Half-built: the Blender sets (`tools/blender/models/clinic.py`; the world.py views and actions) and the pixel poses (2 failing tests).
+  - Built and committed: the Blender sets (`tools/blender/models/clinic.py`; the world.py views and actions), the pixel poses (sprite tests pass), and the scene catalog entries. Not yet rendered or checked in Blender by eye.
   - The next steps 1–9 are in `.memory/STATE.md` under "pilot v6 → Still to do".
   - An episode with `cut.json` is cut by `tools/edit/` and publishes `cut.resolved.json`; one without it uses the old `shots.json` path, unchanged.
   - Storyboard times written by the cut are `"<n>s"` strings, because a bare number ≤ 1 means a fraction of the beat.

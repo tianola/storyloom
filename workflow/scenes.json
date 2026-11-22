@@ -1602,7 +1602,7 @@
    ]
   },
   "vienna": {
-   "description": "Vienna in the 1840s: plastered houses on cobbled streets, chimney smoke, lamps a lamplighter lights one by one, windows lighting house by house, people walking and greeting; the general hospital across the end of the main street with one open lit window where Semmelweis writes at his desk. The streets are dressed: shop awnings and signboards, shutters and balconies, a market with sellers and buyers, handcarts pushed along, barrels and crates by the doors, a pump, trees by the hospital, washing across the back streets, birds over the roofs, neighbours talking. The court has cobbles, a pump, benches, trees, a stretcher carried across, students talking; the assistant's room has books, papers, a candle and a bed; the dissecting room has jars on shelves, a basin and late students.",
+   "description": "Vienna in the 1840s: plastered houses on cobbled streets, chimney smoke, lamps a lamplighter lights one by one, windows lighting house by house, people walking and greeting; the general hospital across the end of the main street with one open lit window where Semmelweis writes at his desk. The streets are dressed: shop awnings and signboards, shutters and balconies, a market with sellers and buyers, handcarts pushed along, barrels and crates by the doors, a pump, trees by the hospital, washing across the back streets, birds over the roofs, neighbours talking. The court has cobbles, a pump, benches, trees, a stretcher carried across, students talking; the assistant's room has books, papers, a candle and a bed; the dissecting room has jars on shelves, a basin and late students. Also framed: a view of the hospital gate from the street, framed for dawn light, with a birth on the cobbles just outside it; and in the dissecting room a student's scalpel lies at the edge of the sheet.",
    "params": {
     "time": {
      "type": "enum",
@@ -1765,7 +1765,7 @@
    ]
   },
   "ward": {
-   "description": "Vienna General Hospital, the First Obstetric Clinic, 1846: a long whitewashed ward (24 x 8 x 5 m) with a beamed ceiling, tall windows on one side letting in cool daylight, a worn plank floor. Two rows of seven iron beds with straw mattresses, a woman lying in most of them (pixel billboards, their faces worried or sad; a few beds stripped with folded linen), tin cups and jugs on small night tables, a crucifix on the far wall, a wash stand with basin and towel and a linen cupboard (water only: no chlorine yet), and by the door a table with the register and an oil lamp. A doctor and three students examine at the first bed, a midwife goes from bed to bed and stops to talk, a woman in labour is held up by a second midwife. Action bell: the priest carrying the viaticum and the altar boy ringing a bell come in at the far door and walk the aisle to a bed; the patients they pass turn their heads and look worried. Daylight by day; at dusk and night a few oil lamps are lit.",
+   "description": "Vienna General Hospital, the First Obstetric Clinic, 1846: a long whitewashed ward (24 x 8 x 5 m) with a beamed ceiling, tall windows on one side letting in cool daylight, a worn plank floor. Two rows of seven iron beds with straw mattresses, a woman lying in most of them (pixel billboards, their faces worried or sad; a few beds stripped with folded linen), tin cups and jugs on small night tables, a crucifix on the far wall, a wash stand with basin and towel and a linen cupboard (water only: no chlorine yet), and by the door a table with the register and an oil lamp. A doctor and three students examine at the first bed, a midwife goes from bed to bed and stops to talk, a woman in labour is held up by a second midwife. Action bell: the priest carrying the viaticum and the altar boy ringing a bell come in at the far door and walk the aisle to a bed; the patients they pass turn their heads and look worried. Daylight by day; at dusk and night a few oil lamps are lit. Also framed: the Second Clinic's bed across the room, framed to match the first bed; a close on whoever stands at the door; the hands held against the window light; and a close on the hands at the door.",
    "params": {
     "time": {
      "type": "enum",
@@ -1959,7 +1959,7 @@
    ]
   },
   "wing": {
-   "description": "The morgue and the First Clinic's ward as one place, so one held shot follows the doctors from the dissecting table, down a corridor past the explorer, into the ward and to a mother's bed without a cut. The body on the table is the one Kolletschka had; the doctor and two students examine it and walk to the ward.",
+   "description": "The morgue and the First Clinic's ward as one place, so one held shot follows the doctors from the dissecting table, down a corridor past the explorer, into the ward and to a mother's bed without a cut. The body on the table is Kolletschka's; the doctor and two students examine it and walk to the ward.",
    "params": {
     "seed": {
      "type": "int",
