@@ -1,0 +1,1245 @@
+{
+ "beats": {
+  "beat-01": {
+   "scene": "asylum",
+   "note": "1865 night: the gate, the guards, the cell as shadows on the wall; the hook",
+   "params": {},
+   "shots": [
+    {
+     "view": "gate",
+     "start": 0.0
+    },
+    {
+     "view": "bars",
+     "start": 2.3
+    },
+    {
+     "view": "cell-close",
+     "start": 4.6
+    },
+    {
+     "view": "gate",
+     "start": 6.9
+    },
+    {
+     "view": "bars",
+     "start": 9.2
+    },
+    {
+     "view": "cell-close",
+     "start": 11.5
+    },
+    {
+     "view": "gate",
+     "start": 13.8
+    },
+    {
+     "view": "bars",
+     "start": 16.1
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.9,
+      0.8
+     ],
+     "height": 0.34,
+     "pose": "stand",
+     "bust": true,
+     "shot": 0,
+     "render": "3d",
+     "speaker": "narrator"
+    }
+   ],
+   "cut": "montage"
+  },
+  "beat-02": {
+   "scene": "vienna",
+   "note": "1846: the hospital facade; a mother and a midwife walk toward the gate; the two doors",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "gate-approach",
+     "start": 0.0,
+     "to": "doors"
+    }
+   ],
+   "cast": [
+    {
+     "who": "mother",
+     "screen": [
+      0.42,
+      0.9
+     ],
+     "height": 0.36,
+     "shot": 0,
+     "pose": "walk",
+     "face": "worried",
+     "render": "3d",
+     "walk": [
+      0.14,
+      -0.02
+     ]
+    },
+    {
+     "who": "midwife",
+     "screen": [
+      0.56,
+      0.9
+     ],
+     "height": 0.34,
+     "shot": 0,
+     "pose": "walk",
+     "face": "worried",
+     "render": "3d",
+     "walk": [
+      0.1,
+      -0.02
+     ]
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-03": {
+   "scene": "ledger",
+   "note": "the death register: first clinic against second, a few marks each",
+   "params": {
+    "columns": "clinics",
+    "first": 4,
+    "second": 1,
+    "adds": 0
+   },
+   "shots": [
+    {
+     "view": "ledger",
+     "start": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.8,
+      0.82
+     ],
+     "height": 0.34,
+     "pose": "stand",
+     "bust": true,
+     "shot": 0,
+     "render": "3d",
+     "speaker": "narrator"
+    }
+   ],
+   "cut": "steady",
+   "actions": [
+    {
+     "name": "tally",
+     "at": 4.0
+    }
+   ]
+  },
+  "beat-04": {
+   "scene": "vienna",
+   "note": "the two doors: doctors and students go in at the first, midwives and women at the second",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "doors",
+     "start": 0.0,
+     "to": "second-door"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.3,
+      0.9
+     ],
+     "height": 0.48,
+     "shot": 0,
+     "pose": "talk",
+     "render": "3d"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.46,
+      0.9
+     ],
+     "height": 0.44,
+     "shot": 0,
+     "pose": "stand",
+     "render": "3d"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.6,
+      0.9
+     ],
+     "height": 0.43,
+     "shot": 0,
+     "pose": "walk",
+     "render": "3d",
+     "walk": [
+      0.1,
+      -0.03
+     ]
+    },
+    {
+     "who": "midwife",
+     "screen": [
+      0.74,
+      0.9
+     ],
+     "height": 0.36,
+     "shot": 0,
+     "pose": "stand",
+     "render": "3d"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-05": {
+   "scene": "board",
+   "note": "the calendar strip turns: admissions alternate by the day",
+   "params": {
+    "stage": "h1"
+   },
+   "shots": [
+    {
+     "view": "h1-low34",
+     "start": 0.0,
+     "to": "h1-calendar"
+    }
+   ],
+   "cast": [],
+   "cut": "travel",
+   "actions": [
+    {
+     "name": "flip",
+     "at": 14.0
+    }
+   ]
+  },
+  "beat-06": {
+   "scene": "vienna",
+   "note": "women kneel at the first door; one mother pleads, close to tears",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "first-door",
+     "start": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "mother",
+     "screen": [
+      0.4,
+      0.9
+     ],
+     "height": 0.34,
+     "shot": 0,
+     "pose": "kneel",
+     "face": "sad",
+     "render": "3d"
+    },
+    {
+     "who": "mother",
+     "screen": [
+      0.72,
+      0.9
+     ],
+     "height": 0.36,
+     "shot": 0,
+     "pose": "kneel",
+     "face": "worried",
+     "render": "3d",
+     "speaker": "mother"
+    },
+    {
+     "who": "mother",
+     "screen": [
+      0.76,
+      0.9
+     ],
+     "height": 0.34,
+     "shot": 0,
+     "pose": "kneel",
+     "face": "sad",
+     "render": "3d"
+    }
+   ],
+   "cut": "steady"
+  },
+  "beat-07": {
+   "scene": "vienna",
+   "note": "the maternity hospital, then the dissecting room: the medical school turns to anatomy",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "hospital",
+     "start": 0.0
+    },
+    {
+     "view": "court",
+     "start": 9.0
+    },
+    {
+     "view": "anatomy",
+     "start": 16.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "midwife",
+     "screen": [
+      0.5,
+      0.9
+     ],
+     "height": 0.36,
+     "shot": 1,
+     "pose": "walk",
+     "render": "3d",
+     "walk": [
+      0.08,
+      0.0
+     ]
+    }
+   ],
+   "cut": "steady"
+  },
+  "beat-08": {
+   "scene": "vienna",
+   "note": "the dissecting room: the autopsy table and the jars",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "anatomy-close",
+     "start": 0.0,
+     "to": "jars"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.38,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 0,
+     "pose": "look-hands"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.62,
+      0.9
+     ],
+     "height": 0.42,
+     "shot": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-09": {
+   "scene": "vienna",
+   "note": "Semmelweis's room behind the hospital window: everything in question",
+   "params": {
+    "time": "night"
+   },
+   "shots": [
+    {
+     "view": "room",
+     "start": 0.0,
+     "to": "desk"
+    }
+   ],
+   "cast": [
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.5,
+      0.72
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "hold",
+     "size": "hands"
+    },
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.5,
+      0.82
+     ],
+     "height": 0.52,
+     "shot": 0,
+     "pose": "stand",
+     "face": "worried",
+     "bust": true
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-10": {
+   "scene": "vienna",
+   "note": "the street: the foul drain and the smoke, then a woman gives birth on the way in",
+   "params": {
+    "time": "dusk"
+   },
+   "shots": [
+    {
+     "view": "court-low",
+     "start": 0.0,
+     "to": "street-birth"
+    }
+   ],
+   "cast": [
+    {
+     "who": "midwife",
+     "screen": [
+      0.5,
+      0.9
+     ],
+     "height": 0.34,
+     "shot": 0,
+     "pose": "give-birth",
+     "face": "worried"
+    },
+    {
+     "who": "mother",
+     "screen": [
+      0.44,
+      0.9
+     ],
+     "height": 0.32,
+     "shot": 0,
+     "pose": "give-birth",
+     "face": "worried"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-11": {
+   "scene": "ward",
+   "note": "the First Clinic ward: women in iron beds; the second clinic lies on their side",
+   "params": {},
+   "shots": [
+    {
+     "view": "ward-wide",
+     "start": 0.0,
+     "to": "second-bed"
+    }
+   ],
+   "cast": [
+    {
+     "who": "patient",
+     "screen": [
+      0.45,
+      0.82
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "sick",
+     "size": "bed",
+     "face": "sad"
+    },
+    {
+     "who": "midwife",
+     "screen": [
+      0.58,
+      0.86
+     ],
+     "height": 0.38,
+     "shot": 0,
+     "pose": "give-birth",
+     "face": "worried"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-12": {
+   "scene": "ward",
+   "note": "Semmelweis's face, a drowning man; then the priest crosses the ward with the acolyte",
+   "params": {},
+   "shots": [
+    {
+     "view": "semmelweis-close",
+     "start": 0.0
+    },
+    {
+     "view": "ward-priest",
+     "start": 9.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.5,
+      0.86
+     ],
+     "height": 0.52,
+     "shot": 0,
+     "pose": "stand",
+     "face": "worried",
+     "bust": true
+    },
+    {
+     "who": "priest",
+     "screen": [
+      0.42,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 1,
+     "pose": "walk1"
+    },
+    {
+     "who": "acolyte",
+     "screen": [
+      0.56,
+      0.9
+     ],
+     "height": 0.42,
+     "shot": 1,
+     "pose": "walk2"
+    }
+   ],
+   "cut": "steady"
+  },
+  "beat-13": {
+   "scene": "ward",
+   "note": "the bell hurries past his door; the priest takes a less obvious route; the commission's search",
+   "params": {
+    "bell_route": "side",
+    "door_swing": true
+   },
+   "shots": [
+    {
+     "view": "ward-door",
+     "start": 0.0,
+     "to": "hands-door",
+     "glide": "log"
+    }
+   ],
+   "cast": [
+    {
+     "who": "acolyte",
+     "screen": [
+      0.52,
+      0.9
+     ],
+     "height": 0.4,
+     "shot": 0,
+     "pose": "ring"
+    },
+    {
+     "who": "priest",
+     "screen": [
+      0.44,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 0,
+     "pose": "walk3"
+    },
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.7,
+      0.86
+     ],
+     "height": 0.5,
+     "shot": 0,
+     "pose": "stand",
+     "face": "worried"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-14": {
+   "scene": "board",
+   "note": "the explorer's board: the guesses pinned, then all three struck",
+   "params": {
+    "stage": "h4"
+   },
+   "shots": [
+    {
+     "view": "h4-ots",
+     "start": 0.0,
+     "to": "h4-turn"
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.84,
+      0.8
+     ],
+     "height": 0.34,
+     "pose": "stand",
+     "bust": true,
+     "shot": 0
+    }
+   ],
+   "cut": "travel",
+   "actions": [
+    {
+     "name": "pull",
+     "at": 5.0
+    }
+   ]
+  },
+  "beat-15": {
+   "scene": "statement",
+   "note": "Venice, March 1847: his mind and spirits, the art; the close friend, a professor",
+   "params": {
+    "mood": "warm"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0
+    }
+   ],
+   "cast": [],
+   "cut": "steady"
+  },
+  "beat-16": {
+   "scene": "vienna",
+   "note": "the dissecting room: Kolletschka's finger is pricked by a student's knife",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "scalpel",
+     "start": 0.0,
+     "to": "cut-hand"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.34,
+      0.6
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "reach",
+     "size": "hands"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.62,
+      0.6
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "reach",
+     "size": "hands"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-17": {
+   "scene": "vienna",
+   "note": "20 March 1847: he returns to Vienna at the gate; the news; haunted at his desk",
+   "params": {
+    "time": "dusk"
+   },
+   "shots": [
+    {
+     "view": "gate-approach",
+     "start": 0.0
+    },
+    {
+     "view": "desk",
+     "start": 9.0
+    },
+    {
+     "view": "room",
+     "start": 17.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.5,
+      0.9
+     ],
+     "height": 0.44,
+     "shot": 0,
+     "pose": "walk1",
+     "face": "sad"
+    },
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.5,
+      0.84
+     ],
+     "height": 0.52,
+     "shot": 2,
+     "pose": "stand",
+     "face": "sad",
+     "bust": true
+    }
+   ],
+   "cut": "steady"
+  },
+  "beat-18": {
+   "scene": "wing",
+   "note": "the morgue: the autopsy shows the same disease; the students examine every labour",
+   "params": {
+    "time": "dusk",
+    "walk_from": 0.5,
+    "walk_to": 0.9
+   },
+   "shots": [
+    {
+     "view": "wing-table",
+     "start": 0.0,
+     "to": "wing-corridor"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.3,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 0,
+     "pose": "look-hands"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.6,
+      0.9
+     ],
+     "height": 0.42,
+     "shot": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-19": {
+   "scene": "wing",
+   "note": "one move from the morgue down the corridor to a mother's bed: the students, the bare hands",
+   "params": {
+    "time": "dusk",
+    "walk_from": 0.2,
+    "walk_to": 0.8
+   },
+   "shots": [
+    {
+     "view": "wing-table",
+     "start": 0.0,
+     "to": "wing-ward-bed"
+    }
+   ],
+   "cast": [
+    {
+     "who": "student",
+     "screen": [
+      0.55,
+      0.9
+     ],
+     "height": 0.42,
+     "shot": 0,
+     "pose": "walk2"
+    },
+    {
+     "who": "doctor",
+     "screen": [
+      0.55,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 0,
+     "pose": "walk1"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-20": {
+   "scene": "wing",
+   "note": "one held move, the explanation: the bare hands at the bed; the particles and the blood",
+   "params": {
+    "time": "dusk"
+   },
+   "shots": [
+    {
+     "view": "wing-hands",
+     "start": 0.0,
+     "to": "wing-ward-bed",
+     "glide": "log"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.5,
+      0.75
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "open",
+     "size": "hands"
+    },
+    {
+     "who": "patient",
+     "screen": [
+      0.7,
+      0.94
+     ],
+     "height": 0.34,
+     "shot": 0,
+     "pose": "sick",
+     "size": "bed",
+     "face": "sad"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-21": {
+   "scene": "ward",
+   "note": "May 1847: students and doctors wash at the door before each examination",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "hands-door",
+     "start": 0.0,
+     "to": "hands-window"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.4,
+      0.75
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "reach",
+     "size": "hands"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.6,
+      0.75
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "reach",
+     "size": "hands"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-22": {
+   "scene": "ledger",
+   "note": "the register: the first clinic falls below the second over the seven months",
+   "params": {
+    "columns": "clinics",
+    "first": 2,
+    "second": 3,
+    "adds": 0
+   },
+   "shots": [
+    {
+     "view": "ledger",
+     "start": 0.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "explorer",
+     "screen": [
+      0.8,
+      0.82
+     ],
+     "height": 0.34,
+     "pose": "stand",
+     "bust": true,
+     "shot": 0
+    }
+   ],
+   "cut": "steady"
+  },
+  "beat-23": {
+   "scene": "ward",
+   "note": "he asks for the reports; October: the woman examined with soap only; eleven die",
+   "params": {},
+   "shots": [
+    {
+     "view": "semmelweis-close",
+     "start": 0.0
+    },
+    {
+     "view": "sickbed",
+     "start": 7.0
+    },
+    {
+     "view": "ward-wide",
+     "start": 14.0
+    }
+   ],
+   "cast": [
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.5,
+      0.84
+     ],
+     "height": 0.5,
+     "shot": 0,
+     "pose": "stand",
+     "face": "worried",
+     "bust": true
+    },
+    {
+     "who": "doctor",
+     "screen": [
+      0.4,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 1,
+     "pose": "wash"
+    },
+    {
+     "who": "patient",
+     "screen": [
+      0.5,
+      0.84
+     ],
+     "height": 0.3,
+     "shot": 1,
+     "pose": "sick",
+     "size": "bed",
+     "face": "sad"
+    },
+    {
+     "who": "patient",
+     "screen": [
+      0.34,
+      0.84
+     ],
+     "height": 0.3,
+     "shot": 2,
+     "pose": "sick",
+     "size": "bed",
+     "face": "sad"
+    }
+   ],
+   "cut": "steady"
+  },
+  "beat-24": {
+   "scene": "ward",
+   "note": "the rule: chlorine water after every contact; the hands at the window",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "hands-window",
+     "start": 0.0,
+     "to": "ward-wide"
+    }
+   ],
+   "cast": [
+    {
+     "who": "student",
+     "screen": [
+      0.5,
+      0.75
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "hold",
+     "size": "hands"
+    },
+    {
+     "who": "doctor",
+     "screen": [
+      0.7,
+      0.75
+     ],
+     "height": 0.3,
+     "shot": 0,
+     "pose": "hold",
+     "size": "hands"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-25": {
+   "scene": "ledger",
+   "note": "1848: both columns level; no mother dies in March and August",
+   "params": {
+    "columns": "clinics",
+    "first": 1,
+    "second": 1,
+    "adds": 0
+   },
+   "shots": [
+    {
+     "view": "ledger-street",
+     "start": 0.0,
+     "to": "ledger"
+    }
+   ],
+   "cast": [],
+   "cut": "travel"
+  },
+  "beat-26": {
+   "scene": "vienna",
+   "note": "the court: the doctors turn away; germ theory not yet accepted; 'You'd think...'",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "court-wide",
+     "start": 0.0,
+     "to": "court-low"
+    }
+   ],
+   "cast": [
+    {
+     "who": "doctor",
+     "screen": [
+      0.46,
+      0.9
+     ],
+     "height": 0.48,
+     "shot": 0,
+     "pose": "talk"
+    },
+    {
+     "who": "doctor",
+     "screen": [
+      0.62,
+      0.9
+     ],
+     "height": 0.48,
+     "shot": 0,
+     "pose": "stand",
+     "face": "sad"
+    },
+    {
+     "who": "explorer",
+     "screen": [
+      0.84,
+      0.8
+     ],
+     "height": 0.34,
+     "pose": "stand",
+     "bust": true,
+     "shot": 0
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-27": {
+   "scene": "timeline",
+   "note": "Pest: the years lit along the rail, 1850 and 1855",
+   "params": {
+    "events": [
+     "1850",
+     "1855"
+    ]
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0,
+     "to": "end"
+    }
+   ],
+   "cast": [],
+   "cut": "travel"
+  },
+  "beat-28": {
+   "scene": "document",
+   "note": "the letters: the reply marked on the page; four years of silence",
+   "params": {
+    "lines": 12
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0,
+     "to": "mark"
+    }
+   ],
+   "cast": [],
+   "cut": "travel"
+  },
+  "beat-29": {
+   "scene": "statement",
+   "note": "the book's claim: a time when only self-infection will occur; only God knows",
+   "params": {
+    "mood": "cool"
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0,
+     "to": "low"
+    }
+   ],
+   "cast": [],
+   "cut": "travel"
+  },
+  "beat-30": {
+   "scene": "asylum",
+   "note": "1865: the gate, the guards, the man brought in, the cell",
+   "params": {},
+   "shots": [
+    {
+     "view": "gate",
+     "start": 0.0,
+     "to": "cell"
+    }
+   ],
+   "cast": [],
+   "cut": "travel"
+  },
+  "beat-31": {
+   "scene": "document",
+   "note": "the death certificate: pyaemia, from a gangrenous wound on the right hand",
+   "params": {
+    "lines": 10
+   },
+   "shots": [
+    {
+     "view": "wide",
+     "start": 0.0,
+     "to": "mark"
+    }
+   ],
+   "cast": [],
+   "cut": "travel"
+  },
+  "beat-32": {
+   "scene": "ward",
+   "note": "the hands at the basin: the washing; the women who die less",
+   "params": {
+    "time": "dawn"
+   },
+   "shots": [
+    {
+     "view": "semmelweis-hands",
+     "start": 0.0,
+     "to": "hands-window",
+     "glide": "log"
+    }
+   ],
+   "cast": [
+    {
+     "who": "student",
+     "screen": [
+      0.66,
+      0.9
+     ],
+     "height": 0.43,
+     "shot": 0,
+     "pose": "wash"
+    },
+    {
+     "who": "doctor",
+     "screen": [
+      0.92,
+      0.9
+     ],
+     "height": 0.46,
+     "shot": 0,
+     "pose": "wash"
+    }
+   ],
+   "cut": "travel"
+  },
+  "beat-33": {
+   "scene": "vienna",
+   "note": "the hospital at dusk, pulling back to the court: same building, same city, different hands",
+   "params": {
+    "time": "dusk"
+   },
+   "shots": [
+    {
+     "view": "hospital",
+     "start": 0.0,
+     "to": "court",
+     "glide": "log"
+    }
+   ],
+   "cast": [
+    {
+     "who": "midwife",
+     "screen": [
+      0.42,
+      0.9
+     ],
+     "height": 0.34,
+     "shot": 0,
+     "pose": "walk1"
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.6,
+      0.9
+     ],
+     "height": 0.44,
+     "shot": 0,
+     "pose": "walk2"
+    },
+    {
+     "who": "explorer",
+     "screen": [
+      0.86,
+      0.8
+     ],
+     "height": 0.34,
+     "pose": "stand",
+     "bust": true,
+     "shot": 0
+    }
+   ],
+   "cut": "travel"
+  }
+ }
+}

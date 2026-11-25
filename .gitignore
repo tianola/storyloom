@@ -37,3 +37,14 @@ media/texts/
 # secrets (API keys): never committed
 .env
 .env.*
+
+# downloaded CC0 assets (tools/fetch_assets.py fetches them again from workflow/assets.json)
+assets/polyhaven/*
+!assets/polyhaven/manifest.json
+assets/kenney/
+assets/quaternius/
+assets/_zips/
+
+# Semmelweis 3D test: character database (735 MB, licence per character) and built cast files
+work/semmelweis-10min/human3d/db/
+work/semmelweis-10min/human3d/*.blend

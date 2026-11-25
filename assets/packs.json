@@ -1,0 +1,11 @@
+{
+ "note": "Asset packs downloaded by hand by the owner on 2026-11-21 and unpacked here (folders git-ignored; the original zips are kept in assets/_zips/). Use the glTF/glb/fbx/obj exports only: never open the .blend files with scripts enabled.",
+ "packs": {
+  "kenney/fantasy-town-kit": {"by": "Kenney", "version": "2.0", "licence": "CC0 1.0 (License.txt in the pack)", "page": "https://kenney.nl/assets/fantasy-town-kit", "formats": ["glb", "fbx", "obj"], "zip": "kenney_fantasy-town-kit_2.0.zip"},
+  "kenney/retro-textures-fantasy": {"by": "Kenney", "version": "1.0", "licence": "CC0 1.0 (License.txt in the pack)", "page": "https://kenney.nl/assets/retro-textures-fantasy", "formats": ["png"], "zip": "kenney_retro-textures-fantasy.zip"},
+  "quaternius/medieval-village-megakit": {"by": "Quaternius", "version": "Standard (free)", "licence": "CC0 1.0 (License_Standard.txt in the pack)", "page": "https://quaternius.com/packs/medievalvillagemegakit.html", "formats": ["gltf", "fbx", "obj"], "zip": "Medieval Village MegaKit[Standard].zip"},
+  "quaternius/fantasy-props-megakit": {"by": "Quaternius", "version": "Standard (free)", "licence": "CC0 1.0 (License_Standard.txt in the pack)", "page": "https://quaternius.com/packs/fantasypropsmegakit.html", "formats": ["gltf", "fbx", "obj"], "zip": "Fantasy Props MegaKit[Standard].zip"},
+  "quaternius/ultimate-fantasy-rts": {"by": "Quaternius", "version": "Aug 2022", "licence": "CC0 1.0 (License.txt in the pack)", "page": "https://quaternius.com", "formats": ["gltf", "fbx", "obj"], "zip": "Ultimate Fantasy RTS - Aug 2022-20261121T154211Z-1-001.zip"},
+  "quaternius/modular-dungeon": {"by": "Quaternius", "version": "Jan 2018", "licence": "no licence file in the zip; Quaternius states CC0 for its packs on quaternius.com - confirm on the pack page before publishing", "page": "https://quaternius.com", "formats": ["fbx", "obj"], "zip": "Modular Dungeon Pack - Jan 2018-20261121T154226Z-1-001.zip"}
+ }
+}

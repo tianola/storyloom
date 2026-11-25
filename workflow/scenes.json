@@ -1602,7 +1602,7 @@
    ]
   },
   "vienna": {
-   "description": "Vienna in the 1840s: plastered houses on cobbled streets, chimney smoke, lamps a lamplighter lights one by one, windows lighting house by house, people walking and greeting; the general hospital across the end of the main street with one open lit window where Semmelweis writes at his desk. The streets are dressed: shop awnings and signboards, shutters and balconies, a market with sellers and buyers, handcarts pushed along, barrels and crates by the doors, a pump, trees by the hospital, washing across the back streets, birds over the roofs, neighbours talking. The court has cobbles, a pump, benches, trees, a stretcher carried across, students talking; the assistant's room has books, papers, a candle and a bed; the dissecting room has jars on shelves, a basin and late students.",
+   "description": "Vienna in the 1840s: plastered houses on cobbled streets, chimney smoke, lamps a lamplighter lights one by one, windows lighting house by house, people walking and greeting; the general hospital across the end of the main street with one open lit window where Semmelweis writes at his desk. The streets are dressed: shop awnings and signboards, shutters and balconies, a market with sellers and buyers, handcarts pushed along, barrels and crates by the doors, a pump, trees by the hospital, washing across the back streets, birds over the roofs, neighbours talking. The court has cobbles, a pump, benches, trees, a stretcher carried across, students talking; the assistant's room has books, papers, a candle and a bed; the dissecting room has jars on shelves, a basin and late students. Also framed: a view of the hospital gate from the street, framed for dawn light, with a birth on the cobbles just outside it; and in the dissecting room a student's scalpel lies at the edge of the sheet.",
    "params": {
     "time": {
      "type": "enum",
@@ -1676,6 +1676,11 @@
      "type": "bool",
      "default": true,
      "doc": "a flock crossing over the roofs"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
     }
    },
    "examples": [
@@ -1700,7 +1705,11 @@
     "pump",
     "court-low",
     "anatomy-close",
-    "jars"
+    "jars",
+    "gate-approach",
+    "street-birth",
+    "scalpel",
+    "cut-hand"
    ],
    "anchors": [
     "first",
@@ -1709,7 +1718,8 @@
     "second",
     "table",
     "window",
-    "writer"
+    "writer",
+    "scalpel"
    ],
    "actions": [
     "greet"
@@ -1727,6 +1737,11 @@
      "type": "number",
      "default": 0.55,
      "doc": "they are through the gate (fraction)"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
     }
    },
    "examples": [
@@ -1750,7 +1765,7 @@
    ]
   },
   "ward": {
-   "description": "Vienna General Hospital, the First Obstetric Clinic, 1846: a long whitewashed ward (24 x 8 x 5 m) with a beamed ceiling, tall windows on one side letting in cool daylight, a worn plank floor. Two rows of seven iron beds with straw mattresses, a woman lying in most of them (pixel billboards, their faces worried or sad; a few beds stripped with folded linen), tin cups and jugs on small night tables, a crucifix on the far wall, a wash stand with basin and towel and a linen cupboard (water only: no chlorine yet), and by the door a table with the register and an oil lamp. A doctor and three students examine at the first bed, a midwife goes from bed to bed and stops to talk, a woman in labour is held up by a second midwife. Action bell: the priest carrying the viaticum and the altar boy ringing a bell come in at the far door and walk the aisle to a bed; the patients they pass turn their heads and look worried. Daylight by day; at dusk and night a few oil lamps are lit.",
+   "description": "Vienna General Hospital, the First Obstetric Clinic, 1846: a long whitewashed ward (24 x 8 x 5 m) with a beamed ceiling, tall windows on one side letting in cool daylight, a worn plank floor. Two rows of seven iron beds with straw mattresses, a woman lying in most of them (pixel billboards, their faces worried or sad; a few beds stripped with folded linen), tin cups and jugs on small night tables, a crucifix on the far wall, a wash stand with basin and towel and a linen cupboard (water only: no chlorine yet), and by the door a table with the register and an oil lamp. A doctor and three students examine at the first bed, a midwife goes from bed to bed and stops to talk, a woman in labour is held up by a second midwife. Action bell: the priest carrying the viaticum and the altar boy ringing a bell come in at the far door and walk the aisle to a bed; the patients they pass turn their heads and look worried. Daylight by day; at dusk and night a few oil lamps are lit. Also framed: the Second Clinic's bed across the room, framed to match the first bed; a close on whoever stands at the door; the hands held against the window light; and a close on the hands at the door.",
    "params": {
     "time": {
      "type": "enum",
@@ -1771,6 +1786,11 @@
      "min": 0,
      "max": 9999,
      "doc": "which patients look which way, how the group talks"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
     }
    },
    "examples": [
@@ -1784,18 +1804,228 @@
     "ward-aisle",
     "ward-bed",
     "ward-door",
-    "ward-priest"
+    "ward-priest",
+    "second-bed",
+    "semmelweis-close",
+    "hands-window",
+    "semmelweis-hands",
+    "hands-door",
+    "sickbed"
    ],
    "anchors": [
     "basin",
     "bed",
     "bell",
     "door",
-    "ledger"
+    "ledger",
+    "window"
    ],
    "actions": [
     "bell"
    ]
+  },
+  "board": {
+   "description": "The explorer's evidence board, made physical: a cork board on a dark wall with the two clinic doors sketched on cards with their tallies, a calendar strip, the three hypothesis cards (AIR, POSITION, FEAR) pinned, struck and pulled down, and a desk below where the plan is laid out. The explorer is a storyboard cast member.",
+   "params": {
+    "stage": {
+     "type": "enum",
+     "values": [
+      "h1",
+      "h2",
+      "h3",
+      "air",
+      "position",
+      "fear",
+      "h4"
+     ],
+     "default": "h1",
+     "doc": "h1 doors, tallies, calendar | h2 | h3 cards laid on the desk | air, position, fear that card pinned | h4 all three struck; the actions move it on"
+    }
+   },
+   "examples": [
+    {
+     "stage": "h1"
+    },
+    {
+     "stage": "h2"
+    },
+    {
+     "stage": "h3"
+    },
+    {
+     "stage": "air"
+    },
+    {
+     "stage": "position"
+    },
+    {
+     "stage": "fear"
+    },
+    {
+     "stage": "h4"
+    }
+   ],
+   "views": [
+    "h1-low34",
+    "h1-calendar",
+    "h2-close",
+    "h3-top",
+    "h4-ots",
+    "h4-turn",
+    "card-air",
+    "card-position",
+    "card-fear"
+   ],
+   "anchors": [
+    "air",
+    "board",
+    "calendar",
+    "desk",
+    "fear",
+    "position"
+   ],
+   "actions": [
+    "flip",
+    "lay",
+    "pin",
+    "pull"
+   ]
+  },
+  "ledger": {
+   "description": "The clinic's death register open on a desk by an oil lamp. The pages hold tally crosses only, no legible names, dates or words, under two column marks (I, II) and, for the street-births comparison, a third column under a small drawn street. Action `tally` adds a cross.",
+   "params": {
+    "columns": {
+     "type": "enum",
+     "values": [
+      "clinics",
+      "street"
+     ],
+     "default": "clinics",
+     "doc": "clinics = columns I and II | street = a third column under a drawn street"
+    },
+    "first": {
+     "type": "int",
+     "default": 9,
+     "min": 0,
+     "max": 60,
+     "doc": "crosses in column I at the start"
+    },
+    "second": {
+     "type": "int",
+     "default": 2,
+     "min": 0,
+     "max": 60,
+     "doc": "crosses in column II at the start"
+    },
+    "street": {
+     "type": "int",
+     "default": 0,
+     "min": 0,
+     "max": 60,
+     "doc": "crosses under the drawn street (columns: street)"
+    },
+    "adds": {
+     "type": "int",
+     "default": 1,
+     "min": 0,
+     "max": 20,
+     "doc": "crosses added in column I over the beat (action tally)"
+    },
+    "seed": {
+     "type": "int",
+     "default": 3,
+     "min": 0,
+     "max": 9999,
+     "doc": "where the crosses fall in each column"
+    }
+   },
+   "examples": [
+    {},
+    {
+     "columns": "street",
+     "street": 3
+    }
+   ],
+   "views": [
+    "ledger",
+    "ledger-street"
+   ],
+   "anchors": [
+    "cross",
+    "page"
+   ],
+   "actions": [
+    "tally"
+   ]
+  },
+  "wing": {
+   "description": "The morgue and the First Clinic's ward as one place, so one held shot follows the doctors from the dissecting table, down a corridor past the explorer, into the ward and to a mother's bed without a cut. The body on the table is Kolletschka's; the doctor and two students examine it and walk to the ward.",
+   "params": {
+    "seed": {
+     "type": "int",
+     "default": 5,
+     "min": 0,
+     "max": 9999,
+     "doc": "which patients look which way, and the dissecting room's crowd"
+    },
+    "assets": {
+     "type": "bool",
+     "default": true,
+     "doc": "CC0 Poly Haven textures and props (false = the plain look)"
+    },
+    "walk_from": {
+     "type": "number",
+     "default": 0.22,
+     "min": 0,
+     "max": 1,
+     "doc": "fraction of the beat when the walk out of the morgue starts"
+    },
+    "walk_to": {
+     "type": "number",
+     "default": 0.8,
+     "min": 0,
+     "max": 1,
+     "doc": "fraction of the beat when the walk ends at the bed"
+    }
+   },
+   "examples": [
+    {}
+   ],
+   "views": [
+    "ward-wide",
+    "ward-aisle",
+    "ward-bed",
+    "ward-door",
+    "ward-priest",
+    "second-bed",
+    "semmelweis-close",
+    "hands-window",
+    "semmelweis-hands",
+    "hands-door",
+    "sickbed",
+    "wing-table",
+    "wing-door",
+    "wing-corridor",
+    "wing-ward-door",
+    "wing-aisle",
+    "wing-ward-bed",
+    "wing-hands"
+   ],
+   "anchors": [
+    "basin",
+    "bed",
+    "bell",
+    "body",
+    "corridor",
+    "door",
+    "hands",
+    "jars",
+    "ledger",
+    "scalpel",
+    "table",
+    "window"
+   ],
+   "actions": []
   }
  }
 }

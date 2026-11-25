@@ -1,5 +1,145 @@
 # STATE
-- Updated: 2026-11-21. Current work: the living-world pilot `work/semmelweis-pilot` (section below). Everything below that section is history.
+- Updated: 2026-11-22 (late). Current work: **Semmelweis pilot v6**, the visual-storytelling and retention pass, on branch `claude/semmelweis-v6` (next section). v5 and everything below it are history.
+
+## 2026-11-22: pilot v6, directing pass + edit architecture (COMMITTED as 7955e5a, NOT PUSHED, branch `claude/semmelweis-v6`)
+### Status after commit 7955e5a (2026-11-22, late)
+- Commit `7955e5a` on `claude/semmelweis-v6`, parent `fd0ddcb` (the PR #2 head). 78 files. NOT pushed; the push and any PR wait for the user's approval.
+- Left out of the commit on purpose (untracked): `.agents/`, `work/semmelweis-pilot/v5-backup/`, and two files in `work/semmelweis-pilot/vo/eleven-cache/`.
+- Tests with `BLENDER_EXE` set (`tools/blender-4.5.15-windows-x64/blender.exe` in the main checkout): full suite 932 passed, 2 skipped. Without `BLENDER_EXE`, 7 Blender-only tests error, because `workflow/blender.json` points at that exe, which is absent in the worktree. Those are environment errors, not code failures.
+- Security review: INCOMPLETE. The plugin's API key was rejected (HTTP 401, `invalid x-api-key`), so there was no verdict, and it covered only 2 changed files. Our own audit found no secret patterns, no new network calls, and subprocess calls only with argument lists. Re-run it with valid credentials before pushing.
+- Scene catalog: `board`, `ledger` and `wing` added. `vienna` and `ward` gained the v6 views and anchors, and their descriptions now mention the v6 framings the code comments describe. The `sickbed` view has no description in the code, so none was written for it.
+- Still to do (in order; sprites are DONE): the cut re-grouping, storyboard.json for v6, captions and lengths, the Blender checks and renders, assemble and QC, and the gate-status doc. The PR waits for the user.
+
+### Approved by the user ("Εγκρίνω, ξεκίνα")
+- The proposal in `work/semmelweis-pilot/directing/`:
+  - `visual-pass.md` is the master document: critique, hook maths, the Fern/Veritasium modes, board moments H1–H5, curiosity loops 0/A/B/C/K, sequence vs shot, the 51-shot list, mute test, provenance, assets, the graphics spec, the timing schema and the validation report (59/59).
+  - Also `cut.proposed.json`, `storyboard.proposed.json`, `timeline.png`, `narration.proposed.md`.
+  - `build_proposal.py` builds the proposal; `validate_proposal.py` checks it and was mutation-tested.
+- The two new lines:
+  - u003 "The hospital has two maternity clinics. In the first, one mother in nine dies. Yet in the second, it's one in thirty six."
+  - u005 "They take women in on alternate days."
+  - "Yet" was added for `qc_script`'s 20 s hook rule.
+- The architecture: cut list, legacy adapter, graphics, compositing. The plan is `C:/Users/thana/.claude/plans/keen-dazzling-dewdrop.md`.
+- Rules for this pass:
+  - redesign freely;
+  - graphics stream frames to ffmpeg, never held in RAM;
+  - cheap subagents do the easy work, Opus does the complex work and the verification.
+
+### Done and verified (tests green)
+- **`tools/edit/cutlist.py`**, the timing schema. `python/test_cutlist.py` has 37 tests.
+  - One film clock; `frame(t)=round(t*fps)` (Python round, as `build_segments` does).
+  - Anchors: `line:uNNN[:end]`, `word:<w>@uNNN[#n][:end]`, or seconds. A word cut leads by 2 frames. A missing word is an error.
+  - `resolve()`:
+    - consecutive in-points per run of one source;
+    - an `n//2` transition head on the incoming source;
+    - `via` waypoints for a held move through several views;
+    - `at_params` for beat params timed on words.
+  - `validate()` checks: gap, overlap, off_frame, too_short, provenance, archive_long (6.0 s, with half of each transition counted), archive_speed, transition bounds, overlay_outside, transition_overlap, handle, beat_reused.
+  - Other functions:
+    - `render_plan()`: abutting segments and transition pieces, with a piece of `n` frames at `[f-n//2, f-n//2+n)`;
+    - `source_seconds_needed`, `beat_shots`, `beat_params`, `beat_spans`, `audio_events` (J/L cuts), `card_hold`, `line_clock`, `episode_cut`.
+- **`tools/edit/legacy.py`**: turns `shots.json` into a resolved cut. `python/test_legacy.py` shows ask-chatgpt, jensen-huang and v5 semmelweis (from `v5-backup/vo`) cut to the same frames as `build_segments`; seeks agree within half a frame.
+- **`tools/edit/assemble.py`**, the cut-mode assembler:
+  - `resolve_episode` refuses a cut with findings; `publish` writes `cut.resolved.json`;
+  - `write_lengths` writes `shot_lengths.json` (handles in) and `sync_storyboard` writes the beat shot times and `at_params` into `storyboard.json` as `"<n>s"`;
+  - `prepare_sources` covers 3D beats, archive stills on the mat (`frame: archive_mat`), graphics, and black;
+  - `draw_overlays` writes alpha .mov clips;
+  - `build_pieces` runs one ffmpeg call per piece, cached, then a copy-concat.
+- **`tools/assemble_episode.py`**:
+  - `edit_mode()` returns "cut" if `cut.json` exists, else "legacy"; legacy is unchanged;
+  - `assemble_cut()`, and `pad_audio()`, which pads the voice to the film length so the black tail survives `-shortest`;
+  - the duplicate imports are removed.
+- **`tools/compose/`** (Sonnet): pure ffmpeg argv builders; `python/test_compose.py` has 14 frame-exact tests.
+  - Dip is a custom xfade expression, because ffmpeg 9's `fadeblack` is lopsided.
+  - Import with `import compose`, tools/ on sys.path.
+- **`tools/graphics/`** (Sonnet; interrupted by the usage limit, but its 70 tests pass):
+  - `graphics` tokens in `workflow/style.json`, `docs/graphics.md`, `gallery.py`;
+  - families: stats (tally, ratio_compare...), grids, timelines, maps (map_plan, always tagged "schematic"), boards, split, archive (archive_mat, source_card, `card_lines`, moved here; `archive_ingest` re-exports it), labels (date_stamp, day_labels...);
+  - `encode.stream_to_mp4` uses a temp file and renames on success; presets `ratio-1846` and `ward-plan-routes`.
+  - NOT yet verified by Opus: the gallery PNG, the memory (tracemalloc) test, and the API names that `edit/assemble.draw_graphic` uses (`graphics.get`, `presets.PRESETS`, `tokens.load_tokens`, `encode.stream_to_mp4(canvas=, alpha=)`, `frame_at(spec, t, canvas=, tokens=)`).
+- **Cut-aware readers** (legacy unchanged):
+  - `workflow/episode.py`: `cut_path`, `resolved_cut`, and `cut_shots`, so `shots()` returns `{shot id: (kind, name)}` for a cut episode;
+  - `audio_finish`;
+  - `sound_design.plan_events_from_cut`, with a `bell()` synth for the J-cut;
+  - `qc_episode` (load_timeline, coverage through `Shot.lines`, known_cuts);
+  - `captions.beat_word_timing`, `lip_sync`, `plan_storyboard`;
+  - `make_episode.shot_table()`; the shots stage is a no-op for a cut episode.
+  - Tests: `python/test_cut_sound.py`.
+- **`workflow/storyboard.when()`** accepts `"<n>s"`. A bare number ≤ 1.0 still means a fraction of the beat, which is a trap for cut times.
+- **Episode data:**
+  - v5 is backed up in `work/semmelweis-pilot/v5-backup/`;
+  - `script/narration.md` holds the approved text;
+  - claims: u003 [c5,c7], u004 = old u003, u005 [c6], u006 = old u005; `story.json` question u004;
+  - `qc_script` shows only the known pilot errors (length, payoff).
+- **Voice:** credits were spent on the 2 new lines only.
+  - New u004 = old u003 and new u006 = old u005, byte for byte; u007–u029 unchanged.
+  - Narration runs 151.11 s; "nine" is heard at about 15.5 s and "thirty six" at about 18.6 s.
+- **`work/semmelweis-pilot/cut.json`**: 51 shots, tail 1.0 s. It resolves clean against the new voice: 152.10 s, median 2.5 s, 22% under 1.5 s, s46 held for 23.3 s.
+
+### In progress (code written, NOT run in Blender yet)
+- **`tools/blender/models/clinic.py`** (registered in `scenes.py`):
+  - `board`: stages h1/h2/h3/air/position/fear/h4; actions flip/lay/pin/pull; views h1-low34, h1-calendar, h2-close, h3-top, h4-ots, h4-turn, card-air/-position/-fear.
+  - `ledger`: columns clinics or street; action tally; views ledger and ledger-street.
+  - `wing`: the ward with its far door open, a corridor, and the anatomy room at x≈43.4; doctors walk from the table to the bed; views wing-table, wing-door, wing-corridor, wing-ward-door, wing-aisle, wing-ward-bed, wing-hands.
+- **`world.py`:**
+  - ward params `through`, `lie`, `side_bed`, `bell`, `bell_route` (aisle/side), `turn`; views second-bed, semmelweis-close, hands-window, semmelweis-hands, hands-door, sickbed;
+  - anatomy `people` / `west_door`, a scalpel and drop with action `slip` (vienna `slip: true`, `anatomy_people`);
+  - vienna: second-door now matched to first-door; views gate-approach, street-birth, scalpel, cut-hand.
+- **`storyboard_beats.place_actor`**: a cast member may take `size` (bed or hands) and `depth`.
+- **Pixel sprites** (Sonnet, interrupted):
+  - `tools/pixel/people.py` and `sprites.json` now hold kneel, give-birth, look-hands, bed lie-side and sick, and a hands size (open, reach, hold);
+  - 2 tests FAIL in `test_people_sprites` (Clergy.test_new_cast_and_poses, NewPoses.test_faces_work_in_the_new_poses);
+  - the contact sheet isn't reviewed.
+
+### Still to do (in order)
+1. Sprites: DONE in 7955e5a. Both failing tests fixed (test_people_sprites: 19 OK); the contact sheet was viewed; atlas layouts match the cell sizes for hands and bed (each layout is the cell plus a 2 px border).
+2. Graphics: verify the gallery, the memory test and the `draw_graphic` API match.
+3. Re-group beats in `cut.json` so the inserts get light scenes:
+   - s22 → `v6-07b-ledger`, s26 → `v6-09b-ledger`, s27 → `v6-09c-vienna`;
+   - s30 and s38 on the ledger scene;
+   - s45 its own ward beat (sickbed);
+   - s46 `via`: wing-door at u022 "same", wing-corridor at u023 "Now", wing-ward-door at u024 "same", wing-aisle at u024 "mothers", wing-ward-bed at u025 "With", wing-hands at u025 "hands";
+   - plus `at_params` walk_from/walk_to; `wing` must parse `"<n>s"`.
+4. Write `storyboard.json` for v6, one beat per 3D source. Take the scene, params, cast and acts from `visual-pass.md` §8 and `storyboard.proposed.json`:
+   - the board stages, and the explorer per H-moment;
+   - the arrival, the doctor explaining, the students from anatomy, the porter and the kneeling mother, the street birth;
+   - the ward lie/turn/bell_route params;
+   - actions on words (flip "which", tally, turn, bell, slip, pull);
+   - Kolletschka in bed (size bed, pose sick); the hands casts.
+   - Then `plan_storyboard --check`.
+5. `make_episode --only captions,lengths` writes `cut.resolved.json`, `shot_lengths.json`, `word_timing.json` and the storyboard sync.
+6. Blender:
+   - `storyboard_beats.py --check`, then `--still` for every new view; LOOK at them and tune the views and cast points;
+   - render the beats, one Blender run at a time.
+7. `make_episode --only assemble,qc`. Check the hook, the mute test and archive ≤ 6 s on the master. QC PASS with no gate loosened.
+8. Run the full tests with BLENDER_EXE; update `qc/pilot-gate-status.md`.
+9. Commit on `claude/semmelweis-v6` (branched from the PR #2 head, fd0ddcb) and open a PR, but only when the user says so.
+- Gaps to report to the user:
+  - the hands are a sprite, not a model;
+  - the cut on the hand is shown as a drop of blood on the sheet;
+  - the board text is Blender text, not the graphics card textures.
+
+## 2026-11-22: pilot v5, natural narration and real archive (PR tianola/storyloom#2)
+- **User feedback (2026-11-21):** "The narration must sound like someone telling you a story, not someone reading a script… make the viewer wonder, form their own guess, and then find out they were wrong." Don't make it more dramatic.
+- **Study:** Fern and Veritasium, in `docs/research/narration-voice.md` (12 rules). The short form is in the story-film skill, `references/script.md` §5 "Telling, not reading".
+- **Voice:** a blend.
+  - The scenes are told Fern-style: third person, present tense.
+  - The explorer turns to the viewer Veritasium-style at the guess and at the reveal.
+- **New script:** 29 lines and 436 words; the user approved the text before any voice was spent.
+  - The story runs: the puzzle of the two clinics → "what would you check first?" → the guesses fail → Kolletschka → the hands.
+  - `story.json`: guess u002, question u003, reversal u013; the hook kind is mystery.
+- **Archive:** three Commons stills (`pd_expired`) with Ken Burns moves and credit plates: the hospital engraving (u001), the Semmelweis portrait (u010), the Kolletschka portrait (u020).
+- **Fixes:**
+  - the jpg ingest, which used `ffmpeg -ss` on an image and got no frame;
+  - credit plates now wrap inside the margins (`card_lines`);
+  - the HUD label moved clear of a bollard. Moving the HUD nearer the lens is not an option: depth of field would blur it.
+  - the cut rhythm (beat-02 is a 20.5 s held glide, beat-05 and beat-06 are montages);
+  - the midwife's walk start.
+- **Result:** QC PASS. Advisories: two archival holds over 6 s and one slow drift. Details in `qc/pilot-gate-status.md`.
+- **Open:**
+  - the user hasn't said whether to merge PR #2;
+  - whether a line that mentions the 1861 book should bring arch-003 back;
+  - what to do with the stray `.agents/` folder (ask the user; don't delete it).
 
 ## 2026-11-21 (uncommitted): living-world films, Semmelweis pilot
 ### Decided (user)
@@ -17,6 +157,14 @@
   - Rejected: Sarah, George, Lily, plus the other candidates in `vo/auditions2/`.
 - The key lives only in the env var `ELEVENLABS_API_KEY` or the git-ignored `.env.local`. Never print or commit it. The user pasted it in chat, so advise rotating it.
 - The user is at the PC: give file paths, don't send files.
+
+### 2026-11-21 late: pilot v4 (committed, PR tianola/storyloom#1)
+- Poly Haven CC0 assets: `workflow/assets.json`, `tools/fetch_assets.py`, `tools/blender/models/assets.py` (textured materials tinted to the palette, HDRI light, glTF props); scene param `assets` (default true).
+- `camera_plan.govern_travel`: a too-fast travel lands short instead of rushing.
+- Faster cutaways pass the cut-rhythm gate; the empty beat-05 `at:bell` cutaway became `ward-bed`.
+- Master 116 s, QC PASS (0 errors, 2 deliberate slow_shot warnings).
+- Six user-downloaded CC0 packs extracted to `assets/kenney/`, `assets/quaternius/` (git-ignored, recorded in `assets/packs.json`), not wired yet.
+- A session interruption kills detached Blender too: after one, re-render only the missing beat with `--beat`.
 
 ### Built (all tests pass, 723, except the 7 known Blender-env errors)
 - Narration syntax: `[name] text` (spoken on screen), `[name:thought] text` (inner voice, no mouth), `{direction}` (sent to v3 as `[direction]`, stripped from captions and QC).

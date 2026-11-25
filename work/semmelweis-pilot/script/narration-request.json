@@ -5,68 +5,67 @@
   {
    "id": "u001",
    "file": "u001.wav",
-   "text": "Vienna, eighteen sixty five. A doctor is led into an asylum.",
+   "text": "It's eighteen forty six, and a woman in labour arrives at Vienna General Hospital.",
    "speed": 1.15,
-   "spoken": "[low, grave] Vienna, eighteen sixty five. A doctor is led into an asylum."
+   "spoken": "[warm, conversational] It's eighteen forty six, and a woman in labour arrives at Vienna General Hospital."
   },
   {
    "id": "u002",
    "file": "u002.wav",
-   "text": "There, it is said, the guards beat him. Two weeks later he is dead.",
+   "text": "If she gets a fever after the birth and dies, any doctor here will tell you why. Bad air.",
    "speed": 1.15
   },
   {
    "id": "u003",
    "file": "u003.wav",
-   "text": "I see a time when only cases of self-infection will occur in the maternity hospitals of the world.",
-   "speed": 1.1,
-   "spoken": "[quietly] I see a time when only cases of self-infection will occur in the maternity hospitals of the world.",
-   "speaker": "semmelweis",
-   "mode": "thought",
-   "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4"
+   "text": "The hospital has two maternity clinics. In the first, one mother in nine dies. Yet in the second, it's one in thirty six.",
+   "speed": 1.15
   },
   {
    "id": "u004",
    "file": "u004.wav",
-   "text": "Ignaz Semmelweis wrote that. But most doctors of his day rejected it.",
-   "speed": 1.15
+   "text": "But here's what nobody can explain: why does it matter so much which day she walks in?",
+   "speed": 1.15,
+   "spoken": "[curious] But here's what nobody can explain: why does it matter so much which day she walks in?"
   },
   {
    "id": "u005",
    "file": "u005.wav",
-   "text": "In his day, every doctor knew what killed new mothers: bad air.",
-   "speed": 1.15,
-   "spoken": "[warmly] In his day, every doctor knew what killed new mothers: bad air."
+   "text": "They take women in on alternate days.",
+   "speed": 1.15
   },
   {
    "id": "u006",
    "file": "u006.wav",
-   "text": "So why did they die in one clinic of Vienna's hospital, and hardly at all in the next?",
-   "speed": 1.15,
-   "spoken": "[curious] So why did they die in one clinic of Vienna's hospital, and hardly at all in the next?"
+   "text": "Doctors and medical students run the first one, and midwives run the second.",
+   "speed": 1.15
   },
   {
    "id": "u007",
    "file": "u007.wav",
-   "text": "Vienna, eighteen forty six. Semmelweis, twenty eight, is the new assistant in the First Clinic.",
+   "text": "And the women know it, so well that they beg on their knees to be taken anywhere else.",
    "speed": 1.15
   },
   {
    "id": "u008",
    "file": "u008.wav",
-   "text": "Here, doctors and students deliver the babies. Next door, midwives do.",
-   "speed": 1.15
+   "text": "Please. Not the first clinic.",
+   "speed": 1.05,
+   "spoken": "[desperate, close to tears] Please. Not the first clinic.",
+   "speaker": "mother",
+   "mode": "say",
+   "voice": "eleven:rCmVtv8cYU60uhlsOo1M"
   },
   {
    "id": "u009",
    "file": "u009.wav",
-   "text": "That year, one mother in nine dies here. Next door, one in thirty six.",
+   "text": "Same building. Same city. Same air. So if you were the doctor here, what would you check first?",
    "speed": 1.15
   },
   {
    "id": "u010",
    "file": "u010.wav",
-   "text": "Yet both clinics share one hospital, and the same Vienna air.",
+   "text": "That question eats at a young doctor called Ignaz Semmelweis. He's twenty eight, and the new assistant in the first clinic.",
    "speed": 1.15
   },
   {
@@ -82,36 +81,31 @@
   {
    "id": "u012",
    "file": "u012.wav",
-   "text": "But the women know the difference.",
+   "text": "So Semmelweis starts testing his guesses, one at a time.",
    "speed": 1.15
   },
   {
    "id": "u013",
    "file": "u013.wav",
-   "text": "Please. Not the first clinic.",
-   "speed": 1.05,
-   "spoken": "[desperate, close to tears] Please. Not the first clinic.",
-   "speaker": "mother",
-   "mode": "say",
-   "voice": "eleven:rCmVtv8cYU60uhlsOo1M"
+   "text": "Maybe it's the air. Yet women who give birth in the street, on their way to the hospital, hardly ever catch the fever.",
+   "speed": 1.15
   },
   {
    "id": "u014",
    "file": "u014.wav",
-   "text": "He wrote that they knelt, wringing their hands, begging to be sent next door.",
+   "text": "Maybe it's how they give birth. The midwives' mothers lie on their side, so he has the women in his clinic do the same.",
    "speed": 1.15
   },
   {
    "id": "u015",
    "file": "u015.wav",
-   "text": "So Semmelweis tests every explanation, one by one. The mothers deliver on their side, as the midwives do. Nothing changes.",
-   "speed": 1.15,
-   "spoken": "[brisk] So Semmelweis tests every explanation, one by one. The mothers deliver on their side, as the midwives do. Nothing changes."
+   "text": "Nothing changes.",
+   "speed": 1.15
   },
   {
    "id": "u016",
    "file": "u016.wav",
-   "text": "But there is the bell. A priest crosses the ward to the dying, an attendant ringing ahead of him.",
+   "text": "Maybe it's fear. Whenever a woman is dying, a priest comes through the ward to her bed, and a man walks ahead of him ringing a bell.",
    "speed": 1.15
   },
   {
@@ -127,19 +121,26 @@
   {
    "id": "u018",
    "file": "u018.wav",
-   "text": "He sends the priest a quieter way. Still, the mothers die.",
+   "text": "So he sends the priest the long way round, but the mothers keep dying.",
    "speed": 1.15
   },
   {
    "id": "u019",
    "file": "u019.wav",
-   "text": "Then, in March eighteen forty seven, Semmelweis's friend Jakob Kolletschka is cut by a student's knife during an autopsy, and dies.",
+   "text": "By now, whatever you guessed first, he's probably tried it. And every time, he was wrong.",
    "speed": 1.15,
-   "spoken": "[pause] Then, in March eighteen forty seven, Semmelweis's friend Jakob Kolletschka is cut by a student's knife during an autopsy, and dies."
+   "spoken": "[conversational] By now, whatever you guessed first, he's probably tried it. And every time, he was wrong."
   },
   {
    "id": "u020",
    "file": "u020.wav",
+   "text": "Then, in March eighteen forty seven, his friend Jakob Kolletschka, a professor of forensic medicine, is cut by a student's knife during an autopsy. And he dies.",
+   "speed": 1.15,
+   "spoken": "[pause] Then, in March eighteen forty seven, his friend Jakob Kolletschka, a professor of forensic medicine, is cut by a student's knife during an autopsy. And he dies."
+  },
+  {
+   "id": "u021",
+   "file": "u021.wav",
    "text": "Day and night I was haunted by the image of Kolletschka's disease.",
    "speed": 1.1,
    "spoken": "[slowly] Day and night I was haunted by the image of Kolletschka's disease.",
@@ -148,24 +149,55 @@
    "voice": "eleven:tMSJwjBGNGcJ7WVIJhg4"
   },
   {
-   "id": "u021",
-   "file": "u021.wav",
-   "text": "But Kolletschka's body shows the same disease as the dying mothers.",
-   "speed": 1.15
-  },
-  {
    "id": "u022",
    "file": "u022.wav",
-   "text": "And the students who cut the dead walk straight on to the mothers.",
-   "speed": 1.15,
-   "spoken": "[quietly] And the students who cut the dead walk straight on to the mothers."
+   "text": "And when they examine his friend's body, they find something he can't shake. It's the same disease that's killing the mothers.",
+   "speed": 1.15
   },
   {
    "id": "u023",
    "file": "u023.wav",
-   "text": "What are their hands carrying?",
+   "text": "Now think about who does the autopsies in this hospital.",
    "speed": 1.15,
-   "spoken": "[softly] What are their hands carrying?"
+   "spoken": "[slower] Now think about who does the autopsies in this hospital."
+  },
+  {
+   "id": "u024",
+   "file": "u024.wav",
+   "text": "The doctors. The students. The same people who walk from the morgue straight to the mothers in the first clinic.",
+   "speed": 1.15
+  },
+  {
+   "id": "u025",
+   "file": "u025.wav",
+   "text": "With the same bare hands.",
+   "speed": 1.15,
+   "spoken": "[softly] With the same bare hands."
+  },
+  {
+   "id": "u026",
+   "file": "u026.wav",
+   "text": "So what are those hands carrying?",
+   "speed": 1.15
+  },
+  {
+   "id": "u027",
+   "file": "u027.wav",
+   "text": "Semmelweis is about to find out.",
+   "speed": 1.15,
+   "spoken": "[quietly] Semmelweis is about to find out."
+  },
+  {
+   "id": "u028",
+   "file": "u028.wav",
+   "text": "And what happens next will change medicine.",
+   "speed": 1.15
+  },
+  {
+   "id": "u029",
+   "file": "u029.wav",
+   "text": "But first, he'll have to convince a world that doesn't want to listen.",
+   "speed": 1.15
   }
  ]
 }

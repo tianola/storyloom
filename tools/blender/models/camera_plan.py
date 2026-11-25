@@ -122,3 +122,31 @@ def shot_speed(entry, duration, lens=50.0):
         duration = max(duration - hold, 0.1)
     p0, p1 = orbit_point(t0, r[0], az[0], h[0]), orbit_point(t1, r[1], az[1], h[1])
     return camera_speed(p0, t0, p1, t1, duration, lens)
+
+
+def _toward(entry, f):
+    """`entry` (a travel) cut short at fraction `f` of the way to its destination."""
+    lerp = lambda a, b: a + (b - a) * f
+    out = dict(entry)
+    out["target_to"] = tuple(lerp(a, b) for a, b in zip(entry["target"], entry["target_to"]))
+    for key in ("radius", "azimuth", "height"):
+        a, b = entry[key]
+        out[key] = (a, lerp(a, b))
+    return out
+
+
+def govern_travel(entry, duration, lens=50.0, limit=None):
+    """A travel that would pan faster than `limit` (MAX_PAN by default) goes only as far as it can
+    at that speed: the camera never rushes, it lands short of the next view instead.
+    -> (entry, fraction of the way travelled)."""
+    limit = MAX_PAN if limit is None else limit
+    if "target_to" not in entry or shot_speed(entry, duration, lens)["pan_frames_s"] <= limit:
+        return entry, 1.0
+    lo, hi = 0.0, 1.0
+    for _ in range(30):
+        mid = (lo + hi) / 2
+        if shot_speed(_toward(entry, mid), duration, lens)["pan_frames_s"] <= limit * 0.98:
+            lo = mid
+        else:
+            hi = mid
+    return _toward(entry, lo), lo

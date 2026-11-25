@@ -43,6 +43,7 @@ from workflow import archive  # noqa: E402
 from workflow.capabilities import REFUSED, stage_report  # noqa: E402
 from workflow.config import style_contract  # noqa: E402
 from workflow.episode import (  # noqa: E402
+    resolved_cut,
     EPISODE_DOCUMENT, document as read_episode_document, graded_path,
 )
 from loudness import loudnorm_filter, measure as delivery_measure  # noqa: E402
@@ -60,6 +61,7 @@ class Shot:
     name: str
     start: float
     duration: float
+    lines: tuple = ()          # the narration lines a cut-list shot plays over
 
 
 @dataclass(frozen=True)
@@ -202,6 +204,12 @@ def load_timeline(episode: Path) -> list[Shot]:
     the assembler is what makes this gate usable for the next episode, whose assembler will not
     be `assemble_episode.py`.
     """
+    cut = resolved_cut(episode)
+    if cut is not None:
+        # A cut-list episode publishes the cut it was made to; its shots are the timeline.
+        return [Shot(id=s["id"], kind=s["source"]["kind"], name=s["source"]["name"],
+                     start=s["start"], duration=s["end"] - s["start"], lines=tuple(s.get("lines", ())))
+                for s in cut["shots"]]
     manifest = json.loads((episode / "vo/manifest.json").read_text(encoding="utf-8"))
     sample_rate = manifest["sampleRate"]
     shot_map = json.loads((episode / "shots.json").read_text(encoding="utf-8"))
@@ -387,7 +395,7 @@ def check_captions(subtitle_streams, contract) -> list[Finding]:
 
 
 def check_coverage(shots, ids, contract) -> list[Finding]:
-    mapped = {s.id for s in shots}
+    mapped = {s.id for s in shots} | {line for s in shots for line in s.lines}
     missing = [i for i in ids if i not in mapped]
     if missing:
         return [error("shot_missing", "timeline",
@@ -805,7 +813,11 @@ def check_cut_rhythm(cuts: list[float], duration: float, contract: dict) -> list
 
 def known_cuts(episode: Path) -> list[float] | None:
     """The cuts the edit was built with (beat changes and every planned shot change), read off
-    the storyboard by tools/sound_design.py; None when the episode has no storyboard."""
+    the storyboard by tools/sound_design.py; None when the episode has no storyboard.
+    A cut-list episode's cuts are its shots' starts, exactly as the cut was resolved."""
+    cut = resolved_cut(episode)
+    if cut is not None:
+        return [s["start"] for s in cut["shots"][1:]]
     if not (Path(episode) / "storyboard.json").exists():
         return None
     import sound_design
@@ -907,7 +919,7 @@ def run(episode: Path, master: Path, contract: dict | None = None,
     manifest = json.loads((episode / "vo/manifest.json").read_text(encoding="utf-8"))
     expected = manifest["totalSamples"] / manifest["sampleRate"]
 
-    shots_path = episode / "shots.json"
+    shots_path = episode / ("cut.resolved.json" if (episode / "cut.json").is_file() else "shots.json")
     if not shots_path.is_file():
         return [error("shot_map_missing", str(shots_path),
                       "the assembler has not published a shot map, so no scene can be judged")]

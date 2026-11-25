@@ -8,6 +8,7 @@ The timing rules (`when`, `default_shots`, `shot_starts`) live here too, without
 Blender builder and the sound design read one definition of when each shot starts.
 """
 import json
+import re
 from pathlib import Path
 
 CATALOG_PATH = Path(__file__).with_name("scenes.json")
@@ -20,9 +21,16 @@ TRAVEL_SECONDS = 12.0       # cut "travel" (the default): one continuous camera 
 MONTAGE_LENGTHS = [1.4, 2.2, 1.2, 2.6, 1.6, 1.9]   # varied on purpose: uniform cut length is a slop tell
 # pixel-art sprites a beat can stand in its set (tools/pixel/sprites.py)
 CAST = {"explorer", "token", "dozing", "sleepy", "awake", "shocked", "bored", "asleep", "zzz", "mug", "truck"}
-CAST_KEYS = {"who", "screen", "height", "shot", "hop", "walk", "flip", "word",
+CAST_KEYS = {"who", "screen", "height", "shot", "hop", "walk", "flip", "word", "size",
              # people who act and talk (tools/pixel/people.py, mirrored in workflow/sprites.json)
-             "speaker", "pose", "face", "acts", "blink", "bust", "span"}
+             "speaker", "pose", "face", "acts", "blink", "bust", "span",
+             # a rigged 3D person (tools/blender/models/human3d.py); "render": "3d" selects it
+             "render"}
+
+# 3D people (rigged CharMorph characters, built by tools/blender/human3d_build.py). Only these may take render "3d".
+HUMAN3D_CHARACTERS = ("semmelweis", "doctor", "student", "midwife", "mother", "explorer")
+HUMAN3D_POSES = ("stand", "walk", "kneel", "sit", "talk", "point", "plead", "look-hands", "wash")
+HUMAN3D_SIZES = ("figure", "bust")
 SHOT_KEYS = {"view", "to", "start", "glide", "move"}
 MOVES = ("drift", "lock", "push", "pull")   # tools/blender/models/camera_plan.py
 PEOPLE_PATH = Path(__file__).with_name("sprites.json")
@@ -40,9 +48,12 @@ def load_catalog(path=CATALOG_PATH):
 
 def when(spec, seconds, words, default=None, warn=None):
     """Resolve a time spec to seconds inside a beat of `seconds`: a fraction when <= 1.0, seconds
-    when larger, or `word:<text>` looked up in `words` ([{"word", "start"}])."""
+    when larger, `"<n>s"` for exact seconds whatever their size (what a cut list writes, since a cut
+    0.7 s into a beat is not 70% of it), or `word:<text>` looked up in `words` ([{"word", "start"}])."""
     if spec is None:
         return default
+    if isinstance(spec, str) and re.fullmatch(r"\d+(\.\d+)?s", spec):
+        return min(float(spec[:-1]), max(0.0, seconds - 1.0 / 30))
     if isinstance(spec, str):
         if spec.startswith("word:"):
             key = spec[5:].strip().lower()
@@ -209,6 +220,8 @@ def staging_advice(storyboard, lines_by_beat, lengths, words_by_beat=None):
 def _time_ok(value):
     if isinstance(value, bool):
         return False
+    if isinstance(value, str) and re.fullmatch(r"\d+(\.\d+)?s", value):
+        return True
     if isinstance(value, (int, float)):
         return value >= 0
     return isinstance(value, str) and value.startswith("word:") and len(value) > 5
@@ -306,9 +319,12 @@ def validate(storyboard, catalog=None, lengths=None, cast=None, warnings=None):
         shots = beat.get("shots") or []
         for c in beat.get("cast") or []:
             who = c.get("who")
-            if who not in CAST and who not in actors:
-                errors.append(f"{where}: cast '{who}' is not a sprite (sprites: {', '.join(sorted(CAST | set(actors)))})")
-            errors += _actor_errors(where, c, actors.get(who), people, cast, warnings)
+            if c.get("render") == "3d":
+                errors += _human3d_errors(where, c, people, cast, warnings)
+            else:
+                if who not in CAST and who not in actors:
+                    errors.append(f"{where}: cast '{who}' is not a sprite (sprites: {', '.join(sorted(CAST | set(actors)))})")
+                errors += _actor_errors(where, c, actors.get(who), people, cast, warnings)
             if set(c) - CAST_KEYS:
                 errors.append(f"{where}: cast '{who}' has unknown keys {sorted(set(c) - CAST_KEYS)}")
             screen = c.get("screen")
@@ -349,7 +365,11 @@ def _actor_errors(where, c, actor, people, cast, warnings):
     bust = bool(c.get("bust"))
     if bust and not actor.get("bust"):
         errors.append(f"{where}: cast '{who}' has no bust (close-up) drawing")
-    poses = people["bust_poses"] if bust else actor["poses"]
+    size = c.get("size") or ("bust" if bust else "figure")
+    if size not in actor.get("sizes", ["figure"] if not bust else ["bust"]):
+        errors.append(f"{where}: cast '{who}' is not drawn at size {size!r} (sizes: {actor.get('sizes')})")
+    poses = {"bust": people["bust_poses"], "bed": people["bed_poses"],
+             "hands": people["hands_poses"]}.get(size, actor["poses"])
     for ch in [c] + list(c.get("acts") or []):
         if "pose" in ch and ch["pose"] not in poses:
             errors.append(f"{where}: cast '{who}' pose {ch['pose']!r} is not one of {poses}")
@@ -371,6 +391,31 @@ def _actor_errors(where, c, actor, people, cast, warnings):
         if c.get("height", 0.25) < LIP_MIN_HEIGHT:
             warnings.append(f"{where}: '{who}' talks at {c.get('height', 0.25):.0%} of the frame; below "
                             f"{LIP_MIN_HEIGHT:.0%} the lips do not read, so give it a gesture instead")
+    return errors
+
+
+def _human3d_errors(where, c, people, cast, warnings):
+    """Checks for a rigged 3D person: who, pose, face, size and speaker, against the 3D lists above."""
+    who = c.get("who")
+    errors = []
+    if who not in HUMAN3D_CHARACTERS:
+        errors.append(f"{where}: cast '{who}' has no 3D character (3D people: {', '.join(HUMAN3D_CHARACTERS)})")
+    if c.get("render") != "3d":
+        errors.append(f"{where}: cast '{who}' render must be '3d'")
+    size = c.get("size") or ("bust" if c.get("bust") else "figure")
+    if size not in HUMAN3D_SIZES:
+        errors.append(f"{where}: cast '{who}' size {size!r} is not one of {HUMAN3D_SIZES} for 3D people")
+    for ch in [c] + list(c.get("acts") or []):
+        if "pose" in ch and ch["pose"] not in HUMAN3D_POSES:
+            errors.append(f"{where}: cast '{who}' pose {ch['pose']!r} is not one of {HUMAN3D_POSES}")
+        if "face" in ch and ch["face"] not in people["expressions"]:
+            errors.append(f"{where}: cast '{who}' face {ch['face']!r} is not one of {people['expressions']}")
+    for a in c.get("acts") or []:
+        if not isinstance(a, dict) or "at" not in a or not _time_ok(a["at"]) or not ({"pose", "face"} & set(a)):
+            errors.append(f"{where}: cast '{who}' acts entries need 'at' and a 'pose' or 'face'")
+    speaker = c.get("speaker")
+    if speaker is not None and cast is not None and speaker not in cast and speaker != "narrator":
+        errors.append(f"{where}: cast '{who}' speaks as '{speaker}', who is not in script/cast.json")
     return errors
 
 

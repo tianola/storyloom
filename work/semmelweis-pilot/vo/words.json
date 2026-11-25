@@ -1,1850 +1,2618 @@
 [
  {
   "uid": "u001",
-  "word": "Vienna,",
-  "start": 0.438,
-  "end": 0.76
+  "word": "It's",
+  "start": 0.045,
+  "end": 0.22
  },
  {
   "uid": "u001",
   "word": "eighteen",
-  "start": 0.796,
-  "end": 1.08
+  "start": 0.256,
+  "end": 0.54
  },
  {
   "uid": "u001",
-  "word": "sixty",
-  "start": 1.147,
-  "end": 1.48
+  "word": "forty",
+  "start": 0.593,
+  "end": 0.86
  },
  {
   "uid": "u001",
-  "word": "five.",
-  "start": 1.56,
-  "end": 2.29
+  "word": "six,",
+  "start": 0.94,
+  "end": 1.42
  },
  {
   "uid": "u001",
-  "word": "A",
-  "start": 2.37,
-  "end": 2.45
+  "word": "and",
+  "start": 1.46,
+  "end": 1.58
  },
  {
   "uid": "u001",
-  "word": "doctor",
-  "start": 2.519,
-  "end": 2.93
- },
- {
-  "uid": "u001",
-  "word": "is",
-  "start": 3.063,
-  "end": 3.33
- },
- {
-  "uid": "u001",
-  "word": "led",
-  "start": 3.41,
-  "end": 3.65
- },
- {
-  "uid": "u001",
-  "word": "into",
-  "start": 3.714,
-  "end": 3.97
- },
- {
-  "uid": "u001",
-  "word": "an",
-  "start": 3.997,
-  "end": 4.05
- },
- {
-  "uid": "u001",
-  "word": "asylum.",
-  "start": 4.141,
-  "end": 5.22
- },
- {
-  "uid": "u002",
-  "word": "There,",
-  "start": 5.22,
-  "end": 5.54
- },
- {
-  "uid": "u002",
-  "word": "it",
-  "start": 5.593,
-  "end": 5.7
- },
- {
-  "uid": "u002",
-  "word": "is",
-  "start": 5.753,
-  "end": 5.86
- },
- {
-  "uid": "u002",
-  "word": "said,",
-  "start": 5.924,
-  "end": 6.26
- },
- {
-  "uid": "u002",
-  "word": "the",
-  "start": 6.34,
-  "end": 6.58
- },
- {
-  "uid": "u002",
-  "word": "guards",
-  "start": 6.626,
-  "end": 6.9
- },
- {
-  "uid": "u002",
-  "word": "beat",
-  "start": 6.964,
-  "end": 7.22
- },
- {
-  "uid": "u002",
-  "word": "him.",
-  "start": 7.28,
-  "end": 7.54
- },
- {
-  "uid": "u002",
-  "word": "Two",
-  "start": 7.66,
-  "end": 7.81
- },
- {
-  "uid": "u002",
-  "word": "weeks",
-  "start": 7.85,
-  "end": 8.05
- },
- {
-  "uid": "u002",
-  "word": "later",
-  "start": 8.117,
-  "end": 8.45
- },
- {
-  "uid": "u002",
-  "word": "he",
-  "start": 8.557,
-  "end": 8.77
- },
- {
-  "uid": "u002",
-  "word": "is",
-  "start": 8.823,
-  "end": 8.93
- },
- {
-  "uid": "u002",
-  "word": "dead.",
-  "start": 8.994,
-  "end": 9.41
- },
- {
-  "uid": "u003",
-  "word": "I",
-  "start": 9.77,
-  "end": 9.79
- },
- {
-  "uid": "u003",
-  "word": "see",
-  "start": 9.84,
-  "end": 10.02
- },
- {
-  "uid": "u003",
   "word": "a",
-  "start": 10.1,
-  "end": 10.18
+  "start": 1.62,
+  "end": 1.66
  },
  {
-  "uid": "u003",
-  "word": "time",
-  "start": 10.276,
-  "end": 10.66
+  "uid": "u001",
+  "word": "woman",
+  "start": 1.727,
+  "end": 2.06
  },
  {
-  "uid": "u003",
-  "word": "when",
-  "start": 10.724,
-  "end": 10.98
- },
- {
-  "uid": "u003",
-  "word": "only",
-  "start": 11.044,
-  "end": 11.3
- },
- {
-  "uid": "u003",
-  "word": "cases",
-  "start": 11.393,
-  "end": 11.86
- },
- {
-  "uid": "u003",
-  "word": "of",
-  "start": 11.913,
-  "end": 12.02
- },
- {
-  "uid": "u003",
-  "word": "self-infection",
-  "start": 12.1,
-  "end": 13.14
- },
- {
-  "uid": "u003",
-  "word": "will",
-  "start": 13.204,
-  "end": 13.46
- },
- {
-  "uid": "u003",
-  "word": "occur",
-  "start": 13.54,
-  "end": 13.94
- },
- {
-  "uid": "u003",
+  "uid": "u001",
   "word": "in",
-  "start": 14.02,
-  "end": 14.18
+  "start": 2.087,
+  "end": 2.14
  },
  {
-  "uid": "u003",
+  "uid": "u001",
+  "word": "labour",
+  "start": 2.197,
+  "end": 2.54
+ },
+ {
+  "uid": "u001",
+  "word": "arrives",
+  "start": 2.62,
+  "end": 3.18
+ },
+ {
+  "uid": "u001",
+  "word": "at",
+  "start": 3.233,
+  "end": 3.34
+ },
+ {
+  "uid": "u001",
+  "word": "Vienna",
+  "start": 3.397,
+  "end": 3.74
+ },
+ {
+  "uid": "u001",
+  "word": "General",
+  "start": 3.79,
+  "end": 4.14
+ },
+ {
+  "uid": "u001",
+  "word": "Hospital.",
+  "start": 4.202,
+  "end": 5.18
+ },
+ {
+  "uid": "u002",
+  "word": "If",
+  "start": 5.18,
+  "end": 5.28
+ },
+ {
+  "uid": "u002",
+  "word": "she",
+  "start": 5.32,
+  "end": 5.44
+ },
+ {
+  "uid": "u002",
+  "word": "gets",
+  "start": 5.504,
+  "end": 5.76
+ },
+ {
+  "uid": "u002",
+  "word": "a",
+  "start": 5.8,
+  "end": 5.84
+ },
+ {
+  "uid": "u002",
+  "word": "fever",
+  "start": 5.907,
+  "end": 6.24
+ },
+ {
+  "uid": "u002",
+  "word": "after",
+  "start": 6.307,
+  "end": 6.64
+ },
+ {
+  "uid": "u002",
   "word": "the",
-  "start": 14.2,
-  "end": 14.26
+  "start": 6.68,
+  "end": 6.8
+ },
+ {
+  "uid": "u002",
+  "word": "birth",
+  "start": 6.867,
+  "end": 7.2
+ },
+ {
+  "uid": "u002",
+  "word": "and",
+  "start": 7.24,
+  "end": 7.36
+ },
+ {
+  "uid": "u002",
+  "word": "dies,",
+  "start": 7.456,
+  "end": 8.08
+ },
+ {
+  "uid": "u002",
+  "word": "any",
+  "start": 8.1,
+  "end": 8.41
+ },
+ {
+  "uid": "u002",
+  "word": "doctor",
+  "start": 8.467,
+  "end": 8.81
+ },
+ {
+  "uid": "u002",
+  "word": "here",
+  "start": 8.858,
+  "end": 9.05
+ },
+ {
+  "uid": "u002",
+  "word": "will",
+  "start": 9.082,
+  "end": 9.21
+ },
+ {
+  "uid": "u002",
+  "word": "tell",
+  "start": 9.258,
+  "end": 9.45
+ },
+ {
+  "uid": "u002",
+  "word": "you",
+  "start": 9.49,
+  "end": 9.61
+ },
+ {
+  "uid": "u002",
+  "word": "why.",
+  "start": 9.69,
+  "end": 10.26
+ },
+ {
+  "uid": "u002",
+  "word": "Bad",
+  "start": 10.3,
+  "end": 10.72
+ },
+ {
+  "uid": "u002",
+  "word": "air.",
+  "start": 10.82,
+  "end": 11.37
  },
  {
   "uid": "u003",
-  "word": "maternity",
-  "start": 14.324,
-  "end": 14.9
- },
- {
-  "uid": "u003",
-  "word": "hospitals",
-  "start": 14.98,
-  "end": 15.7
- },
- {
-  "uid": "u003",
-  "word": "of",
-  "start": 15.78,
-  "end": 15.94
- },
- {
-  "uid": "u003",
-  "word": "the",
-  "start": 15.98,
-  "end": 16.1
- },
- {
-  "uid": "u003",
-  "word": "world.",
-  "start": 16.18,
-  "end": 16.66
- },
- {
-  "uid": "u004",
-  "word": "Ignaz",
-  "start": 16.66,
-  "end": 17.13
- },
- {
-  "uid": "u004",
-  "word": "Semmelweis",
-  "start": 17.19,
-  "end": 17.85
- },
- {
-  "uid": "u004",
-  "word": "wrote",
-  "start": 17.917,
-  "end": 18.25
- },
- {
-  "uid": "u004",
-  "word": "that.",
-  "start": 18.298,
-  "end": 18.57
- },
- {
-  "uid": "u004",
   "word": "But",
-  "start": 18.69,
-  "end": 19.18
+  "start": 11.5,
+  "end": 11.53
+ },
+ {
+  "uid": "u003",
+  "word": "here's",
+  "start": 11.578,
+  "end": 11.85
+ },
+ {
+  "uid": "u003",
+  "word": "what",
+  "start": 11.898,
+  "end": 12.09
+ },
+ {
+  "uid": "u003",
+  "word": "nobody",
+  "start": 12.147,
+  "end": 12.49
+ },
+ {
+  "uid": "u003",
+  "word": "can",
+  "start": 12.53,
+  "end": 12.65
+ },
+ {
+  "uid": "u003",
+  "word": "explain:",
+  "start": 12.72,
+  "end": 13.53
+ },
+ {
+  "uid": "u003",
+  "word": "why",
+  "start": 13.53,
+  "end": 13.82
+ },
+ {
+  "uid": "u003",
+  "word": "does",
+  "start": 13.852,
+  "end": 13.98
+ },
+ {
+  "uid": "u003",
+  "word": "it",
+  "start": 14.033,
+  "end": 14.14
+ },
+ {
+  "uid": "u003",
+  "word": "matter",
+  "start": 14.186,
+  "end": 14.46
+ },
+ {
+  "uid": "u003",
+  "word": "so",
+  "start": 14.54,
+  "end": 14.7
+ },
+ {
+  "uid": "u003",
+  "word": "much",
+  "start": 14.764,
+  "end": 15.02
+ },
+ {
+  "uid": "u003",
+  "word": "which",
+  "start": 15.087,
+  "end": 15.42
+ },
+ {
+  "uid": "u003",
+  "word": "day",
+  "start": 15.48,
+  "end": 15.66
+ },
+ {
+  "uid": "u003",
+  "word": "she",
+  "start": 15.7,
+  "end": 15.82
+ },
+ {
+  "uid": "u003",
+  "word": "walks",
+  "start": 15.873,
+  "end": 16.14
+ },
+ {
+  "uid": "u003",
+  "word": "in?",
+  "start": 16.247,
+  "end": 16.54
  },
  {
   "uid": "u004",
-  "word": "most",
-  "start": 19.244,
-  "end": 19.5
+  "word": "The",
+  "start": 16.54,
+  "end": 16.62
  },
  {
   "uid": "u004",
-  "word": "doctors",
-  "start": 19.57,
-  "end": 20.06
+  "word": "hospital",
+  "start": 16.673,
+  "end": 17.1
  },
  {
   "uid": "u004",
-  "word": "of",
-  "start": 20.14,
+  "word": "has",
+  "start": 17.18,
+  "end": 17.42
+ },
+ {
+  "uid": "u004",
+  "word": "two",
+  "start": 17.48,
+  "end": 17.66
+ },
+ {
+  "uid": "u004",
+  "word": "maternity",
+  "start": 17.716,
+  "end": 18.22
+ },
+ {
+  "uid": "u004",
+  "word": "clinics,",
+  "start": 18.28,
+  "end": 18.94
+ },
+ {
+  "uid": "u004",
+  "word": "and",
+  "start": 18.98,
+  "end": 19.1
+ },
+ {
+  "uid": "u004",
+  "word": "they",
+  "start": 19.148,
+  "end": 19.34
+ },
+ {
+  "uid": "u004",
+  "word": "take",
+  "start": 19.388,
+  "end": 19.58
+ },
+ {
+  "uid": "u004",
+  "word": "women",
+  "start": 19.647,
+  "end": 19.98
+ },
+ {
+  "uid": "u004",
+  "word": "in",
+  "start": 20.087,
   "end": 20.3
  },
  {
   "uid": "u004",
-  "word": "his",
-  "start": 20.34,
-  "end": 20.46
+  "word": "on",
+  "start": 20.407,
+  "end": 20.62
  },
  {
   "uid": "u004",
-  "word": "day",
-  "start": 20.54,
-  "end": 20.78
+  "word": "alternate",
+  "start": 20.684,
+  "end": 21.26
  },
  {
   "uid": "u004",
-  "word": "rejected",
-  "start": 20.851,
-  "end": 21.42
- },
- {
-  "uid": "u004",
-  "word": "it.",
-  "start": 21.5,
-  "end": 21.74
+  "word": "days.",
+  "start": 21.34,
+  "end": 21.82
  },
  {
   "uid": "u005",
-  "word": "In",
-  "start": 21.74,
-  "end": 21.78
+  "word": "Doctors",
+  "start": 21.82,
+  "end": 22.3
  },
  {
   "uid": "u005",
-  "word": "his",
-  "start": 21.84,
-  "end": 22.02
- },
- {
-  "uid": "u005",
-  "word": "day,",
-  "start": 22.1,
-  "end": 22.66
- },
- {
-  "uid": "u005",
-  "word": "every",
-  "start": 22.7,
-  "end": 22.9
- },
- {
-  "uid": "u005",
-  "word": "doctor",
-  "start": 22.957,
-  "end": 23.3
- },
- {
-  "uid": "u005",
-  "word": "knew",
-  "start": 23.364,
-  "end": 23.62
- },
- {
-  "uid": "u005",
-  "word": "what",
-  "start": 23.668,
-  "end": 23.86
- },
- {
-  "uid": "u005",
-  "word": "killed",
-  "start": 23.917,
-  "end": 24.26
- },
- {
-  "uid": "u005",
-  "word": "new",
-  "start": 24.32,
-  "end": 24.5
- },
- {
-  "uid": "u005",
-  "word": "mothers:",
-  "start": 24.57,
-  "end": 25.41
- },
- {
-  "uid": "u005",
-  "word": "bad",
-  "start": 25.49,
-  "end": 25.73
- },
- {
-  "uid": "u005",
-  "word": "air.",
-  "start": 25.85,
-  "end": 26.29
- },
- {
-  "uid": "u006",
-  "word": "So",
-  "start": 26.47,
-  "end": 26.51
- },
- {
-  "uid": "u006",
-  "word": "why",
-  "start": 26.59,
-  "end": 26.83
- },
- {
-  "uid": "u006",
-  "word": "did",
-  "start": 26.89,
-  "end": 27.07
- },
- {
-  "uid": "u006",
-  "word": "they",
-  "start": 27.102,
-  "end": 27.23
- },
- {
-  "uid": "u006",
-  "word": "die",
-  "start": 27.29,
-  "end": 27.47
- },
- {
-  "uid": "u006",
-  "word": "in",
-  "start": 27.55,
-  "end": 27.71
- },
- {
-  "uid": "u006",
-  "word": "one",
-  "start": 27.77,
-  "end": 27.95
- },
- {
-  "uid": "u006",
-  "word": "clinic",
-  "start": 28.007,
-  "end": 28.35
- },
- {
-  "uid": "u006",
-  "word": "of",
-  "start": 28.377,
-  "end": 28.43
- },
- {
-  "uid": "u006",
-  "word": "Vienna's",
-  "start": 28.487,
-  "end": 28.91
- },
- {
-  "uid": "u006",
-  "word": "hospital,",
-  "start": 28.972,
-  "end": 29.55
- },
- {
-  "uid": "u006",
   "word": "and",
-  "start": 29.69,
-  "end": 30.04
+  "start": 22.34,
+  "end": 22.46
  },
  {
-  "uid": "u006",
-  "word": "hardly",
-  "start": 30.109,
-  "end": 30.52
+  "uid": "u005",
+  "word": "medical",
+  "start": 22.51,
+  "end": 22.86
  },
  {
-  "uid": "u006",
-  "word": "at",
-  "start": 30.573,
-  "end": 30.68
- },
- {
-  "uid": "u006",
-  "word": "all",
-  "start": 30.74,
-  "end": 30.92
- },
- {
-  "uid": "u006",
-  "word": "in",
-  "start": 31.0,
-  "end": 31.16
- },
- {
-  "uid": "u006",
-  "word": "the",
-  "start": 31.18,
-  "end": 31.24
- },
- {
-  "uid": "u006",
-  "word": "next?",
-  "start": 31.32,
-  "end": 31.8
- },
- {
-  "uid": "u007",
-  "word": "Vienna,",
-  "start": 31.8,
-  "end": 32.45
- },
- {
-  "uid": "u007",
-  "word": "eighteen",
-  "start": 32.486,
-  "end": 32.77
- },
- {
-  "uid": "u007",
-  "word": "forty",
-  "start": 32.837,
-  "end": 33.17
- },
- {
-  "uid": "u007",
-  "word": "six.",
-  "start": 33.29,
-  "end": 33.81
- },
- {
-  "uid": "u007",
-  "word": "Semmelweis,",
-  "start": 33.96,
-  "end": 35.03
- },
- {
-  "uid": "u007",
-  "word": "twenty",
-  "start": 35.064,
-  "end": 35.27
- },
- {
-  "uid": "u007",
-  "word": "eight,",
-  "start": 35.31,
-  "end": 35.67
- },
- {
-  "uid": "u007",
-  "word": "is",
-  "start": 35.857,
-  "end": 36.15
- },
- {
-  "uid": "u007",
-  "word": "the",
-  "start": 36.17,
-  "end": 36.23
- },
- {
-  "uid": "u007",
-  "word": "new",
-  "start": 36.29,
-  "end": 36.47
- },
- {
-  "uid": "u007",
-  "word": "assistant",
-  "start": 36.542,
-  "end": 37.19
- },
- {
-  "uid": "u007",
-  "word": "in",
-  "start": 37.243,
-  "end": 37.35
- },
- {
-  "uid": "u007",
-  "word": "the",
-  "start": 37.39,
-  "end": 37.51
- },
- {
-  "uid": "u007",
-  "word": "First",
-  "start": 37.563,
-  "end": 37.83
- },
- {
-  "uid": "u007",
-  "word": "Clinic.",
-  "start": 37.899,
-  "end": 38.47
- },
- {
-  "uid": "u008",
-  "word": "Here,",
-  "start": 38.47,
-  "end": 39.03
- },
- {
-  "uid": "u008",
-  "word": "doctors",
-  "start": 39.09,
-  "end": 39.51
- },
- {
-  "uid": "u008",
-  "word": "and",
-  "start": 39.53,
-  "end": 39.59
- },
- {
-  "uid": "u008",
+  "uid": "u005",
   "word": "students",
-  "start": 39.643,
-  "end": 40.07
+  "start": 22.931,
+  "end": 23.5
+ },
+ {
+  "uid": "u005",
+  "word": "run",
+  "start": 23.6,
+  "end": 23.9
+ },
+ {
+  "uid": "u005",
+  "word": "the",
+  "start": 23.94,
+  "end": 24.06
+ },
+ {
+  "uid": "u005",
+  "word": "first",
+  "start": 24.113,
+  "end": 24.38
+ },
+ {
+  "uid": "u005",
+  "word": "one,",
+  "start": 24.44,
+  "end": 25.18
+ },
+ {
+  "uid": "u005",
+  "word": "and",
+  "start": 25.22,
+  "end": 25.34
+ },
+ {
+  "uid": "u005",
+  "word": "midwives",
+  "start": 25.4,
+  "end": 25.98
+ },
+ {
+  "uid": "u005",
+  "word": "run",
+  "start": 26.06,
+  "end": 26.3
+ },
+ {
+  "uid": "u005",
+  "word": "the",
+  "start": 26.32,
+  "end": 26.38
+ },
+ {
+  "uid": "u005",
+  "word": "second.",
+  "start": 26.449,
+  "end": 27.02
+ },
+ {
+  "uid": "u006",
+  "word": "That",
+  "start": 27.02,
+  "end": 27.22
+ },
+ {
+  "uid": "u006",
+  "word": "year,",
+  "start": 27.284,
+  "end": 27.62
+ },
+ {
+  "uid": "u006",
+  "word": "one",
+  "start": 27.76,
+  "end": 28.18
+ },
+ {
+  "uid": "u006",
+  "word": "mother",
+  "start": 28.226,
+  "end": 28.5
+ },
+ {
+  "uid": "u006",
+  "word": "in",
+  "start": 28.553,
+  "end": 28.66
+ },
+ {
+  "uid": "u006",
+  "word": "nine",
+  "start": 28.724,
+  "end": 28.98
+ },
+ {
+  "uid": "u006",
+  "word": "dies",
+  "start": 29.06,
+  "end": 29.38
+ },
+ {
+  "uid": "u006",
+  "word": "in",
+  "start": 29.433,
+  "end": 29.54
+ },
+ {
+  "uid": "u006",
+  "word": "the",
+  "start": 29.56,
+  "end": 29.62
+ },
+ {
+  "uid": "u006",
+  "word": "first",
+  "start": 29.673,
+  "end": 29.94
+ },
+ {
+  "uid": "u006",
+  "word": "clinic.",
+  "start": 29.997,
+  "end": 30.5
+ },
+ {
+  "uid": "u006",
+  "word": "In",
+  "start": 30.66,
+  "end": 30.87
+ },
+ {
+  "uid": "u006",
+  "word": "the",
+  "start": 30.91,
+  "end": 31.03
+ },
+ {
+  "uid": "u006",
+  "word": "second,",
+  "start": 31.087,
+  "end": 31.83
+ },
+ {
+  "uid": "u006",
+  "word": "it's",
+  "start": 31.883,
+  "end": 32.07
+ },
+ {
+  "uid": "u006",
+  "word": "one",
+  "start": 32.13,
+  "end": 32.31
+ },
+ {
+  "uid": "u006",
+  "word": "in",
+  "start": 32.363,
+  "end": 32.47
+ },
+ {
+  "uid": "u006",
+  "word": "thirty",
+  "start": 32.504,
+  "end": 32.71
+ },
+ {
+  "uid": "u006",
+  "word": "six.",
+  "start": 32.81,
+  "end": 33.27
+ },
+ {
+  "uid": "u007",
+  "word": "And",
+  "start": 33.27,
+  "end": 33.35
+ },
+ {
+  "uid": "u007",
+  "word": "the",
+  "start": 33.37,
+  "end": 33.43
+ },
+ {
+  "uid": "u007",
+  "word": "women",
+  "start": 33.483,
+  "end": 33.75
+ },
+ {
+  "uid": "u007",
+  "word": "know",
+  "start": 33.798,
+  "end": 33.99
+ },
+ {
+  "uid": "u007",
+  "word": "it,",
+  "start": 34.043,
+  "end": 34.23
+ },
+ {
+  "uid": "u007",
+  "word": "so",
+  "start": 34.49,
+  "end": 34.94
+ },
+ {
+  "uid": "u007",
+  "word": "well",
+  "start": 35.004,
+  "end": 35.26
+ },
+ {
+  "uid": "u007",
+  "word": "that",
+  "start": 35.356,
+  "end": 35.74
+ },
+ {
+  "uid": "u007",
+  "word": "they",
+  "start": 35.772,
+  "end": 35.9
+ },
+ {
+  "uid": "u007",
+  "word": "beg",
+  "start": 35.98,
+  "end": 36.22
+ },
+ {
+  "uid": "u007",
+  "word": "on",
+  "start": 36.247,
+  "end": 36.3
+ },
+ {
+  "uid": "u007",
+  "word": "their",
+  "start": 36.327,
+  "end": 36.46
+ },
+ {
+  "uid": "u007",
+  "word": "knees",
+  "start": 36.527,
+  "end": 36.86
+ },
+ {
+  "uid": "u007",
+  "word": "to",
+  "start": 36.967,
+  "end": 37.18
+ },
+ {
+  "uid": "u007",
+  "word": "be",
+  "start": 37.207,
+  "end": 37.26
+ },
+ {
+  "uid": "u007",
+  "word": "taken",
+  "start": 37.327,
+  "end": 37.66
+ },
+ {
+  "uid": "u007",
+  "word": "anywhere",
+  "start": 37.722,
+  "end": 38.22
+ },
+ {
+  "uid": "u007",
+  "word": "else.",
+  "start": 38.284,
+  "end": 38.7
  },
  {
   "uid": "u008",
-  "word": "deliver",
-  "start": 40.12,
-  "end": 40.47
+  "word": "Please.",
+  "start": 39.159,
+  "end": 39.29
+ },
+ {
+  "uid": "u008",
+  "word": "Not",
+  "start": 39.51,
+  "end": 39.9
  },
  {
   "uid": "u008",
   "word": "the",
-  "start": 40.49,
-  "end": 40.55
+  "start": 39.94,
+  "end": 40.06
  },
  {
   "uid": "u008",
-  "word": "babies.",
-  "start": 40.63,
-  "end": 41.27
+  "word": "first",
+  "start": 40.14,
+  "end": 40.54
  },
  {
   "uid": "u008",
-  "word": "Next",
-  "start": 41.398,
-  "end": 41.84
- },
- {
-  "uid": "u008",
-  "word": "door,",
-  "start": 41.904,
-  "end": 42.44
- },
- {
-  "uid": "u008",
-  "word": "midwives",
-  "start": 42.51,
-  "end": 42.96
- },
- {
-  "uid": "u008",
-  "word": "do.",
-  "start": 43.067,
-  "end": 43.52
+  "word": "clinic.",
+  "start": 40.62,
+  "end": 41.18
  },
  {
   "uid": "u009",
+  "word": "Same",
+  "start": 41.18,
+  "end": 41.34
+ },
+ {
+  "uid": "u009",
+  "word": "building.",
+  "start": 41.393,
+  "end": 41.9
+ },
+ {
+  "uid": "u009",
+  "word": "Same",
+  "start": 41.98,
+  "end": 42.3
+ },
+ {
+  "uid": "u009",
+  "word": "city.",
+  "start": 42.38,
+  "end": 42.98
+ },
+ {
+  "uid": "u009",
+  "word": "Same",
+  "start": 43.036,
+  "end": 43.26
+ },
+ {
+  "uid": "u009",
+  "word": "air.",
+  "start": 43.36,
+  "end": 44.33
+ },
+ {
+  "uid": "u009",
+  "word": "So",
+  "start": 44.383,
+  "end": 44.49
+ },
+ {
+  "uid": "u009",
+  "word": "if",
+  "start": 44.597,
+  "end": 44.81
+ },
+ {
+  "uid": "u009",
+  "word": "you",
+  "start": 44.83,
+  "end": 44.89
+ },
+ {
+  "uid": "u009",
+  "word": "were",
+  "start": 44.938,
+  "end": 45.13
+ },
+ {
+  "uid": "u009",
+  "word": "the",
+  "start": 45.15,
+  "end": 45.21
+ },
+ {
+  "uid": "u009",
+  "word": "doctor",
+  "start": 45.279,
+  "end": 45.69
+ },
+ {
+  "uid": "u009",
+  "word": "here,",
+  "start": 45.754,
+  "end": 46.09
+ },
+ {
+  "uid": "u009",
+  "word": "what",
+  "start": 46.186,
+  "end": 46.57
+ },
+ {
+  "uid": "u009",
+  "word": "would",
+  "start": 46.597,
+  "end": 46.73
+ },
+ {
+  "uid": "u009",
+  "word": "you",
+  "start": 46.75,
+  "end": 46.81
+ },
+ {
+  "uid": "u009",
+  "word": "check",
+  "start": 46.863,
+  "end": 47.13
+ },
+ {
+  "uid": "u009",
+  "word": "first?",
+  "start": 47.197,
+  "end": 47.77
+ },
+ {
+  "uid": "u010",
   "word": "That",
-  "start": 43.52,
-  "end": 43.67
- },
- {
-  "uid": "u009",
-  "word": "year,",
-  "start": 43.75,
-  "end": 44.35
- },
- {
-  "uid": "u009",
-  "word": "one",
-  "start": 44.42,
-  "end": 44.63
- },
- {
-  "uid": "u009",
-  "word": "mother",
-  "start": 44.687,
-  "end": 45.03
- },
- {
-  "uid": "u009",
-  "word": "in",
-  "start": 45.057,
-  "end": 45.11
- },
- {
-  "uid": "u009",
-  "word": "nine",
-  "start": 45.174,
-  "end": 45.43
- },
- {
-  "uid": "u009",
-  "word": "dies",
-  "start": 45.494,
-  "end": 45.75
- },
- {
-  "uid": "u009",
-  "word": "here.",
-  "start": 45.814,
-  "end": 46.23
- },
- {
-  "uid": "u009",
-  "word": "Next",
-  "start": 46.406,
-  "end": 46.82
- },
- {
-  "uid": "u009",
-  "word": "door,",
-  "start": 46.884,
-  "end": 47.46
- },
- {
-  "uid": "u009",
-  "word": "one",
-  "start": 47.54,
-  "end": 47.78
- },
- {
-  "uid": "u009",
-  "word": "in",
-  "start": 47.887,
-  "end": 48.1
- },
- {
-  "uid": "u009",
-  "word": "thirty",
-  "start": 48.146,
-  "end": 48.42
- },
- {
-  "uid": "u009",
-  "word": "six.",
-  "start": 48.56,
-  "end": 49.06
+  "start": 47.61,
+  "end": 47.71
  },
  {
   "uid": "u010",
-  "word": "Yet",
-  "start": 49.06,
-  "end": 49.3
+  "word": "question",
+  "start": 47.763,
+  "end": 48.19
  },
  {
   "uid": "u010",
-  "word": "both",
-  "start": 49.364,
-  "end": 49.62
+  "word": "eats",
+  "start": 48.286,
+  "end": 48.67
  },
  {
   "uid": "u010",
-  "word": "clinics",
-  "start": 49.68,
-  "end": 50.1
+  "word": "at",
+  "start": 48.697,
+  "end": 48.75
  },
  {
   "uid": "u010",
-  "word": "share",
-  "start": 50.153,
-  "end": 50.42
+  "word": "a",
+  "start": 48.79,
+  "end": 48.83
  },
  {
   "uid": "u010",
-  "word": "one",
-  "start": 50.48,
-  "end": 50.66
+  "word": "young",
+  "start": 48.87,
+  "end": 49.07
  },
  {
   "uid": "u010",
-  "word": "hospital,",
-  "start": 50.722,
-  "end": 51.7
+  "word": "doctor",
+  "start": 49.139,
+  "end": 49.55
+ },
+ {
+  "uid": "u010",
+  "word": "called",
+  "start": 49.619,
+  "end": 50.03
+ },
+ {
+  "uid": "u010",
+  "word": "Ignaz",
+  "start": 50.13,
+  "end": 50.59
+ },
+ {
+  "uid": "u010",
+  "word": "Semmelweis.",
+  "start": 50.67,
+  "end": 51.55
+ },
+ {
+  "uid": "u010",
+  "word": "He's",
+  "start": 51.66,
+  "end": 51.96
+ },
+ {
+  "uid": "u010",
+  "word": "twenty",
+  "start": 52.017,
+  "end": 52.36
+ },
+ {
+  "uid": "u010",
+  "word": "eight,",
+  "start": 52.4,
+  "end": 53.0
  },
  {
   "uid": "u010",
   "word": "and",
-  "start": 51.72,
-  "end": 51.78
+  "start": 53.04,
+  "end": 53.16
  },
  {
   "uid": "u010",
   "word": "the",
-  "start": 51.8,
-  "end": 51.86
+  "start": 53.18,
+  "end": 53.24
  },
  {
   "uid": "u010",
-  "word": "same",
-  "start": 51.924,
-  "end": 52.18
+  "word": "new",
+  "start": 53.28,
+  "end": 53.4
  },
  {
   "uid": "u010",
-  "word": "Vienna",
-  "start": 52.26,
-  "end": 52.74
+  "word": "assistant",
+  "start": 53.456,
+  "end": 53.96
  },
  {
   "uid": "u010",
-  "word": "air.",
-  "start": 52.82,
-  "end": 53.22
+  "word": "in",
+  "start": 53.987,
+  "end": 54.04
+ },
+ {
+  "uid": "u010",
+  "word": "the",
+  "start": 54.08,
+  "end": 54.2
+ },
+ {
+  "uid": "u010",
+  "word": "first",
+  "start": 54.24,
+  "end": 54.44
+ },
+ {
+  "uid": "u010",
+  "word": "clinic.",
+  "start": 54.509,
+  "end": 55.08
  },
  {
   "uid": "u011",
   "word": "Everything",
-  "start": 53.776,
-  "end": 53.94
+  "start": 55.636,
+  "end": 55.8
  },
  {
   "uid": "u011",
   "word": "was",
-  "start": 53.98,
-  "end": 54.1
+  "start": 55.84,
+  "end": 55.96
  },
  {
   "uid": "u011",
   "word": "in",
-  "start": 54.153,
-  "end": 54.26
+  "start": 56.013,
+  "end": 56.12
  },
  {
   "uid": "u011",
   "word": "question.",
-  "start": 54.34,
-  "end": 54.981
+  "start": 56.2,
+  "end": 56.841
  },
  {
   "uid": "u011",
   "word": "Only",
-  "start": 55.14,
-  "end": 55.78
+  "start": 57.0,
+  "end": 57.64
  },
  {
   "uid": "u011",
   "word": "the",
-  "start": 55.82,
-  "end": 55.94
+  "start": 57.68,
+  "end": 57.8
  },
  {
   "uid": "u011",
   "word": "large",
-  "start": 55.993,
-  "end": 56.26
+  "start": 57.853,
+  "end": 58.12
  },
  {
   "uid": "u011",
   "word": "number",
-  "start": 56.306,
-  "end": 56.58
+  "start": 58.166,
+  "end": 58.44
  },
  {
   "uid": "u011",
   "word": "of",
-  "start": 56.607,
-  "end": 56.66
+  "start": 58.467,
+  "end": 58.52
  },
  {
   "uid": "u011",
   "word": "deaths",
-  "start": 56.729,
-  "end": 57.14
+  "start": 58.589,
+  "end": 59.0
  },
  {
   "uid": "u011",
   "word": "was",
-  "start": 57.2,
-  "end": 57.38
+  "start": 59.06,
+  "end": 59.24
  },
  {
   "uid": "u011",
   "word": "an",
-  "start": 57.433,
-  "end": 57.54
+  "start": 59.293,
+  "end": 59.4
  },
  {
   "uid": "u011",
   "word": "unquestionable",
-  "start": 57.605,
-  "end": 58.5
+  "start": 59.465,
+  "end": 60.36
  },
  {
   "uid": "u011",
   "word": "reality.",
-  "start": 58.58,
-  "end": 59.38
+  "start": 60.44,
+  "end": 61.24
  },
  {
   "uid": "u012",
-  "word": "But",
-  "start": 59.38,
-  "end": 59.46
+  "word": "So",
+  "start": 61.24,
+  "end": 61.32
  },
  {
   "uid": "u012",
+  "word": "Semmelweis",
+  "start": 61.38,
+  "end": 61.96
+ },
+ {
+  "uid": "u012",
+  "word": "starts",
+  "start": 62.04,
+  "end": 62.52
+ },
+ {
+  "uid": "u012",
+  "word": "testing",
+  "start": 62.57,
+  "end": 62.92
+ },
+ {
+  "uid": "u012",
+  "word": "his",
+  "start": 62.98,
+  "end": 63.16
+ },
+ {
+  "uid": "u012",
+  "word": "guesses,",
+  "start": 63.22,
+  "end": 64.06
+ },
+ {
+  "uid": "u012",
+  "word": "one",
+  "start": 64.14,
+  "end": 64.38
+ },
+ {
+  "uid": "u012",
+  "word": "at",
+  "start": 64.46,
+  "end": 64.62
+ },
+ {
+  "uid": "u012",
+  "word": "a",
+  "start": 64.66,
+  "end": 64.7
+ },
+ {
+  "uid": "u012",
+  "word": "time.",
+  "start": 64.78,
+  "end": 65.18
+ },
+ {
+  "uid": "u013",
+  "word": "Maybe",
+  "start": 65.18,
+  "end": 65.48
+ },
+ {
+  "uid": "u013",
+  "word": "it's",
+  "start": 65.56,
+  "end": 65.8
+ },
+ {
+  "uid": "u013",
   "word": "the",
-  "start": 59.5,
-  "end": 59.62
+  "start": 65.84,
+  "end": 65.96
  },
  {
-  "uid": "u012",
+  "uid": "u013",
+  "word": "air.",
+  "start": 66.04,
+  "end": 66.36
+ },
+ {
+  "uid": "u013",
+  "word": "Yet",
+  "start": 66.58,
+  "end": 66.97
+ },
+ {
+  "uid": "u013",
   "word": "women",
-  "start": 59.673,
-  "end": 59.94
- },
- {
-  "uid": "u012",
-  "word": "know",
-  "start": 59.988,
-  "end": 60.18
- },
- {
-  "uid": "u012",
-  "word": "the",
-  "start": 60.22,
-  "end": 60.34
- },
- {
-  "uid": "u012",
-  "word": "difference.",
-  "start": 60.384,
-  "end": 61.05
+  "start": 67.037,
+  "end": 67.37
  },
  {
   "uid": "u013",
-  "word": "Please.",
-  "start": 61.509,
-  "end": 61.64
+  "word": "who",
+  "start": 67.45,
+  "end": 67.69
  },
  {
   "uid": "u013",
-  "word": "Not",
-  "start": 61.86,
-  "end": 62.25
+  "word": "give",
+  "start": 67.738,
+  "end": 67.93
+ },
+ {
+  "uid": "u013",
+  "word": "birth",
+  "start": 67.997,
+  "end": 68.33
+ },
+ {
+  "uid": "u013",
+  "word": "in",
+  "start": 68.357,
+  "end": 68.41
  },
  {
   "uid": "u013",
   "word": "the",
-  "start": 62.29,
-  "end": 62.41
+  "start": 68.45,
+  "end": 68.57
  },
  {
   "uid": "u013",
-  "word": "first",
-  "start": 62.49,
-  "end": 62.89
+  "word": "street,",
+  "start": 68.627,
+  "end": 69.37
  },
  {
   "uid": "u013",
-  "word": "clinic.",
-  "start": 62.97,
-  "end": 63.53
+  "word": "on",
+  "start": 69.423,
+  "end": 69.53
+ },
+ {
+  "uid": "u013",
+  "word": "their",
+  "start": 69.557,
+  "end": 69.69
+ },
+ {
+  "uid": "u013",
+  "word": "way",
+  "start": 69.75,
+  "end": 69.93
+ },
+ {
+  "uid": "u013",
+  "word": "to",
+  "start": 69.983,
+  "end": 70.09
+ },
+ {
+  "uid": "u013",
+  "word": "the",
+  "start": 70.11,
+  "end": 70.17
+ },
+ {
+  "uid": "u013",
+  "word": "hospital,",
+  "start": 70.241,
+  "end": 71.13
+ },
+ {
+  "uid": "u013",
+  "word": "hardly",
+  "start": 71.187,
+  "end": 71.53
+ },
+ {
+  "uid": "u013",
+  "word": "ever",
+  "start": 71.578,
+  "end": 71.77
+ },
+ {
+  "uid": "u013",
+  "word": "catch",
+  "start": 71.837,
+  "end": 72.17
+ },
+ {
+  "uid": "u013",
+  "word": "the",
+  "start": 72.19,
+  "end": 72.25
+ },
+ {
+  "uid": "u013",
+  "word": "fever.",
+  "start": 72.33,
+  "end": 72.81
  },
  {
   "uid": "u014",
-  "word": "He",
-  "start": 63.53,
-  "end": 63.59
+  "word": "Maybe",
+  "start": 72.81,
+  "end": 73.05
  },
  {
   "uid": "u014",
-  "word": "wrote",
-  "start": 63.63,
-  "end": 63.83
+  "word": "it's",
+  "start": 73.103,
+  "end": 73.33
  },
  {
   "uid": "u014",
-  "word": "that",
-  "start": 63.878,
-  "end": 64.07
+  "word": "how",
+  "start": 73.36,
+  "end": 73.45
  },
  {
   "uid": "u014",
   "word": "they",
-  "start": 64.118,
-  "end": 64.31
+  "start": 73.466,
+  "end": 73.53
  },
  {
   "uid": "u014",
-  "word": "knelt,",
-  "start": 64.363,
-  "end": 64.87
+  "word": "give",
+  "start": 73.578,
+  "end": 73.77
  },
  {
   "uid": "u014",
-  "word": "wringing",
-  "start": 64.923,
-  "end": 65.27
+  "word": "birth.",
+  "start": 73.85,
+  "end": 74.51
  },
  {
   "uid": "u014",
-  "word": "their",
-  "start": 65.297,
-  "end": 65.43
- },
- {
-  "uid": "u014",
-  "word": "hands,",
-  "start": 65.497,
-  "end": 66.28
- },
- {
-  "uid": "u014",
-  "word": "begging",
-  "start": 66.33,
-  "end": 66.68
- },
- {
-  "uid": "u014",
-  "word": "to",
-  "start": 66.707,
-  "end": 66.76
- },
- {
-  "uid": "u014",
-  "word": "be",
-  "start": 66.813,
-  "end": 66.92
- },
- {
-  "uid": "u014",
-  "word": "sent",
-  "start": 66.984,
-  "end": 67.24
- },
- {
-  "uid": "u014",
-  "word": "next",
-  "start": 67.304,
-  "end": 67.56
- },
- {
-  "uid": "u014",
-  "word": "door.",
-  "start": 67.608,
-  "end": 67.96
- },
- {
-  "uid": "u015",
-  "word": "So",
-  "start": 68.079,
-  "end": 68.1
- },
- {
-  "uid": "u015",
-  "word": "Semmelweis",
-  "start": 68.16,
-  "end": 68.74
- },
- {
-  "uid": "u015",
-  "word": "tests",
-  "start": 68.833,
-  "end": 69.3
- },
- {
-  "uid": "u015",
-  "word": "every",
-  "start": 69.34,
-  "end": 69.54
- },
- {
-  "uid": "u015",
-  "word": "explanation,",
-  "start": 69.6,
-  "end": 70.5
- },
- {
-  "uid": "u015",
-  "word": "one",
-  "start": 70.54,
-  "end": 70.66
- },
- {
-  "uid": "u015",
-  "word": "by",
-  "start": 70.74,
-  "end": 70.9
- },
- {
-  "uid": "u015",
-  "word": "one.",
-  "start": 70.96,
-  "end": 71.22
- },
- {
-  "uid": "u015",
   "word": "The",
-  "start": 71.48,
-  "end": 71.92
+  "start": 74.51,
+  "end": 74.68
  },
  {
-  "uid": "u015",
+  "uid": "u014",
+  "word": "midwives'",
+  "start": 74.72,
+  "end": 75.36
+ },
+ {
+  "uid": "u014",
   "word": "mothers",
-  "start": 71.97,
-  "end": 72.32
+  "start": 75.385,
+  "end": 75.56
  },
  {
-  "uid": "u015",
-  "word": "deliver",
-  "start": 72.37,
-  "end": 72.72
+  "uid": "u014",
+  "word": "lie",
+  "start": 75.64,
+  "end": 75.88
  },
  {
-  "uid": "u015",
+  "uid": "u014",
   "word": "on",
-  "start": 72.747,
-  "end": 72.8
+  "start": 75.933,
+  "end": 76.04
  },
  {
-  "uid": "u015",
+  "uid": "u014",
   "word": "their",
-  "start": 72.827,
-  "end": 72.96
+  "start": 76.067,
+  "end": 76.2
  },
  {
-  "uid": "u015",
+  "uid": "u014",
   "word": "side,",
-  "start": 73.04,
-  "end": 73.52
+  "start": 76.296,
+  "end": 76.98
  },
  {
-  "uid": "u015",
-  "word": "as",
-  "start": 73.573,
-  "end": 73.68
+  "uid": "u014",
+  "word": "so",
+  "start": 77.033,
+  "end": 77.14
  },
  {
-  "uid": "u015",
+  "uid": "u014",
+  "word": "he",
+  "start": 77.22,
+  "end": 77.38
+ },
+ {
+  "uid": "u014",
+  "word": "has",
+  "start": 77.42,
+  "end": 77.54
+ },
+ {
+  "uid": "u014",
   "word": "the",
-  "start": 73.72,
-  "end": 73.84
+  "start": 77.58,
+  "end": 77.7
  },
  {
-  "uid": "u015",
-  "word": "midwives",
-  "start": 73.88,
-  "end": 74.24
+  "uid": "u014",
+  "word": "women",
+  "start": 77.74,
+  "end": 77.94
  },
  {
-  "uid": "u015",
-  "word": "do.",
-  "start": 74.32,
-  "end": 74.56
+  "uid": "u014",
+  "word": "in",
+  "start": 77.993,
+  "end": 78.1
+ },
+ {
+  "uid": "u014",
+  "word": "his",
+  "start": 78.14,
+  "end": 78.26
+ },
+ {
+  "uid": "u014",
+  "word": "clinic",
+  "start": 78.317,
+  "end": 78.66
+ },
+ {
+  "uid": "u014",
+  "word": "do",
+  "start": 78.713,
+  "end": 78.82
+ },
+ {
+  "uid": "u014",
+  "word": "the",
+  "start": 78.86,
+  "end": 78.98
+ },
+ {
+  "uid": "u014",
+  "word": "same.",
+  "start": 79.044,
+  "end": 79.46
  },
  {
   "uid": "u015",
   "word": "Nothing",
-  "start": 74.7,
-  "end": 75.31
+  "start": 79.46,
+  "end": 79.86
  },
  {
   "uid": "u015",
   "word": "changes.",
-  "start": 75.38,
-  "end": 75.95
+  "start": 79.92,
+  "end": 80.5
  },
  {
   "uid": "u016",
-  "word": "But",
-  "start": 76.43,
-  "end": 76.48
+  "word": "Maybe",
+  "start": 80.5,
+  "end": 80.82
  },
  {
   "uid": "u016",
-  "word": "there",
-  "start": 76.52,
-  "end": 76.72
+  "word": "it's",
+  "start": 80.873,
+  "end": 81.06
+ },
+ {
+  "uid": "u016",
+  "word": "fear.",
+  "start": 81.14,
+  "end": 81.86
+ },
+ {
+  "uid": "u016",
+  "word": "Whenever",
+  "start": 81.904,
+  "end": 82.26
+ },
+ {
+  "uid": "u016",
+  "word": "a",
+  "start": 82.34,
+  "end": 82.42
+ },
+ {
+  "uid": "u016",
+  "word": "woman",
+  "start": 82.473,
+  "end": 82.74
  },
  {
   "uid": "u016",
   "word": "is",
-  "start": 76.747,
-  "end": 76.8
- },
- {
-  "uid": "u016",
-  "word": "the",
-  "start": 76.82,
-  "end": 76.88
- },
- {
-  "uid": "u016",
-  "word": "bell.",
-  "start": 76.96,
-  "end": 77.36
- },
- {
-  "uid": "u016",
-  "word": "A",
-  "start": 77.56,
-  "end": 77.77
- },
- {
-  "uid": "u016",
-  "word": "priest",
-  "start": 77.827,
-  "end": 78.17
- },
- {
-  "uid": "u016",
-  "word": "crosses",
-  "start": 78.24,
-  "end": 78.73
- },
- {
-  "uid": "u016",
-  "word": "the",
-  "start": 78.75,
-  "end": 78.81
- },
- {
-  "uid": "u016",
-  "word": "ward",
-  "start": 78.874,
-  "end": 79.13
- },
- {
-  "uid": "u016",
-  "word": "to",
-  "start": 79.183,
-  "end": 79.29
- },
- {
-  "uid": "u016",
-  "word": "the",
-  "start": 79.31,
-  "end": 79.37
+  "start": 82.793,
+  "end": 82.9
  },
  {
   "uid": "u016",
   "word": "dying,",
-  "start": 79.463,
-  "end": 80.25
+  "start": 82.98,
+  "end": 83.7
  },
  {
   "uid": "u016",
-  "word": "an",
-  "start": 80.303,
-  "end": 80.41
+  "word": "a",
+  "start": 83.74,
+  "end": 83.78
  },
  {
   "uid": "u016",
-  "word": "attendant",
-  "start": 80.466,
-  "end": 80.97
+  "word": "priest",
+  "start": 83.849,
+  "end": 84.26
  },
  {
   "uid": "u016",
-  "word": "ringing",
-  "start": 81.03,
-  "end": 81.45
+  "word": "comes",
+  "start": 84.313,
+  "end": 84.58
+ },
+ {
+  "uid": "u016",
+  "word": "through",
+  "start": 84.61,
+  "end": 84.82
+ },
+ {
+  "uid": "u016",
+  "word": "the",
+  "start": 84.86,
+  "end": 84.98
+ },
+ {
+  "uid": "u016",
+  "word": "ward",
+  "start": 85.06,
+  "end": 85.38
+ },
+ {
+  "uid": "u016",
+  "word": "to",
+  "start": 85.46,
+  "end": 85.62
+ },
+ {
+  "uid": "u016",
+  "word": "her",
+  "start": 85.66,
+  "end": 85.78
+ },
+ {
+  "uid": "u016",
+  "word": "bed,",
+  "start": 85.86,
+  "end": 86.64
+ },
+ {
+  "uid": "u016",
+  "word": "and",
+  "start": 86.68,
+  "end": 86.8
+ },
+ {
+  "uid": "u016",
+  "word": "a",
+  "start": 86.84,
+  "end": 86.88
+ },
+ {
+  "uid": "u016",
+  "word": "man",
+  "start": 86.96,
+  "end": 87.2
+ },
+ {
+  "uid": "u016",
+  "word": "walks",
+  "start": 87.253,
+  "end": 87.52
  },
  {
   "uid": "u016",
   "word": "ahead",
-  "start": 81.503,
-  "end": 81.77
+  "start": 87.56,
+  "end": 87.76
  },
  {
   "uid": "u016",
   "word": "of",
-  "start": 81.797,
-  "end": 81.85
+  "start": 87.787,
+  "end": 87.84
  },
  {
   "uid": "u016",
-  "word": "him.",
-  "start": 81.93,
-  "end": 82.25
+  "word": "him",
+  "start": 87.9,
+  "end": 88.08
+ },
+ {
+  "uid": "u016",
+  "word": "ringing",
+  "start": 88.14,
+  "end": 88.56
+ },
+ {
+  "uid": "u016",
+  "word": "a",
+  "start": 88.6,
+  "end": 88.64
+ },
+ {
+  "uid": "u016",
+  "word": "bell.",
+  "start": 88.72,
+  "end": 89.12
  },
  {
   "uid": "u017",
   "word": "Even",
-  "start": 82.506,
-  "end": 82.57
+  "start": 89.376,
+  "end": 89.44
  },
  {
   "uid": "u017",
   "word": "to",
-  "start": 82.623,
-  "end": 82.73
+  "start": 89.493,
+  "end": 89.6
  },
  {
   "uid": "u017",
   "word": "me",
-  "start": 82.783,
-  "end": 82.89
+  "start": 89.653,
+  "end": 89.76
  },
  {
   "uid": "u017",
   "word": "myself",
-  "start": 83.004,
-  "end": 83.69
+  "start": 89.874,
+  "end": 90.56
  },
  {
   "uid": "u017",
   "word": "it",
-  "start": 83.77,
-  "end": 83.93
+  "start": 90.64,
+  "end": 90.8
  },
  {
   "uid": "u017",
   "word": "had",
-  "start": 83.97,
-  "end": 84.09
+  "start": 90.84,
+  "end": 90.96
  },
  {
   "uid": "u017",
   "word": "a",
-  "start": 84.13,
-  "end": 84.17
+  "start": 91.0,
+  "end": 91.04
  },
  {
   "uid": "u017",
   "word": "strange",
-  "start": 84.23,
-  "end": 84.65
+  "start": 91.1,
+  "end": 91.52
  },
  {
   "uid": "u017",
   "word": "effect",
-  "start": 84.719,
-  "end": 85.13
+  "start": 91.589,
+  "end": 92.0
  },
  {
   "uid": "u017",
   "word": "upon",
-  "start": 85.21,
-  "end": 85.53
+  "start": 92.08,
+  "end": 92.4
  },
  {
   "uid": "u017",
   "word": "my",
-  "start": 85.61,
-  "end": 85.77
+  "start": 92.48,
+  "end": 92.64
  },
  {
   "uid": "u017",
   "word": "nerves,",
-  "start": 85.85,
-  "end": 86.49
+  "start": 92.72,
+  "end": 93.36
  },
  {
   "uid": "u017",
   "word": "when",
-  "start": 86.522,
-  "end": 86.65
+  "start": 93.392,
+  "end": 93.52
  },
  {
   "uid": "u017",
   "word": "I",
-  "start": 86.73,
-  "end": 86.81
+  "start": 93.6,
+  "end": 93.68
  },
  {
   "uid": "u017",
   "word": "heard",
-  "start": 86.85,
-  "end": 87.05
+  "start": 93.72,
+  "end": 93.92
  },
  {
   "uid": "u017",
   "word": "the",
-  "start": 87.07,
-  "end": 87.13
+  "start": 93.94,
+  "end": 94.0
  },
  {
   "uid": "u017",
   "word": "bell",
-  "start": 87.226,
-  "end": 87.61
+  "start": 94.096,
+  "end": 94.48
  },
  {
   "uid": "u017",
   "word": "hurry",
-  "start": 87.703,
-  "end": 88.17
+  "start": 94.573,
+  "end": 95.04
  },
  {
   "uid": "u017",
   "word": "past",
-  "start": 88.266,
-  "end": 88.65
+  "start": 95.136,
+  "end": 95.52
  },
  {
   "uid": "u017",
   "word": "my",
-  "start": 88.73,
-  "end": 88.89
+  "start": 95.6,
+  "end": 95.76
  },
  {
   "uid": "u017",
   "word": "door.",
-  "start": 88.97,
-  "end": 89.37
+  "start": 95.84,
+  "end": 96.24
  },
  {
   "uid": "u018",
-  "word": "He",
-  "start": 89.37,
-  "end": 89.4
+  "word": "So",
+  "start": 96.24,
+  "end": 96.32
+ },
+ {
+  "uid": "u018",
+  "word": "he",
+  "start": 96.4,
+  "end": 96.56
  },
  {
   "uid": "u018",
   "word": "sends",
-  "start": 89.453,
-  "end": 89.72
+  "start": 96.613,
+  "end": 96.88
  },
  {
   "uid": "u018",
   "word": "the",
-  "start": 89.74,
-  "end": 89.8
+  "start": 96.92,
+  "end": 97.04
  },
  {
   "uid": "u018",
   "word": "priest",
-  "start": 89.857,
-  "end": 90.2
- },
- {
-  "uid": "u018",
-  "word": "a",
-  "start": 90.28,
-  "end": 90.36
- },
- {
-  "uid": "u018",
-  "word": "quieter",
-  "start": 90.42,
-  "end": 90.84
- },
- {
-  "uid": "u018",
-  "word": "way.",
-  "start": 90.9,
-  "end": 91.56
- },
- {
-  "uid": "u018",
-  "word": "Still,",
-  "start": 91.627,
-  "end": 92.12
+  "start": 97.109,
+  "end": 97.52
  },
  {
   "uid": "u018",
   "word": "the",
-  "start": 92.2,
-  "end": 92.44
+  "start": 97.58,
+  "end": 97.76
+ },
+ {
+  "uid": "u018",
+  "word": "long",
+  "start": 97.808,
+  "end": 98.0
+ },
+ {
+  "uid": "u018",
+  "word": "way",
+  "start": 98.06,
+  "end": 98.24
+ },
+ {
+  "uid": "u018",
+  "word": "round,",
+  "start": 98.307,
+  "end": 99.2
+ },
+ {
+  "uid": "u018",
+  "word": "but",
+  "start": 99.24,
+  "end": 99.36
+ },
+ {
+  "uid": "u018",
+  "word": "the",
+  "start": 99.38,
+  "end": 99.44
  },
  {
   "uid": "u018",
   "word": "mothers",
-  "start": 92.5,
-  "end": 92.92
+  "start": 99.5,
+  "end": 99.92
  },
  {
   "uid": "u018",
-  "word": "die.",
-  "start": 93.02,
-  "end": 93.48
+  "word": "keep",
+  "start": 99.968,
+  "end": 100.16
+ },
+ {
+  "uid": "u018",
+  "word": "dying.",
+  "start": 100.227,
+  "end": 100.64
  },
  {
   "uid": "u019",
-  "word": "Then,",
-  "start": 93.566,
-  "end": 93.87
+  "word": "By",
+  "start": 100.782,
+  "end": 100.802
  },
  {
   "uid": "u019",
-  "word": "in",
-  "start": 93.923,
-  "end": 94.03
+  "word": "now,",
+  "start": 100.86,
+  "end": 101.12
  },
  {
   "uid": "u019",
-  "word": "March",
-  "start": 94.083,
-  "end": 94.35
+  "word": "whatever",
+  "start": 101.191,
+  "end": 101.76
  },
  {
   "uid": "u019",
-  "word": "eighteen",
-  "start": 94.403,
-  "end": 94.83
+  "word": "you",
+  "start": 101.8,
+  "end": 101.92
  },
  {
   "uid": "u019",
-  "word": "forty",
-  "start": 94.897,
-  "end": 95.23
+  "word": "guessed",
+  "start": 101.96,
+  "end": 102.24
  },
  {
   "uid": "u019",
-  "word": "seven,",
-  "start": 95.31,
-  "end": 96.11
+  "word": "first,",
+  "start": 102.307,
+  "end": 102.72
  },
  {
   "uid": "u019",
-  "word": "Semmelweis's",
-  "start": 96.15,
-  "end": 96.75
+  "word": "he's",
+  "start": 102.827,
+  "end": 103.12
  },
  {
   "uid": "u019",
-  "word": "friend",
-  "start": 96.807,
-  "end": 97.15
+  "word": "probably",
+  "start": 103.164,
+  "end": 103.52
  },
  {
   "uid": "u019",
-  "word": "Jakob",
-  "start": 97.29,
-  "end": 97.79
+  "word": "tried",
+  "start": 103.587,
+  "end": 103.92
  },
  {
   "uid": "u019",
-  "word": "Kolletschka",
-  "start": 97.85,
-  "end": 98.43
+  "word": "it.",
+  "start": 103.973,
+  "end": 104.38
  },
  {
   "uid": "u019",
-  "word": "is",
-  "start": 98.59,
-  "end": 98.91
+  "word": "And",
+  "start": 104.42,
+  "end": 104.54
  },
  {
   "uid": "u019",
-  "word": "cut",
-  "start": 98.97,
-  "end": 99.15
+  "word": "every",
+  "start": 104.593,
+  "end": 104.86
  },
  {
   "uid": "u019",
-  "word": "by",
-  "start": 99.203,
-  "end": 99.31
+  "word": "time,",
+  "start": 104.94,
+  "end": 105.34
  },
  {
   "uid": "u019",
-  "word": "a",
-  "start": 99.39,
-  "end": 99.47
+  "word": "he",
+  "start": 105.473,
+  "end": 105.74
  },
  {
   "uid": "u019",
-  "word": "student's",
-  "start": 99.52,
-  "end": 99.95
- },
- {
-  "uid": "u019",
-  "word": "knife",
-  "start": 100.017,
-  "end": 100.35
- },
- {
-  "uid": "u019",
-  "word": "during",
-  "start": 100.407,
-  "end": 100.75
- },
- {
-  "uid": "u019",
-  "word": "an",
-  "start": 100.803,
-  "end": 100.91
- },
- {
-  "uid": "u019",
-  "word": "autopsy,",
-  "start": 100.98,
-  "end": 101.63
- },
- {
-  "uid": "u019",
-  "word": "and",
-  "start": 101.65,
-  "end": 101.71
- },
- {
-  "uid": "u019",
-  "word": "dies.",
-  "start": 101.79,
-  "end": 102.27
- },
- {
-  "uid": "u020",
-  "word": "Day",
-  "start": 102.61,
-  "end": 102.67
- },
- {
-  "uid": "u020",
-  "word": "and",
-  "start": 102.73,
-  "end": 102.91
- },
- {
-  "uid": "u020",
-  "word": "night",
-  "start": 103.003,
-  "end": 103.47
- },
- {
-  "uid": "u020",
-  "word": "I",
-  "start": 103.51,
-  "end": 103.55
- },
- {
-  "uid": "u020",
   "word": "was",
-  "start": 103.61,
-  "end": 103.79
+  "start": 105.8,
+  "end": 105.98
+ },
+ {
+  "uid": "u019",
+  "word": "wrong.",
+  "start": 106.033,
+  "end": 106.83
  },
  {
   "uid": "u020",
-  "word": "haunted",
-  "start": 103.86,
-  "end": 104.35
+  "word": "Then,",
+  "start": 107.086,
+  "end": 107.35
  },
  {
   "uid": "u020",
-  "word": "by",
-  "start": 104.403,
-  "end": 104.51
+  "word": "in",
+  "start": 107.417,
+  "end": 107.55
  },
  {
   "uid": "u020",
-  "word": "the",
-  "start": 104.55,
-  "end": 104.67
+  "word": "March",
+  "start": 107.617,
+  "end": 107.95
  },
  {
   "uid": "u020",
-  "word": "image",
-  "start": 104.75,
-  "end": 105.15
+  "word": "eighteen",
+  "start": 108.012,
+  "end": 108.51
+ },
+ {
+  "uid": "u020",
+  "word": "forty",
+  "start": 108.577,
+  "end": 108.91
+ },
+ {
+  "uid": "u020",
+  "word": "seven,",
+  "start": 108.963,
+  "end": 109.31
+ },
+ {
+  "uid": "u020",
+  "word": "his",
+  "start": 109.47,
+  "end": 109.86
+ },
+ {
+  "uid": "u020",
+  "word": "friend",
+  "start": 109.917,
+  "end": 110.26
+ },
+ {
+  "uid": "u020",
+  "word": "Jakob",
+  "start": 110.4,
+  "end": 110.9
+ },
+ {
+  "uid": "u020",
+  "word": "Kolletschka,",
+  "start": 110.96,
+  "end": 111.84
+ },
+ {
+  "uid": "u020",
+  "word": "a",
+  "start": 111.9,
+  "end": 112.06
+ },
+ {
+  "uid": "u020",
+  "word": "professor",
+  "start": 112.108,
+  "end": 112.54
  },
  {
   "uid": "u020",
   "word": "of",
-  "start": 105.203,
-  "end": 105.31
+  "start": 112.593,
+  "end": 112.7
  },
  {
   "uid": "u020",
+  "word": "forensic",
+  "start": 112.753,
+  "end": 113.18
+ },
+ {
+  "uid": "u020",
+  "word": "medicine,",
+  "start": 113.233,
+  "end": 113.74
+ },
+ {
+  "uid": "u020",
+  "word": "is",
+  "start": 113.927,
+  "end": 114.3
+ },
+ {
+  "uid": "u020",
+  "word": "cut",
+  "start": 114.38,
+  "end": 114.62
+ },
+ {
+  "uid": "u020",
+  "word": "by",
+  "start": 114.7,
+  "end": 114.86
+ },
+ {
+  "uid": "u020",
+  "word": "a",
+  "start": 114.9,
+  "end": 114.94
+ },
+ {
+  "uid": "u020",
+  "word": "student's",
+  "start": 114.99,
+  "end": 115.42
+ },
+ {
+  "uid": "u020",
+  "word": "knife",
+  "start": 115.487,
+  "end": 115.82
+ },
+ {
+  "uid": "u020",
+  "word": "during",
+  "start": 115.877,
+  "end": 116.22
+ },
+ {
+  "uid": "u020",
+  "word": "an",
+  "start": 116.247,
+  "end": 116.3
+ },
+ {
+  "uid": "u020",
+  "word": "autopsy.",
+  "start": 116.37,
+  "end": 117.25
+ },
+ {
+  "uid": "u020",
+  "word": "And",
+  "start": 117.27,
+  "end": 117.33
+ },
+ {
+  "uid": "u020",
+  "word": "he",
+  "start": 117.41,
+  "end": 117.57
+ },
+ {
+  "uid": "u020",
+  "word": "dies.",
+  "start": 117.666,
+  "end": 118.21
+ },
+ {
+  "uid": "u021",
+  "word": "Day",
+  "start": 118.55,
+  "end": 118.61
+ },
+ {
+  "uid": "u021",
+  "word": "and",
+  "start": 118.67,
+  "end": 118.85
+ },
+ {
+  "uid": "u021",
+  "word": "night",
+  "start": 118.943,
+  "end": 119.41
+ },
+ {
+  "uid": "u021",
+  "word": "I",
+  "start": 119.45,
+  "end": 119.49
+ },
+ {
+  "uid": "u021",
+  "word": "was",
+  "start": 119.55,
+  "end": 119.73
+ },
+ {
+  "uid": "u021",
+  "word": "haunted",
+  "start": 119.8,
+  "end": 120.29
+ },
+ {
+  "uid": "u021",
+  "word": "by",
+  "start": 120.343,
+  "end": 120.45
+ },
+ {
+  "uid": "u021",
+  "word": "the",
+  "start": 120.49,
+  "end": 120.61
+ },
+ {
+  "uid": "u021",
+  "word": "image",
+  "start": 120.69,
+  "end": 121.09
+ },
+ {
+  "uid": "u021",
+  "word": "of",
+  "start": 121.143,
+  "end": 121.25
+ },
+ {
+  "uid": "u021",
   "word": "Kolletschka's",
-  "start": 105.37,
-  "end": 106.11
+  "start": 121.31,
+  "end": 122.05
  },
  {
-  "uid": "u020",
+  "uid": "u021",
   "word": "disease.",
-  "start": 106.21,
-  "end": 106.99
- },
- {
-  "uid": "u021",
-  "word": "But",
-  "start": 106.99,
-  "end": 107.04
- },
- {
-  "uid": "u021",
-  "word": "Kolletschka's",
-  "start": 107.1,
-  "end": 107.68
- },
- {
-  "uid": "u021",
-  "word": "body",
-  "start": 107.728,
-  "end": 107.92
- },
- {
-  "uid": "u021",
-  "word": "shows",
-  "start": 107.987,
-  "end": 108.32
- },
- {
-  "uid": "u021",
-  "word": "the",
-  "start": 108.36,
-  "end": 108.48
- },
- {
-  "uid": "u021",
-  "word": "same",
-  "start": 108.512,
-  "end": 108.64
- },
- {
-  "uid": "u021",
-  "word": "disease",
-  "start": 108.7,
-  "end": 109.12
- },
- {
-  "uid": "u021",
-  "word": "as",
-  "start": 109.2,
-  "end": 109.36
- },
- {
-  "uid": "u021",
-  "word": "the",
-  "start": 109.38,
-  "end": 109.44
- },
- {
-  "uid": "u021",
-  "word": "dying",
-  "start": 109.507,
-  "end": 109.84
- },
- {
-  "uid": "u021",
-  "word": "mothers.",
-  "start": 109.9,
-  "end": 110.48
+  "start": 122.15,
+  "end": 122.93
  },
  {
   "uid": "u022",
   "word": "And",
-  "start": 110.566,
-  "end": 110.59
+  "start": 122.93,
+  "end": 123.07
+ },
+ {
+  "uid": "u022",
+  "word": "when",
+  "start": 123.102,
+  "end": 123.23
+ },
+ {
+  "uid": "u022",
+  "word": "they",
+  "start": 123.278,
+  "end": 123.47
+ },
+ {
+  "uid": "u022",
+  "word": "examine",
+  "start": 123.54,
+  "end": 124.03
+ },
+ {
+  "uid": "u022",
+  "word": "his",
+  "start": 124.07,
+  "end": 124.19
+ },
+ {
+  "uid": "u022",
+  "word": "friend's",
+  "start": 124.224,
+  "end": 124.51
+ },
+ {
+  "uid": "u022",
+  "word": "body,",
+  "start": 124.574,
+  "end": 125.24
+ },
+ {
+  "uid": "u022",
+  "word": "they",
+  "start": 125.272,
+  "end": 125.4
+ },
+ {
+  "uid": "u022",
+  "word": "find",
+  "start": 125.448,
+  "end": 125.64
+ },
+ {
+  "uid": "u022",
+  "word": "something",
+  "start": 125.68,
+  "end": 126.04
+ },
+ {
+  "uid": "u022",
+  "word": "he",
+  "start": 126.12,
+  "end": 126.28
+ },
+ {
+  "uid": "u022",
+  "word": "can't",
+  "start": 126.34,
+  "end": 126.6
+ },
+ {
+  "uid": "u022",
+  "word": "shake.",
+  "start": 126.667,
+  "end": 127.08
+ },
+ {
+  "uid": "u022",
+  "word": "It's",
+  "start": 127.267,
+  "end": 127.63
  },
  {
   "uid": "u022",
   "word": "the",
-  "start": 110.63,
-  "end": 110.75
+  "start": 127.67,
+  "end": 127.79
  },
  {
   "uid": "u022",
-  "word": "students",
-  "start": 110.803,
-  "end": 111.23
+  "word": "same",
+  "start": 127.838,
+  "end": 128.03
  },
  {
   "uid": "u022",
-  "word": "who",
-  "start": 111.27,
-  "end": 111.39
+  "word": "disease",
+  "start": 128.09,
+  "end": 128.51
  },
  {
   "uid": "u022",
-  "word": "cut",
-  "start": 111.47,
-  "end": 111.71
+  "word": "that's",
+  "start": 128.558,
+  "end": 128.83
  },
  {
   "uid": "u022",
-  "word": "the",
-  "start": 111.73,
-  "end": 111.79
- },
- {
-  "uid": "u022",
-  "word": "dead",
-  "start": 111.87,
-  "end": 112.19
- },
- {
-  "uid": "u022",
-  "word": "walk",
-  "start": 112.27,
-  "end": 112.59
- },
- {
-  "uid": "u022",
-  "word": "straight",
-  "start": 112.643,
-  "end": 113.07
- },
- {
-  "uid": "u022",
-  "word": "on",
-  "start": 113.123,
-  "end": 113.23
- },
- {
-  "uid": "u022",
-  "word": "to",
-  "start": 113.283,
-  "end": 113.39
+  "word": "killing",
+  "start": 128.87,
+  "end": 129.15
  },
  {
   "uid": "u022",
   "word": "the",
-  "start": 113.41,
-  "end": 113.47
+  "start": 129.17,
+  "end": 129.23
  },
  {
   "uid": "u022",
   "word": "mothers.",
-  "start": 113.54,
-  "end": 114.11
+  "start": 129.3,
+  "end": 129.87
  },
  {
   "uid": "u023",
-  "word": "What",
-  "start": 114.282,
-  "end": 114.32
+  "word": "Now",
+  "start": 130.08,
+  "end": 130.11
  },
  {
   "uid": "u023",
+  "word": "think",
+  "start": 130.177,
+  "end": 130.51
+ },
+ {
+  "uid": "u023",
+  "word": "about",
+  "start": 130.563,
+  "end": 130.83
+ },
+ {
+  "uid": "u023",
+  "word": "who",
+  "start": 130.91,
+  "end": 131.15
+ },
+ {
+  "uid": "u023",
+  "word": "does",
+  "start": 131.23,
+  "end": 131.55
+ },
+ {
+  "uid": "u023",
+  "word": "the",
+  "start": 131.59,
+  "end": 131.71
+ },
+ {
+  "uid": "u023",
+  "word": "autopsies",
+  "start": 131.77,
+  "end": 132.35
+ },
+ {
+  "uid": "u023",
+  "word": "in",
+  "start": 132.377,
+  "end": 132.43
+ },
+ {
+  "uid": "u023",
+  "word": "this",
+  "start": 132.478,
+  "end": 132.67
+ },
+ {
+  "uid": "u023",
+  "word": "hospital.",
+  "start": 132.741,
+  "end": 133.39
+ },
+ {
+  "uid": "u024",
+  "word": "The",
+  "start": 133.39,
+  "end": 133.47
+ },
+ {
+  "uid": "u024",
+  "word": "doctors.",
+  "start": 133.54,
+  "end": 134.23
+ },
+ {
+  "uid": "u024",
+  "word": "The",
+  "start": 134.28,
+  "end": 134.43
+ },
+ {
+  "uid": "u024",
+  "word": "students.",
+  "start": 134.501,
+  "end": 135.55
+ },
+ {
+  "uid": "u024",
+  "word": "The",
+  "start": 135.57,
+  "end": 135.63
+ },
+ {
+  "uid": "u024",
+  "word": "same",
+  "start": 135.678,
+  "end": 135.87
+ },
+ {
+  "uid": "u024",
+  "word": "people",
+  "start": 135.927,
+  "end": 136.27
+ },
+ {
+  "uid": "u024",
+  "word": "who",
+  "start": 136.35,
+  "end": 136.59
+ },
+ {
+  "uid": "u024",
+  "word": "walk",
+  "start": 136.654,
+  "end": 136.91
+ },
+ {
+  "uid": "u024",
+  "word": "from",
+  "start": 136.942,
+  "end": 137.07
+ },
+ {
+  "uid": "u024",
+  "word": "the",
+  "start": 137.09,
+  "end": 137.15
+ },
+ {
+  "uid": "u024",
+  "word": "morgue",
+  "start": 137.23,
+  "end": 137.63
+ },
+ {
+  "uid": "u024",
+  "word": "straight",
+  "start": 137.674,
+  "end": 138.03
+ },
+ {
+  "uid": "u024",
+  "word": "to",
+  "start": 138.057,
+  "end": 138.11
+ },
+ {
+  "uid": "u024",
+  "word": "the",
+  "start": 138.13,
+  "end": 138.19
+ },
+ {
+  "uid": "u024",
+  "word": "mothers",
+  "start": 138.25,
+  "end": 138.67
+ },
+ {
+  "uid": "u024",
+  "word": "in",
+  "start": 138.723,
+  "end": 138.83
+ },
+ {
+  "uid": "u024",
+  "word": "the",
+  "start": 138.85,
+  "end": 138.91
+ },
+ {
+  "uid": "u024",
+  "word": "first",
+  "start": 138.963,
+  "end": 139.23
+ },
+ {
+  "uid": "u024",
+  "word": "clinic.",
+  "start": 139.299,
+  "end": 139.87
+ },
+ {
+  "uid": "u025",
+  "word": "With",
+  "start": 139.904,
+  "end": 139.93
+ },
+ {
+  "uid": "u025",
+  "word": "the",
+  "start": 139.97,
+  "end": 140.09
+ },
+ {
+  "uid": "u025",
+  "word": "same",
+  "start": 140.154,
+  "end": 140.41
+ },
+ {
+  "uid": "u025",
+  "word": "bare",
+  "start": 140.474,
+  "end": 140.73
+ },
+ {
+  "uid": "u025",
+  "word": "hands.",
+  "start": 140.823,
+  "end": 141.51
+ },
+ {
+  "uid": "u026",
+  "word": "So",
+  "start": 141.51,
+  "end": 141.66
+ },
+ {
+  "uid": "u026",
+  "word": "what",
+  "start": 141.756,
+  "end": 142.14
+ },
+ {
+  "uid": "u026",
   "word": "are",
-  "start": 114.36,
-  "end": 114.48
+  "start": 142.16,
+  "end": 142.22
  },
  {
-  "uid": "u023",
-  "word": "their",
-  "start": 114.52,
-  "end": 114.72
+  "uid": "u026",
+  "word": "those",
+  "start": 142.273,
+  "end": 142.54
  },
  {
-  "uid": "u023",
+  "uid": "u026",
   "word": "hands",
-  "start": 114.8,
-  "end": 115.2
+  "start": 142.593,
+  "end": 142.86
  },
  {
-  "uid": "u023",
+  "uid": "u026",
   "word": "carrying?",
-  "start": 115.262,
-  "end": 116.0
+  "start": 142.922,
+  "end": 143.66
+ },
+ {
+  "uid": "u027",
+  "word": "Semmelweis",
+  "start": 143.796,
+  "end": 144.22
+ },
+ {
+  "uid": "u027",
+  "word": "is",
+  "start": 144.273,
+  "end": 144.38
+ },
+ {
+  "uid": "u027",
+  "word": "about",
+  "start": 144.447,
+  "end": 144.78
+ },
+ {
+  "uid": "u027",
+  "word": "to",
+  "start": 144.833,
+  "end": 144.94
+ },
+ {
+  "uid": "u027",
+  "word": "find",
+  "start": 144.988,
+  "end": 145.18
+ },
+ {
+  "uid": "u027",
+  "word": "out.",
+  "start": 145.28,
+  "end": 145.74
+ },
+ {
+  "uid": "u028",
+  "word": "And",
+  "start": 145.74,
+  "end": 145.82
+ },
+ {
+  "uid": "u028",
+  "word": "what",
+  "start": 145.852,
+  "end": 145.98
+ },
+ {
+  "uid": "u028",
+  "word": "happens",
+  "start": 146.04,
+  "end": 146.46
+ },
+ {
+  "uid": "u028",
+  "word": "next",
+  "start": 146.524,
+  "end": 146.78
+ },
+ {
+  "uid": "u028",
+  "word": "will",
+  "start": 146.86,
+  "end": 147.18
+ },
+ {
+  "uid": "u028",
+  "word": "change",
+  "start": 147.237,
+  "end": 147.58
+ },
+ {
+  "uid": "u028",
+  "word": "medicine.",
+  "start": 147.651,
+  "end": 148.38
+ },
+ {
+  "uid": "u029",
+  "word": "But",
+  "start": 148.38,
+  "end": 148.43
+ },
+ {
+  "uid": "u029",
+  "word": "first,",
+  "start": 148.497,
+  "end": 149.07
+ },
+ {
+  "uid": "u029",
+  "word": "he'll",
+  "start": 149.097,
+  "end": 149.23
+ },
+ {
+  "uid": "u029",
+  "word": "have",
+  "start": 149.262,
+  "end": 149.39
+ },
+ {
+  "uid": "u029",
+  "word": "to",
+  "start": 149.417,
+  "end": 149.47
+ },
+ {
+  "uid": "u029",
+  "word": "convince",
+  "start": 149.514,
+  "end": 149.87
+ },
+ {
+  "uid": "u029",
+  "word": "a",
+  "start": 149.91,
+  "end": 149.95
+ },
+ {
+  "uid": "u029",
+  "word": "world",
+  "start": 150.003,
+  "end": 150.27
+ },
+ {
+  "uid": "u029",
+  "word": "that",
+  "start": 150.302,
+  "end": 150.43
+ },
+ {
+  "uid": "u029",
+  "word": "doesn't",
+  "start": 150.483,
+  "end": 150.83
+ },
+ {
+  "uid": "u029",
+  "word": "want",
+  "start": 150.862,
+  "end": 150.99
+ },
+ {
+  "uid": "u029",
+  "word": "to",
+  "start": 151.043,
+  "end": 151.15
+ },
+ {
+  "uid": "u029",
+  "word": "listen.",
+  "start": 151.207,
+  "end": 151.63
  }
 ]

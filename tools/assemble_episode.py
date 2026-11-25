@@ -35,18 +35,11 @@ import music_bed
 import audio_finish
 import captions
 
-import archive_ingest
-import look_pass
-import loudness
-import music_bed
-import audio_finish
-import captions
-
 from workflow.capabilities import REFUSED, stage_report  # noqa: E402
 from workflow.config import style_contract  # noqa: E402
 from workflow.episode import (  # noqa: E402
-    archive_sources, graded_path, master, music_bed_path, render_dir, require_coverage, resolve,
-    segments_dir, shot_lengths_path, shots, vo_dir,
+    archive_sources, cut_path, graded_path, master, music_bed_path, render_dir, require_coverage,
+    resolve, segments_dir, shot_lengths_path, shots, vo_dir,
 )
 
 # The delivery spec is the contract's, not this file's: qc_episode.py judges the master against
@@ -671,6 +664,64 @@ def verify(episode, manifest, output=None):
     print(f"  Output: {output}", flush=True)
 
 
+def edit_mode(episode):
+    """"cut" when the episode is cut from a cut list (cut.json), "legacy" when from shots.json.
+
+    The legacy path is the code that has always cut the older films, left as it was: an episode
+    without a cut list assembles byte for byte as before, and `tools/edit/legacy.py` is the bridge
+    that lets the newer tools read those films as cut lists anyway.
+    """
+    return "cut" if cut_path(episode).is_file() else "legacy"
+
+
+def pad_audio(path, seconds):
+    """Silence after the last word, so the picture's tail (black, a held end frame) is not cut off."""
+    have = probe_duration(path)
+    if seconds <= have + 1e-3:
+        return Path(path)
+    padded = Path(path).with_name(Path(path).stem + "-padded.wav")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(path), "-af", f"apad=whole_dur={seconds:.6f}",
+                    "-c:a", "pcm_s16le", str(padded)], check=True)
+    return padded
+
+
+def assemble_cut(episode, manifest, args, root):
+    """The v6 path: cut list -> resolved cut -> pieces -> grade -> mux."""
+    from edit import assemble as cut_assembly
+    resolved = cut_assembly.resolve_episode(episode, manifest, CONTRACT)
+    cut_assembly.publish(episode, resolved)
+    lengths = cut_assembly.write_lengths(episode, resolved)
+    print(f"  Resolved {len(resolved['shots'])} shots over {resolved['duration']:.2f}s; "
+          f"{len(lengths)} rendered sources sized", flush=True)
+    if args.shot_lengths_only:
+        return 0
+    voice_path = concat_audio(episode, manifest)
+    finish_report = {}
+    if not args.no_finish:
+        print("Finishing the narration (levels, level rides, transitions)...", flush=True)
+        voice_path, finish_report = audio_finish.finish_voice(episode, manifest, resolved)
+    voice_path = pad_audio(voice_path, resolved["duration"])
+    audio_path = add_music_bed(voice_path, music_bed_path(episode),
+                               vo_dir(episode) / "full-audio-with-bed.wav",
+                               drops=finish_report.get("_sound", {}).get("music_drops", ()))
+    captions_path = captions.write_all(episode, manifest)
+    if args.remux:
+        video_path = graded_path(episode)
+    else:
+        print("Cutting from the cut list...", flush=True)
+        sources = cut_assembly.prepare_sources(episode, resolved, CONTRACT, root=root)
+        video_path = cut_assembly.build_pieces(episode, resolved, CONTRACT, sources)
+        video_path = look_pass.apply(video_path, graded_path(episode))
+    output = Path(args.out) if args.out else master(episode)
+    mux_final(episode, video_path, audio_path, output=output, captions_path=captions_path)
+    if args.burn_captions:
+        burned = output.with_name(output.stem + "-burned.mp4")
+        captions.attach(output, captions_path, burned, burn=True)
+    verify(episode, manifest, output)
+    print("\nDone!", flush=True)
+    return 0
+
+
 def main(argv=None, host=None, root=None):
     argv = sys.argv[1:] if argv is None else list(argv)
     root = PROJECT_ROOT if root is None else Path(root)
@@ -701,8 +752,11 @@ def main(argv=None, host=None, root=None):
     args = parser.parse_args(argv)
 
     episode = resolve(root, args.episode)
-    shot_map = shots(episode, CONTRACT)
     manifest = load_manifest(episode)
+    if edit_mode(episode) == "cut":
+        print(f"=== {episode.name}: episode assembly from cut.json ===\n", flush=True)
+        return assemble_cut(episode, manifest, args, root)
+    shot_map = shots(episode, CONTRACT)
 
     # Coverage is checked before the first ffmpeg call: assembling a film whose shot table and
     # narration describe different timelines produces a master that looks finished.

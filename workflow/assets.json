@@ -1,0 +1,35 @@
+{
+ "source": "Poly Haven (https://polyhaven.com), all assets CC0 1.0: free for any use, no credit required (https://polyhaven.com/license). Fetched through the public API, never by scraping the site.",
+ "resolution": "1k",
+ "textures": {
+  "cobblestone_floor_01": "street cobbles (vienna)",
+  "rough_plaster_03": "house facades (vienna)",
+  "plaster_brick_pattern": "worn facades, courtyard walls (vienna)",
+  "dark_wooden_planks": "floorboards (room, ward)",
+  "roof_tiles": "roofs (vienna)",
+  "castle_brick_07": "stone walls (asylum cell, dissecting room)",
+  "herringbone_brick": "corridor and court floors (hospital)"
+ },
+ "hdris": {
+  "farmland_overcast": "soft daylight for streets",
+  "belfast_sunset_puresky": "dusk sky",
+  "hospital_room": "ward interior light",
+  "abandoned_workshop": "dissecting room light"
+ },
+ "models": {
+  "old_bed_frame": "ward, asylum cell",
+  "wooden_barrels_01": "market, street",
+  "wooden_crate_01": "market, street",
+  "wooden_bucket_01": "asylum cell, court pump",
+  "wicker_basket_01": "market stalls",
+  "Lantern_01": "asylum gate, streets",
+  "wooden_candlestick": "his desk",
+  "vintage_oil_lamp": "ward register table, his room",
+  "wooden_bookshelf_worn": "his room",
+  "painted_wooden_shelves": "dissecting room jars",
+  "painted_wooden_nightstand": "ward bedsides",
+  "wooden_table_02": "his room, ward",
+  "chemistry_set": "dissecting room",
+  "ceramic_vase_01": "jars on the dissecting-room shelves"
+ }
+}

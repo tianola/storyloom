@@ -91,6 +91,28 @@ def shot_lengths_path(episode) -> Path:
     return Path(episode) / "shot_lengths.json"
 
 
+def cut_path(episode) -> Path:
+    """The authored cut list (`tools/edit/cutlist.py`). An episode without one is cut from shots.json."""
+    return Path(episode) / "cut.json"
+
+
+def resolved_cut_path(episode) -> Path:
+    """The cut as the assembler resolved it against the voice on disk: what the film was cut to."""
+    return Path(episode) / "cut.resolved.json"
+
+
+def resolved_cut(episode):
+    """The published resolved cut, or None for an episode cut the old way.
+
+    The gate, the sound design and the voice finish read this rather than resolving the cut
+    themselves, for the reason `load_timeline` reads shots.json: they judge what was published.
+    """
+    path = resolved_cut_path(episode)
+    if not cut_path(episode).is_file() or not path.is_file():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def graded_path(episode) -> Path:
     return Path(episode) / "video-graded.mp4"
 
@@ -165,6 +187,8 @@ def shots(episode, contract: dict) -> dict:
     print `WARNING: no visual for u0NN, using black` and carry on, which is how a hole in the film
     reaches a master with a correct total duration.
     """
+    if cut_path(episode).is_file():
+        return cut_shots(episode)
     path = shots_path(episode)
     if not path.is_file():
         raise ValueError(f"{path} is missing, so nothing says what is on screen in this episode")
@@ -195,6 +219,27 @@ def shots(episode, contract: dict) -> dict:
                 entry.append(record[field])
         shot_map[uid] = tuple(entry)
     return shot_map
+
+
+def cut_shots(episode) -> dict:
+    """`{shot id: (kind, name)}` from an episode's cut list, in the shape `shots()` returns.
+
+    A cut list puts several shots under one line and one shot across several, so its table is keyed
+    by shot rather than by utterance. Everything that asks `shots()` which clips a film is made of —
+    the render queue's beat list, the archive ingest — gets the same answer either way; only the
+    legacy segment cutter ever needed one entry per utterance, and a cut episode does not use it.
+    """
+    path = cut_path(episode)
+    body = json.loads(path.read_text(encoding="utf-8"))
+    table = {}
+    for i, s in enumerate(body.get("shots", [])):
+        src = s.get("source") or {}
+        if not src.get("kind") or not src.get("name"):
+            raise ValueError(f"{path}: shot {i + 1} has no source kind and name")
+        table[s.get("id") or f"s{i + 1:02d}"] = (src["kind"], src["name"])
+    if not table:
+        raise ValueError(f"{path} holds no shots")
+    return table
 
 
 def archive_sources(episode, contract: dict) -> dict:

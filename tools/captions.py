@@ -112,7 +112,19 @@ def word_timings(episode, manifest=None):
 
 
 def beat_word_timing(episode, words):
-    """{beat: [{"word", "start"}]} with starts relative to the first word of the beat's utterances."""
+    """{beat: [{"word", "start"}]} with starts relative to the first word of the beat's utterances.
+
+    For a cut-list episode a beat's clock starts at its frame 0 (`cutlist.beat_spans` origin), and
+    its words are those spoken while it is on screen — a line can now span several beats.
+    """
+    from edit import cutlist
+    cut = cutlist.episode_cut(episode)
+    if cut is not None:
+        out = {}
+        for name, span in cutlist.beat_spans(cut).items():
+            out[name] = [{"word": w["word"], "start": round(w["start"] - span["origin"], 3)}
+                         for w in words if span["start"] - 0.05 <= w["start"] < span["end"]]
+        return out
     shots = json.loads((Path(episode) / "shots.json").read_text(encoding="utf-8"))
     out, origin = {}, {}
     for w in words:
@@ -186,7 +198,7 @@ def write_all(episode, manifest=None):
     words = word_timings(episode, manifest)
     vo = episode / "vo"
     (vo / "words.json").write_text(json.dumps(words, indent=1), encoding="utf-8")
-    if (episode / "shots.json").exists():
+    if (episode / "shots.json").exists() or (episode / "cut.json").exists():
         (episode / "word_timing.json").write_text(json.dumps(beat_word_timing(episode, words), indent=1), encoding="utf-8")
     cue_list = cues(words)
     write_srt(cue_list, vo / "captions.srt")

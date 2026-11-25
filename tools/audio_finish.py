@@ -137,7 +137,20 @@ def transition_track(rate, total_samples, cuts, voice_rms):
 
 
 def cut_points(manifest, shots):
-    """[(seconds, kind)] at each utterance whose beat differs from the previous one."""
+    """[(seconds, kind)] at each utterance whose beat differs from the previous one.
+
+    `shots` is either the legacy shots.json table or a resolved cut list (a dict with a `shots`
+    list); for a cut the points are its shots' starts where the source changes.
+    """
+    if isinstance(shots, dict) and isinstance(shots.get("shots"), list):
+        out, prev = [], None
+        for s in shots["shots"]:
+            src = s["source"]
+            if prev is not None and src["name"] != prev["name"]:
+                edge = (src["kind"] == "archive") != (prev["kind"] == "archive")
+                out.append((s["start"], "thud" if edge else "whoosh"))
+            prev = src
+        return out
     cuts, previous = [], None
     for u in manifest["utterances"]:
         shot = shots[u["id"]]
@@ -216,7 +229,7 @@ def finish_voice(episode, manifest, shots=None, sound=True):
         voice = mixed.copy()
     if sound and shots:
         rms = float(np.sqrt((voice ** 2).mean())) or 0.05
-        if (episode / "storyboard.json").exists():
+        if (episode / "storyboard.json").exists() or isinstance(shots.get("shots"), list):
             # the full design: hits on every cut, air on moves, actions, rooms, the reversal
             import sound_design
             events = sound_design.plan_events(episode)

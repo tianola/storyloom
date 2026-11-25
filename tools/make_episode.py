@@ -55,31 +55,39 @@ def has_characters(episode):
     return (episode / "script" / "cast.json").is_file()
 
 
+def shot_table(episode):
+    """The file that says what is on screen: cut.json for a cut-list episode, else shots.json."""
+    return "cut.json" if (episode / "cut.json").is_file() else "shots.json"
+
+
 def beat_renders(episode):
-    """renders/3d/<beat>.mp4 for every 3D beat in shots.json: what the render stage owes the edit."""
-    shots = episode / "shots.json"
-    if not shots.is_file():
+    """renders/3d/<beat>.mp4 for every 3D beat in the shot table: what the render stage owes the edit."""
+    path = episode / shot_table(episode)
+    if not path.is_file():
         return []
-    beats = {s["name"] for s in json.loads(shots.read_text(encoding="utf-8")).values() if s.get("kind") == "3d"}
+    body = json.loads(path.read_text(encoding="utf-8"))
+    records = [s["source"] for s in body.get("shots", [])] if path.name == "cut.json" else body.values()
+    beats = {s["name"] for s in records if s.get("kind") == "3d"}
     return [f"renders/3d/{b}.mp4" for b in sorted(beats)]
 
 
 def inputs_of(stage, episode):
     """Files whose content decides whether a finished stage is still valid."""
     style = ROOT / "workflow" / "style.json"
+    shots = shot_table(episode)
     table = {
         "script": _files(episode, "script/narration.md", "script/chapters.json", "script/claims.json",
                          "research/sources.md") + [style] + _optional(episode, "script/cast.json", "script/dramatisation.json"),
         "narration": _files(episode, "script/narration.md") + _optional(episode, "script/cast.json", "script/pronounce.json"),
         "shots": _files(episode, "vo/manifest.json", "archive.json", "script/shots-hint.json"),
-        "captions": _files(episode, "vo/manifest.json", "shots.json"),
-        "lengths": _files(episode, "vo/manifest.json", "shots.json"),
-        "plan": _files(episode, "shot_lengths.json", "shots.json", "vo/manifest.json") + [ROOT / "workflow" / "scenes.json"],
-        "ingest": _files(episode, "archive.json", "shots.json"),
+        "captions": _files(episode, "vo/manifest.json", shots),
+        "lengths": _files(episode, "vo/manifest.json", shots),
+        "plan": _files(episode, "shot_lengths.json", shots, "vo/manifest.json") + [ROOT / "workflow" / "scenes.json"],
+        "ingest": _files(episode, "archive.json", shots),
         "render": _files(episode, "storyboard.json", "shot_lengths.json", "word_timing.json")
         + _optional(episode, "mouth_timing.json"),
         # a re-rendered beat changes the film, so the renders themselves are inputs of the edit
-        "assemble": _files(episode, "vo/manifest.json", "shots.json", "shot_lengths.json", "storyboard.json",
+        "assemble": _files(episode, "vo/manifest.json", shots, "shot_lengths.json", "storyboard.json",
                            *beat_renders(episode)),
         "qc": [episode / f"{episode.name}.mp4"],
     }
@@ -99,7 +107,7 @@ def outputs_exist(stage, episode):
     out = {
         "script": ["qc/script-qc.json"],
         "narration": ["vo/manifest.json"],
-        "shots": ["shots.json"],
+        "shots": [shot_table(episode)],
         "captions": ["vo/captions.srt", "word_timing.json"] + (["mouth_timing.json"] if has_characters(episode) else []),
         "lengths": ["shot_lengths.json"],
         "plan": ["storyboard.json"],
@@ -164,6 +172,9 @@ def commands(stage, episode, args):
                  "--output", str(episode / "vo"), "--model", str(models / "kokoro-v1.0.onnx"),
                  "--voices", str(models / "voices-v1.0.bin")]]
     if stage == "shots":
+        if (episode / "cut.json").is_file():
+            # the cut list is authored, not planned; it is checked against the voice at `lengths`
+            return [[PY, "-c", "print('cut.json is the shot table; nothing to plan')"]]
         return [[PY, str(tools / "plan_shots.py"), "--episode", ep]]
     if stage == "captions":
         # exact word times from the voice model first (skipped with a note when onnx is missing),

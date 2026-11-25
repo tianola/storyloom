@@ -5,9 +5,32 @@
   - a human story drives it;
   - the world keeps moving;
   - the characters speak in their own voices (ElevenLabs v3).
-- Current position: Semmelweis pilot (`work/semmelweis-pilot`, about 100 s). It is re-narrated with the chosen voices (user's own clone as the explorer, Lajos as Semmelweis, Ana as the mother) and is being rendered (`build2.log`). Next: QC, stills, `qc/pilot-gate-status.md`, user review. Expand to a full film only after approval.
+- **Current position (2026-11-22 late): Semmelweis pilot v6 is COMMITTED as `7955e5a` on branch `claude/semmelweis-v6`, NOT PUSHED.** Push and PR wait for the user's approval. The security review is incomplete (plugin key rejected, HTTP 401). Full suite with BLENDER_EXE: 932 passed, 2 skipped.
+  - Approved: the directing proposal (`work/semmelweis-pilot/directing/visual-pass.md`), the 2 new lines, and the architecture.
+  - Done and tested:
+    - `tools/edit/` (cutlist, legacy, assemble), `tools/compose/`, `tools/graphics/`;
+    - the cut-aware sound, QC, captions, lip sync and planning;
+    - the new voice;
+    - `work/semmelweis-pilot/cut.json`.
+  - Built and committed: the Blender sets (`tools/blender/models/clinic.py`; the world.py views and actions), the pixel poses (sprite tests pass), and the scene catalog entries. Not yet rendered or checked in Blender by eye.
+  - The next steps 1–9 are in `.memory/STATE.md` under "pilot v6 → Still to do".
+  - An episode with `cut.json` is cut by `tools/edit/` and publishes `cut.resolved.json`; one without it uses the old `shots.json` path, unchanged.
+  - Storyboard times written by the cut are `"<n>s"` strings, because a bare number ≤ 1 means a fraction of the beat.
+- Previous position: Semmelweis pilot v5 (`work/semmelweis-pilot/semmelweis-pilot.mp4`, about 152 s).
+  - It has the rewritten "guess loop" narration and real archive stills, and it passes episode QC (`qc/pilot-gate-status.md`).
+  - The narration rules are in `docs/research/narration-voice.md` and in the story-film skill. Every new script follows them.
+  - Repo: github.com/tianola/storyloom (private). PR #2 is open and the user hasn't decided whether to merge it.
+  - Waiting on the user's review of v5.
+  - Next:
+    1. the full 12-15 min script, written in the same voice;
+    2. wire the Kenney/Quaternius packs.
+- Pipeline notes:
+  - the archive ingest skips clips already on disk, so move `renders/archive/*.mp4` aside after changing `archive_ingest.py`;
+  - the render skips beat mp4s already on disk.
+- Assets: `tools/fetch_assets.py` re-fetches `workflow/assets.json` into `assets/polyhaven/` (git-ignored). Single-beat render: `blender -b -P tools/blender/storyboard_beats.py -- --episode <ep> --beat beat-0N`.
 - Run: `PYTHONIOENCODING=utf-8 BLENDER_EXE=F:/AI-PROJECTS/longform-explainer/tools/blender-4.5.15-windows-x64/blender.exe .venv/Scripts/python.exe -X utf8 tools/make_episode.py --episode work/semmelweis-pilot --only <stages>`. Voice change: `--only narration,captions,lengths`, then rescale the shot starts in `storyboard.json` to the new `shot_lengths.json`.
-- Tests: `python -m unittest discover -s python -p "test_*.py"` (723; 7 known errors need `BLENDER_EXE`).
+- Tests: `python -m unittest discover -s python -p "test_*.py"` (791 passed at v5; v6 adds about 130 tests, all passing except 2 in `test_people_sprites`; the Blender tests need BLENDER_EXE).
+- v6 key files: `tools/edit/{cutlist,legacy,assemble}.py`, `tools/compose/`, `tools/graphics/` (`docs/graphics.md`), `tools/blender/models/clinic.py`, `work/semmelweis-pilot/cut.json`.
 - Key files:
   - voice: `python/eleven.py`;
   - lip sync and people: `tools/lip_sync.py`, `tools/pixel/people.py`;

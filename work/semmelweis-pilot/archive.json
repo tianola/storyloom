@@ -1,1 +1,53 @@
-{}
+{
+ "semmelweis-portrait": {
+  "asset": "assets/archive/semmelweis-portrait.jpg",
+  "licence": "arch-001",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "left",
+  "carries": "real_person",
+  "depicts": [
+   "Semmelweis"
+  ],
+  "still_move": {
+   "pan_deg": 1.2,
+   "zoom_from": 1.03,
+   "zoom_to": 1.14
+  }
+ },
+ "akh-engraving": {
+  "asset": "assets/archive/akh-engraving.jpg",
+  "licence": "arch-002",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "left",
+  "carries": "real_place",
+  "depicts": [
+   "General Hospital"
+  ],
+  "still_move": {
+   "pan_deg": -1.2,
+   "zoom_from": 1.03,
+   "zoom_to": 1.14
+  }
+ },
+ "kolletschka-portrait": {
+  "asset": "assets/archive/kolletschka-portrait.jpg",
+  "licence": "arch-004",
+  "form": "still",
+  "aspect": "pillarbox_visible_edge",
+  "treatment": "keep_distinct",
+  "light_side": "right",
+  "carries": "real_person",
+  "depicts": [
+   "Kolletschka"
+  ],
+  "still_move": {
+   "pan_deg": -1.2,
+   "zoom_from": 1.03,
+   "zoom_to": 1.14
+  }
+ }
+}

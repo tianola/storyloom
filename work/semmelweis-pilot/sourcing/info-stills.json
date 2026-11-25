@@ -1,0 +1,69 @@
+{
+ "semmelweis-portrait": {
+  "title": "File:Ignaz_Semmelweis_1860.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Ignaz_Semmelweis_1860.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ignaz_Semmelweis_1860.jpg",
+  "size": 432246,
+  "w": 1441,
+  "h": 1949,
+  "mime": "image/jpeg",
+  "meta": {
+   "ObjectName": "Ignaz Semmelweis 1860",
+   "DateTimeOriginal": "1860",
+   "Credit": "<cite class=\"book\" style=\"font-style:normal\">Benedek, István (1983)      <i> Ignaz Phillip Semmelweis 1818-1865</i>, Gyomaendrőd, Hungary:  Corvina Kiadó  <small><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/ISBN\" class=\"extiw\" title=\"en:ISBN\"><span lang=\"en\" dir=\"ltr\">ISBN</span></a></span>:  <a href=\"//commons.wikimedia.org/wiki/Special:BookSources/9631314596\" title=\"Special:BookSources/9631314596\">9631314596</a>. </small></cite> plate 15",
+   "Artist": "After Jenő Doby's engravig",
+   "LicenseShortName": "Public domain",
+   "License": "pd"
+  }
+ },
+ "akh-engraving": {
+  "title": "File:Schaffer_Wien_Aussicht_des_Allgemeinen_Krankenhauses.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Schaffer_Wien_Aussicht_des_Allgemeinen_Krankenhauses.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Schaffer_Wien_Aussicht_des_Allgemeinen_Krankenhauses.jpg",
+  "size": 3355982,
+  "w": 3630,
+  "h": 2465,
+  "mime": "image/jpeg",
+  "meta": {
+   "ObjectName": "Schaffer Wien Aussicht des Allgemeinen Krankenhauses",
+   "DateTimeOriginal": "circa 1784<div style=\"display: none;\">date QS:P,+1784-00-00T00:00:00Z/9,P1480,Q5727902</div>",
+   "Credit": "<a href=\"//commons.wikimedia.org/wiki/Category:Dorotheum\" title=\"Category:Dorotheum\">Dorotheum</a>: <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Information_icon.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Information_icon.svg/20px-Information_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"20\" height=\"20\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Information_icon.svg/40px-Information_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"620\" data-file-height=\"620\"></a></span> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.dorotheum.com/en/l/9635816/\">Info about artwork</a>",
+   "Artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q95044331\" class=\"extiw\" title=\"d:Q95044331\"><span title=\"Austrian engraver (fl. 1780-1810)\">Joseph Schaffer</span></a></bdi> / <bdi><a href=\"https://www.wikidata.org/wiki/Q95043687\" class=\"extiw\" title=\"d:Q95043687\"><span title=\"Austrian engraver (1761-1804)\">Peter Schaffer</span></a></bdi>",
+   "LicenseShortName": "Public domain",
+   "License": "pd"
+  }
+ },
+ "aetiologie-1861": {
+  "title": "File:Ignaz_Semmelweis_1861_Etiology_front_page.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Ignaz_Semmelweis_1861_Etiology_front_page.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ignaz_Semmelweis_1861_Etiology_front_page.jpg",
+  "size": 297804,
+  "w": 1467,
+  "h": 1967,
+  "mime": "image/jpeg",
+  "meta": {
+   "ObjectName": "<div class=\"fn\">\nDie Ätiologie, der Begriff und die Prophylaxis des Kindbettfiebers</div>",
+   "Artist": "<div class=\"fn value\">\nIgnaz Philipp Semmelweis</div>",
+   "Credit": "<cite class=\"book\" style=\"font-style:normal\">Benedek, István (1983)      <i> Ignaz Phillip Semmelewis 1818-1865</i>, Gyomaendrőd, Hungary:  Corvina Kiadó  <small><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/ISBN\" class=\"extiw\" title=\"en:ISBN\"><span lang=\"en\" dir=\"ltr\">ISBN</span></a></span>:  <a href=\"//commons.wikimedia.org/wiki/Special:BookSources/9631314596\" title=\"Special:BookSources/9631314596\">9631314596</a>. </small></cite> plate 17",
+   "LicenseShortName": "Public domain",
+   "License": "pd"
+  }
+ },
+ "kolletschka-portrait": {
+  "title": "File:Jakob_Kolletschka_Litho.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Jakob_Kolletschka_Litho.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Jakob_Kolletschka_Litho.jpg",
+  "size": 342673,
+  "w": 1199,
+  "h": 1799,
+  "mime": "image/jpeg",
+  "meta": {
+   "ObjectName": "Jakob Kolletschka Litho",
+   "DateTimeOriginal": "1844",
+   "Credit": "Eigenes Foto einer Originallithographie der Albertina (Wien)",
+   "Artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Josef_Kriehuber\" class=\"extiw\" title=\"w:en:Josef Kriehuber\"><span title=\"Austrian lithographer and painter (1800–1876)\">Josef Kriehuber</span></a></bdi>",
+   "LicenseShortName": "Public domain",
+   "License": "pd"
+  }
+ }
+}

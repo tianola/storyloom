@@ -1,93 +1,145 @@
 {
  "u001": {
-  "before_lufs": -20.8,
-  "gain_db": 0.39
+  "before_lufs": -20.91,
+  "gain_db": 0.84
  },
  "u002": {
-  "before_lufs": -21.23,
-  "gain_db": 0.82
+  "before_lufs": -19.9,
+  "gain_db": -0.17
  },
  "u003": {
-  "before_lufs": -22.6,
-  "gain_db": 2.19
+  "before_lufs": -20.7,
+  "gain_db": 0.63
  },
  "u004": {
-  "before_lufs": -21.22,
-  "gain_db": 0.81
+  "before_lufs": -20.47,
+  "gain_db": 0.4
  },
  "u005": {
-  "before_lufs": -20.07,
-  "gain_db": -0.34
+  "before_lufs": -19.59,
+  "gain_db": -0.48
  },
  "u006": {
-  "before_lufs": -20.97,
-  "gain_db": 0.56
+  "before_lufs": -20.36,
+  "gain_db": 0.29
  },
  "u007": {
-  "before_lufs": -16.4,
-  "gain_db": -4.01
+  "before_lufs": -18.8,
+  "gain_db": -1.27
  },
  "u008": {
-  "before_lufs": -20.05,
-  "gain_db": -0.36
+  "before_lufs": -20.24,
+  "gain_db": 0.17
  },
  "u009": {
-  "before_lufs": -17.86,
-  "gain_db": -2.55
+  "before_lufs": -19.97,
+  "gain_db": -0.1
  },
  "u010": {
-  "before_lufs": -20.9,
-  "gain_db": 0.49
+  "before_lufs": -19.48,
+  "gain_db": -0.59
  },
  "u011": {
-  "before_lufs": -20.65,
-  "gain_db": 0.24
+  "before_lufs": -18.46,
+  "gain_db": -1.61
  },
  "u012": {
-  "before_lufs": -19.56,
-  "gain_db": -0.85
+  "before_lufs": -20.96,
+  "gain_db": 0.89
  },
  "u013": {
-  "before_lufs": -19.19,
-  "gain_db": -1.22
+  "before_lufs": -19.66,
+  "gain_db": -0.41
  },
  "u014": {
-  "before_lufs": -13.25,
-  "gain_db": -7.16
+  "before_lufs": -19.6,
+  "gain_db": -0.47
  },
  "u015": {
-  "before_lufs": -20.41,
-  "gain_db": 0.0
+  "before_lufs": -20.56,
+  "gain_db": 0.49
  },
  "u016": {
-  "before_lufs": -21.34,
-  "gain_db": 0.93
+  "before_lufs": -19.11,
+  "gain_db": -0.96
  },
  "u017": {
-  "before_lufs": -17.16,
-  "gain_db": -3.25
+  "before_lufs": -15.94,
+  "gain_db": -4.13
  },
  "u018": {
-  "before_lufs": -19.79,
-  "gain_db": -0.62
+  "before_lufs": -19.3,
+  "gain_db": -0.77
  },
  "u019": {
-  "before_lufs": -21.92,
-  "gain_db": 1.51
+  "before_lufs": -21.03,
+  "gain_db": 0.96
+ },
+ "u020": {
+  "before_lufs": -20.81,
+  "gain_db": 0.74
+ },
+ "u021": {
+  "before_lufs": -16.72,
+  "gain_db": -3.35
+ },
+ "u022": {
+  "before_lufs": -20.85,
+  "gain_db": 0.78
+ },
+ "u023": {
+  "before_lufs": -20.07,
+  "gain_db": 0.0
+ },
+ "u024": {
+  "before_lufs": -20.27,
+  "gain_db": 0.2
+ },
+ "u025": {
+  "before_lufs": -24.05,
+  "gain_db": 3.98
+ },
+ "u026": {
+  "before_lufs": -19.12,
+  "gain_db": -0.95
+ },
+ "u027": {
+  "before_lufs": -23.57,
+  "gain_db": 3.5
+ },
+ "u028": {
+  "before_lufs": -20.09,
+  "gain_db": 0.02
+ },
+ "u029": {
+  "before_lufs": -20.02,
+  "gain_db": -0.05
  },
  "_ride": {
-  "cuts": [],
-  "deltas_lu": []
+  "cuts": [
+   5.18,
+   47.610083333333336,
+   55.080041666666666,
+   106.83004166666667,
+   118.21008333333333
+  ],
+  "deltas_lu": [
+   1.5,
+   1.3,
+   -1.0,
+   -0.8,
+   -0.5
+  ]
  },
  "_sound": {
-  "cuts": 36,
+  "cuts": 33,
   "travels": 4,
-  "actions": 1,
-  "reversal": 60.80008333333333,
+  "actions": 0,
+  "reversal": 65.18004166666667,
   "music_drops": [
    [
-    59.400083333333335,
-    63.80008333333333
+    63.78004166666667,
+    68.18004166666667
    ]
   ]
  }
