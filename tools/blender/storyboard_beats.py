@@ -476,6 +476,26 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     human3d.show(inst, f0, f1, round(seconds * FPS))
 
 
+def drop_set_extras(st):
+    """Remove the pixel people the scene builder put in its set (guards, queues, walkers, students).
+
+    A beat with "extras": "none" shows only its own cast, so a 3D film never mixes in a 2D sprite. The
+    removed figures and their shadow blots leave the scene before the cast is placed."""
+    import characters
+    gone = []
+    for ob in list(characters.ACTORS):
+        if ob.name not in bpy.data.objects:
+            continue
+        shadow = bpy.data.objects.get(ob.get("shadow", ""))
+        if shadow is not None:
+            bpy.data.objects.remove(shadow, do_unlink=True)
+        gone.append(ob.name)
+        bpy.data.objects.remove(ob, do_unlink=True)
+    characters.ACTORS.clear()
+    if gone:
+        print(f"EXTRAS_DROPPED {len(gone)} {', '.join(gone)}", flush=True)
+
+
 def build_beat(name, spec, seconds, words, forced=()):
     """forced: [(start_seconds, anchor)] — the shot running then becomes a close-up on that anchor."""
     import characters
@@ -503,6 +523,8 @@ def build_beat(name, spec, seconds, words, forced=()):
         t0 = when(overrides.get(action, {}).get("at"), seconds, words, default=at * seconds)
         t0 = max(0.0, min(t0, seconds - span))
         fn(t0, t0 + span)
+    if spec.get("extras", "pixel") == "none":
+        drop_set_extras(st)
     place_cast(st, scene, plan, spec, seconds, words)
     characters.finish_actors(st.cam)
 

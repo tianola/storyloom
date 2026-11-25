@@ -60,6 +60,24 @@ class StoryboardValidation(unittest.TestCase):
         self.assertTrue(any("bad at" in e for e in broken(labels=[{"text": "T", "anchor": "die", "at": "soon"}])))
         self.assertTrue(any("screen" in e for e in broken(hud=[{"text": "x", "screen": [2, 0]}])))
 
+    def test_extras_value_is_checked(self):
+        self.assertEqual(broken(extras="none"), [])
+        self.assertTrue(any("extras" in e for e in broken(extras="some")))
+
+    def test_3d_cast_advice_small_people_and_pixel_extras(self):
+        cast = [{"who": "mother", "screen": [0.5, 0.95], "height": 0.3, "render": "3d"}]
+        board = copy.deepcopy(GOOD)
+        board["beats"]["b"]["cast"] = cast
+        warnings = []
+        self.assertEqual(storyboard.validate(board, warnings=warnings), [])
+        self.assertTrue(any("reads as a doll" in w for w in warnings))
+        self.assertTrue(any("extras" in w for w in warnings))
+        cast[0]["height"] = 0.6
+        board["beats"]["b"]["extras"] = "none"
+        warnings = []
+        storyboard.validate(board, warnings=warnings)
+        self.assertFalse(any("doll" in w or "extras" in w for w in warnings))
+
     def test_missing_length(self):
         self.assertTrue(any("shot_lengths" in e for e in storyboard.validate(GOOD, lengths={})))
 

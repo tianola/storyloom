@@ -53,7 +53,8 @@
      "speaker": "narrator"
     }
    ],
-   "cut": "montage"
+   "cut": "montage",
+   "extras": "none"
   },
   "beat-02": {
    "scene": "vienna",
@@ -72,10 +73,10 @@
     {
      "who": "mother",
      "screen": [
-      0.42,
-      0.9
+      0.4,
+      0.97
      ],
-     "height": 0.36,
+     "height": 0.62,
      "shot": 0,
      "pose": "walk",
      "face": "worried",
@@ -88,10 +89,10 @@
     {
      "who": "midwife",
      "screen": [
-      0.56,
-      0.9
+      0.6,
+      0.97
      ],
-     "height": 0.34,
+     "height": 0.6,
      "shot": 0,
      "pose": "walk",
      "face": "worried",
@@ -102,7 +103,8 @@
      ]
     }
    ],
-   "cut": "travel"
+   "cut": "travel",
+   "extras": "none"
   },
   "beat-03": {
    "scene": "ledger",
@@ -140,7 +142,8 @@
      "name": "tally",
      "at": 4.0
     }
-   ]
+   ],
+   "extras": "none"
   },
   "beat-04": {
    "scene": "vienna",
@@ -159,10 +162,10 @@
     {
      "who": "doctor",
      "screen": [
-      0.3,
-      0.9
+      0.24,
+      0.97
      ],
-     "height": 0.48,
+     "height": 0.66,
      "shot": 0,
      "pose": "talk",
      "render": "3d"
@@ -170,10 +173,10 @@
     {
      "who": "student",
      "screen": [
-      0.46,
-      0.9
+      0.42,
+      0.97
      ],
-     "height": 0.44,
+     "height": 0.62,
      "shot": 0,
      "pose": "stand",
      "render": "3d"
@@ -181,10 +184,10 @@
     {
      "who": "student",
      "screen": [
-      0.6,
-      0.9
+      0.58,
+      0.97
      ],
-     "height": 0.43,
+     "height": 0.6,
      "shot": 0,
      "pose": "walk",
      "render": "3d",
@@ -196,16 +199,17 @@
     {
      "who": "midwife",
      "screen": [
-      0.74,
-      0.9
+      0.8,
+      0.97
      ],
-     "height": 0.36,
+     "height": 0.56,
      "shot": 0,
      "pose": "stand",
      "render": "3d"
     }
    ],
-   "cut": "travel"
+   "cut": "travel",
+   "extras": "none"
   },
   "beat-05": {
    "scene": "board",
@@ -227,7 +231,8 @@
      "name": "flip",
      "at": 14.0
     }
-   ]
+   ],
+   "extras": "none"
   },
   "beat-06": {
    "scene": "vienna",
@@ -245,10 +250,10 @@
     {
      "who": "mother",
      "screen": [
-      0.4,
-      0.9
+      0.28,
+      0.96
      ],
-     "height": 0.34,
+     "height": 0.6,
      "shot": 0,
      "pose": "kneel",
      "face": "sad",
@@ -257,10 +262,10 @@
     {
      "who": "mother",
      "screen": [
-      0.72,
-      0.9
+      0.55,
+      0.96
      ],
-     "height": 0.36,
+     "height": 0.68,
      "shot": 0,
      "pose": "kneel",
      "face": "worried",
@@ -270,17 +275,18 @@
     {
      "who": "mother",
      "screen": [
-      0.76,
-      0.9
+      0.8,
+      0.96
      ],
-     "height": 0.34,
+     "height": 0.6,
      "shot": 0,
      "pose": "kneel",
      "face": "sad",
      "render": "3d"
     }
    ],
-   "cut": "steady"
+   "cut": "steady",
+   "extras": "none"
   },
   "beat-07": {
    "scene": "vienna",
@@ -307,9 +313,9 @@
      "who": "midwife",
      "screen": [
       0.5,
-      0.9
+      0.97
      ],
-     "height": 0.36,
+     "height": 0.56,
      "shot": 1,
      "pose": "walk",
      "render": "3d",
@@ -319,7 +325,8 @@
      ]
     }
    ],
-   "cut": "steady"
+   "cut": "steady",
+   "extras": "none"
   },
   "beat-08": {
    "scene": "vienna",
@@ -338,25 +345,28 @@
     {
      "who": "doctor",
      "screen": [
-      0.38,
-      0.9
+      0.36,
+      0.97
      ],
-     "height": 0.46,
+     "height": 0.66,
      "shot": 0,
-     "pose": "look-hands"
+     "pose": "look-hands",
+     "render": "3d"
     },
     {
      "who": "student",
      "screen": [
-      0.62,
-      0.9
+      0.64,
+      0.97
      ],
-     "height": 0.42,
+     "height": 0.6,
      "shot": 0,
-     "pose": "stand"
+     "pose": "stand",
+     "render": "3d"
     }
    ],
-   "cut": "travel"
+   "cut": "travel",
+   "extras": "none"
   },
   "beat-09": {
    "scene": "vienna",
