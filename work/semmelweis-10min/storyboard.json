@@ -250,39 +250,45 @@
     {
      "who": "mother",
      "screen": [
-      0.28,
-      0.96
+      0.2,
+      0.3
      ],
-     "height": 0.6,
+     "height": 0.36,
      "shot": 0,
      "pose": "kneel",
      "face": "sad",
-     "render": "3d"
+     "render": "3d",
+     "bust": true,
+     "depth": 0.42
     },
     {
      "who": "mother",
      "screen": [
-      0.55,
-      0.96
+      0.5,
+      0.25
      ],
-     "height": 0.68,
+     "height": 0.42,
      "shot": 0,
      "pose": "kneel",
      "face": "worried",
      "render": "3d",
-     "speaker": "mother"
+     "speaker": "mother",
+     "bust": true,
+     "depth": 0.36
     },
     {
      "who": "mother",
      "screen": [
       0.8,
-      0.96
+      0.32
      ],
-     "height": 0.6,
+     "height": 0.36,
      "shot": 0,
      "pose": "kneel",
      "face": "sad",
-     "render": "3d"
+     "render": "3d",
+     "bust": true,
+     "depth": 0.46
     }
    ],
    "cut": "steady",

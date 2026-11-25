@@ -146,7 +146,8 @@ def _key_pose_bone(pb, frame):
     pb.keyframe_insert("rotation_quaternion", frame=frame)
 
 
-# the kneel clip (CMU 23_03) retargets badly onto the rig, so for now a kneel is the seated pose
+# the CharMorph kneel clip (CMU 23_03) retargets badly onto the rig, so there a kneel is the seated pose;
+# the MPFB characters have a kneel of their own
 POSE_STAND_IN = {"kneel": "sit"}
 
 
@@ -154,7 +155,8 @@ def set_pose(inst, pose, frame):
     """Pose from the library; a pose without its own entry uses its stand-in, then the standing pose."""
     rig = inst["rig"]
     library = inst["poses"]
-    pose = POSE_STAND_IN.get(pose, pose)
+    if pose not in library:
+        pose = POSE_STAND_IN.get(pose, pose)
     entry = library.get(pose) or library.get("stand") or {}
     if "torso@loc" not in entry and any(k.endswith("@loc") for e in library.values() for k in e):
         entry = dict(entry, **{"torso@loc": [0.0, 0.0, 0.0]})

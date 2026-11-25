@@ -26,8 +26,9 @@ CAST = {"explorer", "token", "dozing", "sleepy", "awake", "shocked", "bored", "a
 CAST_KEYS = {"who", "screen", "height", "shot", "hop", "walk", "flip", "word", "size",
              # people who act and talk (tools/pixel/people.py, mirrored in workflow/sprites.json)
              "speaker", "pose", "face", "acts", "blink", "bust", "span",
-             # a rigged 3D person (tools/blender/models/human3d.py); "render": "3d" selects it
-             "render"}
+             # a rigged 3D person (tools/blender/models/human3d.py); "render": "3d" selects it, "variant" picks
+             # one of the role's built variants (1, 2, 3 ...), "depth" places a bust that far along the view
+             "render", "variant", "depth"}
 
 # 3D people (rigged CharMorph characters, built by tools/blender/human3d_build.py). Only these may take render "3d".
 HUMAN3D_CHARACTERS = ("semmelweis", "doctor", "student", "midwife", "mother", "explorer")
