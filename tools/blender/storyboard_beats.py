@@ -433,7 +433,8 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     figure_frac = 1.8 * height if bust else height
     scale = figure_frac * frame_h / HUMAN3D_BASE_HEIGHT
 
-    inst = human3d.instance(c["who"], HUMAN3D["dir"], f"cast-{n}-{c['who']}", bpy.context.scene.collection)
+    inst = human3d.instance(c["who"], HUMAN3D["dir"], f"cast-{n}-{c['who']}", bpy.context.scene.collection,
+                            variant=c.get("variant"))
     rig = inst["rig"]
     rig.scale = (scale, scale, scale)
     rig.rotation_mode = "XYZ"
@@ -501,7 +502,7 @@ def build_beat(name, spec, seconds, words, forced=()):
     import characters
     import human3d
     BEAT["name"] = name
-    human3d.TEMPLATES.clear()   # each beat starts a new scene; the cached templates belonged to the last one
+    human3d.reset()   # each beat starts a new scene; the cached templates belonged to the last one
     characters.ACTORS.clear()
     characters.EVENTS.clear()
     frames = look.open_set(seconds)
@@ -712,6 +713,13 @@ def main():
         if args.still:
             st = build_beat_framed(name, board[name], seconds, timing.get(name, []))
             bpy.context.scene.render.resolution_percentage = 50
+            if os.environ.get("STORYLOOM_CYCLES_STILLS"):
+                # a machine without a GPU (the cloud checks): Cycles on the CPU, a few samples, denoised
+                sc = bpy.context.scene
+                sc.render.engine = "CYCLES"
+                sc.cycles.device = "CPU"
+                sc.cycles.samples = int(os.environ["STORYLOOM_CYCLES_STILLS"])
+                sc.cycles.use_denoising = True
             for frac in args.still:
                 frame = max(1, round(frac * seconds * FPS))
                 kit.common.render_still(frame, out_dir / f"{name}-{round(frac * 100):03d}.png", samples=16)

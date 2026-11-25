@@ -1,7 +1,8 @@
 """Rigged 3D people for the storyboard renderer.
 
-Each person is a CharMorph character built and posed by tools/blender/human3d_build.py and human3d_poses.py
-(work/<episode>/human3d/<who>.blend). A cast entry with "render": "3d" uses this module instead of the 2D
+Each person is a dressed MPFB2 (MakeHuman) character built by tools/blender/human3d_mpfb.py, in several
+variants per role (work/<episode>/human3d/<who>.blend, <who>.2.blend, ...); the older CharMorph builds of
+human3d_build.py and human3d_poses.py follow the same contract. A cast entry with "render": "3d" uses this module instead of the 2D
 sprites in characters.py:
 
   load_template(who, built_dir)  append the character once per Blender run (hidden)
@@ -39,6 +40,35 @@ ALL_FACE_KEYS = sorted({k for face in FACE.values() for k in face} | {v[0] for v
 IK_SWITCHES = ["upper_arm_parent.L", "upper_arm_parent.R", "thigh_parent.L", "thigh_parent.R"]
 
 TEMPLATES = {}
+USED = {}   # role -> how many cast members of that role this beat has placed, to hand out the variants in turn
+
+
+def reset():
+    """A new beat: forget the templates (they belonged to the last scene) and start the variants again."""
+    TEMPLATES.clear()
+    USED.clear()
+
+
+def variants(who, built_dir):
+    """The built files of a role: <who>.blend, then <who>.2.blend, <who>.3.blend ... (human3d_mpfb.py)."""
+    d = Path(built_dir)
+    out = [who] if (d / f"{who}.blend").exists() else []
+    k = 2
+    while (d / f"{who}.{k}.blend").exists():
+        out.append(f"{who}.{k}")
+        k += 1
+    return out or [who]
+
+
+def pick_variant(who, built_dir, variant=None):
+    """`variant` (1-based) when the storyboard names one, otherwise the next one in turn for this beat; the
+    first cast member of a role is always variant 1, so a named person looks the same in every beat."""
+    names = variants(who, built_dir)
+    if variant:
+        return names[(int(variant) - 1) % len(names)]
+    n = USED.get(who, 0)
+    USED[who] = n + 1
+    return names[n % len(names)]
 
 
 def _rig_of(objects):
@@ -77,8 +107,11 @@ def load_template(who, built_dir):
     return TEMPLATES[who]
 
 
-def instance(who, built_dir, name, collection):
-    """A copy of the character for one cast member: rig, body, garments and hair, all linked and re-pointed."""
+def instance(who, built_dir, name, collection, variant=None):
+    """A copy of the character for one cast member: rig, body, garments and hair, all linked and re-pointed.
+    Roles built in several variants (human3d_mpfb.py) hand them out in turn, see pick_variant."""
+    if "." not in who:
+        who = pick_variant(who, built_dir, variant)
     t = load_template(who, built_dir)
     mapping = {}
     rig = t["rig"].copy()
@@ -123,12 +156,21 @@ def set_pose(inst, pose, frame):
     library = inst["poses"]
     pose = POSE_STAND_IN.get(pose, pose)
     entry = library.get(pose) or library.get("stand") or {}
+    if "torso@loc" not in entry and any(k.endswith("@loc") for e in library.values() for k in e):
+        entry = dict(entry, **{"torso@loc": [0.0, 0.0, 0.0]})
     for name in IK_SWITCHES:
         pb = rig.pose.bones.get(name)
         if pb is not None:
             pb["IK_FK"] = 1.0
             pb.keyframe_insert('["IK_FK"]', frame=frame)
     for ctrl, q in entry.items():
+        if ctrl.endswith("@loc"):
+            # a control's location (MPFB poses lower the torso to kneel and sit)
+            pb = rig.pose.bones.get(ctrl[:-4])
+            if pb is not None:
+                pb.location = q
+                pb.keyframe_insert("location", frame=frame)
+            continue
         pb = rig.pose.bones.get(ctrl)
         if pb is None:
             continue
@@ -149,35 +191,55 @@ def play_walk(inst, start_frame):
             inst["walk"].fcurves.remove(fc)
     if rig.animation_data is None:
         rig.animation_data_create()
+    # the active action (the poses keyed by set_pose) is evaluated over the NLA and would hold the legs still:
+    # the bones the clip moves are left to the clip
+    walked = {fc.data_path for fc in inst["walk"].fcurves}
+    act = rig.animation_data.action
+    if act is not None:
+        for fc in list(act.fcurves):
+            if fc.data_path in walked:
+                act.fcurves.remove(fc)
     track = rig.animation_data.nla_tracks.new()
     strip = track.strips.new("walk", int(start_frame), inst["walk"])
+    if any(m.type == "CYCLES" for fc in inst["walk"].fcurves for m in fc.modifiers):
+        strip.repeat = 60   # a one-cycle clip (human3d_mpfb.py) repeats for the rest of the shot
     strip.extrapolation = "HOLD_FORWARD"
+
+
+def _key_sets(inst):
+    """The body's shape keys, then those of the parts that carry the same face keys (MPFB eyebrows,
+    eyelashes and beards), so the brows move with the forehead."""
+    out = [inst["body"].data.shape_keys.key_blocks]
+    for p in inst["parts"]:
+        if p is not inst["body"] and p.data.shape_keys is not None:
+            out.append(p.data.shape_keys.key_blocks)
+    return out
 
 
 def set_face(inst, face, frame):
     """Expression shape keys for `face`, keyed at `frame`; everything else in the face set to zero."""
-    keys = inst["body"].data.shape_keys.key_blocks
     wanted = FACE.get(face or "neutral", {})
-    for name in ALL_FACE_KEYS:
-        kb = keys.get(name)
-        if kb is None:
-            continue
-        kb.value = wanted.get(name, 0.0)
-        kb.keyframe_insert("value", frame=frame)
+    for keys in _key_sets(inst):
+        for name in ALL_FACE_KEYS:
+            kb = keys.get(name)
+            if kb is None:
+                continue
+            kb.value = wanted.get(name, 0.0)
+            kb.keyframe_insert("value", frame=frame)
 
 
 def talk(inst, visemes, fps):
     """Mouth shapes from [shape, start, end] visemes in beat seconds; the mouth rests between them."""
-    keys = inst["body"].data.shape_keys.key_blocks
-    for shape, t0, t1 in visemes:
-        name, value = MOUTH.get(shape, (None, 0.0))
-        f0 = max(1, round(t0 * fps) + 1)
-        f1 = max(f0 + 1, round(t1 * fps) + 1)
-        if name and keys.get(name):
-            keys[name].value = value
-            keys[name].keyframe_insert("value", frame=f0)
-            keys[name].value = 0.0
-            keys[name].keyframe_insert("value", frame=f1)
+    for keys in _key_sets(inst):
+        for shape, t0, t1 in visemes:
+            name, value = MOUTH.get(shape, (None, 0.0))
+            f0 = max(1, round(t0 * fps) + 1)
+            f1 = max(f0 + 1, round(t1 * fps) + 1)
+            if name and keys.get(name):
+                keys[name].value = value
+                keys[name].keyframe_insert("value", frame=f0)
+                keys[name].value = 0.0
+                keys[name].keyframe_insert("value", frame=f1)
 
 
 def show(inst, f0, f1, total):
