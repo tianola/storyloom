@@ -262,12 +262,36 @@ def command_ask(command):
     return ask
 
 
+STABLE_END = "\n\nBEATS ("   # everything before the beat list is the same on every call of a run
+
+
+def api_ask(call=None):
+    """The planner through the Anthropic API (tools/claude_client.py). The rules and the scene catalog
+    go in a cached system block, so repair rounds pay for them once; the beats and errors follow."""
+    if call is None:
+        import claude_client
+        call = claude_client.ask_text
+
+    def ask(prompt):
+        stable, sep, rest = prompt.partition(STABLE_END)
+        if not sep:                       # no beat list: nothing to split, send it whole
+            stable, rest = "You plan the 3D pictures of a narrated documentary.", prompt
+        else:
+            rest = sep.lstrip("\n") + rest
+        try:
+            return call(stable + "\n\nAnswer with the storyboard JSON object only.", rest)
+        except RuntimeError as exc:       # ClaudeError: no usable answer at all
+            raise SystemExit(f"--ask-api failed: {exc}")
+    return ask
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--episode", type=Path, required=True)
     ap.add_argument("--brief", action="store_true")
     ap.add_argument("--check", action="store_true")
-    ap.add_argument("--ask-cmd")
+    ap.add_argument("--ask-cmd", help="planner command: prompt on stdin, answer on stdout")
+    ap.add_argument("--ask-api", action="store_true", help="plan with Claude through the Anthropic API")
     ap.add_argument("--repairs", type=int, default=3)
     args = ap.parse_args(argv)
     episode = args.episode if args.episode.is_absolute() else ROOT / args.episode
@@ -285,14 +309,15 @@ def main(argv=None):
         if advice and not errors:
             print(f"storyboard OK ({len(beats)} beats), {len(advice)} piece(s) of advice")
         return 1 if errors else 0
-    if args.brief or not args.ask_cmd:
+    if args.brief or not (args.ask_cmd or args.ask_api):
         path = episode / "storyboard-brief.md"
         path.write_text(build_prompt(beats, catalog) + f"\n\nWrite the answer to {episode / 'storyboard.json'}, "
                         f"then run: python tools/plan_storyboard.py --episode {args.episode} --check\n", encoding="utf-8")
         print(f"brief for {len(beats)} beats -> {path}")
         return 0
 
-    board, errors = plan(beats, catalog, command_ask(args.ask_cmd), args.repairs)
+    ask = api_ask() if args.ask_api else command_ask(args.ask_cmd)
+    board, errors = plan(beats, catalog, ask, args.repairs)
     if errors:
         (episode / "storyboard-rejected.json").write_text(
             json.dumps({"errors": errors, "board": board}, indent=1), encoding="utf-8")

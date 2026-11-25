@@ -5,6 +5,7 @@
     python tools/make_episode.py --episode work/X --from render  # start at a stage
     python tools/make_episode.py --episode work/X --only qc      # just these (comma separated)
     python tools/make_episode.py --episode work/X --ask-cmd "<cmd>"   # planner: prompt on stdin, JSON out
+    python tools/make_episode.py --episode work/X --ask-api           # planner: Claude through the Anthropic API
 
 Stages, in order (each is an existing tool; this file only sequences them):
   script     tools/qc_script.py          the script gate; nothing is synthesised for a script that fails
@@ -228,10 +229,12 @@ def commands(stage, episode, args):
     if stage == "plan":
         if (episode / "storyboard.json").is_file() and not args.replan:
             return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--check"]]
+        if getattr(args, "ask_api", False):
+            return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--ask-api"]]
         if args.ask_cmd:
             return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--ask-cmd", args.ask_cmd]]
         return [[PY, str(tools / "plan_storyboard.py"), "--episode", ep, "--brief"], "BLOCK:"
-                "no storyboard.json and no --ask-cmd: the brief is written to storyboard-brief.md; "
+                "no storyboard.json and no --ask-cmd/--ask-api: the brief is written to storyboard-brief.md; "
                 "give a planner command or write storyboard.json from it, then re-run"]
     if stage in ("ingest", "render"):
         return [[PY, str(tools / "rollout_render.py"), "--episode", ep, stage]]
@@ -282,6 +285,7 @@ def main(argv=None):
     ap.add_argument("--only", help="comma-separated stages")
     ap.add_argument("--force", action="store_true", help="run the selected stages even if they are done")
     ap.add_argument("--ask-cmd", help="planner command (see plan_storyboard.py)")
+    ap.add_argument("--ask-api", action="store_true", help="plan the storyboard with Claude through the Anthropic API")
     ap.add_argument("--replan", action="store_true", help="plan again even though storyboard.json exists")
     ap.add_argument("--models", default=str(ROOT / "models" / "kokoro"))
     args = ap.parse_args(argv)
