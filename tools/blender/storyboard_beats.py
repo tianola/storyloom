@@ -17,6 +17,7 @@ but still reports (never hides) anything that does not frame.
 import argparse
 import json
 import math
+import os
 import sys
 import time
 from pathlib import Path
@@ -181,19 +182,58 @@ def _screen_ray(cam, u, v):
     return origin, (cam.matrix_world @ local - origin).normalized()
 
 
-def _ground(origin, direction, fallback):
-    """First surface the ray meets, skipping other cast members; else a point `fallback` along it."""
+def _ground_surface(origin, direction, fallback):
+    """First surface the ray meets, skipping other cast members: (point, normal, object name).
+    Nothing hit gives (a point `fallback` along the ray, None, None)."""
     scene = bpy.context.scene
     dg = bpy.context.evaluated_depsgraph_get()
     start = origin
     for _ in range(6):
-        hit, loc, _n, _i, ob, _m = scene.ray_cast(dg, start, direction, distance=500.0)
+        hit, loc, normal, _i, ob, _m = scene.ray_cast(dg, start, direction, distance=500.0)
         if not hit:
             break
         if not ob.name.startswith("cast-") and not ob.name.startswith("hud"):
-            return loc
+            return loc, normal, ob.name
         start = loc + direction * 0.001
-    return origin + direction * fallback
+    return origin + direction * fallback, None, None
+
+
+def _occluder(origin, direction, dist):
+    """Name of the first set object the ray meets before `dist` (cast members do not count), or None."""
+    scene = bpy.context.scene
+    dg = bpy.context.evaluated_depsgraph_get()
+    start, left = origin, dist
+    for _ in range(6):
+        hit, loc, _n, _i, ob, _m = scene.ray_cast(dg, start, direction, distance=left)
+        if not hit:
+            return None
+        if not ob.name.startswith("cast-") and not ob.name.startswith("hud"):
+            return ob.name
+        step = (loc - start).length + 0.001
+        start = loc + direction * 0.001
+        left -= step
+        if left <= 0:
+            return None
+    return None
+
+
+def _floor_point(origin, direction):
+    """Where the ray meets the floor plane z = 0, or None when it does not point down at it."""
+    if direction.z > -1e-6 or origin.z <= 0:
+        return None
+    return origin + direction * (-origin.z / direction.z)
+
+
+def _ground(origin, direction, fallback):
+    """First surface the ray meets, skipping other cast members; else a point `fallback` along it."""
+    return _ground_surface(origin, direction, fallback)[0]
+
+
+def _floor_at(origin, direction, z0):
+    """Where the ray meets the set's floor at height z0, or None when it does not point down at it."""
+    if direction.z > -1e-6:
+        return None
+    return origin + direction * ((z0 - origin.z) / direction.z)
 
 
 def place_cast(st, scene_set, plan, spec, seconds, words):
@@ -204,6 +244,9 @@ def place_cast(st, scene_set, plan, spec, seconds, words):
     bounds = [(s["start"], plan[i + 1]["start"] if i + 1 < len(plan) else seconds) for i, s in enumerate(plan)]
     import people as _people
     for n, c in enumerate(spec.get("cast", [])):
+        if c.get("render") == "3d":
+            place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds)
+            continue
         if c["who"] in _people.CHARACTERS:
             place_actor(st, scene_set, plan, spec, seconds, words, n, c, bounds)
             continue
@@ -276,10 +319,30 @@ def place_actor(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     origin, ray = _screen_ray(cam, u, v)
     target = Vector(scene_set.views[plan[k]["view"]]["target"]) if plan[k].get("view") in scene_set.views else origin + ray * 8
     reach = (target - origin).length
+    standing = not c.get("bust") and c.get("size", "figure") == "figure"
     if c.get("bust") or c.get("size") == "hands":
         foot = origin + ray * reach * float(c.get("depth", 0.5))
     else:
-        foot = _ground(origin, ray, reach * 0.8) - ray * (0.03 * reach)
+        hit, normal, surface = _ground_surface(origin, ray, reach * 0.8)
+        if standing:
+            # a standing figure stands on the floor plane (z = 0) where its screen point's ray reaches it;
+            # a wall or door the ray meets first would otherwise hold the figure up in mid-air
+            floor = _floor_point(origin, ray)
+            if floor is None:
+                st.problems.append(f"cast '{c['who']}' at screen {c['screen']} points above the horizon: "
+                                   f"move its 'screen' v toward 1.0 (the bottom of the frame)")
+                hit = origin + ray * (reach * 0.8)
+            else:
+                blocker = _occluder(origin, ray, (floor - origin).length - 0.15)
+                if blocker:
+                    st.problems.append(f"cast '{c['who']}' at screen {c['screen']} stands behind {blocker}, "
+                                       f"hidden from the camera: move its 'screen' u or v")
+                hit, normal, surface = floor, Vector((0, 0, 1)), "the floor"
+        foot = hit - ray * (0.03 * reach)
+        # a bed or any other surface: its screen point must land on an upward-facing top, or it floats
+        if normal is None or normal.z < 0.8:
+            st.problems.append(f"cast '{c['who']}' at screen {c['screen']} stands on {surface or 'nothing'}, "
+                               f"not on a surface: move its 'screen' v toward 1.0 (the bottom of the frame)")
     depth = (foot - origin).dot(cam.matrix_world.to_quaternion() @ Vector((0, 0, -1)))
     frame_h = 2 * depth * math.tan(cam.data.angle_y / 2)
     # `size`: figure (default), bust, or any size the character is drawn at (bed, hands)
@@ -320,10 +383,105 @@ def place_actor(st, scene_set, plan, spec, seconds, words, n, c, bounds):
             shadow.keyframe_insert("hide_render", frame=fr)
 
 
+# the CharMorph base character is 1.833 m tall (the rig's own height before any scale)
+HUMAN3D_BASE_HEIGHT = 1.833
+HUMAN3D = {"dir": None}   # set by main(): <episode>/human3d, where the built characters are
+
+
+def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
+    """A rigged 3D person (models/human3d.py), placed like place_actor: where its screen point meets the set,
+    `height` of the frame tall, facing the camera, shown in its shot. It is posed from the library, walks from
+    `walk` (a screen offset), speaks with its speaker's mouth shapes, and takes its `face`. A bust is a
+    figure whose head sits at the screen point and whose body runs off the bottom of the frame."""
+    import human3d
+    cam = bpy.context.scene.camera
+    if "span" in c:
+        t0 = when(c["span"][0], seconds, words, default=0.0)
+        t1 = when(c["span"][1], seconds, words, default=seconds)
+        k = max(i for i, (a, _) in enumerate(bounds) if a <= t0 + 1e-6)
+    else:
+        k = min(int(c.get("shot", 0)), len(bounds) - 1)
+        t0, t1 = bounds[k]
+    f0, f1 = max(1, round(t0 * FPS) + 1), max(2, round(t1 * FPS))
+    bpy.context.scene.frame_set(min(f0 + 1, max(1, f1 - 1)))
+    bpy.context.view_layer.update()
+    u, v = c["screen"]
+    bust = bool(c.get("bust")) or c.get("size") == "bust"
+    height = float(c.get("height", 0.25))
+    origin, ray = _screen_ray(cam, u, v)
+    target = Vector(scene_set.views[plan[k]["view"]]["target"]) if plan[k].get("view") in scene_set.views else origin + ray * 8
+    reach = (target - origin).length
+    if bust:
+        # head at the screen point, body below the frame: the figure's height runs past the bottom edge
+        origin, ray = _screen_ray(cam, u, v + 1.8 * height)
+        foot = origin + ray * reach * float(c.get("depth", 0.5))
+    else:
+        z0 = getattr(scene_set, "floor_z", 0.0)
+        floor = _floor_at(origin, ray, z0)
+        if floor is None:
+            st.problems.append(f"cast '{c['who']}' at screen {c['screen']} points above the horizon: "
+                               f"move its 'screen' v toward 1.0 (the bottom of the frame)")
+            floor = origin + ray * (reach * 0.8)
+        else:
+            blocker = _occluder(origin, ray, (floor - origin).length - 0.15)
+            if blocker:
+                st.problems.append(f"cast '{c['who']}' at screen {c['screen']} stands behind {blocker}, "
+                                   f"hidden from the camera: move its 'screen' u or v")
+        foot = floor
+    depth = (foot - origin).dot(cam.matrix_world.to_quaternion() @ Vector((0, 0, -1)))
+    frame_h = 2 * depth * math.tan(cam.data.angle_y / 2)
+    figure_frac = 1.8 * height if bust else height
+    scale = figure_frac * frame_h / HUMAN3D_BASE_HEIGHT
+
+    inst = human3d.instance(c["who"], HUMAN3D["dir"], f"cast-{n}-{c['who']}", bpy.context.scene.collection)
+    rig = inst["rig"]
+    rig.scale = (scale, scale, scale)
+    rig.rotation_mode = "XYZ"
+    to_cam = origin - foot
+    rig.rotation_euler = (0.0, 0.0, math.atan2(to_cam.x, -to_cam.y))
+    rig.location = tuple(foot)
+    rig.keyframe_insert("location", frame=1)
+    print(f"HUMAN3D_PLACE {n} {c['who']} screen={c['screen']} bust={bust} foot={tuple(round(x, 3) for x in foot)} "
+          f"scale={scale:.3f} depth={depth:.2f} pose={c.get('pose')}", flush=True)
+
+    if c.get("walk"):
+        du, dv = c["walk"]
+        o2, r2 = _screen_ray(cam, u + du, v + dv)
+        end = (_floor_at(o2, r2, getattr(scene_set, "floor_z", 0.0)) or foot) if not bust else foot
+        rig.location = tuple(foot)
+        rig.keyframe_insert("location", frame=f0)
+        rig.location = tuple(end)
+        rig.keyframe_insert("location", frame=f1)
+        if rig.animation_data and rig.animation_data.action:
+            for fc in rig.animation_data.action.fcurves:
+                for kp in fc.keyframe_points:
+                    kp.interpolation = "LINEAR"
+
+    human3d.set_pose(inst, c.get("pose", "stand"), 1)
+    human3d.set_pose(inst, c.get("pose", "stand"), f0)
+    if c.get("pose") == "walk":
+        human3d.play_walk(inst, f0)
+    human3d.set_face(inst, c.get("face", "neutral"), f0)
+    for a in c.get("acts") or []:
+        fa = max(1, round(when(a["at"], seconds, words, default=0.0) * FPS) + 1)
+        if "pose" in a:
+            human3d.set_pose(inst, a["pose"], fa)
+        if "face" in a:
+            human3d.set_face(inst, a["face"], fa)
+    who = c.get("speaker")
+    if who:
+        for line in MOUTHS.get(BEAT["name"], []):
+            if line["speaker"] == who and line["mode"] == "say":
+                human3d.talk(inst, line["visemes"], FPS)
+    human3d.show(inst, f0, f1, round(seconds * FPS))
+
+
 def build_beat(name, spec, seconds, words, forced=()):
     """forced: [(start_seconds, anchor)] — the shot running then becomes a close-up on that anchor."""
     import characters
+    import human3d
     BEAT["name"] = name
+    human3d.TEMPLATES.clear()   # each beat starts a new scene; the cached templates belonged to the last one
     characters.ACTORS.clear()
     characters.EVENTS.clear()
     frames = look.open_set(seconds)
@@ -471,6 +629,9 @@ def dump_catalog(path):
 
 def configure_video(scene, out_path):
     scene.eevee.taa_render_samples = 24
+    if os.environ.get("SEMMELWEIS_720"):
+        # the 2-minute 3D test renders at 720p; the episode itself stays at its own resolution
+        scene.render.resolution_x, scene.render.resolution_y, scene.render.resolution_percentage = 1280, 720, 100
     scene.render.image_settings.file_format = "FFMPEG"
     scene.render.ffmpeg.format = "MPEG4"
     scene.render.ffmpeg.codec = "H264"
@@ -495,6 +656,7 @@ def main():
         dump_catalog(args.catalog)
         return
     episode = args.episode if args.episode.is_absolute() else PROJECT_ROOT / args.episode
+    HUMAN3D["dir"] = episode / "human3d"
     board = json.loads((episode / "storyboard.json").read_text(encoding="utf-8"))["beats"]
     lengths = json.loads((episode / "shot_lengths.json").read_text(encoding="utf-8"))
     timing_path = episode / "word_timing.json"
@@ -560,4 +722,5 @@ def main():
     print(f"{len(names)} beats -> {out_dir}")
 
 
-main()
+if __name__ == "__main__":
+    main()
