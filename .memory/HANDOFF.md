@@ -1,5 +1,6 @@
 # HANDOFF
 - Read `.memory/PROJECT.md`, then the top section of `.memory/STATE.md` (2026-11-21).
+- **Update 2026-11-25:** PR #2 and PR #3 are merged into `main`, so v6 (7955e5a) is pushed and no PR is open. Ignore "NOT PUSHED" and "PR #2 is open" below. See the top section of `.memory/STATE.md` for the two open tracks: (A) finish the pixel pilot v6, steps 2-8 still open; (B) the 3D-people test (`human3d_*.py`, `work/semmelweis-10min/storyboard.json`), experimental, AGPL-3 character database not in the repo. Ask the user which track is primary. Renders and voices run only on the user's PC.
 - Goal: topic in, long-form documentary out. Since 2026-11-21 it must be a **living-world film**:
   - the explorer narrates on screen with lip sync;
   - a human story drives it;
