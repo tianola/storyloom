@@ -135,6 +135,8 @@ class Planner(unittest.TestCase):
 
 class BuilderGate(unittest.TestCase):
     def test_blender_refuses_an_invalid_storyboard_before_building_anything(self):
+        from toolchain import require_blender
+        require_blender()
         from workflow.config import blender_executable
         with tempfile.TemporaryDirectory() as tmp:
             ep = Path(tmp)

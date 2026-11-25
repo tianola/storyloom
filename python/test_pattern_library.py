@@ -80,6 +80,11 @@ class PatternLibraryTests(unittest.TestCase):
 
 
 class EpisodeCarriesItsPatternsTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from toolchain import require_skills
+        require_skills()   # init_episode refuses a machine without the mapped skills
+
     def test_a_new_episode_copies_the_library_it_was_built_against(self):
         with tempfile.TemporaryDirectory() as tmp:
             episode = init_episode(Path(tmp), "episode-thruster", "How a Thruster Works")

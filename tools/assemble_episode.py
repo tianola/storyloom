@@ -229,6 +229,18 @@ def _overlay(img, band):
     return Image.alpha_composite(img.convert("RGBA"), band).convert("RGB")
 
 
+def _card_font(face, size):
+    """The house face from workflow/style.json (Inter, shipped in tools/fonts), so a card looks the
+    same on every machine. It used to ask the OS for "arial.ttf", which exists only on Windows:
+    anywhere else the cards fell back to Pillow's tiny bitmap font."""
+    fonts = CONTRACT.get("graphics", {}).get("fonts", {})
+    path = PROJECT_ROOT / fonts.get(face, f"tools/fonts/Inter-{face.capitalize()}.ttf")
+    try:
+        return ImageFont.truetype(str(path), size)
+    except OSError:
+        return ImageFont.load_default(size)
+
+
 def card_frame(entry, t, duration_s):
     """One frame of an animated card.
 
@@ -259,12 +271,8 @@ def card_frame(entry, t, duration_s):
         # designed on, not an absolute pixel count.
         return int(round(px * SCALE))
 
-    try:
-        font_title = ImageFont.truetype("arial.ttf", s(28))
-        font_sub = ImageFont.truetype("arial.ttf", s(18))
-    except OSError:
-        font_title = ImageFont.load_default()
-        font_sub = ImageFont.load_default()
+    font_title = _card_font("bold", s(28))
+    font_sub = _card_font("regular", s(18))
 
     y_center = HEIGHT // 2
     border = s(40)

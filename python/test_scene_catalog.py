@@ -18,6 +18,8 @@ from workflow.config import blender_executable  # noqa: E402
 
 class SceneCatalog(unittest.TestCase):
     def test_catalog_matches_the_code(self):
+        from toolchain import require_blender
+        require_blender()
         catalog = json.loads((ROOT / "workflow" / "scenes.json").read_text(encoding="utf-8"))["scenes"]
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "found.json"

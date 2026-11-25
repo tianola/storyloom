@@ -61,7 +61,8 @@ class PureArgs(unittest.TestCase):
     def test_overlay_window(self):
         a = segment_args("in.mp4", 0, 15, C, "o.mp4", overlays=[Overlay("ov.png", 5, 10, 4, 6)])
         g = a[a.index("-filter_complex") + 1]
-        self.assertIn("between(n,5,9)", g)
+        # on the clock, half a frame either side, so frame 5 is the first shown and 9 the last
+        self.assertIn("between(t,0.150000,0.316667)", g)
         self.assertIn("setpts=PTS+5/(30*TB)", g)
         self.assertIn("overlay=4:6", g)
 

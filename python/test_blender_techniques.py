@@ -57,6 +57,8 @@ class TestBlenderTechniques(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Build all scenes into a temp directory once for the whole class."""
+        from toolchain import require_blender
+        require_blender()
         cls._tmpdir = tempfile.mkdtemp(prefix="techniques_")
         cls.output_dir = Path(cls._tmpdir)
         # Check that the build script exists
