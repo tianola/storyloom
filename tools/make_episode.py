@@ -94,6 +94,46 @@ def inputs_of(stage, episode):
     return table[stage]
 
 
+# The tool code each stage runs. A change here does not re-run a finished stage by itself (a render
+# is hours, and most code changes do not touch a given episode); the run says which finished stages
+# were built with older code, so `--force --only <stage>` is a decision rather than a guess.
+CODE = {
+    "script": ["tools/qc_script.py"],
+    "narration": ["python/narrate.py", "python/eleven.py"],
+    "shots": ["tools/plan_shots.py"],
+    "captions": ["tools/captions.py", "tools/word_marks.py", "tools/lip_sync.py"],
+    "lengths": ["tools/assemble_episode.py", "tools/edit/*.py"],
+    "plan": ["tools/plan_storyboard.py", "workflow/storyboard.py"],
+    "ingest": ["tools/archive_ingest.py", "tools/rollout_render.py"],
+    "render": ["tools/rollout_render.py", "tools/blender/**/*.py", "tools/pixel/**/*.py"],
+    "assemble": ["tools/assemble_episode.py", "tools/edit/*.py", "tools/compose/*.py", "tools/graphics/*.py",
+                 "tools/look_pass.py", "tools/audio_finish.py", "tools/music_bed.py", "tools/sound_design.py",
+                 "tools/loudness.py", "tools/captions.py"],
+    "qc": ["tools/qc_episode.py"],
+}
+
+
+def code_of(stage, root=ROOT):
+    return sorted({p for pattern in CODE[stage] for p in root.glob(pattern) if p.is_file()})
+
+
+def code_digest(stage, root=ROOT):
+    """Content of the stage's code, by path relative to the repo (so two files called common.py differ)."""
+    h = hashlib.sha1()
+    for p in code_of(stage, root):
+        h.update(p.relative_to(root).as_posix().encode())
+        h.update(p.read_bytes().replace(b"\r\n", b"\n"))   # a checkout's line endings are not a change
+    return h.hexdigest()
+
+
+def code_note(stage, record, root=ROOT):
+    """A sentence when a finished stage was built with different code, else None. Records from before
+    the code was tracked carry no digest and say nothing."""
+    if record and record.get("code") and record["code"] != code_digest(stage, root):
+        return f"built with older {stage} code; --force --only {stage} to redo it with the current code"
+    return None
+
+
 def digest(paths):
     h = hashlib.sha1()
     for p in paths:
@@ -210,7 +250,10 @@ def load_state(episode):
 
 def save_state(episode, state):
     (episode / "qc").mkdir(exist_ok=True)
-    (episode / "qc" / "make-episode.json").write_text(json.dumps(state, indent=1), encoding="utf-8")
+    path = episode / "qc" / "make-episode.json"
+    partial = path.with_name(path.name + ".tmp")     # a crash mid-write must not lose every finished stage
+    partial.write_text(json.dumps(state, indent=1), encoding="utf-8")
+    os.replace(partial, path)
 
 
 def status(stage, episode, state, force):
@@ -264,6 +307,9 @@ def main(argv=None):
             state_now, why = "run", "an earlier stage re-runs"
         if state_now == "done":
             print(f"[{stage:9}] done     {why}")
+            note = code_note(stage, state.get(stage))
+            if note:
+                print(f"            note: {note}")
             continue
         forced_downstream = True      # a stage that runs invalidates what depends on its outputs
         if stage == "narration":
@@ -291,7 +337,7 @@ def main(argv=None):
         if blocked:
             print(f"\nstopped at '{stage}': {blocked}", file=sys.stderr)
             return 2
-        state[stage] = {"inputs": digest(inputs_of(stage, episode)),
+        state[stage] = {"inputs": digest(inputs_of(stage, episode)), "code": code_digest(stage),
                         "finished": datetime.now().isoformat(timespec="seconds")}
         save_state(episode, state)
     print("\nall selected stages are finished" if not args.dry_run else "\n(dry run: nothing was changed)")

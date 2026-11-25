@@ -66,6 +66,25 @@ class MakeEpisode(unittest.TestCase):
             (ep / "renders" / "3d" / "b02.mp4").write_bytes(b"redrawn")
             self.assertEqual(M.status("assemble", ep, state, False)[0], "run")
 
+    def test_a_stage_built_with_older_code_is_named_but_not_rerun(self):
+        """A code change is flagged, not acted on: re-rendering hours of beats is the author's call."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "tools").mkdir()
+            gate = root / "tools" / "qc_script.py"
+            gate.write_bytes(b"rule = 1\r\n")
+            record = {"inputs": "x", "code": M.code_digest("script", root), "finished": "now"}
+            self.assertIsNone(M.code_note("script", record, root))
+            gate.write_bytes(b"rule = 1\n")                 # line endings only: not a change
+            self.assertIsNone(M.code_note("script", record, root))
+            gate.write_bytes(b"rule = 2\n")
+            self.assertIn("--force --only script", M.code_note("script", record, root))
+            self.assertIsNone(M.code_note("script", {"inputs": "x", "finished": "then"}, root))
+
+    def test_every_stage_names_code_that_exists(self):
+        for stage in M.STAGES:
+            self.assertTrue(M.code_of(stage), stage)
+
     def test_plan_without_a_planner_or_storyboard_is_blocked_with_a_brief(self):
         with tempfile.TemporaryDirectory() as tmp:
             ep = Path(tmp) / "ep"

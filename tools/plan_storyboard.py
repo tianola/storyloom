@@ -233,17 +233,23 @@ def staging_advice_for(episode, board):
 def plan(beats, catalog, ask, repairs=3):
     """-> (board or None, errors). `ask(prompt) -> text`. Repairs by sending the errors back."""
     board, errors = None, ["no answer"]
+    best = (None, ["no answer"])
     for attempt in range(repairs + 1):
         answer = ask(build_prompt(beats, catalog, errors if attempt else None, board if attempt else None))
         try:
-            board = extract_json(answer)
+            found = extract_json(answer)
         except ValueError as exc:
-            board, errors = None, [f"the answer is not JSON ({exc})"]
+            # keep the last board that was JSON: the repair prompt shows it again instead of
+            # "(not JSON)", so one garbled answer does not throw away the work before it
+            errors = [f"the answer is not JSON ({exc})"]
             continue
-        errors = problems(board, beats, catalog)
+        board, errors = found, problems(found, beats, catalog)
         if not errors:
             return board, []
-    return board, errors
+        if best[0] is None or len(errors) < len(best[1]):
+            best = (board, errors)
+    # a planner that never got there: hand back its closest attempt, not merely its last one
+    return best if best[0] is not None else (board, errors)
 
 
 def command_ask(command):

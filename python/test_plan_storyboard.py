@@ -52,6 +52,21 @@ class Planner(unittest.TestCase):
         self.assertIsNone(board)
         self.assertTrue(errors)
 
+    def test_a_failed_plan_returns_its_closest_attempt_and_survives_a_garbled_answer(self):
+        beats = [{"name": "a", "seconds": 5.0, "text": "x"}, {"name": "b", "seconds": 5.0, "text": "y"}]
+        good_a = {"beats": {"a": {}}}                         # one beat missing: one error at least
+        worse = {"beats": {"zzz": {}}}                         # both missing and one extra
+        prompts = []
+        answers = iter([json.dumps(good_a), "sorry, here it is: {not json", json.dumps(worse)])
+
+        def ask(prompt):
+            prompts.append(prompt)
+            return next(answers)
+        board, errors = P.plan(beats, {}, ask, repairs=2)
+        self.assertEqual(board, good_a)
+        self.assertTrue(errors)
+        self.assertIn('"a"', prompts[2].split("REJECTED:")[1])   # the garbled answer did not erase the board
+
     def test_missing_and_extra_beats_and_too_many_labels_are_errors(self):
         board = {"beats": {"a": {"scene": "wafer", "labels": [{"text": str(i), "anchor": "die"} for i in range(6)]},
                            "zzz": {"scene": "wafer"}}}
