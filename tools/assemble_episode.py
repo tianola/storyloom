@@ -29,6 +29,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import archive_ingest
+from compose.graph import concat_list
 import look_pass
 import loudness
 import music_bed
@@ -138,9 +139,9 @@ def concat_audio(episode, manifest):
         return audio_path
 
     list_file = audio_dir / "concat-list.txt"
-    with open(list_file, "w") as f:
-        for u in manifest["utterances"]:
-            f.write(f"file '{audio_dir / u['file']}'\n")
+    # UTF-8 with quotes escaped (compose.concat_list): the OS default code page and a bare '...'
+    # broke on a Greek folder name or an apostrophe in the path
+    list_file.write_text(concat_list(audio_dir / u["file"] for u in manifest["utterances"]), encoding="utf-8")
 
     subprocess.run([
         "ffmpeg", "-y", "-f", "concat", "-safe", "0",
@@ -592,10 +593,7 @@ def concat_segments(episode, manifest):
     video_only = episode / "video-only.mp4"
 
     list_file = episode / "segment-list.txt"
-    with open(list_file, "w") as f:
-        for u in manifest["utterances"]:
-            seg = seg_dir / f"{u['id']}.mp4"
-            f.write(f"file '{seg}'\n")
+    list_file.write_text(concat_list(seg_dir / f"{u['id']}.mp4" for u in manifest["utterances"]), encoding="utf-8")
 
     subprocess.run([
         "ffmpeg", "-y", "-f", "concat", "-safe", "0",
