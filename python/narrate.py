@@ -171,6 +171,32 @@ def synthesize(request: dict, output_dir, engine) -> dict:
     return build_manifest(value["voice"], chunks)
 
 
+def cloud_only(request) -> bool:
+    """True when every line of a valid request is an ElevenLabs voice, so Kokoro is never used."""
+    try:
+        value = validate_request(request)
+    except ValueError:
+        return False
+    return all(voice_of(value, u).startswith("eleven:") for u in value["utterances"])
+
+
+class NoLocalEngine:
+    """Stands in for Kokoro when every line is spoken by ElevenLabs: the 325 MB weights are neither
+    required nor loaded. Asked for a local voice anyway, it says so instead of guessing."""
+    sample_rate = SAMPLE_RATE
+    voices = None
+
+    def create(self, text, voice, speed=1.0):
+        raise EngineError(f"voice {voice!r} needs the local Kokoro engine, which was not loaded")
+
+
+def _peek_request(path: Path):
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
 def eleven_engine(cache_dir):
     """The ElevenLabs engine (python/eleven.py); a seam tests replace."""
     import eleven
@@ -210,14 +236,19 @@ def main(argv=None, engine_factory=load_engine, host=None) -> int:
     parser = argparse.ArgumentParser(description="Synthesize English narration with local Kokoro ONNX.")
     parser.add_argument("--input", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--model", required=True, type=Path)
-    parser.add_argument("--voices", required=True, type=Path)
+    parser.add_argument("--model", type=Path, help="Kokoro weights; needed unless every line is an ElevenLabs voice")
+    parser.add_argument("--voices", type=Path, help="Kokoro voices; needed unless every line is an ElevenLabs voice")
     args = parser.parse_args(argv)
+
+    # An episode spoken entirely by ElevenLabs never touches Kokoro, so it is not made to install,
+    # download or load it. Anything else (a local voice, or a request this peek cannot read) takes
+    # the full path below, preflight first.
+    local = not cloud_only(_peek_request(args.input))
 
     # A 96-utterance batch is long enough to be worth refusing to start on a machine that cannot
     # finish it. The weights are checked for wholeness here, not just existence: `_require_asset`
     # below cannot tell a 325 MB model from a 4 KB stub, and a stub fails an hour in.
-    refusal = stage_report(REPO_ROOT, "vo", host=host)
+    refusal = stage_report(REPO_ROOT, "vo", host=host) if local else None
     if refusal:
         print(f"narrate: {refusal}", file=sys.stderr)
         return REFUSED
@@ -236,22 +267,28 @@ def main(argv=None, engine_factory=load_engine, host=None) -> int:
         print(f"narrate: invalid request: {error}", file=sys.stderr)
         return 2
 
-    try:
-        model = _require_asset(args.model, "model")
-        voices = _require_asset(args.voices, "voices")
-    except FileNotFoundError as error:
-        print(f"narrate: {error}", file=sys.stderr)
-        return 3
-
     output = args.output.resolve()
-    for label, path in (("model", model), ("voices", voices)):
-        if output in path.parents:
-            print(f"narrate: output directory must not contain the {label} asset: {output}", file=sys.stderr)
-            return 2
+    if local:
+        try:
+            if args.model is None or args.voices is None:
+                raise FileNotFoundError("model and voices files are needed for a Kokoro voice (--model, --voices)")
+            model = _require_asset(args.model, "model")
+            voices = _require_asset(args.voices, "voices")
+        except FileNotFoundError as error:
+            print(f"narrate: {error}", file=sys.stderr)
+            return 3
+        for label, path in (("model", model), ("voices", voices)):
+            if output in path.parents:
+                print(f"narrate: output directory must not contain the {label} asset: {output}", file=sys.stderr)
+                return 2
 
-    print(f"narrate: loading engine from {model}", file=sys.stderr)
     try:
-        engine = engine_factory(model, voices)
+        if local:
+            print(f"narrate: loading engine from {model}", file=sys.stderr)
+            engine = engine_factory(model, voices)
+        else:
+            print("narrate: every line is an ElevenLabs voice; Kokoro is not loaded", file=sys.stderr)
+            engine = NoLocalEngine()
         manifest = synthesize(request, output, engine)
     except ValueError as error:
         print(f"narrate: {error}", file=sys.stderr)
