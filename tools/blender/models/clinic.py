@@ -303,7 +303,7 @@ def ledger(p, seconds):
     cover = kit.mat("ledger-cover", (0.22, 0.08, 0.05), roughness=0.7)
     ink = kit.mat("ledger-ink", (0.07, 0.05, 0.045), roughness=0.5)
     rule = kit.mat("ledger-rule", (0.48, 0.40, 0.30), roughness=0.9)
-    kit.box("ledger-desk", (0, 0, 0.74), (2.2, 1.4, 0.06), wood, bevel=0.01)
+    kit.box("ledger-desk", (0, 0.1, 0.74), (2.2, 1.0, 0.06), wood, bevel=0.01)   # a writing desk: he can reach the page
     kit.box("ledger-cover", (0, 0, 0.778), (0.86, 0.6, 0.016), cover, bevel=0.004)
     for side in (-1, 1):
         kit.box(f"ledger-page{side:+d}", (side * 0.205, 0, 0.79), (0.4, 0.56, 0.01), page, bevel=0)
@@ -361,7 +361,7 @@ def ledger(p, seconds):
     s.pin("cross", (centres[0], 0.1, 0.8))
     # the registrar's office around the desk: legs under it, a floor, a panelled back wall with a window
     # on the night and a shelf of older registers, so a wider view (ledger-clerk) has a room to show
-    kit.boxes("ledger-legs", [placed((dx, dy, 0.355), (0.07, 0.07, 0.71)) for dx in (-1.0, 1.0) for dy in (-0.6, 0.6)],
+    kit.boxes("ledger-legs", [placed((dx, dy, 0.355), (0.07, 0.07, 0.71)) for dx in (-1.0, 1.0) for dy in (-0.32, 0.52)],
               wood)
     kit.box("ledger-floor", (0, 0.5, -0.02), (7.0, 6.0, 0.04), kit.mat("ledger-floor", (0.16, 0.10, 0.06), roughness=0.8),
             bevel=0)

@@ -33,7 +33,9 @@ CAST_KEYS = {"who", "screen", "height", "shot", "hop", "walk", "flip", "word", "
              # "facing" a yaw in degrees (0 = toward -y) instead of toward the camera, "look" what the head
              # turns to ("camera", a cast index, or [x, y, z]), "gesture" false keeps a speaker's arms
              # still, "idle" false stops breathing and head motion, "place" "start" frames on the first frame
-             "at", "facing", "look", "gesture", "idle", "place"}
+             "at", "facing", "look", "gesture", "idle", "place",
+             # "gestures": [{"kind", "at", "until", "target", "side", "wiggle"}] gestures with a meaning, on words
+             "gestures", "walk_to", "walk_speed"}
 
 # 3D people (rigged CharMorph characters, built by tools/blender/human3d_build.py). Only these may take render "3d".
 HUMAN3D_CHARACTERS = ("semmelweis", "doctor", "student", "midwife", "mother", "explorer")

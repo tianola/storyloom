@@ -466,8 +466,10 @@ def gaze(inst, yaw, pitch, spans=None, fps=30, seed=0):
         delay = round(rnd.uniform(0.25, 0.7) * fps)            # listeners react, never on the same frame
         windows.append((f0 + delay, f1 + round(rnd.uniform(0.4, 1.0) * fps)))
         turns.append(f0 + delay)
-    for bone, share, lag in (("head", 0.65, 0), ("neck", 0.35, 4)):
-        for axis, angle in ((2, yaw * share), (1, pitch * share)):
+    # the eyes go first (eye_aim), the head a few frames later, then the neck, and last the shoulders follow
+    # a part of the turn, so a look travels down the body instead of the head swivelling alone
+    for bone, share, lag in (("head", 0.6, 3), ("neck", 0.3, 6), ("chest", 0.18, 10)):
+        for axis, angle in ((2, yaw * share), (1, pitch * share if bone != "chest" else 0.0)):
             fc = act.fcurves.find(f'pose.bones["{bone}"].rotation_quaternion', index=axis)
             if fc is None or abs(angle) < 1e-4:
                 continue
@@ -483,7 +485,34 @@ def gaze(inst, yaw, pitch, spans=None, fps=30, seed=0):
                     m.frame_end = max(a + lag + 12, b + lag)
                     m.blend_in = min(9 + lag, (m.frame_end - m.frame_start) / 2 - 1)
                     m.blend_out = min(12, (m.frame_end - m.frame_start) / 2 - 1)
+    eye_aim(inst, yaw * 0.4, pitch * 0.3, windows)
     return turns
+
+
+def eye_aim(inst, yaw, pitch, windows):
+    """The eyes turn to the target before the head does (they take the part of the look the head does not):
+    the eye controls (eye.L, eye.R targets in front of the face) move sideways and down, keyed to arrive a
+    few frames ahead of the head and to come back with it."""
+    import math
+    rig = inst["rig"]
+    targets = [rig.pose.bones.get(n) for n in ("eye.L", "eye.R")]
+    targets = [t for t in targets if t is not None]
+    if not targets:
+        return
+    k = _scale(inst)
+    # the targets sit about 0.13 m before the eyes in the rest pose; a shift of tan(angle) * that distance
+    # turns the eyeball by the angle. Their local x is the character's x, local z is up
+    dx = math.tan(max(-0.5, min(0.5, yaw))) * 0.13 * k      # a positive yaw looks toward +x (her left)
+    dz = -math.tan(max(-0.3, min(0.3, pitch))) * 0.13 * k
+    for a, b in windows:
+        for pb in targets:
+            frames = [(1, (0, 0, 0))] if a is None else [(max(1, a - 2), (0, 0, 0)), (a + 3, (dx, 0, dz)),
+                                                         (max(a + 6, b), (dx, 0, dz)), (max(a + 9, b + 6), (0, 0, 0))]
+            if a is None:
+                frames = [(1, (dx, 0, dz))]
+            for f, loc in frames:
+                pb.location = loc
+                pb.keyframe_insert("location", frame=f)
 
 
 def nod(inst, pose, frame, fps, depth=0.055):
@@ -737,3 +766,266 @@ def show(inst, f0, f1, total):
             ob.hide_render = True
             ob.keyframe_insert("hide_render", frame=f1 + 1)
         ob.hide_render = False
+
+
+# ---------------------------------------------------------------------------
+# Hands that go somewhere: IK reaches for gestures with a meaning and for touching things
+# ---------------------------------------------------------------------------
+# Body landmarks in the armature's own space (the character faces -y), for a figure whose neck top (the head
+# bone's root) is at 1.59 m; they are scaled to each character. The right hand is "R" (x < 0).
+LANDMARKS = {
+    "chest": (-0.05, -0.19, 1.30),        # the flat of the hand on the breastbone
+    "mouth": (-0.02, -0.17, 1.51),        # the back of the fingers before the lips
+    "clasp": (-0.02, -0.30, 1.12),        # hands held together before the body, pleading
+    "explain": (-0.28, -0.34, 1.06),      # forearm forward, palm open to whoever listens
+    "rest": (-0.24, -0.06, 0.86),         # beside the thigh
+}
+MIRROR = {"R": 1.0, "L": -1.0}
+
+
+def _scale(inst):
+    b = inst["rig"].data.bones.get("head")
+    return (b.head_local.z / 1.59) if b is not None else 1.0
+
+
+def landmark(inst, name, side="R"):
+    """Armature-space point for a body landmark, mirrored for the left hand."""
+    from mathutils import Vector
+    x, y, z = LANDMARKS[name]
+    k = _scale(inst)
+    return Vector((x * MIRROR[side] * k, y * k, z * k))
+
+
+def world_to_arm(inst, p):
+    """A world point in the rig's armature space. The rig has no parent, so its matrix_basis (made from its
+    location, rotation and scale as they are set now) is its world matrix even before the scene updates."""
+    from mathutils import Vector
+    return inst["rig"].matrix_basis.inverted() @ Vector(p)
+
+
+def _key_ik(inst, side, value, frame):
+    pb = inst["rig"].pose.bones.get(f"upper_arm_parent.{side}")
+    if pb is not None:
+        pb["IK_FK"] = value
+        pb.keyframe_insert('["IK_FK"]', frame=frame)
+
+
+def _key_hand(inst, side, arm_point, frame):
+    """Put the IK hand control at an armature-space point (its rest orientation kept) and key it."""
+    from mathutils import Matrix
+    rig = inst["rig"]
+    pb = rig.pose.bones.get(f"hand_ik.{side}")
+    if pb is None:
+        return
+    import bpy as _bpy
+    _bpy.context.scene.frame_set(frame)
+    rest = pb.bone.matrix_local.copy()
+    rest.translation = arm_point
+    # Blender works out the local offset from the armature-space matrix, whatever the parent chain does
+    pb.matrix = rest
+    _bpy.context.view_layer.update()
+    import os as _os
+    if _os.environ.get("DEBUG_IK"):
+        got = rig.matrix_world @ pb.matrix.translation
+        print("IK_DEBUG", rig.name, side, frame, "want", tuple(round(v, 2) for v in (rig.matrix_world @ arm_point)),
+              "got", tuple(round(v, 2) for v in got), "loc", tuple(round(v, 2) for v in pb.location),
+              "parent", pb.parent.name if pb.parent else None, flush=True)
+    pb.keyframe_insert("location", frame=frame)
+    pb.keyframe_insert("rotation_quaternion", frame=frame)
+
+
+def reach(inst, side, points, fps, lead=0.3, back=0.45):
+    """Move one hand by IK through [(frame, armature point), ...] and give the arm back to its FK pose
+    afterwards. The blend in starts `lead` seconds before the first point (the anticipation: the hand
+    gathers before it goes), and the arm settles back over `back` seconds after the last one. Every key is
+    eased, so the move has a start, a travel and a settle rather than a constant speed."""
+    if not points:
+        return
+    f_first, f_last = points[0][0], points[-1][0]
+    f_in = max(2, f_first - round(lead * fps))
+    _key_ik(inst, side, 1.0, f_in)
+    _key_hand(inst, side, points[0][1], f_in)
+    for f, p in points:
+        _key_ik(inst, side, 0.0, f)
+        _key_hand(inst, side, p, f)
+    _key_ik(inst, side, 1.0, f_last + round(back * fps))
+
+
+def point_at(inst, side, world_target, f0, f1, fps):
+    """The arm straightened toward a target (a door, a board, a person), index finger out, held, then down."""
+    import math
+    from mathutils import Vector
+    shoulder = Vector((-0.19 * MIRROR[side], -0.02, 1.39)) * _scale(inst)
+    d = world_to_arm(inst, world_target) - shoulder
+    d.z = max(-0.4, min(0.5, d.z))
+    if d.length < 1e-3:
+        return
+    hand = shoulder + d.normalized() * 0.56 * _scale(inst)
+    reach(inst, side, [(f0, hand), (f1, hand)], fps)
+    rig = inst["rig"]
+    # the index straight, the other fingers curled in: a point, not an open hand
+    for finger, deg in (("index", -12), ("middle", 70), ("ring", 80), ("pinky", 85)):
+        for k in ("01", "02", "03"):
+            pb = rig.pose.bones.get(f"f_{finger}.{k}.{side}")
+            if pb is None:
+                continue
+            pb.rotation_mode = "QUATERNION"
+            for fr, a in ((max(1, f0 - round(0.3 * fps)), math.radians(12)), (f0, math.radians(deg * (0.8 if k == "01" else 1.0))),
+                          (f1, math.radians(deg * (0.8 if k == "01" else 1.0))), (f1 + round(0.4 * fps), math.radians(12))):
+                pb.rotation_quaternion = (math.cos(a / 2), math.sin(a / 2), 0.0, 0.0)
+                pb.keyframe_insert("rotation_quaternion", frame=fr)
+
+
+def gesture(inst, kind, f0, f1, fps, seed=0, target=None):
+    """One gesture with a meaning, from frame f0 to f1:
+      point     the right arm toward `target` (a world point)
+      explain   the right hand forward, palm open, moving a little with the words
+      chest     the right hand to the breastbone (grief, worry)
+      mouth     the right hand to the mouth (shock)
+      clasp     both hands together before the body (pleading)
+      shake     the head turned left and right (no)
+      nod       the head dips (yes, I hear you)
+    """
+    import random
+    from mathutils import Vector
+    rnd = random.Random(seed * 131 + f0)
+    if kind == "point" and target is not None:
+        point_at(inst, "R", target, f0, f1, fps)
+    elif kind == "explain":
+        base = landmark(inst, "explain", "R")
+        pts, f = [], f0
+        while f < f1:
+            pts.append((f, base + Vector((rnd.uniform(-0.05, 0.05), rnd.uniform(-0.04, 0.03), rnd.uniform(-0.04, 0.05)))))
+            f += round(rnd.uniform(0.35, 0.6) * fps)
+        pts.append((f1, base))
+        reach(inst, "R", pts, fps)
+    elif kind in ("chest", "mouth"):
+        p = landmark(inst, kind, "R")
+        reach(inst, "R", [(f0, p), (f1, p + Vector((0, -0.01, -0.01)))], fps, lead=0.25)
+    elif kind == "clasp":
+        for side in ("R", "L"):
+            p = landmark(inst, "clasp", side)
+            reach(inst, side, [(f0, p), (f1, p)], fps, lead=0.35)
+    elif kind == "shake":
+        head_turns(inst, f0, f1, fps, [0.16, -0.16, 0.12, -0.08, 0.0])
+    elif kind == "nod":
+        head_turns(inst, f0, f1, fps, [0.0], nod_only=True)
+
+
+def head_turns(inst, f0, f1, fps, yaws, nod_only=False):
+    """Keyed head moves relative to the held pose: a shake (yaw left and right, getting smaller) or a nod."""
+    import math
+    rig = inst["rig"]
+    act = rig.animation_data.action if rig.animation_data else None
+    if act is None:
+        return
+    if nod_only:
+        for fc_axis, offsets in ((1, [0.0, 0.07, 0.05, 0.0]),):
+            fc = act.fcurves.find('pose.bones["head"].rotation_quaternion', index=fc_axis)
+            if fc is None:
+                return
+            base = fc.evaluate(f0)
+            for k, o in enumerate(offsets):
+                fc.keyframe_points.insert(f0 + round(k * 0.15 * fps), base + o)
+        return
+    fc = act.fcurves.find('pose.bones["head"].rotation_quaternion', index=2)
+    if fc is None:
+        return
+    base = fc.evaluate(f0)
+    fc.keyframe_points.insert(f0, base)
+    step = max(4, (f1 - f0) // (len(yaws) + 1))
+    for k, y in enumerate(yaws, 1):
+        fc.keyframe_points.insert(f0 + k * step, base + math.sin(y))
+
+
+def lean(inst, f0, f1, fps, amount=0.06):
+    """A lean into a start or a stop: the torso tips forward as the walk begins and rocks back as it ends."""
+    rig = inst["rig"]
+    act = rig.animation_data.action if rig.animation_data else None
+    fc = act.fcurves.find('pose.bones["chest"].rotation_quaternion', index=1) if act else None
+    if fc is None:
+        return
+    base = fc.evaluate(f0)
+    for df, o in ((0, 0.0), (round(0.3 * fps), amount), (round(0.8 * fps), 0.0)):
+        fc.keyframe_points.insert(f0 + df, base + o)
+    for df, o in ((-round(0.2 * fps), 0.0), (round(0.15 * fps), -amount * 0.7), (round(0.6 * fps), 0.0)):
+        fc.keyframe_points.insert(max(1, f1 + df), base + o)
+
+
+def stride_speed(inst, fps):
+    """Metres per second a walker must travel for its feet to stay planted: the speed at which the stance
+    foot slides back in the walk clip when the body does not move (measured once per character)."""
+    if "stride" in inst:
+        return inst["stride"]
+    import bpy as _bpy
+    rig, walk = inst["rig"], inst["walk"]
+    speed = 1.2
+    if walk is not None and rig.data.bones.get("DEF-foot.L") is not None:
+        ad = rig.animation_data or rig.animation_data_create()
+        old = ad.action
+        ad.action = walk
+        scene = _bpy.context.scene
+        keep = scene.frame_current
+        start, end = int(walk.frame_range[0]), int(walk.frame_range[1])
+        ys = []
+        for f in range(start, end + 1):
+            scene.frame_set(f)
+            m = rig.pose.bones["DEF-foot.L"].matrix
+            ys.append((m.translation.y, m.translation.z))
+        ad.action = old
+        scene.frame_set(keep)
+        low = min(z for _, z in ys)
+        stance = [y for y, z in ys if z < low + 0.02]
+        if len(stance) >= 2:
+            # the planted foot moves backward (+y, the character faces -y) at the body's ground speed
+            frames_down = sum(1 for _, z in ys if z < low + 0.02)
+            speed = max(0.6, min(1.8, (max(stance) - min(stance)) / max(1, frames_down - 1) * fps))
+    inst["stride"] = speed
+    return speed
+
+
+def bend(inst, amount, f0=None, f1=None, fps=30):
+    """Bend forward over work (a desk, a table): the chest and neck pitch by `amount` radians, eased in and
+    out at f0 / f1 (or held throughout). The head is left to the gaze."""
+    import math
+    rig = inst["rig"]
+    act = rig.animation_data.action if rig.animation_data else None
+    if act is None:
+        return
+    for bone, share in (("chest", 0.65), ("neck", 0.35)):
+        fc = act.fcurves.find(f'pose.bones["{bone}"].rotation_quaternion', index=1)
+        if fc is None:
+            continue
+        m = fc.modifiers.new("FNGENERATOR")
+        m.function_type = "SIN"
+        m.amplitude = 0.0
+        m.value_offset = math.sin(amount * share / 2)
+        m.use_additive = True
+        if f0 is not None and f1 is not None:
+            m.use_restricted_range = True
+            m.frame_start, m.frame_end = f0, f1
+            m.blend_in = m.blend_out = min(round(0.4 * fps), (f1 - f0) / 2 - 1)
+
+
+def pen_in_hand(inst, side="R", name="pen"):
+    """A quill held in the hand: a thin dark shaft with a pale feather, parented to the hand bone so it
+    goes wherever the hand writes."""
+    import bpy as _bpy
+    rig = inst["rig"]
+    bone = f"DEF-hand.{side}" if rig.data.bones.get(f"DEF-hand.{side}") else f"hand_fk.{side}"
+    _bpy.ops.mesh.primitive_cylinder_add(vertices=8, radius=0.004, depth=0.2)
+    pen = _bpy.context.active_object
+    pen.name = f"{rig.name}-{name}"
+    mat = _bpy.data.materials.new(f"{pen.name}-mat")
+    mat.use_nodes = True
+    mat.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = (0.75, 0.70, 0.62, 1)
+    pen.data.materials.append(mat)
+    pen.parent = rig
+    pen.parent_type = "BONE"
+    pen.parent_bone = bone
+    # bone parenting puts the child at the bone's tail; the quill lies between thumb and fingers, its nib
+    # toward the page and the feather up past the knuckles
+    import math
+    pen.location = (0.0, -0.04, -0.03)
+    pen.rotation_euler = (math.radians(65), 0.0, 0.0)
+    return pen
