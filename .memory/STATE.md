@@ -1,4 +1,17 @@
 # STATE
+## 2026-11-27: track B motion pass, branch `claude/semmelweis-mpfb-motion` (draft PR, on top of #11)
+- The user chose: poses and meaningful motion first, then a test of AI video-to-video (prepared, not run).
+- Done:
+  - IK hands (`human3d.reach/gesture/point_at`): point, explain, chest, mouth, clasp, shake, nod.
+  - `touch` contact: the registrar writes with a quill on the register; the doctor rests his hands on the table.
+  - Eyes lead the head, then the neck and the chest (`eye_aim`, gaze lags).
+  - `walk_to` with a clip slowed to the travel speed, a stop at the target and a lean.
+  - Gestures timed on the words of each beat (storyboard `gestures`); plan in `work/semmelweis-10min/movement-plan.md`.
+  - Fix: `world_to_arm` uses `matrix_basis`; `matrix_world` is stale before a scene update.
+- Video: `work/semmelweis-10min/renders/motion/semmelweis-first2min-motion-720p.mp4`. Before/after stills (before = real pass): `renders/motion/review/`. AI test clip: `renders/motion/ai-test/beat06-mothers-10s.mp4`.
+- AI options: `docs/ai-video-to-video-options.md`. Local is not feasible (no ROCm for Polaris, 8 GB VRAM). Hosted options: Wan VACE on fal.ai (~$12 a pass), Runway Aleph (~$43), Luma Ray2 Modify (~$54). Nothing uploaded or paid; the owner decides.
+- Still not natural: IK hands keep their rest orientation (palms can face wrong); no foot IK lock; nobody kneels or opens a door in beats 01-08; the shake and nod are head-only.
+
 ## 2026-11-26 (night): track B realism pass, branch `claude/semmelweis-mpfb-real` (draft PR, includes #9 and #10)
 - The user finds the people porcelain-like and fake; the target is a photoreal reference (a warm rim-lit man on a bus).
 - Done:
