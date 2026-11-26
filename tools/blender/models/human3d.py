@@ -111,15 +111,115 @@ def load_template(who, built_dir):
 # MPFB's skin group as built reads as wax at film distance: strong subsurface, a clear coat and an even
 # roughness. Skin that reads as skin is drier and less translucent, with the pores (its roughness and bump
 # noise) stronger; lips and ears a touch redder; the eyes' outer layer a wet, sharp coat that catches light.
-SKIN = {"SSS strength": 0.07, "Clearcoat": 0.0, "Roughness": 0.52, "Pore strength": 0.55, "Pore scale": 1600.0,
-        "Contrast": 0.08}
+SKIN = {"SSS strength": 0.12, "SSS radius scale": 0.25, "Clearcoat": 0.0, "Roughness": 0.5, "Pore strength": 0.22,
+        "Pore scale": 2600.0, "Contrast": 0.05}
 SKIN_PART = {"lips": {"colorMixInStrength": 0.2, "Roughness": 0.38},
              "ears": {"colorMixInStrength": 0.12}}
 EYES = {"Clearcoat": 1.0, "Clearcoat Roughness": 0.02, "OuterLayerRoughness": 0.0}
 
 
+def _asset_roots():
+    """MakeHuman asset folders this Blender session knows of: the repo's own, and wherever the built
+    characters' textures were loaded from (the .blend files store absolute paths)."""
+    roots = [Path(__file__).resolve().parents[3] / "assets" / "makehuman"]
+    for img in bpy.data.images:
+        p = Path(bpy.path.abspath(img.filepath)) if img.filepath else None
+        if p is not None and "makehuman" in p.parts:
+            roots.append(Path(*p.parts[:p.parts.index("makehuman") + 1]))
+    return roots
+
+
+def _eye_texture(iris):
+    """The MakeHuman (CC0) eye texture nearest to an iris colour from the built procedural eye."""
+    r, g, b = iris[:3]
+    name = "blue" if b > r * 1.1 else "green" if g > r and g > b else "grey" if max(r, g, b) < 0.08 else \
+        "brownlight" if r > 0.25 else "brown"
+    for root in _asset_roots():
+        f = root / "eyes" / "materials" / f"{name}_eye.png"
+        if f.is_file():
+            return f
+    return None
+
+
+def _real_eye(m, group):
+    """Replace MPFB's procedural eye (its node group does not build cleanly in Blender 4.5: the iris comes
+    out as a flat glowing disc) with the MakeHuman eye texture under a wet, sharp clear coat: a real iris
+    pattern, a pupil, a sclera that is not pure white, and a catchlight from whatever lights the face."""
+    iris = tuple(group.inputs["IrisMajorColor"].default_value) if "IrisMajorColor" in group.inputs else (0.2, 0.1, 0.05)
+    tex = _eye_texture(iris)
+    if tex is None:
+        return False
+    nt = m.node_tree
+    for n in list(nt.nodes):
+        nt.nodes.remove(n)
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+    img = nt.nodes.new("ShaderNodeTexImage")
+    img.image = bpy.data.images.load(str(tex), check_existing=True)
+    tint = nt.nodes.new("ShaderNodeMixRGB")          # the sclera a touch warm and shadowed, never paper white
+    tint.blend_type = "MULTIPLY"
+    tint.inputs["Fac"].default_value = 1.0
+    tint.inputs["Color2"].default_value = (0.86, 0.80, 0.76, 1.0)
+    nt.links.new(img.outputs["Color"], tint.inputs["Color1"])
+    nt.links.new(tint.outputs["Color"], bsdf.inputs["Base Color"])
+    nt.links.new(img.outputs["Alpha"], bsdf.inputs["Alpha"])
+    bsdf.inputs["Roughness"].default_value = 0.35
+    for key, value in (("Coat Weight", 1.0), ("Coat Roughness", 0.02), ("Coat IOR", 1.376)):
+        if key in bsdf.inputs:
+            bsdf.inputs[key].default_value = value
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    m.surface_render_method = "DITHERED"
+    return True
+
+
+def _cloth_wrinkles(m):
+    """Fabric that is not a smooth shell: a fine weave and soft, uneven creases as a bump on the cloth's
+    normal (garments that bring their own normal map keep it)."""
+    bsdf = next((n for n in m.node_tree.nodes if n.bl_idname == "ShaderNodeBsdfPrincipled"), None)
+    if bsdf is None or bsdf.inputs["Normal"].is_linked:
+        return
+    nt = m.node_tree
+    coord = nt.nodes.new("ShaderNodeTexCoord")
+    creases = nt.nodes.new("ShaderNodeTexWave")
+    creases.wave_type = "BANDS"
+    creases.inputs["Scale"].default_value = 3.0
+    creases.inputs["Distortion"].default_value = 9.0
+    creases.inputs["Detail"].default_value = 3.0
+    weave = nt.nodes.new("ShaderNodeTexNoise")
+    weave.inputs["Scale"].default_value = 900.0
+    nt.links.new(coord.outputs["Object"], creases.inputs["Vector"])
+    nt.links.new(coord.outputs["Object"], weave.inputs["Vector"])
+    big = nt.nodes.new("ShaderNodeBump")
+    big.inputs["Strength"].default_value = 0.35
+    big.inputs["Distance"].default_value = 0.02
+    fine = nt.nodes.new("ShaderNodeBump")
+    fine.inputs["Strength"].default_value = 0.15
+    fine.inputs["Distance"].default_value = 0.002
+    nt.links.new(creases.outputs["Fac"], big.inputs["Height"])
+    nt.links.new(weave.outputs["Fac"], fine.inputs["Height"])
+    nt.links.new(big.outputs["Normal"], fine.inputs["Normal"])
+    nt.links.new(fine.outputs["Normal"], bsdf.inputs["Normal"])
+    if not bsdf.inputs["Roughness"].is_linked:
+        bsdf.inputs["Roughness"].default_value = max(0.75, bsdf.inputs["Roughness"].default_value)
+    if "Sheen Weight" in bsdf.inputs:
+        bsdf.inputs["Sheen Weight"].default_value = 0.35     # cotton and wool catch a soft sheen at grazing light
+
+
+def _hair_look(m):
+    """Hair cards that read less like a painted cap: a soft anisotropic sheen along the strands, a little
+    light through the thin edges, a matte top."""
+    bsdf = next((n for n in m.node_tree.nodes if n.bl_idname == "ShaderNodeBsdfPrincipled"), None)
+    if bsdf is None:
+        return
+    for key, value in (("Roughness", 0.42), ("Anisotropic", 0.7), ("Subsurface Weight", 0.15),
+                       ("Specular IOR Level", 0.35), ("Sheen Weight", 0.2)):
+        if key in bsdf.inputs and not bsdf.inputs[key].is_linked:
+            bsdf.inputs[key].default_value = value
+
+
 def skin_look(objects):
-    """Tune the MPFB skin and eye shader inputs of a loaded character (its materials, once per template)."""
+    """Tune the MPFB skin, eye, hair and cloth shaders of a loaded character (its materials, once per
+    template)."""
     for ob in objects:
         if ob.type != "MESH":
             continue
@@ -127,19 +227,25 @@ def skin_look(objects):
             m = slot.material
             if m is None or not m.use_nodes or m.get("human3d_skin"):
                 continue
-            for node in m.node_tree.nodes:
-                if node.bl_idname != "ShaderNodeGroup" or node.node_tree is None:
-                    continue
-                part = next((p for p in reversed(m.name.split(".")) if not p.isdigit()), "")
+            part = next((p for p in reversed(m.name.split(".")) if not p.isdigit()), "")
+            groups = [n for n in m.node_tree.nodes if n.bl_idname == "ShaderNodeGroup" and n.node_tree is not None]
+            for node in groups:
                 if "SSS strength" in node.inputs:
-                    wanted = dict(SKIN, **SKIN_PART.get(part, {}))
+                    for key, value in dict(SKIN, **SKIN_PART.get(part, {})).items():
+                        if key in node.inputs and not node.inputs[key].is_linked:
+                            node.inputs[key].default_value = value
                 elif "OuterLayerRoughness" in node.inputs:
-                    wanted = EYES
-                else:
-                    continue
-                for key, value in wanted.items():
-                    if key in node.inputs and not node.inputs[key].is_linked:
-                        node.inputs[key].default_value = value
+                    if not _real_eye(m, node):
+                        for key, value in EYES.items():
+                            if key in node.inputs:
+                                node.inputs[key].default_value = value
+                    break
+            if not groups:
+                kind = part.lower()
+                if any(k in kind for k in ("short", "hair", "bun", "braid", "ponytail", "beard")):
+                    _hair_look(m)
+                elif not any(k in kind for k in ("eyebrow", "eyelash", "teeth", "tongue", "boots")):
+                    _cloth_wrinkles(m)
             m["human3d_skin"] = True
 
 
@@ -338,32 +444,83 @@ def face_idle(inst, seed, fps):
             m.offset = 0.0
 
 
-def gaze(inst, yaw, pitch):
+def gaze(inst, yaw, pitch, spans=None, fps=30, seed=0):
     """Turn the head (and a little of the neck) by `yaw` radians (positive = to the person's left) and tip it
-    down by `pitch`, as a constant layer over the pose and the idle head motion."""
+    down by `pitch`, as a layer over the pose and the idle head motion. Without `spans` the look holds for
+    the whole shot (someone reading, someone at a board). With `spans` ([(f0, f1)] frames, when the one
+    looked at speaks) the person turns toward the speaker a moment after the speaker starts, the head
+    leading and the neck following a few frames behind, holds, and turns back after the line, all eased.
+    Returns the frames at which the head starts to turn (a blink goes there)."""
     import math
+    import random
     rig = inst["rig"]
     act = rig.animation_data.action if rig.animation_data else None
     if act is None:
-        return
+        return []
+    rnd = random.Random(seed * 409 + 3)
     yaw = max(-1.05, min(1.05, yaw))
     pitch = max(-0.35, min(0.5, pitch))
-    for bone, share in (("neck", 0.35), ("head", 0.65)):
+    turns = []
+    windows = [(None, None)] if not spans else []
+    for f0, f1 in spans or []:
+        delay = round(rnd.uniform(0.25, 0.7) * fps)            # listeners react, never on the same frame
+        windows.append((f0 + delay, f1 + round(rnd.uniform(0.4, 1.0) * fps)))
+        turns.append(f0 + delay)
+    for bone, share, lag in (("head", 0.65, 0), ("neck", 0.35, 4)):
         for axis, angle in ((2, yaw * share), (1, pitch * share)):
             fc = act.fcurves.find(f'pose.bones["{bone}"].rotation_quaternion', index=axis)
             if fc is None or abs(angle) < 1e-4:
                 continue
-            m = fc.modifiers.new("FNGENERATOR")
-            m.function_type = "SIN"
-            m.amplitude = 0.0
-            m.value_offset = math.sin(angle / 2)
-            m.use_additive = True
+            for a, b in windows:
+                m = fc.modifiers.new("FNGENERATOR")
+                m.function_type = "SIN"
+                m.amplitude = 0.0
+                m.value_offset = math.sin(angle / 2)
+                m.use_additive = True
+                if a is not None:
+                    m.use_restricted_range = True
+                    m.frame_start = a + lag
+                    m.frame_end = max(a + lag + 12, b + lag)
+                    m.blend_in = min(9 + lag, (m.frame_end - m.frame_start) / 2 - 1)
+                    m.blend_out = min(12, (m.frame_end - m.frame_start) / 2 - 1)
+    return turns
 
 
-def gestures(inst, spans, fps, base_pose, seed):
-    """While a person speaks ([start, end] seconds per line), the arms move with the words: the open-handed
-    "talk" pose on most phrases, now and then the hands together, and back to the base pose in the pauses.
-    Each change is keyed with a lead-in, so the arms travel between poses rather than snap."""
+def nod(inst, pose, frame, fps, depth=0.055):
+    """A small nod at `frame`: the head dips and comes back over about half a second (eased keys on the
+    head's x channel, relative to the pose the person holds)."""
+    rig = inst["rig"]
+    act = rig.animation_data.action if rig.animation_data else None
+    if act is None:
+        return
+    entry = inst["poses"].get(pose) or inst["poses"].get("stand") or {}
+    base = entry.get("head", [1.0, 0.0, 0.0, 0.0])[1]
+    fc = act.fcurves.find('pose.bones["head"].rotation_quaternion', index=1)
+    if fc is None:
+        return
+    for df, v in ((0, base), (round(0.2 * fps), base + depth), (round(0.32 * fps), base + depth * 0.7),
+                  (round(0.6 * fps), base)):
+        fc.keyframe_points.insert(frame + df, v)
+
+
+def word_beats(words, t0, t1, fps):
+    """Frames of the stressed words inside [t0, t1]: content words of five letters or more, where a speaker's
+    hands would move (a gesture lands just before the word it underlines)."""
+    out = []
+    for w in words:
+        t = w.get("start", 0.0)
+        text = "".join(ch for ch in w.get("word", "") if ch.isalpha())
+        if t0 <= t <= t1 and len(text) >= 5:
+            out.append(t)
+    return out
+
+
+def gestures(inst, spans, fps, base_pose, seed, stresses=()):
+    """While a person speaks ([start, end] seconds per line), the hands underline the words: a gesture opens
+    just before a stressed word (`stresses`, seconds) and is held through the phrase, the open-handed "talk"
+    for explaining, the hands brought together for a point being weighed; in the pauses the arms settle back.
+    No stressed word, no gesture: the hands stay down. Keys are eased, with a short anticipation (the arms
+    dip toward rest before they rise) so a gesture does not start like a machine."""
     import random
     rnd = random.Random(seed * 3571 + 5)
     library = inst["poses"]
@@ -371,16 +528,49 @@ def gestures(inst, spans, fps, base_pose, seed):
     if not choices:
         return
     for t0, t1 in spans:
-        t = t0
-        while t < t1 - 0.6:
-            seg = min(t1, t + rnd.uniform(1.6, 3.2))
+        marks = [t for t in stresses if t0 <= t <= t1] or [t0 + 0.3]
+        last_end = -1.0
+        for t in marks:
+            if t < last_end + 0.4:
+                continue                                   # still inside the last gesture
+            start = max(t0, t - 0.35)
+            end = min(t1, t + rnd.uniform(1.4, 2.4))
             pose = rnd.choice(choices)
-            f_in = max(2, round(t * fps) + 1)
-            set_pose(inst, base_pose, max(1, f_in - round(0.35 * fps)))
-            set_pose(inst, pose, f_in + round(0.25 * fps))
-            set_pose(inst, pose, max(f_in + round(0.3 * fps), round(seg * fps) - round(0.3 * fps)))
-            t = seg
-        set_pose(inst, base_pose, round(t1 * fps) + round(0.5 * fps))
+            f_in = max(2, round(start * fps) + 1)
+            set_pose(inst, base_pose, max(1, f_in - round(0.2 * fps)))        # anticipation: from rest
+            set_pose(inst, pose, f_in + round(0.3 * fps))
+            set_pose(inst, pose, max(f_in + round(0.35 * fps), round(end * fps)))
+            set_pose(inst, base_pose, round(end * fps) + round(0.45 * fps))   # settle
+            last_end = end + 0.45
+
+
+# a hand at rest is never flat: the fingers curl a little, more toward the little finger, the thumb tucks in
+FINGER_CURL = {"index": 10, "middle": 14, "ring": 18, "pinky": 22}
+CURL_SIGN = 1.0
+
+
+def relax_hands(inst, seed):
+    import math
+    import random
+    rnd = random.Random(seed * 53 + 7)
+    rig = inst["rig"]
+    for side in ("L", "R"):
+        for finger, deg in FINGER_CURL.items():
+            for k, share in (("01", 0.6), ("02", 1.0), ("03", 0.8)):
+                pb = rig.pose.bones.get(f"f_{finger}.{k}.{side}")
+                if pb is None:
+                    continue
+                a = math.radians(deg * share * rnd.uniform(0.8, 1.25)) * CURL_SIGN
+                pb.rotation_mode = "QUATERNION"
+                pb.rotation_quaternion = (math.cos(a / 2), math.sin(a / 2), 0.0, 0.0)
+                pb.keyframe_insert("rotation_quaternion", frame=1)
+        for k, deg in (("02", 12), ("03", 10)):
+            pb = rig.pose.bones.get(f"thumb.{k}.{side}")
+            if pb is not None:
+                a = math.radians(deg) * CURL_SIGN
+                pb.rotation_mode = "QUATERNION"
+                pb.rotation_quaternion = (math.cos(a / 2), math.sin(a / 2), 0.0, 0.0)
+                pb.keyframe_insert("rotation_quaternion", frame=1)
 
 
 # speakers' arms are never quite still between gestures either
@@ -453,7 +643,7 @@ def talk(inst, visemes, fps, seed=0):
                 kb.keyframe_insert("value", frame=frame)
 
 
-def blinks(inst, total, seed, fps):
+def blinks(inst, total, seed, fps, extra=()):
     """Blinks every 2.5-5.5 s (a quick double now and then), on the eyelid shape key of the body, brows
     and lashes; a seed per person so a group never blinks together."""
     import random
@@ -465,6 +655,11 @@ def blinks(inst, total, seed, fps):
         if rnd.random() < 0.15:
             frames.append(round((t + 0.35) * fps) + 1)
         t += rnd.uniform(2.5, 5.5)
+    # a blink comes with a head turn (the eyes close as they move to the new target); none on top of another
+    for f in extra:
+        if 1 < f + 2 < total and all(abs(f + 2 - g) > 12 for g in frames):
+            frames.append(f + 2)
+    frames.sort()
     for keys in _key_sets(inst):
         kb = keys.get("Exp_eyesClosed_max")
         if kb is None:
