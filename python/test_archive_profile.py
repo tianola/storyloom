@@ -110,7 +110,7 @@ class TestModeLadder(unittest.TestCase):
 class TestVisualMix(unittest.TestCase):
     def test_the_mix_names_every_layer_the_pipeline_can_render(self):
         layers = profile(CONTRACT)["mix"]["layers"]
-        self.assertEqual(sorted(layers), ["3d", "archive", "cards", "manim"],
+        self.assertEqual(sorted(layers), ["3d", "archive", "black", "cards", "graphic", "manim"],
                          "the taxonomy is contract data now: the render queue and the canvas "
                          "test read it instead of each carrying its own tuple")
 
