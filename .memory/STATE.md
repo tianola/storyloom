@@ -1,5 +1,20 @@
 # STATE
-- Updated: 2026-11-22 (late). Current work: **Semmelweis pilot v6**, the visual-storytelling and retention pass, on branch `claude/semmelweis-v6` (next section). v5 and everything below it are history.
+- Updated: 2026-11-25. PR #2 and PR #3 are MERGED into `main` (2026-11-25 ~18:36 UTC); no open PRs. Two tracks are open (next section). Older sections below are history; where they say "NOT PUSHED" or "PR #2 is open", read them as superseded by this section.
+
+## 2026-11-25: where things stand (reconciled against GitHub)
+- `main` = 0b0301c. Branch `claude/semmelweis-v6` (6fe449d) is merged through PR #3; PR #2 (v4/v5 pilot, fd0ddcb) is merged too. The v6 commit 7955e5a is therefore on `main`, pushed.
+- **Track A, pixel pilot v6 (`work/semmelweis-pilot/`):** code, sprites and `cut.json` (51 shots) are done and tested. The steps under "Still to do (in order)" in the v6 section below are still open, with these facts checked on 2026-11-25:
+  - `storyboard.json` is still the v5 one (7 beats: vienna, ward); the v6 storyboard is not written;
+  - `cut.json` s22 still points at `v6-07-vienna`; the re-grouping (step 3) is not done;
+  - no v6 render, assemble or QC has been run; `qc/pilot-gate-status.md` still describes v5;
+  - the security review is still incomplete (HTTP 401).
+- **Track B, 3D people test (commit 6fe449d, PR #3):** rigged 3D characters (CharMorph database, Rigify rig, CMU mocap) in `tools/blender/human3d_{build,poses,mocap}.py` and `tools/blender/models/human3d.py`; `storyboard_beats.place_human3d` handles cast entries with `"render": "3d"`; `SEMMELWEIS_720=1` renders at 720p. First test: `work/semmelweis-10min/storyboard.json` (33 beats; beats 01-07 use 3D people).
+  - Status: experimental. Garments are shells with gaps, sets are still box-built, the walk has no torso motion, and kneel is a seated pose.
+  - The CharMorph database (AGPL-3 models) and the built `.blend` files are NOT in the repo. Check the licence terms before publishing any video that uses them.
+- Decision still open for the user: finish track A first (recommended: one complete reference video) or move on with track B.
+- Environment note: renders, ElevenLabs voices and Blender run only on the user's Windows PC (`F:/AI-PROJECTS/longform-explainer`), not in the cloud container.
+
+(Previous header, 2026-11-22: Updated: 2026-11-22 (late). Current work: **Semmelweis pilot v6**, the visual-storytelling and retention pass, on branch `claude/semmelweis-v6` (next section). v5 and everything below it are history.)
 
 ## 2026-11-22: pilot v6, directing pass + edit architecture (COMMITTED as 7955e5a, NOT PUSHED, branch `claude/semmelweis-v6`)
 ### Status after commit 7955e5a (2026-11-22, late)
