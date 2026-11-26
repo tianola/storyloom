@@ -1681,10 +1681,18 @@
      "type": "bool",
      "default": true,
      "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
+    },
+    "slip": {
+     "type": "bool",
+     "default": false,
+     "doc": "the student's scalpel slips at the sheet's edge and a drop of blood spreads (action slip)"
     }
    },
    "examples": [
-    {}
+    {},
+    {
+     "slip": true
+    }
    ],
    "views": [
     "aerial",
@@ -1722,7 +1730,8 @@
     "scalpel"
    ],
    "actions": [
-    "greet"
+    "greet",
+    "slip"
    ]
   },
   "asylum": {
@@ -1791,12 +1800,38 @@
      "type": "bool",
      "default": true,
      "doc": "CC0 Poly Haven textures tinted into the palette, soft HDRI light and a few glTF props (false = the plain look)"
+    },
+    "door_swing": {
+     "type": "bool",
+     "default": false,
+     "doc": "the corridor door becomes a real leaf that the hands push open and that swings shut (action door-swing)"
+    },
+    "lie": {
+     "type": "enum",
+     "values": [
+      "back",
+      "side"
+     ],
+     "default": "back",
+     "doc": "how the patients lie: on their backs, or all turned onto their side (pose lie-side)"
+    },
+    "bell_route": {
+     "type": "enum",
+     "values": [
+      "aisle",
+      "side"
+     ],
+     "default": "aisle",
+     "doc": "the priest's route: down the middle aisle past the beds (the bell rings), or by the side wall (quieter)"
     }
    },
    "examples": [
     {},
     {
      "time": "night"
+    },
+    {
+     "door_swing": true
     }
    ],
    "views": [
@@ -1821,7 +1856,8 @@
     "window"
    ],
    "actions": [
-    "bell"
+    "bell",
+    "door-swing"
    ]
   },
   "board": {
@@ -1961,6 +1997,19 @@
   "wing": {
    "description": "The morgue and the First Clinic's ward as one place, so one held shot follows the doctors from the dissecting table, down a corridor past the explorer, into the ward and to a mother's bed without a cut. The body on the table is Kolletschka's; the doctor and two students examine it and walk to the ward.",
    "params": {
+    "time": {
+     "type": "enum",
+     "values": [
+      "dawn",
+      "day",
+      "dusk",
+      "night",
+      "day>dusk",
+      "dusk>night"
+     ],
+     "default": "day",
+     "doc": "time of day; a>b changes over the beat (more oil lamps are lit at dusk and night)"
+    },
     "seed": {
      "type": "int",
      "default": 5,

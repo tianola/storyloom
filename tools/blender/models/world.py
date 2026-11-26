@@ -1014,10 +1014,11 @@ def clinic_doors(s, n, seconds, seed, time):
     kit.common.aim(fill, (54, 0, 0))
 
 
-def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False):
+def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False, roof=False):
     """The dissecting room, apart from the town: a long table with a body under a sheet, a lamp
     over it, a professor (Kolletschka) and students around it (`people`). `west_door` opens the
-    west wall onto the corridor the `wing` scene joins to the ward."""
+    west wall onto the corridor the `wing` scene joins to the ward. `roof` closes the top: without
+    it the room is open to the sky, and under a dusk world the sky floods the floor white."""
     wall = kit.mat("anat-wall", (0.45, 0.42, 0.36), roughness=0.9)
     wood = kit.mat("anat-wood", (0.14, 0.08, 0.04), roughness=0.6)
     sheet = kit.mat("anat-sheet", (0.75, 0.73, 0.68), roughness=0.9)
@@ -1027,7 +1028,8 @@ def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False
     kit.boxes("anat-room", [placed((x0, 4.0, 3.0), (14, 0.3, 6)), placed((x0 + 7, 0, 3.0), (0.3, 8, 6)),
                             placed((x0, 0, -0.02), (14, 8, 0.04))]
               + [placed(tuple((a + b) / 2 for a, b in zip(lo, hi)), tuple(b - a for a, b in zip(lo, hi)))
-                 for lo, hi in west], wall)
+                 for lo, hi in west]
+              + ([placed((x0, 0.0, 6.0), (14, 8, 0.2))] if roof else []), wall)
     kit.boxes("anat-table", [placed((x0, 0.6, 0.85), (2.4, 0.9, 0.08)), placed((x0 - 1.0, 0.6, 0.42), (0.1, 0.7, 0.84)),
                              placed((x0 + 1.0, 0.6, 0.42), (0.1, 0.7, 0.84))], wood)
     body = kit.box("anat-body", (x0, 0.6, 1.0), (2.0, 0.6, 0.22), sheet, bevel=0.08)
@@ -1251,9 +1253,10 @@ def vienna(p, seconds):
     s.view("window", (39.4, room_y, room_z - 0.6), 3.2, 180, room_z + 0.1)
     s.view("court", (54, 0, 2.0), 15.0, 0, 3.2)
     s.view("doors", (53.0, 0, 2.0), 21.0, 10, 4.2)
-    s.view("first-door", (52.6, -6.0, 1.5), 5.0, 25, 1.8)
+    # the camera stands further back (radius 7.5) so the courtyard floor in front of the doors is in frame
+    s.view("first-door", (52.6, -6.0, 1.5), 7.5, 25, 1.8)
     # matched to first-door: the same lens, height and distance, mirrored about the court's axis
-    s.view("second-door", (52.6, 6.0, 1.5), 5.0, -25, 1.8)
+    s.view("second-door", (52.6, 6.0, 1.5), 7.5, -25, 1.8)
     s.view("anatomy", (200, 0, 1.3), 6.5, -110, 3.0)
     # from up the street (azimuth near the street view's 180), so a move between the two never
     # swings the camera through the house fronts
@@ -1364,7 +1367,7 @@ def asylum(p, seconds):
                             for k in range(8)], 0.025, iron)
     door = kit.box("cell-door", (cx + 2.2, -3.0, 1.2), (1.4, 0.15, 2.4), wood, bevel=0)
     mdata = bpy.data.lights.new("cell-moonlight", "SPOT")
-    mdata.energy = 1500.0
+    mdata.energy = 420.0            # the moon through the bars, not a flash: the bars must still read
     mdata.color = (0.55, 0.66, 1.0)
     mdata.spot_size = math.radians(35)
     mdata.shadow_soft_size = 0.05
@@ -1394,7 +1397,7 @@ def asylum(p, seconds):
                                 expression="sad", tint=0.7)
     characters.blinks(prisoner, n, 11)
     s.view("street", (0, -2, 2.4), 18.0, 250, 2.0)
-    s.view("gate", (0, 0, 3.2), 9.0, 265, 3.0)
+    s.view("gate", (0, 0, 3.2), 12.0, 265, 1.8)
     s.view("cell", (cx, 1.0, 1.6), 7.0, 265, 2.2)
     s.view("bars", (cx, 3.0, 3.5), 2.6, 255, 2.4)
     s.view("cell-close", (cx - 1.0, 1.0, 1.0), 3.6, 235, 1.5)
@@ -1453,7 +1456,9 @@ def ward(p, seconds):
     table with the register and an oil lamp. A doctor and students examine at one bed, a midwife goes
     from bed to bed, a woman in labour is held up by a midwife. Action `bell`: the priest, with the
     viaticum, and the altar boy ringing a bell come in at the far door and walk the aisle to a bed.
-    `time`: dawn | day | dusk | night (or `a>b`)."""
+    `time`: dawn | day | dusk | night (or `a>b`). `flicker`: the oil lamps waver (default) or burn steady;
+    a held shot that must stay one shot (the wing) asks for steady, because a 20% step every 0.17 s
+    reads as a cut to the scene detector and as a flash to the eye."""
     from scenes import Set
     s = Set(seconds)
     s.lighting = "world"
@@ -1461,6 +1466,9 @@ def ward(p, seconds):
     n = s.frames
     time = p.get("time", "day")
     t0_, t1_ = _times(time)
+    # at 1080p the default shadow pool overflows in these rooms (2075/2048 pages): shadows drop out for
+    # about a third of the frames. A 1024 pool renders the same frames with no overflow (measured).
+    bpy.context.scene.eevee.shadow_pool_size = "1024"
     seed = int(p.get("seed", 5))
     use_assets = bool(p.get("assets", True))
     rnd = random.Random(seed)
@@ -1580,6 +1588,7 @@ def ward(p, seconds):
     # the corridor behind each door, so an opening is a passage and not the sky; `through` leaves the
     # far door open onto the real corridor the `wing` scene builds behind it
     through = bool(p.get("through", False))
+    flicker = bool(p.get("flicker", True))
     put("corridor", (2.0, -HW - 1.3, 1.2), (2.4, 0.1, 2.4))
     if not through:
         put("corridor", (L + 1.3, 0.0, 1.2), (0.1, 2.4, 2.4))
@@ -1616,8 +1625,12 @@ def ward(p, seconds):
         lo.location = (x, y * 0.97, z + 0.12)
         base_e = WARD_LIGHT[t0_][3] if k == 0 else WARD_LIGHT[lamp_t][3]
         for fr in range(1, n + 1, 5):                                  # a flame never holds still
-            data.energy = base_e * (0.85 + 0.3 * rnd.random())
-            data.keyframe_insert("energy", frame=fr)
+            wobble = 0.85 + 0.3 * rnd.random()                         # drawn either way: same scene
+            if flicker:
+                data.energy = base_e * wobble
+                data.keyframe_insert("energy", frame=fr)
+        if not flicker:
+            data.energy = base_e
     # --- daylight: sun through the windows, an area light in each, soft fill under the beams -----------------
     s.sky = sky_world(time, seconds)
     sky_lights(time, seconds, (L / 2, 0, 0), 12.0, sun_azimuth=110.0)
@@ -1782,6 +1795,26 @@ def ward(p, seconds):
 
     if p.get("turn"):                       # registered only when asked: every action runs once
         s.action("turn", act_turn, at=0.5, span=2.0)
+    if p.get("door_swing"):
+        # v6: the corridor door (the ajar `dark` plane above) as a real leaf on a hinge at its near jamb.
+        # The unwashed hands push it open and it swings shut behind them (visual-pass s50).
+        hinge = kit._link(bpy.data.objects.new("ward-door-hinge", None))
+        hinge.location = (1.95, -HW + 0.05, 0.0)
+        wood = kit.mat("ward-door-wood", (0.13, 0.07, 0.035), roughness=0.6)
+        leaf = kit.box("ward-door-leaf", (0.6, 0.0, 1.15), (1.2, 0.06, 2.3), wood, bevel=0)
+        leaf.parent = hinge
+
+        def swing(t0, t1):
+            f0, f1 = frames(t0), frames(t1)
+            mid = frames(t0 + 0.5 * (t1 - t0))
+            hinge.rotation_euler = (0, 0, 0)
+            hinge.keyframe_insert("rotation_euler", frame=1)
+            hinge.rotation_euler = (0, 0, math.radians(80))          # pushed open into the room
+            hinge.keyframe_insert("rotation_euler", frame=mid)
+            hinge.rotation_euler = (0, 0, 0)                          # swings shut behind them
+            hinge.keyframe_insert("rotation_euler", frame=f1)
+
+        s.action("door-swing", swing, at=0.45, span=1.6)
     if use_assets:
         assets.scene_hdri("ward", time, n)
         assets.upgrade_materials()

@@ -53,6 +53,8 @@ def open_set(seconds, res=None):
     if hasattr(scene.eevee, "use_fast_gi"):
         scene.eevee.use_fast_gi = True
     scene.view_settings.exposure = 0.25
+    # the default shadow pool, so a beat that needs more pages sets its own (see world.ward)
+    scene.eevee.shadow_pool_size = "512"
     scene.world = haze_world()
     return frames
 

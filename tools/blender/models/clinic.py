@@ -392,7 +392,7 @@ def wing(p, seconds):
     cast member) and in through the ward's far door to a mother's bed near the door end. `walk_from`
     and `walk_to` are fractions of the beat for the walk; the views follow the same path."""
     params = dict(p)
-    params.update(through=True, bell=False)
+    params.update(through=True, bell=False, flicker=False)   # one held move: the lamps must not step
     s = world.ward(params, seconds)
     n = s.frames
     seed = int(p.get("seed", 5))
@@ -410,7 +410,8 @@ def wing(p, seconds):
     lamp = _light("wing-lamp", (mid, 0, 2.6), 120.0, (1.0, 0.7, 0.42), size=0.3)
     kit.ico("wing-lampglass", (mid, 0, 2.7), 0.06, look.neon("wing-lampglass", (1.0, 0.7, 0.4), 10.0), subdivisions=1)
     # the dissecting room beyond, opening west onto the corridor; no Kolletschka: his is the body
-    body = world.anatomy(s, n, seed, x0=ANAT_X0, use_assets=bool(p.get("assets", True)), people=False, west_door=True)
+    body = world.anatomy(s, n, seed, x0=ANAT_X0, use_assets=bool(p.get("assets", True)), people=False, west_door=True,
+                         roof=True)
     # the men who examined him: a doctor and two students at the table, then the walk to the ward
     walk_from = float(p.get("walk_from", 0.22))
     walk_to = float(p.get("walk_to", 0.8))

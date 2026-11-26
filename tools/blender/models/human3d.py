@@ -142,6 +142,18 @@ def instance(who, built_dir, name, collection, variant=None):
     return {"rig": rig, "body": body, "parts": [mapping[p] for p in t["parts"]], "poses": t["poses"], "walk": t["walk"]}
 
 
+def stature(inst):
+    """Standing height of the character at rig scale 1: the top of its body mesh (feet are at z=0)."""
+    body = inst["body"]
+    top = max((body.matrix_parent_inverse @ __import__("mathutils").Vector(c)).z for c in body.bound_box)
+    return top if top > 0.5 else 1.75
+
+
+def size_jitter(n):
+    """A small size change per cast member (about +-3 %), so two people of one role and variant still differ."""
+    return 1.0 + ((n * 37 + 11) % 7 - 3) * 0.01
+
+
 def _key_pose_bone(pb, frame):
     pb.keyframe_insert("rotation_quaternion", frame=frame)
 
