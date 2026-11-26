@@ -141,11 +141,13 @@ class TheProbeAsksTheInterpreterTheRegistryNamed(unittest.TestCase):
     def test_a_bare_name_is_resolved_to_an_absolute_path_before_it_is_spawned(self):
         class Host(RealHost):
             def which(self, name):
-                return "C:/Python314/python.EXE"
+                return FOUND
 
+        # what `which` answers on the machine the test runs on: a Windows path is not absolute on Linux
+        FOUND = "C:/Python314/python.EXE" if os.name == "nt" else "/usr/bin/python3"
         answer, seen = self.probe(Host())
         self.assertTrue(answer)
-        self.assertEqual(seen[0][0], "C:/Python314/python.EXE")
+        self.assertEqual(seen[0][0], FOUND)
         self.assertTrue(os.path.isabs(seen[0][0]),
                         "a bare name lets CreateProcess pick the calling venv's own python.exe")
 
@@ -294,6 +296,11 @@ class PreflightFailsOnAHalfBuiltMachine(unittest.TestCase):
 
 
 class EpisodeInitRefusesAHalfBuiltMachine(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from toolchain import require_skills
+        require_skills()   # init_episode refuses a machine without the mapped skills
+
     def test_a_missing_capability_stops_the_episode_from_being_created(self):
         """The value is the stop, not the message: a build started on a broken box ends broken."""
         host = healthy_host(ROOT, missing_modules=["kokoro_onnx"])

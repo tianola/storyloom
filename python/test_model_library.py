@@ -27,6 +27,8 @@ BEATS = [
 class ModelLibraryBuilds(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        from toolchain import require_blender
+        require_blender()
         cls.tmp = tempfile.TemporaryDirectory()
         cls.out = Path(cls.tmp.name)
         cls.proc = subprocess.run(

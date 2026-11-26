@@ -44,6 +44,9 @@ class Legacy(unittest.TestCase):
             self.skipTest(f"{slug} is not in this checkout")
         # semmelweis-pilot is cut from cut.json since v6; its v5 voice and shots.json are the legacy pair
         vo = ep / "v5-backup" / "vo" if (ep / "cut.json").is_file() else ep / "vo"
+        if not (vo / "manifest.json").is_file():
+            # v5-backup was never committed; it exists only in the production checkout
+            self.skipTest(f"{vo.relative_to(ROOT)} is not in this checkout")
         manifest = json.loads((vo / "manifest.json").read_text(encoding="utf-8"))
         table = json.loads((ep / "shots.json").read_text(encoding="utf-8"))
         return ep, manifest, {uid: (r["kind"], r["name"]) for uid, r in table.items()}

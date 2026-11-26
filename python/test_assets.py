@@ -63,8 +63,9 @@ class Paths(unittest.TestCase):
             self.assertEqual(A.hdri_path("hospital_room", tmp).name, "hospital_room_1k.hdr")
 
     def test_downloaded_assets_match_the_rules(self):
-        if not A.ASSET_ROOT.is_dir():
-            self.skipTest("assets/polyhaven is not downloaded")
+        # the folder itself is committed (manifest.json), so "is it a directory" said nothing
+        from toolchain import require_dir_content
+        require_dir_content(A.ASSET_ROOT, "assets/polyhaven")
         for r in A.RULES:
             self.assertIsNotNone(A.texture_files(r.texture), r.texture)
         for kind, table in A.HDRI_PLAN.items():

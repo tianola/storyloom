@@ -14,6 +14,8 @@ import hashlib
 import json
 import os
 import re
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -41,16 +43,33 @@ def api_key():
 class ElevenEngine:
     sample_rate = 24000
 
-    def __init__(self, cache_dir, fetch=None):
+    def __init__(self, cache_dir, fetch=None, opener=None, sleep=time.sleep):
         self.cache = Path(cache_dir)
         self.fetch = fetch or self._fetch
+        self.open = opener or urllib.request.urlopen
+        self.sleep = sleep
         self.last_alignment = None
 
     def _fetch(self, voice_id, body):
-        req = urllib.request.Request(API.format(voice=voice_id), data=json.dumps(body).encode("utf-8"),
-                                     headers={"xi-api-key": api_key(), "Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=120) as r:
-            return json.loads(r.read().decode("utf-8"))
+        """One synthesis. A busy or failing server (429, 5xx) or a dropped connection is retried
+        with a growing wait: a long episode is dozens of calls, and one hiccup used to stop the
+        whole narration stage. Any other refusal (a bad key, a voice that does not exist, no
+        credits) is not retried and is reported with ElevenLabs' own explanation."""
+        data = json.dumps(body).encode("utf-8")
+        headers = {"xi-api-key": api_key(), "Content-Type": "application/json"}
+        for attempt in range(len(RETRY_WAITS) + 1):
+            req = urllib.request.Request(API.format(voice=voice_id), data=data, headers=headers)
+            try:
+                with self.open(req, timeout=120) as r:
+                    return json.loads(r.read().decode("utf-8"))
+            except urllib.error.HTTPError as exc:
+                detail = _error_detail(exc)
+                if exc.code not in RETRY_STATUS or attempt == len(RETRY_WAITS):
+                    raise RuntimeError(f"ElevenLabs refused the line (HTTP {exc.code}): {detail}") from None
+            except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+                if attempt == len(RETRY_WAITS):
+                    raise RuntimeError(f"ElevenLabs could not be reached: {exc}") from None
+            self.sleep(RETRY_WAITS[attempt])
 
     def create(self, text, voice, speed=1.0):
         voice_id = voice.split(":", 1)[1]
@@ -59,15 +78,40 @@ class ElevenEngine:
             body["voice_settings"]["speed"] = min(1.2, max(0.7, float(speed)))
         h = hashlib.sha1(json.dumps([voice_id, body], sort_keys=True).encode("utf-8")).hexdigest()[:20]
         path = self.cache / f"{h}.json"
+        data = None
         if path.exists():
-            data = json.loads(path.read_text(encoding="utf-8"))
-        else:
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+                data["audio_base64"]
+            except (ValueError, KeyError, TypeError):
+                data = None          # a damaged cache entry from an older run: fetch the line again
+        if data is None:
             data = self.fetch(voice_id, body)
             self.cache.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps(data), encoding="utf-8")
+            # written whole or not at all: a half-written cache file (a crash, a full disk) would
+            # otherwise fail every later run on its JSON instead of fetching the line again
+            partial = path.with_name(f"{path.name}.{os.getpid()}.tmp")
+            partial.write_text(json.dumps(data), encoding="utf-8")
+            os.replace(partial, path)
         pcm = numpy.frombuffer(base64.b64decode(data["audio_base64"]), dtype="<i2").astype(numpy.float32) / 32767.0
         pcm, self.last_alignment = tighten(pcm, data.get("alignment"), self.sample_rate)
         return pcm, self.sample_rate
+
+
+RETRY_STATUS = {429, 500, 502, 503, 504}
+RETRY_WAITS = (2, 5, 15, 30)   # s before each retry
+
+
+def _error_detail(exc):
+    """ElevenLabs' own sentence for a refusal ({"detail": {"message": ...}}), else the HTTP reason."""
+    try:
+        body = json.loads(exc.read().decode("utf-8", "replace"))
+        detail = body.get("detail", body)
+        if isinstance(detail, dict):
+            detail = detail.get("message") or detail.get("status") or json.dumps(detail)
+        return str(detail)[:300]
+    except Exception:
+        return str(exc.reason)
 
 
 MAX_PAUSE = 0.4    # s: a longer silence inside a line is cut down to this (v3 drags its [pause]s)

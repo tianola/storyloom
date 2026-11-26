@@ -56,8 +56,8 @@ def intersect(a, b):
 class TestManimLabels(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        if not MANIM_PYTHON.is_file():
-            raise AssertionError(f"no manim interpreter at {MANIM_PYTHON}")
+        from toolchain import require_file
+        require_file(MANIM_PYTHON, "the Manim interpreter")
         proc = subprocess.run(
             [str(MANIM_PYTHON), str(PROBE)],
             capture_output=True, text=True, timeout=600, cwd=str(ROOT))

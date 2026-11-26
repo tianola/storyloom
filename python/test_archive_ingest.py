@@ -523,6 +523,8 @@ class RealPixels(unittest.TestCase):
 
     # -- mirror -----------------------------------------------------------------
     def test_a_textless_clip_against_the_key_is_flipped(self):
+        from toolchain import require_ocr
+        require_ocr()   # without OCR the guard refuses the flip on purpose
         result = self.ingest(self.clip("flip-yes"), record(light_side=OPPOSITE_SIDE))
         self.assertTrue(result["flipped"], result["flip_reason"])
         self.assertGreater(AI.find_block_x(result["path"], 0.5, canvas=CANVAS), CANVAS[0] // 2,

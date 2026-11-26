@@ -21,6 +21,8 @@ PROBE = ROOT / "tools" / "blender" / "techniques" / "transforms_probe.py"
 class TestAddBoxTransforms(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        from toolchain import require_blender
+        require_blender()
         proc = subprocess.run(
             [str(blender_executable(ROOT)), "--background", "--factory-startup",
              "--python-exit-code", "1", "--python", str(PROBE)],

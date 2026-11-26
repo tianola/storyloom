@@ -1,0 +1,44 @@
+# Runs the portable part of the test suite on every push and pull request.
+# Blender, Manim, Tesseract, the Poly Haven downloads and the agent skills live on the production
+# PC only; tests that need them skip here with the reason (python/toolchain.py). On the PC, run the
+# whole suite with STORYLOOM_REQUIRE_TOOLCHAIN=1 so nothing is skipped by accident.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Python packages the tests import
+        run: python -m pip install numpy pillow pytest anthropic
+      - name: Python tests
+        run: python -m pytest -q -p no:cacheprovider python
+
+  node:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Chromium for the screenshot helper
+        run: npx playwright install --with-deps chromium
+      - run: npm run typecheck
+      - run: npm test

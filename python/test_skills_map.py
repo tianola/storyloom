@@ -22,7 +22,8 @@ class SkillsMapTests(unittest.TestCase):
     """
 
     def setUp(self):
-        self.map = skills_map(ROOT)
+        from toolchain import require_skills
+        self.map = require_skills()
         self.work = Path(tempfile.mkdtemp())
 
     def write_map(self, mutate):

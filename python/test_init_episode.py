@@ -13,6 +13,11 @@ from workflow.init_episode import init_episode  # noqa: E402
 
 
 class InitEpisodeTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from toolchain import require_skills
+        require_skills()   # init_episode refuses a machine without the mapped skills
+
     def test_creates_nine_phase_layout_and_empty_manifest(self):
         with tempfile.TemporaryDirectory() as tmp:
             episode = init_episode(Path(tmp), "episode-carrington", "The Carrington Event",
@@ -45,6 +50,11 @@ class ArchivalLayerSeededTests(unittest.TestCase):
     to be declared, so absence becomes a finding the pipeline reports instead of a gap it walks
     past.
     """
+
+    @classmethod
+    def setUpClass(cls):
+        from toolchain import require_skills
+        require_skills()   # init_episode refuses a machine without the mapped skills
 
     def test_a_new_episode_declares_the_archival_layer_on(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -124,6 +134,11 @@ class RolloutPlanSeededTests(unittest.TestCase):
     different states, and only a document on disk tells them apart; the queue reads the first as
     "author this" and refuses both until the value exists.
     """
+
+    @classmethod
+    def setUpClass(cls):
+        from toolchain import require_skills
+        require_skills()   # init_episode refuses a machine without the mapped skills
 
     def build(self, tmp):
         return init_episode(Path(tmp), "episode-carrington", "The Carrington Event",

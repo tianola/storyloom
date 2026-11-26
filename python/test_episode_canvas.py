@@ -60,17 +60,18 @@ class TestEpisodeCanvas(unittest.TestCase):
         """A card drawn larger than its design canvas must not lose relative ink."""
         import assemble_episode as A
         from PIL import Image
-        out = ROOT / "work" / "episode-artemis-ii" / "qc" / "canvas-probe"
-        out.mkdir(parents=True, exist_ok=True)
+        # a scratch folder: writing into work/ changed committed files on every test run
+        scratch = tempfile.TemporaryDirectory()
+        self.addCleanup(scratch.cleanup)
+        out = Path(scratch.name)
         paths = []
         original = (A.WIDTH, A.HEIGHT, A.SCALE)
         cw, ch = contract_canvas()
         try:
             # Measured against the contract, not a hardcoded 1280: whatever the canvas
-            # becomes, the card has to keep its proportions at it. `arial.ttf` is
-            # present here, but the fallback in `make_scene_card` is a fixed-size bitmap
-            # font, so a silent fallback would shrink the ink and no absolute-pixel test
-            # would notice.
+            # becomes, the card has to keep its proportions at it. The card loads the
+            # house font from tools/fonts; a silent fallback to a fixed-size bitmap font
+            # would shrink the ink and no absolute-pixel test would notice.
             for scale, size in ((1.0, (640, 360)), (cw / 640.0, (cw, ch))):
                 A.WIDTH, A.HEIGHT, A.SCALE = size[0], size[1], scale
                 p = A.make_scene_card(("u000", "process", "Trans-lunar injection",

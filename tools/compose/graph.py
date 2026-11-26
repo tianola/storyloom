@@ -75,7 +75,7 @@ def segment_args(source, src_in, frames, canvas, out, *, still=False, loop=False
             args += ["-i", str(ov.path)]
             parts.append(f"[{i}:v]format=rgba,setpts=PTS+{ov.start_frame}/({fps}*TB)[o{i}]")
             parts.append(f"[v{i-1}][o{i}]overlay={ov.x}:{ov.y}:eof_action=pass:"
-                         f"enable='between(n,{ov.start_frame},{ov.end_frame - 1})'[v{i}]")
+                         f"enable='between(t,{(ov.start_frame - 0.5) / fps:.6f},{(ov.end_frame - 0.5) / fps:.6f})'[v{i}]")
         last = len(overlays)
         parts.append(f"[v{last}]format=yuv420p[vout]")
         args += ["-filter_complex", ";".join(parts), "-map", "[vout]", "-frames:v", str(frames)]
