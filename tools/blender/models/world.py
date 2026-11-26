@@ -369,6 +369,8 @@ def house(town, i, x, y, w, d, storeys, facing, rnd, glass, lit_sets, shop=False
         cy = y - facing * d * 0.15
         ch = h + 2.4
         town.add("chimney", (0.30, 0.20, 0.16), placed((cx, cy, ch), (0.55, 0.55, 2.0)))
+        town.add("trim", (0.72, 0.68, 0.6), placed((cx, cy, ch + 1.05), (0.72, 0.72, 0.12)))     # the cap
+        town.add("chimney", (0.30, 0.20, 0.16), placed((cx + 0.12, cy, ch + 1.22), (0.14, 0.14, 0.24)))  # a pot
         town.chimneys.append((cx, cy, ch + 1.0))
     bays = max(2, int(w // 2.4))
     door_bay = rnd.randrange(bays)
@@ -380,6 +382,13 @@ def house(town, i, x, y, w, d, storeys, facing, rnd, glass, lit_sets, shop=False
             if s == 0 and b == door_bay:
                 town.add("door", (0.16, 0.08, 0.04), placed((wx, front + out * 0.05, 1.25), (1.2, 0.12, 2.5)))
                 town.add("trim", (0.72, 0.68, 0.6), placed((wx, front + out * 0.1, 2.62), (1.5, 0.2, 0.22)))
+                # a panelled door in a stone frame, with a fanlight over it
+                for side in (-1, 1):
+                    town.add("trim", (0.72, 0.68, 0.6), placed((wx + side * 0.68, front + out * 0.09, 1.25), (0.16, 0.18, 2.5)))
+                    for zz, hh in ((0.6, 0.8), (1.55, 0.8)):
+                        town.add("doorpanel", (0.21, 0.11, 0.055),
+                                 placed((wx + side * 0.28, front + out * 0.12, zz), (0.42, 0.03, hh)))
+                town.add("bars", (0.09, 0.07, 0.05), placed((wx, front + out * 0.12, 2.3), (1.1, 0.03, 0.04)))
                 town.add("step", (0.42, 0.40, 0.36), placed((wx, front + out * 0.3, 0.08), (1.5, 0.6, 0.16)))
                 if shop:
                     awning = AWNINGS[rnd.randrange(len(AWNINGS))]
@@ -402,6 +411,8 @@ def house(town, i, x, y, w, d, storeys, facing, rnd, glass, lit_sets, shop=False
             lit_sets.setdefault((i, s), []).append(placed((wx, front + out * 0.07, z), (0.85, 0.06, 1.45)))
             town.add("sill", (0.75, 0.72, 0.66), placed((wx, front + out * 0.12, z - 0.85), (1.15, 0.22, 0.1)))
             town.add("sill", (0.75, 0.72, 0.66), placed((wx, front + out * 0.1, z + 0.92), (1.3, 0.18, 0.2)))
+            for side in (-1, 1):         # the jambs: the window sits in a frame, not on the plaster
+                town.add("sill", (0.75, 0.72, 0.66), placed((wx + side * 0.55, front + out * 0.09, z), (0.14, 0.16, 1.72)))
             # glazing bars over the pane (they also cross a lit window, as they would)
             town.add("bars", (0.09, 0.07, 0.05), placed((wx, front + out * 0.115, z), (0.06, 0.03, 1.45)))
             town.add("bars", (0.09, 0.07, 0.05), placed((wx, front + out * 0.115, z + 0.22), (0.85, 0.03, 0.06)))
@@ -432,7 +443,7 @@ def dress_shutters(town, lit_keys, rnd, closed=0.3):
                     town.add(name, colour, placed((wx + side * 0.26, front + out * 0.13, z), (0.5, 0.06, 1.6)))
             else:
                 for side in (-1, 1):
-                    town.add(name, colour, placed((wx + side * 0.74, front + out * 0.09, z), (0.5, 0.06, 1.6)))
+                    town.add(name, colour, placed((wx + side * 0.87, front + out * 0.12, z), (0.5, 0.06, 1.6)))
 
 
 def multi_object(name, groups):
@@ -1068,6 +1079,85 @@ def clinic_doors(s, n, seconds, seed, time):
     kit.common.aim(fill, (54, 0, 0))
 
 
+def _body_height(u, v):
+    """How far a body lying on its back (head toward -u) lifts a sheet above the table at (u, v), metres."""
+    def ell(cu, cv, ru, rv, hz):
+        q = 1.0 - ((u - cu) / ru) ** 2 - ((v - cv) / rv) ** 2
+        return hz * math.sqrt(q) if q > 0 else 0.0
+    h = max(ell(-0.80, 0.0, 0.12, 0.10, 0.20),          # head
+            ell(-0.36, 0.0, 0.30, 0.21, 0.21),          # chest
+            ell(0.02, 0.0, 0.20, 0.19, 0.17),           # hips
+            ell(-0.58, 0.0, 0.07, 0.07, 0.11))          # neck
+    for side in (-1, 1):
+        h = max(h, ell(-0.30, side * 0.25, 0.30, 0.055, 0.09))    # arms along the sides
+        if 0.08 < u < 0.86:
+            h = max(h, ell(u, side * 0.09, 1.0, 0.075, 0.12 - 0.05 * (u - 0.08)))   # legs, thinner to the ankle
+        h = max(h, ell(0.90, side * 0.09, 0.05, 0.06, 0.19))      # feet, toes up
+    return h
+
+
+def sheet_over_body(name, centre, top, material, half_len=1.13, half_w=0.66, table_half_w=0.45):
+    """A sheet laid over a body on a table: it rests on the head, chest, hands and feet, tents across the
+    hollows between them, crumples a little, and falls straight down over the table's long edges in soft
+    folds. One subdivided mesh, not a box."""
+    import bmesh
+    cx, cy = centre
+    nu, nv = 90, 44
+    us = [-half_len + 2 * half_len * i / (nu - 1) for i in range(nu)]
+    vs = [-half_w + 2 * half_w * j / (nv - 1) for j in range(nv)]
+    over = lambda v: abs(v) <= table_half_w
+    base = [[_body_height(u, v) if over(v) else -1.0 for v in vs] for u in us]
+    z = [[max(0.0, b) for b in row] for row in base]
+    # relax: the cloth spans the gaps, never sinking below what it rests on
+    for _ in range(60):
+        nz = [row[:] for row in z]
+        for i in range(1, nu - 1):
+            for j in range(1, nv - 1):
+                if not over(vs[j]):
+                    continue
+                avg = (z[i - 1][j] + z[i + 1][j] + z[i][j - 1] + z[i][j + 1]) / 4
+                nz[i][j] = max(base[i][j], 0.6 * avg + 0.4 * z[i][j]) if base[i][j] >= 0 else avg
+        z = nz
+    rnd = random.Random(23)
+    phase = [rnd.uniform(0, 6.3) for _ in range(4)]
+    verts = []
+    for i, u in enumerate(us):
+        for j, v in enumerate(vs):
+            if over(v):
+                crumple = 0.006 * math.sin(u * 23 + phase[0]) * math.sin(v * 17 + phase[1])
+                verts.append((cx + u, cy + v, top + 0.004 + z[i][j] + crumple * min(1.0, z[i][j] * 12)))
+            else:
+                # past the edge the cloth hangs: the distance past the edge becomes depth below it, with folds
+                past = abs(v) - table_half_w
+                side = 1 if v > 0 else -1
+                ripple = 0.018 * math.sin(u * 13 + phase[2]) + 0.008 * math.sin(u * 31 + phase[3])
+                verts.append((cx + u, cy + side * (table_half_w + 0.012 + ripple * min(1.0, past * 6)),
+                              top + 0.004 - past * (1.0 + 0.15 * math.sin(u * 7 + phase[1]))))
+    faces = [(i * nv + j, (i + 1) * nv + j, (i + 1) * nv + j + 1, i * nv + j + 1)
+             for i in range(nu - 1) for j in range(nv - 1)]
+    mesh = bpy.data.meshes.new(name)
+    mesh.from_pydata(verts, [], faces)
+    mesh.update()
+    for p in mesh.polygons:
+        p.use_smooth = True
+    ob = bpy.data.objects.new(name, mesh)
+    kit._link(ob)
+    ob.data.materials.append(material)
+    sol = ob.modifiers.new("thickness", "SOLIDIFY")
+    sol.thickness = 0.004
+    sub = ob.modifiers.new("smooth", "SUBSURF")
+    sub.levels = 1
+    sub.render_levels = 2
+    # a hand slipped out from under the sheet, hanging over the table's edge below the cloth by the hip
+    skin = kit.mat(f"{name}-hand", (0.50, 0.44, 0.39), roughness=0.6)
+    hx, hy = cx - 0.05, cy - table_half_w - 0.035
+    kit.boxes(f"{name}-hand", [placed((hx, hy, top - 0.17), (0.075, 0.03, 0.12)),
+                               placed((hx, hy + 0.004, top - 0.08), (0.06, 0.035, 0.1))]
+              + [placed((hx - 0.027 + 0.018 * k, hy, top - 0.27 + 0.01 * abs(k - 1.5)), (0.014, 0.016, 0.075))
+                 for k in range(4)], skin)
+    return ob
+
+
 def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False, roof=False):
     """The dissecting room, apart from the town: a long table with a body under a sheet, a lamp
     over it, a professor (Kolletschka) and students around it (`people`). `west_door` opens the
@@ -1097,10 +1187,7 @@ def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False
     kit.boxes("anat-apron", [placed((x0, 0.6, 0.74), (2.3, 0.8, 0.14))]
               + [placed((x0 + dx, 0.6 + dy, 0.37), (0.08, 0.08, 0.74)) for dx in (-1.05, 1.05) for dy in (-0.33, 0.33)],
               wood)
-    body = kit.box("anat-body", (x0, 0.6, 1.0), (2.0, 0.6, 0.22), sheet, bevel=0.08)
-    # the sheet over a body: the head and the feet lift it
-    kit.ico("anat-sheet-head", (x0 - 0.8, 0.6, 1.08), 0.16, sheet, subdivisions=3, smooth=True)
-    kit.ico("anat-sheet-feet", (x0 + 0.88, 0.6, 1.07), 0.12, sheet, subdivisions=3, smooth=True)
+    body = sheet_over_body("anat-body", (x0, 0.6), 0.89, sheet)
     m = look.neon("anat-lamp", (1.0, 0.7, 0.4), 10.0)
     kit.box("anat-lampshade", (x0, 0.6, 3.2), (0.5, 0.5, 0.25), m, bevel=0)
     data = bpy.data.lights.new("anat-light", "POINT")
@@ -1132,12 +1219,12 @@ def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False
     kit.boxes("anat-door", [placed((x0 + 6.84, -1.5, 1.2), (0.1, 1.3, 2.4))], wood)
     # a student's scalpel at the sheet's edge; `slip` moves it and a drop of blood spreads on the sheet
     steel = kit.mat("anat-blade", (0.62, 0.63, 0.66), metallic=0.8, roughness=0.25)
-    scalpel = kit.boxes("anat-scalpel", [placed((x0 + 0.55, 0.3, 1.125), (0.16, 0.012, 0.006), 0.35),
-                                         placed((x0 + 0.42, 0.25, 1.125), (0.14, 0.018, 0.012), 0.35)], steel)
+    scalpel = kit.boxes("anat-scalpel", [placed((x0 + 0.55, 0.3, 0.905), (0.16, 0.012, 0.006), 0.35),
+                                         placed((x0 + 0.42, 0.25, 0.905), (0.14, 0.018, 0.012), 0.35)], steel)
     blood = kit.mat("anat-blood", (0.32, 0.02, 0.02), roughness=0.35)
-    drop = kit.cylinders("anat-drop", [((x0 + 0.62, 0.22, 1.112), 0.03, 0.004)], blood, segments=20)
+    drop = kit.cylinders("anat-drop", [((x0 + 0.62, 0.22, 0.897), 0.03, 0.004)], blood, segments=20)
     drop.scale = (0.001, 0.001, 1.0)
-    s.pin("scalpel", (x0 + 0.5, 0.3, 1.13))
+    s.pin("scalpel", (x0 + 0.5, 0.3, 0.91))
 
     def act_slip(t0, t1):
         f0, f1 = frames(t0), max(frames(t0) + 3, frames(t0 + 0.25))
@@ -1342,8 +1429,8 @@ def vienna(p, seconds):
     # v6: the gate at dawn from the street, a birth on the cobbles just outside it, the scalpel
     s.view("gate-approach", (35.0, -1.5, 1.3), 9.0, 182, 1.25)
     s.view("street-birth", (33.4, -2.8, 0.5), 3.4, 205, 0.95)
-    s.view("scalpel", (200.5, 0.3, 1.12), 0.9, -105, 1.55)
-    s.view("cut-hand", (200.6, 0.24, 1.12), 0.55, -80, 1.4)
+    s.view("scalpel", (200.5, 0.3, 0.9), 0.9, -105, 1.33)
+    s.view("cut-hand", (200.6, 0.24, 0.9), 0.55, -80, 1.18)
     s.floor_grid = 0
 
     def act_greet(t0, t1):
@@ -1382,6 +1469,38 @@ def asylum(p, seconds):
         for z in (3.0, 7.0, 10.0):
             glass.append(placed((x, 8.95, z), (1.0, 0.1, 1.6)))
     kit.boxes("asy-windows", glass, dark)
+    # dress the wall and the house so they read as masonry, not boxes: a coping along the wall top, piers
+    # every few metres and a plinth on the street side, a stone surround with a keystone round the gate,
+    # panels and iron straps on its leaves; on the building a cornice, a hipped roof with chimneys, and
+    # every window barred, with a sill and a stone head
+    stone = kit.mat("asy-stone", (0.46, 0.43, 0.38), roughness=0.85)
+    iron_bar = kit.mat("asy-bars", (0.04, 0.04, 0.045), roughness=0.45)
+    coping = [placed((side * 9, 0, 5.12), (14.3, 1.0, 0.24)) for side in (-1, 1)] + [placed((0, 0, 6.1), (4.7, 1.0, 0.2))]
+    piers = [placed((x, -0.5, 2.45), (0.55, 0.3, 4.9)) for x in (-15.5, -12.0, -8.5, -5.0, 5.0, 8.5, 12.0, 15.5)]
+    plinth = [placed((side * 9, -0.46, 0.35), (14, 0.16, 0.7)) for side in (-1, 1)]
+    surround = [placed((side * 2.45, -0.5, 2.6), (0.8, 0.3, 5.2)) for side in (-1, 1)]
+    surround += [placed((0, -0.5, 5.05), (5.7, 0.32, 0.5)), placed((0, -0.6, 5.0), (0.45, 0.3, 0.7))]
+    kit.boxes("asy-masonry", coping + piers + plinth + surround, stone)
+    leaf_panels = [placed((dx, -0.17, z), (0.8, 0.03, h)) for dx in (-1.05,) for z, h in ((0.9, 1.2), (2.4, 1.2), (3.9, 1.3))]
+    kit.boxes("asy-gate-panels", leaf_panels, kit.mat("asy-gate-panel", (0.15, 0.085, 0.045), roughness=0.6))
+    kit.boxes("asy-gate-straps", [placed((-1.05, -0.19, z), (1.9, 0.02, 0.08)) for z in (0.6, 2.4, 4.2)], iron_bar)
+    moving = kit.boxes("asy-leaf-straps", [placed((1.05, -0.17, z), (1.9, 0.02, 0.08)) for z in (0.6, 2.4, 4.2)], iron_bar)
+    bpy.context.view_layer.update()
+    moving.parent = leaf                               # the open leaf swings shut with its straps on
+    moving.matrix_parent_inverse = leaf.matrix_world.inverted()
+    win_dress, win_bars = [], []
+    for x in range(-16, 17, 4):
+        for z in (3.0, 7.0, 10.0):
+            win_dress += [placed((x, 8.85, z - 0.9), (1.4, 0.3, 0.12)), placed((x, 8.88, z + 0.92), (1.4, 0.24, 0.24)),
+                          placed((x - 0.6, 8.9, z), (0.18, 0.2, 1.8)), placed((x + 0.6, 8.9, z), (0.18, 0.2, 1.8))]
+            win_bars += [placed((x - 0.3 + 0.2 * k, 8.86, z), (0.035, 0.035, 1.6)) for k in range(4)]
+            win_bars += [placed((x, 8.86, z + dz), (1.0, 0.035, 0.035)) for dz in (-0.4, 0.4)]
+    win_dress += [placed((0, 8.8, 11.8), (40.6, 0.5, 0.4)), placed((0, 8.85, 4.95), (40.2, 0.3, 0.18))]
+    kit.boxes("asy-building-stone", win_dress, stone)
+    kit.boxes("asy-building-bars", win_bars, iron_bar)
+    _roof_prisms("asy-roof", [(0, 14, 40.8, 10.8, 12.0, 3.4, True)], kit.mat("asy-roof", (0.16, 0.15, 0.17), roughness=0.8))
+    kit.boxes("asy-chimneys", [placed((x, 14.5, 14.6), (0.7, 0.7, 2.4)) for x in (-12, -3, 7, 15)]
+              + [placed((x, 14.5, 15.85), (0.9, 0.9, 0.15)) for x in (-12, -3, 7, 15)], stone)
     lantern_m = look.neon("asy-lantern", (1.0, 0.62, 0.28), 5.0)
     # the lantern over the gate: the glTF lantern with a small emissive flame inside it
     # (the box is the lantern itself when the model is missing)
@@ -1468,6 +1587,8 @@ def asylum(p, seconds):
     characters.blinks(prisoner, n, 11)
     s.view("street", (0, -2, 2.4), 18.0, 250, 2.0)
     s.view("gate", (0, 0, 3.2), 12.0, 265, 1.8)
+    # eye level in front of the gate: a medium shot of someone standing there, the lit gate behind
+    s.view("gate-near", (-0.1, -6.8, 1.4), 3.4, 265, 1.6)
     s.view("cell", (cx, 1.0, 1.6), 7.0, 265, 2.2)
     s.view("bars", (cx, 3.0, 3.5), 2.6, 255, 2.4)
     s.view("cell-close", (cx - 1.0, 1.0, 1.0), 3.6, 235, 1.5)

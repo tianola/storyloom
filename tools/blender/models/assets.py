@@ -60,7 +60,10 @@ RULES = [
     Rule(r"^door-panel$", "dark_wooden_planks", 0.8, 0.50),
     Rule(r"^asy-wall$", "castle_brick_07", 2.2, 0.45),
     Rule(r"^asy-wood$", "dark_wooden_planks", 1.2, 0.55),
-    # the ward
+    Rule(r"^asy-stone$", "rough_plaster_03", 1.5, 0.45),
+    Rule(r"^asy-roof$", "roof_tiles", 2.2, 0.50),
+    Rule(r"^asy-gate-panel$", "dark_wooden_planks", 0.8, 0.50),
+    Rule(r"^town-doorpanel$", "dark_wooden_planks", 0.8, 0.50),    # the ward
     Rule(r"^ward-wall$", "rough_plaster_03", 3.0, 0.50),
     Rule(r"^ward-floor$", "dark_wooden_planks", 1.5, 0.60),
     Rule(r"^ward-beam$", "dark_wooden_planks", 1.2, 0.55),

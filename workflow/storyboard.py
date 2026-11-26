@@ -28,7 +28,12 @@ CAST_KEYS = {"who", "screen", "height", "shot", "hop", "walk", "flip", "word", "
              "speaker", "pose", "face", "acts", "blink", "bust", "span",
              # a rigged 3D person (tools/blender/models/human3d.py); "render": "3d" selects it, "variant" picks
              # one of the role's built variants (1, 2, 3 ...), "depth" places a bust that far along the view
-             "render", "variant", "depth"}
+             "render", "variant", "depth",
+             # 3D only: "at" [x, y] stands the person on that set point (the screen point is then only advice),
+             # "facing" a yaw in degrees (0 = toward -y) instead of toward the camera, "look" what the head
+             # turns to ("camera", a cast index, or [x, y, z]), "gesture" false keeps a speaker's arms
+             # still, "idle" false stops breathing and head motion, "place" "start" frames on the first frame
+             "at", "facing", "look", "gesture", "idle", "place"}
 
 # 3D people (rigged CharMorph characters, built by tools/blender/human3d_build.py). Only these may take render "3d".
 HUMAN3D_CHARACTERS = ("semmelweis", "doctor", "student", "midwife", "mother", "explorer")

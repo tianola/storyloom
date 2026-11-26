@@ -8,7 +8,7 @@
    },
    "shots": [
     {
-     "view": "gate",
+     "view": "gate-near",
      "start": 0.0
     },
     {
@@ -20,7 +20,7 @@
      "start": 8.8
     },
     {
-     "view": "gate",
+     "view": "gate-near",
      "start": 12.9
     },
     {
@@ -32,30 +32,36 @@
     {
      "who": "explorer",
      "screen": [
-      0.74,
-      0.62
+      0.72,
+      0.97
      ],
-     "height": 0.5,
+     "height": 0.85,
      "pose": "stand",
-     "bust": true,
      "shot": 0,
      "render": "3d",
      "speaker": "narrator",
-     "variant": 1
+     "variant": 1,
+     "at": [
+      0.35,
+      -6.8
+     ]
     },
     {
      "who": "explorer",
      "screen": [
-      0.28,
-      0.62
+      0.3,
+      0.97
      ],
-     "height": 0.5,
+     "height": 0.85,
      "pose": "stand",
-     "bust": true,
      "shot": 3,
      "render": "3d",
      "speaker": "narrator",
-     "variant": 1
+     "variant": 1,
+     "at": [
+      -0.55,
+      -6.8
+     ]
     }
    ],
    "cut": "montage",
@@ -121,11 +127,64 @@
    },
    "shots": [
     {
-     "view": "ledger",
+     "view": "ledger-clerk",
      "start": 0.0
+    },
+    {
+     "view": "ledger",
+     "start": 3.4
+    },
+    {
+     "view": "ledger-clerk",
+     "start": 12.0
     }
    ],
-   "cast": [],
+   "cast": [
+    {
+     "who": "student",
+     "screen": [
+      0.5,
+      0.6
+     ],
+     "height": 0.6,
+     "pose": "look-hands",
+     "render": "3d",
+     "at": [
+      0.15,
+      0.95
+     ],
+     "facing": 0,
+     "look": [
+      0.2,
+      0.05,
+      0.8
+     ],
+     "shot": 0,
+     "variant": 2
+    },
+    {
+     "who": "student",
+     "screen": [
+      0.5,
+      0.6
+     ],
+     "height": 0.6,
+     "pose": "look-hands",
+     "render": "3d",
+     "at": [
+      0.15,
+      0.95
+     ],
+     "facing": 0,
+     "look": [
+      0.2,
+      0.05,
+      0.8
+     ],
+     "shot": 2,
+     "variant": 2
+    }
+   ],
    "cut": "steady",
    "actions": [
     {
@@ -194,7 +253,8 @@
      "height": 0.56,
      "shot": 0,
      "pose": "stand",
-     "render": "3d"
+     "render": "3d",
+     "look": 0
     }
    ],
    "cut": "travel",
@@ -209,11 +269,36 @@
    "shots": [
     {
      "view": "h1-low34",
-     "start": 0.0,
-     "to": "h1-calendar"
+     "start": 0.0
+    },
+    {
+     "view": "h1-calendar",
+     "start": 9.0
     }
    ],
-   "cast": [],
+   "cast": [
+    {
+     "who": "semmelweis",
+     "screen": [
+      0.8,
+      0.95
+     ],
+     "height": 0.7,
+     "pose": "point",
+     "render": "3d",
+     "at": [
+      1.45,
+      -0.8
+     ],
+     "facing": -80,
+     "look": [
+      0.0,
+      -0.02,
+      1.86
+     ],
+     "shot": 0
+    }
+   ],
    "cut": "travel",
    "actions": [
     {
@@ -360,7 +445,12 @@
      "height": 0.6,
      "shot": 0,
      "pose": "stand",
-     "render": "3d"
+     "render": "3d",
+     "look": [
+      200.0,
+      0.6,
+      1.0
+     ]
     }
    ],
    "cut": "travel",

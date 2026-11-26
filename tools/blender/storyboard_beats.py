@@ -258,6 +258,7 @@ def place_cast(st, scene_set, plan, spec, seconds, words):
     cam = bpy.context.scene.camera
     bounds = [(s["start"], plan[i + 1]["start"] if i + 1 < len(plan) else seconds) for i, s in enumerate(plan)]
     import people as _people
+    PLACED.clear()
     for n, c in enumerate(spec.get("cast", [])):
         if c.get("render") == "3d":
             place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds)
@@ -311,6 +312,46 @@ def place_cast(st, scene_set, plan, spec, seconds, words):
             ob.hide_render = True
             ob.keyframe_insert("hide_render", frame=f1 + 1)
         ob.hide_render = False
+    apply_gaze()
+
+
+PLACED = []   # the 3D people of this beat as place_human3d left them, for the gaze pass
+
+
+def apply_gaze():
+    """Turn each 3D person's head to what it looks at: `look` on its cast entry ("camera", the index of
+    another cast member, or a point [x, y, z]); by default a listener looks at whoever speaks in the shot
+    and a speaker at the camera when it is the narrator. Heads turn, bodies keep their facing."""
+    import human3d
+    by_n = {p["n"]: p for p in PLACED}
+    speakers = [p for p in PLACED if p["c"].get("speaker")]
+    for p in PLACED:
+        c = p["c"]
+        look = c.get("look")
+        if look is None:
+            if c.get("speaker") == "narrator" or c.get("pose") == "walk":
+                continue
+            other = next((q for q in speakers if q is not p and q["c"].get("shot", 0) == c.get("shot", 0)), None)
+            if other is None:
+                continue
+            look = other["n"]
+        if look == "camera":
+            target = p["cam"]
+        elif isinstance(look, int) and look in by_n:
+            q = by_n[look]
+            target = q["foot"] + Vector((0, 0, q["stature"] * 0.93))
+        elif isinstance(look, list) and len(look) == 3:
+            target = Vector(look)
+        else:
+            continue
+        eye = p["foot"] + Vector((0, 0, p["stature"] * 0.93))
+        d = target - eye
+        want = math.atan2(d.x, -d.y)
+        yaw = (want - p["yaw"] + math.pi) % (2 * math.pi) - math.pi
+        pitch = math.atan2(-d.z, max(0.05, Vector((d.x, d.y)).length))
+        human3d.gaze(p["inst"], yaw, pitch)
+        print(f"HUMAN3D_GAZE {p['n']} {c['who']} -> {look} yaw={math.degrees(yaw):.0f} pitch={math.degrees(pitch):.0f}",
+              flush=True)
 
 
 def place_actor(st, scene_set, plan, spec, seconds, words, n, c, bounds):
@@ -494,10 +535,20 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     frames = [max(f0 + 1, f1 - 1), min(f0 + 1, max(1, f1 - 1))]
     if c.get("place") == "start":
         frames.reverse()
-    for frame in frames:
-        foot, origin, depth, problem = solve(frame)
-        if problem is None:
-            break
+    if c.get("at"):
+        # a set point chosen by the storyboard (behind a desk, at a board): stand there, whatever the screen
+        frame = frames[0]
+        bpy.context.scene.frame_set(frame)
+        bpy.context.view_layer.update()
+        origin = cam.matrix_world.translation.copy()
+        foot = Vector((float(c["at"][0]), float(c["at"][1]), z0))
+        depth = (foot - origin).dot(cam.matrix_world.to_quaternion() @ Vector((0, 0, -1)))
+        problem = None
+    else:
+        for frame in frames:
+            foot, origin, depth, problem = solve(frame)
+            if problem is None:
+                break
     if problem:
         st.problems.append(problem)
     bpy.context.scene.frame_set(frame)
@@ -505,7 +556,12 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     rig.scale = (scale, scale, scale)
     rig.rotation_mode = "XYZ"
     to_cam = origin - foot
-    rig.rotation_euler = (0.0, 0.0, math.atan2(to_cam.x, -to_cam.y))
+    yaw = math.atan2(to_cam.x, -to_cam.y)
+    if c.get("facing") is not None:
+        yaw = math.radians(float(c["facing"]))
+    rig.rotation_euler = (0.0, 0.0, yaw)
+    PLACED.append({"n": n, "c": c, "inst": inst, "foot": foot.copy(), "yaw": yaw, "stature": stature,
+                   "cam": origin.copy()})
     rig.location = tuple(foot)
     rig.keyframe_insert("location", frame=1)
     print(f"HUMAN3D_PLACE {n} {c['who']} screen={c['screen']} bust={bust} foot={tuple(round(x, 3) for x in foot)} "
@@ -538,14 +594,26 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
         if "face" in a:
             human3d.set_face(inst, a["face"], fa)
     who = c.get("speaker")
+    person_seed = n * 31 + sum(map(ord, BEAT["name"] or ""))
+    spans = []
     if who:
         for line in MOUTHS.get(BEAT["name"], []):
             if line["speaker"] == who and line["mode"] == "say":
                 human3d.talk(inst, line["visemes"], FPS, seed=n)
-    # life: breathing, a weight shift, a wandering head and blinks, out of step with the others
-    person_seed = n * 31 + sum(map(ord, BEAT["name"] or ""))
+                spoken = [v for v in line["visemes"] if v[0] not in ("rest", "closed")]
+                if spoken:
+                    spans.append((max(t0, spoken[0][1]), min(t1, spoken[-1][2])))
+        # the arms move with the words, unless the person walks or holds a pose the storyboard set
+        if c.get("gesture", True) and c.get("pose", "stand") in ("stand", "talk") and not c.get("acts"):
+            human3d.gestures(inst, [s for s in spans if s[1] - s[0] > 0.8], FPS, c.get("pose", "stand"),
+                             person_seed)
+    # life: breathing, a weight shift, a wandering head, a face that is never still, and blinks, all
+    # out of step with the others
     if c.get("idle", True):
         human3d.idle(inst, person_seed, FPS, walking=c.get("pose") == "walk")
+        human3d.face_idle(inst, person_seed, FPS)
+        if spans and c.get("pose") != "walk":
+            human3d.arm_idle(inst, person_seed, FPS)
     if c.get("blink", True):
         human3d.blinks(inst, round(seconds * FPS), person_seed, FPS)
     human3d.show(inst, f0, f1, round(seconds * FPS))

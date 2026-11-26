@@ -359,8 +359,26 @@ def ledger(p, seconds):
     s.sky = world.sky_world("night", seconds)
     s.pin("page", (0.21, 0.0, 0.8))
     s.pin("cross", (centres[0], 0.1, 0.8))
+    # the registrar's office around the desk: legs under it, a floor, a panelled back wall with a window
+    # on the night and a shelf of older registers, so a wider view (ledger-clerk) has a room to show
+    kit.boxes("ledger-legs", [placed((dx, dy, 0.355), (0.07, 0.07, 0.71)) for dx in (-1.0, 1.0) for dy in (-0.6, 0.6)],
+              wood)
+    kit.box("ledger-floor", (0, 0.5, -0.02), (7.0, 6.0, 0.04), kit.mat("ledger-floor", (0.16, 0.10, 0.06), roughness=0.8),
+            bevel=0)
+    office = kit.mat("ledger-wall", (0.36, 0.31, 0.24), roughness=0.9)
+    kit.box("ledger-wall", (0, 2.2, 1.8), (7.0, 0.2, 3.6), office, bevel=0)
+    kit.boxes("ledger-wainscot", [placed((0, 2.08, 0.55), (7.0, 0.05, 1.1)), placed((0, 2.05, 1.12), (7.0, 0.1, 0.05))], wood)
+    kit.box("ledger-window", (1.6, 2.09, 2.0), (1.0, 0.03, 1.4), look.neon("ledger-night", (0.10, 0.13, 0.24), 0.25), bevel=0)
+    kit.boxes("ledger-window-bars", [placed((1.6, 2.06, 2.0), (0.05, 0.03, 1.45)), placed((1.6, 2.06, 2.2), (1.05, 0.03, 0.05)),
+                                     placed((1.6, 2.06, 1.28), (1.2, 0.12, 0.06))], wood)
+    kit.boxes("ledger-shelf", [placed((-1.4, 1.95, 1.3 + 0.45 * k), (1.8, 0.35, 0.04)) for k in range(3)], wood)
+    spines = [placed((-2.2 + 0.09 * j + 0.02 * rnd.random(), 1.95, 1.32 + 0.45 * k + 0.17), (0.07, 0.28, 0.34))
+              for k in range(3) for j in range(19) if rnd.random() < 0.85]
+    kit.boxes("ledger-registers", spines, cover)
     s.view("ledger", (0.2, 0.05, 0.8), 0.75, -70, 1.32)
     s.view("ledger-street", (0.21, 0.04, 0.8), 0.9, -90, 1.45)
+    # the registrar at his desk, the open register between him and the camera
+    s.view("ledger-clerk", (0.1, 0.5, 1.15), 2.9, -78, 1.55)
     s.floor_grid = 0
 
     def act_tally(t0, t1):

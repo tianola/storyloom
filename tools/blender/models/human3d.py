@@ -100,11 +100,47 @@ def load_template(who, built_dir):
         o.hide_viewport = True
     rig = _rig_of(objects)
     body = _body_of(objects)
+    skin_look(objects)
     walk = next((a for a in dst.actions if a is not None), None)
     poses = json.loads(rig["human3d_poses"]) if "human3d_poses" in rig.keys() else {}
     TEMPLATES[who] = {"rig": rig, "body": body, "parts": [o for o in objects if o.type == "MESH"],
                       "poses": poses, "walk": walk}
     return TEMPLATES[who]
+
+
+# MPFB's skin group as built reads as wax at film distance: strong subsurface, a clear coat and an even
+# roughness. Skin that reads as skin is drier and less translucent, with the pores (its roughness and bump
+# noise) stronger; lips and ears a touch redder; the eyes' outer layer a wet, sharp coat that catches light.
+SKIN = {"SSS strength": 0.07, "Clearcoat": 0.0, "Roughness": 0.52, "Pore strength": 0.55, "Pore scale": 1600.0,
+        "Contrast": 0.08}
+SKIN_PART = {"lips": {"colorMixInStrength": 0.2, "Roughness": 0.38},
+             "ears": {"colorMixInStrength": 0.12}}
+EYES = {"Clearcoat": 1.0, "Clearcoat Roughness": 0.02, "OuterLayerRoughness": 0.0}
+
+
+def skin_look(objects):
+    """Tune the MPFB skin and eye shader inputs of a loaded character (its materials, once per template)."""
+    for ob in objects:
+        if ob.type != "MESH":
+            continue
+        for slot in ob.material_slots:
+            m = slot.material
+            if m is None or not m.use_nodes or m.get("human3d_skin"):
+                continue
+            for node in m.node_tree.nodes:
+                if node.bl_idname != "ShaderNodeGroup" or node.node_tree is None:
+                    continue
+                part = next((p for p in reversed(m.name.split(".")) if not p.isdigit()), "")
+                if "SSS strength" in node.inputs:
+                    wanted = dict(SKIN, **SKIN_PART.get(part, {}))
+                elif "OuterLayerRoughness" in node.inputs:
+                    wanted = EYES
+                else:
+                    continue
+                for key, value in wanted.items():
+                    if key in node.inputs and not node.inputs[key].is_linked:
+                        node.inputs[key].default_value = value
+            m["human3d_skin"] = True
 
 
 def instance(who, built_dir, name, collection, variant=None):
@@ -254,15 +290,119 @@ def _key_sets(inst):
 
 
 def set_face(inst, face, frame):
-    """Expression shape keys for `face`, keyed at `frame`; everything else in the face set to zero."""
+    """Expression shape keys for `face`, keyed at `frame`; everything else in the face set to zero. A
+    face is never quite symmetric: one side's keys are scaled a little (per person, from its rig name)."""
     wanted = FACE.get(face or "neutral", {})
+    lean = 0.8 + 0.15 * ((sum(map(ord, inst["rig"].name)) * 37) % 100) / 100.0
+    side = "R" if sum(map(ord, inst["rig"].name)) % 2 else "L"
     for keys in _key_sets(inst):
         for name in ALL_FACE_KEYS:
             kb = keys.get(name)
             if kb is None:
                 continue
-            kb.value = wanted.get(name, 0.0)
+            value = wanted.get(name, 0.0)
+            if name.endswith(f"{side}_max"):
+                value *= lean
+            kb.value = value
             kb.keyframe_insert("value", frame=frame)
+
+
+# the face is never still: the brows lift and settle a little, one more than the other, and the corners
+# of the mouth move (noise on the expression keys over whatever face is keyed)
+FACE_IDLE = [("Exp_browsMidVert_max", 0.16, 3.0), ("Exp_browOutVertL_max", 0.10, 4.5),
+             ("Exp_browOutVertR_max", 0.07, 5.5), ("Exp_mouthSmile_max", 0.05, 6.0)]
+
+
+def face_idle(inst, seed, fps):
+    import random
+    rnd = random.Random(seed * 271 + 9)
+    phases = {name: rnd.uniform(0, 1000) for name, _, _ in FACE_IDLE}
+    for p in [inst["body"]] + [q for q in inst["parts"] if q is not inst["body"]]:
+        sk = p.data.shape_keys
+        if sk is None or sk.animation_data is None or sk.animation_data.action is None:
+            continue
+        for name, strength, period in FACE_IDLE:
+            fc = sk.animation_data.action.fcurves.find(f'key_blocks["{name}"].value')
+            if fc is None:
+                if sk.key_blocks.get(name) is None:
+                    continue
+                sk.key_blocks[name].keyframe_insert("value", frame=1)
+                fc = sk.animation_data.action.fcurves.find(f'key_blocks["{name}"].value')
+                if fc is None:
+                    continue
+            m = fc.modifiers.new("NOISE")
+            m.blend_type = "REPLACE"
+            m.scale = period * fps
+            m.strength = strength
+            m.phase = phases[name]       # the same phase on body, brows and lashes: they move as one face
+            m.offset = 0.0
+
+
+def gaze(inst, yaw, pitch):
+    """Turn the head (and a little of the neck) by `yaw` radians (positive = to the person's left) and tip it
+    down by `pitch`, as a constant layer over the pose and the idle head motion."""
+    import math
+    rig = inst["rig"]
+    act = rig.animation_data.action if rig.animation_data else None
+    if act is None:
+        return
+    yaw = max(-1.05, min(1.05, yaw))
+    pitch = max(-0.35, min(0.5, pitch))
+    for bone, share in (("neck", 0.35), ("head", 0.65)):
+        for axis, angle in ((2, yaw * share), (1, pitch * share)):
+            fc = act.fcurves.find(f'pose.bones["{bone}"].rotation_quaternion', index=axis)
+            if fc is None or abs(angle) < 1e-4:
+                continue
+            m = fc.modifiers.new("FNGENERATOR")
+            m.function_type = "SIN"
+            m.amplitude = 0.0
+            m.value_offset = math.sin(angle / 2)
+            m.use_additive = True
+
+
+def gestures(inst, spans, fps, base_pose, seed):
+    """While a person speaks ([start, end] seconds per line), the arms move with the words: the open-handed
+    "talk" pose on most phrases, now and then the hands together, and back to the base pose in the pauses.
+    Each change is keyed with a lead-in, so the arms travel between poses rather than snap."""
+    import random
+    rnd = random.Random(seed * 3571 + 5)
+    library = inst["poses"]
+    choices = [p for p in ("talk", "talk", "look-hands") if p in library]   # point swings the arm out sideways
+    if not choices:
+        return
+    for t0, t1 in spans:
+        t = t0
+        while t < t1 - 0.6:
+            seg = min(t1, t + rnd.uniform(1.6, 3.2))
+            pose = rnd.choice(choices)
+            f_in = max(2, round(t * fps) + 1)
+            set_pose(inst, base_pose, max(1, f_in - round(0.35 * fps)))
+            set_pose(inst, pose, f_in + round(0.25 * fps))
+            set_pose(inst, pose, max(f_in + round(0.3 * fps), round(seg * fps) - round(0.3 * fps)))
+            t = seg
+        set_pose(inst, base_pose, round(t1 * fps) + round(0.5 * fps))
+
+
+# speakers' arms are never quite still between gestures either
+ARM_IDLE = [("upper_arm_fk.L", 1), ("upper_arm_fk.R", 1), ("forearm_fk.L", 1), ("forearm_fk.R", 1),
+            ("hand_fk.L", 3), ("hand_fk.R", 3)]
+
+
+def arm_idle(inst, seed, fps, strength=0.05):
+    import random
+    rnd = random.Random(seed * 911 + 1)
+    act = inst["rig"].animation_data.action if inst["rig"].animation_data else None
+    if act is None:
+        return
+    for bone, axis in ARM_IDLE:
+        fc = act.fcurves.find(f'pose.bones["{bone}"].rotation_quaternion', index=axis)
+        if fc is None:
+            continue
+        m = fc.modifiers.new("NOISE")
+        m.blend_type = "REPLACE"
+        m.scale = rnd.uniform(1.5, 2.5) * fps
+        m.strength = strength
+        m.phase = rnd.uniform(0, 1000)
 
 
 # mouth_timing.json marks whole phrases as one "half" or "open" stretch; a held open mouth reads as a gape,
