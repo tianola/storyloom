@@ -1,4 +1,18 @@
 # STATE
+## 2026-11-26 (night): track B realism pass, branch `claude/semmelweis-mpfb-real` (draft PR, includes #9 and #10)
+- The user finds the people porcelain-like and fake; the target is a photoreal reference (a warm rim-lit man on a bus).
+- Done:
+  - `light_people`: key, rim and fill per person and shot, plus a focus pull at f/1.2-1.8.
+  - `film_finish`: AgX Medium High Contrast, -0.45 exposure on day sets, bloom, lift/gamma/gain, an S-curve and a vignette.
+  - Eyes: the MPFB EnhancedEye group is broken on 4.5 (the iris is a flat glow), so it is replaced by the MakeHuman eye texture under a clear coat.
+  - Skin, cloth (crease and weave bump, sheen), hair-card shader, relaxed fingers.
+  - Motion: listeners turn to the speaker with timed, eased modifiers (`gaze` spans) and nod; blinks come with turns; gestures are keyed on stressed words.
+  - Plan: `work/semmelweis-10min/movement-plan.md`.
+- Video: `work/semmelweis-10min/renders/real/semmelweis-first2min-real-720p.mp4`, with ffmpeg grain at assembly. Before/after stills (before = polish2): `renders/real/review/`.
+- Render time with EEVEE at 720p on the Ryzen 7 5700X and RX 580: 2 h 21 min for 153 s, 9-31 min a beat.
+- Honest result: warmer and more filmic, but the people still read as CG dolls. Cycles needs HIP, and the RX 580 (Polaris) has no HIP support in Blender 4.5, so Cycles runs on the CPU only, which is far too slow for video.
+- Photoreal needs other characters (scanned or MetaHuman-class heads, strand hair) and a capable GPU or cloud render, or an AI video-to-video pass over the renders. That is a decision for the user.
+
 ## 2026-11-26 (evening): track B round 2, branch `claude/semmelweis-mpfb-polish2` (draft PR, includes #9's commits)
 - Gestures: speakers move between the talk and look-hands poses on their phrases (`human3d.gestures`, `arm_idle`). Point is left out because it swings the arm out sideways.
 - Gaze: cast key `look` ("camera" | cast index | [x, y, z]). By default listeners look at the speaker in the shot (`storyboard_beats.apply_gaze`, `human3d.gaze`). Head and neck turn, clamped to ±60°. The eyes themselves are not aimed.
