@@ -54,6 +54,10 @@ RULES = [
     # dissecting room, asylum (yard wall, building, cell)
     Rule(r"^anat-wall$", "castle_brick_07", 2.0, 0.45),
     Rule(r"^anat-wood$", "dark_wooden_planks", 1.2, 0.55),
+    Rule(r"^anat-floor$", "herringbone_brick", 1.6, 0.60),
+    Rule(r"^anat-panel$", "dark_wooden_planks", 0.9, 0.50),
+    Rule(r"^akh-plinth$", "castle_brick_07", 1.6, 0.45),
+    Rule(r"^door-panel$", "dark_wooden_planks", 0.8, 0.50),
     Rule(r"^asy-wall$", "castle_brick_07", 2.2, 0.45),
     Rule(r"^asy-wood$", "dark_wooden_planks", 1.2, 0.55),
     # the ward

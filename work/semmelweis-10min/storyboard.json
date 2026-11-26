@@ -3,7 +3,9 @@
   "beat-01": {
    "scene": "asylum",
    "note": "1865 night: the gate, the guards, the cell as shadows on the wall; the hook",
-   "params": {},
+   "params": {
+    "night_key": true
+   },
    "shots": [
     {
      "view": "gate",
@@ -11,31 +13,19 @@
     },
     {
      "view": "bars",
-     "start": 2.3
+     "start": 6.0
     },
     {
      "view": "cell-close",
-     "start": 4.6
+     "start": 8.8
     },
     {
      "view": "gate",
-     "start": 6.9
-    },
-    {
-     "view": "bars",
-     "start": 9.2
+     "start": 12.9
     },
     {
      "view": "cell-close",
-     "start": 11.5
-    },
-    {
-     "view": "gate",
-     "start": 13.8
-    },
-    {
-     "view": "bars",
-     "start": 16.1
+     "start": 16.0
     }
    ],
    "cast": [
@@ -50,7 +40,22 @@
      "bust": true,
      "shot": 0,
      "render": "3d",
-     "speaker": "narrator"
+     "speaker": "narrator",
+     "variant": 1
+    },
+    {
+     "who": "explorer",
+     "screen": [
+      0.28,
+      0.62
+     ],
+     "height": 0.5,
+     "pose": "stand",
+     "bust": true,
+     "shot": 3,
+     "render": "3d",
+     "speaker": "narrator",
+     "variant": 1
     }
    ],
    "cut": "montage",
@@ -290,7 +295,7 @@
      "start": 0.0
     },
     {
-     "view": "court",
+     "view": "court-near",
      "start": 9.0
     },
     {

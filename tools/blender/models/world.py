@@ -568,6 +568,7 @@ def hospital(s, glass, lit, x0=40.0, half_y=26.0, depth=12.0, length=50.0, store
     kit.boxes("akh-cornice", [placed((cx, cy, h - 0.2), (w + 0.4, d + 0.4, 0.4)) for cx, cy, w, d in wings], trim)
     _roof_prisms("akh-roofs", [(cx, cy, w + 0.6, d + 0.6, h, 3.2, w > d) for cx, cy, w, d in wings], roof)
     # windows of the west front (towards the town) and of the courtyard side of the west wing
+    surrounds = []
     for face_x, facing in ((x0, -1), (x0 + depth, 1)):
         for st in range(storeys):
             z = 2.0 + st * 4.2
@@ -581,9 +582,51 @@ def hospital(s, glass, lit, x0=40.0, half_y=26.0, depth=12.0, length=50.0, store
                 m = placed((face_x + facing * 0.05, yy, z), (0.1, 1.1, 2.0))
                 glass.append(m)
                 lit.append(((st, yy, facing), placed((face_x + facing * 0.08, yy, z), (0.06, 1.0, 1.9))))
+                surrounds.append((face_x, facing, yy, z))
+    # each window gets a stone surround standing proud of the plaster (jambs, a head with a small cornice,
+    # a sill), and a painted wooden frame with a cross of glazing bars over the glass, so the front reads as
+    # windows in a wall rather than dark tiles on it; a string course marks each floor and a plinth the base
+    frame_parts, bar_parts = [], []
+    for face_x, facing, yy, z in surrounds:
+        out = face_x + facing * 0.09
+        frame_parts += [placed((out, yy - 0.66, z), (0.18, 0.2, 2.3)),
+                        placed((out, yy + 0.66, z), (0.18, 0.2, 2.3)),
+                        placed((out, yy, z + 1.2), (0.18, 1.52, 0.22)),
+                        placed((face_x + facing * 0.14, yy, z + 1.36), (0.28, 1.72, 0.1)),
+                        placed((face_x + facing * 0.12, yy, z - 1.12), (0.24, 1.5, 0.1))]
+        bar = face_x + facing * 0.13
+        bar_parts += [placed((bar, yy, z), (0.03, 0.06, 1.95)),
+                      placed((bar, yy, z + 0.35), (0.03, 1.08, 0.05)),
+                      placed((bar, yy, z - 0.45), (0.03, 1.08, 0.05)),
+                      placed((bar, yy - 0.53, z), (0.03, 0.06, 1.98)),
+                      placed((bar, yy + 0.53, z), (0.03, 0.06, 1.98)),
+                      placed((bar, yy, z + 0.97), (0.03, 1.1, 0.06)),
+                      placed((bar, yy, z - 0.97), (0.03, 1.1, 0.06))]
+    kit.boxes("akh-window-stone", frame_parts, trim)
+    kit.boxes("akh-window-bars", bar_parts, kit.mat("akh-window-wood", (0.20, 0.16, 0.12), roughness=0.55))
+    courses = []
+    for face_x, facing in ((x0, -1), (x0 + depth, 1)):
+        span = 2 * half_y if facing < 0 else 2 * (half_y - depth)
+        for st in range(1, storeys):
+            courses.append(placed((face_x + facing * 0.06, 0, st * 4.2 - 0.6), (0.12, span, 0.2)))
+        # the plinth stops at the openings: the gate in the west front, the two clinic doors in the court
+        gaps = [(-2.5, 2.5)] if facing < 0 else [(-7.3, -4.7), (4.7, 7.3)]
+        y = -span / 2
+        for g0, g1 in gaps + [(span / 2, span / 2)]:
+            if g0 > y:
+                courses.append(placed((face_x + facing * 0.05, (y + g0) / 2, 0.3), (0.1, g0 - y, 0.6)))
+            y = g1
+    kit.boxes("akh-courses", courses, kit.mat("akh-plinth", (0.50, 0.47, 0.40), roughness=0.9))
     # the gate: a dark arch in the west front
     kit.boxes("akh-gate", [placed((x0 - 0.1, 0, 2.2), (0.3, 4.0, 4.4))], kit.mat("akh-gate", (0.05, 0.04, 0.035)))
     kit.boxes("akh-gate-trim", [placed((x0 - 0.2, 0, 4.6), (0.4, 5.0, 0.5))], trim)
+    # the gate's two oak leaves, panelled, with a wicket in one, and stone piers either side
+    gate_panels = [placed((x0 - 0.27, side * 1.0, z), (0.04, 1.6, h))
+                   for side in (-1, 1) for z, h in ((0.75, 1.1), (2.15, 1.3), (3.5, 1.0))]
+    kit.boxes("akh-gate-leaves", [placed((x0 - 0.25, side * 1.0, 2.2), (0.04, 1.96, 4.36)) for side in (-1, 1)],
+              kit.mat("door-wood", (0.13, 0.07, 0.035), roughness=0.6))
+    kit.boxes("akh-gate-panels", gate_panels, kit.mat("door-panel", (0.17, 0.09, 0.045), roughness=0.55))
+    kit.boxes("akh-gate-piers", [placed((x0 - 0.2, side * 2.25, 2.2), (0.4, 0.5, 4.4)) for side in (-1, 1)], trim)
     return h
 
 
@@ -947,6 +990,17 @@ def clinic_doors(s, n, seconds, seed, time):
                                             placed((52.12, y - 1.05, 1.4), (0.24, 0.3, 2.8)),
                                             placed((52.12, y + 1.05, 1.4), (0.24, 0.3, 2.8)),
                                             placed((52.6, y, 0.08), (1.0, 2.4, 0.16))], stone)
+        # a two-leaf panelled door: three raised panels a leaf, the meeting stile, iron ring handles, and
+        # a keystone and cornice over the frame
+        panels = [placed((52.17, y + side * 0.45, z), (0.03, 0.62, h))
+                  for side in (-1, 1) for z, h in ((0.55, 0.7), (1.45, 0.8), (2.35, 0.6))]
+        kit.boxes(f"clinic-panels{y:+.0f}", panels, kit.mat("door-panel", (0.17, 0.09, 0.045), roughness=0.55))
+        kit.boxes(f"clinic-stile{y:+.0f}", [placed((52.17, y, 1.4), (0.04, 0.05, 2.8))],
+                  kit.mat("door-seam", (0.03, 0.02, 0.012), roughness=0.7))
+        iron = kit.mat("door-iron", (0.06, 0.06, 0.065), roughness=0.35)
+        kit.cylinders(f"clinic-knobs{y:+.0f}", [((52.2, y + dy, 1.25), 0.05, 0.06) for dy in (-0.12, 0.12)], iron)
+        kit.boxes(f"clinic-head{y:+.0f}", [placed((52.2, y, 3.18), (0.32, 2.8, 0.16)),
+                                           placed((52.2, y, 2.98), (0.3, 0.34, 0.42))], stone)
         m = look.neon(f"door-lamp{y:+.0f}", (1.0, 0.64, 0.30), 8.0)
         kit.box(f"door-lamp{y:+.0f}", (52.35, y + 1.6, 3.1), (0.28, 0.28, 0.4), m, bevel=0)
         data = bpy.data.lights.new(f"door-light{y:+.0f}", "POINT")
@@ -1021,18 +1075,32 @@ def anatomy(s, n, seed, x0=200.0, use_assets=False, people=True, west_door=False
     it the room is open to the sky, and under a dusk world the sky floods the floor white."""
     wall = kit.mat("anat-wall", (0.45, 0.42, 0.36), roughness=0.9)
     wood = kit.mat("anat-wood", (0.14, 0.08, 0.04), roughness=0.6)
-    sheet = kit.mat("anat-sheet", (0.75, 0.73, 0.68), roughness=0.9)
+    sheet = kit.mat("anat-sheet", (0.62, 0.60, 0.56), roughness=0.9)
     west = [((x0 - 7.15, -4, 0), (x0 - 6.85, 4, 6))]
     if west_door:
         west = subtract(west[0][0], west[0][1], (x0 - 8, -0.75, -1), (x0 - 6, 0.75, 2.5))
-    kit.boxes("anat-room", [placed((x0, 4.0, 3.0), (14, 0.3, 6)), placed((x0 + 7, 0, 3.0), (0.3, 8, 6)),
-                            placed((x0, 0, -0.02), (14, 8, 0.04))]
+    kit.boxes("anat-room", [placed((x0, 4.0, 3.0), (14, 0.3, 6)), placed((x0 + 7, 0, 3.0), (0.3, 8, 6))]
               + [placed(tuple((a + b) / 2 for a, b in zip(lo, hi)), tuple(b - a for a, b in zip(lo, hi)))
                  for lo, hi in west]
               + ([placed((x0, 0.0, 6.0), (14, 8, 0.2))] if roof else []), wall)
     kit.boxes("anat-table", [placed((x0, 0.6, 0.85), (2.4, 0.9, 0.08)), placed((x0 - 1.0, 0.6, 0.42), (0.1, 0.7, 0.84)),
                              placed((x0 + 1.0, 0.6, 0.42), (0.1, 0.7, 0.84))], wood)
+    # a herringbone brick floor of its own (the walls are stone), dark oak panelling to chest height with a
+    # rail on the back and east walls, and a table with an apron rather than a slab on two boards
+    kit.box("anat-floor", (x0, 0, -0.02), (14, 8, 0.04), kit.mat("anat-floor", (0.30, 0.24, 0.19), roughness=0.9),
+            bevel=0)
+    panel = kit.mat("anat-panel", (0.10, 0.06, 0.035), roughness=0.55)
+    kit.boxes("anat-wainscot", [placed((x0, 3.82, 0.6), (14, 0.06, 1.2)), placed((x0 + 6.82, 0, 0.6), (0.06, 8, 1.2)),
+                                placed((x0, 3.78, 1.22), (14, 0.12, 0.06)), placed((x0 + 6.78, 0, 1.22), (0.12, 8, 0.06)),
+                                placed((x0, 3.79, 0.06), (14, 0.1, 0.12)), placed((x0 + 6.79, 0, 0.06), (0.1, 8, 0.12))],
+              panel)
+    kit.boxes("anat-apron", [placed((x0, 0.6, 0.74), (2.3, 0.8, 0.14))]
+              + [placed((x0 + dx, 0.6 + dy, 0.37), (0.08, 0.08, 0.74)) for dx in (-1.05, 1.05) for dy in (-0.33, 0.33)],
+              wood)
     body = kit.box("anat-body", (x0, 0.6, 1.0), (2.0, 0.6, 0.22), sheet, bevel=0.08)
+    # the sheet over a body: the head and the feet lift it
+    kit.ico("anat-sheet-head", (x0 - 0.8, 0.6, 1.08), 0.16, sheet, subdivisions=3, smooth=True)
+    kit.ico("anat-sheet-feet", (x0 + 0.88, 0.6, 1.07), 0.12, sheet, subdivisions=3, smooth=True)
     m = look.neon("anat-lamp", (1.0, 0.7, 0.4), 10.0)
     kit.box("anat-lampshade", (x0, 0.6, 3.2), (0.5, 0.5, 0.25), m, bevel=0)
     data = bpy.data.lights.new("anat-light", "POINT")
@@ -1267,6 +1335,8 @@ def vienna(p, seconds):
     s.view("court-wide", (62.0, 0.0, 1.6), 11.0, 20, 4.5)
     s.view("pump", (66.0, 0.0, 1.0), 5.5, 200, 1.7)
     s.view("court-low", (57.0, -7.5, 1.2), 7.0, -35, 1.3)
+    # the court from its middle, looking at the First Clinic's door: the benches and pump behind the camera
+    s.view("court-near", (54.0, -4.0, 1.3), 7.0, 10, 1.6)
     s.view("anatomy-close", (200.0, 0.8, 1.2), 3.4, -100, 1.9)
     s.view("jars", (195.8, 3.6, 1.8), 2.6, -90, 1.9)
     # v6: the gate at dawn from the street, a birth on the cobbles just outside it, the scalpel
@@ -1417,6 +1487,29 @@ def asylum(p, seconds):
 
     s.action("door-shut", shut, at=0.6, span=0.6)
     s.floor_grid = 0
+    if p.get("night_key"):
+        # a night that reads on a phone: a cold moon from high behind the camera's left as the fill, the
+        # lantern warmer and stronger as the key on the gate and on whoever stands in front of it, and a
+        # little more exposure; the cell keeps its own moonlight through the bars
+        moon_d = bpy.data.lights.new("asy-moon", "SUN")
+        moon_d.energy = 0.9
+        moon_d.color = (0.62, 0.72, 1.0)
+        moon_d.angle = math.radians(1.5)
+        mo = kit._link(bpy.data.objects.new("asy-moon", moon_d))
+        mo.rotation_euler = (math.radians(55), 0.0, math.radians(-35))
+        for fc in (data.animation_data.action.fcurves if data.animation_data and data.animation_data.action else []):
+            for kp in fc.keyframe_points:
+                kp.co[1] *= 1.6
+                kp.handle_left[1] *= 1.6
+                kp.handle_right[1] *= 1.6
+        kd = bpy.data.lights.new("asy-gate-key", "AREA")
+        kd.energy = 150.0
+        kd.color = (1.0, 0.7, 0.42)
+        kd.size = 1.5
+        ko = kit._link(bpy.data.objects.new("asy-gate-key", kd))
+        ko.location = (-2.5, -4.5, 3.2)
+        kit.common.aim(ko, (0.5, -1.5, 1.4))
+        bpy.context.scene.view_settings.exposure = 0.55
     if use_assets:
         assets.scene_hdri("asylum", "night", n)          # none: the night stays dark
         assets.upgrade_materials()

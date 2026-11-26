@@ -541,7 +541,13 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     if who:
         for line in MOUTHS.get(BEAT["name"], []):
             if line["speaker"] == who and line["mode"] == "say":
-                human3d.talk(inst, line["visemes"], FPS)
+                human3d.talk(inst, line["visemes"], FPS, seed=n)
+    # life: breathing, a weight shift, a wandering head and blinks, out of step with the others
+    person_seed = n * 31 + sum(map(ord, BEAT["name"] or ""))
+    if c.get("idle", True):
+        human3d.idle(inst, person_seed, FPS, walking=c.get("pose") == "walk")
+    if c.get("blink", True):
+        human3d.blinks(inst, round(seconds * FPS), person_seed, FPS)
     human3d.show(inst, f0, f1, round(seconds * FPS))
 
 
