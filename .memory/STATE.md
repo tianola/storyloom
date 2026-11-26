@@ -1,4 +1,15 @@
 # STATE
+## 2026-11-26 (evening): track B round 2, branch `claude/semmelweis-mpfb-polish2` (draft PR, includes #9's commits)
+- Gestures: speakers move between the talk and look-hands poses on their phrases (`human3d.gestures`, `arm_idle`). Point is left out because it swings the arm out sideways.
+- Gaze: cast key `look` ("camera" | cast index | [x, y, z]). By default listeners look at the speaker in the shot (`storyboard_beats.apply_gaze`, `human3d.gaze`). Head and neck turn, clamped to ±60°. The eyes themselves are not aimed.
+- Skin and eyes (`human3d.skin_look`): SSS 0.07, no clear coat, roughness 0.52, pores 0.55, redder lips and ears; eye clear coat 1.0. Brows and mouth drift (`face_idle`), and each face is a little asymmetric (`set_face`).
+- New cast keys `at` [x, y] and `facing` (workflow/storyboard.py CAST_KEYS). New views: asylum `gate-near`, ledger `ledger-clerk`. The ledger office now has floor, wall, window and shelves.
+- Beat 01: the narrator stands at eye level (face and chest visible). Beat 03: a registrar (student variant 2) behind the desk. Beat 05: Semmelweis at the board in profile, looking at the calendar.
+- Asylum: coping, piers, plinth, gate surround, panelled and strapped leaves, barred windows, cornice, roof, chimneys. Town houses: jambs, panelled doors, chimney caps. Beat 08: a draped sheet mesh (`world.sheet_over_body`) with a hand hanging out. The scalpel and the scalpel/cut-hand views were lowered to the new sheet height.
+- Video: `work/semmelweis-10min/renders/polish2/semmelweis-first2min-polish2-720p.mp4`. Before/after stills (before = the polish video): `renders/polish2/review/`. All framing reports are empty.
+- Tests: pytest python/ gives 936 passed, 24 skipped, and 2 env failures (as before). Catalog and storyboard tests pass with Blender.
+- Still weak: the hands of the look-hands pose float in the air (the registrar does not touch the book); the eyes are not aimed; there is no real cloth simulation; the faces still render softly at 720p; the cell shot in beat 01 is very dark.
+
 ## 2026-11-26 (later): track B polish, branch `claude/semmelweis-mpfb-polish` (draft PR, not merged)
 - PR #8 is merged. This branch fixes the weak points of the 2:33 MPFB2 test:
   - `human3d.idle`: breathing, weight shift and head motion (F-curve modifiers, seeded per person). `human3d.blinks`: the eyes-closed key. `human3d.talk`: syllable-rate mouth flaps from mouth_timing.json (shape keys Exp_mouthOpenHalf/Open/OpenLarge). The narrator in beat 01 and the mother in beat 06 move their lips.
