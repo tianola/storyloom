@@ -1,4 +1,15 @@
 # STATE
+## 2026-11-26 (later): track B polish, branch `claude/semmelweis-mpfb-polish` (draft PR, not merged)
+- PR #8 is merged. This branch fixes the weak points of the 2:33 MPFB2 test:
+  - `human3d.idle`: breathing, weight shift and head motion (F-curve modifiers, seeded per person). `human3d.blinks`: the eyes-closed key. `human3d.talk`: syllable-rate mouth flaps from mouth_timing.json (shape keys Exp_mouthOpenHalf/Open/OpenLarge). The narrator in beat 01 and the mother in beat 06 move their lips.
+  - The point pose is held lower (`human3d.SOFTEN`), so sleeves no longer fan out.
+  - `asylum` param `night_key` (moon fill, stronger lantern, gate key, exposure 0.55). Beat 01 shows the narrator 0-6 s and 12.9-16 s.
+  - New vienna view `court-near`. Beat 07 shows the midwife at about 2/3 of the frame.
+  - Hospital sets: window surrounds, sills, glazing bars, string courses, plinth; panelled clinic doors and gate. Dissecting room: herringbone floor, panelling, table legs and apron, sheet over head and feet. New asset rules: anat-floor, anat-panel, akh-plinth, door-panel. No new downloads.
+- Video: `work/semmelweis-10min/renders/polish/semmelweis-first2min-polish-720p.mp4` (153 s). Before/after stills: `renders/polish/review/{before,after}-tNNNs.png`. All framing reports are empty.
+- Tests: pytest python/ gives 936 passed, 24 skipped, and 2 failed. The 2 failures (test_pattern_library and test_skills_map, which create a new episode) are refused by the preflight because the worktree has no kokoro, manim or Blender. Scene catalog and storyboard tests pass with BLENDER_EXE.
+- Still weak: the people stand in place (no gestures while talking, no eye direction); faces are softly lit and a little waxy; beats 03 and 05 still have no people; the beat-01 narrator sits low in the frame; the town houses and the asylum are still box-built; the sheet in beat 08 reads as a pillow.
+
 ## 2026-11-26: track B, MPFB2 people rendered (branch `claude/semmelweis-mpfb-render`, draft PR)
 - PRs #4, #5, #6 are merged into `main` (fba96c9). PR #5 brought the MPFB2 people (`tools/blender/human3d_mpfb.py`, `tools/human3d_assets.py`, docs/human3d-mpfb.md, credits in docs/human3d-credits.md).
 - On the PC: MPFB 2.0.18 is installed in Blender 4.5 (`bl_ext.user_default.mpfb`); the assets (about 2 GB, CC0 + CC-BY 4.0) are in the main checkout's `assets/makehuman/` (git-ignored). The 6 roles × 3 variants build on 4.5 with no code change (MPFB logs harmless node-socket errors from its eye shader). Lineup: `work/semmelweis-10min/renders/people.png`.
