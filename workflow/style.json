@@ -290,13 +290,13 @@
         "closed": "refuse the build before a single frame renders, the way a missing required capability refuses init_episode rather than warning and continuing."
       },
       "mix": {
-        "layers": ["3d", "manim", "cards", "archive"],
+        "layers": ["3d", "manim", "cards", "archive", "black", "graphic"],
         "layers_why": "the visual taxonomy as contract data. The render queue, the canvas test and the QC gate read this list, so a fifth kind becomes one edit here instead of four tuples that can quietly disagree about what the film is made of.",
         "measured_on": "screen seconds summed per layer, from shots.json against the vo/manifest.json clock",
         "measured_on_basis": "house style — a share in shot counts is carried by one-second inserts laid over long beats, which is the failure the reference cut-ups do not have; seconds are what the viewer actually receives",
-        "min_share": { "3d": 0.0, "manim": 0.0, "cards": 0.0, "archive": 0.0,
+        "min_share": { "3d": 0.0, "manim": 0.0, "cards": 0.0, "archive": 0.0, "black": 0.0, "graphic": 0.0,
                        "basis": "house style — owner decision 2026-11-17 after the ask-chatgpt cut: a share floor made the planner fill 20% of the film with generic data-centre clips, which the owner called random and AI slop. Measured on fern and Veritasium (docs/research/story-not-slides.md): their archive is always the specific thing the line names (the real shooting, the real ad, the real Corning lab), so the amount follows the evidence there is, not a quota. No floor; archive.evidence decides which clips may appear at all" },
-        "min_per_act": { "3d": 0, "manim": 0, "cards": 0, "archive": 0,
+        "min_per_act": { "3d": 0, "manim": 0, "cards": 0, "archive": 0, "black": 0, "graphic": 0,
                          "basis": "house style — same decision: a per-act quota is the same padding pressure spread thinner" },
         "act_seconds": [180.0, 300.0],
         "act_seconds_basis": "house style — an act is a three-to-five-minute span; the rhythm section bounds a single shot, not a structure, so the partition is ours",

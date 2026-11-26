@@ -229,6 +229,21 @@ def _ground(origin, direction, fallback):
     return _ground_surface(origin, direction, fallback)[0]
 
 
+def _first_hit(origin, direction):
+    """Where the ray first meets a set object (cast members do not count), or None."""
+    scene = bpy.context.scene
+    dg = bpy.context.evaluated_depsgraph_get()
+    start = origin
+    for _ in range(6):
+        hit, loc, _n, _i, ob, _m = scene.ray_cast(dg, start, direction)
+        if not hit:
+            return None
+        if not ob.name.startswith("cast-") and not ob.name.startswith("hud"):
+            return loc
+        start = loc + direction * 0.001
+    return None
+
+
 def _floor_at(origin, direction, z0):
     """Where the ray meets the set's floor at height z0, or None when it does not point down at it."""
     if direction.z > -1e-6:
@@ -388,6 +403,9 @@ HUMAN3D_BASE_HEIGHT = 1.833
 HUMAN3D = {"dir": None}   # set by main(): <episode>/human3d, where the built characters are
 
 
+from bpy_extras.object_utils import world_to_camera_view  # noqa: E402
+
+
 def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     """A rigged 3D person (models/human3d.py), placed like place_actor: where its screen point meets the set,
     `height` of the frame tall, facing the camera, shown in its shot. It is posed from the library, walks from
@@ -403,39 +421,87 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
         k = min(int(c.get("shot", 0)), len(bounds) - 1)
         t0, t1 = bounds[k]
     f0, f1 = max(1, round(t0 * FPS) + 1), max(2, round(t1 * FPS))
-    bpy.context.scene.frame_set(min(f0 + 1, max(1, f1 - 1)))
-    bpy.context.view_layer.update()
-    u, v = c["screen"]
+    u, v0 = c["screen"]
     bust = bool(c.get("bust")) or c.get("size") == "bust"
     height = float(c.get("height", 0.25))
-    origin, ray = _screen_ray(cam, u, v)
-    target = Vector(scene_set.views[plan[k]["view"]]["target"]) if plan[k].get("view") in scene_set.views else origin + ray * 8
-    reach = (target - origin).length
-    if bust:
-        # head at the screen point, body below the frame: the figure's height runs past the bottom edge
-        origin, ray = _screen_ray(cam, u, v + 1.8 * height)
-        foot = origin + ray * reach * float(c.get("depth", 0.5))
-    else:
-        z0 = getattr(scene_set, "floor_z", 0.0)
-        floor = _floor_at(origin, ray, z0)
-        if floor is None:
-            st.problems.append(f"cast '{c['who']}' at screen {c['screen']} points above the horizon: "
-                               f"move its 'screen' v toward 1.0 (the bottom of the frame)")
-            floor = origin + ray * (reach * 0.8)
-        else:
-            blocker = _occluder(origin, ray, (floor - origin).length - 0.15)
-            if blocker:
-                st.problems.append(f"cast '{c['who']}' at screen {c['screen']} stands behind {blocker}, "
-                                   f"hidden from the camera: move its 'screen' u or v")
-        foot = floor
-    depth = (foot - origin).dot(cam.matrix_world.to_quaternion() @ Vector((0, 0, -1)))
-    frame_h = 2 * depth * math.tan(cam.data.angle_y / 2)
-    figure_frac = 1.8 * height if bust else height
-    scale = figure_frac * frame_h / HUMAN3D_BASE_HEIGHT
-
     inst = human3d.instance(c["who"], HUMAN3D["dir"], f"cast-{n}-{c['who']}", bpy.context.scene.collection,
                             variant=c.get("variant"))
     rig = inst["rig"]
+    # people keep their real size (a small per-cast-member variation aside): the camera depth where a figure
+    # of that stature fills `height` of the frame decides where it stands, never a scale factor
+    scale = human3d.size_jitter(n)
+    stature = human3d.stature(inst) * scale
+    z0 = getattr(scene_set, "floor_z", 0.0)
+
+    def solve(frame):
+        """(foot, camera origin, depth, problem) for the camera as it is at `frame`."""
+        bpy.context.scene.frame_set(frame)
+        bpy.context.view_layer.update()
+        k = 2 * math.tan(cam.data.angle_y / 2)
+        fwd = cam.matrix_world.to_quaternion() @ Vector((0, 0, -1))
+        origin, ray = _screen_ray(cam, u, v0)
+
+        def cam_depth(p):
+            return (p - origin).dot(fwd)
+
+        if bust:
+            # head at the screen point, the body hanging below it out of the frame; never inside the set
+            want = max(0.6, stature / (1.8 * height * k))
+            hloc = _first_hit(origin, ray)
+            if hloc is not None and cam_depth(hloc) - 0.35 < want:
+                want = max(0.6, cam_depth(hloc) - 0.35)
+            head = origin + ray * (want / max(ray.dot(fwd), 1e-3))
+            foot = head - Vector((0, 0, stature * 0.94))
+            if foot.z > z0 + 0.02:
+                foot.z = z0   # stand on the floor rather than float (the head sinks a little in the frame)
+            return foot, origin, cam_depth(foot), None
+        floor = _floor_at(origin, ray, z0)
+        if floor is None:
+            return (origin + ray * 6.0, origin, 6.0,
+                    f"cast '{c['who']}' at screen {c['screen']} points above the horizon: "
+                    f"move its 'screen' v toward 1.0 (the bottom of the frame)")
+        want = max(1.2, stature / (height * k))
+        if cam_depth(floor) > want:
+            # too far to be `height` tall: walk the feet toward the camera, below the frame edge if need be,
+            # while the head stays in the upper half of the frame (a high camera looks down on anyone near it)
+            def foot_at(vv):
+                o2, r2 = _screen_ray(cam, u, vv)
+                return _floor_at(o2, r2, z0)
+
+            def ok(vv):
+                f2 = foot_at(vv)
+                if f2 is None or cam_depth(f2) < want:
+                    return False
+                top = world_to_camera_view(bpy.context.scene, cam, f2 + Vector((0, 0, stature)))
+                return (1.0 - top.y) <= 0.45
+            lo, hi = v0, 4.0
+            if ok(lo):
+                for _ in range(40):
+                    mid = (lo + hi) / 2
+                    if ok(mid):
+                        lo = mid
+                    else:
+                        hi = mid
+                floor = foot_at(lo) or floor
+        chest = floor + Vector((0, 0, min(1.3, stature * 0.7)))
+        blocker = _occluder(origin, (chest - origin).normalized(), (chest - origin).length - 0.3)
+        problem = (f"cast '{c['who']}' at screen {c['screen']} stands behind {blocker}, hidden from the camera: "
+                   f"move its 'screen' u or v") if blocker else None
+        return floor, origin, cam_depth(floor), problem
+
+    # a camera that dollies in should arrive at the framing the storyboard asks for, so the people are placed
+    # against the camera of the shot's last frame; where that hides them, against its first frame
+    frames = [max(f0 + 1, f1 - 1), min(f0 + 1, max(1, f1 - 1))]
+    if c.get("place") == "start":
+        frames.reverse()
+    for frame in frames:
+        foot, origin, depth, problem = solve(frame)
+        if problem is None:
+            break
+    if problem:
+        st.problems.append(problem)
+    bpy.context.scene.frame_set(frame)
+    bpy.context.view_layer.update()
     rig.scale = (scale, scale, scale)
     rig.rotation_mode = "XYZ"
     to_cam = origin - foot
@@ -447,8 +513,10 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
 
     if c.get("walk"):
         du, dv = c["walk"]
-        o2, r2 = _screen_ray(cam, u + du, v + dv)
-        end = (_floor_at(o2, r2, getattr(scene_set, "floor_z", 0.0)) or foot) if not bust else foot
+        # the walk is the screen offset's step on the floor, taken from wherever the feet ended up
+        a = _floor_at(*_screen_ray(cam, u, v0), z0)
+        b = _floor_at(*_screen_ray(cam, u + du, v0 + dv), z0)
+        end = foot + (b - a) if (a is not None and b is not None and not bust) else foot
         rig.location = tuple(foot)
         rig.keyframe_insert("location", frame=f0)
         rig.location = tuple(end)

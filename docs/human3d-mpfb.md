@@ -28,3 +28,14 @@ On a machine without a GPU, `STORYLOOM_CYCLES_STILLS=24` (environment variable) 
 with Cycles on the CPU instead of EEVEE.
 
 Credits for the CC-BY clothing: docs/human3d-credits.md.
+
+## How a 3D person is placed (storyboard_beats.place_human3d)
+
+People keep their real size: a cast entry's `height` (fraction of the frame) decides how far from the camera
+the person stands, not a scale factor. The feet are walked toward the camera along the floor until the
+figure is that tall, but never so close that the head drops below the upper half of the frame (a high camera
+looks down on anyone near it). A bust puts the head at its `screen` point at that depth, in front of any set
+object on the way, with the feet on the floor. Each cast member gets a small size change (about 3 %), on top
+of the role variants. The camera of the shot's last frame is used, so a camera that dollies in arrives at the
+asked-for framing; when that hides the person behind the set, the first frame's camera is used instead
+(`"place": "start"` on a cast entry asks for the first frame directly).

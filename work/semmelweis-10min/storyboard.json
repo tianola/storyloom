@@ -42,10 +42,10 @@
     {
      "who": "explorer",
      "screen": [
-      0.9,
-      0.8
+      0.74,
+      0.62
      ],
-     "height": 0.34,
+     "height": 0.5,
      "pose": "stand",
      "bust": true,
      "shot": 0,
@@ -65,8 +65,7 @@
    "shots": [
     {
      "view": "gate-approach",
-     "start": 0.0,
-     "to": "doors"
+     "start": 0.0
     }
    ],
    "cast": [
@@ -121,21 +120,7 @@
      "start": 0.0
     }
    ],
-   "cast": [
-    {
-     "who": "explorer",
-     "screen": [
-      0.8,
-      0.82
-     ],
-     "height": 0.34,
-     "pose": "stand",
-     "bust": true,
-     "shot": 0,
-     "render": "3d",
-     "speaker": "narrator"
-    }
-   ],
+   "cast": [],
    "cut": "steady",
    "actions": [
     {
@@ -153,9 +138,8 @@
    },
    "shots": [
     {
-     "view": "doors",
-     "start": 0.0,
-     "to": "second-door"
+     "view": "second-door",
+     "start": 0.0
     }
    ],
    "cast": [
@@ -255,7 +239,7 @@
      ],
      "height": 0.36,
      "shot": 0,
-     "pose": "kneel",
+     "pose": "stand",
      "face": "sad",
      "render": "3d",
      "bust": true,
@@ -269,7 +253,7 @@
      ],
      "height": 0.42,
      "shot": 0,
-     "pose": "kneel",
+     "pose": "stand",
      "face": "worried",
      "render": "3d",
      "speaker": "mother",
@@ -284,7 +268,7 @@
      ],
      "height": 0.36,
      "shot": 0,
-     "pose": "kneel",
+     "pose": "stand",
      "face": "sad",
      "render": "3d",
      "bust": true,
@@ -343,8 +327,11 @@
    "shots": [
     {
      "view": "anatomy-close",
-     "start": 0.0,
-     "to": "jars"
+     "start": 0.0
+    },
+    {
+     "view": "jars",
+     "start": "9.0s"
     }
    ],
    "cast": [

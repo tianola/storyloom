@@ -1,4 +1,12 @@
 # STATE
+## 2026-11-26: track B, MPFB2 people rendered (branch `claude/semmelweis-mpfb-render`, draft PR)
+- PRs #4, #5, #6 are merged into `main` (fba96c9). PR #5 brought the MPFB2 people (`tools/blender/human3d_mpfb.py`, `tools/human3d_assets.py`, docs/human3d-mpfb.md, credits in docs/human3d-credits.md).
+- On the PC: MPFB 2.0.18 is installed in Blender 4.5 (`bl_ext.user_default.mpfb`); the assets (about 2 GB, CC0 + CC-BY 4.0) are in the main checkout's `assets/makehuman/` (git-ignored). The 6 roles × 3 variants build on 4.5 with no code change (MPFB logs harmless node-socket errors from its eye shader). Lineup: `work/semmelweis-10min/renders/people.png`.
+- Branch `claude/semmelweis-mpfb-render` (not merged) holds: the placement code an earlier PC session left uncommitted (`place_human3d` places people by real size and distance; anatomy roof, steady wing lamps, shadow pool, scenes.json), and storyboard fixes for beats 01/02/04/08 (02 and 04 hold one view, 08 cuts to the jars at 9 s, the beat-01 narrator bust is larger).
+- Rendered (720p, `SEMMELWEIS_720=1`): `work/semmelweis-10min/renders/mpfb/beat-01..08.mp4`, all framing reports empty. 2-minute test: `work/semmelweis-10min/renders/mpfb/semmelweis-first2min-mpfb-720p.mp4` (153 s: beats concatenated + the first 153 s of `vo/full-audio-finished.wav`, 1.5 s fade). Review stills in `renders/mpfb/review/`.
+- Weak still: the people stand stiffly (no lip sync, faces are not animated, little torso motion); beat 01 is dark and the narrator shows for only ~2 s; beat 07's court shot is wide, so the midwife is small; beats 03 and 05 have no people; the sets are box-built.
+- Worktree setup note: a fresh worktree needs `assets/polyhaven/` (copied from another worktree, 60 MB) and the episode inputs (vo/, music/, shot_lengths.json, word_timing.json and so on; not in git).
+
 - Updated: 2026-11-25. PR #2 and PR #3 are MERGED into `main` (2026-11-25 ~18:36 UTC); no open PRs. Two tracks are open (next section). Older sections below are history; where they say "NOT PUSHED" or "PR #2 is open", read them as superseded by this section.
 
 ## 2026-11-25: where things stand (reconciled against GitHub)
