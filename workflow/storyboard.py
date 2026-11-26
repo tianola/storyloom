@@ -13,7 +13,9 @@ from pathlib import Path
 
 CATALOG_PATH = Path(__file__).with_name("scenes.json")
 MAX_LABEL = 32
-BEAT_KEYS = {"scene", "params", "shots", "labels", "actions", "hud", "counter", "note", "cast", "cut"}
+BEAT_KEYS = {"scene", "params", "shots", "labels", "actions", "hud", "counter", "note", "cast", "cut", "extras"}
+# "extras": "pixel" (default) keeps the pixel people a scene puts in its set; "none" removes them
+EXTRAS = ("pixel", "none")
 # how a beat without explicit shots is cut (default_shots below)
 CUTS = {"travel", "montage", "steady"}
 SHOT_SECONDS = 4.5          # cut "steady": a cut about this often
@@ -24,13 +26,16 @@ CAST = {"explorer", "token", "dozing", "sleepy", "awake", "shocked", "bored", "a
 CAST_KEYS = {"who", "screen", "height", "shot", "hop", "walk", "flip", "word", "size",
              # people who act and talk (tools/pixel/people.py, mirrored in workflow/sprites.json)
              "speaker", "pose", "face", "acts", "blink", "bust", "span",
-             # a rigged 3D person (tools/blender/models/human3d.py); "render": "3d" selects it
-             "render"}
+             # a rigged 3D person (tools/blender/models/human3d.py); "render": "3d" selects it, "variant" picks
+             # one of the role's built variants (1, 2, 3 ...), "depth" places a bust that far along the view
+             "render", "variant", "depth"}
 
 # 3D people (rigged CharMorph characters, built by tools/blender/human3d_build.py). Only these may take render "3d".
 HUMAN3D_CHARACTERS = ("semmelweis", "doctor", "student", "midwife", "mother", "explorer")
 HUMAN3D_POSES = ("stand", "walk", "kneel", "sit", "talk", "point", "plead", "look-hands", "wash")
 HUMAN3D_SIZES = ("figure", "bust")
+# a standing 3D person smaller than this share of the frame reads as a doll in a model set
+HUMAN3D_MIN_HEIGHT = 0.5
 SHOT_KEYS = {"view", "to", "start", "glide", "move"}
 MOVES = ("drift", "lock", "push", "pull")   # tools/blender/models/camera_plan.py
 PEOPLE_PATH = Path(__file__).with_name("sprites.json")
@@ -271,6 +276,10 @@ def validate(storyboard, catalog=None, lengths=None, cast=None, warnings=None):
         where = f"beat '{name}'"
         if lengths is not None and name not in lengths:
             errors.append(f"{where}: no length in shot_lengths.json")
+        if beat.get("extras", "pixel") not in EXTRAS:
+            errors.append(f"{where}: extras {beat.get('extras')!r} is not one of {EXTRAS}")
+        if any(c.get("render") == "3d" for c in beat.get("cast") or []) and beat.get("extras", "pixel") != "none":
+            warnings.append(f"{where}: 3D cast with the set's pixel people still in it; add \"extras\": \"none\"")
         unknown = set(beat) - BEAT_KEYS
         if unknown:
             errors.append(f"{where}: unknown keys {sorted(unknown)}")
@@ -413,6 +422,9 @@ def _human3d_errors(where, c, people, cast, warnings):
     for a in c.get("acts") or []:
         if not isinstance(a, dict) or "at" not in a or not _time_ok(a["at"]) or not ({"pose", "face"} & set(a)):
             errors.append(f"{where}: cast '{who}' acts entries need 'at' and a 'pose' or 'face'")
+    if size == "figure" and float(c.get("height", 0.25)) < HUMAN3D_MIN_HEIGHT:
+        warnings.append(f"{where}: 3D '{who}' stands at {float(c.get('height', 0.25)):.0%} of the frame; below "
+                        f"{HUMAN3D_MIN_HEIGHT:.0%} a person reads as a doll, so frame closer")
     speaker = c.get("speaker")
     if speaker is not None and cast is not None and speaker not in cast and speaker != "narrator":
         errors.append(f"{where}: cast '{who}' speaks as '{speaker}', who is not in script/cast.json")
