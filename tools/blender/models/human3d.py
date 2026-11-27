@@ -199,6 +199,43 @@ def _cloth_wrinkles(m):
     nt.links.new(weave.outputs["Fac"], fine.inputs["Height"])
     nt.links.new(big.outputs["Normal"], fine.inputs["Normal"])
     nt.links.new(fine.outputs["Normal"], bsdf.inputs["Normal"])
+    # a real weave where one is on disk: a CC0 Poly Haven fabric normal map under the creases (wool for
+    # coats, herringbone suiting for suits and trousers, linen for blouses, aprons, dresses and skirts)
+    weave_tex = _fabric_normal(m.name)
+    if weave_tex is not None:
+        mapping = nt.nodes.new("ShaderNodeMapping")
+        mapping.inputs["Scale"].default_value = (7.0, 7.0, 7.0)          # a tile every ~14 cm
+        nt.links.new(coord.outputs["Object"], mapping.inputs["Vector"])
+        img = nt.nodes.new("ShaderNodeTexImage")
+        img.image = bpy.data.images.load(str(weave_tex), check_existing=True)
+        img.image.colorspace_settings.name = "Non-Color"
+        img.projection = "BOX"
+        img.projection_blend = 0.3
+        nt.links.new(mapping.outputs["Vector"], img.inputs["Vector"])
+        nmap = nt.nodes.new("ShaderNodeNormalMap")
+        nmap.inputs["Strength"].default_value = 0.6
+        nt.links.new(img.outputs["Color"], nmap.inputs["Color"])
+        nt.links.new(nmap.outputs["Normal"], big.inputs["Normal"])
+        nt.nodes.remove(fine)
+        nt.links.new(big.outputs["Normal"], bsdf.inputs["Normal"])
+
+
+FABRICS = [(("coat",), "caban"), (("suit", "pants", "trousers", "jacket"), "poly_wool_herringbone"),
+           (("blouse", "apron", "dress", "skirt", "shirt", "bonnet"), "rough_linen")]
+
+
+def _fabric_normal(material_name):
+    """The CC0 fabric normal map for a garment, by the words in its material name, or None."""
+    name = material_name.lower()
+    try:
+        import assets
+    except ImportError:
+        return None
+    for words, tex in FABRICS:
+        if any(w in name for w in words):
+            files = assets.texture_files(tex)
+            return files["nor"] if files and files.get("nor") else None
+    return None
     if not bsdf.inputs["Roughness"].is_linked:
         bsdf.inputs["Roughness"].default_value = max(0.75, bsdf.inputs["Roughness"].default_value)
     if "Sheen Weight" in bsdf.inputs:

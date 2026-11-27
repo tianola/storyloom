@@ -1093,7 +1093,7 @@ def main():
         t0 = time.time()
         if args.still:
             st = build_beat_framed(name, board[name], seconds, timing.get(name, []))
-            bpy.context.scene.render.resolution_percentage = 50
+            bpy.context.scene.render.resolution_percentage = 100 if os.environ.get("STORYLOOM_STILL_FULL") else 50
             if os.environ.get("STORYLOOM_CYCLES_STILLS"):
                 # a machine without a GPU (the cloud checks): Cycles on the CPU, a few samples, denoised
                 sc = bpy.context.scene
@@ -1103,7 +1103,10 @@ def main():
                 sc.cycles.use_denoising = True
             for frac in args.still:
                 frame = max(1, round(frac * seconds * FPS))
+                t_still = time.time()
                 kit.common.render_still(frame, out_dir / f"{name}-{round(frac * 100):03d}.png", samples=16)
+                print(f"    STILL {name} frame {frame}: {time.time() - t_still:.1f}s "
+                      f"({bpy.context.scene.render.engine})", flush=True)
             for line in st.problems:
                 print(f"    FRAMING {name}: {line}")
             print(f"  [{idx + 1}/{len(names)}] {name} stills in {time.time() - t0:.1f}s")

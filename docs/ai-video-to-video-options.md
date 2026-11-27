@@ -1,70 +1,98 @@
-# AI video-to-video over our 3D renders: options (2026-11-26)
+# AI video-to-video over our 3D renders: free routes only (checked 2026-11-27)
 
-**Goal:** keep our motion, timing and camera from Blender, and have a model repaint the picture so the
-people and sets look photoreal.
+**Project rule:** every tool and service must be free. Paid services, paid credits and paid tiers are
+out, so the paid options of the previous version of this page (Runway, Luma, fal.ai) are dropped.
 
-**Status:** prepared, nothing tried. No footage has been uploaded anywhere, no account has been made and
-no money has been spent. Choosing a service is the owner's decision.
+**Goal:** keep our motion, timing and camera from Blender, and have an open model repaint the picture so
+it looks real.
 
-**Test clip:** `work/semmelweis-10min/renders/motion/ai-test/beat06-mothers-10s.mp4`.
-- 10 s, 1280x720, 30 fps, no audio. It is cut from the motion-pass render at 100.5-110.5 s of the 2:33 test.
-- It shows the three mothers at the First Clinic door. One clasps her hands and shakes her head on
-  "Please. Not the first clinic"; the others react.
-- No depth, normal or pose pass was exported. Rendering one costs another Blender run of the beat,
-  about 20 minutes. Do it only for a service that takes one as a control input (Wan VACE does; Runway
-  and Luma do not).
+**Status:**
+- Prepared, not run. Nothing has been uploaded and no account has been made: the owner runs it in his
+  own free account.
+- Test clip: `work/semmelweis-10min/renders/motion/ai-test/beat06-mothers-10s.mp4` (10 s, 1280x720,
+  30 fps, no sound): the three mothers, the plea and the head shake.
+- Ready-to-run notebook: `tools/ai/wan_vace_v2v_free.ipynb`. It is untested, because this PC has no
+  NVIDIA GPU.
 
-## Can it run on this PC? No, not in a usable way
+## The model: Wan2.1-VACE-1.3B (open, free)
 
-The PC has a Ryzen 7 5700X, 64 GB RAM and a Radeon RX 580 (Polaris, gfx803).
+Checked on its [model card](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B) on 2026-11-27.
+- **Licence:** Apache-2.0, so commercial use is allowed.
+- **Resolution:** built for 480p (832x480). The card says 720p works but is "generally less stable".
+- **Video-to-video:** done with a control video (depth, pose and so on); the depth or pose is computed
+  first.
+- **Frames:** the frame count must be 4k+1, with about 81 frames per call (about 5 s at 16 fps). A 10 s clip
+  therefore needs two calls.
+- **VRAM:** not stated for VACE. *Unverified:* about 8 GB is reported for the related T2V-1.3B model, and
+  the VACE transformer file alone is about 7 GB, so a 16 GB GPU is comfortable and 8 GB is tight.
+- **Depth model:** [Depth-Anything-V2-Small](https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf),
+  Apache-2.0, 25M parameters.
+- **Library:** the `WanVACEPipeline` of [Diffusers](https://huggingface.co/docs/diffusers/main/en/api/pipelines/wan).
+  In the mask, black is kept and white is generated.
 
-- **No GPU path.** PyTorch on Windows runs on AMD only through ROCm, and AMD's Windows support matrix
-  covers RDNA3/RDNA4 cards (RX 7000/9000) and Ryzen AI APUs. Polaris (gfx803) is not on it, so the RX 580
-  cannot run these models at all. (The same card is also why Blender's Cycles cannot use it.)
-- **Too little memory.** The open model that best keeps motion is Wan 2.1 VACE 14B. Its fp16 weights are
-  about 32 GB, and third-party estimates put inference at about 38 GB of VRAM at fp16, or about 9-10 GB
-  with an INT4 GGUF build. The RX 580 has 8 GB.
-- **CPU is far too slow.** The small 1.3B model would run on the CPU, but at many hours per second of
-  video, which is impractical.
-- **The practical route is a hosted service,** or a rented cloud GPU (24-80 GB) running the open Wan
-  VACE model.
+## Free route 1 (recommended): Kaggle Notebooks, free GPU
 
-## Hosted options
+| | |
+|---|---|
+| What you get | A free Jupyter notebook with an NVIDIA GPU, in your own Kaggle account (a phone-verified account is needed for GPUs). |
+| Limits | *Unverified* (Kaggle's [docs page](https://www.kaggle.com/docs/notebooks) did not load for checking; the figures are from third-party guides): about 30 GPU hours a week, sessions up to about 12 hours, GPU 1-2x NVIDIA T4 with 16 GB each. Your account settings show the real quota. |
+| Fits | Yes: the 10 s clip at 480p in two pieces of 81 frames. Rough estimate 10-30 minutes on a T4 (*unverified*). |
+| Your footage | Uploaded to Kaggle (Google) as a private dataset in your account. |
+| Cost | Free. |
 
-Costs below are list prices seen on 2026-11-26. One pass over the 153 s test is the minimum; real use
-needs 2-3 passes per shot to choose from.
+**Steps** (they are also at the top of the notebook):
+1. kaggle.com → New Notebook → File → Import notebook → `tools/ai/wan_vace_v2v_free.ipynb`.
+2. Add data → Upload → `beat06-mothers-10s.mp4` as a private dataset.
+3. Settings → Accelerator → GPU T4. Settings → Internet → On.
+4. Run all. Then download `wan_vace_out.mp4` from Output.
+5. Optional, on the PC: `ffmpeg -i wan_vace_out.mp4 -vf "minterpolate=fps=30,scale=1280:720:flags=lanczos" out30.mp4`.
 
-| | Runway Aleph 2.0 (Edit Studio / API) | Luma Ray 2 Modify ("Modify Video") | Wan VACE 14B on fal.ai (open model) |
-|---|---|---|---|
-| What it does | Edits or restyles an existing clip from a text prompt (and a reference image). Keeps the motion and the camera. | Restyles a clip; keeps motion and camera; strength settings from "adhere" to "reimagine". | Repaints a clip from a control input (pose, depth or the video itself) plus a prompt; the control keeps motion and camera exactly. |
-| Price | 28 credits/s = **$0.28/s**, minimum $0.56 per generation | **$0.35/s** on fal.ai; Luma's API charges per pixel (720p 5 s ≈ $1.75). Ray 3.2 Modify via WaveSpeed is listed at $0.019/s, a different model on a reseller. | **$0.08/s** at 720p (pose endpoint; 16 fps output) |
-| One pass of 153 s | about **$43** | about **$54** (Ray 3.2 via WaveSpeed about $3) | about **$12** |
-| With 3 tries per shot | about $130 | about $160 | about $37 |
-| Clip length | short generations (seconds), so the 153 s is cut into shots | up to 10 s (Ray 2), 30 s (Ray 3.2 on WaveSpeed) per generation | a few seconds per call, so long clips are cut into pieces |
-| Footage uploaded to | Runway (USA) | Luma, or fal.ai / WaveSpeed as resellers | fal.ai (USA); or a GPU we rent, which keeps it off any model company's servers |
-| Ownership and training | Runway's terms say it claims no ownership of inputs or outputs. Third-party summaries say non-Enterprise inputs and outputs may be used to train its models: check the current terms (updated 2026-05-11) first. | Paid Luma plans allow commercial use; check the data-use clause before uploading. | The Wan weights are open (Apache-2.0). fal.ai's terms govern the upload. Self-hosting on a rented GPU means no third-party model training. |
-| What it is good at | The best "keep everything, make it real" edits today; the simplest to use. | Strong restyling; the strength setting controls how far it may drift. | The cheapest, the most control (it can use our depth or pose passes), and it can be self-hosted later. |
-| Risks | Faces can change between shots (the same person looks different); costs add up with retries. | Same face-drift risk; less exact motion when the strength is high. | Needs more setup (workflow, passes); 16 fps output needs interpolating to 30. |
+## Free route 2: Google Colab, free tier
 
-## Recommendation for a first try
+Checked on the [Colab FAQ](https://research.google.com/colaboratory/faq.html) on 2026-11-27.
+- "Colab is free of charge to use."
+- GPUs are "not guaranteed and not unlimited", and the GPU type varies.
+- A free notebook runs for "at most 12 hours" and stops when idle. Colab does not publish its limits.
+- **Catch:** the FAQ says free runtimes doing "content generation" "commonly experience runtime terminations".
+  The same notebook runs there, but a run may be cut off. Use it only as a fallback.
+- Your footage goes to Google Drive or the Colab runtime in your account.
 
-1. Run the 10 s clip through **Wan VACE on fal.ai**: about $1 for a few tries, and the footage goes only to
-   fal.ai. Then run it through **Runway Aleph**: about $3-9 for 1-3 tries.
-2. Compare them on three things: is the motion kept, do the faces stay the same person, does it read as
-   real. Only then decide on the whole 2.5 minutes.
-3. To keep the footage away from any model company, rent a cloud GPU (24-48 GB, about $0.5-2/hour)
-   and run Wan VACE there.
+## Free route 3: Hugging Face Spaces, ZeroGPU
 
-## Sources
-- [Runway API pricing](https://docs.dev.runwayml.com/guides/pricing/)
-- [Runway help: Aleph](https://help.runwayml.com/hc/en-us/articles/43176400374419)
-- [Runway terms of use](https://runwayml.com/terms-of-use)
-- [terms.law on Runway output rights](https://terms.law/ai-output-rights/runway/)
-- [Luma Ray 2 Modify on fal.ai](https://fal.ai/models/fal-ai/luma-dream-machine/ray-2/modify)
-- [Luma Modify Video API changelog](https://lumalabs.ai/changelog/modify-video-api-release)
-- [Luma Modify Video on WaveSpeed](https://wavespeed.ai/models/luma/modify-video)
-- [Wan VACE 14B pose on fal.ai](https://fal.ai/models/fal-ai/wan-vace-14b/pose/llms.txt)
-- [Wan2.1 VACE 14B on Hugging Face](https://huggingface.co/Wan-AI/Wan2.1-VACE-14B)
-- [ComfyUI VACE tutorial](https://docs.comfy.org/tutorials/video/wan/vace)
-- [Spheron GPU guide for Wan VACE GGUF](https://www.spheron.network/tools/gpu-recommender/QuantStack/Wan2.1_14B_VACE-GGUF/)
+Checked on the [ZeroGPU docs](https://huggingface.co/docs/hub/spaces-zerogpu) on 2026-11-27.
+- "available to use for free to all users", with a daily GPU quota of 2 minutes (no account) or 5 minutes
+  (free account).
+- The GPU is half an RTX Pro 6000 with 48 GB. A call can run 60 s by default.
+- **Verdict:** 5 minutes a day is enough for perhaps one 5 s piece at 480p, using a public Space that
+  already runs Wan VACE (which Space is still to find, *unverified*). It is fine to see the look once,
+  but too little for the film.
+- Your footage goes to the Space's owner and Hugging Face.
+
+## On this PC (RX 580, 8 GB): not usable
+
+- **No GPU route for Wan.** PyTorch on AMD under Windows needs ROCm, and AMD's
+  [Windows support matrix](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html)
+  lists only the RX 7000/9000 series and Ryzen AI, not Polaris (RX 580). ZLUDA, the CUDA-on-AMD
+  translation layer, also targets newer AMD cards.
+- **The older path is possible but poor.** ComfyUI with DirectML (torch-directml) can run Stable Diffusion
+  1.5 with ControlNet and an AnimateDiff-style motion module. My estimate (*unverified*, not measured
+  here) is minutes per frame at 512x288 for a 10 s clip, so hours, with visible flicker from frame to
+  frame and faces that change. That is worse than our renders, so it is not recommended.
+- **Wan VACE 1.3B on the CPU (Ryzen 7 5700X)** would run in principle, but at many hours per second of
+  video. That is not practical.
+
+## Recommendation
+
+Use **Kaggle**: free and the most room. Run the notebook on the 10 s clip and judge three things: is the
+motion kept, do the faces stay the same people, does it read as real. Only if it passes, process the
+2.5-minute test piece by piece within the weekly quota (about 30 pieces of 5 s).
+
+## Sources (checked 2026-11-27)
+- [Wan2.1-VACE-1.3B model card](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B)
+- [Diffusers Wan pipelines](https://huggingface.co/docs/diffusers/main/en/api/pipelines/wan)
+- [Depth-Anything-V2-Small](https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf)
+- [Colab FAQ](https://research.google.com/colaboratory/faq.html)
+- [Hugging Face ZeroGPU](https://huggingface.co/docs/hub/spaces-zerogpu)
+- [Kaggle notebooks docs](https://www.kaggle.com/docs/notebooks) (did not load)
+- [Free Cloud GPUs in 2026 (gpuperhour)](https://gpuperhour.com/blog/free-cloud-gpus-and-credits) (third party, for the Kaggle quota)
 - [AMD ROCm Windows support matrix](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html)

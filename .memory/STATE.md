@@ -1,4 +1,22 @@
 # STATE
+## STANDING RULE (owner, 2026-11-27): free only
+Every tool, asset and service must be free: open-source software, CC0/CC-BY assets, open model weights, free tiers with no payment. Never suggest or set up anything paid. Never upload footage or create accounts on the owner's behalf; he runs any cloud step in his own free account.
+
+## 2026-11-27: free-only pass, branch `claude/semmelweis-free-only` (draft PR, on top of #12)
+- AI video-to-video, free routes (`docs/ai-video-to-video-options.md`):
+  - Kaggle (recommended) with Wan2.1-VACE-1.3B (Apache-2.0) and Depth-Anything-V2-Small (Apache-2.0) at 480p.
+  - Colab free tier: works, but its FAQ warns that content generation runs get terminated.
+  - Hugging Face ZeroGPU: 5 min a day, too little.
+  - Locally on the RX 580: not usable (no ROCm for Polaris; DirectML with SD1.5 is slow and flickers).
+- Notebook (untested, no NVIDIA here): `tools/ai/wan_vace_v2v_free.ipynb`, for the clip `renders/motion/ai-test/beat06-mothers-10s.mp4`.
+- Cycles vs EEVEE, same shots at 1920x1080 stills:
+  - EEVEE: 3-18 s a frame. Cycles CPU, 64 samples + denoise: 150-200 s a frame (about 70-90 s estimated at 720p).
+  - Cycles shades and grounds a little better, but the faces still read as CG.
+  - Mixed approach (3-4 close-ups of ~5 s in Cycles): about 600 frames × ~80 s ≈ 13 h. Possible overnight, but the gain is small; not done.
+  - Stills: `renders/cmp-eevee/`, `renders/cmp-cycles64/`.
+  - `STORYLOOM_STILL_FULL=1` renders `--still` frames at full resolution, and each still prints its time.
+- Free assets: Poly Haven CC0 fabrics (`caban`, `poly_wool_herringbone`, `rough_linen`) as detail normal maps on the clothes (`human3d._fabric_normal`); listed in `docs/human3d-credits.md`. The gain is small but visible on coats at close-ups.
+
 ## 2026-11-27: track B motion pass, branch `claude/semmelweis-mpfb-motion` (draft PR, on top of #11)
 - The user chose: poses and meaningful motion first, then a test of AI video-to-video (prepared, not run).
 - Done:
