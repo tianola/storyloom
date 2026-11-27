@@ -1,4 +1,29 @@
 # STATE
+## 2026-11-26 (night): track B realism pass, branch `claude/semmelweis-mpfb-real` (draft PR, includes #9 and #10)
+- The user finds the people porcelain-like and fake; the target is a photoreal reference (a warm rim-lit man on a bus).
+- Done:
+  - `light_people`: key, rim and fill per person and shot, plus a focus pull at f/1.2-1.8.
+  - `film_finish`: AgX Medium High Contrast, -0.45 exposure on day sets, bloom, lift/gamma/gain, an S-curve and a vignette.
+  - Eyes: the MPFB EnhancedEye group is broken on 4.5 (the iris is a flat glow), so it is replaced by the MakeHuman eye texture under a clear coat.
+  - Skin, cloth (crease and weave bump, sheen), hair-card shader, relaxed fingers.
+  - Motion: listeners turn to the speaker with timed, eased modifiers (`gaze` spans) and nod; blinks come with turns; gestures are keyed on stressed words.
+  - Plan: `work/semmelweis-10min/movement-plan.md`.
+- Video: `work/semmelweis-10min/renders/real/semmelweis-first2min-real-720p.mp4`, with ffmpeg grain at assembly. Before/after stills (before = polish2): `renders/real/review/`.
+- Render time with EEVEE at 720p on the Ryzen 7 5700X and RX 580: 2 h 21 min for 153 s, 9-31 min a beat.
+- Honest result: warmer and more filmic, but the people still read as CG dolls. Cycles needs HIP, and the RX 580 (Polaris) has no HIP support in Blender 4.5, so Cycles runs on the CPU only, which is far too slow for video.
+- Photoreal needs other characters (scanned or MetaHuman-class heads, strand hair) and a capable GPU or cloud render, or an AI video-to-video pass over the renders. That is a decision for the user.
+
+## 2026-11-26 (evening): track B round 2, branch `claude/semmelweis-mpfb-polish2` (draft PR, includes #9's commits)
+- Gestures: speakers move between the talk and look-hands poses on their phrases (`human3d.gestures`, `arm_idle`). Point is left out because it swings the arm out sideways.
+- Gaze: cast key `look` ("camera" | cast index | [x, y, z]). By default listeners look at the speaker in the shot (`storyboard_beats.apply_gaze`, `human3d.gaze`). Head and neck turn, clamped to ±60°. The eyes themselves are not aimed.
+- Skin and eyes (`human3d.skin_look`): SSS 0.07, no clear coat, roughness 0.52, pores 0.55, redder lips and ears; eye clear coat 1.0. Brows and mouth drift (`face_idle`), and each face is a little asymmetric (`set_face`).
+- New cast keys `at` [x, y] and `facing` (workflow/storyboard.py CAST_KEYS). New views: asylum `gate-near`, ledger `ledger-clerk`. The ledger office now has floor, wall, window and shelves.
+- Beat 01: the narrator stands at eye level (face and chest visible). Beat 03: a registrar (student variant 2) behind the desk. Beat 05: Semmelweis at the board in profile, looking at the calendar.
+- Asylum: coping, piers, plinth, gate surround, panelled and strapped leaves, barred windows, cornice, roof, chimneys. Town houses: jambs, panelled doors, chimney caps. Beat 08: a draped sheet mesh (`world.sheet_over_body`) with a hand hanging out. The scalpel and the scalpel/cut-hand views were lowered to the new sheet height.
+- Video: `work/semmelweis-10min/renders/polish2/semmelweis-first2min-polish2-720p.mp4`. Before/after stills (before = the polish video): `renders/polish2/review/`. All framing reports are empty.
+- Tests: pytest python/ gives 936 passed, 24 skipped, and 2 env failures (as before). Catalog and storyboard tests pass with Blender.
+- Still weak: the hands of the look-hands pose float in the air (the registrar does not touch the book); the eyes are not aimed; there is no real cloth simulation; the faces still render softly at 720p; the cell shot in beat 01 is very dark.
+
 ## 2026-11-26 (later): track B polish, branch `claude/semmelweis-mpfb-polish` (draft PR, not merged)
 - PR #8 is merged. This branch fixes the weak points of the 2:33 MPFB2 test:
   - `human3d.idle`: breathing, weight shift and head motion (F-curve modifiers, seeded per person). `human3d.blinks`: the eyes-closed key. `human3d.talk`: syllable-rate mouth flaps from mouth_timing.json (shape keys Exp_mouthOpenHalf/Open/OpenLarge). The narrator in beat 01 and the mother in beat 06 move their lips.

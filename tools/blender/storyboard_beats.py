@@ -258,6 +258,7 @@ def place_cast(st, scene_set, plan, spec, seconds, words):
     cam = bpy.context.scene.camera
     bounds = [(s["start"], plan[i + 1]["start"] if i + 1 < len(plan) else seconds) for i, s in enumerate(plan)]
     import people as _people
+    PLACED.clear()
     for n, c in enumerate(spec.get("cast", [])):
         if c.get("render") == "3d":
             place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds)
@@ -311,6 +312,217 @@ def place_cast(st, scene_set, plan, spec, seconds, words):
             ob.hide_render = True
             ob.keyframe_insert("hide_render", frame=f1 + 1)
         ob.hide_render = False
+    apply_gaze()
+
+
+PLACED = []   # the 3D people of this beat as place_human3d left them, for the gaze pass
+
+
+def _key_value(owner, attr, frame, value):
+    setattr(owner, attr, value)
+    owner.keyframe_insert(attr, frame=frame)
+
+
+def light_people(seconds):
+    """Film lighting for the 3D people, shot by shot. Each person in a shot gets a warm key from high on the
+    camera's left (a big soft area, so the light wraps the face), a warm rim from behind on the other side
+    that outlines head and shoulders against the set, and a big cool fill from low on the camera's right
+    for blue shadows; the lights are on only while that person's shot runs. The camera focuses on the
+    nearest person with a wide aperture, so the set behind falls soft."""
+    if not PLACED:
+        return
+    total = round(seconds * FPS)
+    cam = bpy.context.scene.camera
+    for p in PLACED:
+        f0, f1 = p["f0"], p["f1"]
+        head = p["foot"] + Vector((0, 0, p["stature"] * 0.9))
+        to_cam = (p["cam"] - head)
+        to_cam.z = 0
+        to_cam.normalize()
+        side = Vector((to_cam.y, -to_cam.x, 0))          # the camera's left, seen from the person
+        rigs = [("key", head + to_cam * 1.6 + side * 1.4 + Vector((0, 0, 1.0)), 90.0, (1.0, 0.80, 0.62), 1.4),
+                ("rim", head - to_cam * 1.3 - side * 0.9 + Vector((0, 0, 0.9)), 70.0, (1.0, 0.72, 0.45), 0.6),
+                ("fill", head + to_cam * 2.0 - side * 1.8 - Vector((0, 0, 0.5)), 35.0, (0.62, 0.74, 1.0), 2.5)]
+        for name, pos, energy, colour, size in rigs:
+            data = bpy.data.lights.new(f"p{p['n']}-{name}", "AREA")
+            data.size = size
+            data.color = colour
+            data.use_shadow = name != "fill"
+            ob = kit._link(bpy.data.objects.new(data.name, data))
+            ob.location = pos
+            kit.common.aim(ob, tuple(head))
+            # a person stands in a set already lit for itself: the rig adds to it, scaled by how bright
+            # the scene is exposed (a night scene at higher exposure needs less)
+            e = energy * (0.45 if bpy.context.scene.view_settings.exposure > 0.4 else 1.0)
+            _key_value(data, "energy", 1, 0.0)
+            _key_value(data, "energy", max(1, f0 - 1), 0.0)
+            _key_value(data, "energy", f0, e)
+            _key_value(data, "energy", min(total, f1), e)
+            if f1 < total:
+                _key_value(data, "energy", f1 + 1, 0.0)
+            for fc in data.animation_data.action.fcurves:
+                for kp in fc.keyframe_points:
+                    kp.interpolation = "CONSTANT"
+    # focus: the nearest person of each shot, wide open; shots without people keep the set's focus
+    dof = cam.data.dof
+    focus = kit._link(bpy.data.objects.new("focus-person", None))
+    base_obj, base_fstop = dof.focus_object, dof.aperture_fstop
+    follow = focus.constraints.new("COPY_LOCATION")
+    follow.target = base_obj
+    dof.focus_object = focus
+    _key_value(follow, "influence", 1, 1.0)
+    _key_value(dof, "aperture_fstop", 1, base_fstop)
+    spans = {}
+    for p in PLACED:
+        if p["depth"] < 7.0:
+            key = (p["f0"], p["f1"])
+            if key not in spans or p["depth"] < spans[key]["depth"]:
+                spans[key] = p
+    for (f0, f1), p in sorted(spans.items()):
+        head = p["foot"] + Vector((0, 0, p["stature"] * 0.92))
+        _key_value(follow, "influence", max(1, f0 - 1), 1.0)
+        _key_value(follow, "influence", f0, 0.0)
+        focus.location = head
+        focus.keyframe_insert("location", frame=f0)
+        _key_value(dof, "aperture_fstop", max(1, f0 - 1), base_fstop)
+        _key_value(dof, "aperture_fstop", f0, 1.2 if p["depth"] < 4.5 else 1.8)
+        if f1 < total:
+            _key_value(follow, "influence", f1 + 1, 1.0)
+            _key_value(dof, "aperture_fstop", f1 + 1, base_fstop)
+    print("FOCUS_SPANS", [(k, round(p["depth"], 2)) for k, p in sorted(spans.items())], flush=True)
+    if os.environ.get("DEBUG_DOF"):
+        for (f0, f1), p in sorted(spans.items()):
+            bpy.context.scene.frame_set(f0 + 10)
+            bpy.context.view_layer.update()
+            fw = focus.matrix_world.translation
+            print("DOF_AT", f0 + 10, dof.use_dof, dof.focus_object.name, round(dof.aperture_fstop, 2),
+                  tuple(round(x, 2) for x in fw), round((fw - cam.matrix_world.translation).length, 2),
+                  "lens", cam.data.lens, "sensor", cam.data.sensor_width, flush=True)
+    for idb in (focus, cam.data):
+        if idb.animation_data and idb.animation_data.action:
+            for fc in idb.animation_data.action.fcurves:
+                for kp in fc.keyframe_points:
+                    kp.interpolation = "CONSTANT"
+
+
+def film_finish():
+    """A gentle film grade in the render itself: AgX with a little more contrast, and a soft bloom on what
+    glows (windows, lamps) through the compositor. Grain is added at assembly."""
+    scene = bpy.context.scene
+    scene.view_settings.view_transform = "AgX"
+    if scene.view_settings.exposure < 0.4:
+        # daylight sets are exposed for themselves and read washed out once the people carry their own
+        # key: half a stop down lets the faces and the bright windows hold their shape
+        scene.view_settings.exposure -= 0.45
+    try:
+        scene.view_settings.look = "AgX - Medium High Contrast"
+    except TypeError:
+        pass
+    scene.use_nodes = True
+    nt = scene.node_tree
+    for n in list(nt.nodes):
+        nt.nodes.remove(n)
+    rl = nt.nodes.new("CompositorNodeRLayers")
+    glare = nt.nodes.new("CompositorNodeGlare")
+    glare.glare_type = "BLOOM" if "BLOOM" in [i.identifier for i in glare.bl_rna.properties["glare_type"].enum_items] else "FOG_GLOW"
+    glare.quality = "MEDIUM"
+    glare.threshold = 1.2
+    if hasattr(glare, "mix"):
+        glare.mix = -0.75
+    if hasattr(glare, "size"):
+        glare.size = 7
+    comp = nt.nodes.new("CompositorNodeComposite")
+    nt.links.new(rl.outputs["Image"], glare.inputs["Image"])
+    # the grade: cool shadows and warm highlights (lift / gain), a gentle S-curve for contrast, and a soft
+    # vignette that keeps the eye on the people in the middle of the frame
+    cb = nt.nodes.new("CompositorNodeColorBalance")
+    cb.correction_method = "LIFT_GAMMA_GAIN"
+    cb.lift = (0.97, 0.99, 1.04)
+    cb.gamma = (1.0, 1.0, 0.98)
+    cb.gain = (1.05, 1.01, 0.95)
+    curve = nt.nodes.new("CompositorNodeCurveRGB")
+    c = curve.mapping.curves[3]
+    c.points[0].location = (0.0, 0.0)
+    c.points[1].location = (1.0, 1.0)
+    c.points.new(0.25, 0.20)
+    c.points.new(0.75, 0.80)
+    curve.mapping.update()
+    mask = nt.nodes.new("CompositorNodeEllipseMask")
+    mask.width, mask.height = 1.15, 1.05
+    blur = nt.nodes.new("CompositorNodeBlur")
+    blur.filter_type = "GAUSS"
+    blur.use_relative = True
+    blur.factor_x = blur.factor_y = 35.0
+    blur.size_x = blur.size_y = 200
+    vig = nt.nodes.new("CompositorNodeMixRGB")
+    vig.blend_type = "MULTIPLY"
+    vig.inputs["Fac"].default_value = 1.0
+    lift = nt.nodes.new("CompositorNodeMapRange")       # edges 25 % darker, never black
+    lift.inputs["To Min"].default_value = 0.75
+    nt.links.new(glare.outputs["Image"], cb.inputs["Image"])
+    nt.links.new(cb.outputs["Image"], curve.inputs["Image"])
+    nt.links.new(mask.outputs["Mask"], blur.inputs["Image"])
+    nt.links.new(blur.outputs["Image"], lift.inputs["Value"])
+    nt.links.new(curve.outputs["Image"], vig.inputs[1])
+    nt.links.new(lift.outputs["Value"], vig.inputs[2])
+    nt.links.new(vig.outputs["Image"], comp.inputs["Image"])
+
+
+def apply_gaze():
+    """Turn each 3D person's head to what it looks at: `look` on its cast entry ("camera", the index of
+    another cast member, or a point [x, y, z]); by default a listener looks at whoever speaks in the shot
+    and a speaker at the camera when it is the narrator. Heads turn, bodies keep their facing."""
+    import random
+    import human3d
+    by_n = {p["n"]: p for p in PLACED}
+    speakers = [p for p in PLACED if p["c"].get("speaker") and p.get("spans")]
+    for p in PLACED:
+        c = p["c"]
+        look = c.get("look")
+        turns = []
+        timed = None
+        if look is None:
+            if c.get("speaker") == "narrator" or c.get("pose") == "walk":
+                _finish_face(p, turns)
+                continue
+            other = next((q for q in speakers if q is not p and q["c"].get("shot", 0) == c.get("shot", 0)), None)
+            if other is None:
+                _finish_face(p, turns)
+                continue
+            look = other["n"]
+            # a listener turns to the speaker when she speaks, and back after; nods now and then at the
+            # end of a phrase, each listener on her own delay
+            timed = [(round(a * FPS) + 1, round(b * FPS) + 1) for a, b in other["spans"]]
+            rnd = random.Random(p.get("seed", 0) * 17 + 5)
+            for a, b in timed:
+                if rnd.random() < 0.6:
+                    human3d.nod(p["inst"], c.get("pose", "stand"), b + round(rnd.uniform(0.1, 0.5) * FPS), FPS)
+        if look == "camera":
+            target = p["cam"]
+        elif isinstance(look, int) and look in by_n:
+            q = by_n[look]
+            target = q["foot"] + Vector((0, 0, q["stature"] * 0.93))
+        elif isinstance(look, list) and len(look) == 3:
+            target = Vector(look)
+        else:
+            _finish_face(p, turns)
+            continue
+        eye = p["foot"] + Vector((0, 0, p["stature"] * 0.93))
+        d = target - eye
+        want = math.atan2(d.x, -d.y)
+        yaw = (want - p["yaw"] + math.pi) % (2 * math.pi) - math.pi
+        pitch = math.atan2(-d.z, max(0.05, Vector((d.x, d.y)).length))
+        turns = human3d.gaze(p["inst"], yaw, pitch, spans=timed, fps=FPS, seed=p.get("seed", 0))
+        _finish_face(p, turns)
+        print(f"HUMAN3D_GAZE {p['n']} {c['who']} -> {look} yaw={math.degrees(yaw):.0f} pitch={math.degrees(pitch):.0f}"
+              f" timed={bool(timed)}", flush=True)
+
+
+def _finish_face(p, turns):
+    """Blinks last, so the ones that go with a head turn are in place."""
+    import human3d
+    if p["c"].get("blink", True):
+        human3d.blinks(p["inst"], p.get("total", 1), p.get("seed", 0), FPS, extra=turns)
 
 
 def place_actor(st, scene_set, plan, spec, seconds, words, n, c, bounds):
@@ -494,10 +706,20 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     frames = [max(f0 + 1, f1 - 1), min(f0 + 1, max(1, f1 - 1))]
     if c.get("place") == "start":
         frames.reverse()
-    for frame in frames:
-        foot, origin, depth, problem = solve(frame)
-        if problem is None:
-            break
+    if c.get("at"):
+        # a set point chosen by the storyboard (behind a desk, at a board): stand there, whatever the screen
+        frame = frames[0]
+        bpy.context.scene.frame_set(frame)
+        bpy.context.view_layer.update()
+        origin = cam.matrix_world.translation.copy()
+        foot = Vector((float(c["at"][0]), float(c["at"][1]), z0))
+        depth = (foot - origin).dot(cam.matrix_world.to_quaternion() @ Vector((0, 0, -1)))
+        problem = None
+    else:
+        for frame in frames:
+            foot, origin, depth, problem = solve(frame)
+            if problem is None:
+                break
     if problem:
         st.problems.append(problem)
     bpy.context.scene.frame_set(frame)
@@ -505,7 +727,12 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
     rig.scale = (scale, scale, scale)
     rig.rotation_mode = "XYZ"
     to_cam = origin - foot
-    rig.rotation_euler = (0.0, 0.0, math.atan2(to_cam.x, -to_cam.y))
+    yaw = math.atan2(to_cam.x, -to_cam.y)
+    if c.get("facing") is not None:
+        yaw = math.radians(float(c["facing"]))
+    rig.rotation_euler = (0.0, 0.0, yaw)
+    PLACED.append({"n": n, "c": c, "inst": inst, "foot": foot.copy(), "yaw": yaw, "stature": stature,
+                   "cam": origin.copy(), "f0": f0, "f1": f1, "depth": depth})
     rig.location = tuple(foot)
     rig.keyframe_insert("location", frame=1)
     print(f"HUMAN3D_PLACE {n} {c['who']} screen={c['screen']} bust={bust} foot={tuple(round(x, 3) for x in foot)} "
@@ -528,6 +755,7 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
 
     human3d.set_pose(inst, c.get("pose", "stand"), 1)
     human3d.set_pose(inst, c.get("pose", "stand"), f0)
+    human3d.relax_hands(inst, n * 13 + len(BEAT["name"] or ""))
     if c.get("pose") == "walk":
         human3d.play_walk(inst, f0)
     human3d.set_face(inst, c.get("face", "neutral"), f0)
@@ -538,16 +766,30 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
         if "face" in a:
             human3d.set_face(inst, a["face"], fa)
     who = c.get("speaker")
+    person_seed = n * 31 + sum(map(ord, BEAT["name"] or ""))
+    spans = []
     if who:
         for line in MOUTHS.get(BEAT["name"], []):
             if line["speaker"] == who and line["mode"] == "say":
                 human3d.talk(inst, line["visemes"], FPS, seed=n)
-    # life: breathing, a weight shift, a wandering head and blinks, out of step with the others
-    person_seed = n * 31 + sum(map(ord, BEAT["name"] or ""))
+                spoken = [v for v in line["visemes"] if v[0] not in ("rest", "closed")]
+                if spoken:
+                    spans.append((max(t0, spoken[0][1]), min(t1, spoken[-1][2])))
+        # the arms move with the words, unless the person walks or holds a pose the storyboard set
+        if c.get("gesture", True) and c.get("pose", "stand") in ("stand", "talk") and not c.get("acts"):
+            stresses = human3d.word_beats(words or [], t0, t1, FPS) if isinstance(words, list) else []
+            human3d.gestures(inst, [s for s in spans if s[1] - s[0] > 0.8], FPS, c.get("pose", "stand"),
+                             person_seed, stresses=stresses)
+    PLACED[-1]["spans"] = spans
+    PLACED[-1]["seed"] = person_seed
+    # life: breathing, a weight shift, a wandering head, a face that is never still, and blinks, all
+    # out of step with the others
     if c.get("idle", True):
         human3d.idle(inst, person_seed, FPS, walking=c.get("pose") == "walk")
-    if c.get("blink", True):
-        human3d.blinks(inst, round(seconds * FPS), person_seed, FPS)
+        human3d.face_idle(inst, person_seed, FPS)
+        if spans and c.get("pose") != "walk":
+            human3d.arm_idle(inst, person_seed, FPS)
+    PLACED[-1]["total"] = round(seconds * FPS)
     human3d.show(inst, f0, f1, round(seconds * FPS))
 
 
@@ -601,6 +843,9 @@ def build_beat(name, spec, seconds, words, forced=()):
     if spec.get("extras", "pixel") == "none":
         drop_set_extras(st)
     place_cast(st, scene, plan, spec, seconds, words)
+    if PLACED:
+        light_people(seconds)
+        film_finish()
     characters.finish_actors(st.cam)
 
     bounds = [(s["start"], plan[i + 1]["start"] if i + 1 < len(plan) else seconds) for i, s in enumerate(plan)]

@@ -1767,7 +1767,8 @@
     "gate",
     "cell",
     "bars",
-    "cell-close"
+    "cell-close",
+    "gate-near"
    ],
    "anchors": [
     "door",
@@ -1990,7 +1991,8 @@
    ],
    "views": [
     "ledger",
-    "ledger-street"
+    "ledger-street",
+    "ledger-clerk"
    ],
    "anchors": [
     "cross",
