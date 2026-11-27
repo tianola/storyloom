@@ -1,40 +1,54 @@
 # Semmelweis 3D test, beats 01-08: movement plan
 
-Every movement below has a reason in the story. Code: `tools/blender/models/human3d.py` (idle, gestures, gaze,
-nod, blinks, relax_hands) and `tools/blender/storyboard_beats.py` (`apply_gaze`, `light_people`).
+Every movement has a reason in the story, and the gestures are timed on the words they carry (times
+are seconds in the beat, from `word_timing.json`).
+- Code: `tools/blender/models/human3d.py` (`gesture`, `reach`, `point_at`, `gaze`, `eye_aim`, `bend`,
+  `pen_in_hand`, `lean`, `stride_speed`, `idle`, `blinks`) and `tools/blender/storyboard_beats.py`
+  (`gestures`, `walk_to`, `look`, `apply_gaze`).
+- Storyboard: the `gestures` key on each cast entry.
 
-These run for everyone:
-- breathing (chest, about every 4 s);
-- a slow shift of weight (chest and hips);
-- a small wandering of the head;
-- brows and mouth corners that are never still;
-- blinks every 2.5-5.5 s, and one with every head turn;
-- relaxed, slightly curled fingers.
+Everyone, all the time:
+- breathing, a slow shift of weight, a face that is never quite still;
+- blinks every 2.5-5.5 s, and one with each head turn;
+- relaxed fingers.
 
-No two people share a timing.
+Nobody shares a timing. A look starts with the eyes; the head follows a few frames later, then the
+neck, then part of the shoulders. A gesture gathers before it moves (anticipation) and settles after it.
 
-| Beat | Who | What they do | Why | When |
+| Beat | Who | Action | Why (the words) | When |
 |---|---|---|---|---|
-| 01 | Narrator, at the asylum gate | Talks to the camera; his hands open just before each stressed word of the narration and settle in the pauses. | He is telling us where the story ends. | 0-6 s and 12.9-16 s |
-| 02 | Mother and midwife | Walk toward the hospital gate. | The mother is coming to give birth; the midwife brings her. | the whole shot |
-| 03 | Registrar | Stands at the desk and looks down at the open death register. | He is the man who writes the deaths in. | 0-3.4 s and 12-18 s |
-| 04 | Doctor | Holds the "talk" pose. | He lectures at the First Clinic's door. | the whole beat |
-| 04 | Midwife | Looks at the doctor. | She listens to him. | the whole beat |
-| 04 | Student | Walks past the door. | Students come and go from the dissecting room. | the whole beat |
-| 05 | Semmelweis | Stands at the board in profile, reaches toward it and looks at the calendar strip MON/TUE. | He sees that the clinics take women on alternate days. | 0-9 s |
-| 06 | The mother who speaks | Says her line; her hands open with her stressed words. | She pleads not to be taken to the First Clinic. | 5.5-7.6 s |
-| 06 | The two other mothers | Turn their heads to her 0.25-0.7 s after she starts and turn back after; sometimes nod at the end of her phrase. | They listen, each with her own delay. | 5.5-8.5 s |
-| 07 | Midwife | Crosses the court toward the First Clinic. | Her daily round. | 9-16 s |
-| 08 | Doctor | Looks at his hands over the covered body. | He has come from the dissection without washing. | 0-9 s |
-| 08 | Student | Looks down at the body. | He looks at what lies under the sheet. | 0-9 s |
+| 01 | Narrator, at the asylum gate | Open hand toward the camera | "taken through the gate of a mental asylum" | 2.6-4.4 |
+| 01 | Narrator | Hand to the chest | "The guards beat him" | 5.4-6.0 |
+| 01 | Narrator | Open hand | "how does a man whose idea..." | 13.1-14.6 |
+| 01 | Narrator | Hand to the chest | "cut the deaths" | 14.85-15.9 |
+| 02 | Mother and midwife | Walk to the hospital gate, face it, and stop there | She has come to give birth; the midwife brings her. They walk at about 1.15 m/s. | 0-7 |
+| 03 | Registrar | Bends over the register, writes with a quill in the right hand; the left hand holds the page | He enters the deaths: "their deaths were counted there" | 0.2-3.3 and 12-17.9 |
+| 04 | Doctor | Lectures with open hands | "run by doctors and medical students", "an imperial decree" | 1.3-2.9, 3.3-5.0, 12.6-14.9 |
+| 04 | Student | Nods | "...and medical students" | 4.7 |
+| 04 | Midwife | Looks at the doctor, nods | "by midwives" | 6.9 |
+| 04 | Student | Walks to the Second Clinic's door and stops there | Students come and go. | from 0 |
+| 05 | Semmelweis | Hand to the chin, thinking | "no more skilful or conscientious" | 3.7-6.7 |
+| 05 | Semmelweis | Points at the calendar strip | "Admissions rotate, changing every twenty four hours" | 7.3-8.9 |
+| 06 | Mother who speaks | Clasps her hands | "They kneel and beg..." | 2.6-4.5 |
+| 06 | Mother who speaks | Clasps her hands again | "Please." | 5.3-6.0 |
+| 06 | Mother who speaks | Shakes her head | "Not the first clinic." | 6.0-6.95 |
+| 06 | Mother left | Hand to her chest, worried | "...beg not to be sent to the first clinic" | 2.2-4.9 |
+| 06 | Mother right | Clasped hands, then a hand to her mouth | The plea, then shock at the refusal | 2.9-4.6, 6.2-7.6 |
+| 06 | The two listeners | Turn to the speaker a moment after she starts, then turn back | They listen. | 5.5-8.5 |
+| 07 | Midwife | Crosses the court to the First Clinic's door and stops there | Her round. | 9-16 |
+| 08 | Doctor | Rests both hands on the edge of the dissecting table, looks down at the covered body | He has come from the dissection. | 0.3-8.8 |
+| 08 | Student | Looks at the body; hand to his chest | "mothers die" | 6.4-8.6 |
 
-## Not done yet (honest)
-- Pointing at the thing a line names, hands to the chest for grief, clasped hands for pleading and a shake
-  of the head for no all need poses the character library does not have yet. Today the gesture timing
-  follows the stressed words, but the shape of the gesture does not follow what the word means.
-- The eyes do not lead the head: the head turns, but the eyes are not aimed separately.
-- The shoulders and body do not follow the head through a turn.
-- The walk is the baked MPFB clip moved along a straight line: no planted feet (they can slide a little),
-  no leaning into a start or a stop.
-- The registrar does not write: his hands are in the air above the book. Nobody touches the doors or the
-  table, and nobody kneels.
+## Still not natural (honest)
+- The arm moves by IK, but each hand keeps its rest orientation, so a palm does not always turn the
+  right way (a hand on the chest can look like the back of the hand).
+- The head shake and the nod are keyed head rotations; the shoulders and the face do not join in.
+- In a walk the feet stay planted on average (the clip is slowed to match the travel), but there is no
+  foot IK lock, so a small slide can remain. Turning on the spot is not animated: walkers start already
+  facing where they go.
+- Nobody kneels in beats 01-08: the mothers are framed as busts, and a kneel would take them out of
+  frame. The "kneel and beg" line is carried by the clasped hands.
+- The doors stay shut: nobody walks through one in these beats, and the clinic doors are one solid
+  piece.
+- At the registrar's wide shot the quill is small and the crosses are added only in the close-up of the
+  page.

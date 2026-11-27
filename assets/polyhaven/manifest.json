@@ -748,5 +748,77 @@
     "bytes": 272656
    }
   ]
+ },
+ "caban": {
+  "kind": "textures",
+  "use": "wool coat cloth (3D people's coats)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/caban",
+  "files": [
+   {
+    "path": "textures/caban/caban_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/caban/caban_diff_1k.jpg",
+    "bytes": 715554
+   },
+   {
+    "path": "textures/caban/caban_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/caban/caban_nor_gl_1k.jpg",
+    "bytes": 616486
+   },
+   {
+    "path": "textures/caban/caban_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/caban/caban_rough_1k.jpg",
+    "bytes": 1022753
+   }
+  ]
+ },
+ "rough_linen": {
+  "kind": "textures",
+  "use": "linen (blouses, aprons, skirts)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/rough_linen",
+  "files": [
+   {
+    "path": "textures/rough_linen/rough_linen_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_diff_1k.jpg",
+    "bytes": 835801
+   },
+   {
+    "path": "textures/rough_linen/rough_linen_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_nor_gl_1k.jpg",
+    "bytes": 916843
+   },
+   {
+    "path": "textures/rough_linen/rough_linen_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_rough_1k.jpg",
+    "bytes": 1083725
+   }
+  ]
+ },
+ "poly_wool_herringbone": {
+  "kind": "textures",
+  "use": "suit cloth (3D people's suits and trousers)",
+  "licence": "CC0-1.0 (https://polyhaven.com/license)",
+  "resolution": "1k",
+  "page": "https://polyhaven.com/a/poly_wool_herringbone",
+  "files": [
+   {
+    "path": "textures/poly_wool_herringbone/poly_wool_herringbone_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/poly_wool_herringbone/poly_wool_herringbone_diff_1k.jpg",
+    "bytes": 942966
+   },
+   {
+    "path": "textures/poly_wool_herringbone/poly_wool_herringbone_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/poly_wool_herringbone/poly_wool_herringbone_nor_gl_1k.jpg",
+    "bytes": 1045151
+   },
+   {
+    "path": "textures/poly_wool_herringbone/poly_wool_herringbone_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/poly_wool_herringbone/poly_wool_herringbone_rough_1k.jpg",
+    "bytes": 857426
+   }
+  ]
  }
 }

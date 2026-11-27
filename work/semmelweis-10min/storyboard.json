@@ -44,6 +44,18 @@
      "at": [
       0.35,
       -6.8
+     ],
+     "gestures": [
+      {
+       "kind": "explain",
+       "at": "2.6s",
+       "until": "4.4s"
+      },
+      {
+       "kind": "chest",
+       "at": "5.4s",
+       "until": "5.95s"
+      }
      ]
     },
     {
@@ -61,6 +73,18 @@
      "at": [
       -0.55,
       -6.8
+     ],
+     "gestures": [
+      {
+       "kind": "explain",
+       "at": "13.1s",
+       "until": "14.6s"
+      },
+      {
+       "kind": "chest",
+       "at": "14.85s",
+       "until": "15.9s"
+      }
      ]
     }
    ],
@@ -94,6 +118,10 @@
      "walk": [
       0.14,
       -0.02
+     ],
+     "walk_to": [
+      38.6,
+      -1.1
      ]
     },
     {
@@ -110,6 +138,10 @@
      "walk": [
       0.1,
       -0.02
+     ],
+     "walk_to": [
+      38.6,
+      -0.4
      ]
     }
    ],
@@ -147,20 +179,47 @@
       0.6
      ],
      "height": 0.6,
-     "pose": "look-hands",
+     "pose": "stand",
      "render": "3d",
      "at": [
-      0.15,
-      0.95
+      0.1,
+      0.74
      ],
      "facing": 0,
      "look": [
-      0.2,
-      0.05,
+      0.08,
+      0.14,
       0.8
      ],
      "shot": 0,
-     "variant": 2
+     "variant": 2,
+     "gestures": [
+      {
+       "kind": "touch",
+       "at": "0.2s",
+       "until": "3.3s",
+       "target": [
+        0.08,
+        0.14,
+        0.81
+       ],
+       "side": "R",
+       "wiggle": 0.012,
+       "bend": 0.42,
+       "pen": true
+      },
+      {
+       "kind": "touch",
+       "at": "0.2s",
+       "until": "3.3s",
+       "target": [
+        0.32,
+        0.32,
+        0.8
+       ],
+       "side": "L"
+      }
+     ]
     },
     {
      "who": "student",
@@ -169,20 +228,47 @@
       0.6
      ],
      "height": 0.6,
-     "pose": "look-hands",
+     "pose": "stand",
      "render": "3d",
      "at": [
-      0.15,
-      0.95
+      0.1,
+      0.74
      ],
      "facing": 0,
      "look": [
-      0.2,
-      0.05,
+      0.08,
+      0.14,
       0.8
      ],
      "shot": 2,
-     "variant": 2
+     "variant": 2,
+     "gestures": [
+      {
+       "kind": "touch",
+       "at": "12.0s",
+       "until": "17.9s",
+       "target": [
+        0.08,
+        0.14,
+        0.81
+       ],
+       "side": "R",
+       "wiggle": 0.012,
+       "bend": 0.42,
+       "pen": true
+      },
+      {
+       "kind": "touch",
+       "at": "12.0s",
+       "until": "17.9s",
+       "target": [
+        0.32,
+        0.32,
+        0.8
+       ],
+       "side": "L"
+      }
+     ]
     }
    ],
    "cut": "steady",
@@ -215,8 +301,25 @@
      ],
      "height": 0.66,
      "shot": 0,
-     "pose": "talk",
-     "render": "3d"
+     "pose": "stand",
+     "render": "3d",
+     "gestures": [
+      {
+       "kind": "explain",
+       "at": "1.3s",
+       "until": "2.9s"
+      },
+      {
+       "kind": "explain",
+       "at": "3.3s",
+       "until": "5.0s"
+      },
+      {
+       "kind": "explain",
+       "at": "12.6s",
+       "until": "14.9s"
+      }
+     ]
     },
     {
      "who": "student",
@@ -227,7 +330,14 @@
      "height": 0.62,
      "shot": 0,
      "pose": "stand",
-     "render": "3d"
+     "render": "3d",
+     "gestures": [
+      {
+       "kind": "nod",
+       "at": "4.7s",
+       "until": "5.3s"
+      }
+     ]
     },
     {
      "who": "student",
@@ -242,6 +352,14 @@
      "walk": [
       0.1,
       -0.03
+     ],
+     "at": [
+      55.2,
+      8.4
+     ],
+     "walk_to": [
+      52.9,
+      6.5
      ]
     },
     {
@@ -254,7 +372,14 @@
      "shot": 0,
      "pose": "stand",
      "render": "3d",
-     "look": 0
+     "look": 0,
+     "gestures": [
+      {
+       "kind": "nod",
+       "at": "6.9s",
+       "until": "7.5s"
+      }
+     ]
     }
    ],
    "cut": "travel",
@@ -284,7 +409,7 @@
       0.95
      ],
      "height": 0.7,
-     "pose": "point",
+     "pose": "stand",
      "render": "3d",
      "at": [
       1.45,
@@ -296,7 +421,20 @@
       -0.02,
       1.86
      ],
-     "shot": 0
+     "shot": 0,
+     "gestures": [
+      {
+       "kind": "mouth",
+       "at": "3.7s",
+       "until": "6.7s"
+      },
+      {
+       "kind": "point",
+       "at": "7.3s",
+       "until": "8.9s",
+       "target": "calendar"
+      }
+     ]
     }
    ],
    "cut": "travel",
@@ -333,7 +471,14 @@
      "face": "sad",
      "render": "3d",
      "bust": true,
-     "depth": 0.42
+     "depth": 0.42,
+     "gestures": [
+      {
+       "kind": "chest",
+       "at": "2.2s",
+       "until": "4.9s"
+      }
+     ]
     },
     {
      "who": "mother",
@@ -348,7 +493,24 @@
      "render": "3d",
      "speaker": "mother",
      "bust": true,
-     "depth": 0.36
+     "depth": 0.36,
+     "gestures": [
+      {
+       "kind": "clasp",
+       "at": "2.6s",
+       "until": "4.5s"
+      },
+      {
+       "kind": "clasp",
+       "at": "5.3s",
+       "until": "6.0s"
+      },
+      {
+       "kind": "shake",
+       "at": "6.0s",
+       "until": "6.95s"
+      }
+     ]
     },
     {
      "who": "mother",
@@ -362,7 +524,19 @@
      "face": "sad",
      "render": "3d",
      "bust": true,
-     "depth": 0.46
+     "depth": 0.46,
+     "gestures": [
+      {
+       "kind": "clasp",
+       "at": "2.9s",
+       "until": "4.6s"
+      },
+      {
+       "kind": "mouth",
+       "at": "6.2s",
+       "until": "7.6s"
+      }
+     ]
     }
    ],
    "cut": "steady",
@@ -402,6 +576,10 @@
      "walk": [
       0.08,
       0.0
+     ],
+     "walk_to": [
+      52.9,
+      -5.4
      ]
     }
    ],
@@ -433,8 +611,37 @@
      ],
      "height": 0.66,
      "shot": 0,
-     "pose": "look-hands",
-     "render": "3d"
+     "pose": "stand",
+     "render": "3d",
+     "look": [
+      200.0,
+      0.6,
+      0.95
+     ],
+     "gestures": [
+      {
+       "kind": "touch",
+       "at": "0.3s",
+       "until": "8.8s",
+       "target": [
+        199.38,
+        1.12,
+        0.93
+       ],
+       "side": "R"
+      },
+      {
+       "kind": "touch",
+       "at": "0.3s",
+       "until": "8.8s",
+       "target": [
+        199.74,
+        1.12,
+        0.93
+       ],
+       "side": "L"
+      }
+     ]
     },
     {
      "who": "student",
@@ -450,6 +657,13 @@
       200.0,
       0.6,
       1.0
+     ],
+     "gestures": [
+      {
+       "kind": "chest",
+       "at": "6.4s",
+       "until": "8.6s"
+      }
      ]
     }
    ],

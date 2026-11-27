@@ -1,5 +1,31 @@
 # 3D people: asset credits
 
+**Project rule: free only.** Every tool, asset and service this project uses must be free. Free means
+open-source software (Blender, MPFB2, ffmpeg), assets under CC0 or CC-BY, open model weights, and free
+tiers that need no payment. CC-BY assets are credited in the film's end credits. Nothing paid goes in:
+no paid assets, no paid credits, no paid cloud.
+
+## Fabric detail on the clothes (added 2026-11-27)
+These three Poly Haven textures are CC0 1.0 (https://polyhaven.com/license): free for any use, no credit
+required. `tools/fetch_assets.py` fetches them through workflow/assets.json. They are used as detail
+normal maps under the garment creases in `human3d._cloth_wrinkles`.
+
+| Texture | Used for |
+|---|---|
+| `caban` | wool coats |
+| `poly_wool_herringbone` | suits, jackets, trousers |
+| `rough_linen` | blouses, aprons, dresses, skirts, bonnets |
+
+## Eyes
+The irises use the MakeHuman eye textures (CC0, MakeHuman system assets) in place of MPFB's procedural
+eye group, which does not build in Blender 4.5.
+
+## Other free sources checked
+- ambientCG: all CC0.
+- BlenderKit: its free items are royalty-free, but the licence differs per item and an account is
+  needed. Not used yet; each item would be checked before use.
+- Poly Haven has no CC0 hair or skin textures. The skins stay MakeHuman's own (CC0).
+
 The dressed 3D people of tools/blender/human3d_mpfb.py are built with
 [MPFB2](https://static.makehumancommunity.org/mpfb.html) (MakeHuman for Blender, GPL code; the characters it
 makes are not covered by the GPL) from MakeHuman assets. None of the assets are stored in this repository:

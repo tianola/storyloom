@@ -316,6 +316,7 @@ def place_cast(st, scene_set, plan, spec, seconds, words):
 
 
 PLACED = []   # the 3D people of this beat as place_human3d left them, for the gaze pass
+WALKS = {}    # cast index -> (start, end) of a walk, from the placement to the posing
 
 
 def _key_value(owner, attr, frame, value):
@@ -744,20 +745,52 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
         a = _floor_at(*_screen_ray(cam, u, v0), z0)
         b = _floor_at(*_screen_ray(cam, u + du, v0 + dv), z0)
         end = foot + (b - a) if (a is not None and b is not None and not bust) else foot
-        rig.location = tuple(foot)
-        rig.keyframe_insert("location", frame=f0)
-        rig.location = tuple(end)
-        rig.keyframe_insert("location", frame=f1)
-        if rig.animation_data and rig.animation_data.action:
-            for fc in rig.animation_data.action.fcurves:
-                for kp in fc.keyframe_points:
-                    kp.interpolation = "LINEAR"
+        WALKS[n] = (foot.copy(), end.copy())
+    if c.get("walk_to"):
+        # walking somewhere: to the gate, to a door. The person faces where she goes
+        end = Vector((float(c["walk_to"][0]), float(c["walk_to"][1]), z0))
+        WALKS[n] = (foot.copy(), end)
+        d = end - foot
+        if d.length > 0.05:
+            rig.rotation_euler = (0.0, 0.0, math.atan2(d.x, -d.y))
+            PLACED[-1]["yaw"] = rig.rotation_euler[2]
 
     human3d.set_pose(inst, c.get("pose", "stand"), 1)
     human3d.set_pose(inst, c.get("pose", "stand"), f0)
     human3d.relax_hands(inst, n * 13 + len(BEAT["name"] or ""))
     if c.get("pose") == "walk":
         human3d.play_walk(inst, f0)
+    if n in WALKS:
+        # walk to the end point and stop there: the body travels at the speed the clip's planted foot slides
+        # back, so the feet do not skate; the walk ends with the arrival, the person settles into a stand,
+        # leaning into the start and rocking back at the stop
+        start, end = WALKS.pop(n)
+        stride = human3d.stride_speed(inst, FPS) * scale
+        # an unhurried 1846 walk: the clip is slowed to the wanted speed, so the stride and the travel agree
+        speed = float(c.get("walk_speed", min(stride, 1.15)))
+        dist = (end - start).length
+        f_arrive = min(f1, f0 + max(round(0.6 * FPS), round(dist / max(speed, 0.2) * FPS)))
+        if f_arrive >= f1 and dist > 0:
+            end = start + (end - start) * ((f1 - f0) / FPS * speed / dist)     # the shot ends mid-walk
+        rig.location = tuple(start)
+        rig.keyframe_insert("location", frame=f0)
+        rig.location = tuple(end)
+        rig.keyframe_insert("location", frame=f_arrive)
+        for fc in rig.animation_data.action.fcurves:
+            if fc.data_path == "location":
+                for kp in fc.keyframe_points:
+                    kp.interpolation = "LINEAR"
+        if c.get("pose") == "walk" and rig.animation_data and rig.animation_data.nla_tracks:
+            strip = rig.animation_data.nla_tracks[-1].strips[-1]
+            clip = max(1.0, strip.action_frame_end - strip.action_frame_start)
+            strip.scale = max(1.0, stride / speed)
+            strip.repeat = max(0.5, (f_arrive - f0) / (clip * strip.scale))
+            strip.extrapolation = "NOTHING"
+            strip.blend_out = min(8.0, (f_arrive - f0) / 3)
+            if f_arrive < f1:
+                human3d.set_pose(inst, "stand", f_arrive + 6)
+        human3d.lean(inst, f0, f_arrive, FPS)
+        print(f"HUMAN3D_WALK {n} {c['who']} {dist:.2f} m at {speed:.2f} m/s, arrives {f_arrive} of {f1}", flush=True)
     human3d.set_face(inst, c.get("face", "neutral"), f0)
     for a in c.get("acts") or []:
         fa = max(1, round(when(a["at"], seconds, words, default=0.0) * FPS) + 1)
@@ -775,13 +808,42 @@ def place_human3d(st, scene_set, plan, spec, seconds, words, n, c, bounds):
                 spoken = [v for v in line["visemes"] if v[0] not in ("rest", "closed")]
                 if spoken:
                     spans.append((max(t0, spoken[0][1]), min(t1, spoken[-1][2])))
-        # the arms move with the words, unless the person walks or holds a pose the storyboard set
-        if c.get("gesture", True) and c.get("pose", "stand") in ("stand", "talk") and not c.get("acts"):
+        # the arms move with the words, unless the person walks or holds a pose the storyboard set, or the
+        # storyboard gives the gestures that carry the meaning of the line (below)
+        if c.get("gesture", True) and c.get("pose", "stand") in ("stand", "talk") and not c.get("acts") \
+                and not c.get("gestures"):
             stresses = human3d.word_beats(words or [], t0, t1, FPS) if isinstance(words, list) else []
             human3d.gestures(inst, [s for s in spans if s[1] - s[0] > 0.8], FPS, c.get("pose", "stand"),
                              person_seed, stresses=stresses)
     PLACED[-1]["spans"] = spans
     PLACED[-1]["seed"] = person_seed
+    # gestures that carry a meaning, timed on the words they belong to: "point" at the gate the line names,
+    # "chest" for the dead, "clasp" to plead, "shake" for no, "mouth" for shock, "nod", "explain", and
+    # "touch" for a hand that rests on or works at something (a pen on a page, a hand on a table)
+    for g in c.get("gestures") or []:
+        ga = when(g["at"], seconds, words, default=t0)
+        gb = when(g.get("until"), seconds, words, default=ga + 2.0)
+        fa, fb = max(2, round(ga * FPS) + 1), max(3, round(gb * FPS) + 1)
+        target = g.get("target")
+        if isinstance(target, str) and target in scene_set.pins:
+            target = tuple(scene_set.pins[target].matrix_world.translation)
+        if g["kind"] == "touch" and target is not None:
+            import random as _random
+            rnd = _random.Random(n * 7 + fa)
+            base = human3d.world_to_arm(inst, target)
+            pts, f = [], fa
+            wig = float(g.get("wiggle", 0.0))
+            while f < fb:
+                pts.append((f, base + Vector((rnd.uniform(-wig, wig), rnd.uniform(-wig, wig) * 0.5, 0.0))))
+                f += max(3, round(0.18 * FPS)) if wig else (fb - fa)
+            pts.append((fb, base))
+            if g.get("bend"):
+                human3d.bend(inst, float(g["bend"]), max(1, fa - round(0.5 * FPS)), fb + round(0.5 * FPS), FPS)
+            human3d.reach(inst, g.get("side", "R"), pts, FPS)
+            if g.get("pen"):
+                inst["parts"].append(human3d.pen_in_hand(inst, g.get("side", "R")))
+        else:
+            human3d.gesture(inst, g["kind"], fa, fb, FPS, seed=n, target=target)
     # life: breathing, a weight shift, a wandering head, a face that is never still, and blinks, all
     # out of step with the others
     if c.get("idle", True):
@@ -1031,7 +1093,7 @@ def main():
         t0 = time.time()
         if args.still:
             st = build_beat_framed(name, board[name], seconds, timing.get(name, []))
-            bpy.context.scene.render.resolution_percentage = 50
+            bpy.context.scene.render.resolution_percentage = 100 if os.environ.get("STORYLOOM_STILL_FULL") else 50
             if os.environ.get("STORYLOOM_CYCLES_STILLS"):
                 # a machine without a GPU (the cloud checks): Cycles on the CPU, a few samples, denoised
                 sc = bpy.context.scene
@@ -1041,7 +1103,10 @@ def main():
                 sc.cycles.use_denoising = True
             for frac in args.still:
                 frame = max(1, round(frac * seconds * FPS))
+                t_still = time.time()
                 kit.common.render_still(frame, out_dir / f"{name}-{round(frac * 100):03d}.png", samples=16)
+                print(f"    STILL {name} frame {frame}: {time.time() - t_still:.1f}s "
+                      f"({bpy.context.scene.render.engine})", flush=True)
             for line in st.problems:
                 print(f"    FRAMING {name}: {line}")
             print(f"  [{idx + 1}/{len(names)}] {name} stills in {time.time() - t0:.1f}s")

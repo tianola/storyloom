@@ -8,7 +8,10 @@
   "dark_wooden_planks": "floorboards (room, ward)",
   "roof_tiles": "roofs (vienna)",
   "castle_brick_07": "stone walls (asylum cell, dissecting room)",
-  "herringbone_brick": "corridor and court floors (hospital)"
+  "herringbone_brick": "corridor and court floors (hospital)",
+  "caban": "wool coat cloth (3D people's coats)",
+  "rough_linen": "linen (blouses, aprons, skirts)",
+  "poly_wool_herringbone": "suit cloth (suits and trousers)"
  },
  "hdris": {
   "farmland_overcast": "soft daylight for streets",
