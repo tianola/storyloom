@@ -162,6 +162,26 @@ def _key_pose_bone(pb, frame):
 # the MPFB characters have a kneel of their own
 POSE_STAND_IN = {"kneel": "sit"}
 
+# the MPFB "point" pose lifts the arm about 65 degrees out from the body; the coats and blouses are weighted
+# for a hanging arm, so the sleeve stretches into a fin. A pointing arm held lower (the fraction of the
+# library rotation kept) keeps the cloth on the arm and still reads as a gesture
+SOFTEN = {"point": {"upper_arm_fk.R": 0.55, "upper_arm_fk.L": 0.6, "forearm_fk.R": 0.8}}
+
+
+def _toward_rest(q, keep):
+    """The rotation `q` (w, x, y, z) scaled to `keep` of its angle (a slerp toward the rest pose)."""
+    import math
+    w, x, y, z = q
+    w = max(-1.0, min(1.0, w))
+    angle = 2 * math.acos(abs(w))
+    s = math.sqrt(max(1e-12, 1 - w * w))
+    if angle < 1e-6:
+        return q
+    sign = 1.0 if w >= 0 else -1.0
+    half = angle * keep / 2
+    return [math.cos(half), sign * x / s * math.sin(half), sign * y / s * math.sin(half),
+            sign * z / s * math.sin(half)]
+
 
 def set_pose(inst, pose, frame):
     """Pose from the library; a pose without its own entry uses its stand-in, then the standing pose."""
@@ -177,7 +197,10 @@ def set_pose(inst, pose, frame):
         if pb is not None:
             pb["IK_FK"] = 1.0
             pb.keyframe_insert('["IK_FK"]', frame=frame)
+    soften = SOFTEN.get(pose, {})
     for ctrl, q in entry.items():
+        if ctrl in soften:
+            q = _toward_rest(q, soften[ctrl])
         if ctrl.endswith("@loc"):
             # a control's location (MPFB poses lower the torso to kneel and sit)
             pb = rig.pose.bones.get(ctrl[:-4])
@@ -242,18 +265,130 @@ def set_face(inst, face, frame):
             kb.keyframe_insert("value", frame=frame)
 
 
-def talk(inst, visemes, fps):
-    """Mouth shapes from [shape, start, end] visemes in beat seconds; the mouth rests between them."""
+# mouth_timing.json marks whole phrases as one "half" or "open" stretch; a held open mouth reads as a gape,
+# so inside each stretch the jaw opens and closes at syllable rate (about 4-6 a second), each syllable a
+# little different, and the stretch's shape sets how far it opens
+SYLLABLE = (0.13, 0.22)          # seconds per syllable, min and max
+OPENING = {"half": ("Exp_mouthOpenHalf_max", 0.9), "open": ("Exp_mouthOpen_max", 0.75),
+           "wide": ("Exp_mouthOpenLarge_max", 0.6)}
+MOUTH_KEYS = sorted({name for name, _ in OPENING.values()})
+
+
+def talk(inst, visemes, fps, seed=0):
+    """Mouth motion from [shape, start, end] visemes in beat seconds: syllable flaps inside the spoken
+    stretches, the mouth shut in the "rest" and "closed" ones. Each key set (body, brows, lashes) gets the
+    same curve, so the face moves as one."""
+    import random
+    rnd = random.Random(seed * 7919 + len(visemes))
+    keys_out = {}                 # shape key -> [(frame, value)]
+    for shape, t0, t1 in visemes:
+        f0 = max(1, round(t0 * fps) + 1)
+        f1 = max(f0 + 1, round(t1 * fps) + 1)
+        if shape not in OPENING:
+            for name in MOUTH_KEYS:
+                keys_out.setdefault(name, []).append((f0, 0.0))
+            continue
+        name, peak = OPENING[shape]
+        t = t0
+        while t < t1 - 0.06:
+            step = rnd.uniform(*SYLLABLE)
+            mid, end = t + step * 0.45, min(t1, t + step)
+            keys_out.setdefault(name, []).append((round(mid * fps) + 1, peak * rnd.uniform(0.45, 1.0)))
+            keys_out[name].append((round(end * fps) + 1, peak * rnd.uniform(0.0, 0.15)))
+            for other in MOUTH_KEYS:
+                if other != name:
+                    keys_out.setdefault(other, []).append((round(mid * fps) + 1, 0.0))
+            t = end
+        keys_out.setdefault(name, []).append((f1, 0.0))
     for keys in _key_sets(inst):
-        for shape, t0, t1 in visemes:
-            name, value = MOUTH.get(shape, (None, 0.0))
-            f0 = max(1, round(t0 * fps) + 1)
-            f1 = max(f0 + 1, round(t1 * fps) + 1)
-            if name and keys.get(name):
-                keys[name].value = value
-                keys[name].keyframe_insert("value", frame=f0)
-                keys[name].value = 0.0
-                keys[name].keyframe_insert("value", frame=f1)
+        for name, points in keys_out.items():
+            kb = keys.get(name)
+            if kb is None:
+                continue
+            last = {}
+            for frame, value in points:
+                last[max(1, frame)] = value          # a later key on the same frame wins
+            for frame in sorted(last):
+                kb.value = last[frame]
+                kb.keyframe_insert("value", frame=frame)
+
+
+def blinks(inst, total, seed, fps):
+    """Blinks every 2.5-5.5 s (a quick double now and then), on the eyelid shape key of the body, brows
+    and lashes; a seed per person so a group never blinks together."""
+    import random
+    rnd = random.Random(seed * 104729 + 17)
+    t = rnd.uniform(0.3, 2.5)
+    frames = []
+    while t * fps < total:
+        frames.append(round(t * fps) + 1)
+        if rnd.random() < 0.15:
+            frames.append(round((t + 0.35) * fps) + 1)
+        t += rnd.uniform(2.5, 5.5)
+    for keys in _key_sets(inst):
+        kb = keys.get("Exp_eyesClosed_max")
+        if kb is None:
+            continue
+        kb.value = 0.0
+        kb.keyframe_insert("value", frame=1)
+        for f in frames:
+            for df, v in ((-1, 0.0), (1, 1.0), (2, 1.0), (5, 0.0)):
+                kb.value = v
+                kb.keyframe_insert("value", frame=max(1, f + df))
+
+
+# subtle life on a person who is not walking, layered over whatever pose is keyed: F-curve modifiers on the
+# quaternion x/y/z channels of the spine and head controls (Blender normalises pose quaternions, so a small
+# offset there is a small extra rotation). (bone, axis, kind, amplitude, period in seconds):
+#   breathing   the chest bends a little forward and back, about every 4 s
+#   sway        the chest leans side to side and the hips roll the other way, slowly: a weight shift
+#   head        a slow look left and right, a small nod and tilt
+IDLE = [
+    ("chest", 1, "sine", 0.010, 4.2),
+    ("chest", 3, "noise", 0.030, 7.0),
+    ("hips", 3, "noise", 0.016, 9.0),
+    ("neck", 2, "noise", 0.040, 6.0),
+    ("head", 2, "noise", 0.110, 5.0),
+    ("head", 1, "noise", 0.050, 3.5),
+    ("head", 3, "noise", 0.030, 6.5),
+]
+
+
+def idle(inst, seed, fps, walking=False):
+    """Breathing, a weight shift and a wandering head, out of step with everyone else (seed per person).
+    A walker keeps the clip's own body motion; only its head and breathing are added where the clip
+    leaves those bones to the keyed pose."""
+    import math
+    import random
+    rig = inst["rig"]
+    act = rig.animation_data.action if rig.animation_data else None
+    if act is None:
+        return 0
+    rnd = random.Random(seed * 6151 + 3)
+    added = 0
+    for bone, axis, kind, amp, period in IDLE:
+        if walking and bone in ("hips", "chest") and kind == "noise":
+            continue
+        fc = act.fcurves.find(f'pose.bones["{bone}"].rotation_quaternion', index=axis)
+        if fc is None:
+            continue
+        amp *= rnd.uniform(0.75, 1.25)
+        if kind == "sine":
+            m = fc.modifiers.new("FNGENERATOR")
+            m.function_type = "SIN"
+            m.amplitude = amp
+            m.phase_multiplier = 2 * math.pi / (period * fps * rnd.uniform(0.85, 1.15))
+            m.phase_offset = rnd.uniform(0, 2 * math.pi)
+            m.use_additive = True
+        else:
+            m = fc.modifiers.new("NOISE")
+            m.blend_type = "REPLACE"           # value + (noise - 0.5) * strength: centred on the pose
+            m.scale = period * fps * rnd.uniform(0.8, 1.25)
+            m.strength = 2 * amp
+            m.phase = rnd.uniform(0, 1000)
+            m.depth = 0
+        added += 1
+    return added
 
 
 def show(inst, f0, f1, total):
