@@ -45,13 +45,15 @@ init.save(os.path.join(args.out, "init.png"))
 
 from diffusers import AutoPipelineForImage2Image, AutoencoderKL  # noqa: E402
 
-vae = AutoencoderKL.from_pretrained("madebyollin/sdxl-vae-fp16-fix", torch_dtype=torch.float16)
+dev = "cuda" if torch.cuda.is_available() else "cpu"
+dtype = torch.float16 if dev == "cuda" else torch.float32    # CPU: fp32 (slow, ~10 min an image)
+vae = AutoencoderKL.from_pretrained("madebyollin/sdxl-vae-fp16-fix", torch_dtype=dtype)
 pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", vae=vae,
-                                                  torch_dtype=torch.float16, variant="fp16").to("cuda")
+                                                  torch_dtype=dtype, variant="fp16").to(dev)
 for s in args.seeds:
     img = pipe(prompt=args.prompt, negative_prompt=args.negative, image=init, strength=args.strength,
                num_inference_steps=40, guidance_scale=6.0,
-               generator=torch.Generator("cuda").manual_seed(s)).images[0]
+               generator=torch.Generator(dev).manual_seed(s)).images[0]
     path = os.path.join(args.out, f"ref_seed{s}.png")
     img.save(path)
     print("wrote", path)
