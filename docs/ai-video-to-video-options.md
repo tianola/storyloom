@@ -7,12 +7,12 @@ out, so the paid options of the previous version of this page (Runway, Luma, fal
 it looks real.
 
 **Status:**
-- Prepared, not run. Nothing has been uploaded and no account has been made: the owner runs it in his
-  own free account.
+- Run once on 2026-11-28 in the owner's free Kaggle account (T4). Only the 10 s clip was uploaded, as a
+  private dataset. The result is `work/semmelweis-10min/renders/motion/ai-test/wan_vace_out.mp4`, with a
+  side-by-side comparison in `.../ai-test/compare/`. See "Result of the first run" below.
 - Test clip: `work/semmelweis-10min/renders/motion/ai-test/beat06-mothers-10s.mp4` (10 s, 1280x720,
   30 fps, no sound): the three mothers, the plea and the head shake.
-- Ready-to-run notebook: `tools/ai/wan_vace_v2v_free.ipynb`. It is untested, because this PC has no
-  NVIDIA GPU.
+- Notebook: `tools/ai/wan_vace_v2v_free.ipynb`, fixed for a 16 GB T4 during the first run.
 
 ## The model: Wan2.1-VACE-1.3B (open, free)
 
@@ -35,8 +35,8 @@ Checked on its [model card](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B) on 2
 | | |
 |---|---|
 | What you get | A free Jupyter notebook with an NVIDIA GPU, in your own Kaggle account (a phone-verified account is needed for GPUs). |
-| Limits | *Unverified* (Kaggle's [docs page](https://www.kaggle.com/docs/notebooks) did not load for checking; the figures are from third-party guides): about 30 GPU hours a week, sessions up to about 12 hours, GPU 1-2x NVIDIA T4 with 16 GB each. Your account settings show the real quota. |
-| Fits | Yes: the 10 s clip at 480p in two pieces of 81 frames. Rough estimate 10-30 minutes on a T4 (*unverified*). |
+| Limits | Checked in the owner's account settings on 2026-11-28: 30 GPU hours a week, sessions up to 12 hours, GPU T4 x2 (16 GB each). P100 was not offered. A saved "Run All" version can wait in the queue for a long time (45+ minutes on 2026-11-28); an interactive session started sooner. |
+| Fits | Yes, with the T4 fixes in the notebook: 4 pieces of up to 49 frames at 480p. Measured: 37 s per step, about 1 h 35 min for the 10 s clip, so about 1.6 GPU hours per 10 s. |
 | Your footage | Uploaded to Kaggle (Google) as a private dataset in your account. |
 | Cost | Free. |
 
@@ -46,6 +46,22 @@ Checked on its [model card](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B) on 2
 3. Settings → Accelerator → GPU T4. Settings → Internet → On.
 4. Run all. Then download `wan_vace_out.mp4` from Output.
 5. Optional, on the PC: `ffmpeg -i wan_vace_out.mp4 -vf "minterpolate=fps=30,scale=1280:720:flags=lanczos" out30.mp4`.
+
+## Result of the first run (2026-11-28)
+
+What the T4 needed (all in the notebook now): `av` for imageio; 49-frame pieces and VAE tiling (81 frames
+ran out of memory); the `_native_efficient` attention backend in fp16 (the default asked for 18 GB); the
+prompt encoded once and the 11 GB text encoder moved to the CPU; a stop when fewer than 5 frames are left
+(the loop otherwise repeated 1-frame pieces forever).
+
+- **Looks real:** yes, far more than our renders: skin, cloth, stone and light read as filmed.
+- **Motion and camera:** kept. The camera, the three positions and the big gestures (hand to chest) follow
+  the depth of our clip.
+- **Faces and people:** not kept. The model invents new faces, and they and the dresses, the bonnets and the
+  building change at every piece join (about every 3 s). The women also do not look like our cast.
+- **Verdict:** not usable for the film as it is. It is worth one more test with the same free setup:
+  give VACE a reference image of each woman and of the set, condition each piece on the last frames of the
+  one before (instead of starting fresh), and name the look in the prompt more tightly.
 
 ## Free route 2: Google Colab, free tier
 
@@ -83,9 +99,9 @@ Checked on the [ZeroGPU docs](https://huggingface.co/docs/hub/spaces-zerogpu) on
 
 ## Recommendation
 
-Use **Kaggle**: free and the most room. Run the notebook on the 10 s clip and judge three things: is the
-motion kept, do the faces stay the same people, does it read as real. Only if it passes, process the
-2.5-minute test piece by piece within the weekly quota (about 30 pieces of 5 s).
+Use **Kaggle**: free and the most room. The first run passed on motion and realism and failed on keeping the
+same people (see above). Fix that first. At the measured speed, the 2.5-minute test would need about 24 GPU
+hours, almost all of one week's quota, so only process it once a 10 s test keeps the faces.
 
 ## Sources (checked 2026-11-27)
 - [Wan2.1-VACE-1.3B model card](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B)
