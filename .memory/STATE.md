@@ -2,6 +2,26 @@
 ## STANDING RULE (owner, 2026-11-27): free only
 Every tool, asset and service must be free: open-source software, CC0/CC-BY assets, open model weights, free tiers with no payment. Never suggest or set up anything paid. Never upload footage or create accounts on the owner's behalf; he runs any cloud step in his own free account.
 
+## 2026-11-28: Kaggle AI video tests, branch `claude/kaggle-notebook-fixes` (draft PR #14)
+- Run 1 (Wan2.1-VACE-1.3B, depth only, free T4): motion and camera kept, looks far more real, but faces,
+  clothes and the building change at every piece join. Result and frames: `renders/motion/ai-test/`.
+  Five T4 fixes are in `tools/ai/wan_vace_v2v_free.ipynb`; details in `docs/ai-video-to-video-options.md`.
+- Kaggle in the owner's account: 30 GPU h/week (T4 x2), 20 TPU h/week (TPU v5e-8, 8x16 GB). P100 is not
+  offered. The TPU v5e-8 queue was ~#700 and moved ~1 place a minute on 2026-11-28; GPU queue is short.
+- Next quality step, scripts in `tools/ai/animate/`:
+  - T4: `t4_refs_pipeline.py` = SDXL img2img reference per character (from the clip) + VACE with
+    `reference_images` and 5-frame overlap between pieces + 2x Real-ESRGAN to 1080p.
+  - TPU: Wan2.2-Animate-14B (Apache-2.0, 720p, one character per pass, "replace" mode) through
+    MaxDiffusion (`run_animate_tpu.sh`), fed by `prep_replace.py` from a Blender pass of one character
+    alone (`scratchpad solo_render.py` idea: build the beat, delete every other renderable object,
+    since visibility is keyed; RGBA PNGs). Model download is 82 GB (fp32 transformer).
+  - MaxDiffusion's LTX-2 pipeline on TPU is text-to-video only; diffusers video pipelines are GPU-only.
+- Run 2 (`t4_refs_pipeline.py`, T4 x1, ~2 h for 10 s): `renders/motion/ai-test/v2/vace_refs_1080p.mp4`,
+  comparison in `v2/compare/`. The set, the clothes and mostly the faces now stay the same, and the gestures
+  are kept, but the picture degrades and saturates over the 10 s (errors carry through the overlapping
+  pieces) and the 2x upscale looks painted. Faces read less like our cast than the references.
+- Uploading anything beyond the 10 s clip to Kaggle needs the owner's explicit yes (asked 2026-11-28).
+
 ## 2026-11-27: free-only pass, branch `claude/semmelweis-free-only` (draft PR, on top of #12)
 - AI video-to-video, free routes (`docs/ai-video-to-video-options.md`):
   - Kaggle (recommended) with Wan2.1-VACE-1.3B (Apache-2.0) and Depth-Anything-V2-Small (Apache-2.0) at 480p.
